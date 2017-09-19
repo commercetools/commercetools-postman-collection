@@ -1717,7 +1717,7 @@
           ],
           "request": {
             "url": {
-              "raw": "{{host}}/{{projectKey}}/carts/?customerId=ba30a48a-6424-4bd1-9b82-f05f07ef3399",
+              "raw": "{{host}}/{{projectKey}}/carts/?customerId=0c2eaad4-833c-43c1-98a4-5d03f57e9329",
               "auth": {},
               "host": [
                 "{{host}}"
@@ -1730,7 +1730,7 @@
               "query": [
                 {
                   "key": "customerId",
-                  "value": "ba30a48a-6424-4bd1-9b82-f05f07ef3399",
+                  "value": "0c2eaad4-833c-43c1-98a4-5d03f57e9329",
                   "equals": true,
                   "description": ""
                 }
