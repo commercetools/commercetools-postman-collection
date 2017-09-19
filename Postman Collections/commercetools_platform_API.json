@@ -150,7 +150,13 @@
               "variable": []
             },
             "method": "POST",
-            "header": [],
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic NjVZRW1LWlZPaUU2WkdpQmMwRFZFWUpwOlFxc3ZsZFdsNUhWVlpkcnNfN2ptLXhRZjQxVkdFcTdU",
+                "description": ""
+              }
+            ],
             "body": {},
             "description": "Use this request to obtain an access token for your commercetools platform project via Password Flow. As a prerequisite you must have filled out environment variables in Postman for projectKey, client_id, client_secret, user_email and user_password to use this."
           },
