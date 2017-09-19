@@ -1423,7 +1423,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeSortOrder\",\n      \"sortOrder\": 0.2\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeSortOrder\",\n    \"sortOrder\": 0.2\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-cartDiscounts.html#change-sort-order"
           },
