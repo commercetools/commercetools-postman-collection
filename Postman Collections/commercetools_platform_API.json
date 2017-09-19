@@ -4717,6 +4717,24 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "f7dff0c0-56f1-228e-d9ae-be2b5b2273a2",
+          "name": "Query Customers copy",
+          "request": {
+            "url": "{{host}}/{{projectKey}}/customers",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": ""
+          },
+          "response": []
         }
       ]
     },
