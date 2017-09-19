@@ -4583,7 +4583,7 @@
               }
             ],
             "body": {},
-            "description": ""
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#get-customer-by-key"
           },
           "response": []
         },
