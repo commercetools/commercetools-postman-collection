@@ -1381,7 +1381,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setDescription\",\n      \"description\": {\n          \"en\": \"Ein CartDiscount für ein spezifisches Produkt\",\n          \"de\": \"A CartDiscount which applies to a specific product\"\n      }\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setDescription\",\n      \"description\": {\n          \"en\": \"New Description EN\",\n          \"de\": \"New Description DE\"\n      }\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-cartDiscounts.html#set-description"
           },
