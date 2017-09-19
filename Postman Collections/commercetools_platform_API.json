@@ -547,7 +547,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"name\": {\n    \"en\": \"nameEN\",\n    \"de\": \"nameDE\"\n  },\n  \"description\": {\n    \"en\": \"DescriptionEN\",\n    \"de\": \"EDescriptionEN\"\n  },\n  \"value\": {\n    \"type\": \"absolute\",\n    \"money\": [{\n      \"currencyCode\": \"EUR\",\n      \"centAmount\":40000\n    }]\n  },\n  \"cartPredicate\": \"lineItemCount(sku = \\\"mySKU\\\") > 0\",\n  \"target\": {\n    \"type\": \"lineItems\",\n    \"predicate\": \"sku = \\\"mySKU\\\"\"\n  },\n  \"isActive\": true,\n  \"sortOrder\": \"0.1\",\n  \"requiresDiscountCode\": false\n}"
+              "raw": "{\n  \"name\": {\n    \"en\": \"nameEN\",\n    \"de\": \"nameDE\"\n  },\n  \"description\": {\n    \"en\": \"DescriptionEN\",\n    \"de\": \"EDescriptionDE\"\n  },\n  \"value\": {\n    \"type\": \"absolute\",\n    \"money\": [{\n      \"currencyCode\": \"EUR\",\n      \"centAmount\":40000\n    }]\n  },\n  \"cartPredicate\": \"lineItemCount(sku = \\\"mySKU\\\") > 0\",\n  \"target\": {\n    \"type\": \"lineItems\",\n    \"predicate\": \"sku = \\\"mySKU\\\"\"\n  },\n  \"isActive\": true,\n  \"sortOrder\": \"0.1\",\n  \"requiresDiscountCode\": false\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-cartDiscounts.html#create-a-cartdiscount"
           },
