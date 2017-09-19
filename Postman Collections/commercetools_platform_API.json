@@ -1389,7 +1389,7 @@
         },
         {
           "_postman_id": "2edddcf6-e035-aefd-465b-06e63d7d9907",
-          "name": "Set Sort Order",
+          "name": "Change Sort Order",
           "event": [
             {
               "listen": "test",
