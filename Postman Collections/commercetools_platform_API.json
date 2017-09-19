@@ -547,7 +547,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"name\": {\n    \"en\": \"My Cart Discount\",\n    \"de\": \"Mein Cart Discount\"\n  },\n  \"description\": {\n    \"en\": \"A CartDiscount which applies to a specific product\",\n    \"de\": \"Ein CartDiscount für ein spezifisches Produkt\"\n  },\n  \"value\": {\n    \"type\": \"absolute\",\n    \"money\": [{\n      \"currencyCode\": \"EUR\",\n      \"centAmount\":40000\n    }]\n  },\n  \"cartPredicate\": \"lineItemCount(sku = \\\"mySKU\\\") > 0\",\n  \"target\": {\n    \"type\": \"lineItems\",\n    \"predicate\": \"sku = \\\"mySKU\\\"\"\n  },\n  \"isActive\": true,\n  \"sortOrder\": \"0.1\",\n  \"requiresDiscountCode\": false\n}"
+              "raw": "{\n  \"name\": {\n    \"en\": \"nameEN\",\n    \"de\": \"nameDE\"\n  },\n  \"description\": {\n    \"en\": \"DescriptionEN\",\n    \"de\": \"DescriptionDE\"\n  },\n  \"value\": {\n    \"type\": \"absolute\",\n    \"money\": [{\n      \"currencyCode\": \"EUR\",\n      \"centAmount\":40000\n    }]\n  },\n  \"cartPredicate\": \"lineItemCount(sku = \\\"mySKU\\\") > 0\",\n  \"target\": {\n    \"type\": \"lineItems\",\n    \"predicate\": \"sku = \\\"mySKU\\\"\"\n  },\n  \"isActive\": true,\n  \"sortOrder\": \"0.1\",\n  \"requiresDiscountCode\": false\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-cartDiscounts.html#create-a-cartdiscount"
           },
@@ -1312,13 +1312,11 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
                   "var data = JSON.parse(responseBody);",
-                  "if(data.id){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id);   ",
-                  "}",
-                  "if(data.version){",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);   ",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
                   "}"
                 ]
               }
@@ -1341,7 +1339,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeName\",\n      \"name\": {\n          \"de\": \"Mein Cart Discount\",\n          \"en\": \"My Cart Discount\"\n      }\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeName\",\n      \"name\": {\n          \"en\": \"NewNameEN\",\n          \"de\": \"NewNameDE\"\n      }\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-cartDiscounts.html#change-name"
           },
@@ -1356,13 +1354,11 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
                   "var data = JSON.parse(responseBody);",
-                  "if(data.id){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id);   ",
-                  "}",
-                  "if(data.version){",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);   ",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
                   "}"
                 ]
               }
@@ -1400,13 +1396,11 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
                   "var data = JSON.parse(responseBody);",
-                  "if(data.id){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id);   ",
-                  "}",
-                  "if(data.version){",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);   ",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
                   "}"
                 ]
               }
@@ -1444,13 +1438,11 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
                   "var data = JSON.parse(responseBody);",
-                  "if(data.id){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id);   ",
-                  "}",
-                  "if(data.version){",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);   ",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
                   "}"
                 ]
               }
@@ -1488,13 +1480,11 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
                   "var data = JSON.parse(responseBody);",
-                  "if(data.id){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id);   ",
-                  "}",
-                  "if(data.version){",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);   ",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
                   "}"
                 ]
               }
@@ -1532,13 +1522,11 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
                   "var data = JSON.parse(responseBody);",
-                  "if(data.id){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id);   ",
-                  "}",
-                  "if(data.version){",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);   ",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
                   "}"
                 ]
               }
@@ -1576,11 +1564,7 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "if (responseCode.code === 200){",
-                  "    postman.setEnvironmentVariable(\"id\", null);   ",
-                  "    postman.setEnvironmentVariable(\"version\", null);   ",
-                  "} "
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;"
                 ]
               }
             }
