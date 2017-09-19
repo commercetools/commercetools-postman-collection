@@ -1652,7 +1652,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"currency\": \"EUR\",\n  \"customerId\": \"ba30a48a-6424-4bd1-9b82-f05f07ef3399\",\n  \"shippingAddress\": {\n    \"country\": \"DE\"\n  }\n}"
+              "raw": "{\n  \"currency\": \"EUR\",\n  \"customerId\": \"0c2eaad4-833c-43c1-98a4-5d03f57e9329\",\n  \"shippingAddress\": {\n    \"country\": \"DE\"\n  }\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-carts.html#create-cart"
           },
