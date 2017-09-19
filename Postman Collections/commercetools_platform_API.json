@@ -99,6 +99,15 @@
             }
           ],
           "request": {
+            "auth": {
+              "type": "basic",
+              "basic": {
+                "username": "{{client_id}}",
+                "password": "{{client_secret}}",
+                "saveHelperData": true,
+                "showPassword": false
+              }
+            },
             "url": {
               "raw": "https://{{auth_url}}/oauth/{{projectKey}}/customers/token?grant_type=password&username={{user_email}}&password={{user_password}}&scope=manage_project:{{projectKey}}",
               "protocol": "https",
