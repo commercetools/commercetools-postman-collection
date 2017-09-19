@@ -4571,7 +4571,7 @@
         },
         {
           "_postman_id": "103c6a10-8615-7531-65a3-410645105b3b",
-          "name": "Get Customer by ID copy",
+          "name": "Get Customer by Key",
           "request": {
             "url": "{{host}}/{{projectKey}}/customers/{{id}}",
             "method": "GET",
