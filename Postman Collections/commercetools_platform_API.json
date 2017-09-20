@@ -3793,7 +3793,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeParent\",\n    \"parent\": {\n      \"typeId\": \"category\",\n      \"id\": \"{{categoryId}}\"\n    }\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeParent\",\n    \"parent\": {\n      \"typeId\": \"category\",\n      \"id\": \"14dcd209-28c0-42e7-aaac-fb277423b9b0\"\n    }\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-categories.html#change-parent"
           },
