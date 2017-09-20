@@ -24182,6 +24182,48 @@
       "description": "",
       "item": [
         {
+          "_postman_id": "a0f66ca5-1872-0c01-ec41-6a57e39d3a5e",
+          "name": "Create Zone",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/zones",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\":\"Zone\",\n  \"description\": \"\",\n  \"locations\":[{\n      \"country\": \"ES\",\n      \"state\": \"\"\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-zones.html#create-zone"
+          },
+          "response": []
+        },
+        {
           "_postman_id": "f963b973-cb88-3cb0-6e13-bf3e8f88d380",
           "name": "Get Zone by ID",
           "event": [
@@ -24246,48 +24288,6 @@
             ],
             "body": {},
             "description": "http://dev.commercetools.com/http-api-projects-zones.html#query-zones"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "a0f66ca5-1872-0c01-ec41-6a57e39d3a5e",
-          "name": "Create Zone",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/zones",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"name\":\"Zone\",\n  \"description\": \"\",\n  \"locations\":[{\n      \"country\": \"ES\",\n      \"state\": \"\"\n  }]\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-zones.html#create-zone"
           },
           "response": []
         },
