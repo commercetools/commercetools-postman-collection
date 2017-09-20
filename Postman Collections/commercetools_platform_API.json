@@ -2693,7 +2693,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setShippingMethod\",\n    \"shippingMethod\": {\n      \"id\": \"{{shippingMethodId}}\",\n      \"typeId\": \"shipping-method\"\n    }\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setShippingMethod\",\n    \"shippingMethod\": {\n      \"id\": \"5fb8a475-9fb7-4f65-a08c-4a26c26c56b8\",\n      \"typeId\": \"shipping-method\"\n    }\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-carts.html#set-shippingmethod"
           },
