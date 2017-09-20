@@ -1631,7 +1631,7 @@
                       "var data = JSON.parse(responseBody);",
                       "if(data.id && data.version){",
                       "    postman.setEnvironmentVariable(\"cartExternalId\", data.id); ",
-                      "    postman.setEnvironmentVariable(\"cartExternalVersion\", data.id); ",
+                      "    postman.setEnvironmentVariable(\"cartExternalVersion\", data.version); ",
                       "}"
                     ]
                   }
