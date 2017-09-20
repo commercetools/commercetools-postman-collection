@@ -22851,7 +22851,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeType\",\n    \"type\": \"OrderState\"\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeType\",\n    \"type\": \"ReviewState\"\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-states.html#change-state-type"
           },
