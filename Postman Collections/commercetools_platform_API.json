@@ -24909,7 +24909,7 @@
                   "    postman.setEnvironmentVariable(\"version\", data.version);",
                   "}",
                   "",
-                  "postman.setNextRequest(\"Helpers/Change TaxMode External\");"
+                  "postman.setNextRequest(\"Carts/Set LineItem TaxRate\");"
                 ]
               }
             }
