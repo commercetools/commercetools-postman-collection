@@ -24075,7 +24075,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addEnumValue\",\n      \"fieldName\": \"myCustomFieldName\",\n      \"value\": {\n        \"key\": \"NewENumKey\",\n        \"label\": \"NewENumLabel\"\n      }\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addEnumValue\",\n      \"fieldName\": \"ENumField\",\n      \"value\": {\n        \"key\": \"NewENumKey\",\n        \"label\": \"NewENumLabel\"\n      }\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-types.html#update-type-by-id\nhttp://dev.commercetools.com/http-api-projects-types.html#add-enumvalue-to-fielddefinition"
           },
