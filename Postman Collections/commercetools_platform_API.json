@@ -1824,49 +1824,6 @@
           "response": []
         },
         {
-          "_postman_id": "6cea080d-4aa7-c522-7d33-c49f407d678e",
-          "name": "Remove LineItem",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id);   ",
-                  "}",
-                  "if(data.version){",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);   ",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/carts/{{id}}",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addLineItem\",\n    \"productId\": \"{{productId}}\",\n    \"variantId\": 1\n  }]\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-carts.html#remove-lineitem"
-          },
-          "response": []
-        },
-        {
           "_postman_id": "3549b10b-d58a-5213-01b6-90b56d36dd9e",
           "name": "Change LineItem Quantity",
           "event": [
@@ -2078,6 +2035,49 @@
               "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setLineItemCustomField\",\n    \"lineItemId\": \"{{lineItemId}}\",\n    \"name\": \"myCustomField\",\n    \"value\": \"myNewValue\"\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-carts.html#set-lineitem-customfield"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "6cea080d-4aa7-c522-7d33-c49f407d678e",
+          "name": "Remove LineItem",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id);   ",
+                  "}",
+                  "if(data.version){",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);   ",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/carts/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addLineItem\",\n    \"productId\": \"{{productId}}\",\n    \"variantId\": 1\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-carts.html#remove-lineitem"
           },
           "response": []
         },
