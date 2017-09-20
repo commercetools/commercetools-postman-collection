@@ -1707,6 +1707,35 @@
           "_postman_isSubFolder": true
         },
         {
+          "_postman_id": "40bb24de-f004-6e70-12d4-cd1de86ce363",
+          "name": "Query Carts",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/carts",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "http://dev.commercetools.com/http-api-projects-carts.html#get-cart-by-id"
+          },
+          "response": []
+        },
+        {
           "_postman_id": "e1fd55ed-0b5c-9bae-49ea-00c0653e35cc",
           "name": "Create Cart",
           "event": [
@@ -1839,35 +1868,6 @@
             ],
             "body": {},
             "description": "http://dev.commercetools.com/http-api-projects-carts.html#get-cart-by-customer-id"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "40bb24de-f004-6e70-12d4-cd1de86ce363",
-          "name": "Query Carts",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/carts",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": "http://dev.commercetools.com/http-api-projects-carts.html#get-cart-by-id"
           },
           "response": []
         },
