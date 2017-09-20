@@ -4424,7 +4424,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setAssetCustomField\",\n    \"assetId\": \"{{assetId}}\",\n    \"name\": \"myField\",\n    \"value\": \"myNewValue\"\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setAssetCustomField\",\n    \"assetId\": \"{{assetId}}\",\n    \"name\": \"StringCustomField\",\n    \"value\": \"myNewValue\"\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-categories.html#set-asset-custom-field"
           },
@@ -22535,17 +22535,7 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id);   ",
-                  "}",
-                  "if(data.version){",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);   ",
-                  "}",
-                  "if(data.key){",
-                  "    postman.setEnvironmentVariable(\"key\", data.key);",
-                  "}tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
                   "var data = JSON.parse(responseBody);",
                   "if(data.id && data.version){",
                   "    postman.setEnvironmentVariable(\"id\", data.id); ",
@@ -22587,10 +22577,12 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "if (responseCode.code === 200){",
-                  "    postman.setEnvironmentVariable(\"id\", null);   ",
-                  "    postman.setEnvironmentVariable(\"version\", null);   ",
-                  "} "
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
                 ]
               }
             }
