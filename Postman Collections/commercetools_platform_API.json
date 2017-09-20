@@ -1979,6 +1979,7 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
+                  "postman.setEnvironmentVariable(\"id\", postman.getEnvironmentVariable(\"cartExternalId\"));",
                   "postman.setEnvironmentVariable(\"id\", postman.getEnvironmentVariable(\"cartExternalId\"));"
                 ]
               }
