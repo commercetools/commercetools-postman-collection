@@ -3321,7 +3321,7 @@
             }
           ],
           "request": {
-            "url": "{{host}}/{{projectKey}}/categories/key={{key}}",
+            "url": "{{host}}/{{projectKey}}/categories/key=myKey",
             "method": "GET",
             "header": [
               {
