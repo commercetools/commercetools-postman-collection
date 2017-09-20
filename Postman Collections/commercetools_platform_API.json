@@ -22692,6 +22692,22 @@
         {
           "_postman_id": "45cab99b-3955-2dea-33af-f9b144c7dceb",
           "name": "Query States",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
           "request": {
             "url": "{{host}}/{{projectKey}}/states",
             "method": "GET",
