@@ -2865,7 +2865,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"removeDiscountCode\",\n    \"code\": {\n      \"typeId\": \"discount-code\",\n      \"id\": \"{{discountCodeId}}\"\n    }\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"removeDiscountCode\",\n    \"discountCode\": {\n      \"typeId\": \"discount-code\",\n      \"id\": \"{{discountCodeId}}\"\n    }\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-carts.html#remove-discountcode"
           },
