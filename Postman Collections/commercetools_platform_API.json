@@ -24126,7 +24126,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addLocalizedEnumValue\",\n      \"fieldName\": \"fieldDefinitionLocalizedEnumName\",\n      \"value\": {\n        \"key\": \"NewLocalizedEnumKeyString\",\n        \"label\": {\n          \"en\": \"NewLocalizedEnumKeyEN\",\n          \"de\": \"NewLocalizedEnumKeyDE\"\n        }\n      }\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addLocalizedEnumValue\",\n      \"fieldName\": \"LocalizedENumField\",\n      \"value\": {\n        \"key\": \"NewLocalizedEnumKeyString\",\n        \"label\": {\n          \"en\": \"NewLocalizedEnumKeyEN\",\n          \"de\": \"NewLocalizedEnumKeyDE\"\n        }\n      }\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-types.html#update-type-by-id\nhttp://dev.commercetools.com/http-api-projects-types.html#add-localizedenumvalue-to-fielddefinition"
           },
