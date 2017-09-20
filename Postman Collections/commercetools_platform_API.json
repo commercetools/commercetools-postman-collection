@@ -1971,6 +1971,15 @@
                   "}"
                 ]
               }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "postman.setEnvironmentVariable(\"id\", {{cartExternalId}});"
+                ]
+              }
             }
           ],
           "request": {
