@@ -4172,7 +4172,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeAssetOrder\",\n    \"assetOrder\": [\"{{assetId1}}\",\"{{assetId2}}\"]\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeAssetOrder\",\n    \"assetOrder\": [\"{{assetId}}\"\"]\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-categories.html#change-asset-order"
           },
