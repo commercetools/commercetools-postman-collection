@@ -2220,7 +2220,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addCustomLineItem\",\n    \"name\": \"myLineItem\",\n    \"quantity\": 1,\n    \"money\": {\n        \"currencyCode\": \"EUR\",\n        \"centAmount\":4200\n      },\n    \"slug\": \"mySlug\"\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addCustomLineItem\",\n    \"name\": {\n    \t\"en\": \"Name EN\",\n    \t\"de\": \"Name DE\"\n    },\n    \"quantity\": 1,\n    \"money\": {\n        \"currencyCode\": \"EUR\",\n        \"centAmount\":4200\n      },\n    \"slug\": \"mySlug\"\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-carts.html#add-customlineitem"
           },
