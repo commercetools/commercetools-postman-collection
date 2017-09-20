@@ -1839,7 +1839,7 @@
                   "    postman.setEnvironmentVariable(\"version\", data.version);",
                   "}",
                   "",
-                  "postman.setNextRequest(\"Carts/Pre-Helpers/Change TaxMode External\");"
+                  "postman.setNextRequest(\"Helpers/Change TaxMode External\");"
                 ]
               }
             }
