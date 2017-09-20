@@ -21423,63 +21423,6 @@
       "description": "",
       "item": [
         {
-          "_postman_id": "1cac9d52-c7db-a225-9d56-24c804ff7ae7",
-          "name": "Get ShoppingLists by ID",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id);   ",
-                  "}",
-                  "if(data.version){",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);   ",
-                  "}",
-                  "if(data.key){",
-                  "    postman.setEnvironmentVariable(\"key\", data.key);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/shopping-lists/{{id}}",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": "http://dev.commercetools.com/http-api-projects-shoppingLists.html#get-shoppinglist"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "70f07526-a6a4-cafc-c96f-e5ec814a583e",
-          "name": "Query ShoppingLists",
-          "request": {
-            "url": "{{host}}/{{projectKey}}/shopping-lists",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": "http://dev.commercetools.com/http-api-projects-shoppingLists.html#set-custom-type"
-          },
-          "response": []
-        },
-        {
           "_postman_id": "d073f777-3e09-0f2e-35fd-7f4d2bcbc7fe",
           "name": "Create ShoppingList",
           "event": [
@@ -21637,6 +21580,63 @@
               "body": "{\"id\":\"cc10b895-c1be-47b1-abd5-68fc2ee384f3\",\"version\":1,\"name\":{\"de\":\"Einkaufsliste\",\"en\":\"Shopping list\"},\"description\":{\"de\":\"DEdesc\",\"en\":\"ENdesc\"},\"customer\":{\"typeId\":\"customer\",\"id\":\"fe40d0eb-6049-4448-a29c-ec399967662d\"},\"slug\":{\"de\":\"DEslug\",\"en\":\"ENslug\"},\"lineItems\":[{\"id\":\"7feba687-79d6-4f8f-8ce8-3b707aa85ad9\",\"productId\":\"7eb21a2e-6545-4a21-a667-381857c7b131\",\"name\":{\"de\":\"Geberit MeplaFix adaptor\",\"en\":\"Geberit MeplaFix adaptor\"},\"productType\":{\"typeId\":\"product-type\",\"id\":\"fab0c032-daf3-47a5-9b64-755238092707\"},\"variantId\":1,\"quantity\":2,\"custom\":{\"type\":{\"typeId\":\"type\",\"id\":\"e94ae2af-317c-4bde-92e0-ec34b8ed2178\"},\"fields\":{\"myCustomFieldName\":\"whatever\"}},\"addedAt\":\"2017-05-06T22:22:22.000Z\"}],\"textLineItems\":[{\"id\":\"f3705d8c-314b-4634-a1a2-cfd81cb8fbd2\",\"name\":{\"de\":\"textLineItem\",\"en\":\"textLineItem\"},\"description\":{\"de\":\"TLI description\",\"en\":\"TLI description\"},\"quantity\":1,\"custom\":{\"type\":{\"typeId\":\"type\",\"id\":\"a1e0f35c-8cca-42d3-a8bb-c462efa02de0\"},\"fields\":{\"customfieldname\":\"whatever\"}},\"addedAt\":\"2017-05-05T22:22:22.000Z\"}],\"custom\":{\"type\":{\"typeId\":\"type\",\"id\":\"000d10e4-0109-463e-b804-1fbd5454ad8a\"},\"fields\":{\"myCustomFieldName\":\"whatever\"}},\"createdAt\":\"2017-09-07T15:03:21.506Z\",\"lastModifiedAt\":\"2017-09-07T15:03:21.506Z\",\"deleteDaysAfterLastModification\":120}"
             }
           ]
+        },
+        {
+          "_postman_id": "1cac9d52-c7db-a225-9d56-24c804ff7ae7",
+          "name": "Get ShoppingLists by ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id);   ",
+                  "}",
+                  "if(data.version){",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);   ",
+                  "}",
+                  "if(data.key){",
+                  "    postman.setEnvironmentVariable(\"key\", data.key);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/shopping-lists/{{id}}",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "http://dev.commercetools.com/http-api-projects-shoppingLists.html#get-shoppinglist"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "70f07526-a6a4-cafc-c96f-e5ec814a583e",
+          "name": "Query ShoppingLists",
+          "request": {
+            "url": "{{host}}/{{projectKey}}/shopping-lists",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "http://dev.commercetools.com/http-api-projects-shoppingLists.html#set-custom-type"
+          },
+          "response": []
         },
         {
           "_postman_id": "30f90507-f5b3-b222-ee16-4674ddaa363f",
