@@ -23486,7 +23486,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"replaceTaxRate\",\n    \"taxRateId\": {{taxRateID}},\n    \"taxRate\": {\n      \"name\": \"TaxRateName\",\n      \"amount\": 0.4,\n      \"includedInPrice\": true,\n      \"country\": \"EN\",\n      \"state\":\"state\"\n    }\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"replaceTaxRate\",\n    \"taxRateId\": \"\\\"{{taxRateID}}\\\"\",\n    \"taxRate\": {\n      \"name\": \"TaxRateName\",\n      \"amount\": 0.4,\n      \"includedInPrice\": true,\n      \"country\": \"EN\",\n      \"state\":\"state\"\n    }\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-taxCategories.html#update-taxcategory\nhttp://dev.commercetools.com/http-api-projects-taxCategories.html#replace-taxrate"
           },
