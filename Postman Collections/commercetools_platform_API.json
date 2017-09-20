@@ -3372,7 +3372,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setKey\",\n    \"key\": \"myKey\"\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setKey\",\n    \"key\": \"myNewKey\"\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-categories.html#update-category-by-key"
           },
