@@ -3970,6 +3970,22 @@
         {
           "_postman_id": "fb472461-1cb4-e8d0-964c-36e7e42e7c5a",
           "name": "Set Meta Keywords",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
           "request": {
             "url": "{{host}}/{{projectKey}}/categories/{{id}}",
             "method": "POST",
@@ -3996,6 +4012,22 @@
         {
           "_postman_id": "4fce204d-d98d-cb24-8e29-fad98a3782cb",
           "name": "Set Custom Type",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
           "request": {
             "url": "{{host}}/{{projectKey}}/categories/{{id}}",
             "method": "POST",
