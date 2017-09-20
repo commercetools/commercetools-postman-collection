@@ -2822,7 +2822,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addDiscountCode\",\n    \"code\": \"iWantIt4Free\"\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addDiscountCode\",\n    \"code\": \"mydiscountcode\"\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-carts.html#add-discountcode"
           },
