@@ -24177,7 +24177,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeFieldDefinitionOrder\",\n      \"fieldNames\": [\n        \"fieldDefinitionName2\",\n        \"fieldDefinitionName1\"\n      ]\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeFieldDefinitionOrder\",\n      \"fieldNames\": [\n        \"StringCustomField\"\n      ]\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-types.html#update-type-by-id\nhttp://dev.commercetools.com/http-api-projects-types.html#change-the-order-of-fielddefinitions"
           },
