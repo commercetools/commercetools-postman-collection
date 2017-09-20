@@ -2033,7 +2033,7 @@
                 "type": "text/javascript",
                 "exec": [
                   "postman.setEnvironmentVariable(\"id\", postman.getEnvironmentVariable(\"cartExternalAmountId\"));",
-                  "postman.setEnvironmentVariable(\"version\", postman.getEnvironmentVariable(\"cartExternalAmountId\"));"
+                  "postman.setEnvironmentVariable(\"version\", postman.getEnvironmentVariable(\"cartExternalAmountVersion\"));"
                 ]
               }
             }
