@@ -4137,48 +4137,6 @@
           "response": []
         },
         {
-          "_postman_id": "4290f405-bcf7-780b-40a9-760da7d30e1a",
-          "name": "Remove Asset",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/categories/{{id}}",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"removeAsset\",\n    \"assetId\": \"{{assetId}}\"\n  }]\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-categories.html#remove-asset"
-          },
-          "response": []
-        },
-        {
           "_postman_id": "4a72d712-b994-99dd-e259-48b11a58f3bb",
           "name": "Change Asset Order",
           "event": [
@@ -4469,6 +4427,48 @@
               "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setAssetCustomField\",\n    \"assetId\": \"{{assetId}}\",\n    \"name\": \"myField\",\n    \"value\": \"myNewValue\"\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-categories.html#set-asset-custom-field"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "4290f405-bcf7-780b-40a9-760da7d30e1a",
+          "name": "Remove Asset",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/categories/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"removeAsset\",\n    \"assetId\": \"{{assetId}}\"\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-categories.html#remove-asset"
           },
           "response": []
         },
