@@ -23067,7 +23067,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setDescription\",\n      \"description\":{\n        \"de\": \"description\"\n      }\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setDescription\",\n      \"description\":{\n        \"de\": \"StatedescriptionDE\",\n        \"en\": \"StatedescriptionEN\"\n      }\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-states.html#set-state-description"
           },
