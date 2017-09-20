@@ -21462,45 +21462,6 @@
           "response": []
         },
         {
-          "_postman_id": "5aff3a19-cfca-d676-1810-d2ef1f5d5b91",
-          "name": "Get ShoppingLists by Key",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id);   ",
-                  "}",
-                  "if(data.version){",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);   ",
-                  "}",
-                  "if(data.key){",
-                  "    postman.setEnvironmentVariable(\"key\", data.key);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/shopping-lists/key={{key}}",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": "http://dev.commercetools.com/http-api-projects-shoppingLists.html#get-shoppinglist-by-key"
-          },
-          "response": []
-        },
-        {
           "_postman_id": "70f07526-a6a4-cafc-c96f-e5ec814a583e",
           "name": "Query ShoppingLists",
           "request": {
