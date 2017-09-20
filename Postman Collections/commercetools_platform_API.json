@@ -24763,7 +24763,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeName\",\n    \"name\": \"DefaultZone newName\"\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeName\",\n    \"name\": \"newName\"\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-zones.html#change-name"
           },
