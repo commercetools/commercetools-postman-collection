@@ -24411,9 +24411,11 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
                   "var data = JSON.parse(responseBody);",
-                  "if(data.total===0){",
-                  "    tests[\"No element available\"]=false;",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
                   "}",
                   "else if(responseCode.code==200){",
                   "    tests[\"Status code is 200\"] = true;",
@@ -24436,16 +24438,7 @@
                   "        postman.setEnvironmentVariable(\"key\", data.results[0].key);",
                   "    }",
                   "}",
-                  "else{",
-                  "    for(var i=0;i<data.errors.length;i++){",
-                  "        if(data.errors[i].detailedErrorsMessage){",
-                  "            tests[data.errors[i].detailedErrorsMessage] = false;",
-                  "        }",
-                  "        else{",
-                  "            tests[data.errors[0].message] = false;",
-                  "        }",
-                  "    }",
-                  "}"
+                  ""
                 ]
               }
             }
