@@ -2779,7 +2779,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCustomerId\",\n    \"customerId\": \"{{customerId}}\"\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCustomerId\",\n    \"customerId\": \"0c2eaad4-833c-43c1-98a4-5d03f57e9329\"\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-carts.html#set-customer-id"
           },
