@@ -23763,7 +23763,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"key\": \"myLineItemType\",\n  \"name\": { \n    \"en\": \"Name EN\",\n    \"de\": \"Name DE\",\n  },\n  \"resourceTypeIds\": [\"lineItem\"],\n  \n  \"description\": { \n  \t\"en\": \"TypeDescription\",\n  \t\"de\": \"TypeDescription\" \n  },\n  \"fieldDefinitions\": [\n    {\n      \"name\": \"myCustomFieldName\",\n      \"type\": { \"name\": \"String\" },\n      \"required\": false,\n      \"label\": { \n      \t\"en\": \"myCustomFieldLabel EN\", \n      \t\"de\": \"myCustomFieldLabel EN\",\n      },\n      \"inputHint\": \"SingleLine\"\n    }\n  ]\n}"
+              "raw": "{\n  \"key\": \"myLineItemType\",\n  \"name\": { \n    \"en\": \"Name EN\",\n    \"de\": \"Name DE\",\n  },\n  \"resourceTypeIds\": [\"lineItem\"],\n  \n  \"description\": { \n  \t\"en\": \"TypeDescription\",\n  \t\"de\": \"TypeDescription\" \n  },\n  \"fieldDefinitions\": [\n    {\n      \"name\": \"myCustomFieldName\",\n      \"type\": { \"name\": \"String\" },\n      \"required\": false,\n      \"label\": { \n      \t\"en\": \"myCustomFieldLabel EN\", \n      \t\"de\": \"myCustomFieldLabel DE\"\n      },\n      \"inputHint\": \"SingleLine\"\n    }\n  ]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-types.html#create-type"
           },
