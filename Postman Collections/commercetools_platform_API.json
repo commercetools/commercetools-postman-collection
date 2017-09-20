@@ -22580,6 +22580,53 @@
       "description": "",
       "item": [
         {
+          "_postman_id": "f88c4065-1317-64f0-daab-b8d16c1d8efd",
+          "name": "Create State",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id);   ",
+                  "}",
+                  "if(data.version){",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);   ",
+                  "}",
+                  "if(data.key){",
+                  "    postman.setEnvironmentVariable(\"key\", data.key);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/states",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key\": \"\",\n  \"type\": \"\"\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-states.html#create-state"
+          },
+          "response": []
+        },
+        {
           "_postman_id": "bc996767-4f51-6495-afbc-615152fd737e",
           "name": "Get State by ID",
           "event": [
@@ -22672,53 +22719,6 @@
             ],
             "body": {},
             "description": "http://dev.commercetools.com/http-api-projects-states.html#query-states"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "f88c4065-1317-64f0-daab-b8d16c1d8efd",
-          "name": "Create State",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id);   ",
-                  "}",
-                  "if(data.version){",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);   ",
-                  "}",
-                  "if(data.key){",
-                  "    postman.setEnvironmentVariable(\"key\", data.key);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/states",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"key\": \"\",\n  \"type\": \"\"\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-states.html#create-state"
           },
           "response": []
         },
