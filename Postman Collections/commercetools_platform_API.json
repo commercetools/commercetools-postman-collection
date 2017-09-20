@@ -1643,19 +1643,19 @@
                 "method": "POST",
                 "header": [
                   {
-                    "description": "",
                     "key": "Authorization",
-                    "value": "Bearer {{access_token}}"
+                    "value": "Bearer {{access_token}}",
+                    "description": ""
                   },
                   {
-                    "description": "",
                     "key": "Content-Type",
-                    "value": "application/json"
+                    "value": "application/json",
+                    "description": ""
                   }
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"currency\": \"EUR\",\n  \"customerId\": \"0c2eaad4-833c-43c1-98a4-5d03f57e9329\",\n  \"shippingAddress\": {\n    \"country\": \"DE\"\n  }\n}"
+                  "raw": "{\n  \"currency\": \"EUR\",\n  \"customerId\": \"0c2eaad4-833c-43c1-98a4-5d03f57e9329\",\n  \"shippingAddress\": {\n    \"country\": \"DE\"\n  },\n  \"TaxMode\": \"External\"\n}"
                 },
                 "description": "http://dev.commercetools.com/http-api-projects-carts.html#create-cart"
               },
