@@ -1621,7 +1621,7 @@
           "item": [
             {
               "_postman_id": "33f2d09a-73eb-2760-82ec-970b5699c0a9",
-              "name": "Create Cart copy",
+              "name": "Create Cart External",
               "event": [
                 {
                   "listen": "test",
