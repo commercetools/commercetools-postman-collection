@@ -3213,6 +3213,22 @@
         {
           "_postman_id": "e6cce485-c555-a2b8-135c-b0fee327438e",
           "name": "Query Categories",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
           "request": {
             "url": "{{host}}/{{projectKey}}/categories",
             "method": "GET",
@@ -22615,7 +22631,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"key\": \"StateKey\",\n  \"type\": \"ReviewState\"\n}"
+              "raw": "{\n  \"key\": \"StateKey\",\n  \"type\": \"OrderState\"\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-states.html#create-state"
           },
