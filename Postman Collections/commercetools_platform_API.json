@@ -23214,6 +23214,48 @@
       "description": "",
       "item": [
         {
+          "_postman_id": "ec468aca-8790-53a5-31b7-ab6ee6b791c5",
+          "name": "Create TaxCategory",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/tax-categories",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"\"\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-taxCategories.html#create-taxcategory"
+          },
+          "response": []
+        },
+        {
           "_postman_id": "e2eded8e-cd90-b86e-9845-b5a4bcad9619",
           "name": "Get TaxCategory by ID",
           "event": [
@@ -23278,48 +23320,6 @@
             ],
             "body": {},
             "description": "http://dev.commercetools.com/http-api-projects-taxCategories.html#query-taxcategories"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "ec468aca-8790-53a5-31b7-ab6ee6b791c5",
-          "name": "Create TaxCategory",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/tax-categories",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"name\": \"\"\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-taxCategories.html#create-taxcategory"
           },
           "response": []
         },
