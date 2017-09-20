@@ -24890,7 +24890,7 @@
     },
     {
       "_postman_id": "7b649853-0839-eb55-f10b-e85321a2758a",
-      "name": "Pre-Helpers",
+      "name": "Helpers",
       "description": "Creates dummy resources that are required by the subsequent request",
       "item": [
         {
