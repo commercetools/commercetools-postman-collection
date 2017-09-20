@@ -23615,102 +23615,6 @@
       "description": "",
       "item": [
         {
-          "_postman_id": "ae6c9a32-8827-84a4-0b1b-cb536448ba48",
-          "name": "Get Type by ID",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id);   ",
-                  "}",
-                  "if(data.version){",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);   ",
-                  "}",
-                  "if(data.key){",
-                  "    postman.setEnvironmentVariable(\"key\", data.key);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/types/{{id}}",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": "http://dev.commercetools.com/http-api-projects-types.html#get-type-by-id"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "cf5d030c-5d0b-83c6-35ed-598c4f91003a",
-          "name": "Get Type by Key",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id);   ",
-                  "}",
-                  "if(data.version){",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);   ",
-                  "}",
-                  "if(data.key){",
-                  "    postman.setEnvironmentVariable(\"key\", data.key);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/types/key={{key}}",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": "http://dev.commercetools.com/http-api-projects-types.html#get-type-by-key"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "7898e6dd-3a1a-1a28-d175-3f7082e8bd37",
-          "name": "Query Types",
-          "request": {
-            "url": "{{host}}/{{projectKey}}/types",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": "http://dev.commercetools.com/http-api-projects-zones.html#query-zones"
-          },
-          "response": []
-        },
-        {
           "_postman_id": "29a8b478-ae39-a697-a60e-2f3194cd8f67",
           "name": "Create a Type",
           "event": [
@@ -23871,6 +23775,102 @@
               "body": "{\"id\":\"e1d7550d-a04e-4325-84fa-4000b908edb0\",\"version\":1,\"key\":\"assetType\",\"name\":{\"en\":\"my Asset Types Name\"},\"description\":{\"en\":\"customized fields definition my asset\"},\"resourceTypeIds\":[\"asset\"],\"fieldDefinitions\":[{\"name\":\"owener\",\"label\":{\"en\":\"assetOwner\"},\"required\":false,\"type\":{\"name\":\"String\"},\"inputHint\":\"SingleLine\"}],\"createdAt\":\"2017-08-29T09:21:34.879Z\",\"lastModifiedAt\":\"2017-08-29T09:21:34.879Z\"}"
             }
           ]
+        },
+        {
+          "_postman_id": "ae6c9a32-8827-84a4-0b1b-cb536448ba48",
+          "name": "Get Type by ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id);   ",
+                  "}",
+                  "if(data.version){",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);   ",
+                  "}",
+                  "if(data.key){",
+                  "    postman.setEnvironmentVariable(\"key\", data.key);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/types/{{id}}",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "http://dev.commercetools.com/http-api-projects-types.html#get-type-by-id"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "cf5d030c-5d0b-83c6-35ed-598c4f91003a",
+          "name": "Get Type by Key",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id);   ",
+                  "}",
+                  "if(data.version){",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);   ",
+                  "}",
+                  "if(data.key){",
+                  "    postman.setEnvironmentVariable(\"key\", data.key);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/types/key={{key}}",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "http://dev.commercetools.com/http-api-projects-types.html#get-type-by-key"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "7898e6dd-3a1a-1a28-d175-3f7082e8bd37",
+          "name": "Query Types",
+          "request": {
+            "url": "{{host}}/{{projectKey}}/types",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "http://dev.commercetools.com/http-api-projects-zones.html#query-zones"
+          },
+          "response": []
         },
         {
           "_postman_id": "1d08dd75-d85c-34bd-2d2d-b07875955cf2",
