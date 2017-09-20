@@ -3280,7 +3280,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"name\": {\n    \"de\": \"Das ist eine Kategorie\",\n    \"en\": \"This is a category\"\n  },\n  \"slug\": {\n    \"de\": \"slug-de\",\n    \"en\": \"slug-en\"\n  },\n  \"key\": \"myKey\"\n}"
+              "raw": "{\n  \"name\": {\n    \"de\": \"Das ist eine Kategorie\",\n    \"en\": \"This is a category\"\n  },\n  \"slug\": {\n    \"de\": \"slug-de\",\n    \"en\": \"slug-en\"\n  }\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-categories.html#create-a-category"
           },
@@ -4390,22 +4390,6 @@
         {
           "_postman_id": "36df8b94-24d6-1495-945b-7c53d98c6fdb",
           "name": "Set Asset Custom Type",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
           "request": {
             "url": "{{host}}/{{projectKey}}/categories/{{id}}",
             "method": "POST",
@@ -4432,22 +4416,6 @@
         {
           "_postman_id": "70df576a-54f4-88de-afd1-957f47202fab",
           "name": "Set Asset Custom Field",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
           "request": {
             "url": "{{host}}/{{projectKey}}/categories/{{id}}",
             "method": "POST",
@@ -4522,31 +4490,6 @@
             "description": ""
           },
           "response": []
-        }
-      ]
-    },
-    {
-      "_postman_id": "384e4e19-6629-da0f-7d6f-0e0478900736",
-      "name": "Channels",
-      "description": "",
-      "item": [
-        {
-          "_postman_id": "6673fb98-5455-a72f-673c-ab7abbe45424",
-          "name": "Query Channels",
-          "request": {
-            "url": "{{host}}/{{projectKey}}/channels",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": ""
-          },
-          "response": []
         },
         {
           "_postman_id": "9e353172-935a-aa19-791c-41ac8fb4472f",
@@ -4557,11 +4500,9 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
                   "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "if(data.version){",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);   ",
                   "}"
                 ]
               }
@@ -4587,6 +4528,63 @@
               "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setRoles\",\n    \"roles\": [\"ProductDistribution\"]\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-channels.html#set-roles"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "55884806-eb43-91c7-13ff-9a820f64cf94",
+          "name": "Get Channel by Id",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.version){",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);   ",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/categories/{{id}}",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "http://dev.commercetools.com/http-api-projects-channels.html#get-channel-by-id"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "384e4e19-6629-da0f-7d6f-0e0478900736",
+      "name": "Channels",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "6673fb98-5455-a72f-673c-ab7abbe45424",
+          "name": "Query Channels",
+          "request": {
+            "url": "{{host}}/{{projectKey}}/channels",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": ""
           },
           "response": []
         },
@@ -4685,40 +4683,6 @@
               "raw": ""
             },
             "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "55884806-eb43-91c7-13ff-9a820f64cf94",
-          "name": "Get Channel by Id",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/categories/{{id}}",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": "http://dev.commercetools.com/http-api-projects-channels.html#get-channel-by-id"
           },
           "response": []
         }
@@ -23277,7 +23241,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addRoles\",\n    \"roles\": [\"ReviewIncludedInStatistics\"]\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addRoles\",\n    \"roles\": [\"ReviewIncludedInStatistics2\"]\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-states.html#change-initial-state"
           },
