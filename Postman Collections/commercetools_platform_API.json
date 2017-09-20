@@ -1658,6 +1658,46 @@
                 "description": "http://dev.commercetools.com/http-api-projects-carts.html#create-cart"
               },
               "response": []
+            },
+            {
+              "_postman_id": "c7d72743-45ff-5736-3c61-72eec114bc9a",
+              "name": "Create Cart External copy",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "var data = JSON.parse(responseBody);",
+                      "if(data.id && data.version){",
+                      "    postman.setEnvironmentVariable(\"cartExternalId\", data.id); ",
+                      "}"
+                    ]
+                  }
+                }
+              ],
+              "request": {
+                "url": "{{host}}/{{projectKey}}/carts",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"currency\": \"EUR\",\n  \"customerId\": \"0c2eaad4-833c-43c1-98a4-5d03f57e9329\",\n  \"shippingAddress\": {\n    \"country\": \"DE\"\n  },\n  \"TaxMode\": \"External\"\n}"
+                },
+                "description": "http://dev.commercetools.com/http-api-projects-carts.html#create-cart"
+              },
+              "response": []
             }
           ],
           "_postman_isSubFolder": true
