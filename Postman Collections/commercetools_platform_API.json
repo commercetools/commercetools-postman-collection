@@ -22615,7 +22615,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"key\": \"StateKey\",\n  \"type\": \"OrderState\"\n}"
+              "raw": "{\n  \"key\": \"StateKey\",\n  \"type\": \"ReviewState\"\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-states.html#create-state"
           },
