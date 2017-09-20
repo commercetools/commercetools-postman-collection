@@ -24228,7 +24228,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeEnumValueOrder\",\n      \"fieldName\": \"fieldDefinitionENumName\",\n      \"keys\": [\n        \"eNumKeyString2\",\n        \"eNumKeyString1\"\n      ]\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeEnumValueOrder\",\n      \"fieldName\": \"fieldDefinitionENumName\",\n      \"keys\": [\n        \"NewENumKey\",\n        \"eNum2\",\n        \"eNum1\"\n      ]\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-types.html#update-type-by-id\nhttp://dev.commercetools.com/http-api-projects-types.html#change-the-order-of-enumvalues"
           },
