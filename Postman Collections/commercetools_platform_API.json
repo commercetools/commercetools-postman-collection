@@ -2986,7 +2986,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addPayment\",\n    \"payment\": {\n      \"id\": {{paymentId}},\n      \"typeId\": \"payment\"\n    }\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addPayment\",\n    \"payment\": {\n      \"id\": de42b20a-59be-4787-a2cd-605a2fd3026d,\n      \"typeId\": \"payment\"\n    }\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-carts.html#add-payment"
           },
