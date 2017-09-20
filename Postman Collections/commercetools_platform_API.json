@@ -1615,56 +1615,6 @@
       "description": "",
       "item": [
         {
-          "_postman_id": "7b649853-0839-eb55-f10b-e85321a2758a",
-          "name": "Pre-Helpers",
-          "description": "Creates dummy resources that are required by the subsequent request",
-          "item": [
-            {
-              "_postman_id": "3f6b23f5-53fd-fdae-d1f7-ec18d1412a01",
-              "name": "Change TaxMode External",
-              "event": [
-                {
-                  "listen": "test",
-                  "script": {
-                    "type": "text/javascript",
-                    "exec": [
-                      "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                      "var data = JSON.parse(responseBody);",
-                      "if(data.id && data.version){",
-                      "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                      "    postman.setEnvironmentVariable(\"version\", data.version);",
-                      "}"
-                    ]
-                  }
-                }
-              ],
-              "request": {
-                "url": "{{host}}/{{projectKey}}/carts/{{id}}",
-                "method": "POST",
-                "header": [
-                  {
-                    "key": "Authorization",
-                    "value": "Bearer {{access_token}}",
-                    "description": ""
-                  },
-                  {
-                    "key": "Content-Type",
-                    "value": "application/json",
-                    "description": ""
-                  }
-                ],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeTaxMode\",\n    \"taxMode\": \"External\"\n  }]\n}"
-                },
-                "description": "http://dev.commercetools.com/http-api-projects-carts.html#change-taxmode"
-              },
-              "response": []
-            }
-          ],
-          "_postman_isSubFolder": true
-        },
-        {
           "_postman_id": "e1fd55ed-0b5c-9bae-49ea-00c0653e35cc",
           "name": "Create Cart",
           "event": [
@@ -24933,6 +24883,55 @@
               "raw": ""
             },
             "description": "http://dev.commercetools.com/http-api-projects-zones.html#delete-zone"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "7b649853-0839-eb55-f10b-e85321a2758a",
+      "name": "Pre-Helpers",
+      "description": "Creates dummy resources that are required by the subsequent request",
+      "item": [
+        {
+          "_postman_id": "3f6b23f5-53fd-fdae-d1f7-ec18d1412a01",
+          "name": "Change TaxMode External",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/carts/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeTaxMode\",\n    \"taxMode\": \"External\"\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-carts.html#change-taxmode"
           },
           "response": []
         }
