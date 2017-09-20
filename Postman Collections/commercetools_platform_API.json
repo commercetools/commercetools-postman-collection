@@ -22893,7 +22893,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeInitial\",\n      \"initial\": true\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeInitial\",\n      \"initial\": false\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-states.html#change-initial-state"
           },
