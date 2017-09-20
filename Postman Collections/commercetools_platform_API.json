@@ -24629,18 +24629,7 @@
                   "if(data.id && data.version){",
                   "    postman.setEnvironmentVariable(\"id\", data.id); ",
                   "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "    postman.setEnvironmentVariable(\"key\", data.key);",
-                  "    tests[\"succeeded\"]=true;",
-                  "}",
-                  "else {",
-                  "    if(data.results){",
-                  "        postman.setEnvironmentVariable(\"id\", data.results[0].id);   ",
-                  "        postman.setEnvironmentVariable(\"version\", data.results[0].version);   ",
-                  "        postman.setEnvironmentVariable(\"key\", data.results[0].key);",
-                  "        tests[\"succeeded2\"]=true;",
-                  "    }",
-                  "}",
-                  ""
+                  "}"
                 ]
               }
             }
