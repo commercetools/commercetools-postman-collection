@@ -22545,6 +22545,11 @@
                   "}",
                   "if(data.key){",
                   "    postman.setEnvironmentVariable(\"key\", data.key);",
+                  "}tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
                   "}"
                 ]
               }
