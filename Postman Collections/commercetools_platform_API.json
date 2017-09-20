@@ -2037,7 +2037,7 @@
                 "exec": [
                   "postman.setEnvironmentVariable(\"id\", postman.getEnvironmentVariable(\"cartExternalAmountId\"));",
                   "postman.setEnvironmentVariable(\"version\", postman.getEnvironmentVariable(\"cartExternalAmountVersion\"));",
-                  "postman.setEnvironmentVariable(\"lineItemId\", postman.getEnvironmentVariable(\"cartExternalLineItemVersion\"));"
+                  "postman.setEnvironmentVariable(\"lineItemId\", postman.getEnvironmentVariable(\"cartExternalAmountLineItemVersion\"));"
                 ]
               }
             }
