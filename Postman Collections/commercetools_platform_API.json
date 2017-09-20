@@ -1661,7 +1661,7 @@
             },
             {
               "_postman_id": "c7d72743-45ff-5736-3c61-72eec114bc9a",
-              "name": "Create Cart External copy",
+              "name": "Create Cart ExternalAmount",
               "event": [
                 {
                   "listen": "test",
