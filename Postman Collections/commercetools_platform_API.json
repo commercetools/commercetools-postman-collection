@@ -22620,7 +22620,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"key\": \"\",\n  \"type\": \"\"\n}"
+              "raw": "{\n  \"key\": \"StateKey\",\n  \"type\": \"ProductState\"\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-states.html#create-state"
           },
