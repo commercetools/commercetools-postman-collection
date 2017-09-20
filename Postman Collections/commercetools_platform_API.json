@@ -23740,7 +23740,15 @@
                   "        postman.setEnvironmentVariable(\"key\", data.results[0].key);",
                   "    }",
                   "}",
-                  ""
+                  "",
+                  "// Load the JSON Schema",
+                  "const customerSchema = JSON.parse(environment.customerSchema);",
+                  "",
+                  "// Test whether the response matches the schema",
+                  "var customer = JSON.parse(responseBody);",
+                  "tests[\"Customer is valid\"] = tv4.validate(customer, customerSchema);",
+                  "tests[customer] = true;",
+                  "tests[customerSchema] = true;"
                 ]
               }
             }
@@ -23762,7 +23770,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"key\": \"myType\",\n  \"name\": { \n    \"en\": \"my TypeName\"\n  },\n  \"resourceTypeIds\": [\"order\"],\n  \n  \"description\": { \"en\": \"TypeDscription\" },\n  \"fieldDefinitions\": [\n    {\n      \"name\": \"myCustomFieldName\",\n      \"type\": { \"name\": \"String\" },\n      \"required\": false,\n      \"label\": { \"en\": \"myCustomField\" },\n      \"inputHint\": \"SingleLine\"\n    }\n  ]\n}"
+              "raw": "{\n  \"key\": \"TestType\",\n  \"name\": { \n    \"en\": \"my TypeName\"\n  },\n  \"resourceTypeIds\": [\"order\"],\n  \n  \"description\": { \"en\": \"TypeDscription\" },\n  \"fieldDefinitions\": [\n    {\n      \"name\": \"myCustomFieldName\",\n      \"type\": { \"name\": \"String\" },\n      \"required\": false,\n      \"label\": { \"en\": \"myCustomField\" },\n      \"inputHint\": \"SingleLine\"\n    }\n  ]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-types.html#create-type"
           },
