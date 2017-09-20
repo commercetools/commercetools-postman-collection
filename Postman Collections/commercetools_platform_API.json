@@ -2091,7 +2091,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setLineItemCustomType\",\n    \"lineItemId\": \"{{lineItemId}}\",\n    \"type\": {\n      \"id\": \"{{typeId}}\",\n      \"typeId\": \"type\"\n    }\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setLineItemCustomType\",\n    \"lineItemId\": \"96a0e2f6-1369-4359-ad9e-99132482f214\",\n    \"type\": {\n      \"id\": \"{{typeId}}\",\n      \"typeId\": \"type\"\n    }\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-carts.html#set-lineitem-custom-type"
           },
