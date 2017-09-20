@@ -1632,6 +1632,7 @@
                       "if(data.id && data.version){",
                       "    postman.setEnvironmentVariable(\"cartExternalId\", data.id); ",
                       "    postman.setEnvironmentVariable(\"cartExternalVersion\", data.version); ",
+                      "     postman.setEnvironmentVariable(\"cartExternalVersion\", data.version); ",
                       "}"
                     ]
                   }
