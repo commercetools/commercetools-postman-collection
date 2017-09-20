@@ -2177,7 +2177,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"removeLineItem\",\n    \"productId\": \"{{lineItemId}}\"\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"removeLineItem\",\n    \"lineItemId\": \"{{lineItemId}}\"\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-carts.html#remove-lineitem"
           },
