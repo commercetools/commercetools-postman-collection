@@ -1618,7 +1618,50 @@
           "_postman_id": "478d7abd-39b9-8ffd-78a9-fff86781900e",
           "name": "Pre-Helpers",
           "description": "",
-          "item": [],
+          "item": [
+            {
+              "_postman_id": "33f2d09a-73eb-2760-82ec-970b5699c0a9",
+              "name": "Create Cart copy",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                      "var data = JSON.parse(responseBody);",
+                      "if(data.id && data.version){",
+                      "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                      "    postman.setEnvironmentVariable(\"version\", data.version);",
+                      "}"
+                    ]
+                  }
+                }
+              ],
+              "request": {
+                "url": "{{host}}/{{projectKey}}/carts",
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "",
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}"
+                  },
+                  {
+                    "description": "",
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"currency\": \"EUR\",\n  \"customerId\": \"0c2eaad4-833c-43c1-98a4-5d03f57e9329\",\n  \"shippingAddress\": {\n    \"country\": \"DE\"\n  }\n}"
+                },
+                "description": "http://dev.commercetools.com/http-api-projects-carts.html#create-cart"
+              },
+              "response": []
+            }
+          ],
           "_postman_isSubFolder": true
         },
         {
@@ -3106,48 +3149,6 @@
               "raw": ""
             },
             "description": "http://dev.commercetools.com/http-api-projects-carts.html#delete-cart"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "33f2d09a-73eb-2760-82ec-970b5699c0a9",
-          "name": "Create Cart copy",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/carts",
-            "method": "POST",
-            "header": [
-              {
-                "description": "",
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}"
-              },
-              {
-                "description": "",
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"currency\": \"EUR\",\n  \"customerId\": \"0c2eaad4-833c-43c1-98a4-5d03f57e9329\",\n  \"shippingAddress\": {\n    \"country\": \"DE\"\n  }\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-carts.html#create-cart"
           },
           "response": []
         }
