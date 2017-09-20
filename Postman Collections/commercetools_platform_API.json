@@ -1655,7 +1655,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeTaxMode\",\n    \"taxMode\": \"Platform\"\n  }]\n}"
+                  "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeTaxMode\",\n    \"taxMode\": \"Extrnal\"\n  }]\n}"
                 },
                 "description": "http://dev.commercetools.com/http-api-projects-carts.html#change-taxmode"
               },
