@@ -23763,7 +23763,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"key\": \"myLineItemType\",\n  \"name\": { \n    \"en\": \"Name EN\",\n    \"de\": \"Name EN\",\n  },\n  \"resourceTypeIds\": [\"lineItem\"],\n  \n  \"description\": { \"en\": \"TypeDscription\" },\n  \"fieldDefinitions\": [\n    {\n      \"name\": \"myCustomFieldName\",\n      \"type\": { \"name\": \"String\" },\n      \"required\": false,\n      \"label\": { \"en\": \"myCustomField\" },\n      \"inputHint\": \"SingleLine\"\n    }\n  ]\n}"
+              "raw": "{\n  \"key\": \"myLineItemType\",\n  \"name\": { \n    \"en\": \"Name EN\",\n    \"de\": \"Name DE\",\n  },\n  \"resourceTypeIds\": [\"lineItem\"],\n  \n  \"description\": { \"en\": \"TypeDscription\" },\n  \"fieldDefinitions\": [\n    {\n      \"name\": \"myCustomFieldName\",\n      \"type\": { \"name\": \"String\" },\n      \"required\": false,\n      \"label\": { \"en\": \"myCustomField\" },\n      \"inputHint\": \"SingleLine\"\n    }\n  ]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-types.html#create-type"
           },
