@@ -4382,7 +4382,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setAssetCustomType\",\n    \"assetId\": \"\",\n    \"type\": {\n      \"id\": \"146ac9bf-3ecf-4370-912f-f90ee63731b4\",\n      \"typeId\": \"type\"\n    }\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setAssetCustomType\",\n    \"assetId\": \"\",\n    \"type\": {\n      \"id\": \"type\",\n      \"typeId\": \"{{typeId}}\"\n    }\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-categories.html#set-asset-custom-type"
           },
@@ -21989,11 +21989,16 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "if(data.id){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id);   ",
+                  "}",
+                  "if(data.version){",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);   ",
+                  "}",
+                  "if(data.key){",
+                  "    postman.setEnvironmentVariable(\"key\", data.key);",
                   "}"
                 ]
               }
@@ -22031,11 +22036,16 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "if(data.id){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id);   ",
+                  "}",
+                  "if(data.version){",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);   ",
+                  "}",
+                  "if(data.key){",
+                  "    postman.setEnvironmentVariable(\"key\", data.key);",
                   "}"
                 ]
               }
@@ -22073,11 +22083,16 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "if(data.id){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id);   ",
+                  "}",
+                  "if(data.version){",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);   ",
+                  "}",
+                  "if(data.key){",
+                  "    postman.setEnvironmentVariable(\"key\", data.key);",
                   "}"
                 ]
               }
@@ -22115,11 +22130,16 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "if(data.id){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id);   ",
+                  "}",
+                  "if(data.version){",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);   ",
+                  "}",
+                  "if(data.key){",
+                  "    postman.setEnvironmentVariable(\"key\", data.key);",
                   "}"
                 ]
               }
@@ -22157,11 +22177,16 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "if(data.id){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id);   ",
+                  "}",
+                  "if(data.version){",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);   ",
+                  "}",
+                  "if(data.key){",
+                  "    postman.setEnvironmentVariable(\"key\", data.key);",
                   "}"
                 ]
               }
@@ -22199,11 +22224,16 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "if(data.id){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id);   ",
+                  "}",
+                  "if(data.version){",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);   ",
+                  "}",
+                  "if(data.key){",
+                  "    postman.setEnvironmentVariable(\"key\", data.key);",
                   "}"
                 ]
               }
@@ -22241,11 +22271,16 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "if(data.id){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id);   ",
+                  "}",
+                  "if(data.version){",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);   ",
+                  "}",
+                  "if(data.key){",
+                  "    postman.setEnvironmentVariable(\"key\", data.key);",
                   "}"
                 ]
               }
@@ -22283,11 +22318,16 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "if(data.id){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id);   ",
+                  "}",
+                  "if(data.version){",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);   ",
+                  "}",
+                  "if(data.key){",
+                  "    postman.setEnvironmentVariable(\"key\", data.key);",
                   "}"
                 ]
               }
@@ -22325,11 +22365,16 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "if(data.id){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id);   ",
+                  "}",
+                  "if(data.version){",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);   ",
+                  "}",
+                  "if(data.key){",
+                  "    postman.setEnvironmentVariable(\"key\", data.key);",
                   "}"
                 ]
               }
@@ -22367,11 +22412,16 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "if(data.id){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id);   ",
+                  "}",
+                  "if(data.version){",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);   ",
+                  "}",
+                  "if(data.key){",
+                  "    postman.setEnvironmentVariable(\"key\", data.key);",
                   "}"
                 ]
               }
@@ -22409,11 +22459,16 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "if(data.id){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id);   ",
+                  "}",
+                  "if(data.version){",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);   ",
+                  "}",
+                  "if(data.key){",
+                  "    postman.setEnvironmentVariable(\"key\", data.key);",
                   "}"
                 ]
               }
@@ -22451,11 +22506,16 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "if(data.id){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id);   ",
+                  "}",
+                  "if(data.version){",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);   ",
+                  "}",
+                  "if(data.key){",
+                  "    postman.setEnvironmentVariable(\"key\", data.key);",
                   "}"
                 ]
               }
@@ -22493,11 +22553,16 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "if(data.id){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id);   ",
+                  "}",
+                  "if(data.version){",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);   ",
+                  "}",
+                  "if(data.key){",
+                  "    postman.setEnvironmentVariable(\"key\", data.key);",
                   "}"
                 ]
               }
@@ -22535,11 +22600,16 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "if(data.id){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id);   ",
+                  "}",
+                  "if(data.version){",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);   ",
+                  "}",
+                  "if(data.key){",
+                  "    postman.setEnvironmentVariable(\"key\", data.key);",
                   "}"
                 ]
               }
