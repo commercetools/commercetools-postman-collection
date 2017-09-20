@@ -4172,7 +4172,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeAssetOrder\",\n    \"assetOrder\": [\"{{assetId}}\"\"]\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeAssetOrder\",\n    \"assetOrder\": [\"{{assetId}}\"]\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-categories.html#change-asset-order"
           },
@@ -4340,7 +4340,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setAssetSources\",\n    \"assetId\": {{assetId}},\n    \"sources\": [{\n      \"uri\": \"https://www.commercetools.de/ct-logo.svg\",\n      \"key\": \"vector\"\n    }]\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setAssetSources\",\n    \"assetId\": \"{{assetId}}\",\n    \"sources\": [{\n      \"uri\": \"https://www.commercetools.de/ct-logo.svg\",\n      \"key\": \"vector\"\n    }]\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-categories.html#set-asset-sources"
           },
@@ -4382,7 +4382,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setAssetCustomType\",\n    \"assetId\": \"\",\n    \"type\": {\n      \"id\": \"type\",\n      \"typeId\": \"{{typeId}}\"\n    }\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setAssetCustomType\",\n    \"assetId\": \"{{assetId}}\",\n    \"type\": {\n      \"id\": \"146ac9bf-3ecf-4370-912f-f90ee63731b4\",\n      \"typeId\": \"type\"\n    }\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-categories.html#set-asset-custom-type"
           },
@@ -4424,7 +4424,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setAssetCustomField\",\n    \"assetId\": \"{{assetId}}\",\n    \"name\": \"myField\",\n    \"value\": \"myNewValue\"\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setAssetCustomField\",\n    \"assetId\": \"{{assetId}}\",\n    \"name\": \"StringCustomField\",\n    \"value\": \"myNewValue\"\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-categories.html#set-asset-custom-field"
           },
@@ -19552,150 +19552,6 @@
               "body": "{\"id\":\"f7b5f182-b78a-4d53-811f-a289382d1e45\",\"version\":58,\"productType\":{\"typeId\":\"product-type\",\"id\":\"9cd761b6-4adf-4d57-b414-07d0b673c6f9\"},\"catalogs\":[],\"masterData\":{\"current\":{\"name\":{\"en\":\"My Test Product\",\"de\":\"Mein Versuchsprodukt\"},\"description\":{\"en\":\"Description\",\"de\":\"Beschreibung\"},\"categories\":[{\"typeId\":\"category\",\"id\":\"33cd839b-f71a-4fa4-ae26-2abeb543e68d\"}],\"categoryOrderHints\":{\"33cd839b-f71a-4fa4-ae26-2abeb543e68d\":\"0.4\"},\"slug\":{\"en\":\"mein-versuchsprodukt-slug\",\"de\":\"my-test-product-slug\"},\"metaTitle\":{\"de\":\"mein MetaTitel2\",\"en\":\"my metaTitle2\"},\"metaKeywords\":{\"en\":\"metyKeywords\",\"de\":\"MetaKeywords\"},\"metaDescription\":{\"en\":\"metaDescription\",\"de\":\"Metabeschreibung\"},\"masterVariant\":{\"id\":1,\"sku\":\"skuMasterVariantString\",\"key\":\"ProductMasterVariantKey\",\"prices\":[{\"value\":{\"currencyCode\":\"USD\",\"centAmount\":4200},\"id\":\"2bda383d-e09c-4d58-80c1-a173627472e4\",\"country\":\"DE\",\"customerGroup\":{\"typeId\":\"customer-group\",\"id\":\"509c58ed-e9fc-44b6-93f6-b1a0047df688\"},\"channel\":{\"typeId\":\"channel\",\"id\":\"5c172f89-c4f1-4360-8233-bbc71ad80900\"},\"validFrom\":\"2017-01-01T00:00:01.000Z\",\"validUntil\":\"2017-12-31T23:59:59.000Z\",\"tiers\":[{\"minimumQuantity\":10,\"value\":{\"currencyCode\":\"USD\",\"centAmount\":2000}}],\"custom\":{\"type\":{\"typeId\":\"type\",\"id\":\"ba2f3428-2b0a-4594-aeb7-b82292ac2948\"},\"fields\":{\"customTypePriceFieldName\":\"customTypePriceFieldNameValue\"}}}],\"images\":[],\"attributes\":[{\"name\":\"taste\",\"value\":\"excellent\"}],\"assets\":[]},\"variants\":[{\"id\":2,\"sku\":\"skuVariant1String\",\"key\":\"ProductVariantKey\",\"prices\":[{\"value\":{\"currencyCode\":\"USD\",\"centAmount\":4200},\"id\":\"76d070dc-39d8-4798-bab0-1d7f3356cc5c\",\"country\":\"DE\",\"customerGroup\":{\"typeId\":\"customer-group\",\"id\":\"509c58ed-e9fc-44b6-93f6-b1a0047df688\"},\"channel\":{\"typeId\":\"channel\",\"id\":\"5c172f89-c4f1-4360-8233-bbc71ad80900\"},\"validFrom\":\"2017-01-01T00:00:01.000Z\",\"validUntil\":\"2017-12-31T23:59:59.000Z\",\"tiers\":[{\"minimumQuantity\":10,\"value\":{\"currencyCode\":\"USD\",\"centAmount\":2000}}],\"custom\":{\"type\":{\"typeId\":\"type\",\"id\":\"ba2f3428-2b0a-4594-aeb7-b82292ac2948\"},\"fields\":{}}}],\"images\":[],\"attributes\":[{\"name\":\"taste\",\"value\":\"excellent\"}],\"assets\":[]}],\"searchKeywords\":{\"de\":[{\"text\":\"Schweizer Messer\",\"suggestTokenizer\":{\"type\":\"custom\",\"inputs\":[\"schweizer messer\",\"offiziersmesser\",\"sackmesser\"]}}],\"en\":[{\"text\":\"Multi tool\"},{\"text\":\"Swiss Army Knife\",\"suggestTokenizer\":{\"type\":\"whitespace\"}}]}},\"staged\":{\"name\":{\"en\":\"My Test Product\",\"de\":\"Mein Versuchsprodukt\"},\"description\":{\"en\":\"Description\",\"de\":\"Beschreibung\"},\"categories\":[{\"typeId\":\"category\",\"id\":\"33cd839b-f71a-4fa4-ae26-2abeb543e68d\"}],\"categoryOrderHints\":{\"33cd839b-f71a-4fa4-ae26-2abeb543e68d\":\"0.4\"},\"slug\":{\"en\":\"mein-versuchsprodukt-slug\",\"de\":\"my-test-product-slug\"},\"metaTitle\":{\"de\":\"mein MetaTitel2\",\"en\":\"my metaTitle2\"},\"metaKeywords\":{\"en\":\"metyKeywords\",\"de\":\"MetaKeywords\"},\"metaDescription\":{\"en\":\"metaDescription\",\"de\":\"Metabeschreibung\"},\"masterVariant\":{\"id\":1,\"sku\":\"skuMasterVariantString\",\"key\":\"ProductMasterVariantKey\",\"prices\":[{\"value\":{\"currencyCode\":\"USD\",\"centAmount\":4200},\"id\":\"2bda383d-e09c-4d58-80c1-a173627472e4\",\"country\":\"DE\",\"customerGroup\":{\"typeId\":\"customer-group\",\"id\":\"509c58ed-e9fc-44b6-93f6-b1a0047df688\"},\"channel\":{\"typeId\":\"channel\",\"id\":\"5c172f89-c4f1-4360-8233-bbc71ad80900\"},\"validFrom\":\"2017-01-01T00:00:01.000Z\",\"validUntil\":\"2017-12-31T23:59:59.000Z\",\"tiers\":[{\"minimumQuantity\":10,\"value\":{\"currencyCode\":\"USD\",\"centAmount\":2000}}],\"custom\":{\"type\":{\"typeId\":\"type\",\"id\":\"ba2f3428-2b0a-4594-aeb7-b82292ac2948\"},\"fields\":{\"customTypePriceFieldName\":\"customTypePriceFieldNameValue\"}}}],\"images\":[],\"attributes\":[{\"name\":\"taste\",\"value\":\"excellent\"}],\"assets\":[]},\"variants\":[{\"id\":2,\"sku\":\"skuVariant1String\",\"key\":\"ProductVariantKey\",\"prices\":[{\"value\":{\"currencyCode\":\"USD\",\"centAmount\":4200},\"id\":\"76d070dc-39d8-4798-bab0-1d7f3356cc5c\",\"country\":\"DE\",\"customerGroup\":{\"typeId\":\"customer-group\",\"id\":\"509c58ed-e9fc-44b6-93f6-b1a0047df688\"},\"channel\":{\"typeId\":\"channel\",\"id\":\"5c172f89-c4f1-4360-8233-bbc71ad80900\"},\"validFrom\":\"2017-01-01T00:00:01.000Z\",\"validUntil\":\"2017-12-31T23:59:59.000Z\",\"tiers\":[{\"minimumQuantity\":10,\"value\":{\"currencyCode\":\"USD\",\"centAmount\":2000}}],\"custom\":{\"type\":{\"typeId\":\"type\",\"id\":\"ba2f3428-2b0a-4594-aeb7-b82292ac2948\"},\"fields\":{}}}],\"images\":[],\"attributes\":[{\"name\":\"taste\",\"value\":\"excellent\"}],\"assets\":[]}],\"searchKeywords\":{\"de\":[{\"text\":\"Schweizer Messer\",\"suggestTokenizer\":{\"type\":\"custom\",\"inputs\":[\"schweizer messer\",\"offiziersmesser\",\"sackmesser\"]}}],\"en\":[{\"text\":\"Multi tool\"},{\"text\":\"Swiss Army Knife\",\"suggestTokenizer\":{\"type\":\"whitespace\"}}]}},\"published\":false,\"hasStagedChanges\":false},\"key\":\"myNewProductKey\",\"catalogData\":{},\"taxCategory\":{\"typeId\":\"tax-category\",\"id\":\"c7d25c25-9a8a-4988-b914-1ee67624a69d\"},\"state\":{\"typeId\":\"ProductState\",\"id\":\"8dc4ceb5-89ee-4662-be15-9d3ddfaee945\"},\"lastVariantId\":3,\"createdAt\":\"2017-08-28T12:26:49.481Z\",\"lastModifiedAt\":\"2017-08-29T14:05:37.543Z\",\"lastMessageSequenceNumber\":10}"
             }
           ]
-        },
-        {
-          "_postman_id": "1e41c19d-8775-8297-b8ef-e0aec0a227d0",
-          "name": "Transition State",
-          "request": {
-            "url": "{{host}}/{{projectKey}}/products/{{id}}",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"transitionState\",\n    \"state\": {\n      \"typeId\": \"product\",\n      \"id\": \"{{stateId}}\"\n    }\n  }]\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-categories.html#transition-state"
-          },
-          "response": [
-            {
-              "id": "bdca4e34-1e97-6e8c-50f9-f801e0b07713",
-              "name": "Transition Product State",
-              "originalRequest": {
-                "url": "{{host}}/{{projectKey}}/products/{{id}}",
-                "method": "POST",
-                "header": [
-                  {
-                    "key": "Authorization",
-                    "value": "Bearer {{access_token}}",
-                    "description": ""
-                  },
-                  {
-                    "key": "Content-Type",
-                    "value": "application/json",
-                    "description": ""
-                  }
-                ],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"transitionState\",\n    \"state\": {\n    \t\"typeId\": \"product\",\n    \t\"id\": \"8dc4ceb5-89ee-4662-be15-9d3ddfaee945\"\n    }\n  }]\n}"
-                }
-              },
-              "status": "OK",
-              "code": 200,
-              "_postman_previewlanguage": "json",
-              "_postman_previewtype": "text",
-              "header": [
-                {
-                  "key": "Access-Control-Allow-Headers",
-                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
-                  "name": "Access-Control-Allow-Headers",
-                  "description": ""
-                },
-                {
-                  "key": "Access-Control-Allow-Methods",
-                  "value": "GET, POST, DELETE, OPTIONS",
-                  "name": "Access-Control-Allow-Methods",
-                  "description": ""
-                },
-                {
-                  "key": "Access-Control-Allow-Origin",
-                  "value": "*",
-                  "name": "Access-Control-Allow-Origin",
-                  "description": ""
-                },
-                {
-                  "key": "Access-Control-Max-Age",
-                  "value": "299",
-                  "name": "Access-Control-Max-Age",
-                  "description": ""
-                },
-                {
-                  "key": "Alt-Svc",
-                  "value": "clear",
-                  "name": "Alt-Svc",
-                  "description": ""
-                },
-                {
-                  "key": "Content-Encoding",
-                  "value": "gzip",
-                  "name": "Content-Encoding",
-                  "description": ""
-                },
-                {
-                  "key": "Content-Type",
-                  "value": "application/json; charset=utf-8",
-                  "name": "Content-Type",
-                  "description": ""
-                },
-                {
-                  "key": "Date",
-                  "value": "Wed, 30 Aug 2017 07:37:13 GMT",
-                  "name": "Date",
-                  "description": ""
-                },
-                {
-                  "key": "Server",
-                  "value": "nginx",
-                  "name": "Server",
-                  "description": ""
-                },
-                {
-                  "key": "Transfer-Encoding",
-                  "value": "chunked",
-                  "name": "Transfer-Encoding",
-                  "description": ""
-                },
-                {
-                  "key": "Via",
-                  "value": "1.1 google",
-                  "name": "Via",
-                  "description": ""
-                },
-                {
-                  "key": "X-Correlation-ID",
-                  "value": "projects-7233702e-8519-444e-bf33-1e6def3bb653",
-                  "name": "X-Correlation-ID",
-                  "description": ""
-                },
-                {
-                  "key": "X-Served-By",
-                  "value": "api-gce-5b2ab894.sphere.prod.commercetools.de",
-                  "name": "X-Served-By",
-                  "description": ""
-                },
-                {
-                  "key": "X-Served-Config",
-                  "value": "sphere-projects-ws-1.0",
-                  "name": "X-Served-Config",
-                  "description": ""
-                }
-              ],
-              "cookie": [],
-              "responseTime": "56",
-              "body": "{\"id\":\"e62c0102-5a65-4f3f-9bbc-17a7cc815ad2\",\"version\":2,\"productType\":{\"typeId\":\"product-type\",\"id\":\"9cd761b6-4adf-4d57-b414-07d0b673c6f9\"},\"catalogs\":[],\"masterData\":{\"current\":{\"name\":{\"en\":\"My Test Product\",\"de\":\"Mein Versuchsprodukt\"},\"description\":{\"en\":\"Description\",\"de\":\"Beschreibung\"},\"categories\":[{\"typeId\":\"category\",\"id\":\"33cd839b-f71a-4fa4-ae26-2abeb543e68d\"}],\"categoryOrderHints\":{\"33cd839b-f71a-4fa4-ae26-2abeb543e68d\":\"0.4\"},\"slug\":{\"en\":\"mein-versuchsprodukt-slug\",\"de\":\"my-test-product-slug\"},\"metaTitle\":{\"en\":\"metaTitle\",\"de\":\"Metatitel\"},\"metaKeywords\":{\"en\":\"metyKeywords\",\"de\":\"MetaKeywords\"},\"metaDescription\":{\"en\":\"metaDescription\",\"de\":\"Metabeschreibung\"},\"masterVariant\":{\"id\":1,\"sku\":\"skuMasterVariantString\",\"key\":\"ProductMasterVariantKey\",\"prices\":[{\"value\":{\"currencyCode\":\"USD\",\"centAmount\":4200},\"id\":\"13def618-1938-4e02-9fdf-95a3ca627598\",\"country\":\"DE\",\"customerGroup\":{\"typeId\":\"customer-group\",\"id\":\"509c58ed-e9fc-44b6-93f6-b1a0047df688\"},\"channel\":{\"typeId\":\"channel\",\"id\":\"5c172f89-c4f1-4360-8233-bbc71ad80900\"},\"validFrom\":\"2017-01-01T00:00:01.000Z\",\"validUntil\":\"2017-12-31T23:59:59.000Z\",\"tiers\":[{\"minimumQuantity\":10,\"value\":{\"currencyCode\":\"USD\",\"centAmount\":2000}}],\"custom\":{\"type\":{\"typeId\":\"type\",\"id\":\"ba2f3428-2b0a-4594-aeb7-b82292ac2948\"},\"fields\":{}}}],\"images\":[],\"attributes\":[{\"name\":\"taste\",\"value\":\"excellent\"}],\"assets\":[]},\"variants\":[{\"id\":2,\"sku\":\"skuVariant1String\",\"key\":\"ProductVariantKey\",\"prices\":[{\"value\":{\"currencyCode\":\"USD\",\"centAmount\":4200},\"id\":\"16e88fb0-a0c7-48a4-b0ef-bc4340b2e2e2\",\"country\":\"DE\",\"customerGroup\":{\"typeId\":\"customer-group\",\"id\":\"509c58ed-e9fc-44b6-93f6-b1a0047df688\"},\"channel\":{\"typeId\":\"channel\",\"id\":\"5c172f89-c4f1-4360-8233-bbc71ad80900\"},\"validFrom\":\"2017-01-01T00:00:01.000Z\",\"validUntil\":\"2017-12-31T23:59:59.000Z\",\"tiers\":[{\"minimumQuantity\":10,\"value\":{\"currencyCode\":\"USD\",\"centAmount\":2000}}],\"custom\":{\"type\":{\"typeId\":\"type\",\"id\":\"ba2f3428-2b0a-4594-aeb7-b82292ac2948\"},\"fields\":{}}}],\"images\":[],\"attributes\":[{\"name\":\"taste\",\"value\":\"excellent\"}],\"assets\":[]}],\"searchKeywords\":{\"de\":[{\"text\":\"Schweizer Messer\",\"suggestTokenizer\":{\"type\":\"custom\",\"inputs\":[\"schweizer messer\",\"offiziersmesser\",\"sackmesser\"]}}],\"en\":[{\"text\":\"Multi tool\"},{\"text\":\"Swiss Army Knife\",\"suggestTokenizer\":{\"type\":\"whitespace\"}}]}},\"staged\":{\"name\":{\"en\":\"My Test Product\",\"de\":\"Mein Versuchsprodukt\"},\"description\":{\"en\":\"Description\",\"de\":\"Beschreibung\"},\"categories\":[{\"typeId\":\"category\",\"id\":\"33cd839b-f71a-4fa4-ae26-2abeb543e68d\"}],\"categoryOrderHints\":{\"33cd839b-f71a-4fa4-ae26-2abeb543e68d\":\"0.4\"},\"slug\":{\"en\":\"mein-versuchsprodukt-slug\",\"de\":\"my-test-product-slug\"},\"metaTitle\":{\"en\":\"metaTitle\",\"de\":\"Metatitel\"},\"metaKeywords\":{\"en\":\"metyKeywords\",\"de\":\"MetaKeywords\"},\"metaDescription\":{\"en\":\"metaDescription\",\"de\":\"Metabeschreibung\"},\"masterVariant\":{\"id\":1,\"sku\":\"skuMasterVariantString\",\"key\":\"ProductMasterVariantKey\",\"prices\":[{\"value\":{\"currencyCode\":\"USD\",\"centAmount\":4200},\"id\":\"13def618-1938-4e02-9fdf-95a3ca627598\",\"country\":\"DE\",\"customerGroup\":{\"typeId\":\"customer-group\",\"id\":\"509c58ed-e9fc-44b6-93f6-b1a0047df688\"},\"channel\":{\"typeId\":\"channel\",\"id\":\"5c172f89-c4f1-4360-8233-bbc71ad80900\"},\"validFrom\":\"2017-01-01T00:00:01.000Z\",\"validUntil\":\"2017-12-31T23:59:59.000Z\",\"tiers\":[{\"minimumQuantity\":10,\"value\":{\"currencyCode\":\"USD\",\"centAmount\":2000}}],\"custom\":{\"type\":{\"typeId\":\"type\",\"id\":\"ba2f3428-2b0a-4594-aeb7-b82292ac2948\"},\"fields\":{}}}],\"images\":[],\"attributes\":[{\"name\":\"taste\",\"value\":\"excellent\"}],\"assets\":[]},\"variants\":[{\"id\":2,\"sku\":\"skuVariant1String\",\"key\":\"ProductVariantKey\",\"prices\":[{\"value\":{\"currencyCode\":\"USD\",\"centAmount\":4200},\"id\":\"16e88fb0-a0c7-48a4-b0ef-bc4340b2e2e2\",\"country\":\"DE\",\"customerGroup\":{\"typeId\":\"customer-group\",\"id\":\"509c58ed-e9fc-44b6-93f6-b1a0047df688\"},\"channel\":{\"typeId\":\"channel\",\"id\":\"5c172f89-c4f1-4360-8233-bbc71ad80900\"},\"validFrom\":\"2017-01-01T00:00:01.000Z\",\"validUntil\":\"2017-12-31T23:59:59.000Z\",\"tiers\":[{\"minimumQuantity\":10,\"value\":{\"currencyCode\":\"USD\",\"centAmount\":2000}}],\"custom\":{\"type\":{\"typeId\":\"type\",\"id\":\"ba2f3428-2b0a-4594-aeb7-b82292ac2948\"},\"fields\":{}}}],\"images\":[],\"attributes\":[{\"name\":\"taste\",\"value\":\"excellent\"}],\"assets\":[]}],\"searchKeywords\":{\"de\":[{\"text\":\"Schweizer Messer\",\"suggestTokenizer\":{\"type\":\"custom\",\"inputs\":[\"schweizer messer\",\"offiziersmesser\",\"sackmesser\"]}}],\"en\":[{\"text\":\"Multi tool\"},{\"text\":\"Swiss Army Knife\",\"suggestTokenizer\":{\"type\":\"whitespace\"}}]}},\"published\":true,\"hasStagedChanges\":false},\"key\":\"myTestProduct\",\"catalogData\":{},\"taxCategory\":{\"typeId\":\"tax-category\",\"id\":\"335c12e3-d61a-4d1b-94a3-068319367350\"},\"state\":{\"typeId\":\"product\",\"id\":\"8dc4ceb5-89ee-4662-be15-9d3ddfaee945\"},\"lastVariantId\":2,\"createdAt\":\"2017-08-30T07:04:25.283Z\",\"lastModifiedAt\":\"2017-08-30T07:37:13.086Z\",\"lastMessageSequenceNumber\":2}"
-            }
-          ]
         }
       ]
     },
@@ -21974,7 +21830,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addLineItem\",\n    \"productId\": \"productID\",\n    \"variantId\": 1,\n    \"quantity\": 2\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addLineItem\",\n    \"productId\": \"83b03e78-f4be-40a9-b379-d3affced17ed\",\n    \"variantId\": 1,\n    \"quantity\": 2\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-shoppingLists.html#set-customer"
           },
@@ -22283,16 +22139,11 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
                   "var data = JSON.parse(responseBody);",
-                  "if(data.id){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id);   ",
-                  "}",
-                  "if(data.version){",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);   ",
-                  "}",
-                  "if(data.key){",
-                  "    postman.setEnvironmentVariable(\"key\", data.key);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
                   "}"
                 ]
               }
@@ -22330,16 +22181,11 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
                   "var data = JSON.parse(responseBody);",
-                  "if(data.id){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id);   ",
-                  "}",
-                  "if(data.version){",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);   ",
-                  "}",
-                  "if(data.key){",
-                  "    postman.setEnvironmentVariable(\"key\", data.key);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
                   "}"
                 ]
               }
@@ -22377,16 +22223,11 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
                   "var data = JSON.parse(responseBody);",
-                  "if(data.id){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id);   ",
-                  "}",
-                  "if(data.version){",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);   ",
-                  "}",
-                  "if(data.key){",
-                  "    postman.setEnvironmentVariable(\"key\", data.key);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
                   "}"
                 ]
               }
@@ -22424,16 +22265,11 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
                   "var data = JSON.parse(responseBody);",
-                  "if(data.id){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id);   ",
-                  "}",
-                  "if(data.version){",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);   ",
-                  "}",
-                  "if(data.key){",
-                  "    postman.setEnvironmentVariable(\"key\", data.key);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
                   "}"
                 ]
               }
@@ -22471,16 +22307,11 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
                   "var data = JSON.parse(responseBody);",
-                  "if(data.id){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id);   ",
-                  "}",
-                  "if(data.version){",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);   ",
-                  "}",
-                  "if(data.key){",
-                  "    postman.setEnvironmentVariable(\"key\", data.key);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
                   "}"
                 ]
               }
@@ -22518,16 +22349,11 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
                   "var data = JSON.parse(responseBody);",
-                  "if(data.id){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id);   ",
-                  "}",
-                  "if(data.version){",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);   ",
-                  "}",
-                  "if(data.key){",
-                  "    postman.setEnvironmentVariable(\"key\", data.key);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
                   "}"
                 ]
               }
@@ -22565,16 +22391,11 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
                   "var data = JSON.parse(responseBody);",
-                  "if(data.id){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id);   ",
-                  "}",
-                  "if(data.version){",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);   ",
-                  "}",
-                  "if(data.key){",
-                  "    postman.setEnvironmentVariable(\"key\", data.key);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
                   "}"
                 ]
               }
@@ -22612,10 +22433,12 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "if (responseCode.code === 200){",
-                  "    postman.setEnvironmentVariable(\"id\", null);   ",
-                  "    postman.setEnvironmentVariable(\"version\", null);   ",
-                  "} "
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
                 ]
               }
             }
@@ -24462,7 +24285,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"name\":\"DefaultZone\",\n  \"description\": \"\",\n  \"locations\":[{\n      \"country\": \"DE\",\n      \"state\": \"\"\n  }]\n}"
+              "raw": "{\n  \"name\":\"Zone\",\n  \"description\": \"\",\n  \"locations\":[{\n      \"country\": \"ES\",\n      \"state\": \"\"\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-zones.html#create-zone"
           },
