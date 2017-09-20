@@ -4550,48 +4550,6 @@
           "response": []
         },
         {
-          "_postman_id": "9e353172-935a-aa19-791c-41ac8fb4472f",
-          "name": "Set Role",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/channels/{{id}}",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setRoles\",\n    \"roles\": [\"ProductDistribution\"]\n  }]\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-channels.html#set-roles"
-          },
-          "response": []
-        },
-        {
           "_postman_id": "f05993c1-20ec-0ac0-4416-79fd09a27c21",
           "name": "Create a Channel",
           "event": [
@@ -4631,6 +4589,82 @@
               "raw": "{\n  \"key\": \"listPrice\",\n  \"roles\": \"ProductDistribution\",\n  \"name\": {\n    \"de\": \"ListPrice\",\n    \"en\": \"ListPrice\",\n    \"ch\": \"ListPrice\",\n    \"fr\": \"ListPrice\"\n  }\n}"
             },
             "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "55884806-eb43-91c7-13ff-9a820f64cf94",
+          "name": "Get Channel by Id",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/categories/{{id}}",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "http://dev.commercetools.com/http-api-projects-channels.html#get-channel-by-id"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "9e353172-935a-aa19-791c-41ac8fb4472f",
+          "name": "Set Role",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/channels/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setRoles\",\n    \"roles\": [\"ProductDistribution\"]\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-channels.html#set-roles"
           },
           "response": []
         },
@@ -4686,40 +4720,6 @@
               "raw": ""
             },
             "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "55884806-eb43-91c7-13ff-9a820f64cf94",
-          "name": "Get Channel by Id",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/categories/{{id}}",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": "http://dev.commercetools.com/http-api-projects-channels.html#get-channel-by-id"
           },
           "response": []
         }
