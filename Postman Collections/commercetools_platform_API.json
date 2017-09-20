@@ -3064,7 +3064,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeTaxRoundingMode\",\n    \"taxMode\": \"HalfUp\"\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeTaxRoundingMode\",\n    \"taxRoundingMode\": \"HalfUp\"\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-carts.html#change-tax-roundingmode"
           },
@@ -22642,40 +22642,6 @@
           ],
           "request": {
             "url": "{{host}}/{{projectKey}}/states/{{id}}",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": "http://dev.commercetools.com/http-api-projects-states.html#get-state-by-id"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "e166c0e1-0766-964b-9967-da9306c0ffb7",
-          "name": "Get State by Key",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/states/key={{key}}",
             "method": "GET",
             "header": [
               {
