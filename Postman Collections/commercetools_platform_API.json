@@ -23528,7 +23528,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"removeTaxRate\",\n    \"taxRateId\": {{taxRateID}}\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"removeTaxRate\",\n    \"taxRateId\": \"\\\"{{taxRateID}}\\\"\"\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-taxCategories.html#update-taxcategory\nhttp://dev.commercetools.com/http-api-projects-taxCategories.html#remove-taxrate"
           },
