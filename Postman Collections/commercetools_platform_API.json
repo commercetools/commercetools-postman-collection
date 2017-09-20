@@ -2177,7 +2177,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"removeLineItem\",\n    \"productId\": \"{{productId}}\",\n    \"variantId\": 1\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"removeLineItem\",\n    \"productId\": \"{{lineItemId}}\"\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-carts.html#remove-lineitem"
           },
@@ -24860,7 +24860,11 @@
                 "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  ""
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
                 ]
               }
             }
