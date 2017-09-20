@@ -3090,7 +3090,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setLocale\",\n    \"locale\": \"de\"\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setLocale\",\n    \"locale\": \"de-DE\"\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-carts.html#set-locale"
           },
