@@ -24136,7 +24136,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeLabel\",\n      \"fieldName\": \"fieldDefinitionName\",\n      \"label\": {\n        \"de\": \"NewLabelDE\",\n        \"en\": \"NewLabelEN\"\n      }\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeLabel\",\n      \"fieldName\": \"myCustomFieldName\",\n      \"label\": {\n        \"de\": \"NewLabelDE\",\n        \"en\": \"NewLabelEN\"\n      }\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-types.html#update-type-by-id\nhttp://dev.commercetools.com/http-api-projects-types.html#change-fielddefinition-label"
           },
