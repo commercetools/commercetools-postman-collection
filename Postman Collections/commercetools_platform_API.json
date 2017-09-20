@@ -24019,7 +24019,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setDescription\",\n    \"description\": {\n      \"de\": \"tolle Beschreibung\",\n      \"en\": \"awesome description\"\n    }\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setDescription\",\n    \"description\": {\n      \"de\": \"DescriptionDE\",\n      \"en\": \"DescriptionEN\"\n    }\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-types.html#update-type-by-id\nhttp://dev.commercetools.com/http-api-projects-types.html#set-description"
           },
