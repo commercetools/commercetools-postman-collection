@@ -2986,7 +2986,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addPayment\",\n    \"payment\": {\n      \"id\": de42b20a-59be-4787-a2cd-605a2fd3026d,\n      \"typeId\": \"payment\"\n    }\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addPayment\",\n    \"payment\": {\n      \"id\": \"de42b20a-59be-4787-a2cd-605a2fd3026d\",\n      \"typeId\": \"payment\"\n    }\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-carts.html#add-payment"
           },
@@ -22664,16 +22664,11 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
                   "var data = JSON.parse(responseBody);",
-                  "if(data.id){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id);   ",
-                  "}",
-                  "if(data.version){",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);   ",
-                  "}",
-                  "if(data.key){",
-                  "    postman.setEnvironmentVariable(\"key\", data.key);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
                   "}"
                 ]
               }
