@@ -2736,7 +2736,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCustomShippingMethod\",\n    \"name\": \"myCustomShippingMethod\",\n    \"shippingRate\": {\n      \"price\": {\n        \"currencyCode\": \"EUR\",\n        \"centAmount\":4200\n      }\n    },\n    \"taxCategory\": {\n      \"id\": \"5786eba8-d448-4b7a-84fd-07fd1d612696\",\n      \"typeId\": \"tax-category\"\n    }\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCustomShippingMethod\",\n    \"shippingMethodName\": \"myCustomShippingMethod\",\n    \"shippingRate\": {\n      \"price\": {\n        \"currencyCode\": \"EUR\",\n        \"centAmount\":4200\n      }\n    },\n    \"taxCategory\": {\n      \"id\": \"5786eba8-d448-4b7a-84fd-07fd1d612696\",\n      \"typeId\": \"tax-category\"\n    }\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-carts.html#set-custom-shippingmethod"
           },
