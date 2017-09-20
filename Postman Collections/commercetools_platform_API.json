@@ -24279,7 +24279,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeLocalizedEnumValueOrder\",\n      \"fieldName\": \"fieldDefinitionLocalizedEnumName\",\n      \"keys\": [\n        \"localizedEnumKeyString2\",\n        \"localizedEnumKeyString\"\n      ]\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeLocalizedEnumValueOrder\",\n      \"fieldName\": \"LocalizedENumField\",\n      \"keys\": [\n        \"NewLocalizedEnumKeyString\",\n        \"lENum2\",\n        \"lENum1\"\n      ]\n  }]\n}\n"
             },
             "description": "http://dev.commercetools.com/http-api-projects-types.html#update-type-by-id\nhttp://dev.commercetools.com/http-api-projects-types.html#change-the-order-of-localizedenumvalues"
           },
