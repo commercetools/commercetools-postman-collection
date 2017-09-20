@@ -1670,7 +1670,7 @@
                     "exec": [
                       "var data = JSON.parse(responseBody);",
                       "if(data.id && data.version){",
-                      "    postman.setEnvironmentVariable(\"cartExternalId\", data.id); ",
+                      "    postman.setEnvironmentVariable(\"cartExternalAmount\", data.id); ",
                       "}"
                     ]
                   }
