@@ -3280,7 +3280,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"name\": {\n    \"de\": \"Das ist eine Kategorie\",\n    \"en\": \"This is a category\"\n  },\n  \"slug\": {\n    \"de\": \"slug-de\",\n    \"en\": \"slug-en\"\n  }\n}"
+              "raw": "{\n  \"name\": {\n    \"de\": \"Das ist eine Kategorie\",\n    \"en\": \"This is a category\"\n  },\n  \"slug\": {\n    \"de\": \"slug-de\",\n    \"en\": \"slug-en\"\n  },\n  \"key\": \"myKey\"\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-categories.html#create-a-category"
           },
