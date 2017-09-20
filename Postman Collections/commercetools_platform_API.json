@@ -1977,7 +1977,7 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "postman.setEnvironmentVariable(\"id\", getEnvironmentVariable(\"artExternalId\"));"
+                  "postman.setEnvironmentVariable(\"id\", postman.getEnvironmentVariable(\"artExternalId\"));"
                 ]
               }
             }
