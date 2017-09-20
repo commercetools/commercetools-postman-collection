@@ -1618,34 +1618,7 @@
           "_postman_id": "478d7abd-39b9-8ffd-78a9-fff86781900e",
           "name": "Pre-Helpers",
           "description": "",
-          "item": [
-            {
-              "_postman_id": "e7bf20c0-e93c-e008-7525-ad55d27917fb",
-              "name": "Add Payment",
-              "request": {
-                "url": "{{host}}/{{projectKey}}/carts/{{id}}",
-                "method": "POST",
-                "header": [
-                  {
-                    "key": "Authorization",
-                    "value": "Bearer {{access_token}}",
-                    "description": ""
-                  },
-                  {
-                    "key": "Content-Type",
-                    "value": "application/json",
-                    "description": ""
-                  }
-                ],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addPayment\",\n    \"payment\": {\n      \"id\": {{paymentId}},\n      \"typeId\": \"payment\"\n    }\n  }]\n}"
-                },
-                "description": "http://dev.commercetools.com/http-api-projects-carts.html#add-payment"
-              },
-              "response": []
-            }
-          ],
+          "item": [],
           "_postman_isSubFolder": true
         },
         {
@@ -3149,6 +3122,32 @@
               "raw": "{\n  \"currency\": \"EUR\",\n  \"customerId\": \"0c2eaad4-833c-43c1-98a4-5d03f57e9329\",\n  \"shippingAddress\": {\n    \"country\": \"DE\"\n  }\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-carts.html#create-cart"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "e7bf20c0-e93c-e008-7525-ad55d27917fb",
+          "name": "Add Payment",
+          "request": {
+            "url": "{{host}}/{{projectKey}}/carts/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addPayment\",\n    \"payment\": {\n      \"id\": {{paymentId}},\n      \"typeId\": \"payment\"\n    }\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-carts.html#add-payment"
           },
           "response": []
         }
