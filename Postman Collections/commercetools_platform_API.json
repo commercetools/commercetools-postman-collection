@@ -2029,7 +2029,7 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "postman.setEnvironmentVariable(\"id\", {{cartExternalAmountId}});"
+                  "postman.setEnvironmentVariable(\"id\", {{cartExternalId}});"
                 ]
               }
             }
