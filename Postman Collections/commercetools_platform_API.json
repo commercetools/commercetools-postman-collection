@@ -23803,40 +23803,6 @@
           "response": []
         },
         {
-          "_postman_id": "cf5d030c-5d0b-83c6-35ed-598c4f91003a",
-          "name": "Get Type by Key",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/types/key={{key}}",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": "http://dev.commercetools.com/http-api-projects-types.html#get-type-by-key"
-          },
-          "response": []
-        },
-        {
           "_postman_id": "7898e6dd-3a1a-1a28-d175-3f7082e8bd37",
           "name": "Query Types",
           "event": [
