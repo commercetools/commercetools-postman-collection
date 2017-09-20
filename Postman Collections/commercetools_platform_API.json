@@ -2934,7 +2934,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCustomType\",\n    \"type\": {\n      \"id\": \"089eaa2e-b54b-42d7-811e-23e180fe8dcc\",\n      \"typeId\": \"{{type}}\"\n    }\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCustomType\",\n    \"type\": {\n      \"id\": \"089eaa2e-b54b-42d7-811e-23e180fe8dcc\",\n      \"typeId\": \"type\"\n    }\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-carts.html#set-custom-type"
           },
