@@ -21974,7 +21974,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addLineItem\",\n    \"productId\": \"productID\",\n    \"variantId\": 1,\n    \"quantity\": 2\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addLineItem\",\n    \"productId\": \"83b03e78-f4be-40a9-b379-d3affced17ed\",\n    \"variantId\": 1,\n    \"quantity\": 2\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-shoppingLists.html#set-customer"
           },
