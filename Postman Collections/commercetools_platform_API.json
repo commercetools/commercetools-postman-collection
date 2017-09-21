@@ -21978,7 +21978,7 @@
                   "    postman.setEnvironmentVariable(\"version\", data.version);",
                   "    postman.setEnvironmentVariable(\"lineItemID\", data.lineItems[0].id);",
                   "}",
-                  "postman.setNextRequest('Change LineItem Quantity');"
+                  "postman.setNextRequest('Add LineItem 2');"
                 ]
               }
             }
