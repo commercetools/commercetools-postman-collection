@@ -4913,7 +4913,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeDescription\",\n    \"description\": {\n    \t\"en\": \"new Description EN\",\n    \t\"de\": \"new Description DE\"\n    }\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeName\",\n    \"name\": {\n    \t\"en\": \"new Channel Name EN\",\n    \t\"de\": \"new Channel Name DE\"\n    }\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-channels.html#set-roles"
           },
@@ -4921,7 +4921,7 @@
         },
         {
           "_postman_id": "9e353172-935a-aa19-791c-41ac8fb4472f",
-          "name": "Set Roles",
+          "name": "Set Role",
           "event": [
             {
               "listen": "test",
@@ -5014,48 +5014,6 @@
               "raw": ""
             },
             "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "8e4cbc1d-9ce0-77f4-5ae4-d0a1df5ec873",
-          "name": "Set Roles copy",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/channels/{{id}}",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setRoles\",\n    \"roles\": [\"ProductDistribution\", \"Primary\"]\n  }]\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-channels.html#set-roles"
           },
           "response": []
         }
