@@ -25567,6 +25567,750 @@
           "response": []
         }
       ]
+    },
+    {
+      "_postman_id": "4c210cb0-e35f-d223-feb6-512e743072a6",
+      "name": "Types copy",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "c0e1e8f4-950e-3449-31c4-f8edaa8a9e2e",
+          "name": "Create a Type",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/types",
+            "method": "POST",
+            "header": [
+              {
+                "description": "",
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "description": "",
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key\": \"OrderTypeTest\",\n  \"name\": { \n    \"en\": \"Name EN\",\n    \"de\": \"Name DE\"\n  },\n  \"resourceTypeIds\": [\"order\"],\n  \"description\": { \n    \"en\": \"TypeDescriptionEN\",\n    \"de\": \"TypeDescriptionDE\" \n  },\n  \"fieldDefinitions\": [\n    {\n      \"name\": \"StringCustomField\",\n      \"type\": { \"name\": \"String\" },\n      \"required\": false,\n      \"label\": { \n        \"en\": \"StringCustomFieldEN\", \n        \"de\": \"StringCustomFieldDE\"\n      },\n      \"inputHint\": \"SingleLine\"\n    },\n    {\n      \"name\": \"ENumField\",\n      \"type\": { \n        \"name\": \"Enum\",\n        \"values\": [\n          {\n            \"key\": \"enum1\",\n            \"label\": \"enum1label\"\n          },\n          {\n            \"key\": \"enum2\",\n            \"label\": \"enum2label\"\n          }\n        ]\n      },\n      \"required\": false,\n      \"label\": { \n        \"en\": \"ENumFieldEN\", \n        \"de\": \"ENumFieldDE\"\n      },\n      \"inputHint\": \"SingleLine\"\n    },\n    {\n      \"name\": \"LocalizedENumField\",\n      \"type\": { \n        \"name\": \"LocalizedEnum\",\n        \"values\": [\n          {\n            \"key\": \"lEnum1\",\n            \"label\": {\n              \"de\": \"Localizedenum1labelDE\",\n              \"en\": \"Localizedenum1labelEN\"\n            }\n          },\n          {\n            \"key\": \"lEnum2\",\n            \"label\": {\n              \"de\": \"Localizedenum1labelDE\",\n              \"en\": \"Localizedenum1labelEN\"\n            }\n          }\n        ]\n      },\n      \"required\": false,\n      \"label\": { \n        \"en\": \"LocalizedENumFieldEN\", \n        \"de\": \"LocalizedENumFieldDE\"\n      },\n      \"inputHint\": \"SingleLine\"\n    }\n  ]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-types.html#create-type"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "fcad99c7-9401-0e9e-b401-ae503fbdd8ff",
+          "name": "Get Type by ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/types/{{id}}",
+            "method": "GET",
+            "header": [
+              {
+                "description": "",
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "body": {},
+            "description": "http://dev.commercetools.com/http-api-projects-types.html#get-type-by-id"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "3628afde-11e6-5fdb-eaba-f32dbe2aaa6b",
+          "name": "Query Types",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/types",
+            "method": "GET",
+            "header": [
+              {
+                "description": "",
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "body": {},
+            "description": "http://dev.commercetools.com/http-api-projects-zones.html#query-zones"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "3c77f59f-86a4-3d07-49c8-9b1fdf81dba7",
+          "name": "Change Key",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "    postman.setEnvironmentVariable(\"key\", data.key);",
+                  "}",
+                  "else if(responseCode.code==200){",
+                  "    if(data.results){",
+                  "        postman.setEnvironmentVariable(\"id\", data.results[0].id);   ",
+                  "        postman.setEnvironmentVariable(\"version\", data.results[0].version);   ",
+                  "        postman.setEnvironmentVariable(\"key\", data.results[0].key);",
+                  "    }",
+                  "}",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/types/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "description": "",
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "description": "",
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeKey\",\n      \"key\": \"NewKey\"\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-types.html#update-type-by-id\nhttp://dev.commercetools.com/http-api-projects-types.html#change-key"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "15e1c2f1-1c4a-3aaa-8bb6-e970200e7b42",
+          "name": "Change Name",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "    postman.setEnvironmentVariable(\"key\", data.key);",
+                  "}",
+                  "else if(responseCode.code==200){",
+                  "    if(data.results){",
+                  "        postman.setEnvironmentVariable(\"id\", data.results[0].id);   ",
+                  "        postman.setEnvironmentVariable(\"version\", data.results[0].version);   ",
+                  "        postman.setEnvironmentVariable(\"key\", data.results[0].key);",
+                  "    }",
+                  "}",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/types/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "description": "",
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "description": "",
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeName\",\n      \"name\": {\n        \"en\": \"NameDE\",\n        \"de\": \"NameEN\"\n      }\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-types.html#update-type-by-id\nhttp://dev.commercetools.com/http-api-projects-types.html#change-name"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "e71f8a31-0ac6-3e16-1ceb-cbb8fe7b24e0",
+          "name": "Set Description",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "    postman.setEnvironmentVariable(\"key\", data.key);",
+                  "}",
+                  "else if(responseCode.code==200){",
+                  "    if(data.results){",
+                  "        postman.setEnvironmentVariable(\"id\", data.results[0].id);   ",
+                  "        postman.setEnvironmentVariable(\"version\", data.results[0].version);   ",
+                  "        postman.setEnvironmentVariable(\"key\", data.results[0].key);",
+                  "    }",
+                  "}",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/types/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "description": "",
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "description": "",
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setDescription\",\n    \"description\": {\n      \"de\": \"DescriptionDE\",\n      \"en\": \"DescriptionEN\"\n    }\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-types.html#update-type-by-id\nhttp://dev.commercetools.com/http-api-projects-types.html#set-description"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "7ff02710-3956-6e52-81d4-736c860a60ae",
+          "name": "Add FieldDefinition",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "    postman.setEnvironmentVariable(\"key\", data.key);",
+                  "}",
+                  "else if(responseCode.code==200){",
+                  "    if(data.results){",
+                  "        postman.setEnvironmentVariable(\"id\", data.results[0].id);   ",
+                  "        postman.setEnvironmentVariable(\"version\", data.results[0].version);   ",
+                  "        postman.setEnvironmentVariable(\"key\", data.results[0].key);",
+                  "    }",
+                  "}",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/types/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "description": "",
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "description": "",
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addFieldDefinition\",\n      \"fieldDefinition\": {\n        \"type\": {\n          \"name\": \"LocalizedString\"\n        },\n        \"name\": \"fieldDefinitionName\",\n        \"label\": {\n          \"de\": \"labelDE\",\n          \"en\": \"labelEN\"\n        },\n        \"required\": false,\n        \"inputHint\": \"MultiLine\"\n      }\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-types.html#update-type-by-id\nhttp://dev.commercetools.com/http-api-projects-types.html#add-fielddefinition"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "8cf71715-1b53-dcb9-516a-e542f64251b9",
+          "name": "Remove FieldDefinition",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "    postman.setEnvironmentVariable(\"key\", data.key);",
+                  "}",
+                  "else if(responseCode.code==200){",
+                  "    if(data.results){",
+                  "        postman.setEnvironmentVariable(\"id\", data.results[0].id);   ",
+                  "        postman.setEnvironmentVariable(\"version\", data.results[0].version);   ",
+                  "        postman.setEnvironmentVariable(\"key\", data.results[0].key);",
+                  "    }",
+                  "}",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/types/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "description": "",
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "description": "",
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"removeFieldDefinition\",\n      \"fieldName\": \"fieldDefinitionName\"\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-types.html#update-type-by-id\nhttp://dev.commercetools.com/http-api-projects-types.html#remove-fielddefinition"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "319dc76d-4992-9794-aeed-9e47f5957ffb",
+          "name": "Change FieldDefinition Label",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "    postman.setEnvironmentVariable(\"key\", data.key);",
+                  "}",
+                  "else if(responseCode.code==200){",
+                  "    if(data.results){",
+                  "        postman.setEnvironmentVariable(\"id\", data.results[0].id);   ",
+                  "        postman.setEnvironmentVariable(\"version\", data.results[0].version);   ",
+                  "        postman.setEnvironmentVariable(\"key\", data.results[0].key);",
+                  "    }",
+                  "}",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/types/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "description": "",
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "description": "",
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeLabel\",\n      \"fieldName\": \"StringCustomField\",\n      \"label\": {\n        \"de\": \"NewLabelDE\",\n        \"en\": \"NewLabelEN\"\n      }\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-types.html#update-type-by-id\nhttp://dev.commercetools.com/http-api-projects-types.html#change-fielddefinition-label"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "12fabbfc-204b-9dbe-84fc-6b55f25a3b66",
+          "name": "Add FieldDefinition ENumValue",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "    postman.setEnvironmentVariable(\"key\", data.key);",
+                  "}",
+                  "else if(responseCode.code==200){",
+                  "    if(data.results){",
+                  "        postman.setEnvironmentVariable(\"id\", data.results[0].id);   ",
+                  "        postman.setEnvironmentVariable(\"version\", data.results[0].version);   ",
+                  "        postman.setEnvironmentVariable(\"key\", data.results[0].key);",
+                  "    }",
+                  "}",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/types/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "description": "",
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "description": "",
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addEnumValue\",\n      \"fieldName\": \"ENumField\",\n      \"value\": {\n        \"key\": \"NewENumKey\",\n        \"label\": \"NewENumLabel\"\n      }\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-types.html#update-type-by-id\nhttp://dev.commercetools.com/http-api-projects-types.html#add-enumvalue-to-fielddefinition"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "6a6d2b3b-2c90-ef9f-df00-ef7d1030e801",
+          "name": "Add FieldDefinition LocalizedENumValue",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "    postman.setEnvironmentVariable(\"key\", data.key);",
+                  "}",
+                  "else if(responseCode.code==200){",
+                  "    if(data.results){",
+                  "        postman.setEnvironmentVariable(\"id\", data.results[0].id);   ",
+                  "        postman.setEnvironmentVariable(\"version\", data.results[0].version);   ",
+                  "        postman.setEnvironmentVariable(\"key\", data.results[0].key);",
+                  "    }",
+                  "}",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/types/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "description": "",
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "description": "",
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addLocalizedEnumValue\",\n      \"fieldName\": \"LocalizedENumField\",\n      \"value\": {\n        \"key\": \"NewLocalizedEnumKeyString\",\n        \"label\": {\n          \"en\": \"NewLocalizedEnumKeyEN\",\n          \"de\": \"NewLocalizedEnumKeyDE\"\n        }\n      }\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-types.html#update-type-by-id\nhttp://dev.commercetools.com/http-api-projects-types.html#add-localizedenumvalue-to-fielddefinition"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "48339b15-f4fa-3100-07ff-fc0486e54489",
+          "name": "Change FieldDefinition Order",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "    postman.setEnvironmentVariable(\"key\", data.key);",
+                  "}",
+                  "else if(responseCode.code==200){",
+                  "    if(data.results){",
+                  "        postman.setEnvironmentVariable(\"id\", data.results[0].id);   ",
+                  "        postman.setEnvironmentVariable(\"version\", data.results[0].version);   ",
+                  "        postman.setEnvironmentVariable(\"key\", data.results[0].key);",
+                  "    }",
+                  "}",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/types/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "description": "",
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "description": "",
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeFieldDefinitionOrder\",\n      \"fieldNames\": [\n        \"ENumField\",\n        \"LocalizedENumField\",\n        \"StringCustomField\"\n      ]\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-types.html#update-type-by-id\nhttp://dev.commercetools.com/http-api-projects-types.html#change-the-order-of-fielddefinitions"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "01e5f306-9a21-9add-31f2-13623123c425",
+          "name": "Change FieldDefinition ENumValue Order",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "    postman.setEnvironmentVariable(\"key\", data.key);",
+                  "}",
+                  "else if(responseCode.code==200){",
+                  "    if(data.results){",
+                  "        postman.setEnvironmentVariable(\"id\", data.results[0].id);   ",
+                  "        postman.setEnvironmentVariable(\"version\", data.results[0].version);   ",
+                  "        postman.setEnvironmentVariable(\"key\", data.results[0].key);",
+                  "    }",
+                  "}",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/types/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "description": "",
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "description": "",
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeEnumValueOrder\",\n      \"fieldName\": \"ENumField\",\n      \"keys\": [\n        \"NewENumKey\",\n        \"eNum2\",\n        \"eNum1\"\n      ]\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-types.html#update-type-by-id\nhttp://dev.commercetools.com/http-api-projects-types.html#change-the-order-of-enumvalues"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "68b5516a-17a6-17e0-be1f-6ca0a3d468c5",
+          "name": "Change FieldDefinition LocalizedENumValue Order",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "    postman.setEnvironmentVariable(\"key\", data.key);",
+                  "}",
+                  "else if(responseCode.code==200){",
+                  "    if(data.results){",
+                  "        postman.setEnvironmentVariable(\"id\", data.results[0].id);   ",
+                  "        postman.setEnvironmentVariable(\"version\", data.results[0].version);   ",
+                  "        postman.setEnvironmentVariable(\"key\", data.results[0].key);",
+                  "    }",
+                  "}",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/types/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "description": "",
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "description": "",
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeLocalizedEnumValueOrder\",\n      \"fieldName\": \"LocalizedENumField\",\n      \"keys\": [\n        \"NewLocalizedEnumKeyString\",\n        \"lENum2\",\n        \"lENum1\"\n      ]\n  }]\n}\n"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-types.html#update-type-by-id\nhttp://dev.commercetools.com/http-api-projects-types.html#change-the-order-of-localizedenumvalues"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "e6286deb-5f7a-7c2f-6201-bfe4d5a905f5",
+          "name": "Delete Type by ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "    postman.setEnvironmentVariable(\"key\", data.key);",
+                  "}",
+                  "else if(responseCode.code==200){",
+                  "    if(data.results){",
+                  "        postman.setEnvironmentVariable(\"id\", data.results[0].id);   ",
+                  "        postman.setEnvironmentVariable(\"version\", data.results[0].version);   ",
+                  "        postman.setEnvironmentVariable(\"key\", data.results[0].key);",
+                  "    }",
+                  "}",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": {
+              "raw": "{{host}}/{{projectKey}}/types/{{id}}?version={{version}}",
+              "auth": {},
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "{{projectKey}}",
+                "types",
+                "{{id}}"
+              ],
+              "query": [
+                {
+                  "description": "",
+                  "equals": true,
+                  "key": "version",
+                  "value": "{{version}}"
+                }
+              ],
+              "variable": []
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "description": "",
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
     }
   ]
 }
