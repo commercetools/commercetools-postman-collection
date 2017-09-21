@@ -20601,7 +20601,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"name\": \"\",\n  \"key\": \"\",\n  \"description\": \"\",\n  \"taxCategory\": {\n    \"id\": \"5786eba8-d448-4b7a-84fd-07fd1d612696\",\n    \"typeId\": \"tax-category\"\n  },\n  \"zoneRates\": [{\n    \"zone\":{\n      \"typeId\": \"zone\",\n      \"id\":\"76e32004-03ae-4332-b2a7-c8f092adbd7c\"\n    },\n    \"shippingRates\": [{\n      \"price\":{\n        \"currencyCode\": \"currencyCode\",\n        \"centAmount\": 10\n      }\n    }]\n  }],\n  \"isDefault\": true\n}"
+              "raw": "{\n  \"name\": \"\",\n  \"key\": \"\",\n  \"description\": \"\",\n  \"taxCategory\": {\n    \"id\": \"5786eba8-d448-4b7a-84fd-07fd1d612696\",\n    \"typeId\": \"tax-category\"\n  },\n  \"zoneRates\": [{\n    \"zone\":{\n      \"typeId\": \"zone\",\n      \"id\":\"76e32004-03ae-4332-b2a7-c8f092adbd7c\"\n    },\n    \"shippingRates\": [{\n      \"price\":{\n        \"currencyCode\": \"EUR\",\n        \"centAmount\": 10\n      }\n    }]\n  }],\n  \"isDefault\": true\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-shippingMethods.html#create-shippingmethod"
           },
