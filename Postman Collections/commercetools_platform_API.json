@@ -1630,7 +1630,8 @@
                       "if(data.id && data.version){",
                       "    postman.setEnvironmentVariable(\"cartExternalId\", data.id); ",
                       "    postman.setEnvironmentVariable(\"cartExternalVersion\", data.version); ",
-                      "    postman.setEnvironmentVariable(\"cartExternalLineItemId\", data.lineItems[0].id); ",
+                      "    postman.setEnvironmentVariable(\"cartExternalLineItemId\", data.lineItems[0].id);",
+                      "    postman.setEnvironmentVariable(\"cartExternalAmountCustomLineItemId\", data.customLineItems[0].id);",
                       "}"
                     ]
                   }
