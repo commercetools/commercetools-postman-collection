@@ -1695,7 +1695,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"currency\": \"EUR\",\n  \"customerId\": \"0c2eaad4-833c-43c1-98a4-5d03f57e9329\",\n  \"shippingAddress\": {\n    \"country\": \"DE\"\n  },\n  \"taxMode\": \"ExternalAmount\",\n   \"lineItems\": [{\n    \"productId\": \"e6b98eaa-631d-422b-9fc0-af67c18ff48d\",\n    \"variantId\": 1\n  }\n}"
+                  "raw": "{\n  \"currency\": \"EUR\",\n  \"customerId\": \"0c2eaad4-833c-43c1-98a4-5d03f57e9329\",\n  \"shippingAddress\": {\n    \"country\": \"DE\"\n  },\n  \"taxMode\": \"ExternalAmount\",\n   \"lineItems\": [{\n    \"productId\": \"e6b98eaa-631d-422b-9fc0-af67c18ff48d\",\n    \"variantId\": 1\n  }]\n}"
                 },
                 "description": "http://dev.commercetools.com/http-api-projects-carts.html#create-cart"
               },
