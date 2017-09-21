@@ -21327,6 +21327,49 @@
               "response": []
             },
             {
+              "_postman_id": "80d2bc8f-7df0-fb4a-47a0-12a1616758be",
+              "name": "Create Shopping List TextLineItemCustomField Type",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                      "var data = JSON.parse(responseBody);",
+                      "if(data.id && data.version){",
+                      "    postman.setEnvironmentVariable(\"SLTlicfTypeID\", data.id); ",
+                      "    postman.setEnvironmentVariable(\"version\", data.version);",
+                      "}",
+                      "postman.setNextRequest('Create ShoppingList');"
+                    ]
+                  }
+                }
+              ],
+              "request": {
+                "url": "{{host}}/{{projectKey}}/types",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key\": \"SLTlicfType\",\n  \"name\": { \n    \"en\": \"SLTlicfTypeEN\",\n    \"de\": \"SLTlicfTypeDE\"\n  },\n  \"resourceTypeIds\": [\"shopping-list-text-line-item\"],\n  \"fieldDefinitions\": [\n    {\n      \"name\": \"TextLineItemCustomField\",\n      \"type\": { \"name\": \"String\" },\n      \"required\": false,\n      \"label\": { \n        \"en\": \"TextLineItemCustomFieldEN\", \n        \"de\": \"TextLineItemCustomFieldDE\"\n      },\n      \"inputHint\": \"SingleLine\"\n    },\n    {\n      \"name\": \"ENumField\",\n      \"type\": { \n        \"name\": \"Enum\",\n        \"values\": [\n          {\n            \"key\": \"enum1\",\n            \"label\": \"enum1label\"\n          },\n          {\n            \"key\": \"enum2\",\n            \"label\": \"enum2label\"\n          }\n        ]\n      },\n      \"required\": false,\n      \"label\": { \n        \"en\": \"ENumFieldEN\", \n        \"de\": \"ENumFieldDE\"\n      },\n      \"inputHint\": \"SingleLine\"\n    },\n    {\n      \"name\": \"LocalizedENumField\",\n      \"type\": { \n        \"name\": \"LocalizedEnum\",\n        \"values\": [\n          {\n            \"key\": \"lEnum1\",\n            \"label\": {\n              \"de\": \"Localizedenum1labelDE\",\n              \"en\": \"Localizedenum1labelEN\"\n            }\n          },\n          {\n            \"key\": \"lEnum2\",\n            \"label\": {\n              \"de\": \"Localizedenum1labelDE\",\n              \"en\": \"Localizedenum1labelEN\"\n            }\n          }\n        ]\n      },\n      \"required\": false,\n      \"label\": { \n        \"en\": \"LocalizedENumFieldEN\", \n        \"de\": \"LocalizedENumFieldDE\"\n      },\n      \"inputHint\": \"SingleLine\"\n    }\n  ]\n}"
+                },
+                "description": "http://dev.commercetools.com/http-api-projects-types.html#create-type"
+              },
+              "response": []
+            },
+            {
               "_postman_id": "0a49fcfe-d1f5-9924-de55-a0bea6fb3b7a",
               "name": "Add LineItem 2",
               "event": [
@@ -21413,49 +21456,6 @@
                   "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addTextLineItem\",\n    \"name\": {\n      \"de\": \"textDE\",\n      \"en\": \"textEN\"\n    }\n  }]\n}"
                 },
                 "description": "http://dev.commercetools.com/http-api-projects-shoppingLists.html#set-customer"
-              },
-              "response": []
-            },
-            {
-              "_postman_id": "80d2bc8f-7df0-fb4a-47a0-12a1616758be",
-              "name": "Create Shopping List TextLineItemCustomField Type",
-              "event": [
-                {
-                  "listen": "test",
-                  "script": {
-                    "type": "text/javascript",
-                    "exec": [
-                      "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                      "var data = JSON.parse(responseBody);",
-                      "if(data.id && data.version){",
-                      "    postman.setEnvironmentVariable(\"SLTlicfTypeID\", data.id); ",
-                      "    postman.setEnvironmentVariable(\"version\", data.version);",
-                      "}",
-                      "postman.setNextRequest('Create ShoppingList');"
-                    ]
-                  }
-                }
-              ],
-              "request": {
-                "url": "{{host}}/{{projectKey}}/types",
-                "method": "POST",
-                "header": [
-                  {
-                    "key": "Authorization",
-                    "value": "Bearer {{access_token}}",
-                    "description": ""
-                  },
-                  {
-                    "key": "Content-Type",
-                    "value": "application/json",
-                    "description": ""
-                  }
-                ],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"key\": \"SLTlicfType\",\n  \"name\": { \n    \"en\": \"SLTlicfTypeEN\",\n    \"de\": \"SLTlicfTypeDE\"\n  },\n  \"resourceTypeIds\": [\"shopping-list-text-line-item\"],\n  \"fieldDefinitions\": [\n    {\n      \"name\": \"TextLineItemCustomField\",\n      \"type\": { \"name\": \"String\" },\n      \"required\": false,\n      \"label\": { \n        \"en\": \"TextLineItemCustomFieldEN\", \n        \"de\": \"TextLineItemCustomFieldDE\"\n      },\n      \"inputHint\": \"SingleLine\"\n    },\n    {\n      \"name\": \"ENumField\",\n      \"type\": { \n        \"name\": \"Enum\",\n        \"values\": [\n          {\n            \"key\": \"enum1\",\n            \"label\": \"enum1label\"\n          },\n          {\n            \"key\": \"enum2\",\n            \"label\": \"enum2label\"\n          }\n        ]\n      },\n      \"required\": false,\n      \"label\": { \n        \"en\": \"ENumFieldEN\", \n        \"de\": \"ENumFieldDE\"\n      },\n      \"inputHint\": \"SingleLine\"\n    },\n    {\n      \"name\": \"LocalizedENumField\",\n      \"type\": { \n        \"name\": \"LocalizedEnum\",\n        \"values\": [\n          {\n            \"key\": \"lEnum1\",\n            \"label\": {\n              \"de\": \"Localizedenum1labelDE\",\n              \"en\": \"Localizedenum1labelEN\"\n            }\n          },\n          {\n            \"key\": \"lEnum2\",\n            \"label\": {\n              \"de\": \"Localizedenum1labelDE\",\n              \"en\": \"Localizedenum1labelEN\"\n            }\n          }\n        ]\n      },\n      \"required\": false,\n      \"label\": { \n        \"en\": \"LocalizedENumFieldEN\", \n        \"de\": \"LocalizedENumFieldDE\"\n      },\n      \"inputHint\": \"SingleLine\"\n    }\n  ]\n}"
-                },
-                "description": "http://dev.commercetools.com/http-api-projects-types.html#create-type"
               },
               "response": []
             }
