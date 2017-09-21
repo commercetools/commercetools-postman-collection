@@ -22234,7 +22234,7 @@
                   "    postman.setEnvironmentVariable(\"id\", data.id); ",
                   "    postman.setEnvironmentVariable(\"version\", data.version);",
                   "}",
-                  "postman.setNextRequest('Change TextLineItem Quantity');"
+                  "postman.setNextRequest('Add TextLineItem 2');"
                 ]
               }
             }
