@@ -5207,7 +5207,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setGeoLocation\",\n    \"geoLocation\": \"StringCustomField\",\n    \"value\": \"myNewValue\"\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setGeoLocation\",\n    \"geoLocation\": {\n    \t\"type\": \"Point\",\n    \t\"coordinates\": []\n    }\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-channels.html#set-customfield"
           },
