@@ -5039,7 +5039,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"removeRoles\",\n    \"roles\": [\"InventorySupply\"]\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addRoles\",\n    \"roles\": [\"InventorySupply\"]\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-channels.html#set-roles"
           },
