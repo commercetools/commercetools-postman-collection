@@ -5209,7 +5209,7 @@
               "mode": "raw",
               "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setGeoLocation\",\n    \"geoLocation\": {\n    \t\"type\": \"Point\",\n    \t\"coordinates\": [48.163569, 11.558663]\n    }\n  }]\n}"
             },
-            "description": "http://dev.commercetools.com/http-api-projects-channels.html#set-customfield"
+            "description": "http://dev.commercetools.com/http-api-projects-channels.html#set-geolocation"
           },
           "response": []
         },
