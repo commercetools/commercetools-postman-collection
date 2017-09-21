@@ -22939,7 +22939,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setTransitions\",\n    \"transitions\": [\n    {\n      \"typeId\": \"state\",\n      \"id\": \"51341d4e-688e-4f65-bcc2-52989f7d65c2\"\n    }\n  ]\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setTransitions\",\n    \"transitions\": [\n    {\n      \"typeId\": \"state\",\n      \"id\": \"{{tranStateID}}\"\n    },\n    {\n      \"typeId\": \"state\",\n      \"id\": \"{{tranStateID2}}\"\n    }\n  ]\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-states.html#set-transitions"
           },
