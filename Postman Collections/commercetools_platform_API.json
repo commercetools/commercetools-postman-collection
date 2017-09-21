@@ -1972,7 +1972,8 @@
                 "type": "text/javascript",
                 "exec": [
                   "postman.setEnvironmentVariable(\"id\", postman.getEnvironmentVariable(\"cartExternalId\"));",
-                  "postman.setEnvironmentVariable(\"version\", postman.getEnvironmentVariable(\"cartExternalVersion\"));"
+                  "postman.setEnvironmentVariable(\"version\", postman.getEnvironmentVariable(\"cartExternalVersion\"));",
+                  "postman.setEnvironmentVariable(\"lineItemId\", postman.getEnvironmentVariable(\"cartExternalLineItemVersion\"));"
                 ]
               }
             }
