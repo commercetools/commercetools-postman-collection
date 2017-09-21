@@ -4831,7 +4831,7 @@
               "mode": "raw",
               "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeKey\",\n    \"key\": \"myNewChannelKey\"\n  }]\n}"
             },
-            "description": "http://dev.commercetools.com/http-api-projects-channels.html#set-roles"
+            "description": "http://dev.commercetools.com/http-api-projects-channels.html#change-key"
           },
           "response": []
         },
