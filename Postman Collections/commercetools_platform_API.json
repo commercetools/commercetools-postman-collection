@@ -24483,6 +24483,392 @@
       ]
     },
     {
+      "_postman_id": "71b0e853-2090-8a0e-6cdc-efb6bcaa569b",
+      "name": "Tax Categories copy",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "8df3be23-920a-85a8-736c-09be735c194c",
+          "name": "Create TaxCategory",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/tax-categories",
+            "method": "POST",
+            "header": [
+              {
+                "description": "",
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "description": "",
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"\"\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-taxCategories.html#create-taxcategory"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "297bbbb2-c42c-ed60-8437-f827ad4524c0",
+          "name": "Get TaxCategory by ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/tax-categories/{{id}}",
+            "method": "GET",
+            "header": [
+              {
+                "description": "",
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "body": {},
+            "description": "http://dev.commercetools.com/http-api-projects-taxCategories.html#get-taxcategory-by-id"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "4d2cca94-5b80-7c41-8a24-fc41ffc1df70",
+          "name": "Query TaxCategories",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/tax-categories",
+            "method": "GET",
+            "header": [
+              {
+                "description": "",
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "body": {},
+            "description": "http://dev.commercetools.com/http-api-projects-taxCategories.html#query-taxcategories"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "ea5fb219-4d12-be8c-e0a4-4c1d85b6acce",
+          "name": "Change Name",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/tax-categories/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "description": "",
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "description": "",
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeName\",\n    \"name\": \"name\"\n   }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-taxCategories.html#update-taxcategory\nhttp://dev.commercetools.com/http-api-projects-taxCategories.html#change-name"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "6ba211ca-aec8-5d87-771f-678625d42185",
+          "name": "Set Description",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/tax-categories/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "description": "",
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "description": "",
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setDescription\",\n    \"description\": \"new Description\"\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-taxCategories.html#update-taxcategory\nhttp://dev.commercetools.com/http-api-projects-taxCategories.html#set-description"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "7fe0f362-032c-5395-37cc-627ef5e77c3b",
+          "name": "Add TaxRate",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "    postman.setEnvironmentVariable(\"taxRateID\", data.rates[0].id)",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/tax-categories/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "description": "",
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "description": "",
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addTaxRate\",\n    \"taxRate\": {\n      \"name\": \"TaxRateName\",\n      \"amount\": 0.3,\n      \"includedInPrice\": true,\n      \"country\": \"DE\",\n      \"state\":\"state\"\n    }\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-taxCategories.html#update-taxcategory\nhttp://dev.commercetools.com/http-api-projects-taxCategories.html#add-taxrate"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "727e309b-8d17-b54e-110d-88677466bf16",
+          "name": "Replace TaxRate",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "    postman.setEnvironmentVariable(\"taxRateID\", data.rates[0].id)",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/tax-categories/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "description": "",
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "description": "",
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"replaceTaxRate\",\n    \"taxRateId\": \"{{taxRateID}}\",\n    \"taxRate\": {\n      \"name\": \"TaxRateName\",\n      \"amount\": 0.4,\n      \"includedInPrice\": true,\n      \"country\": \"DE\",\n      \"state\":\"state\"\n    }\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-taxCategories.html#update-taxcategory\nhttp://dev.commercetools.com/http-api-projects-taxCategories.html#replace-taxrate"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "4421d687-ce8e-c0af-f1f9-9720e05a2bde",
+          "name": "Remove TaxRate",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/tax-categories/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "description": "",
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "description": "",
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"removeTaxRate\",\n    \"taxRateId\": \"{{taxRateID}}\"\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-taxCategories.html#update-taxcategory\nhttp://dev.commercetools.com/http-api-projects-taxCategories.html#remove-taxrate"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "36ef1203-6b11-88e5-2da7-e5193bc34cb5",
+          "name": "Delete TaxCategory",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": {
+              "raw": "{{host}}/{{projectKey}}/tax-categories/{{id}}?version={{version}}",
+              "auth": {},
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "{{projectKey}}",
+                "tax-categories",
+                "{{id}}"
+              ],
+              "query": [
+                {
+                  "description": "",
+                  "equals": true,
+                  "key": "version",
+                  "value": "{{version}}"
+                }
+              ],
+              "variable": []
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "description": "",
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-taxCategories.html#delete-taxcategory"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
       "_postman_id": "acfe19f6-f9d5-bb4b-661d-40e58c26f3f7",
       "name": "Types",
       "description": "",
@@ -25563,392 +25949,6 @@
               "raw": ""
             },
             "description": "http://dev.commercetools.com/http-api-projects-zones.html#delete-zone"
-          },
-          "response": []
-        }
-      ]
-    },
-    {
-      "_postman_id": "71b0e853-2090-8a0e-6cdc-efb6bcaa569b",
-      "name": "Tax Categories copy",
-      "description": "",
-      "item": [
-        {
-          "_postman_id": "8df3be23-920a-85a8-736c-09be735c194c",
-          "name": "Create TaxCategory",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/tax-categories",
-            "method": "POST",
-            "header": [
-              {
-                "description": "",
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}"
-              },
-              {
-                "description": "",
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"name\": \"\"\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-taxCategories.html#create-taxcategory"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "297bbbb2-c42c-ed60-8437-f827ad4524c0",
-          "name": "Get TaxCategory by ID",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/tax-categories/{{id}}",
-            "method": "GET",
-            "header": [
-              {
-                "description": "",
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}"
-              }
-            ],
-            "body": {},
-            "description": "http://dev.commercetools.com/http-api-projects-taxCategories.html#get-taxcategory-by-id"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "4d2cca94-5b80-7c41-8a24-fc41ffc1df70",
-          "name": "Query TaxCategories",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/tax-categories",
-            "method": "GET",
-            "header": [
-              {
-                "description": "",
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}"
-              }
-            ],
-            "body": {},
-            "description": "http://dev.commercetools.com/http-api-projects-taxCategories.html#query-taxcategories"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "ea5fb219-4d12-be8c-e0a4-4c1d85b6acce",
-          "name": "Change Name",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/tax-categories/{{id}}",
-            "method": "POST",
-            "header": [
-              {
-                "description": "",
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}"
-              },
-              {
-                "description": "",
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeName\",\n    \"name\": \"name\"\n   }]\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-taxCategories.html#update-taxcategory\nhttp://dev.commercetools.com/http-api-projects-taxCategories.html#change-name"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "6ba211ca-aec8-5d87-771f-678625d42185",
-          "name": "Set Description",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/tax-categories/{{id}}",
-            "method": "POST",
-            "header": [
-              {
-                "description": "",
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}"
-              },
-              {
-                "description": "",
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setDescription\",\n    \"description\": \"new Description\"\n  }]\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-taxCategories.html#update-taxcategory\nhttp://dev.commercetools.com/http-api-projects-taxCategories.html#set-description"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "7fe0f362-032c-5395-37cc-627ef5e77c3b",
-          "name": "Add TaxRate",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "    postman.setEnvironmentVariable(\"taxRateID\", data.rates[0].id)",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/tax-categories/{{id}}",
-            "method": "POST",
-            "header": [
-              {
-                "description": "",
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}"
-              },
-              {
-                "description": "",
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addTaxRate\",\n    \"taxRate\": {\n      \"name\": \"TaxRateName\",\n      \"amount\": 0.3,\n      \"includedInPrice\": true,\n      \"country\": \"DE\",\n      \"state\":\"state\"\n    }\n  }]\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-taxCategories.html#update-taxcategory\nhttp://dev.commercetools.com/http-api-projects-taxCategories.html#add-taxrate"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "727e309b-8d17-b54e-110d-88677466bf16",
-          "name": "Replace TaxRate",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "    postman.setEnvironmentVariable(\"taxRateID\", data.rates[0].id)",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/tax-categories/{{id}}",
-            "method": "POST",
-            "header": [
-              {
-                "description": "",
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}"
-              },
-              {
-                "description": "",
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"replaceTaxRate\",\n    \"taxRateId\": \"{{taxRateID}}\",\n    \"taxRate\": {\n      \"name\": \"TaxRateName\",\n      \"amount\": 0.4,\n      \"includedInPrice\": true,\n      \"country\": \"DE\",\n      \"state\":\"state\"\n    }\n  }]\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-taxCategories.html#update-taxcategory\nhttp://dev.commercetools.com/http-api-projects-taxCategories.html#replace-taxrate"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "4421d687-ce8e-c0af-f1f9-9720e05a2bde",
-          "name": "Remove TaxRate",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/tax-categories/{{id}}",
-            "method": "POST",
-            "header": [
-              {
-                "description": "",
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}"
-              },
-              {
-                "description": "",
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"removeTaxRate\",\n    \"taxRateId\": \"{{taxRateID}}\"\n  }]\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-taxCategories.html#update-taxcategory\nhttp://dev.commercetools.com/http-api-projects-taxCategories.html#remove-taxrate"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "36ef1203-6b11-88e5-2da7-e5193bc34cb5",
-          "name": "Delete TaxCategory",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": {
-              "raw": "{{host}}/{{projectKey}}/tax-categories/{{id}}?version={{version}}",
-              "auth": {},
-              "host": [
-                "{{host}}"
-              ],
-              "path": [
-                "{{projectKey}}",
-                "tax-categories",
-                "{{id}}"
-              ],
-              "query": [
-                {
-                  "description": "",
-                  "equals": true,
-                  "key": "version",
-                  "value": "{{version}}"
-                }
-              ],
-              "variable": []
-            },
-            "method": "DELETE",
-            "header": [
-              {
-                "description": "",
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-taxCategories.html#delete-taxcategory"
           },
           "response": []
         }
