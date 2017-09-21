@@ -5516,7 +5516,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"email\": \"thisisatest@commercetools.de\",\n  \"password\": \"thisisnotsecret\"\n  \"key\": \"mycustomerkey\"\n}"
+              "raw": "{\n  \"email\": \"thisisatest@commercetools.de\",\n  \"password\": \"thisisnotsecret\"\n}"
             },
             "description": ""
           },
