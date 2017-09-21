@@ -23044,6 +23044,48 @@
             "description": "http://dev.commercetools.com/http-api-projects-states.html#delete-state"
           },
           "response": []
+        },
+        {
+          "_postman_id": "8197c88e-2de1-a900-c0ac-c909f7f114ad",
+          "name": "Create State copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/states",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key\": \"StateKey\",\n  \"type\": \"OrderState\"\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-states.html#create-state"
+          },
+          "response": []
         }
       ]
     },
