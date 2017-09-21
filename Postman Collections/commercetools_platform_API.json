@@ -21871,7 +21871,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCustomField\",\n    \"type\": {\n    \t\"id\": \"{{SLCFTypeID}}\"\n    },\n    \"fields\": {\"StringCustomField\": \"test\"}\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCustomType\",\n    \"type\": {\n    \t\"id\": \"{{SLCFTypeID}}\"\n    }\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-shoppingLists.html#set-customer"
           },
