@@ -22666,7 +22666,7 @@
               ],
               "request": {
                 "url": {
-                  "raw": "{{host}}/{{projectKey}}/states/key=TransitionStateKey1?version=1",
+                  "raw": "{{host}}/{{projectKey}}/states/key=TransitionStateKey2?version=1",
                   "auth": {},
                   "host": [
                     "{{host}}"
@@ -22674,7 +22674,7 @@
                   "path": [
                     "{{projectKey}}",
                     "states",
-                    "key=TransitionStateKey1"
+                    "key=TransitionStateKey2"
                   ],
                   "query": [
                     {
