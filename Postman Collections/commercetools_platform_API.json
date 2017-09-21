@@ -22587,7 +22587,65 @@
           "_postman_id": "beec1687-57f2-f3a1-3818-462f8b9e4bfd",
           "name": "PostHelpers",
           "description": "",
-          "item": [],
+          "item": [
+            {
+              "_postman_id": "79ea4948-e1b5-fd5d-5fba-bac66f2166f8",
+              "name": "Delete State copy",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                      "var data = JSON.parse(responseBody);",
+                      "if(data.id && data.version){",
+                      "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                      "    postman.setEnvironmentVariable(\"version\", data.version);",
+                      "}"
+                    ]
+                  }
+                }
+              ],
+              "request": {
+                "url": {
+                  "raw": "{{host}}/{{projectKey}}/states/{{id}}?version={{version}}",
+                  "auth": {},
+                  "host": [
+                    "{{host}}"
+                  ],
+                  "path": [
+                    "{{projectKey}}",
+                    "states",
+                    "{{id}}"
+                  ],
+                  "query": [
+                    {
+                      "description": "",
+                      "equals": true,
+                      "key": "version",
+                      "value": "{{version}}"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "DELETE",
+                "header": [
+                  {
+                    "description": "",
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "description": "http://dev.commercetools.com/http-api-projects-states.html#delete-state"
+              },
+              "response": []
+            }
+          ],
           "_postman_isSubFolder": true
         },
         {
@@ -23125,63 +23183,6 @@
                 "key": "Authorization",
                 "value": "Bearer {{access_token}}",
                 "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-states.html#delete-state"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "79ea4948-e1b5-fd5d-5fba-bac66f2166f8",
-          "name": "Delete State copy",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": {
-              "raw": "{{host}}/{{projectKey}}/states/{{id}}?version={{version}}",
-              "auth": {},
-              "host": [
-                "{{host}}"
-              ],
-              "path": [
-                "{{projectKey}}",
-                "states",
-                "{{id}}"
-              ],
-              "query": [
-                {
-                  "description": "",
-                  "equals": true,
-                  "key": "version",
-                  "value": "{{version}}"
-                }
-              ],
-              "variable": []
-            },
-            "method": "DELETE",
-            "header": [
-              {
-                "description": "",
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}"
               }
             ],
             "body": {
