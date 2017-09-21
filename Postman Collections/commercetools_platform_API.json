@@ -20822,7 +20822,7 @@
           ],
           "request": {
             "url": {
-              "raw": "{{host}}/{{projectKey}}/shipping-methods?country={{country}}",
+              "raw": "{{host}}/{{projectKey}}/shipping-methods?country=DE",
               "auth": {},
               "host": [
                 "{{host}}"
@@ -20834,7 +20834,7 @@
               "query": [
                 {
                   "key": "country",
-                  "value": "{{country}}",
+                  "value": "DE",
                   "equals": true,
                   "description": ""
                 }
