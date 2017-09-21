@@ -21279,6 +21279,48 @@
       "description": "",
       "item": [
         {
+          "_postman_id": "53125c70-1864-4579-c91c-d5f5c44ac664",
+          "name": "Create a Type copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/types",
+            "method": "POST",
+            "header": [
+              {
+                "description": "",
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "description": "",
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key\": \"OrderTypeTest\",\n  \"name\": { \n    \"en\": \"Name EN\",\n    \"de\": \"Name DE\"\n  },\n  \"resourceTypeIds\": [\"order\"],\n  \"description\": { \n    \"en\": \"TypeDescriptionEN\",\n    \"de\": \"TypeDescriptionDE\" \n  },\n  \"fieldDefinitions\": [\n    {\n      \"name\": \"StringCustomField\",\n      \"type\": { \"name\": \"String\" },\n      \"required\": false,\n      \"label\": { \n        \"en\": \"StringCustomFieldEN\", \n        \"de\": \"StringCustomFieldDE\"\n      },\n      \"inputHint\": \"SingleLine\"\n    },\n    {\n      \"name\": \"ENumField\",\n      \"type\": { \n        \"name\": \"Enum\",\n        \"values\": [\n          {\n            \"key\": \"enum1\",\n            \"label\": \"enum1label\"\n          },\n          {\n            \"key\": \"enum2\",\n            \"label\": \"enum2label\"\n          }\n        ]\n      },\n      \"required\": false,\n      \"label\": { \n        \"en\": \"ENumFieldEN\", \n        \"de\": \"ENumFieldDE\"\n      },\n      \"inputHint\": \"SingleLine\"\n    },\n    {\n      \"name\": \"LocalizedENumField\",\n      \"type\": { \n        \"name\": \"LocalizedEnum\",\n        \"values\": [\n          {\n            \"key\": \"lEnum1\",\n            \"label\": {\n              \"de\": \"Localizedenum1labelDE\",\n              \"en\": \"Localizedenum1labelEN\"\n            }\n          },\n          {\n            \"key\": \"lEnum2\",\n            \"label\": {\n              \"de\": \"Localizedenum1labelDE\",\n              \"en\": \"Localizedenum1labelEN\"\n            }\n          }\n        ]\n      },\n      \"required\": false,\n      \"label\": { \n        \"en\": \"LocalizedENumFieldEN\", \n        \"de\": \"LocalizedENumFieldDE\"\n      },\n      \"inputHint\": \"SingleLine\"\n    }\n  ]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-types.html#create-type"
+          },
+          "response": []
+        },
+        {
           "_postman_id": "d073f777-3e09-0f2e-35fd-7f4d2bcbc7fe",
           "name": "Create ShoppingList",
           "event": [
@@ -22483,48 +22525,6 @@
               "raw": ""
             },
             "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "53125c70-1864-4579-c91c-d5f5c44ac664",
-          "name": "Create a Type copy",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/types",
-            "method": "POST",
-            "header": [
-              {
-                "description": "",
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}"
-              },
-              {
-                "description": "",
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"key\": \"OrderTypeTest\",\n  \"name\": { \n    \"en\": \"Name EN\",\n    \"de\": \"Name DE\"\n  },\n  \"resourceTypeIds\": [\"order\"],\n  \"description\": { \n    \"en\": \"TypeDescriptionEN\",\n    \"de\": \"TypeDescriptionDE\" \n  },\n  \"fieldDefinitions\": [\n    {\n      \"name\": \"StringCustomField\",\n      \"type\": { \"name\": \"String\" },\n      \"required\": false,\n      \"label\": { \n        \"en\": \"StringCustomFieldEN\", \n        \"de\": \"StringCustomFieldDE\"\n      },\n      \"inputHint\": \"SingleLine\"\n    },\n    {\n      \"name\": \"ENumField\",\n      \"type\": { \n        \"name\": \"Enum\",\n        \"values\": [\n          {\n            \"key\": \"enum1\",\n            \"label\": \"enum1label\"\n          },\n          {\n            \"key\": \"enum2\",\n            \"label\": \"enum2label\"\n          }\n        ]\n      },\n      \"required\": false,\n      \"label\": { \n        \"en\": \"ENumFieldEN\", \n        \"de\": \"ENumFieldDE\"\n      },\n      \"inputHint\": \"SingleLine\"\n    },\n    {\n      \"name\": \"LocalizedENumField\",\n      \"type\": { \n        \"name\": \"LocalizedEnum\",\n        \"values\": [\n          {\n            \"key\": \"lEnum1\",\n            \"label\": {\n              \"de\": \"Localizedenum1labelDE\",\n              \"en\": \"Localizedenum1labelEN\"\n            }\n          },\n          {\n            \"key\": \"lEnum2\",\n            \"label\": {\n              \"de\": \"Localizedenum1labelDE\",\n              \"en\": \"Localizedenum1labelEN\"\n            }\n          }\n        ]\n      },\n      \"required\": false,\n      \"label\": { \n        \"en\": \"LocalizedENumFieldEN\", \n        \"de\": \"LocalizedENumFieldDE\"\n      },\n      \"inputHint\": \"SingleLine\"\n    }\n  ]\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-types.html#create-type"
           },
           "response": []
         }
