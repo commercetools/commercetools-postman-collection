@@ -4915,7 +4915,7 @@
               "mode": "raw",
               "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeDescription\",\n    \"description\": {\n    \t\"en\": \"new Description EN\",\n    \t\"de\": \"new Description DE\"\n    }\n  }]\n}"
             },
-            "description": "http://dev.commercetools.com/http-api-projects-channels.html#set-roles"
+            "description": "http://dev.commercetools.com/http-api-projects-channels.html#change-description"
           },
           "response": []
         },
