@@ -21297,7 +21297,8 @@
                       "if(data.id && data.version){",
                       "    postman.setEnvironmentVariable(\"SLCFTypeID\", data.id); ",
                       "    postman.setEnvironmentVariable(\"version\", data.version);",
-                      "}"
+                      "}",
+                      "postman.setNextRequest('Create ShoppingList');"
                     ]
                   }
                 }
