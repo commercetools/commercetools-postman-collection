@@ -4879,7 +4879,7 @@
         },
         {
           "_postman_id": "1241aa85-bb8e-4ee4-d414-1005956ed594",
-          "name": "Change Name copy",
+          "name": "Change Description",
           "event": [
             {
               "listen": "test",
@@ -4913,7 +4913,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeName\",\n    \"name\": {\n    \t\"en\": \"new Channel Name EN\",\n    \t\"de\": \"new Channel Name DE\"\n    }\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeDescription\",\n    \"name\": {\n    \t\"en\": \"new Description EN\",\n    \t\"de\": \"new Description DE\"\n    }\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-channels.html#set-roles"
           },
