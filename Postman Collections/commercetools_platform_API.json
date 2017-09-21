@@ -20857,6 +20857,22 @@
         {
           "_postman_id": "4258025f-c6cd-a021-90ba-58ffe3b10d44",
           "name": "Query ShippingMethods",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
           "request": {
             "url": "{{host}}/{{projectKey}}/shipping-methods",
             "method": "GET",
