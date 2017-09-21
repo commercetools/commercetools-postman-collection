@@ -5004,48 +5004,6 @@
           "response": []
         },
         {
-          "_postman_id": "a7166990-e3bf-6550-f666-976beb4afb27",
-          "name": "Remove Roles",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/channels/{{id}}",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"removeRoles\",\n    \"roles\": [\"InventorySupply\"]\n  }]\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-channels.html#set-roles"
-          },
-          "response": []
-        },
-        {
           "_postman_id": "16d9499a-7f4a-3474-3be7-c849183e536b",
           "name": "Delete Channel",
           "event": [
@@ -5102,8 +5060,8 @@
           "response": []
         },
         {
-          "_postman_id": "dee99670-0361-a74a-06c6-5be717e9f6c2",
-          "name": "Remove Roles copy",
+          "_postman_id": "a7166990-e3bf-6550-f666-976beb4afb27",
+          "name": "Add Roles copy",
           "event": [
             {
               "listen": "test",
@@ -5137,7 +5095,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"removeRoles\",\n    \"roles\": [\"InventorySupply\"]\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addRoles\",\n    \"roles\": [\"InventorySupply\"]\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-channels.html#set-roles"
           },
