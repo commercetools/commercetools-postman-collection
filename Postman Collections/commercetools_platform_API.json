@@ -1661,7 +1661,7 @@
             },
             {
               "_postman_id": "407da371-fdc3-c701-cbfa-eb304b010dd0",
-              "name": "Add CustomLineItem copy",
+              "name": "Add CustomLineItem",
               "event": [
                 {
                   "listen": "test",
