@@ -22644,6 +22644,63 @@
                 "description": "http://dev.commercetools.com/http-api-projects-states.html#delete-state"
               },
               "response": []
+            },
+            {
+              "_postman_id": "77ae98d2-75cf-bf0d-a5bf-0ff83fd0f4f6",
+              "name": "Delete Transition State copy",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                      "var data = JSON.parse(responseBody);",
+                      "if(data.id && data.version){",
+                      "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                      "    postman.setEnvironmentVariable(\"version\", data.version);",
+                      "}"
+                    ]
+                  }
+                }
+              ],
+              "request": {
+                "url": {
+                  "raw": "{{host}}/{{projectKey}}/states/key=TransitionStateKey1?version=1",
+                  "auth": {},
+                  "host": [
+                    "{{host}}"
+                  ],
+                  "path": [
+                    "{{projectKey}}",
+                    "states",
+                    "key=TransitionStateKey1"
+                  ],
+                  "query": [
+                    {
+                      "key": "version",
+                      "value": "1",
+                      "equals": true,
+                      "description": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "description": "http://dev.commercetools.com/http-api-projects-states.html#delete-state"
+              },
+              "response": []
             }
           ],
           "_postman_isSubFolder": true
