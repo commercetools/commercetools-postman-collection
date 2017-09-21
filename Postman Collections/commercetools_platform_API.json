@@ -22597,7 +22597,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setTextLineItemCustomField\",\n    \"lineItemId\": \"{{textLineItemID}}\",\n    \"name\": \"myCustomFieldName\",\n    \"value\": \"value\"\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setTextLineItemCustomField\",\n    \"lineItemId\": \"{{lineItemID}}\",\n    \"name\": \"myCustomFieldName\",\n    \"value\": \"value\"\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-shoppingLists.html#set-customer"
           },
