@@ -5683,10 +5683,11 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
                   "if (responseCode.code === 200){",
                   "    postman.setEnvironmentVariable(\"id\", null);   ",
                   "    postman.setEnvironmentVariable(\"version\", null);   ",
-                  "}    "
+                  "}"
                 ]
               }
             }
