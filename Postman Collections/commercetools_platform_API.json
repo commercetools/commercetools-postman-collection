@@ -20537,6 +20537,165 @@
       "description": "",
       "item": [
         {
+          "_postman_id": "19a57454-5f59-208f-baec-120ae64c4c38",
+          "name": "Create ShippingMethod",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id);   ",
+                  "}",
+                  "if(data.version){",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);   ",
+                  "}",
+                  "if(data.key){",
+                  "    postman.setEnvironmentVariable(\"key\", data.key);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/shipping-methods",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"\",\n  \"key\": \"\",\n  \"description\": \"\",\n  \"taxCategory\": {\n    \"id\": \"tax-category-ID\",\n    \"typeId\": \"tax-category\"\n  },\n  \"zoneRates\": [{\n    \"zone\":{\n      \"typeId\": \"zone\",\n      \"id\":\"zone-ID\"\n    },\n    \"shippingRates\": [{\n      \"price\":{\n        \"currencyCode\": \"currencyCode\",\n        \"centAmount\": Amount\n      }\n    }]\n  }],\n  \"isDefault\": true\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-shippingMethods.html#create-shippingmethod"
+          },
+          "response": [
+            {
+              "id": "6fb0a1e6-cf9b-2e46-c5f7-191328aa6126",
+              "name": "Create ShippingMethod",
+              "originalRequest": {
+                "url": "{{host}}/{{projectKey}}/shipping-methods",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"ShippingMethod\",\n  \"key\": \"shippingmethodkey\",\n  \"description\": \"shippingmethoddescription\",\n  \"taxCategory\": {\n    \"typeId\": \"tax-category\",\n    \"id\": \"335c12e3-d61a-4d1b-94a3-068319367350\"\n  },\n  \"zoneRates\": [{\n    \"zone\":{\n      \"typeId\": \"zone\",\n      \"id\":\"780b1740-ed4e-4207-be80-c74777103c97\"\n    },\n    \"shippingRates\": [{\n      \"price\":{\n        \"currencyCode\": \"EUR\",\n        \"centAmount\": 2000\n      },\n      \"freeAbove\": {\n      \t\"currencyCode\": \"EUR\",\n      \t\"centAmount\": 100000\n      },\n      \"isMatching\": false\n    }]\n  }],\n  \"isDefault\": true\n}"
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "_postman_previewtype": "text",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "542",
+                  "name": "Content-Length",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 07 Sep 2017 15:47:32 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-ca413484-ef2d-4547-b453-e5eb6d9d423e",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-f36b4abf.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "1763",
+              "body": "{\"id\":\"ca68ac21-80bb-4a4a-92cd-66aac57867a3\",\"version\":1,\"name\":\"ShippingMethod\",\"description\":\"shippingmethoddescription\",\"taxCategory\":{\"typeId\":\"tax-category\",\"id\":\"335c12e3-d61a-4d1b-94a3-068319367350\"},\"zoneRates\":[{\"zone\":{\"typeId\":\"zone\",\"id\":\"780b1740-ed4e-4207-be80-c74777103c97\"},\"shippingRates\":[{\"price\":{\"currencyCode\":\"EUR\",\"centAmount\":2000},\"freeAbove\":{\"currencyCode\":\"EUR\",\"centAmount\":100000}}]}],\"isDefault\":true,\"createdAt\":\"2017-09-07T15:47:32.543Z\",\"lastModifiedAt\":\"2017-09-07T15:47:32.543Z\",\"key\":\"shippingmethodkey\"}"
+            }
+          ]
+        },
+        {
           "_postman_id": "533be9b3-d1af-4320-2b95-c1f376186ede",
           "name": "Get ShippingMethods by ID",
           "event": [
@@ -20705,165 +20864,6 @@
             "description": "http://dev.commercetools.com/http-api-projects-shippingMethods.html#query-shippingmethods"
           },
           "response": []
-        },
-        {
-          "_postman_id": "19a57454-5f59-208f-baec-120ae64c4c38",
-          "name": "Create ShippingMethod",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id);   ",
-                  "}",
-                  "if(data.version){",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);   ",
-                  "}",
-                  "if(data.key){",
-                  "    postman.setEnvironmentVariable(\"key\", data.key);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/shipping-methods",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"name\": \"\",\n  \"key\": \"\",\n  \"description\": \"\",\n  \"taxCategory\": {\n    \"id\": \"tax-category-ID\",\n    \"typeId\": \"tax-category\"\n  },\n  \"zoneRates\": [{\n    \"zone\":{\n      \"typeId\": \"zone\",\n      \"id\":\"zone-ID\"\n    },\n    \"shippingRates\": [{\n      \"price\":{\n        \"currencyCode\": \"currencyCode\",\n        \"centAmount\": Amount\n      }\n    }]\n  }],\n  \"isDefault\": true\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-shippingMethods.html#create-shippingmethod"
-          },
-          "response": [
-            {
-              "id": "6fb0a1e6-cf9b-2e46-c5f7-191328aa6126",
-              "name": "Create ShippingMethod",
-              "originalRequest": {
-                "url": "{{host}}/{{projectKey}}/shipping-methods",
-                "method": "POST",
-                "header": [
-                  {
-                    "key": "Authorization",
-                    "value": "Bearer {{access_token}}",
-                    "description": ""
-                  },
-                  {
-                    "key": "Content-Type",
-                    "value": "application/json",
-                    "description": ""
-                  }
-                ],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"name\": \"ShippingMethod\",\n  \"key\": \"shippingmethodkey\",\n  \"description\": \"shippingmethoddescription\",\n  \"taxCategory\": {\n    \"typeId\": \"tax-category\",\n    \"id\": \"335c12e3-d61a-4d1b-94a3-068319367350\"\n  },\n  \"zoneRates\": [{\n    \"zone\":{\n      \"typeId\": \"zone\",\n      \"id\":\"780b1740-ed4e-4207-be80-c74777103c97\"\n    },\n    \"shippingRates\": [{\n      \"price\":{\n        \"currencyCode\": \"EUR\",\n        \"centAmount\": 2000\n      },\n      \"freeAbove\": {\n      \t\"currencyCode\": \"EUR\",\n      \t\"centAmount\": 100000\n      },\n      \"isMatching\": false\n    }]\n  }],\n  \"isDefault\": true\n}"
-                }
-              },
-              "status": "Created",
-              "code": 201,
-              "_postman_previewlanguage": "json",
-              "_postman_previewtype": "text",
-              "header": [
-                {
-                  "key": "Access-Control-Allow-Headers",
-                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
-                  "name": "Access-Control-Allow-Headers",
-                  "description": ""
-                },
-                {
-                  "key": "Access-Control-Allow-Methods",
-                  "value": "GET, POST, DELETE, OPTIONS",
-                  "name": "Access-Control-Allow-Methods",
-                  "description": ""
-                },
-                {
-                  "key": "Access-Control-Allow-Origin",
-                  "value": "*",
-                  "name": "Access-Control-Allow-Origin",
-                  "description": ""
-                },
-                {
-                  "key": "Access-Control-Max-Age",
-                  "value": "299",
-                  "name": "Access-Control-Max-Age",
-                  "description": ""
-                },
-                {
-                  "key": "Alt-Svc",
-                  "value": "clear",
-                  "name": "Alt-Svc",
-                  "description": ""
-                },
-                {
-                  "key": "Content-Length",
-                  "value": "542",
-                  "name": "Content-Length",
-                  "description": ""
-                },
-                {
-                  "key": "Content-Type",
-                  "value": "application/json; charset=utf-8",
-                  "name": "Content-Type",
-                  "description": ""
-                },
-                {
-                  "key": "Date",
-                  "value": "Thu, 07 Sep 2017 15:47:32 GMT",
-                  "name": "Date",
-                  "description": ""
-                },
-                {
-                  "key": "Server",
-                  "value": "nginx",
-                  "name": "Server",
-                  "description": ""
-                },
-                {
-                  "key": "Via",
-                  "value": "1.1 google",
-                  "name": "Via",
-                  "description": ""
-                },
-                {
-                  "key": "X-Correlation-ID",
-                  "value": "projects-ca413484-ef2d-4547-b453-e5eb6d9d423e",
-                  "name": "X-Correlation-ID",
-                  "description": ""
-                },
-                {
-                  "key": "X-Served-By",
-                  "value": "api-gce-f36b4abf.sphere.prod.commercetools.de",
-                  "name": "X-Served-By",
-                  "description": ""
-                },
-                {
-                  "key": "X-Served-Config",
-                  "value": "sphere-projects-ws-1.0",
-                  "name": "X-Served-Config",
-                  "description": ""
-                }
-              ],
-              "cookie": [],
-              "responseTime": "1763",
-              "body": "{\"id\":\"ca68ac21-80bb-4a4a-92cd-66aac57867a3\",\"version\":1,\"name\":\"ShippingMethod\",\"description\":\"shippingmethoddescription\",\"taxCategory\":{\"typeId\":\"tax-category\",\"id\":\"335c12e3-d61a-4d1b-94a3-068319367350\"},\"zoneRates\":[{\"zone\":{\"typeId\":\"zone\",\"id\":\"780b1740-ed4e-4207-be80-c74777103c97\"},\"shippingRates\":[{\"price\":{\"currencyCode\":\"EUR\",\"centAmount\":2000},\"freeAbove\":{\"currencyCode\":\"EUR\",\"centAmount\":100000}}]}],\"isDefault\":true,\"createdAt\":\"2017-09-07T15:47:32.543Z\",\"lastModifiedAt\":\"2017-09-07T15:47:32.543Z\",\"key\":\"shippingmethodkey\"}"
-            }
-          ]
         },
         {
           "_postman_id": "d36350da-bac6-99ea-b296-37d875fbd653",
