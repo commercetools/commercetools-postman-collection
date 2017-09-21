@@ -4915,7 +4915,7 @@
               "mode": "raw",
               "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeDescription\",\n    \"description\": {\n    \t\"en\": \"new Description EN\",\n    \t\"de\": \"new Description DE\"\n    }\n  }]\n}"
             },
-            "description": "http://dev.commercetools.com/http-api-projects-channels.html#set-roles"
+            "description": "http://dev.commercetools.com/http-api-projects-channels.html#change-description"
           },
           "response": []
         },
@@ -4999,7 +4999,7 @@
               "mode": "raw",
               "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addRoles\",\n    \"roles\": [\"InventorySupply\"]\n  }]\n}"
             },
-            "description": "http://dev.commercetools.com/http-api-projects-channels.html#set-roles"
+            "description": "http://dev.commercetools.com/http-api-projects-channels.html#add-roles"
           },
           "response": []
         },
@@ -5041,7 +5041,7 @@
               "mode": "raw",
               "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"removeRoles\",\n    \"roles\": [\"InventorySupply\"]\n  }]\n}"
             },
-            "description": "http://dev.commercetools.com/http-api-projects-channels.html#set-roles"
+            "description": "http://dev.commercetools.com/http-api-projects-channels.html#remove-roles"
           },
           "response": []
         },
@@ -5083,7 +5083,7 @@
               "mode": "raw",
               "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setAddress\",\n    \"address\": {\n    \t\"country\": \"DE\"\n    }\n  }]\n}"
             },
-            "description": "http://dev.commercetools.com/http-api-projects-channels.html#set-roles"
+            "description": "http://dev.commercetools.com/http-api-projects-channels.html#set-address"
           },
           "response": []
         },
