@@ -2326,6 +2326,18 @@
                   "}"
                 ]
               }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "",
+                  "",
+                  "",
+                  "cartExternalCustomLineItemId"
+                ]
+              }
             }
           ],
           "request": {
