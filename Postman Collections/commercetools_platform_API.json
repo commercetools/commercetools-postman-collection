@@ -5516,7 +5516,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"email\": \"thisisatest@commercetools.de\",\n  \"password\": \"thisisnotsecret\"\n  \"key\": \"customerKey\"\n}"
+              "raw": "{\n  \"email\": \"thisisatest@commercetools.de\",\n  \"password\": \"thisisnotsecret\",\n  \"key\": \"customerKey\"\n}"
             },
             "description": ""
           },
@@ -5576,27 +5576,7 @@
             }
           ],
           "request": {
-            "url": {
-              "raw": "{{host}}/{{projectKey}}/customers/?key=customerKey",
-              "auth": {},
-              "host": [
-                "{{host}}"
-              ],
-              "path": [
-                "{{projectKey}}",
-                "customers",
-                ""
-              ],
-              "query": [
-                {
-                  "key": "key",
-                  "value": "customerKey",
-                  "equals": true,
-                  "description": ""
-                }
-              ],
-              "variable": []
-            },
+            "url": "{{host}}/{{projectKey}}/customers/key=customerKey",
             "method": "GET",
             "header": [
               {
@@ -5646,7 +5626,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCustomType\",\n    \"type\": {\n      \"id\": \"{{typeId}}\",\n      \"typeId\": \"type\"\n    }\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCustomType\",\n    \"type\": {\n      \"id\": \"a5c70aa9-72cd-4d32-a398-3888734465fa\",\n      \"typeId\": \"type\"\n    }\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-custom-type"
           },
