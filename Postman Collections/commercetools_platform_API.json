@@ -21363,7 +21363,7 @@
               ],
               "request": {
                 "url": {
-                  "raw": "{{host}}/{{projectKey}}/types/{{id}}?version={{version}}",
+                  "raw": "{{host}}/{{projectKey}}/types/{{SLCFTypeID}}?version=1",
                   "auth": {},
                   "host": [
                     "{{host}}"
@@ -21371,14 +21371,14 @@
                   "path": [
                     "{{projectKey}}",
                     "types",
-                    "{{id}}"
+                    "{{SLCFTypeID}}"
                   ],
                   "query": [
                     {
-                      "description": "",
-                      "equals": true,
                       "key": "version",
-                      "value": "{{version}}"
+                      "value": "1",
+                      "equals": true,
+                      "description": ""
                     }
                   ],
                   "variable": []
@@ -21386,9 +21386,9 @@
                 "method": "DELETE",
                 "header": [
                   {
-                    "description": "",
                     "key": "Authorization",
-                    "value": "Bearer {{access_token}}"
+                    "value": "Bearer {{access_token}}",
+                    "description": ""
                   }
                 ],
                 "body": {
