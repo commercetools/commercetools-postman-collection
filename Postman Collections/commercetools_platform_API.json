@@ -21335,7 +21335,7 @@
           "item": [
             {
               "_postman_id": "d9a3dc10-fd36-6716-a853-2e9c392ad42d",
-              "name": "Delete Type by ID copy",
+              "name": "Delete Shopping List Custom Field Type",
               "event": [
                 {
                   "listen": "test",
