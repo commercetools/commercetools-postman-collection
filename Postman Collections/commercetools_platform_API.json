@@ -22564,7 +22564,7 @@
                   "    postman.setEnvironmentVariable(\"id\", data.id); ",
                   "    postman.setEnvironmentVariable(\"version\", data.version);",
                   "}",
-                  "postman.nextStepRequest('Delete Shopping List Custom Field Type');"
+                  "postman.setNextRequest('Delete Shopping List Custom Field Type');"
                 ]
               }
             }
