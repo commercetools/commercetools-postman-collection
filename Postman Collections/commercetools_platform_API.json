@@ -25567,6 +25567,503 @@
           "response": []
         }
       ]
+    },
+    {
+      "_postman_id": "797d49af-249e-6318-3fa8-4f4ca8dee6ac",
+      "name": "Authorization copy",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "e8fcebff-1cab-e910-468d-40bdd5bbf12d",
+          "name": "Obtain access token",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.access_token){",
+                  "    postman.setEnvironmentVariable(\"access_token\", data.access_token);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": {
+                "username": "{{client_id}}",
+                "password": "{{client_secret}}",
+                "saveHelperData": true,
+                "showPassword": false
+              }
+            },
+            "url": {
+              "raw": "https://{{auth_url}}/oauth/token?grant_type=client_credentials&scope=manage_project:{{projectKey}}",
+              "protocol": "https",
+              "auth": {},
+              "host": [
+                "{{auth_url}}"
+              ],
+              "path": [
+                "oauth",
+                "token"
+              ],
+              "query": [
+                {
+                  "description": "",
+                  "equals": true,
+                  "key": "grant_type",
+                  "value": "client_credentials"
+                },
+                {
+                  "description": "",
+                  "equals": true,
+                  "key": "scope",
+                  "value": "manage_project:{{projectKey}}"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "header": [
+              {
+                "description": "",
+                "key": "Authorization",
+                "value": "Basic NjVZRW1LWlZPaUU2WkdpQmMwRFZFWUpwOlFxc3ZsZFdsNUhWVlpkcnNfN2ptLXhRZjQxVkdFcTdU"
+              }
+            ],
+            "body": {},
+            "description": "Use this request to obtain an access token for your commercetools platform project via Client Credentials Flow. As a prerequisite you must have filled out environment variables in Postman for projectKey, client_id and client_secret to use this."
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "9aeeddee-b802-882d-6984-0dea43aa4a91",
+          "name": "Obtain access token through password flow",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.access_token){",
+                  "    postman.setEnvironmentVariable(\"access_token\", data.access_token);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": {
+                "username": "{{client_id}}",
+                "password": "{{client_secret}}",
+                "saveHelperData": true,
+                "showPassword": false
+              }
+            },
+            "url": {
+              "raw": "https://{{auth_url}}/oauth/{{projectKey}}/customers/token?grant_type=password&username={{user_email}}&password={{user_password}}&scope=manage_project:{{projectKey}}",
+              "protocol": "https",
+              "auth": {},
+              "host": [
+                "{{auth_url}}"
+              ],
+              "path": [
+                "oauth",
+                "{{projectKey}}",
+                "customers",
+                "token"
+              ],
+              "query": [
+                {
+                  "description": "",
+                  "equals": true,
+                  "key": "grant_type",
+                  "value": "password"
+                },
+                {
+                  "description": "",
+                  "equals": true,
+                  "key": "username",
+                  "value": "{{user_email}}"
+                },
+                {
+                  "description": "",
+                  "equals": true,
+                  "key": "password",
+                  "value": "{{user_password}}"
+                },
+                {
+                  "description": "",
+                  "equals": true,
+                  "key": "scope",
+                  "value": "manage_project:{{projectKey}}"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "header": [
+              {
+                "description": "",
+                "key": "Authorization",
+                "value": "Basic NjVZRW1LWlZPaUU2WkdpQmMwRFZFWUpwOlFxc3ZsZFdsNUhWVlpkcnNfN2ptLXhRZjQxVkdFcTdU"
+              }
+            ],
+            "body": {},
+            "description": "Use this request to obtain an access token for your commercetools platform project via Password Flow. As a prerequisite you must have filled out environment variables in Postman for projectKey, client_id, client_secret, user_email and user_password to use this."
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "c03aaa62-3549-230e-ccb3-bbadd829f42e",
+          "name": "Token Introspection",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": {
+                "username": "{{client_id}}",
+                "password": "{{client_secret}}",
+                "saveHelperData": true,
+                "showPassword": false
+              }
+            },
+            "url": {
+              "raw": "https://{{auth_url}}/oauth/introspect?token={{access_token}}",
+              "protocol": "https",
+              "auth": {},
+              "host": [
+                "{{auth_url}}"
+              ],
+              "path": [
+                "oauth",
+                "introspect"
+              ],
+              "query": [
+                {
+                  "description": "",
+                  "equals": true,
+                  "key": "token",
+                  "value": "{{access_token}}"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "header": [
+              {
+                "description": "",
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "description": "",
+                "key": "Authorization",
+                "value": "Basic NjVZRW1LWlZPaUU2WkdpQmMwRFZFWUpwOlFxc3ZsZFdsNUhWVlpkcnNfN2ptLXhRZjQxVkdFcTdU"
+              }
+            ],
+            "body": {},
+            "description": "Token introspection allows to determine the active state of an OAuth 2.0 access token and to determine meta-information about this accces token, such as the `scope`."
+          },
+          "response": [
+            {
+              "id": "a3038bfe-5abe-8ae9-bcba-9cc97dbb162c",
+              "name": "Successful introspection",
+              "originalRequest": {
+                "url": {
+                  "raw": "https://{{auth_url}}/oauth/introspect?token={{access_token}}",
+                  "protocol": "https",
+                  "auth": {},
+                  "host": [
+                    "{{auth_url}}"
+                  ],
+                  "path": [
+                    "oauth",
+                    "introspect"
+                  ],
+                  "query": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "equals": true,
+                      "description": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "_postman_previewtype": "text",
+              "header": [
+                {
+                  "description": "",
+                  "key": "Access-Control-Allow-Headers",
+                  "name": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent"
+                },
+                {
+                  "description": "",
+                  "key": "Access-Control-Allow-Methods",
+                  "name": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS"
+                },
+                {
+                  "description": "",
+                  "key": "Access-Control-Allow-Origin",
+                  "name": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "description": "",
+                  "key": "Access-Control-Max-Age",
+                  "name": "Access-Control-Max-Age",
+                  "value": "299"
+                },
+                {
+                  "description": "",
+                  "key": "Alt-Svc",
+                  "name": "Alt-Svc",
+                  "value": "clear"
+                },
+                {
+                  "description": "",
+                  "key": "Cache-Control",
+                  "name": "Cache-Control",
+                  "value": "no-store"
+                },
+                {
+                  "description": "",
+                  "key": "Content-Encoding",
+                  "name": "Content-Encoding",
+                  "value": "gzip"
+                },
+                {
+                  "description": "",
+                  "key": "Content-Type",
+                  "name": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "description": "",
+                  "key": "Date",
+                  "name": "Date",
+                  "value": "Mon, 31 Jul 2017 12:45:30 GMT"
+                },
+                {
+                  "description": "",
+                  "key": "Pragma",
+                  "name": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "description": "",
+                  "key": "Server",
+                  "name": "Server",
+                  "value": "nginx"
+                },
+                {
+                  "description": "",
+                  "key": "Transfer-Encoding",
+                  "name": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "description": "",
+                  "key": "Via",
+                  "name": "Via",
+                  "value": "1.1 google"
+                },
+                {
+                  "description": "",
+                  "key": "X-Correlation-ID",
+                  "name": "X-Correlation-ID",
+                  "value": "auth-3283b690-a28e-40c6-81c2-143e7d954334"
+                },
+                {
+                  "description": "",
+                  "key": "X-Served-By",
+                  "name": "X-Served-By",
+                  "value": "auth-gce-9b803276.sphere.prod.commercetools.de"
+                },
+                {
+                  "description": "",
+                  "key": "X-Served-Config",
+                  "name": "X-Served-Config",
+                  "value": "sphere-auth-ws-1.0"
+                }
+              ],
+              "cookie": [],
+              "responseTime": "59",
+              "body": "{\"active\":true,\"scope\":\"manage_project:valentins-test-92\",\"exp\":1501677875850}"
+            },
+            {
+              "id": "f8678df8-eccd-5522-61e9-34827b64dd72",
+              "name": "Inactive token",
+              "originalRequest": {
+                "url": {
+                  "raw": "https://{{auth_url}}/oauth/introspect?token={{access_token}}",
+                  "protocol": "https",
+                  "auth": {},
+                  "host": [
+                    "{{auth_url}}"
+                  ],
+                  "path": [
+                    "oauth",
+                    "introspect"
+                  ],
+                  "query": [
+                    {
+                      "key": "token",
+                      "value": "{{access_token}}",
+                      "equals": true,
+                      "description": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "_postman_previewtype": "text",
+              "header": [
+                {
+                  "description": "",
+                  "key": "Access-Control-Allow-Headers",
+                  "name": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent"
+                },
+                {
+                  "description": "",
+                  "key": "Access-Control-Allow-Methods",
+                  "name": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS"
+                },
+                {
+                  "description": "",
+                  "key": "Access-Control-Allow-Origin",
+                  "name": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "description": "",
+                  "key": "Access-Control-Max-Age",
+                  "name": "Access-Control-Max-Age",
+                  "value": "299"
+                },
+                {
+                  "description": "",
+                  "key": "Alt-Svc",
+                  "name": "Alt-Svc",
+                  "value": "clear"
+                },
+                {
+                  "description": "",
+                  "key": "Cache-Control",
+                  "name": "Cache-Control",
+                  "value": "no-store"
+                },
+                {
+                  "description": "",
+                  "key": "Content-Length",
+                  "name": "Content-Length",
+                  "value": "16"
+                },
+                {
+                  "description": "",
+                  "key": "Content-Type",
+                  "name": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "description": "",
+                  "key": "Date",
+                  "name": "Date",
+                  "value": "Mon, 31 Jul 2017 13:18:28 GMT"
+                },
+                {
+                  "description": "",
+                  "key": "Pragma",
+                  "name": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "description": "",
+                  "key": "Server",
+                  "name": "Server",
+                  "value": "nginx"
+                },
+                {
+                  "description": "",
+                  "key": "Via",
+                  "name": "Via",
+                  "value": "1.1 google"
+                },
+                {
+                  "description": "",
+                  "key": "X-Correlation-ID",
+                  "name": "X-Correlation-ID",
+                  "value": "auth-e5e746a5-6101-4f5c-8c36-a864e63b3d15"
+                },
+                {
+                  "description": "",
+                  "key": "X-Served-By",
+                  "name": "X-Served-By",
+                  "value": "auth-gce-9b803276.sphere.prod.commercetools.de"
+                },
+                {
+                  "description": "",
+                  "key": "X-Served-Config",
+                  "name": "X-Served-Config",
+                  "value": "sphere-auth-ws-1.0"
+                }
+              ],
+              "cookie": [],
+              "responseTime": "47",
+              "body": "{\"active\":false}"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
