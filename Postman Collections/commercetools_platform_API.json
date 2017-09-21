@@ -21418,7 +21418,7 @@
             },
             {
               "_postman_id": "80d2bc8f-7df0-fb4a-47a0-12a1616758be",
-              "name": "Create Shopping List Custom Field Type copy",
+              "name": "Create Shopping List TextLineItem Custom Field Type",
               "event": [
                 {
                   "listen": "test",
