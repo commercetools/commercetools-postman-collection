@@ -5516,7 +5516,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"email\": \"thisisatest@commercetools.de\",\n  \"password\": \"thisisnotsecret\"\n  \"key\": \"customerKey\"\n}"
+              "raw": "{\n  \"email\": \"\",\n  \"password\": \"\"\n}"
             },
             "description": ""
           },
@@ -5635,22 +5635,6 @@
         {
           "_postman_id": "7a4f2d3d-63d5-8368-0070-b34380a371b8",
           "name": "Set CustomField",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
           "request": {
             "url": "{{host}}/{{projectKey}}/customers/{{id}}",
             "method": "POST",
@@ -5683,11 +5667,10 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
                   "if (responseCode.code === 200){",
                   "    postman.setEnvironmentVariable(\"id\", null);   ",
                   "    postman.setEnvironmentVariable(\"version\", null);   ",
-                  "}"
+                  "}    "
                 ]
               }
             }
