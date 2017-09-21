@@ -22609,7 +22609,7 @@
               ],
               "request": {
                 "url": {
-                  "raw": "{{host}}/{{projectKey}}/states/{{id}}?version={{version}}",
+                  "raw": "{{host}}/{{projectKey}}/states/key=TransitionStateKey1?version=1",
                   "auth": {},
                   "host": [
                     "{{host}}"
@@ -22617,14 +22617,14 @@
                   "path": [
                     "{{projectKey}}",
                     "states",
-                    "{{id}}"
+                    "key=TransitionStateKey1"
                   ],
                   "query": [
                     {
-                      "description": "",
-                      "equals": true,
                       "key": "version",
-                      "value": "{{version}}"
+                      "value": "1",
+                      "equals": true,
+                      "description": ""
                     }
                   ],
                   "variable": []
@@ -22632,9 +22632,9 @@
                 "method": "DELETE",
                 "header": [
                   {
-                    "description": "",
                     "key": "Authorization",
-                    "value": "Bearer {{access_token}}"
+                    "value": "Bearer {{access_token}}",
+                    "description": ""
                   }
                 ],
                 "body": {
