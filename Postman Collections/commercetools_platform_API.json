@@ -21746,7 +21746,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCustomType\",\n    \"type\": {\n            \"typeId\": \"type\",\n            \"id\": \"000d10e4-0109-463e-b804-1fbd5454ad8a\"\n        },\n        \"fields\": {\n            \"myCustomFieldName\": \"ladidadidadidum\"\n        }\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCustomType\",\n    \"type\": {\n            \"typeId\": \"type\",\n            \"id\": \"089eaa2e-b54b-42d7-811e-23e180fe8dcc\"\n        },\n        \"fields\": {\n            \"StringCustomField\": \"ladidadidadidum\"\n        }\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-shoppingLists.html#set-customer"
           },
