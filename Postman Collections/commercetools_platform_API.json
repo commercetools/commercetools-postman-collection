@@ -22500,7 +22500,7 @@
           "item": [
             {
               "_postman_id": "8197c88e-2de1-a900-c0ac-c909f7f114ad",
-              "name": "Create State copy",
+              "name": "Create Transition State",
               "event": [
                 {
                   "listen": "test",
