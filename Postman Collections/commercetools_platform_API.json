@@ -4999,7 +4999,7 @@
               "mode": "raw",
               "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addRoles\",\n    \"roles\": [\"InventorySupply\"]\n  }]\n}"
             },
-            "description": "http://dev.commercetools.com/http-api-projects-channels.html#set-roles"
+            "description": "http://dev.commercetools.com/http-api-projects-channels.html#add-roles"
           },
           "response": []
         },
@@ -5041,7 +5041,7 @@
               "mode": "raw",
               "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"removeRoles\",\n    \"roles\": [\"InventorySupply\"]\n  }]\n}"
             },
-            "description": "http://dev.commercetools.com/http-api-projects-channels.html#set-roles"
+            "description": "http://dev.commercetools.com/http-api-projects-channels.html#remove-roles"
           },
           "response": []
         },
