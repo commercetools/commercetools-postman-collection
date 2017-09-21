@@ -2929,6 +2929,22 @@
         {
           "_postman_id": "703bc90a-6aec-8045-8222-ef61484d3587",
           "name": "Set CustomField",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
           "request": {
             "url": "{{host}}/{{projectKey}}/carts/{{id}}",
             "method": "POST",
@@ -2955,6 +2971,22 @@
         {
           "_postman_id": "e7bf20c0-e93c-e008-7525-ad55d27917fb",
           "name": "Add Payment",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
           "request": {
             "url": "{{host}}/{{projectKey}}/carts/{{id}}",
             "method": "POST",
