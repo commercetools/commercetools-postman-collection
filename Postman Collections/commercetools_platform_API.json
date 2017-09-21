@@ -21535,7 +21535,7 @@
             },
             {
               "_postman_id": "05d062d4-cc58-27c9-ce62-50b992e1cc50",
-              "name": "Delete Shopping List Custom Field Type copy",
+              "name": "Delete Shopping List TextLineItemCustomField Type copy",
               "event": [
                 {
                   "listen": "test",
