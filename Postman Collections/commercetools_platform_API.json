@@ -22660,7 +22660,8 @@
                       "if(data.id && data.version){",
                       "    postman.setEnvironmentVariable(\"id\", data.id); ",
                       "    postman.setEnvironmentVariable(\"version\", data.version);",
-                      "}"
+                      "}",
+                      "postman.setNextRequest('null');"
                     ]
                   }
                 }
