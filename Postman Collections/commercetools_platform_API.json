@@ -2335,9 +2335,9 @@
                   "postman.setEnvironmentVariable(\"id\", postman.getEnvironmentVariable(\"cartExternalId\"));",
                   "postman.setEnvironmentVariable(\"version\", postman.getEnvironmentVariable(\"cartExternalVersion\"));",
                   "postman.setEnvironmentVariable(\"lineItemId\", postman.getEnvironmentVariable(\"cartExternalLineItemId\"));",
-                  "postman.setEnvironmentVariable(\"customLineItemId\", postman.getEnvironmentVariable(\"cartExternalLineItemId\"));",
+                  "postman.setEnvironmentVariable(\"customLineItemId\", postman.getEnvironmentVariable(\"cartExternalCustomLineItemId\"));",
                   "",
-                  "cartExternalCustomLineItemId"
+                  ""
                 ]
               }
             }
