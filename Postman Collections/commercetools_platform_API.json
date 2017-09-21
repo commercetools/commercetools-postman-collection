@@ -22590,7 +22590,7 @@
           "item": [
             {
               "_postman_id": "79ea4948-e1b5-fd5d-5fba-bac66f2166f8",
-              "name": "Delete State copy",
+              "name": "Delete Transition State",
               "event": [
                 {
                   "listen": "test",
