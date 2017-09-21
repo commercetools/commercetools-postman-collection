@@ -22539,6 +22539,48 @@
                 "description": "http://dev.commercetools.com/http-api-projects-states.html#create-state"
               },
               "response": []
+            },
+            {
+              "_postman_id": "ac64b386-26cb-c466-bde8-7a8e0906f752",
+              "name": "Create Transition State copy",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                      "var data = JSON.parse(responseBody);",
+                      "if(data.id && data.version){",
+                      "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                      "    postman.setEnvironmentVariable(\"version\", data.version);",
+                      "}"
+                    ]
+                  }
+                }
+              ],
+              "request": {
+                "url": "{{host}}/{{projectKey}}/states",
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "",
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}"
+                  },
+                  {
+                    "description": "",
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key\": \"StateKey\",\n  \"type\": \"OrderState\"\n}"
+                },
+                "description": "http://dev.commercetools.com/http-api-projects-states.html#create-state"
+              },
+              "response": []
             }
           ],
           "_postman_isSubFolder": true
