@@ -22552,7 +22552,8 @@
                       "var data = JSON.parse(responseBody);",
                       "if(data.id && data.version){",
                       "    postman.setEnvironmentVariable(\"tranStateID2\", data.id); ",
-                      "}"
+                      "}",
+                      "postman.setNextRequest('Create State');"
                     ]
                   }
                 }
