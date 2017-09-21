@@ -25227,348 +25227,6 @@
       ]
     },
     {
-      "_postman_id": "3871be86-00f4-3de6-5694-1a7c47ec7b27",
-      "name": "Zones",
-      "description": "",
-      "item": [
-        {
-          "_postman_id": "a0f66ca5-1872-0c01-ec41-6a57e39d3a5e",
-          "name": "Create Zone",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/zones",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"name\":\"Zone\",\n  \"description\": \"\",\n  \"locations\":[{\n      \"country\": \"ES\",\n      \"state\": \"\"\n  }]\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-zones.html#create-zone"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "f963b973-cb88-3cb0-6e13-bf3e8f88d380",
-          "name": "Get Zone by ID",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/zones/{{id}}",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": "http://dev.commercetools.com/http-api-projects-zones.html#get-zone-by-id"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "48c46124-f342-939f-f8e8-b0f5c4165577",
-          "name": "Query Zones",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/zones",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": "http://dev.commercetools.com/http-api-projects-zones.html#query-zones"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "31dd2392-b2da-4d87-9dce-f736803ea9ec",
-          "name": "Change Name",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/zones/{{id}}",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeName\",\n    \"name\": \"changedName\"\n  }]\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-zones.html#change-name"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "21704140-5b5b-ff21-3b9e-246a67990a02",
-          "name": "Set Description",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/zones/{{id}}",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setDescription\",\n    \"description\": \"new ZoneDescription\"\n  }]\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-zones.html#set-description"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "78f2ca52-5340-f96e-1e23-ea837d93112f",
-          "name": "Add Location",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/zones/{{id}}",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addLocation\",\n    \"location\": {\n      \"country\": \"AT\",\n      \"state\": \"\"\n    }\n  }]\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-zones.html#add-location"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "5c468edf-5f48-78b5-0d2e-07f9fe72bd44",
-          "name": "Remove Location",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/zones/{{id}}",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"removeLocation\",\n    \"location\": {\n      \"country\": \"AT\",\n      \"state\": \"\"\n    }\n  }]\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-zones.html#remove-location"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "170d9d21-d8f1-123b-a827-31ad214b0f31",
-          "name": "Delete Zone",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": {
-              "raw": "{{host}}/{{projectKey}}/zones/{{id}}?version={{version}}",
-              "auth": {},
-              "host": [
-                "{{host}}"
-              ],
-              "path": [
-                "{{projectKey}}",
-                "zones",
-                "{{id}}"
-              ],
-              "query": [
-                {
-                  "key": "version",
-                  "value": "{{version}}",
-                  "equals": true,
-                  "description": ""
-                }
-              ],
-              "variable": []
-            },
-            "method": "DELETE",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-zones.html#delete-zone"
-          },
-          "response": []
-        }
-      ]
-    },
-    {
       "_postman_id": "4c210cb0-e35f-d223-feb6-512e743072a6",
       "name": "Types copy",
       "description": "",
@@ -26307,6 +25965,348 @@
               "raw": ""
             },
             "description": ""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "3871be86-00f4-3de6-5694-1a7c47ec7b27",
+      "name": "Zones",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "a0f66ca5-1872-0c01-ec41-6a57e39d3a5e",
+          "name": "Create Zone",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/zones",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\":\"Zone\",\n  \"description\": \"\",\n  \"locations\":[{\n      \"country\": \"ES\",\n      \"state\": \"\"\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-zones.html#create-zone"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "f963b973-cb88-3cb0-6e13-bf3e8f88d380",
+          "name": "Get Zone by ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/zones/{{id}}",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "http://dev.commercetools.com/http-api-projects-zones.html#get-zone-by-id"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "48c46124-f342-939f-f8e8-b0f5c4165577",
+          "name": "Query Zones",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/zones",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "http://dev.commercetools.com/http-api-projects-zones.html#query-zones"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "31dd2392-b2da-4d87-9dce-f736803ea9ec",
+          "name": "Change Name",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/zones/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeName\",\n    \"name\": \"changedName\"\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-zones.html#change-name"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "21704140-5b5b-ff21-3b9e-246a67990a02",
+          "name": "Set Description",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/zones/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setDescription\",\n    \"description\": \"new ZoneDescription\"\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-zones.html#set-description"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "78f2ca52-5340-f96e-1e23-ea837d93112f",
+          "name": "Add Location",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/zones/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addLocation\",\n    \"location\": {\n      \"country\": \"AT\",\n      \"state\": \"\"\n    }\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-zones.html#add-location"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "5c468edf-5f48-78b5-0d2e-07f9fe72bd44",
+          "name": "Remove Location",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/zones/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"removeLocation\",\n    \"location\": {\n      \"country\": \"AT\",\n      \"state\": \"\"\n    }\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-zones.html#remove-location"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "170d9d21-d8f1-123b-a827-31ad214b0f31",
+          "name": "Delete Zone",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": {
+              "raw": "{{host}}/{{projectKey}}/zones/{{id}}?version={{version}}",
+              "auth": {},
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "{{projectKey}}",
+                "zones",
+                "{{id}}"
+              ],
+              "query": [
+                {
+                  "key": "version",
+                  "value": "{{version}}",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-zones.html#delete-zone"
           },
           "response": []
         }
