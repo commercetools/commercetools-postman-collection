@@ -22615,6 +22615,50 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "0a49fcfe-d1f5-9924-de55-a0bea6fb3b7a",
+          "name": "Add LineItem copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "    postman.setEnvironmentVariable(\"lineItemID\", data.lineItems[0].id);",
+                  "}",
+                  "postman.setNextRequest('Change LineItem Quantity');"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/shopping-lists/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addLineItem\",\n    \"productId\": \"8e418f4f-9591-4593-aecd-4012bfbdbe95\",\n    \"variantId\": 1,\n    \"quantity\": 2\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-shoppingLists.html#set-customer"
+          },
+          "response": []
         }
       ]
     },
