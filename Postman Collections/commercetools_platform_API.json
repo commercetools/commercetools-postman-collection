@@ -22697,7 +22697,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": ""
+                  "raw": "postman.setNextRequest(null);"
                 },
                 "description": "http://dev.commercetools.com/http-api-projects-states.html#delete-state"
               },
