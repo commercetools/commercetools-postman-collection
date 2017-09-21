@@ -5465,42 +5465,6 @@
           "response": []
         },
         {
-          "_postman_id": "711d55fd-afbd-8277-7059-153644bf417e",
-          "name": "Get Customer by ID",
-          "request": {
-            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "103c6a10-8615-7531-65a3-410645105b3b",
-          "name": "Get Customer by Key",
-          "request": {
-            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#get-customer-by-key"
-          },
-          "response": []
-        },
-        {
           "_postman_id": "ecb8d56e-5039-ed11-690c-8f1f305338f4",
           "name": "Create Customer",
           "event": [
@@ -5540,6 +5504,42 @@
               "raw": "{\n  \"email\": \"\",\n  \"password\": \"\"\n}"
             },
             "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "711d55fd-afbd-8277-7059-153644bf417e",
+          "name": "Get Customer by ID",
+          "request": {
+            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "103c6a10-8615-7531-65a3-410645105b3b",
+          "name": "Get Customer by Key",
+          "request": {
+            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#get-customer-by-key"
           },
           "response": []
         },
