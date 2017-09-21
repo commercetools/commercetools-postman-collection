@@ -21408,7 +21408,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addTextLineItem\",\n    \"name\": {\n      \"de\": \"text2\"\n    }\n  }]\n}"
+                  "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addTextLineItem\",\n    \"name\": {\n      \"de\": \"textDE\",\n      \"en\": \"textEN\"\n    }\n  }]\n}"
                 },
                 "description": "http://dev.commercetools.com/http-api-projects-shoppingLists.html#set-customer"
               },
