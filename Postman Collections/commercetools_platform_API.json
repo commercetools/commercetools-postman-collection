@@ -22170,7 +22170,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setLineItemCustomType\",\n    \"lineItemId\": \"23d18a97-33ff-448a-bc08-fc3dbc6586fe\",\n    \"type\": {\n    \t\"id\": \"{{SLCFTypeID}}\"\n    }\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setLineItemCustomType\",\n    \"lineItemId\": \"23d18a97-33ff-448a-bc08-fc3dbc6586fe\",\n    \"type\": {\n    \t\"id\": \"96a0e2f6-1369-4359-ad9e-99132482f214\"\n    }\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-shoppingLists.html#set-customer"
           },
