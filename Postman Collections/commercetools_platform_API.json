@@ -22511,7 +22511,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeTextLineItemsOrder\",\n    \"textLineItemOrder\": [\n      \"6ea7381f-5d85-4ff0-b376-8b8d83c50388\",\n      \"b50acdc6-1ec5-4bf0-a890-1dc40746a5da\"\n    ]\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeTextLineItemsOrder\",\n    \"textLineItemOrder\": [\n      \"textLineItemID2\",\n      \"textLineItemID\"\n    ]\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-shoppingLists.html#set-customer"
           },
