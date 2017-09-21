@@ -22213,7 +22213,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setLineItemCustomField\",\n    \"lineItemId\": \"23d18a97-33ff-448a-bc08-fc3dbc6586fe\",\n    \"name\": \"myCustomFieldName\",\n    \"value\": \"value\"\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setLineItemCustomField\",\n    \"lineItemId\": \"{{lineItemID}}\",\n    \"name\": \"myCustomFieldName\",\n    \"value\": \"value\"\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-shoppingLists.html#set-customer"
           },
