@@ -1660,48 +1660,6 @@
               "response": []
             },
             {
-              "_postman_id": "c7d72743-45ff-5736-3c61-72eec114bc9a",
-              "name": "Create Cart ExternalAmount",
-              "event": [
-                {
-                  "listen": "test",
-                  "script": {
-                    "type": "text/javascript",
-                    "exec": [
-                      "var data = JSON.parse(responseBody);",
-                      "if(data.id && data.version){",
-                      "    postman.setEnvironmentVariable(\"cartExternalAmountId\", data.id); ",
-                      "    postman.setEnvironmentVariable(\"cartExternalAmountVersion\", data.version);",
-                      "    postman.setEnvironmentVariable(\"cartExternalAmountLineItemId\", data.lineItems[0].id);",
-                      "}"
-                    ]
-                  }
-                }
-              ],
-              "request": {
-                "url": "{{host}}/{{projectKey}}/carts",
-                "method": "POST",
-                "header": [
-                  {
-                    "key": "Authorization",
-                    "value": "Bearer {{access_token}}",
-                    "description": ""
-                  },
-                  {
-                    "key": "Content-Type",
-                    "value": "application/json",
-                    "description": ""
-                  }
-                ],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"currency\": \"EUR\",\n  \"customerId\": \"0c2eaad4-833c-43c1-98a4-5d03f57e9329\",\n  \"shippingAddress\": {\n    \"country\": \"DE\"\n  },\n  \"taxMode\": \"ExternalAmount\",\n   \"lineItems\": [{\n    \"productId\": \"e6b98eaa-631d-422b-9fc0-af67c18ff48d\",\n    \"variantId\": 1\n  }]\n}"
-                },
-                "description": "http://dev.commercetools.com/http-api-projects-carts.html#create-cart"
-              },
-              "response": []
-            },
-            {
               "_postman_id": "407da371-fdc3-c701-cbfa-eb304b010dd0",
               "name": "Add CustomLineItem copy",
               "event": [
@@ -1741,6 +1699,48 @@
                   "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addCustomLineItem\",\n    \"name\": {\n      \"en\": \"Name EN\",\n      \"de\": \"Name DE\"\n    },\n    \"quantity\": 1,\n    \"money\": {\n        \"currencyCode\": \"EUR\",\n        \"centAmount\":4200\n      },\n    \"slug\": \"mySlug\"\n  }]\n}"
                 },
                 "description": "http://dev.commercetools.com/http-api-projects-carts.html#add-customlineitem"
+              },
+              "response": []
+            },
+            {
+              "_postman_id": "c7d72743-45ff-5736-3c61-72eec114bc9a",
+              "name": "Create Cart ExternalAmount",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "var data = JSON.parse(responseBody);",
+                      "if(data.id && data.version){",
+                      "    postman.setEnvironmentVariable(\"cartExternalAmountId\", data.id); ",
+                      "    postman.setEnvironmentVariable(\"cartExternalAmountVersion\", data.version);",
+                      "    postman.setEnvironmentVariable(\"cartExternalAmountLineItemId\", data.lineItems[0].id);",
+                      "}"
+                    ]
+                  }
+                }
+              ],
+              "request": {
+                "url": "{{host}}/{{projectKey}}/carts",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"currency\": \"EUR\",\n  \"customerId\": \"0c2eaad4-833c-43c1-98a4-5d03f57e9329\",\n  \"shippingAddress\": {\n    \"country\": \"DE\"\n  },\n  \"taxMode\": \"ExternalAmount\",\n   \"lineItems\": [{\n    \"productId\": \"e6b98eaa-631d-422b-9fc0-af67c18ff48d\",\n    \"variantId\": 1\n  }]\n}"
+                },
+                "description": "http://dev.commercetools.com/http-api-projects-carts.html#create-cart"
               },
               "response": []
             }
