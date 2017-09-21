@@ -22128,7 +22128,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeLineItemOrder\",\n    \"lineItemOrder\": [\n      \"{{lineItemID2}}\",\n      \"{{lineItemID}}\"\n    ]\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeLineItemsOrder\",\n    \"lineItemOrder\": [\n      \"{{lineItemID2}}\",\n      \"{{lineItemID}}\"\n    ]\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-shoppingLists.html#set-customer"
           },
