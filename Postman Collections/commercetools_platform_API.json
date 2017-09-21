@@ -20593,7 +20593,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"name\": \"\",\n  \"key\": \"\",\n  \"description\": \"\",\n  \"taxCategory\": {\n    \"id\": \"tax-category-ID\",\n    \"typeId\": \"tax-category\"\n  },\n  \"zoneRates\": [{\n    \"zone\":{\n      \"typeId\": \"zone\",\n      \"id\":\"zone-ID\"\n    },\n    \"shippingRates\": [{\n      \"price\":{\n        \"currencyCode\": \"currencyCode\",\n        \"centAmount\": Amount\n      }\n    }]\n  }],\n  \"isDefault\": true\n}"
+              "raw": "{\n  \"name\": \"\",\n  \"key\": \"\",\n  \"description\": \"\",\n  \"taxCategory\": {\n    \"id\": \"tax-category-ID\",\n    \"typeId\": \"tax-category\"\n  },\n  \"zoneRates\": [{\n    \"zone\":{\n      \"typeId\": \"zone\",\n      \"id\":\"zone-ID\"\n    },\n    \"shippingRates\": [{\n      \"price\":{\n        \"currencyCode\": \"currencyCode\",\n        \"centAmount\": 10\n      }\n    }]\n  }],\n  \"isDefault\": true\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-shippingMethods.html#create-shippingmethod"
           },
