@@ -20769,7 +20769,7 @@
           ],
           "request": {
             "url": {
-              "raw": "{{host}}/{{projectKey}}/shipping-methods?cartId={{cartId}}",
+              "raw": "{{host}}/{{projectKey}}/shipping-methods?cartId=7b629c92-b0c4-463d-a982-bdff0ac1f8ea",
               "auth": {},
               "host": [
                 "{{host}}"
@@ -20781,7 +20781,7 @@
               "query": [
                 {
                   "key": "cartId",
-                  "value": "{{cartId}}",
+                  "value": "7b629c92-b0c4-463d-a982-bdff0ac1f8ea",
                   "equals": true,
                   "description": ""
                 }
