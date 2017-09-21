@@ -4913,7 +4913,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeDescription\",\n    \"name\": {\n    \t\"en\": \"new Description EN\",\n    \t\"de\": \"new Description DE\"\n    }\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeDescription\",\n    \"description\": {\n    \t\"en\": \"new Description EN\",\n    \t\"de\": \"new Description DE\"\n    }\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-channels.html#set-roles"
           },
@@ -4921,7 +4921,7 @@
         },
         {
           "_postman_id": "9e353172-935a-aa19-791c-41ac8fb4472f",
-          "name": "Set Role",
+          "name": "Set Roles",
           "event": [
             {
               "listen": "test",
