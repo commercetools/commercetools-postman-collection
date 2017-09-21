@@ -20749,40 +20749,6 @@
           "response": []
         },
         {
-          "_postman_id": "f5c20af5-5325-cea7-4a7e-9e0309cbc49b",
-          "name": "Get ShippingMethods by Key",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/shipping-methods/key={{key}}",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": "http://dev.commercetools.com/http-api-projects-shippingMethods.html#get-shippingmethod-by-key"
-          },
-          "response": []
-        },
-        {
           "_postman_id": "8cb835dc-e3e5-8a05-826d-853ef4c3f73c",
           "name": "Get ShippingMethods for a Cart",
           "request": {
