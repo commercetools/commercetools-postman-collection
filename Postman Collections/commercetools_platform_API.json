@@ -22470,7 +22470,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setTextLineItemDescription\",\n    \"textLineItemId\": \"{{textLineItemID}}\",\n    \"description\": {\n      \"de\": \"descriptionDE\",\n      \"en\": \"descriotionEN\"\n    }\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setTextLineItemDescription\",\n    \"textLineItemId\": \"{{lineItemID}}\",\n    \"description\": {\n      \"de\": \"descriptionDE\",\n      \"en\": \"descriotionEN\"\n    }\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-shoppingLists.html#set-customer"
           },
