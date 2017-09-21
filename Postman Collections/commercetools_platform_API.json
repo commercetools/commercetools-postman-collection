@@ -4779,7 +4779,7 @@
             }
           ],
           "request": {
-            "url": "{{host}}/{{projectKey}}/categories/{{id}}",
+            "url": "{{host}}/{{projectKey}}/channels/{{id}}",
             "method": "GET",
             "header": [
               {
