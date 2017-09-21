@@ -3329,6 +3329,49 @@
             "description": "http://dev.commercetools.com/http-api-projects-carts.html#delete-cart"
           },
           "response": []
+        },
+        {
+          "_postman_id": "407da371-fdc3-c701-cbfa-eb304b010dd0",
+          "name": "Add CustomLineItem copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "    postman.setEnvironmentVariable(\"customLineItemId\", data.customLineItems[0].id);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/carts/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addCustomLineItem\",\n    \"name\": {\n      \"en\": \"Name EN\",\n      \"de\": \"Name DE\"\n    },\n    \"quantity\": 1,\n    \"money\": {\n        \"currencyCode\": \"EUR\",\n        \"centAmount\":4200\n      },\n    \"slug\": \"mySlug\"\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-carts.html#add-customlineitem"
+          },
+          "response": []
         }
       ]
     },
