@@ -5173,7 +5173,7 @@
         },
         {
           "_postman_id": "22c9dd41-3c46-f11a-8e8f-5423541b2e0d",
-          "name": "Set CustomField copy",
+          "name": "Set GeoLocation",
           "event": [
             {
               "listen": "test",
