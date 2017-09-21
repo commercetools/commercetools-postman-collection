@@ -22856,48 +22856,6 @@
           "response": []
         },
         {
-          "_postman_id": "094442eb-d221-5ab8-f279-bfd88fb7c69f",
-          "name": "Set Roles",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/states/{{id}}",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setRoles\",\n    \"roles\": []\n  }]\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-states.html#change-initial-state"
-          },
-          "response": []
-        },
-        {
           "_postman_id": "22793375-90da-a251-7d3f-f41e73a23dcb",
           "name": "Add Roles",
           "event": [
@@ -22976,6 +22934,48 @@
             "body": {
               "mode": "raw",
               "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"removeRoles\",\n    \"roles\": [\"ReviewIncludedInStatistics\"]\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-states.html#change-initial-state"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "094442eb-d221-5ab8-f279-bfd88fb7c69f",
+          "name": "Set Roles",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/states/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setRoles\",\n    \"roles\": []\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-states.html#change-initial-state"
           },
