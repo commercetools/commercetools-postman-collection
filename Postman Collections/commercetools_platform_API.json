@@ -20804,6 +20804,22 @@
         {
           "_postman_id": "24939736-0f43-efc6-afd9-2afc55d258c5",
           "name": "Get ShippingMethods for a Location",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
           "request": {
             "url": {
               "raw": "{{host}}/{{projectKey}}/shipping-methods?country={{country}}",
