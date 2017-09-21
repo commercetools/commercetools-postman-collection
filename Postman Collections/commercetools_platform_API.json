@@ -21704,7 +21704,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCustomer\",\n    \"customer\": {\n      \"typeId\": \"customer\",\n      \"id\": \"fe40d0eb-6049-4448-a29c-ec399967662d\"\n    }\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCustomer\",\n    \"customer\": {\n      \"typeId\": \"customer\",\n      \"id\": \"0c2eaad4-833c-43c1-98a4-5d03f57e9329\"\n    }\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-shoppingLists.html#set-customer"
           },
