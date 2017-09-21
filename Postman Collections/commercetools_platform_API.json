@@ -21443,49 +21443,6 @@
                 "description": ""
               },
               "response": []
-            },
-            {
-              "_postman_id": "53d2f3ca-5306-fb59-9483-a8a66a3dba97",
-              "name": "Remove LineItem copy",
-              "event": [
-                {
-                  "listen": "test",
-                  "script": {
-                    "type": "text/javascript",
-                    "exec": [
-                      "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                      "var data = JSON.parse(responseBody);",
-                      "if(data.id && data.version){",
-                      "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                      "    postman.setEnvironmentVariable(\"version\", data.version);",
-                      "}",
-                      "postman.setNextRequest('Add TextLineItem');"
-                    ]
-                  }
-                }
-              ],
-              "request": {
-                "url": "{{host}}/{{projectKey}}/shopping-lists/{{id}}",
-                "method": "POST",
-                "header": [
-                  {
-                    "description": "",
-                    "key": "Authorization",
-                    "value": "Bearer {{access_token}}"
-                  },
-                  {
-                    "description": "",
-                    "key": "Content-Type",
-                    "value": "application/json"
-                  }
-                ],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"removeLineItem\",\n    \"lineItemId\": \"{{lineItemID}}\",\n    \"quantity\": 2\n  }]\n}"
-                },
-                "description": "http://dev.commercetools.com/http-api-projects-shoppingLists.html#set-customer"
-              },
-              "response": []
             }
           ],
           "_postman_isSubFolder": true
