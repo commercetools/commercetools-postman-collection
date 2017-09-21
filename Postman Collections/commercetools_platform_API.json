@@ -21976,7 +21976,8 @@
                   "if(data.id && data.version){",
                   "    postman.setEnvironmentVariable(\"id\", data.id); ",
                   "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
+                  "}",
+                  "postman.setNextRequest('Add TextLineItem');"
                 ]
               }
             }
@@ -21998,7 +21999,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"removeLineItem\",\n    \"lineItemId\": \"{{lineItemID}}\",\n    \"quantity\": 1\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"removeLineItem\",\n    \"lineItemId\": \"{{lineItemID}}\",\n    \"quantity\": 2\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-shoppingLists.html#set-customer"
           },
