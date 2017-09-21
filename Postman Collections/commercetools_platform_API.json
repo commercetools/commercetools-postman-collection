@@ -4753,7 +4753,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"key\": \"listPrice\",\n  \"roles\": \"ProductDistribution\",\n  \"name\": {\n    \"de\": \"ListPrice\",\n    \"en\": \"ListPrice\",\n    \"ch\": \"ListPrice\",\n    \"fr\": \"ListPrice\"\n  }\n}"
+              "raw": "{\n  \"key\": \"listPrice\",\n  \"roles\": [\"ProductDistribution\"],\n  \"name\": {\n    \"de\": \"ListPrice\",\n    \"en\": \"ListPrice\",\n    \"ch\": \"ListPrice\",\n    \"fr\": \"ListPrice\"\n  }\n}"
             },
             "description": ""
           },
