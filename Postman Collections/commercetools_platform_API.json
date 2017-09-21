@@ -21340,7 +21340,6 @@
                       "if(data.id && data.version){",
                       "    postman.setEnvironmentVariable(\"id\", data.id); ",
                       "    postman.setEnvironmentVariable(\"version\", data.version);",
-                      "    postman.setEnvironmentVariable(\"lineItemID\", data.lineItems[0].id);",
                       "}",
                       "postman.setNextRequest('Change LineItem Quantity');"
                     ]
@@ -21364,7 +21363,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addLineItem\",\n    \"productId\": \"8e418f4f-9591-4593-aecd-4012bfbdbe95\",\n    \"variantId\": 1,\n    \"quantity\": 2\n  }]\n}"
+                  "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addLineItem\",\n    \"productId\": \"225ba16a-c1bf-4726-91ee-527ad905ea29\",\n    \"variantId\": 1,\n    \"quantity\": 2\n  }]\n}"
                 },
                 "description": "http://dev.commercetools.com/http-api-projects-shoppingLists.html#set-customer"
               },
