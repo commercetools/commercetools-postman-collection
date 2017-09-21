@@ -22428,7 +22428,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeTextLineItemName\",\n    \"textLineItemId\": \"{{textLineItemID}}\",\n    \"name\":{\n      \"de\": \"nameDE\",\n      \"en\": \"nameEN\"\n    }\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeTextLineItemName\",\n    \"textLineItemId\": \"{{lineItemID}}\",\n    \"name\":{\n      \"de\": \"nameDE\",\n      \"en\": \"nameEN\"\n    }\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-shoppingLists.html#set-customer"
           },
