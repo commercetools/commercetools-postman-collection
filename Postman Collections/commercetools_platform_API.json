@@ -5083,7 +5083,7 @@
               "mode": "raw",
               "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setAddress\",\n    \"address\": {\n    \t\"country\": \"DE\"\n    }\n  }]\n}"
             },
-            "description": "http://dev.commercetools.com/http-api-projects-channels.html#set-roles"
+            "description": "http://dev.commercetools.com/http-api-projects-channels.html#set-address"
           },
           "response": []
         },
