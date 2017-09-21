@@ -21332,7 +21332,74 @@
           "_postman_id": "69cc425f-2be6-094d-d621-f4299c89c96c",
           "name": "PostHelpers",
           "description": "",
-          "item": [],
+          "item": [
+            {
+              "_postman_id": "d9a3dc10-fd36-6716-a853-2e9c392ad42d",
+              "name": "Delete Type by ID copy",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                      "var data = JSON.parse(responseBody);",
+                      "if(data.id && data.version){",
+                      "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                      "    postman.setEnvironmentVariable(\"version\", data.version);",
+                      "    postman.setEnvironmentVariable(\"key\", data.key);",
+                      "}",
+                      "else if(responseCode.code==200){",
+                      "    if(data.results){",
+                      "        postman.setEnvironmentVariable(\"id\", data.results[0].id);   ",
+                      "        postman.setEnvironmentVariable(\"version\", data.results[0].version);   ",
+                      "        postman.setEnvironmentVariable(\"key\", data.results[0].key);",
+                      "    }",
+                      "}",
+                      ""
+                    ]
+                  }
+                }
+              ],
+              "request": {
+                "url": {
+                  "raw": "{{host}}/{{projectKey}}/types/{{id}}?version={{version}}",
+                  "auth": {},
+                  "host": [
+                    "{{host}}"
+                  ],
+                  "path": [
+                    "{{projectKey}}",
+                    "types",
+                    "{{id}}"
+                  ],
+                  "query": [
+                    {
+                      "description": "",
+                      "equals": true,
+                      "key": "version",
+                      "value": "{{version}}"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "DELETE",
+                "header": [
+                  {
+                    "description": "",
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "description": ""
+              },
+              "response": []
+            }
+          ],
           "_postman_isSubFolder": true
         },
         {
@@ -24436,72 +24503,6 @@
                 "key": "Authorization",
                 "value": "Bearer {{access_token}}",
                 "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "d9a3dc10-fd36-6716-a853-2e9c392ad42d",
-          "name": "Delete Type by ID copy",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "    postman.setEnvironmentVariable(\"key\", data.key);",
-                  "}",
-                  "else if(responseCode.code==200){",
-                  "    if(data.results){",
-                  "        postman.setEnvironmentVariable(\"id\", data.results[0].id);   ",
-                  "        postman.setEnvironmentVariable(\"version\", data.results[0].version);   ",
-                  "        postman.setEnvironmentVariable(\"key\", data.results[0].key);",
-                  "    }",
-                  "}",
-                  ""
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": {
-              "raw": "{{host}}/{{projectKey}}/types/{{id}}?version={{version}}",
-              "auth": {},
-              "host": [
-                "{{host}}"
-              ],
-              "path": [
-                "{{projectKey}}",
-                "types",
-                "{{id}}"
-              ],
-              "query": [
-                {
-                  "description": "",
-                  "equals": true,
-                  "key": "version",
-                  "value": "{{version}}"
-                }
-              ],
-              "variable": []
-            },
-            "method": "DELETE",
-            "header": [
-              {
-                "description": "",
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}"
               }
             ],
             "body": {
