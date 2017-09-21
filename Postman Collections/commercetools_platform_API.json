@@ -20751,6 +20751,22 @@
         {
           "_postman_id": "8cb835dc-e3e5-8a05-826d-853ef4c3f73c",
           "name": "Get ShippingMethods for a Cart",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
           "request": {
             "url": {
               "raw": "{{host}}/{{projectKey}}/shipping-methods?cartId={{cartId}}",
