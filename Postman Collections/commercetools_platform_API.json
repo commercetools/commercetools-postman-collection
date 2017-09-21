@@ -4873,7 +4873,7 @@
               "mode": "raw",
               "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeName\",\n    \"name\": {\n    \t\"en\": \"new Channel Name EN\",\n    \t\"de\": \"new Channel Name DE\"\n    }\n  }]\n}"
             },
-            "description": "http://dev.commercetools.com/http-api-projects-channels.html#set-roles"
+            "description": "http://dev.commercetools.com/http-api-projects-channels.html#change-name"
           },
           "response": []
         },
