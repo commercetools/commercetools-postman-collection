@@ -21280,7 +21280,7 @@
       "item": [
         {
           "_postman_id": "53125c70-1864-4579-c91c-d5f5c44ac664",
-          "name": "Create a Type copy",
+          "name": "Create Shopping List Custom Field Type",
           "event": [
             {
               "listen": "test",
