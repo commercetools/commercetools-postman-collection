@@ -22849,7 +22849,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setTransitions\",\n    \"transitions\": [\n    {\n      \"typeId\": \"state\",\n      \"id\": \"07038a7d-1232-4fc4-a356-da0088f5c520\"\n    },\n    {\n      \"typeId\": \"state\",\n      \"id\": \"98be7369-ba50-4707-b2b8-d3e04938d714\"\n    }\n  ]\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setTransitions\",\n    \"transitions\": [\n    {\n      \"typeId\": \"state\",\n      \"id\": \"51341d4e-688e-4f65-bcc2-52989f7d65c2\"\n    }\n  ]\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-states.html#set-transitions"
           },
