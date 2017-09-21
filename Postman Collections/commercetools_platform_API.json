@@ -22645,7 +22645,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setTextLineItemCustomType\",\n    \"textLineItemId\": \"{{lineItemID}}\",\n    \"type\": {\n        \"id\": \"96a0e2f6-1369-4359-ad9e-99132482f214\"\n    }\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setTextLineItemCustomType\",\n    \"textLineItemId\": \"{{lineItemID}}\",\n    \"type\": {\n        \"id\": \"{{SLTlicfTypeID}}\"\n    }\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-shoppingLists.html#set-customer"
           },
