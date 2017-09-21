@@ -5576,7 +5576,27 @@
             }
           ],
           "request": {
-            "url": "{{host}}/{{projectKey}}/customers/key=customerKey",
+            "url": {
+              "raw": "{{host}}/{{projectKey}}/customers/?key=customerKey",
+              "auth": {},
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "{{projectKey}}",
+                "customers",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "key",
+                  "value": "customerKey",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
             "method": "GET",
             "header": [
               {
