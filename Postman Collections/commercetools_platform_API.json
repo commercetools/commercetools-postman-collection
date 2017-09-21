@@ -21322,61 +21322,6 @@
             "description": "http://dev.commercetools.com/http-api-projects-shippingMethods.html#delete-shippingmethod-by-id"
           },
           "response": []
-        },
-        {
-          "_postman_id": "ef1a10d5-50b1-8647-de6a-c926d7063377",
-          "name": "Delete ShippingMethod by Key",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "if (responseCode.code === 200){",
-                  "    postman.setEnvironmentVariable(\"id\", null);   ",
-                  "    postman.setEnvironmentVariable(\"version\", null);   ",
-                  "} "
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": {
-              "raw": "{{host}}/{{projectKey}}/shipping-methods/key={{key}}?version={{version}}",
-              "auth": {},
-              "host": [
-                "{{host}}"
-              ],
-              "path": [
-                "{{projectKey}}",
-                "shipping-methods",
-                "key={{key}}"
-              ],
-              "query": [
-                {
-                  "key": "version",
-                  "value": "{{version}}",
-                  "equals": true,
-                  "description": ""
-                }
-              ],
-              "variable": []
-            },
-            "method": "DELETE",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-shippingMethods.html#delete-shippingmethod-by-key"
-          },
-          "response": []
         }
       ]
     },
