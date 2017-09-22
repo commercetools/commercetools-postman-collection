@@ -6725,7 +6725,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n\t\"email\": \"{{id}}\",\n\t\"version\": {{version}},\n\t\"currentPassword\": \"foobar\",\n\t\"newPassword\": \"foonew\"\n}"
+              "raw": "{\n\t\"email\": \"foo@bar.de\",\n\t\"version\": {{version}},\n\t\"currentPassword\": \"foobar\",\n\t\"newPassword\": \"foonew\"\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-customers.html#change-customers-password"
           },
