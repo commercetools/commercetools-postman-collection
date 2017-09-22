@@ -6229,7 +6229,7 @@
         },
         {
           "_postman_id": "2128d0f5-ef27-d5e0-5d19-8801a627e0c8",
-          "name": "Set CustomerGroup copy",
+          "name": "Set Customer Number",
           "event": [
             {
               "listen": "test",
