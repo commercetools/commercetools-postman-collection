@@ -5674,7 +5674,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeEmail\",\n    \"email\": \"bar@foo.com\"\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeEmail\",\n    \"fistName\": \"firstName\"\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-first-name"
           },
@@ -5816,6 +5816,48 @@
               "raw": ""
             },
             "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "d21c6251-d1ae-8534-ef9a-2fce9a61584b",
+          "name": "Change First Name copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeEmail\",\n    \"fistName\": \"firstName\"\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-first-name"
           },
           "response": []
         }
