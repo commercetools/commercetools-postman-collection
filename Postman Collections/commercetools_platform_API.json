@@ -6649,7 +6649,7 @@
         },
         {
           "_postman_id": "14e870df-73c7-a03f-22d3-0522bcb4ac42",
-          "name": "Set Key copy",
+          "name": "Change Customer's Password",
           "event": [
             {
               "listen": "test",
