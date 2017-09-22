@@ -6139,7 +6139,7 @@
               "mode": "raw",
               "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setDefaultBillingAddress\",\n    \"addressId\": \"{{addressId}}\"\n  }]\n}"
             },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-default-billing-address"
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#add-billing-address-id"
           },
           "response": []
         },
