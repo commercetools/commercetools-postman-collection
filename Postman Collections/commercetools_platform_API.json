@@ -6431,7 +6431,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setDateOfBirth\",\n    \"dateOfBirth\": \"\"\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setDateOfBirth\",\n    \"dateOfBirth\": \"2015-10-21\"\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-date-of-birth"
           },
