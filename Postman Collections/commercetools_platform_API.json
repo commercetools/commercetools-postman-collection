@@ -6944,6 +6944,48 @@
           "response": []
         },
         {
+          "_postman_id": "70ddfb47-c9d9-5841-f441-a3f140d61eb5",
+          "name": "Get Customer By Email Token copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/customers/email-token={{token}}",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"email\": \"foo@bar.de\"\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#get-customer-by-email-token"
+          },
+          "response": []
+        },
+        {
           "_postman_id": "936a5a26-5493-ed51-3c87-87aff5bdc481",
           "name": "Delete Customer",
           "event": [
@@ -6995,48 +7037,6 @@
               "raw": ""
             },
             "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "70ddfb47-c9d9-5841-f441-a3f140d61eb5",
-          "name": "Get Customer By Email Token copy",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/customers/email-token={{token}}",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n\t\"email\": \"foo@bar.de\"\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#get-customer-by-email-token"
           },
           "response": []
         }
