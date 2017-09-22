@@ -6775,6 +6775,49 @@
           "response": []
         },
         {
+          "_postman_id": "48ff8050-5c0b-2e7e-461e-ba8654a4186d",
+          "name": "Create a Token for Resetting the Customer's Password copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.value){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "    postman.setEnvironmentVariable(\"token\", data.value);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/customers/password-token",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"email\": \"foo@bar.de\"\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#create-a-token-for-resetting-the-customers-password"
+          },
+          "response": []
+        },
+        {
           "_postman_id": "936a5a26-5493-ed51-3c87-87aff5bdc481",
           "name": "Delete Customer",
           "event": [
@@ -6826,49 +6869,6 @@
               "raw": ""
             },
             "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "48ff8050-5c0b-2e7e-461e-ba8654a4186d",
-          "name": "Create a Token for Resetting the Customer's Password copy",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.value){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "    postman.setEnvironmentVariable(\"token\", data.value);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/customers/password-token",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n\t\"email\": \"foo@bar.de\"\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#create-a-token-for-resetting-the-customers-password"
           },
           "response": []
         }
