@@ -6981,7 +6981,7 @@
               "mode": "raw",
               "raw": "{\n\t\"email\": \"foo@bar.de\"\n}"
             },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#get-customer-by-email-token"
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#verify-customers-email"
           },
           "response": []
         },
