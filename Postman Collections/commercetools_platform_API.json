@@ -5564,7 +5564,7 @@
         },
         {
           "_postman_id": "e02ff2f5-ebcb-65c0-4b08-9770b7480a73",
-          "name": "Get Customer by Key",
+          "name": "Get Customer by ID copy",
           "event": [
             {
               "listen": "test",
