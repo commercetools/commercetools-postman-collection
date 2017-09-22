@@ -6103,7 +6103,7 @@
         },
         {
           "_postman_id": "d0bd57ff-b58d-ef25-7b9f-c3b88bc97412",
-          "name": "Set Default Billing Address copy",
+          "name": "Add Billing Address ID",
           "event": [
             {
               "listen": "test",
