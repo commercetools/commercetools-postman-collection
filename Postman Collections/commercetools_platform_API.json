@@ -5935,7 +5935,7 @@
         },
         {
           "_postman_id": "656474dc-3c69-2032-a498-1fa64114f2f2",
-          "name": "Change Address copy",
+          "name": "Remove Address",
           "event": [
             {
               "listen": "test",
