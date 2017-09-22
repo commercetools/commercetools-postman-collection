@@ -6725,7 +6725,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"email\": \"bar@foo.de\",\n  \"password\": \"foonew\"\n}"
+              "raw": "{\n  \"email\": \"bar@foo.com\",\n  \"password\": \"foonew\"\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-customers.html#authenticate-customer-sign-in"
           },
