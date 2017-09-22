@@ -6397,7 +6397,7 @@
         },
         {
           "_postman_id": "d6354b78-7990-17dd-19d4-ab3c285e1b7f",
-          "name": "Set Dat of Birth",
+          "name": "Set Date of Birth",
           "event": [
             {
               "listen": "test",
