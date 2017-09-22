@@ -6745,7 +6745,7 @@
                   "if(data.id && data.value){",
                   "    postman.setEnvironmentVariable(\"id\", data.id); ",
                   "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "    postman.setEnvironmentVariable(\"token\", data.version);",
+                  "    postman.setEnvironmentVariable(\"token\", data.value);",
                   "}"
                 ]
               }
