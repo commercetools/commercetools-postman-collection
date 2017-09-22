@@ -6643,7 +6643,7 @@
               "mode": "raw",
               "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setLocale\",\n    \"locale\": \"de\"\n  }]\n}"
             },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-locale"
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-key"
           },
           "response": []
         },
