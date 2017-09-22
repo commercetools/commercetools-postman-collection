@@ -6813,7 +6813,7 @@
               "mode": "raw",
               "raw": "{\n\t\"email\": \"foo@bar.de\"\n}"
             },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#create-a-token-for-resetting-the-customers-password"
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#get-customer-by-password-token"
           },
           "response": []
         },
