@@ -7043,6 +7043,1714 @@
       ]
     },
     {
+      "_postman_id": "e914ac34-f6f4-9a32-d6f0-d71a9bc5a63c",
+      "name": "Customers copy",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "a695e6f2-bce5-ff90-9ebd-c9d055503a7c",
+          "name": "Query Customers",
+          "request": {
+            "url": "{{host}}/{{projectKey}}/customers",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#create-customer-sign-up"
+          },
+          "response": [
+            {
+              "id": "30ce118a-a2a1-8f88-8b24-5a657bb3ffaa",
+              "name": "Query Customers by Email",
+              "originalRequest": {
+                "url": {
+                  "raw": "{{host}}/{{projectKey}}/customers?where=email%3D%22demo%40commercetools.de%22",
+                  "auth": {},
+                  "host": [
+                    "{{host}}"
+                  ],
+                  "path": [
+                    "{{projectKey}}",
+                    "customers"
+                  ],
+                  "query": [
+                    {
+                      "key": "where",
+                      "value": "email%3D%22demo%40commercetools.de%22",
+                      "equals": true,
+                      "description": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}",
+                    "description": ""
+                  }
+                ],
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "_postman_previewtype": "text",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip",
+                  "name": "Content-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 21 Sep 2017 12:22:25 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked",
+                  "name": "Transfer-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-99a8d4da-35f5-45f0-ba7e-0900c94fd00f",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-4d7984f6.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "50",
+              "body": "{\"offset\":0,\"count\":1,\"total\":1,\"results\":[{\"id\":\"0c2eaad4-833c-43c1-98a4-5d03f57e9329\",\"version\":3,\"customerNumber\":\"1\",\"email\":\"demo@commercetools.de\",\"firstName\":\"Max\",\"lastName\":\"Mustermann\",\"password\":\"zzR5YzDqKJUM1iZ7sYwwN1NRglmpBkPZ+kyZBr9xaqo=$RBdEZcI/Rx4mSYhVClNyhMeKzX60F8ydbXEnRUuHXWc=\",\"addresses\":[],\"shippingAddressIds\":[],\"billingAddressIds\":[],\"isEmailVerified\":false,\"createdAt\":\"2017-09-19T13:46:14.412Z\",\"lastModifiedAt\":\"2017-09-19T13:49:35.971Z\",\"lastMessageSequenceNumber\":1}]}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "d59a126e-1bf2-950f-319b-f4b5bcaddae3",
+          "name": "Create Customer",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/customers",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"foo@bar.de\",\n  \"password\": \"foobar\",\n  \"key\": \"myKey\"\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#create-customer-sign-up"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "8fc0f31e-42e9-5a97-7a93-a67ca4ba1b97",
+          "name": "Get Customer by ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#get-customer-by-id"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "1e8960ce-ab4f-9a38-d77a-6f6e871f7058",
+          "name": "Get Customer by Key",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/customers/key=myKey",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "b5e699b1-9ed4-1d49-f8c9-0475a5763b12",
+          "name": "Change Email",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeEmail\",\n    \"email\": \"bar@foo.com\"\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#change-email"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "8addd62c-f667-47b3-2119-bfe816befc44",
+          "name": "Set First Name",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setFirstName\",\n    \"fistName\": \"firstName\"\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-first-name"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "256d6ccb-e298-676a-2fb7-512654491ab0",
+          "name": "Set Last Name",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setLastName\",\n    \"lastName\": \"lastName\"\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-last-name"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "f6758c3e-8d96-47c9-4734-af973cec1a35",
+          "name": "Set Middle Name",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setMiddleName\",\n    \"middleName\": \"middleName\"\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-middle-name"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "2ec196b3-1e7c-cf55-618e-732acf1655d0",
+          "name": "Set Title",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setTitle\",\n    \"title\": \"Dr\"\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-title"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "a7f519c2-62f5-a218-6994-6734d34b28f1",
+          "name": "Set Salutation",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setSalutation\",\n    \"salutation\": \"Mr\"\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-salutation"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "bd0eebf7-2201-2845-f6ca-d64124f84c8b",
+          "name": "Add Address",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "    postman.setEnvironmentVariable(\"addressId\", data.addresses[0].id);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addAddress\",\n    \"address\": {\n    \t\"country\": \"DE\"\n    }\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#add-address"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "4ec22ef4-1e4c-e970-6f3a-19624b99c920",
+          "name": "Change Address",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeAddress\",\n    \"addressId\": \"{{addressId}}\",\n    \"address\": {\n    \t\"country\": \"FR\"\n    }\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#change-address"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "49a4b430-1b82-6185-93e4-aacc6941f917",
+          "name": "Set Default Shipping Address",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setDefaultShippingAddress\",\n    \"addressId\": \"{{addressId}}\"\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-default-shipping-address"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "50a16805-3f93-0919-6a52-b643d9c87dd1",
+          "name": "Add Shipping Address ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addShippingAddressId\",\n    \"addressId\": \"{{addressId}}\"\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#add-shipping-address-id"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "9512237b-57d0-0780-c6a6-b04cb1aff8e0",
+          "name": "Remove Shipping Address ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"removeShippingAddressId\",\n    \"addressId\": \"{{addressId}}\"\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#remove-shipping-address-id"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "cd64f43d-d91f-e834-a0b2-aa0f206b37bb",
+          "name": "Set Default Billing Address",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setDefaultBillingAddress\",\n    \"addressId\": \"{{addressId}}\"\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-default-billing-address"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "6ae9a341-4222-257e-75ea-0ace21392abc",
+          "name": "Add Billing Address ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addBillingAddressId\",\n    \"addressId\": \"{{addressId}}\"\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#add-billing-address-id"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "ffdf8c72-dca7-6bd9-a80f-8918b6a9cd13",
+          "name": "Remove Billing Address ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"removeBillingAddressId\",\n    \"addressId\": \"{{addressId}}\"\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#remove-billing-address-id"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "f8e9cb30-64c4-1e5d-51ca-03376c17904f",
+          "name": "Remove Address",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"removeAddress\",\n    \"addressId\": \"{{addressId}}\"\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#remove-address"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "c2a9c5f1-fb6c-9518-ccef-d3f3ce2116ff",
+          "name": "Set CustomerGroup",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCustomerGroup\",\n    \"customerGroup\": {\n    \t\"id\": \"ac6bc2f4-5e5a-482e-805d-602efc76f598\",\n    \t\"typeId\": \"customer-group\"\n    }\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#remove-billing-address-id"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "4112a58b-9d48-edc1-c32b-2fa9ab4da5bc",
+          "name": "Set Customer Number",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCustomerNumber\",\n    \"customerNumber\": \"123\"\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-customer-number"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "b92e820d-fef8-091b-d849-d643ebd5cf3a",
+          "name": "Set External ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setExternalId\",\n    \"externalId\": \"123\"\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-external-id"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "76b43376-d2b5-d06d-6405-cafc4883d45e",
+          "name": "Set Company Name",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCompanyName\",\n    \"companyName\": \"commercetools GmbH\"\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-company-name"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "f20877ec-bad2-a446-b433-ee4098362e7b",
+          "name": "Set Date of Birth",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setDateOfBirth\",\n    \"dateOfBirth\": \"2015-10-21\"\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-date-of-birth"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "202cde95-0a1a-010b-3bba-0eb73da80aad",
+          "name": "Set Vat Id",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setVatId\",\n    \"vatId\": \"vatId\"\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-date-of-birth"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "bcc9e4ef-1703-cc65-6386-eb4809bf1ab1",
+          "name": "Set Custom Type",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCustomType\",\n    \"type\": {\n      \"id\": \"a5c70aa9-72cd-4d32-a398-3888734465fa\",\n      \"typeId\": \"type\"\n    }\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-custom-type"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "41f74f31-7057-8c1f-0dfb-e44fd8738ed0",
+          "name": "Set CustomField",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCustomField\",\n    \"name\": \"StringCustomField\",\n    \"value\": \"myValue\"\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-customfield"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "75052ef7-0956-b85d-2f0b-3dd08de3c6ec",
+          "name": "Set Locale",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setLocale\",\n    \"locale\": \"de\"\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-locale"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "48a0806b-9e01-d979-716f-5fe0deaa8876",
+          "name": "Set Key",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setKey\",\n    \"key\": \"newKey\"\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-key"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "3d7f0f1d-1bc6-dff3-6fd9-4baee79c89ee",
+          "name": "Change Customer's Password",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/customers/password/",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"id\": \"{{id}}\",\n\t\"version\": {{version}},\n\t\"currentPassword\": \"foobar\",\n\t\"newPassword\": \"foonew\"\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#change-customers-password"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "c55159e1-507f-1a15-0e7f-b5f708911a18",
+          "name": "Authenticate Customer (Sign In)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/login",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"email\": \"foo@bar.de\",\n\t\"password\": \"foonew\"\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#authenticate-customer-sign-in"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "f823786b-497f-6247-2163-3b292b5b2f7c",
+          "name": "Create a Token for Resetting the Customer's Password",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.value){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "    postman.setEnvironmentVariable(\"token\", data.value);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/customers/password-token",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"email\": \"foo@bar.de\"\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#create-a-token-for-resetting-the-customers-password"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "bc956fcb-b30a-864f-fb10-6f8945859f9f",
+          "name": "Get Customer By Password Token",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/customers/password-token={{token}}",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"email\": \"foo@bar.de\"\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#get-customer-by-password-token"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "c0e487f5-b21d-8e57-43bc-6b1fc7518e10",
+          "name": "Reset Customer's Password",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/customers/password/reset",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"tokenValue\": \"{{token}}\",\n\t\"newPassword\": \"foobar\"\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#reset-customers-password"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "36b21186-3e29-2c57-a47a-ae3be446ada8",
+          "name": "Create a Token for verifying the Customer#s Email",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.value){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "    postman.setEnvironmentVariable(\"token\", data.value);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/customers/email-token",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"id\": \"{{id}}\",\n\t\"version\": {{version}},\n\t\"ttlMinutes\": 1440\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#create-a-token-for-verifying-the-customers-email"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "b1b47f53-a1eb-5765-7bbd-951a79c0af10",
+          "name": "Get Customer By Email Token",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/customers/email-token={{token}}",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"email\": \"foo@bar.de\"\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#get-customer-by-email-token"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "20bf773a-97eb-265c-934f-2f1c2f55180e",
+          "name": "Verify Customer's Email",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/customers/email/confirm",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"tokenValue\": \"{{token}}\"\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#verify-customers-email"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "c507157d-38da-58d1-cb4a-458710b28fb3",
+          "name": "Delete Customer by ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "if (responseCode.code === 200){",
+                  "    postman.setEnvironmentVariable(\"id\", null);   ",
+                  "    postman.setEnvironmentVariable(\"version\", null);   ",
+                  "}    "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": {
+              "raw": "{{host}}/{{projectKey}}/customers/{{id}}?version={{version}}",
+              "auth": {},
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "{{projectKey}}",
+                "customers",
+                "{{id}}"
+              ],
+              "query": [
+                {
+                  "key": "version",
+                  "value": "{{version}}",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
       "_postman_id": "2c66c10a-2480-1ae2-9e29-46dd227d9fb2",
       "name": "Customers Groups",
       "description": "",
@@ -26596,1714 +28304,6 @@
               "raw": ""
             },
             "description": "http://dev.commercetools.com/http-api-projects-zones.html#delete-zone"
-          },
-          "response": []
-        }
-      ]
-    },
-    {
-      "_postman_id": "e914ac34-f6f4-9a32-d6f0-d71a9bc5a63c",
-      "name": "Customers copy",
-      "description": "",
-      "item": [
-        {
-          "_postman_id": "a695e6f2-bce5-ff90-9ebd-c9d055503a7c",
-          "name": "Query Customers",
-          "request": {
-            "url": "{{host}}/{{projectKey}}/customers",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#create-customer-sign-up"
-          },
-          "response": [
-            {
-              "id": "30ce118a-a2a1-8f88-8b24-5a657bb3ffaa",
-              "name": "Query Customers by Email",
-              "originalRequest": {
-                "url": {
-                  "raw": "{{host}}/{{projectKey}}/customers?where=email%3D%22demo%40commercetools.de%22",
-                  "auth": {},
-                  "host": [
-                    "{{host}}"
-                  ],
-                  "path": [
-                    "{{projectKey}}",
-                    "customers"
-                  ],
-                  "query": [
-                    {
-                      "key": "where",
-                      "value": "email%3D%22demo%40commercetools.de%22",
-                      "equals": true,
-                      "description": ""
-                    }
-                  ],
-                  "variable": []
-                },
-                "method": "GET",
-                "header": [
-                  {
-                    "key": "Authorization",
-                    "value": "Bearer {{access_token}}",
-                    "description": ""
-                  }
-                ],
-                "body": {}
-              },
-              "status": "OK",
-              "code": 200,
-              "_postman_previewlanguage": "json",
-              "_postman_previewtype": "text",
-              "header": [
-                {
-                  "key": "Access-Control-Allow-Headers",
-                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
-                  "name": "Access-Control-Allow-Headers",
-                  "description": ""
-                },
-                {
-                  "key": "Access-Control-Allow-Methods",
-                  "value": "GET, POST, DELETE, OPTIONS",
-                  "name": "Access-Control-Allow-Methods",
-                  "description": ""
-                },
-                {
-                  "key": "Access-Control-Allow-Origin",
-                  "value": "*",
-                  "name": "Access-Control-Allow-Origin",
-                  "description": ""
-                },
-                {
-                  "key": "Access-Control-Max-Age",
-                  "value": "299",
-                  "name": "Access-Control-Max-Age",
-                  "description": ""
-                },
-                {
-                  "key": "Alt-Svc",
-                  "value": "clear",
-                  "name": "Alt-Svc",
-                  "description": ""
-                },
-                {
-                  "key": "Content-Encoding",
-                  "value": "gzip",
-                  "name": "Content-Encoding",
-                  "description": ""
-                },
-                {
-                  "key": "Content-Type",
-                  "value": "application/json; charset=utf-8",
-                  "name": "Content-Type",
-                  "description": ""
-                },
-                {
-                  "key": "Date",
-                  "value": "Thu, 21 Sep 2017 12:22:25 GMT",
-                  "name": "Date",
-                  "description": ""
-                },
-                {
-                  "key": "Server",
-                  "value": "nginx",
-                  "name": "Server",
-                  "description": ""
-                },
-                {
-                  "key": "Transfer-Encoding",
-                  "value": "chunked",
-                  "name": "Transfer-Encoding",
-                  "description": ""
-                },
-                {
-                  "key": "Via",
-                  "value": "1.1 google",
-                  "name": "Via",
-                  "description": ""
-                },
-                {
-                  "key": "X-Correlation-ID",
-                  "value": "projects-99a8d4da-35f5-45f0-ba7e-0900c94fd00f",
-                  "name": "X-Correlation-ID",
-                  "description": ""
-                },
-                {
-                  "key": "X-Served-By",
-                  "value": "api-gce-4d7984f6.sphere.prod.commercetools.de",
-                  "name": "X-Served-By",
-                  "description": ""
-                },
-                {
-                  "key": "X-Served-Config",
-                  "value": "sphere-projects-ws-1.0",
-                  "name": "X-Served-Config",
-                  "description": ""
-                }
-              ],
-              "cookie": [],
-              "responseTime": "50",
-              "body": "{\"offset\":0,\"count\":1,\"total\":1,\"results\":[{\"id\":\"0c2eaad4-833c-43c1-98a4-5d03f57e9329\",\"version\":3,\"customerNumber\":\"1\",\"email\":\"demo@commercetools.de\",\"firstName\":\"Max\",\"lastName\":\"Mustermann\",\"password\":\"zzR5YzDqKJUM1iZ7sYwwN1NRglmpBkPZ+kyZBr9xaqo=$RBdEZcI/Rx4mSYhVClNyhMeKzX60F8ydbXEnRUuHXWc=\",\"addresses\":[],\"shippingAddressIds\":[],\"billingAddressIds\":[],\"isEmailVerified\":false,\"createdAt\":\"2017-09-19T13:46:14.412Z\",\"lastModifiedAt\":\"2017-09-19T13:49:35.971Z\",\"lastMessageSequenceNumber\":1}]}"
-            }
-          ]
-        },
-        {
-          "_postman_id": "d59a126e-1bf2-950f-319b-f4b5bcaddae3",
-          "name": "Create Customer",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/customers",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"email\": \"foo@bar.de\",\n  \"password\": \"foobar\",\n  \"key\": \"myKey\"\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#create-customer-sign-up"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "8fc0f31e-42e9-5a97-7a93-a67ca4ba1b97",
-          "name": "Get Customer by ID",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#get-customer-by-id"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "1e8960ce-ab4f-9a38-d77a-6f6e871f7058",
-          "name": "Get Customer by Key",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/customers/key=myKey",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "b5e699b1-9ed4-1d49-f8c9-0475a5763b12",
-          "name": "Change Email",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeEmail\",\n    \"email\": \"bar@foo.com\"\n  }]\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#change-email"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "8addd62c-f667-47b3-2119-bfe816befc44",
-          "name": "Set First Name",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setFirstName\",\n    \"fistName\": \"firstName\"\n  }]\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-first-name"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "256d6ccb-e298-676a-2fb7-512654491ab0",
-          "name": "Set Last Name",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setLastName\",\n    \"lastName\": \"lastName\"\n  }]\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-last-name"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "f6758c3e-8d96-47c9-4734-af973cec1a35",
-          "name": "Set Middle Name",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setMiddleName\",\n    \"middleName\": \"middleName\"\n  }]\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-middle-name"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "2ec196b3-1e7c-cf55-618e-732acf1655d0",
-          "name": "Set Title",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setTitle\",\n    \"title\": \"Dr\"\n  }]\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-title"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "a7f519c2-62f5-a218-6994-6734d34b28f1",
-          "name": "Set Salutation",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setSalutation\",\n    \"salutation\": \"Mr\"\n  }]\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-salutation"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "bd0eebf7-2201-2845-f6ca-d64124f84c8b",
-          "name": "Add Address",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "    postman.setEnvironmentVariable(\"addressId\", data.addresses[0].id);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addAddress\",\n    \"address\": {\n    \t\"country\": \"DE\"\n    }\n  }]\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#add-address"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "4ec22ef4-1e4c-e970-6f3a-19624b99c920",
-          "name": "Change Address",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeAddress\",\n    \"addressId\": \"{{addressId}}\",\n    \"address\": {\n    \t\"country\": \"FR\"\n    }\n  }]\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#change-address"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "49a4b430-1b82-6185-93e4-aacc6941f917",
-          "name": "Set Default Shipping Address",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setDefaultShippingAddress\",\n    \"addressId\": \"{{addressId}}\"\n  }]\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-default-shipping-address"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "50a16805-3f93-0919-6a52-b643d9c87dd1",
-          "name": "Add Shipping Address ID",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addShippingAddressId\",\n    \"addressId\": \"{{addressId}}\"\n  }]\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#add-shipping-address-id"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "9512237b-57d0-0780-c6a6-b04cb1aff8e0",
-          "name": "Remove Shipping Address ID",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"removeShippingAddressId\",\n    \"addressId\": \"{{addressId}}\"\n  }]\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#remove-shipping-address-id"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "cd64f43d-d91f-e834-a0b2-aa0f206b37bb",
-          "name": "Set Default Billing Address",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setDefaultBillingAddress\",\n    \"addressId\": \"{{addressId}}\"\n  }]\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-default-billing-address"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "6ae9a341-4222-257e-75ea-0ace21392abc",
-          "name": "Add Billing Address ID",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addBillingAddressId\",\n    \"addressId\": \"{{addressId}}\"\n  }]\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#add-billing-address-id"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "ffdf8c72-dca7-6bd9-a80f-8918b6a9cd13",
-          "name": "Remove Billing Address ID",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"removeBillingAddressId\",\n    \"addressId\": \"{{addressId}}\"\n  }]\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#remove-billing-address-id"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "f8e9cb30-64c4-1e5d-51ca-03376c17904f",
-          "name": "Remove Address",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"removeAddress\",\n    \"addressId\": \"{{addressId}}\"\n  }]\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#remove-address"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "c2a9c5f1-fb6c-9518-ccef-d3f3ce2116ff",
-          "name": "Set CustomerGroup",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCustomerGroup\",\n    \"customerGroup\": {\n    \t\"id\": \"ac6bc2f4-5e5a-482e-805d-602efc76f598\",\n    \t\"typeId\": \"customer-group\"\n    }\n  }]\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#remove-billing-address-id"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "4112a58b-9d48-edc1-c32b-2fa9ab4da5bc",
-          "name": "Set Customer Number",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCustomerNumber\",\n    \"customerNumber\": \"123\"\n  }]\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-customer-number"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "b92e820d-fef8-091b-d849-d643ebd5cf3a",
-          "name": "Set External ID",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setExternalId\",\n    \"externalId\": \"123\"\n  }]\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-external-id"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "76b43376-d2b5-d06d-6405-cafc4883d45e",
-          "name": "Set Company Name",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCompanyName\",\n    \"companyName\": \"commercetools GmbH\"\n  }]\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-company-name"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "f20877ec-bad2-a446-b433-ee4098362e7b",
-          "name": "Set Date of Birth",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setDateOfBirth\",\n    \"dateOfBirth\": \"2015-10-21\"\n  }]\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-date-of-birth"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "202cde95-0a1a-010b-3bba-0eb73da80aad",
-          "name": "Set Vat Id",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setVatId\",\n    \"vatId\": \"vatId\"\n  }]\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-date-of-birth"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "bcc9e4ef-1703-cc65-6386-eb4809bf1ab1",
-          "name": "Set Custom Type",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCustomType\",\n    \"type\": {\n      \"id\": \"a5c70aa9-72cd-4d32-a398-3888734465fa\",\n      \"typeId\": \"type\"\n    }\n  }]\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-custom-type"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "41f74f31-7057-8c1f-0dfb-e44fd8738ed0",
-          "name": "Set CustomField",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCustomField\",\n    \"name\": \"StringCustomField\",\n    \"value\": \"myValue\"\n  }]\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-customfield"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "75052ef7-0956-b85d-2f0b-3dd08de3c6ec",
-          "name": "Set Locale",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setLocale\",\n    \"locale\": \"de\"\n  }]\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-locale"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "48a0806b-9e01-d979-716f-5fe0deaa8876",
-          "name": "Set Key",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setKey\",\n    \"key\": \"newKey\"\n  }]\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-key"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "3d7f0f1d-1bc6-dff3-6fd9-4baee79c89ee",
-          "name": "Change Customer's Password",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/customers/password/",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n\t\"id\": \"{{id}}\",\n\t\"version\": {{version}},\n\t\"currentPassword\": \"foobar\",\n\t\"newPassword\": \"foonew\"\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#change-customers-password"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "c55159e1-507f-1a15-0e7f-b5f708911a18",
-          "name": "Authenticate Customer (Sign In)",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/login",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n\t\"email\": \"foo@bar.de\",\n\t\"password\": \"foonew\"\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#authenticate-customer-sign-in"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "f823786b-497f-6247-2163-3b292b5b2f7c",
-          "name": "Create a Token for Resetting the Customer's Password",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.value){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "    postman.setEnvironmentVariable(\"token\", data.value);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/customers/password-token",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n\t\"email\": \"foo@bar.de\"\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#create-a-token-for-resetting-the-customers-password"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "bc956fcb-b30a-864f-fb10-6f8945859f9f",
-          "name": "Get Customer By Password Token",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/customers/password-token={{token}}",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n\t\"email\": \"foo@bar.de\"\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#get-customer-by-password-token"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "c0e487f5-b21d-8e57-43bc-6b1fc7518e10",
-          "name": "Reset Customer's Password",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/customers/password/reset",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n\t\"tokenValue\": \"{{token}}\",\n\t\"newPassword\": \"foobar\"\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#reset-customers-password"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "36b21186-3e29-2c57-a47a-ae3be446ada8",
-          "name": "Create a Token for verifying the Customer#s Email",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.value){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "    postman.setEnvironmentVariable(\"token\", data.value);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/customers/email-token",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n\t\"id\": \"{{id}}\",\n\t\"version\": {{version}},\n\t\"ttlMinutes\": 1440\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#create-a-token-for-verifying-the-customers-email"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "b1b47f53-a1eb-5765-7bbd-951a79c0af10",
-          "name": "Get Customer By Email Token",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/customers/email-token={{token}}",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n\t\"email\": \"foo@bar.de\"\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#get-customer-by-email-token"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "20bf773a-97eb-265c-934f-2f1c2f55180e",
-          "name": "Verify Customer's Email",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/customers/email/confirm",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n\t\"tokenValue\": \"{{token}}\"\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#verify-customers-email"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "c507157d-38da-58d1-cb4a-458710b28fb3",
-          "name": "Delete Customer by ID",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "if (responseCode.code === 200){",
-                  "    postman.setEnvironmentVariable(\"id\", null);   ",
-                  "    postman.setEnvironmentVariable(\"version\", null);   ",
-                  "}    "
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": {
-              "raw": "{{host}}/{{projectKey}}/customers/{{id}}?version={{version}}",
-              "auth": {},
-              "host": [
-                "{{host}}"
-              ],
-              "path": [
-                "{{projectKey}}",
-                "customers",
-                "{{id}}"
-              ],
-              "query": [
-                {
-                  "key": "version",
-                  "value": "{{version}}",
-                  "equals": true,
-                  "description": ""
-                }
-              ],
-              "variable": []
-            },
-            "method": "DELETE",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "description": ""
           },
           "response": []
         }
