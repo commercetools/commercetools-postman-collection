@@ -6607,7 +6607,7 @@
         },
         {
           "_postman_id": "04e7c04b-7312-83f8-2e76-89049b87a957",
-          "name": "Set Locale copy",
+          "name": "Set Key",
           "event": [
             {
               "listen": "test",
