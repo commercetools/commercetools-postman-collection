@@ -5353,7 +5353,7 @@
               }
             ],
             "body": {},
-            "description": ""
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#create-customer-sign-up"
           },
           "response": [
             {
