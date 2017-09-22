@@ -5977,7 +5977,7 @@
         },
         {
           "_postman_id": "483e48a8-5117-207a-8899-3204d2913547",
-          "name": "Set Default Shipping Address copy",
+          "name": "Add Shipping Address ID",
           "event": [
             {
               "listen": "test",
