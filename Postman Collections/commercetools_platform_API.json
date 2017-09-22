@@ -6565,7 +6565,7 @@
         },
         {
           "_postman_id": "c5601b9d-b233-e57f-3324-d82cc5b2f43c",
-          "name": "Set Vat Id copy",
+          "name": "Set Locale",
           "event": [
             {
               "listen": "test",
@@ -6601,7 +6601,7 @@
               "mode": "raw",
               "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setVatId\",\n    \"vatId\": \"vatId\"\n  }]\n}"
             },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-date-of-birth"
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-locale"
           },
           "response": []
         },
