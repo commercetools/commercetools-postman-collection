@@ -5558,13 +5558,13 @@
               }
             ],
             "body": {},
-            "description": ""
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#get-customer-by-id"
           },
           "response": []
         },
         {
           "_postman_id": "e02ff2f5-ebcb-65c0-4b08-9770b7480a73",
-          "name": "Get Customer by ID copy",
+          "name": "Get Customer by Key",
           "event": [
             {
               "listen": "test",
