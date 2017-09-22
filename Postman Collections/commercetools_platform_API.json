@@ -5632,7 +5632,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCustomType\",\n    \"type\": {\n      \"id\": \"{{typeId}}\",\n      \"typeId\": \"type\"\n    }\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeEmail\",\n    \"email\": \"bar@foo.com\"\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-customers.html#change-email"
           },
