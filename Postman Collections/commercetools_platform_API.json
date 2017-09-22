@@ -6389,7 +6389,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCompanyName\",\n    \"externalId\": \"123\"\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCompanyName\",\n    \"companyName\": \"123\"\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-company-name"
           },
