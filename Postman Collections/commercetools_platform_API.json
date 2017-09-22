@@ -6599,7 +6599,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setLocale\",\n    \"vatId\": \"vatId\"\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setLocale\",\n    \"locale\": \"DE\"\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-locale"
           },
