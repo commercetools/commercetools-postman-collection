@@ -6751,7 +6751,7 @@
             }
           ],
           "request": {
-            "url": "{{host}}/{{projectKey}}/login",
+            "url": "{{host}}/{{projectKey}}/customers/password-token",
             "method": "POST",
             "header": [
               {
