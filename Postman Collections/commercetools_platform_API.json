@@ -6733,7 +6733,7 @@
         },
         {
           "_postman_id": "2d148fca-5f6b-0f61-ec7b-3155ba449578",
-          "name": "Authenticate Customer (Sign In) copy",
+          "name": "Customer's Password Reset",
           "event": [
             {
               "listen": "test",
