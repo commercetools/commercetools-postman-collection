@@ -6019,7 +6019,7 @@
         },
         {
           "_postman_id": "13afc8dc-e811-6604-60c1-a0415af9cc96",
-          "name": "Add Shipping Address ID copy",
+          "name": "Remove Shipping Address ID",
           "event": [
             {
               "listen": "test",
