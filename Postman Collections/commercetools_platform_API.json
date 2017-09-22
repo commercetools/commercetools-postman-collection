@@ -6733,7 +6733,7 @@
         },
         {
           "_postman_id": "2d148fca-5f6b-0f61-ec7b-3155ba449578",
-          "name": "Customer's Password Reset",
+          "name": "Create a Token for Resetting the Customer's Password",
           "event": [
             {
               "listen": "test",
