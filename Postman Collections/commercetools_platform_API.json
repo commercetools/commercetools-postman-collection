@@ -5640,7 +5640,7 @@
         },
         {
           "_postman_id": "efd15e30-8c90-2a01-89fe-7dac8cb71482",
-          "name": "Change First Name",
+          "name": "Set First Name",
           "event": [
             {
               "listen": "test",
