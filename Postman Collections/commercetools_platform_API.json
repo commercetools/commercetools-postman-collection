@@ -6439,7 +6439,7 @@
         },
         {
           "_postman_id": "dbb17cdc-927b-660e-9fe5-68744482683f",
-          "name": "Set Date of Birth copy",
+          "name": "Set Vat Id",
           "event": [
             {
               "listen": "test",
