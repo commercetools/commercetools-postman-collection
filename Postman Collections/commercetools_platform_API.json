@@ -5935,7 +5935,7 @@
         },
         {
           "_postman_id": "a18ef1ae-f73a-9653-4810-f805c627a2ec",
-          "name": "Change Address copy",
+          "name": "Set Default Shipping Address",
           "event": [
             {
               "listen": "test",
