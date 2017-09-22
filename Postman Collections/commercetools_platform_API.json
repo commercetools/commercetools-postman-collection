@@ -6838,7 +6838,7 @@
             }
           ],
           "request": {
-            "url": "{{host}}/{{projectKey}}/customers/password-token={{token}}",
+            "url": "{{host}}/{{projectKey}}/customers/password/reset",
             "method": "POST",
             "header": [
               {
