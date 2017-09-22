@@ -6768,7 +6768,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n\t\"email\": \"foo@bar.de\"\n}"
+              "raw": "{\n  \"email\": \"bar@foo.com\"\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-customers.html#create-a-token-for-resetting-the-customers-password"
           },
