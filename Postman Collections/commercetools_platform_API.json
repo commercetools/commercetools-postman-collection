@@ -6667,7 +6667,7 @@
             }
           ],
           "request": {
-            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
+            "url": "{{host}}/{{projectKey}}/customers/password/",
             "method": "POST",
             "header": [
               {
