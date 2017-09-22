@@ -6819,7 +6819,7 @@
         },
         {
           "_postman_id": "2a5c8691-22db-d9c0-67f3-e0ca0e1f1293",
-          "name": "Get Customer By Password Token copy",
+          "name": "Reset Customer's Password",
           "event": [
             {
               "listen": "test",
