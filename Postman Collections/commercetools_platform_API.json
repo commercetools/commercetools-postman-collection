@@ -5760,7 +5760,7 @@
               "mode": "raw",
               "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeEmail\",\n    \"fistName\": \"firstName\"\n  }]\n}"
             },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-first-name"
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-middle-name"
           },
           "response": []
         },
