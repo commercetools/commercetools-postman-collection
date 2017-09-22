@@ -5582,7 +5582,7 @@
             }
           ],
           "request": {
-            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
+            "url": "{{host}}/{{projectKey}}/customers/key=myKey",
             "method": "GET",
             "header": [
               {
