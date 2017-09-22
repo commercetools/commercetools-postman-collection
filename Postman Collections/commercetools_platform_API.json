@@ -6307,7 +6307,7 @@
               "mode": "raw",
               "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCustomerNumber\",\n    \"customerNumber\": \"123\"\n  }]\n}"
             },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-customer-number"
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-external-id"
           },
           "response": []
         },
