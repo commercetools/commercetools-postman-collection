@@ -6854,7 +6854,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n\t\"tokenValue\": \"{{token}}\"\n}"
+              "raw": "{\n\t\"tokenValue\": \"{{token}}\",\n\t\"newPassword\": \"foobar\",\n\t\"version\": {{version}}\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-customers.html#reset-customers-password"
           },
