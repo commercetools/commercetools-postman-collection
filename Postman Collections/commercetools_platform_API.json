@@ -5892,7 +5892,7 @@
         },
         {
           "_postman_id": "e6136cdf-6a0c-3d9b-b705-395f7e3c8027",
-          "name": "Add Address copy",
+          "name": "Change Address",
           "event": [
             {
               "listen": "test",
