@@ -5734,6 +5734,48 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "67e01d67-01f9-de2d-e6f4-ca84b0f628e3",
+          "name": "Set Custom Type copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCustomType\",\n    \"type\": {\n      \"id\": \"{{typeId}}\",\n      \"typeId\": \"type\"\n    }\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-custom-type"
+          },
+          "response": []
         }
       ]
     },
