@@ -6221,7 +6221,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"http://dev.commercetools.com/http-api-projects-customers.html#set-customergroup\",\n    \"addressId\": \"{{addressId}}\"\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCustomerGroup\",\n    \"addressId\": \"{{addressId}}\"\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-customers.html#remove-billing-address-id"
           },
