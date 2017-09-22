@@ -6391,7 +6391,7 @@
               "mode": "raw",
               "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setExternalId\",\n    \"externalId\": \"123\"\n  }]\n}"
             },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-external-id"
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-company-name"
           },
           "response": []
         },
