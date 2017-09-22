@@ -6785,6 +6785,48 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "2d148fca-5f6b-0f61-ec7b-3155ba449578",
+          "name": "Authenticate Customer (Sign In) copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/login",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"email\": \"foo@bar.de\",\n\t\"password\": \"foonew\"\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#authenticate-customer-sign-in"
+          },
+          "response": []
         }
       ]
     },
