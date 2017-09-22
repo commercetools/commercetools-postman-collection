@@ -6963,8 +6963,8 @@
             }
           ],
           "request": {
-            "url": "{{host}}/{{projectKey}}/customers/email-token={{token}}",
-            "method": "GET",
+            "url": "{{host}}/{{projectKey}}/customers/email/confirm",
+            "method": "POST",
             "header": [
               {
                 "key": "Authorization",
