@@ -5522,7 +5522,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n\t\"email\": \"\",\n\t\"password\": \"\"\n}"
+              "raw": "{\n  \"email\": \"foo@bar.de\",\n  \"password\": \"foobar\"\n}"
             },
             "description": ""
           },
