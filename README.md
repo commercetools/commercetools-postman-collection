@@ -11,8 +11,8 @@ This is not the official commercetools platform API documentation. Please see [h
 To use this collection in Postman please perform the following steps:
 
 1. Download and install the Postman Client
-2. Click the "Run in Postman"-button in the header of the [collection's documention page](https://documenter.getpostman.com/view/2267334/commercetools-platform-api/6fR3nEb) to clone this collection to your Postman client
-3. Duplicate the environment "commercetools Plattform.template" and fill out your commercetools client credentials
+2. Click the "Run in Postman"-button in the header of the [collection's documentation page](https://documenter.getpostman.com/view/2267334/commercetools-platform-api/6fR3nEb) to clone this collection to your Postman client
+3. Duplicate the environment "commercetools Platform.template" and fill out your commercetools client credentials
 4. Obtain an access token by sending the "Authorization/Obtain access token" request at the bottom of the request list. Now you can use all other endpoints.
 5. Feel free to clone and modify this collection to your needs.
 
