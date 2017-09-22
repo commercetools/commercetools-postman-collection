@@ -6987,7 +6987,7 @@
         },
         {
           "_postman_id": "936a5a26-5493-ed51-3c87-87aff5bdc481",
-          "name": "Delete Customer",
+          "name": "Delete Customer by ID",
           "event": [
             {
               "listen": "test",
