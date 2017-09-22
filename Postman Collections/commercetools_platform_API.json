@@ -5598,7 +5598,7 @@
         },
         {
           "_postman_id": "67e01d67-01f9-de2d-e6f4-ca84b0f628e3",
-          "name": "Set Custom Type copy",
+          "name": "Change Email",
           "event": [
             {
               "listen": "test",
