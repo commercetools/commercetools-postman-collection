@@ -5886,7 +5886,7 @@
               "mode": "raw",
               "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setSalutation\",\n    \"middleName\": \"Mr\"\n  }]\n}"
             },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-salutation"
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#add-address"
           },
           "response": []
         },
