@@ -6839,7 +6839,7 @@
           ],
           "request": {
             "url": "{{host}}/{{projectKey}}/customers/password-token={{token}}",
-            "method": "GET",
+            "method": "POST",
             "header": [
               {
                 "key": "Authorization",
@@ -6854,7 +6854,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n\t\"email\": \"foo@bar.de\"\n}"
+              "raw": "{\n\t\"tokenValue\": \"{{token}}\"\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-customers.html#reset-customers-password"
           },
