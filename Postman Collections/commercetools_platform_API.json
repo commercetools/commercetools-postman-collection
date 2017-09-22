@@ -5971,7 +5971,7 @@
               "mode": "raw",
               "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeAddress\",\n    \"addressId\": \"{{addressId}}\",\n    \"address\": {\n    \t\"country\": \"FR\"\n    }\n  }]\n}"
             },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#change-address"
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#remove-address"
           },
           "response": []
         },
