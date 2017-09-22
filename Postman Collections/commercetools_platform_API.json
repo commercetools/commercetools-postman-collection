@@ -6515,7 +6515,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n\t\"version\": {{version}},\n\t\"actions\": [{\n\t\t\"action\": \"setCustomType\",\n\t\t\"type\": {\n\t\t\t\"id\": \"{{typeId}}\",\n\t\t\t\"typeId\": \"type\"\n\t\t}\n\t}]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCustomType\",\n    \"type\": {\n      \"id\": \"a5c70aa9-72cd-4d32-a398-3888734465fa\",\n      \"typeId\": \"type\"\n    }\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-custom-type"
           },
