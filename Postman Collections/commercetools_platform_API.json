@@ -5969,7 +5969,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeAddress\",\n    \"addressId\": \"{{addressId}}\",\n    \"address\": {\n    \t\"country\": \"FR\"\n    }\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setDefaultShippingAddress\",\n    \"addressId\": \"{{addressId}}\"\n  }]\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-default-shipping-address"
           },
