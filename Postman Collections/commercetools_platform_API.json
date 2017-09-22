@@ -6691,7 +6691,7 @@
         },
         {
           "_postman_id": "c3e24b06-35e1-6676-d73e-02abffb99f30",
-          "name": "Change Customer's Password copy",
+          "name": "Authenticate Customer (Sign In)",
           "event": [
             {
               "listen": "test",
