@@ -6685,7 +6685,7 @@
               "mode": "raw",
               "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setKey\",\n    \"key\": \"newKey\"\n  }]\n}"
             },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#set-key"
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#change-customers-password"
           },
           "response": []
         },
