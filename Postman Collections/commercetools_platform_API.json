@@ -6921,7 +6921,7 @@
             }
           ],
           "request": {
-            "url": "{{host}}/{{projectKey}}/customers/email/confirm",
+            "url": "{{host}}/{{projectKey}}/customers/email-token={{token}}",
             "method": "GET",
             "header": [
               {
