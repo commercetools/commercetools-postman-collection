@@ -6186,6 +6186,48 @@
           "response": []
         },
         {
+          "_postman_id": "68e33000-a5c2-1cd2-e4f3-75138ee77be6",
+          "name": "Remove Billing Address ID copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/customers/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"removeBillingAddressId\",\n    \"addressId\": \"{{addressId}}\"\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#remove-billing-address-id"
+          },
+          "response": []
+        },
+        {
           "_postman_id": "656474dc-3c69-2032-a498-1fa64114f2f2",
           "name": "Remove Address",
           "event": [
