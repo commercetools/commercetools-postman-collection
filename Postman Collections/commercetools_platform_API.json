@@ -4647,19 +4647,19 @@
             "method": "POST",
             "header": [
               {
-                "description": "",
                 "key": "Authorization",
-                "value": "Bearer {{access_token}}"
+                "value": "Bearer {{access_token}}",
+                "description": ""
               },
               {
-                "description": "",
                 "key": "Content-Type",
-                "value": "application/json"
+                "value": "application/json",
+                "description": ""
               }
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"key\": \"listPrice\",\n  \"roles\": [\"ProductDistribution\"],\n  \"name\": {\n    \"de\": \"ListPrice\",\n    \"en\": \"ListPrice\",\n    \"ch\": \"ListPrice\",\n    \"fr\": \"ListPrice\"\n  }\n}"
+              "raw": "{\n  \"key\": \"myChannel\",\n  \"roles\": [\"ProductDistribution\"],\n  \"name\": {\n    \"de\": \"myChannel\",\n    \"en\": \"myChannel\"\n  }\n}"
             },
             "description": ""
           },
