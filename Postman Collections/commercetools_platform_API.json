@@ -6945,7 +6945,7 @@
         },
         {
           "_postman_id": "70ddfb47-c9d9-5841-f441-a3f140d61eb5",
-          "name": "Get Customer By Email Token copy",
+          "name": "Verify Customer's Email",
           "event": [
             {
               "listen": "test",
