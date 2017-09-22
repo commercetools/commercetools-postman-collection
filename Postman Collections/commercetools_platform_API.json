@@ -5682,7 +5682,7 @@
         },
         {
           "_postman_id": "d21c6251-d1ae-8534-ef9a-2fce9a61584b",
-          "name": "Change Last Name",
+          "name": "Set Last Name",
           "event": [
             {
               "listen": "test",
