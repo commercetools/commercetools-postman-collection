@@ -6061,7 +6061,7 @@
         },
         {
           "_postman_id": "14741ef9-9bb2-2fd5-b4d6-df1f723bafd2",
-          "name": "Remove Shipping Address ID copy",
+          "name": "Set Default Billing Address",
           "event": [
             {
               "listen": "test",
