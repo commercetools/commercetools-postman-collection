@@ -6862,7 +6862,7 @@
         },
         {
           "_postman_id": "9752fc23-40be-0ea3-5956-31eefd404cae",
-          "name": "Reset Customer's Password copy",
+          "name": "Create a Token for verifying the Customer#s Email",
           "event": [
             {
               "listen": "test",
