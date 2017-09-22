@@ -6903,7 +6903,7 @@
         },
         {
           "_postman_id": "b914b0a0-926f-0d70-a606-8fa4c4af5023",
-          "name": "Get Customer By Password Token copy",
+          "name": "Get Customer By Email Token",
           "event": [
             {
               "listen": "test",
