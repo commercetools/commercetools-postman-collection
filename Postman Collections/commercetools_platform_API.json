@@ -5808,7 +5808,7 @@
         },
         {
           "_postman_id": "6c3a8463-3c8b-cf5a-7b53-d38223300bfe",
-          "name": "Set Middle Name copy copy",
+          "name": "Set Salutation",
           "event": [
             {
               "listen": "test",
