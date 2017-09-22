@@ -6776,7 +6776,7 @@
         },
         {
           "_postman_id": "48ff8050-5c0b-2e7e-461e-ba8654a4186d",
-          "name": "Create a Token for Resetting the Customer's Password copy",
+          "name": "Get Customer By Password Token",
           "event": [
             {
               "listen": "test",
