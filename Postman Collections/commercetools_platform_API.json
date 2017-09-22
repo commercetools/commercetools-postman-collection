@@ -6271,7 +6271,7 @@
         },
         {
           "_postman_id": "41b75b32-4edf-04fa-c624-a7d5a0fdbe68",
-          "name": "Set Customer Number copy",
+          "name": "Set External ID",
           "event": [
             {
               "listen": "test",
