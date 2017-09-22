@@ -26263,6 +26263,532 @@
           "response": []
         }
       ]
+    },
+    {
+      "_postman_id": "26148165-b49f-e817-917b-8c530d2fc87d",
+      "name": "Discount Codes copy",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "9aca3afd-eacc-a08f-42cd-944fef12bf87",
+          "name": "Query DiscountCodes",
+          "request": {
+            "url": "{{host}}/{{projectKey}}/discount-codes",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "http://dev.commercetools.com/http-api-projects-discountCodes.html#query-discountcodes"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "4255e9c8-e4fc-a030-8477-95f94112802e",
+          "name": "Create a DiscountCode",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/discount-codes",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": {\n    \"en\": \"My Discount Code\"\n  },\n  \"description\": {\n    \"en\": \"A discount Code that will trigger a CartDiscounts.\"\n  },\n  \"code\": \"myVoucherCode\",\n  \"cartDiscounts\": [\n    {\n      \"typeId\": \"cart-discount\",\n      \"id\": \"a241ec8d-921e-4095-a0cb-46cd664ce36d\"\n    }\n  ],\n  \"cartPredicate\": \"lineItemCount(sku = \\\"mySKU\\\") > 0\",\n  \"isActive\": true\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-discountCodes.html#create-a-discountcode"
+          },
+          "response": [
+            {
+              "id": "25c8ae32-81c8-a00d-f454-ae5ae85440a6",
+              "name": "Create a DiscountCode that applies to two CartDiscounts",
+              "originalRequest": {
+                "url": "{{host}}/{{projectKey}}/discount-codes",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": {\n    \"en\": \"My Discount Code\"\n  },\n  \"description\": {\n    \"en\": \"A discount Code that will trigger a CartDiscounts.\"\n  },\n  \"code\": \"myVoucherCode\",\n  \"cartDiscounts\": [\n    {\n      \"typeId\": \"cart-discount\",\n      \"id\": \"a241ec8d-921e-4095-a0cb-46cd664ce36d\"\n    }\n  ],\n  \"cartPredicate\": \"lineItemCount(sku = \\\"mySKU\\\") > 0\",\n  \"isActive\": true\n}"
+                },
+                "description": "http://dev.commercetools.com/http-api-projects-discountCodes.html#create-a-discountcode"
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "_postman_previewtype": "text",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "619",
+                  "name": "Content-Length",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 12 Jun 2017 10:34:01 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-3ecc4ab1-68e5-41ab-80f6-6f2def324d86",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-de8742bd.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "674",
+              "body": "{\"id\":\"a42fe562-300a-499e-bee0-64c1395d16d5\",\"version\":1,\"code\":\"iWantIt4Free\",\"name\":{\"en\":\"My Discount Code\"},\"description\":{\"en\":\"A discount Code that will trigger two specific CartDiscounts.\"},\"cartDiscounts\":[{\"typeId\":\"cart-discount\",\"id\":\"b4491b56-6863-4c42-bec7-490c749852a9\"},{\"typeId\":\"cart-discount\",\"id\":\"1d6ac18f-e61e-486e-a143-4e10b3bda654\"}],\"isActive\":true,\"cartPredicate\":\"lineItemCount(sku = \\\"mySKU\\\") > 0\",\"references\":[],\"attributeTypes\":{},\"cartFieldTypes\":{},\"lineItemFieldTypes\":{},\"customLineItemFieldTypes\":{},\"createdAt\":\"2017-06-12T10:34:01.661Z\",\"lastModifiedAt\":\"2017-06-12T10:34:01.661Z\"}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "49370d3b-a1ea-99df-dea1-2f6e0aab1f95",
+          "name": "Set Name",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/discount-codes/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setName\",\n    \"name\": {\n    \t\"en\": \"New Name EN\",\n    \t\"de\": \"New Name DE\"\n    }\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-discountCodes.html#set-name"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "f44fd655-3a6e-b6f1-8218-80ae1a27c716",
+          "name": "Set Description",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/discount-codes/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setDescription\",\n    \"description\": {\n    \t\"en\": \"New Description EN\",\n    \t\"de\": \"New Description DE\"\n    }\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-discountCodes.html#set-description"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "904daf50-0d0d-28bb-dbd9-5a4bd54b941b",
+          "name": "Set Cart Predicate",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/discount-codes/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCartPredicate\",\n    \"cartPredicate\": \"lineItemCount(sku = \\\"mySKU\\\") > 1\"\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-discountCodes.html#set-description"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "1e9df9d1-a1dd-be2b-cf20-ce1da73142c9",
+          "name": "Set Max Applications",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/discount-codes/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setMaxApplications\",\n    \"maxApplications\": 100\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-discountCodes.html#set-max-applications"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "b94dbab1-759c-782f-2739-320c135bca02",
+          "name": "Set Max Applications Per Customer",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/discount-codes/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setMaxApplicationsPerCustomer\",\n    \"maxApplicationsPerCustomer\": 10\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-discountCodes.html#set-max-applications-per-customer"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "351d7580-1b8f-bd7b-85a3-12f0a7852aac",
+          "name": "Change CartDiscounts",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/discount-codes/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setMaxApplicationsPerCustomer\",\n    \"cartDiscounts\": [{\n      \"typeId\": \"cart-discount\",\n      \"id\": \"a241ec8d-921e-4095-a0cb-46cd664ce36d\"\n    }]\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-discountCodes.html#change-cartdiscounts"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "cb1fdeee-6ff9-3b54-fa4c-59c8a351cef9",
+          "name": "Change IsActive",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/discount-codes/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeIsActive\",\n    \"isActive\": false\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-discountCodes.html#change-isactive"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "e772f0f5-ffac-7c26-ff17-e343419155f4",
+          "name": "Delete DiscountCode",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": {
+              "raw": "{{host}}/{{projectKey}}/discount-codes/{{id}}?version={{version}}",
+              "auth": {},
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "{{projectKey}}",
+                "discount-codes",
+                "{{id}}"
+              ],
+              "query": [
+                {
+                  "key": "version",
+                  "value": "{{version}}",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
     }
   ]
 }
