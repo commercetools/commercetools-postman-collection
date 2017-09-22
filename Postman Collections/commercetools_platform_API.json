@@ -5209,12 +5209,11 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
                   "var data = JSON.parse(responseBody);",
-                  "if(data.id){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id);   ",
-                  "}",
-                  "if(data.version){",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);   ",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
                   "}"
                 ]
               }
