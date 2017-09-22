@@ -6897,7 +6897,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n\t\"id\": \"{{id}}\",\n\t\"version\": \"foobar\"\n}"
+              "raw": "{\n\t\"id\": \"{{id}}\",\n\t\"newPassword\": \"foobar\"\n}"
             },
             "description": "http://dev.commercetools.com/http-api-projects-customers.html#create-a-token-for-verifying-the-customers-email"
           },
