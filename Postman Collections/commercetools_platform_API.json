@@ -6181,7 +6181,7 @@
               "mode": "raw",
               "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addBillingAddressId\",\n    \"addressId\": \"{{addressId}}\"\n  }]\n}"
             },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#add-billing-address-id"
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#remove-billing-address-id"
           },
           "response": []
         },
