@@ -5928,7 +5928,7 @@
               "mode": "raw",
               "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addAddress\",\n    \"address\": {\n    \t\"country\": \"DE\"\n    }\n  }]\n}"
             },
-            "description": "http://dev.commercetools.com/http-api-projects-customers.html#add-address"
+            "description": "http://dev.commercetools.com/http-api-projects-customers.html#change-address"
           },
           "response": []
         },
