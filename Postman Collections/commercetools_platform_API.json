@@ -6313,7 +6313,7 @@
         },
         {
           "_postman_id": "b3b9c2e4-2cc5-2af3-0bed-804a63f703e9",
-          "name": "Set External ID copy",
+          "name": "Set Company Name",
           "event": [
             {
               "listen": "test",
