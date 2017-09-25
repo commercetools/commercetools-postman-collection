@@ -6855,6 +6855,17 @@
         {
           "_postman_id": "9aca3afd-eacc-a08f-42cd-944fef12bf87",
           "name": "Query DiscountCodes",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;"
+                ]
+              }
+            }
+          ],
           "request": {
             "url": "{{host}}/{{projectKey}}/discount-codes",
             "method": "GET",
