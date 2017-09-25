@@ -8540,31 +8540,6 @@
       ]
     },
     {
-      "_postman_id": "6d758dbd-7efb-b1fe-b1ef-ceaaf1ee8111",
-      "name": "Messages",
-      "description": "",
-      "item": [
-        {
-          "_postman_id": "1fcd6407-f904-66fe-8657-8cc2c83fea19",
-          "name": "Query Messages",
-          "request": {
-            "url": "{{host}}/{{projectKey}}/messages",
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              }
-            ],
-            "body": {},
-            "description": ""
-          },
-          "response": []
-        }
-      ]
-    },
-    {
       "_postman_id": "c8b86bc8-2cc4-818e-8308-2da92f7e2d40",
       "name": "Orders",
       "description": "",
