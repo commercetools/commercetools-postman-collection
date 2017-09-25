@@ -6570,6 +6570,17 @@
         {
           "_postman_id": "403d5994-07b3-4970-2247-96b8218fea4f",
           "name": "Query CustomerGroups",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;"
+                ]
+              }
+            }
+          ],
           "request": {
             "url": "{{host}}/{{projectKey}}/customer-groups",
             "method": "GET",
