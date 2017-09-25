@@ -7279,6 +7279,17 @@
         {
           "_postman_id": "83f29a86-0694-0598-ac03-a10dc631ef27",
           "name": "Query Inventory",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;"
+                ]
+              }
+            }
+          ],
           "request": {
             "url": "{{host}}/{{projectKey}}/inventory",
             "method": "GET",
