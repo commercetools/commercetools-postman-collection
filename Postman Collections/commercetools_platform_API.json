@@ -8688,6 +8688,49 @@
           "response": []
         },
         {
+          "_postman_id": "d76fd1fa-7727-0af7-4e76-c37153692114",
+          "name": "Add Delivery",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id);   ",
+                  "}",
+                  "if(data.version){",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);   ",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/orders/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addDelivery\",\n    \"items\": [{\n    \t\"id\": \"1064c690-1895-4c78-9e2d-b491a9078790\",\n    \t\"quantity\": 1\n    }],\n    \"parcels\": [{\n    \t\"measurements\": {\n    \t\t\"heightInMillimeter\": 90,\n    \t\t\"lengthInMillimeter\": 60,\n    \t\t\"widthInMillimeter\": 50,\n    \t\t\"weightInGram\": 1000\n    \t},\n    \t\"trackingData\": {\n    \t\t\"trackingId\": \"myTrackingId\",\n    \t\t\"carrier\": \"DHL\"\n    \t}\n    }]\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-orders.html#add-delivery"
+          },
+          "response": []
+        },
+        {
           "_postman_id": "92c24e1f-69a5-d6b7-1d67-3a76b626f045",
           "name": "Delete Order",
           "event": [
@@ -8739,49 +8782,6 @@
               "raw": ""
             },
             "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "d76fd1fa-7727-0af7-4e76-c37153692114",
-          "name": "Add Delivery",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id);   ",
-                  "}",
-                  "if(data.version){",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);   ",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{host}}/{{projectKey}}/orders/{{id}}",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addDelivery\",\n    \"items\": [{\n    \t\"id\": \"1064c690-1895-4c78-9e2d-b491a9078790\",\n    \t\"quantity\": 1\n    }],\n    \"parcels\": [{\n    \t\"measurements\": {\n    \t\t\"heightInMillimeter\": 90,\n    \t\t\"lengthInMillimeter\": 60,\n    \t\t\"widthInMillimeter\": 50,\n    \t\t\"weightInGram\": 1000\n    \t},\n    \t\"trackingData\": {\n    \t\t\"trackingId\": \"myTrackingId\",\n    \t\t\"carrier\": \"DHL\"\n    \t}\n    }]\n  }]\n}"
-            },
-            "description": "http://dev.commercetools.com/http-api-projects-orders.html#add-delivery"
           },
           "response": []
         }
