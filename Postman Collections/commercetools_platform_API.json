@@ -22905,6 +22905,3341 @@
           "response": []
         }
       ]
+    },
+    {
+      "_postman_id": "5bfc7fd3-3678-c35d-b801-04273b243205",
+      "name": "Product Types copy",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "a8ff2e47-1d25-264e-9e5f-f827d065c73f",
+          "name": "Create a Product Type",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/product-types/",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"DefaultProductType\",\n  \"key\": \"defaultProductType\",\n  \"description\": \"Product Type\",\n  \"attributes\": [{\n    \"name\": \"ProductTypeAttribute\",\n    \"label\": {\n      \"en\": \"ProductTypeAttributeEN\",\n      \"de\": \"ProductTypeAttributeDE\"\n    },\n    \"isRequired\": false,\n    \"type\": {\n      \"name\": \"ltext\"\n    },\n    \"attributeConstraint\": \"None\",\n    \"isSearchable\": true,\n    \"inputHint\": \"MultiLine\"\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-productTypes.html#create-a-producttype"
+          },
+          "response": [
+            {
+              "id": "f3a72bf4-a6aa-35fb-e998-f9baf6516316",
+              "name": "Create Product Type",
+              "originalRequest": {
+                "url": "{{host}}/{{projectKey}}/product-types/{{id}}",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n\t\"name\": \"my Product Type\",\n\t\"key\": \"myproductType\",\n\t\"description\": \"One type to rule them all\",\n\t\"attributes\": [{\n\t\t\"name\": \"myAttribute\",\n\t\t\"label\": {\n\t\t\t\"en\": \"Awesome Attribute\",\n\t\t\t\"de\": \"Geniales Attribut\"\n\t\t},\n\t\t\"isRequired\": false,\n\t\t\"type\": {\n\t\t\t\"name\": \"ltext\"\n\t\t},\n\t\t\"attributeConstraint\": \"Unique\",\n\t\t\"isSearchable\": true,\n\t\t\"inputHint\": \"MultiLine\",\n\t\t\"displayGroup\": \"Other\"\n\t}]\n}"
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "_postman_previewtype": "text",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "491",
+                  "name": "Content-Length",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 29 Aug 2017 14:41:05 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-5b185eaf-a505-436d-b59d-7c1222f60296",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-e56cc360.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "61",
+              "body": "{\"id\":\"34c992b0-9b6e-4a61-9a80-2fd64b5c02c1\",\"version\":1,\"name\":\"my Product Type\",\"description\":\"One type to rule them all\",\"classifier\":\"Complex\",\"attributes\":[{\"name\":\"myAttribute\",\"label\":{\"en\":\"Awesome Attribute\",\"de\":\"Geniales Attribut\"},\"isRequired\":false,\"type\":{\"name\":\"ltext\"},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"}],\"key\":\"myproductType\",\"createdAt\":\"2017-08-29T14:41:05.472Z\",\"lastModifiedAt\":\"2017-08-29T14:41:05.472Z\"}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "1477bfad-4a57-a83b-3441-f02d667c6b1e",
+          "name": "Get ProductType by ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/product-types/{{id}}",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "http://dev.commercetools.com/http-api-projects-productTypes.html#get-a-producttype-by-id"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "16a3eac5-c708-e844-146d-592547899410",
+          "name": "Query ProductTypes",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/product-types",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {},
+            "description": "http://dev.commercetools.com/http-api-projects-productTypes.html#query-producttypes"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "607ad9e1-2ab7-dc2d-4462-66bffc566545",
+          "name": "Set Key",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/product-types/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n      \"action\": \"setKey\",\n      \"key\": \"newDefaultKey\"\n    }\n  ]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-productTypes.html#set-key"
+          },
+          "response": [
+            {
+              "id": "f2525eb4-d6cc-d74c-5fda-661e1bfeafb3",
+              "name": "Set ProductType Key",
+              "originalRequest": {
+                "url": "{{host}}/{{projectKey}}/product-types/{{id}}",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n      \"action\": \"setKey\",\n      \"key\": \"my-key\"\n    }\n  ]\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "_postman_previewtype": "text",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip",
+                  "name": "Content-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 29 Aug 2017 14:48:40 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked",
+                  "name": "Transfer-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-4499bbf9-b9a9-4e13-a9d0-60a32ff25e4b",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-de8742bd.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "494",
+              "body": "{\"id\":\"34c992b0-9b6e-4a61-9a80-2fd64b5c02c1\",\"version\":2,\"name\":\"my Product Type\",\"description\":\"One type to rule them all\",\"classifier\":\"Complex\",\"attributes\":[{\"name\":\"myAttribute\",\"label\":{\"de\":\"Geniales Attribut\",\"en\":\"Awesome Attribute\"},\"isRequired\":false,\"type\":{\"name\":\"ltext\"},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"}],\"key\":\"my-key\",\"createdAt\":\"2017-08-29T14:41:05.472Z\",\"lastModifiedAt\":\"2017-08-29T14:48:40.797Z\"}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "abfcf355-9837-0daa-bf52-115a0bf81e40",
+          "name": "Change Name",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/product-types/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n      \"action\": \"changeName\",\n      \"name\": \"NewDefaultProdcutTypeName\"\n    }\n  ]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-productTypes.html#change-name"
+          },
+          "response": [
+            {
+              "id": "3842a6a5-177e-9711-6ce8-898fe00796ed",
+              "name": "Change ProductType Name",
+              "originalRequest": {
+                "url": "{{host}}/{{projectKey}}/product-types/{{id}}",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n      \"action\": \"changeName\",\n      \"name\": \"new prodcutType name\"\n    }\n  ]\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "_postman_previewtype": "text",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip",
+                  "name": "Content-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 29 Aug 2017 14:54:19 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked",
+                  "name": "Transfer-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-5c534696-ecf2-4530-b2e4-979e1a30ebaf",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-bf772e57.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "57",
+              "body": "{\"id\":\"34c992b0-9b6e-4a61-9a80-2fd64b5c02c1\",\"version\":4,\"name\":\"new prodcutType name\",\"description\":\"One type to rule them all\",\"classifier\":\"Complex\",\"attributes\":[{\"name\":\"myAttribute\",\"label\":{\"de\":\"Geniales Attribut\",\"en\":\"Awesome Attribute\"},\"isRequired\":false,\"type\":{\"name\":\"ltext\"},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"}],\"key\":\"my-key\",\"createdAt\":\"2017-08-29T14:41:05.472Z\",\"lastModifiedAt\":\"2017-08-29T14:54:19.322Z\"}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "68c8786e-dcaa-02b9-fe52-350365bdec00",
+          "name": "Change Description",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/product-types/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n      \"action\": \"changeDescription\",\n      \"description\": \"DefaultproductTypedescription\"\n    }\n  ]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-productTypes.html#change-description"
+          },
+          "response": [
+            {
+              "id": "003afda6-6b12-88e1-9375-b0c06f58be9b",
+              "name": "Change ProductType Description",
+              "originalRequest": {
+                "url": "{{host}}/{{projectKey}}/product-types/{{id}}",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n      \"action\": \"changeDescription\",\n      \"description\": \"productTypedescription\"\n    }\n  ]\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "_postman_previewtype": "text",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip",
+                  "name": "Content-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 29 Aug 2017 14:56:45 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked",
+                  "name": "Transfer-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-ad03758f-7cca-4bda-b3fe-a1a36aa2c71d",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-de8742bd.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "78",
+              "body": "{\"id\":\"34c992b0-9b6e-4a61-9a80-2fd64b5c02c1\",\"version\":5,\"name\":\"new prodcutType name\",\"description\":\"productTypedescription\",\"classifier\":\"Complex\",\"attributes\":[{\"name\":\"myAttribute\",\"label\":{\"en\":\"Awesome Attribute\",\"de\":\"Geniales Attribut\"},\"isRequired\":false,\"type\":{\"name\":\"ltext\"},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"}],\"key\":\"my-key\",\"createdAt\":\"2017-08-29T14:41:05.472Z\",\"lastModifiedAt\":\"2017-08-29T14:56:45.311Z\"}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "36399afd-3090-f4ed-8bd3-a31566c989b6",
+          "name": "Add AttributeDefinition",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}",
+                  "postman.setNextRequest('Change AttributeDefinitionLabel');"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/product-types/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addAttributeDefinition\",\n    \"attribute\": {\n      \"name\": \"myAddedENumAttribute\",\n      \"isRequired\": false,\n      \"type\": {\n        \"name\": \"enum\",\n        \"values\": [\n        {\n          \"key\": \"enum1\",\n          \"label\": \"enumlabel1\"\n        },\n        {\n          \"key\": \"enum2\",\n          \"label\": \"enumlabel2\"\n        }\n      ]\n    },\n      \"label\": {\n        \"en\": \"addedAttributeEN\",\n        \"de\": \"addedAttributeDE\"\n      },\n      \"attributeConstraint\": \"Unique\",\n      \"isSearchable\": true,\n      \"inputHint\": \"MultiLine\",\n      \"displayGroup\": \"Other\"\n    }\n  },\n  {\n    \"action\": \"addAttributeDefinition\",\n    \"attribute\": {\n      \"name\": \"myAddedLeNumAttribute\",\n      \"label\": {\n        \"en\": \"addedAttributeEN\",\n        \"de\": \"addedAttributeDE\"\n      },\n      \"isRequired\": false,\n      \"type\": {\n        \"name\": \"lenum\",\n        \"values\": [\n        {\n          \"key\": \"lenum1\",\n        \"label\": {\n          \"de\": \"lenumDE\",\n          \"en\": \"lenumEN\"\n        }\n    },\n      {\n          \"key\": \"lenum2\",\n        \"label\": {\n          \"de\": \"lenum2DE\",\n          \"en\": \"lenum2EN\"\n        }\n      }\n      ]\n      },\n      \"attributeConstraint\": \"Unique\",\n      \"isSearchable\": true,\n      \"inputHint\": \"MultiLine\",\n      \"displayGroup\": \"Other\"\n    }\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-productTypes.html#add-attributedefinition"
+          },
+          "response": [
+            {
+              "id": "20adb6f6-76aa-5bea-912b-10181e08270b",
+              "name": "Add Nested AttributeDefinition",
+              "originalRequest": {
+                "url": "{{host}}/{{projectKey}}/product-types/{{id}}",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n\t\"version\": {{version}},\n\t\"actions\": [{\n\t\t\"action\": \"addAttributeDefinition\",\n\t\t\"attribute\": {\n\t\t\t\"name\": \"sparePartsTable\",\n\t\t\t\"label\": {\n\t\t\t\t\"en\": \"Spare Parts\",\n\t\t\t\t\"de\": \"Einzelteile\"\n\t\t\t},\n\t\t\t\"isRequired\": false,\n\t\t\t\"type\": {\n\t\t\t\t\"name\": \"set\",\n\t\t\t\t\"elementType\": {\n\t\t\t\t\t\"name\": \"nested\",\n\t\t\t\t\t\"typeReference\": {\n\t\t\t\t\t\t\"id\": \"b98de458-3678-4980-9bcf-7bbcbc2a1c04\",\n\t\t\t\t\t\t\"typeId\": \"product-type\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"attributeConstraint\": \"Unique\",\n\t\t\t\"isSearchable\": true,\n\t\t\t\"inputHint\": \"MultiLine\",\n\t\t\t\"displayGroup\": \"Other\"\n\t\t}\n\t}]\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "_postman_previewtype": "text",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip",
+                  "name": "Content-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 05 Sep 2017 10:10:56 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked",
+                  "name": "Transfer-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-067635f5-192e-4bff-b85e-01043771b8fa",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-ebb1810c.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "79",
+              "body": "{\"id\":\"b98de458-3678-4980-9bcf-7bbcbc2a1c04\",\"version\":2,\"name\":\"GeberitNestedProductType\",\"description\":\"Product with spareparts\",\"classifier\":\"Complex\",\"attributes\":[{\"name\":\"SomeWeirdAttribute\",\"label\":{\"de\":\"Geniales Attribut\",\"en\":\"Awesome Attribute\"},\"isRequired\":false,\"type\":{\"name\":\"ltext\"},\"attributeConstraint\":\"None\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"},{\"name\":\"sparePartsTable\",\"label\":{\"en\":\"Spare Parts\",\"de\":\"Einzelteile\"},\"isRequired\":false,\"type\":{\"name\":\"set\",\"elementType\":{\"name\":\"nested\",\"typeReference\":{\"typeId\":\"product-type\",\"id\":\"b98de458-3678-4980-9bcf-7bbcbc2a1c04\"}}},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"}],\"key\":\"mynestedproductType\",\"createdAt\":\"2017-09-05T10:07:35.917Z\",\"lastModifiedAt\":\"2017-09-05T10:10:56.042Z\"}"
+            },
+            {
+              "id": "26e2e291-1b43-f1ce-857d-0538bd66b3d2",
+              "name": "Add productType lenum AttributeDefinition",
+              "originalRequest": {
+                "url": "{{host}}/{{projectKey}}/product-types/{{id}}",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addAttributeDefinition\",\n    \"attribute\": {\n      \"name\": \"myLeNumAttribute\",\n      \"label\": {\n        \"en\": \"Awesome added Attribute\",\n        \"de\": \"Geniales hinzugefügtes Attribut\"\n      },\n      \"isRequired\": false,\n      \"type\": {\n        \"name\": \"lenum\",\n        \"values\": [{\n        \t\"key\": \"lenumkey\",\n        \t\"label\": {\n        \t\t\"de\": \"bladiblubb\"\n        \t}\n        }]\n      },\n      \"attributeConstraint\": \"Unique\",\n      \"isSearchable\": true,\n      \"inputHint\": \"MultiLine\",\n      \"displayGroup\": \"Other\"\n    }\n  }]\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "_postman_previewtype": "text",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip",
+                  "name": "Content-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 30 Aug 2017 14:50:21 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked",
+                  "name": "Transfer-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-cdc20324-6a88-4df2-959a-6af0b685c492",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-de8742bd.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "78",
+              "body": "{\"id\":\"34c992b0-9b6e-4a61-9a80-2fd64b5c02c1\",\"version\":14,\"name\":\"new prodcutType name\",\"description\":\"productTypedescription\",\"classifier\":\"Complex\",\"attributes\":[{\"name\":\"myAddedAttribute\",\"label\":{\"en\":\"english\",\"de\":\"german\"},\"inputTip\":{\"de\":\"german\",\"en\":\"english\"},\"isRequired\":false,\"type\":{\"name\":\"ltext\"},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"},{\"name\":\"myENumAttribute\",\"label\":{\"en\":\"Awesome enum Attribute\",\"de\":\"Geniales hinzugefügtes Attribut\"},\"isRequired\":false,\"type\":{\"name\":\"enum\",\"values\":[{\"key\":\"enumkey\",\"label\":\"enumlabel\"},{\"key\":\"neweNumKey\",\"label\":\"neweNumLabel\"}]},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"},{\"name\":\"myLeNumAttribute\",\"label\":{\"en\":\"Awesome added Attribute\",\"de\":\"Geniales hinzugefügtes Attribut\"},\"isRequired\":false,\"type\":{\"name\":\"lenum\",\"values\":[{\"key\":\"lenumkey\",\"label\":{\"de\":\"bladiblubb\"}}]},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"}],\"key\":\"my-key\",\"createdAt\":\"2017-08-29T14:41:05.472Z\",\"lastModifiedAt\":\"2017-08-30T14:50:21.811Z\"}"
+            },
+            {
+              "id": "4616d872-86f8-3aa1-4e0d-8982f0ad7552",
+              "name": "Add productType Attribute Definition",
+              "originalRequest": {
+                "url": "{{host}}/{{projectKey}}/product-types/{{id}}",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n\t\"version\": {{version}},\n\t\"actions\": [{\n\t\t\"action\": \"addAttributeDefinition\",\n\t\t\"attribute\": {\n\t\t\t\"name\": \"myAddedAttribute\",\n\t\t\t\"label\": {\n\t\t\t\t\"en\": \"Awesome added Attribute\",\n\t\t\t\t\"de\": \"Geniales hinzugefügtes Attribut\"\n\t\t\t},\n\t\t\t\"isRequired\": false,\n\t\t\t\"type\": {\n\t\t\t\t\"name\": \"ltext\"\n\t\t\t},\n\t\t\t\"attributeConstraint\": \"Unique\",\n\t\t\t\"isSearchable\": true,\n\t\t\t\"inputHint\": \"MultiLine\",\n\t\t\t\"displayGroup\": \"Other\"\n\t\t}\n\t}]\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "_postman_previewtype": "text",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip",
+                  "name": "Content-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 29 Aug 2017 14:58:31 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked",
+                  "name": "Transfer-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-806d529b-34a6-419a-985a-9120e6f33a28",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-e56cc360.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "59",
+              "body": "{\"id\":\"34c992b0-9b6e-4a61-9a80-2fd64b5c02c1\",\"version\":6,\"name\":\"new prodcutType name\",\"description\":\"productTypedescription\",\"classifier\":\"Complex\",\"attributes\":[{\"name\":\"myAttribute\",\"label\":{\"de\":\"Geniales Attribut\",\"en\":\"Awesome Attribute\"},\"isRequired\":false,\"type\":{\"name\":\"ltext\"},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"},{\"name\":\"myAddedAttribute\",\"label\":{\"en\":\"Awesome added Attribute\",\"de\":\"Geniales hinzugefügtes Attribut\"},\"isRequired\":false,\"type\":{\"name\":\"ltext\"},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"}],\"key\":\"my-key\",\"createdAt\":\"2017-08-29T14:41:05.472Z\",\"lastModifiedAt\":\"2017-08-29T14:58:31.241Z\"}"
+            },
+            {
+              "id": "75eaf0f8-1d3b-eb44-2e1e-2b3f90cdb1b8",
+              "name": "Add productType eNum AttributeDefinition",
+              "originalRequest": {
+                "url": "{{host}}/{{projectKey}}/product-types/{{id}}",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addAttributeDefinition\",\n    \"attribute\": {\n      \"name\": \"myENumAttribute\",\n      \"label\": {\n        \"en\": \"Awesome enum Attribute\",\n        \"de\": \"Geniales hinzugefügtes Attribut\"\n      },\n      \"isRequired\": false,\n      \"type\": {\n        \"name\": \"enum\",\n        \"values\": [{\n        \t\"key\": \"enumkey\",\n        \t\"label\": \"enumlabel\"\n        }]\n      },\n      \"attributeConstraint\": \"Unique\",\n      \"isSearchable\": true,\n      \"inputHint\": \"MultiLine\",\n      \"displayGroup\": \"Other\"\n    }\n  }]\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "_postman_previewtype": "text",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip",
+                  "name": "Content-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 30 Aug 2017 14:40:42 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked",
+                  "name": "Transfer-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-d0e3e2ed-899e-45c3-9a0c-2a902964cfd0",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-f36b4abf.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "55",
+              "body": "{\"id\":\"34c992b0-9b6e-4a61-9a80-2fd64b5c02c1\",\"version\":12,\"name\":\"new prodcutType name\",\"description\":\"productTypedescription\",\"classifier\":\"Complex\",\"attributes\":[{\"name\":\"myAddedAttribute\",\"label\":{\"en\":\"english\",\"de\":\"german\"},\"inputTip\":{\"de\":\"german\",\"en\":\"english\"},\"isRequired\":false,\"type\":{\"name\":\"ltext\"},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"},{\"name\":\"myENumAttribute\",\"label\":{\"en\":\"Awesome enum Attribute\",\"de\":\"Geniales hinzugefügtes Attribut\"},\"isRequired\":false,\"type\":{\"name\":\"enum\",\"values\":[{\"key\":\"enumkey\",\"label\":\"enumlabel\"}]},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"}],\"key\":\"my-key\",\"createdAt\":\"2017-08-29T14:41:05.472Z\",\"lastModifiedAt\":\"2017-08-30T14:40:42.107Z\"}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "5fa051b2-f8ea-2568-3f0d-496bb1fc7e0f",
+          "name": "Remove AttributeDefinition",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}",
+                  "postman.setNextRequest('Delete Product Type by ID');"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/product-types/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"removeAttributeDefinition\",\n    \"name\": \"myAddedENumAttribute\"\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-productTypes.html#remove-attributedefinition"
+          },
+          "response": [
+            {
+              "id": "e8ae3a19-fe44-135d-1b93-bb4cc20da48d",
+              "name": "Remove ProductType Attribute Definition",
+              "originalRequest": {
+                "url": "{{host}}/{{projectKey}}/product-types/{{id}}",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n\t\"version\": {{version}},\n\t\"actions\": [{\n\t\t\"action\": \"removeAttributeDefinition\",\n\t\t\"name\": \"myAddedAttribute\"\n\t}]\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "_postman_previewtype": "text",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip",
+                  "name": "Content-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 29 Aug 2017 15:01:20 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked",
+                  "name": "Transfer-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-7f4388b9-a99a-4475-8cb6-90c8fd3c27fd",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-4d7984f6.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "70",
+              "body": "{\"id\":\"34c992b0-9b6e-4a61-9a80-2fd64b5c02c1\",\"version\":7,\"name\":\"new prodcutType name\",\"description\":\"productTypedescription\",\"classifier\":\"Complex\",\"attributes\":[{\"name\":\"myAttribute\",\"label\":{\"en\":\"Awesome Attribute\",\"de\":\"Geniales Attribut\"},\"isRequired\":false,\"type\":{\"name\":\"ltext\"},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"}],\"key\":\"my-key\",\"createdAt\":\"2017-08-29T14:41:05.472Z\",\"lastModifiedAt\":\"2017-08-29T15:01:20.288Z\"}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "1c0b5dc5-c7aa-5fc8-cd77-7c82ddd923af",
+          "name": "Change AttributeDefinitionLabel",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/product-types/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n      \"action\": \"changeLabel\",\n      \"attributeName\": \"myAddedENumAttribute\",\n      \"label\": {\n        \"en\": \"english\",\n        \"de\": \"german\"\n      }\n    }\n  ]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-productTypes.html#change-attributedefinition-label"
+          },
+          "response": [
+            {
+              "id": "776a558b-e912-7e02-d7c6-4f2bd36ef0fb",
+              "name": "Change ProductType AttributeDefinition Label",
+              "originalRequest": {
+                "url": "{{host}}/{{projectKey}}/product-types/{{id}}",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n      \"action\": \"changeLabel\",\n      \"attributeName\": \"myAddedAttribute\",\n      \"label\": {\n        \"en\": \"english\",\n        \"de\": \"german\"\n      }\n    }\n  ]\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "_postman_previewtype": "text",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip",
+                  "name": "Content-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 30 Aug 2017 09:07:44 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked",
+                  "name": "Transfer-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-8c2e782d-9498-4ea2-ba72-78802cd427be",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-40bb8d66.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "105",
+              "body": "{\"id\":\"34c992b0-9b6e-4a61-9a80-2fd64b5c02c1\",\"version\":10,\"name\":\"new prodcutType name\",\"description\":\"productTypedescription\",\"classifier\":\"Complex\",\"attributes\":[{\"name\":\"myAddedAttribute\",\"label\":{\"en\":\"english\",\"de\":\"german\"},\"isRequired\":false,\"type\":{\"name\":\"ltext\"},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"}],\"key\":\"my-key\",\"createdAt\":\"2017-08-29T14:41:05.472Z\",\"lastModifiedAt\":\"2017-08-30T09:07:44.989Z\"}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "9dd017ee-ea5d-9212-b3db-1ed51bde77b3",
+          "name": "Set AttributeDefinition InputTip",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/product-types/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n      \"action\": \"setInputTip\",\n      \"attributeName\": \"myAddedENumAttribute\",\n      \"inputTip\": {\n        \"en\": \"inputTipEN\",\n        \"de\": \"inputTipDE\"\n      }\n    }\n  ]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-productTypes.html#set-attributedefinition-inputtip"
+          },
+          "response": [
+            {
+              "id": "f69cc699-bc11-af33-a20a-ade7417af458",
+              "name": "Set AttributeDefinition InputTip",
+              "originalRequest": {
+                "url": "{{host}}/{{projectKey}}/product-types/{{id}}",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n      \"action\": \"setInputTip\",\n      \"attributeName\": \"myAddedAttribute\",\n      \"inputTip\": {\n        \"en\": \"english\",\n        \"de\": \"german\"\n      }\n    }\n  ]\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "_postman_previewtype": "text",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip",
+                  "name": "Content-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 30 Aug 2017 13:52:14 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked",
+                  "name": "Transfer-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-04440961-5779-40a6-a91d-f9ae1b22b59e",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-e56cc360.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "55",
+              "body": "{\"id\":\"34c992b0-9b6e-4a61-9a80-2fd64b5c02c1\",\"version\":11,\"name\":\"new prodcutType name\",\"description\":\"productTypedescription\",\"classifier\":\"Complex\",\"attributes\":[{\"name\":\"myAddedAttribute\",\"label\":{\"de\":\"german\",\"en\":\"english\"},\"inputTip\":{\"en\":\"english\",\"de\":\"german\"},\"isRequired\":false,\"type\":{\"name\":\"ltext\"},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"}],\"key\":\"my-key\",\"createdAt\":\"2017-08-29T14:41:05.472Z\",\"lastModifiedAt\":\"2017-08-30T13:52:14.428Z\"}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "daa0d62d-934e-2448-0ded-23e602249814",
+          "name": "Add PlainEnumValue to AttributeDefinition",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/product-types/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n      \"action\": \"addPlainEnumValue\",\n      \"attributeName\": \"myAddedENumAttribute\",\n      \"value\": {\n        \"key\": \"neweNumKey\",\n        \"label\": \"neweNumLabel\"\n      }\n    }\n  ]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-productTypes.html#add-plainenumvalue-to-attributedefinition"
+          },
+          "response": [
+            {
+              "id": "d7307151-f6d0-538b-c9f2-bc5fed585e9c",
+              "name": "Add product Type PlainEnumValue to AttributeDefinition",
+              "originalRequest": {
+                "url": "{{host}}/{{projectKey}}/product-types/{{id}}",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n      \"action\": \"addPlainEnumValue\",\n      \"attributeName\": \"myENumAttribute\",\n      \"value\": {\n        \"key\": \"neweNumKey\",\n        \"label\": \"neweNumLabel\"\n      }\n    }\n  ]\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "_postman_previewtype": "text",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip",
+                  "name": "Content-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 30 Aug 2017 14:41:36 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked",
+                  "name": "Transfer-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-32999b84-d775-4586-a042-33669a1e3f70",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-de8742bd.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "85",
+              "body": "{\"id\":\"34c992b0-9b6e-4a61-9a80-2fd64b5c02c1\",\"version\":13,\"name\":\"new prodcutType name\",\"description\":\"productTypedescription\",\"classifier\":\"Complex\",\"attributes\":[{\"name\":\"myAddedAttribute\",\"label\":{\"de\":\"german\",\"en\":\"english\"},\"inputTip\":{\"en\":\"english\",\"de\":\"german\"},\"isRequired\":false,\"type\":{\"name\":\"ltext\"},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"},{\"name\":\"myENumAttribute\",\"label\":{\"de\":\"Geniales hinzugefügtes Attribut\",\"en\":\"Awesome enum Attribute\"},\"isRequired\":false,\"type\":{\"name\":\"enum\",\"values\":[{\"key\":\"enumkey\",\"label\":\"enumlabel\"},{\"key\":\"neweNumKey\",\"label\":\"neweNumLabel\"}]},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"}],\"key\":\"my-key\",\"createdAt\":\"2017-08-29T14:41:05.472Z\",\"lastModifiedAt\":\"2017-08-30T14:41:36.908Z\"}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "7f1efe8c-a777-438e-9782-3bd3fdbd940f",
+          "name": "Add LocalizableEnumValue to AttributeDefinition",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/product-types/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n      \"action\": \"addLocalizedEnumValue\",\n      \"attributeName\": \"myAddedLeNumAttribute\",\n      \"value\": {\n        \"key\": \"newleNumKey\",\n        \"label\": {\n          \"de\": \"newGermaneNumLabel\",\n          \"en\": \"newEnglishNumLabel\"\n        }\n      }\n    }\n  ]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-productTypes.html#add-localizableenumvalue-to-attributedefinition"
+          },
+          "response": [
+            {
+              "id": "ddaa7f99-6e66-5fdf-b4fc-1d9e36698891",
+              "name": "Add productType LocalizableEnumValue to AttributeDefinition",
+              "originalRequest": {
+                "url": "{{host}}/{{projectKey}}/product-types/{{id}}",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n      \"action\": \"addLocalizedEnumValue\",\n      \"attributeName\": \"myLeNumAttribute\",\n      \"value\": {\n        \"key\": \"newleNumKey\",\n        \"label\": {\n        \t\"de\": \"newGermaneNumLabel\",\n        \t\"en\": \"newEnglishNumLabel\"\n        }\n      }\n    }\n  ]\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "_postman_previewtype": "text",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip",
+                  "name": "Content-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 30 Aug 2017 14:51:15 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked",
+                  "name": "Transfer-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-f1c41e61-480c-4645-9b28-0067864b34ea",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-f36b4abf.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "55",
+              "body": "{\"id\":\"34c992b0-9b6e-4a61-9a80-2fd64b5c02c1\",\"version\":15,\"name\":\"new prodcutType name\",\"description\":\"productTypedescription\",\"classifier\":\"Complex\",\"attributes\":[{\"name\":\"myAddedAttribute\",\"label\":{\"de\":\"german\",\"en\":\"english\"},\"inputTip\":{\"en\":\"english\",\"de\":\"german\"},\"isRequired\":false,\"type\":{\"name\":\"ltext\"},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"},{\"name\":\"myENumAttribute\",\"label\":{\"de\":\"Geniales hinzugefügtes Attribut\",\"en\":\"Awesome enum Attribute\"},\"isRequired\":false,\"type\":{\"name\":\"enum\",\"values\":[{\"key\":\"enumkey\",\"label\":\"enumlabel\"},{\"key\":\"neweNumKey\",\"label\":\"neweNumLabel\"}]},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"},{\"name\":\"myLeNumAttribute\",\"label\":{\"de\":\"Geniales hinzugefügtes Attribut\",\"en\":\"Awesome added Attribute\"},\"isRequired\":false,\"type\":{\"name\":\"lenum\",\"values\":[{\"key\":\"lenumkey\",\"label\":{\"de\":\"bladiblubb\"}},{\"key\":\"newleNumKey\",\"label\":{\"de\":\"newGermaneNumLabel\",\"en\":\"newEnglishNumLabel\"}}]},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"}],\"key\":\"my-key\",\"createdAt\":\"2017-08-29T14:41:05.472Z\",\"lastModifiedAt\":\"2017-08-30T14:51:15.475Z\"}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "718c3d9c-a093-fde1-40f3-cad21ad4541e",
+          "name": "Change the order of AttributeDefinitions",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/product-types/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n      \"action\": \"changeAttributeOrder\",\n      \"attributes\":[\n        {\n          \"name\": \"myAddedLeNumAttribute\",\n          \"label\": {\n              \"en\": \"addedAttributeEN\",\n              \"de\": \"addedAttributeDE\"\n          },\n          \"isRequired\": false,\n          \"type\": {\n              \"name\": \"lenum\",\n              \"values\": [\n                {\n                    \"key\": \"lenum1\",\n                    \"label\": {\n                        \"de\": \"lenumDE\",\n                        \"en\": \"lenumEN\"\n                    }\n                },\n                {\n                    \"key\": \"lenum2\",\n                    \"label\": {\n                        \"de\": \"lenum2DE\",\n                        \"en\": \"lenum2EN\"\n                    }\n                },\n                {\n                    \"key\": \"newleNumKey\",\n                    \"label\": {\n                        \"de\": \"newGermaneNumLabel\",\n                        \"en\": \"newEnglishNumLabel\"\n                    }\n                }\n              ]\n            },\n          \"attributeConstraint\": \"Unique\",\n          \"isSearchable\": true,\n          \"inputHint\": \"MultiLine\",\n          \"displayGroup\": \"Other\"\n        },\n        {\n          \"name\": \"ProductTypeAttribute\",\n          \"label\": {\n              \"en\": \"ProductTypeAttributeEN\",\n              \"de\": \"ProductTypeAttributeDE\"\n          },\n          \"isRequired\": false,\n          \"type\": {\n              \"name\": \"ltext\"\n          },\n          \"attributeConstraint\": \"None\",\n          \"isSearchable\": true,\n          \"inputHint\": \"MultiLine\",\n          \"displayGroup\": \"Other\"\n      },\n      {\n          \"name\": \"myAddedENumAttribute\",\n          \"label\": {\n              \"de\": \"german\",\n              \"en\": \"english\"\n          },\n          \"inputTip\": {\n              \"en\": \"inputTipEN\",\n              \"de\": \"inputTipDE\"\n          },\n          \"isRequired\": false,\n          \"type\": {\n              \"name\": \"enum\",\n              \"values\": [{\n                  \"key\": \"enum1\",\n                  \"label\": \"enumlabel1\"\n              }, {\n                  \"key\": \"enum2\",\n                  \"label\": \"enumlabel2\"\n              }, {\n                  \"key\": \"neweNumKey\",\n                  \"label\": \"neweNumLabel\"\n              }]\n          },\n          \"attributeConstraint\": \"Unique\",\n          \"isSearchable\": true,\n          \"inputHint\": \"MultiLine\",\n          \"displayGroup\": \"Other\"\n      }\n      ]\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-productTypes.html#change-the-order-of-attributedefinitions"
+          },
+          "response": [
+            {
+              "id": "a53b4ad0-c6b0-02c2-2853-47523be3054d",
+              "name": "Change the order of AttributeDefinitions in productType",
+              "originalRequest": {
+                "url": "{{host}}/{{projectKey}}/product-types/{{id}}",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n\t\"version\": {{version}},\n\t\"actions\": [{\n\t\t\"action\": \"changeAttributeOrder\",\n\t\t\"attributes\": [\n\t\t\n                {\n                    \"name\": \"myENumAttribute\",\n                    \"label\": {\n                        \"de\": \"Geniales hinzugefügtes Attribut\",\n                        \"en\": \"Awesome enum Attribute\"\n                    },\n                    \"isRequired\": false,\n                    \"type\": {\n                        \"name\": \"enum\",\n                        \"values\": [\n                            {\n                                \"key\": \"enumkey\",\n                                \"label\": \"enumlabel\"\n                            },\n                            {\n                                \"key\": \"neweNumKey\",\n                                \"label\": \"neweNumLabel\"\n                            }\n                        ]\n                    },\n                    \"attributeConstraint\": \"Unique\",\n                    \"isSearchable\": true,\n                    \"inputHint\": \"MultiLine\",\n                    \"displayGroup\": \"Other\"\n                },\n                {\n                    \"name\": \"myAddedAttribute\",\n                    \"label\": {\n                        \"de\": \"german\",\n                        \"en\": \"english\"\n                    },\n                    \"inputTip\": {\n                        \"en\": \"english\",\n                        \"de\": \"german\"\n                    },\n                    \"isRequired\": false,\n                    \"type\": {\n                        \"name\": \"ltext\"\n                    },\n                    \"attributeConstraint\": \"Unique\",\n                    \"isSearchable\": true,\n                    \"inputHint\": \"MultiLine\",\n                    \"displayGroup\": \"Other\"\n                },{\n                    \"name\": \"myLeNumAttribute\",\n                    \"label\": {\n                        \"de\": \"Geniales hinzugefügtes Attribut\",\n                        \"en\": \"Awesome added Attribute\"\n                    },\n                    \"isRequired\": false,\n                    \"type\": {\n                        \"name\": \"lenum\",\n                        \"values\": [\n                            {\n                                \"key\": \"lenumkey\",\n                                \"label\": {\n                                    \"de\": \"bladiblubb\"\n                                }\n                            },\n                            {\n                                \"key\": \"newleNumKey\",\n                                \"label\": {\n                                    \"de\": \"newGermaneNumLabel\",\n                                    \"en\": \"newEnglishNumLabel\"\n                                }\n                            }\n                        ]\n                    },\n                    \"attributeConstraint\": \"Unique\",\n                    \"isSearchable\": true,\n                    \"inputHint\": \"MultiLine\",\n                    \"displayGroup\": \"Other\"\n                },\n                {\n                    \"name\": \"my2ndAddedAttribute\",\n                    \"label\": {\n                        \"de\": \"Geniales 2. hinzugefügtes Attribut\",\n                        \"en\": \"Awesome 2nd added Attribute\"\n                    },\n                    \"isRequired\": false,\n                    \"type\": {\n                        \"name\": \"ltext\"\n                    },\n                    \"attributeConstraint\": \"Unique\",\n                    \"isSearchable\": true,\n                    \"inputHint\": \"MultiLine\",\n                    \"displayGroup\": \"Other\"\n                }\n\t\t]\n\t}]\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "_postman_previewtype": "text",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip",
+                  "name": "Content-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 30 Aug 2017 15:10:54 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked",
+                  "name": "Transfer-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-133ec57b-ad38-4e24-a85a-9d49b6eeb8ab",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-bf772e57.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "73",
+              "body": "{\"id\":\"34c992b0-9b6e-4a61-9a80-2fd64b5c02c1\",\"version\":17,\"name\":\"new prodcutType name\",\"description\":\"productTypedescription\",\"classifier\":\"Complex\",\"attributes\":[{\"name\":\"myENumAttribute\",\"label\":{\"de\":\"Geniales hinzugefügtes Attribut\",\"en\":\"Awesome enum Attribute\"},\"isRequired\":false,\"type\":{\"name\":\"enum\",\"values\":[{\"key\":\"enumkey\",\"label\":\"enumlabel\"},{\"key\":\"neweNumKey\",\"label\":\"neweNumLabel\"}]},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"},{\"name\":\"myAddedAttribute\",\"label\":{\"de\":\"german\",\"en\":\"english\"},\"inputTip\":{\"en\":\"english\",\"de\":\"german\"},\"isRequired\":false,\"type\":{\"name\":\"ltext\"},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"},{\"name\":\"myLeNumAttribute\",\"label\":{\"de\":\"Geniales hinzugefügtes Attribut\",\"en\":\"Awesome added Attribute\"},\"isRequired\":false,\"type\":{\"name\":\"lenum\",\"values\":[{\"key\":\"lenumkey\",\"label\":{\"de\":\"bladiblubb\"}},{\"key\":\"newleNumKey\",\"label\":{\"de\":\"newGermaneNumLabel\",\"en\":\"newEnglishNumLabel\"}}]},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"},{\"name\":\"my2ndAddedAttribute\",\"label\":{\"de\":\"Geniales 2. hinzugefügtes Attribut\",\"en\":\"Awesome 2nd added Attribute\"},\"isRequired\":false,\"type\":{\"name\":\"ltext\"},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"}],\"key\":\"my-key\",\"createdAt\":\"2017-08-29T14:41:05.472Z\",\"lastModifiedAt\":\"2017-08-30T15:10:54.554Z\"}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "b4511264-bda6-19a1-a275-74db353fcecb",
+          "name": "Change the order of EnumValues",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/product-types/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changePlainEnumValueOrder\",\n    \"attributeName\": \"myAddedENumAttribute\",\n    \"values\": [\n        {\n            \"key\": \"enum2\",\n            \"label\": \"enumlabel2\"\n        },\n        {\n            \"key\": \"enum1\",\n            \"label\": \"enumlabel1\"\n        },\n        {\n            \"key\": \"neweNumKey\",\n            \"label\": \"neweNumLabel\"\n        }\n    ]\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-productTypes.html#change-the-order-of-attributedefinitions"
+          },
+          "response": [
+            {
+              "id": "73157211-c5cb-433b-3547-fc5783ff0c96",
+              "name": "Change the order of productType EnumValues",
+              "originalRequest": {
+                "url": "{{host}}/{{projectKey}}/product-types/{{id}}",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n\t\"version\": {{version}},\n\t\"actions\": [{\n\t\t\"action\": \"changePlainEnumValueOrder\",\n\t\t\"attributeName\": \"myENumAttribute\",\n\t\t\"values\": \n\t\t[\n\t\t\t{\n                \"key\": \"enumkey\",\n                \"label\": \"enumlabel\"\n            },\n            {\n                \"key\": \"neweNumKey\",\n                \"label\": \"neweNumLabel\"\n            }\n\t\t]\n\t}]\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "_postman_previewtype": "text",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip",
+                  "name": "Content-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 04 Sep 2017 08:28:32 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked",
+                  "name": "Transfer-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-136e2701-f3c5-4ded-adf6-498fcd622837",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-40bb8d66.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "1362",
+              "body": "{\"id\":\"34c992b0-9b6e-4a61-9a80-2fd64b5c02c1\",\"version\":21,\"name\":\"new prodcutType name\",\"description\":\"productTypedescription\",\"classifier\":\"Complex\",\"attributes\":[{\"name\":\"myENumAttribute\",\"label\":{\"de\":\"Geniales hinzugefügtes Attribut\",\"en\":\"Awesome enum Attribute\"},\"isRequired\":false,\"type\":{\"name\":\"enum\",\"values\":[{\"key\":\"enumkey\",\"label\":\"enumlabel\"},{\"key\":\"neweNumKey\",\"label\":\"neweNumLabel\"}]},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"},{\"name\":\"myAddedAttribute\",\"label\":{\"de\":\"german\",\"en\":\"english\"},\"inputTip\":{\"en\":\"english\",\"de\":\"german\"},\"isRequired\":false,\"type\":{\"name\":\"ltext\"},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"},{\"name\":\"myLeNumAttribute\",\"label\":{\"de\":\"Geniales hinzugefügtes Attribut\",\"en\":\"Awesome added Attribute\"},\"isRequired\":false,\"type\":{\"name\":\"lenum\",\"values\":[{\"key\":\"lenumkey\",\"label\":{\"en\":\"english\",\"de\":\"german\"}},{\"key\":\"newleNumKey\",\"label\":{\"de\":\"german\",\"en\":\"english\"}}]},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"},{\"name\":\"my2ndAddedAttribute\",\"label\":{\"de\":\"Geniales 2. hinzugefügtes Attribut\",\"en\":\"Awesome 2nd added Attribute\"},\"isRequired\":false,\"type\":{\"name\":\"ltext\"},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"}],\"key\":\"my-key\",\"createdAt\":\"2017-08-29T14:41:05.472Z\",\"lastModifiedAt\":\"2017-09-04T08:28:32.232Z\"}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "ff150361-d0f4-040b-aca9-ce5e3b157d66",
+          "name": "Change the order of LocalizedEnumValues",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/product-types/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeLocalizedEnumValueOrder\",\n    \"attributeName\": \"myAddedLeNumAttribute\",\n    \"values\": [\n        {\n            \"key\": \"lenum2\",\n            \"label\": {\n                \"de\": \"lenum2DE\",\n                \"en\": \"lenum2EN\"\n            }\n      },\n      {\n            \"key\": \"lenum1\",\n            \"label\": {\n                \"de\": \"lenumDE\",\n                \"en\": \"lenumEN\"\n          }\n      },\n      {\n            \"key\": \"newleNumKey\",\n            \"label\": {\n                \"de\": \"newGermaneNumLabel\",\n                \"en\": \"newEnglishNumLabel\"\n            }\n    }\n    ]\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-productTypes.html#change-the-order-of-attributedefinitions"
+          },
+          "response": [
+            {
+              "id": "6f03c83e-4ca3-966d-b915-d3f91d8fe90f",
+              "name": "Change the order of productType LocalizedEnumValues",
+              "originalRequest": {
+                "url": "{{host}}/{{projectKey}}/product-types/{{id}}",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n\t\"version\": {{version}},\n\t\"actions\": [{\n\t\t\"action\": \"changeLocalizedEnumValueOrder\",\n\t\t\"attributeName\": \"myLeNumAttribute\",\n\t\t\"values\": [\n        \t{\n                \"key\": \"newleNumKey\",\n                \"label\": {\n                    \"de\": \"german\",\n                    \"en\": \"english\"\n                }\n            },\n            {\n                \"key\": \"lenumkey\",\n                \"label\": {\n                    \"en\": \"english\",\n                    \"de\": \"german\"\n                }\n            }\n\t\t]\n\t}]\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "_postman_previewtype": "text",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip",
+                  "name": "Content-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 04 Sep 2017 08:59:57 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked",
+                  "name": "Transfer-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-f6a2f713-ec14-475a-a140-2dbbe46194df",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-a3e2881c.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "139",
+              "body": "{\"id\":\"34c992b0-9b6e-4a61-9a80-2fd64b5c02c1\",\"version\":22,\"name\":\"new prodcutType name\",\"description\":\"productTypedescription\",\"classifier\":\"Complex\",\"attributes\":[{\"name\":\"myENumAttribute\",\"label\":{\"en\":\"Awesome enum Attribute\",\"de\":\"Geniales hinzugefügtes Attribut\"},\"isRequired\":false,\"type\":{\"name\":\"enum\",\"values\":[{\"key\":\"enumkey\",\"label\":\"enumlabel\"},{\"key\":\"neweNumKey\",\"label\":\"neweNumLabel\"}]},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"},{\"name\":\"myAddedAttribute\",\"label\":{\"en\":\"english\",\"de\":\"german\"},\"inputTip\":{\"de\":\"german\",\"en\":\"english\"},\"isRequired\":false,\"type\":{\"name\":\"ltext\"},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"},{\"name\":\"myLeNumAttribute\",\"label\":{\"en\":\"Awesome added Attribute\",\"de\":\"Geniales hinzugefügtes Attribut\"},\"isRequired\":false,\"type\":{\"name\":\"lenum\",\"values\":[{\"key\":\"newleNumKey\",\"label\":{\"de\":\"german\",\"en\":\"english\"}},{\"key\":\"lenumkey\",\"label\":{\"en\":\"english\",\"de\":\"german\"}}]},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"},{\"name\":\"my2ndAddedAttribute\",\"label\":{\"en\":\"Awesome 2nd added Attribute\",\"de\":\"Geniales 2. hinzugefügtes Attribut\"},\"isRequired\":false,\"type\":{\"name\":\"ltext\"},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"}],\"key\":\"my-key\",\"createdAt\":\"2017-08-29T14:41:05.472Z\",\"lastModifiedAt\":\"2017-09-04T08:59:57.686Z\"}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "b33f14bc-f199-8469-f79c-7bc9bb781cf0",
+          "name": "Change the Label of an EnumValue",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/product-types/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changePlainEnumValueLabel\",\n    \"attributeName\": \"myAddedENumAttribute\",\n    \"newValue\": \n    {\n        \"key\": \"enum1\",\n        \"label\": \"enumlabel1new\"\n    }\n  }]\n}"
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-productTypes.html#change-the-order-of-attributedefinitions"
+          },
+          "response": [
+            {
+              "id": "dbce7545-5acb-903e-3c7b-a46b0d25ef26",
+              "name": "Change the Label of a productType EnumValue",
+              "originalRequest": {
+                "url": "{{host}}/{{projectKey}}/product-types/{{id}}",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}",
+                    "disabled": false,
+                    "description": ""
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "disabled": false,
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n\t\"version\": {{version}},\n\t\"actions\": [{\n\t\t\"action\": \"changePlainEnumValueLabel\",\n\t\t\"attributeName\": \"myENumAttribute\",\n\t\t\"newValue\": {\n            \"key\": \"neweNumKey\",\n            \"label\": \"ladida\"\n        }\n\t}]\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "_postman_previewtype": "text",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip",
+                  "name": "Content-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 04 Sep 2017 09:03:30 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked",
+                  "name": "Transfer-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-98740281-babc-46f8-9b8a-a1f58b9d7c55",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-de8742bd.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "79",
+              "body": "{\"id\":\"34c992b0-9b6e-4a61-9a80-2fd64b5c02c1\",\"version\":23,\"name\":\"new prodcutType name\",\"description\":\"productTypedescription\",\"classifier\":\"Complex\",\"attributes\":[{\"name\":\"myENumAttribute\",\"label\":{\"de\":\"Geniales hinzugefügtes Attribut\",\"en\":\"Awesome enum Attribute\"},\"isRequired\":false,\"type\":{\"name\":\"enum\",\"values\":[{\"key\":\"enumkey\",\"label\":\"enumlabel\"},{\"key\":\"neweNumKey\",\"label\":\"ladida\"}]},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"},{\"name\":\"myAddedAttribute\",\"label\":{\"de\":\"german\",\"en\":\"english\"},\"inputTip\":{\"en\":\"english\",\"de\":\"german\"},\"isRequired\":false,\"type\":{\"name\":\"ltext\"},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"},{\"name\":\"myLeNumAttribute\",\"label\":{\"de\":\"Geniales hinzugefügtes Attribut\",\"en\":\"Awesome added Attribute\"},\"isRequired\":false,\"type\":{\"name\":\"lenum\",\"values\":[{\"key\":\"newleNumKey\",\"label\":{\"en\":\"english\",\"de\":\"german\"}},{\"key\":\"lenumkey\",\"label\":{\"de\":\"german\",\"en\":\"english\"}}]},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"},{\"name\":\"my2ndAddedAttribute\",\"label\":{\"de\":\"Geniales 2. hinzugefügtes Attribut\",\"en\":\"Awesome 2nd added Attribute\"},\"isRequired\":false,\"type\":{\"name\":\"ltext\"},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"}],\"key\":\"my-key\",\"createdAt\":\"2017-08-29T14:41:05.472Z\",\"lastModifiedAt\":\"2017-09-04T09:03:30.097Z\"}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "f43429ac-e60d-8172-9242-36d43dda3673",
+          "name": "Change the label of a LocalizedEnumVale",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/product-types/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n      \"action\": \"changeLocalizedEnumValueLabel\",\n      \"attributeName\": \"myAddedLeNumAttribute\",\n      \"newValue\": {\n        \"key\": \"lenum1\",\n        \"label\": {\n            \"de\": \"lenumDEnew\",\n            \"en\": \"lenumENnew\"\n      }\n      }\n    }\n  ]\n}"
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "id": "fab1125e-9b79-a69c-3116-efdac64523ff",
+              "name": "Change the label of a productType LocalizedEnumVale",
+              "originalRequest": {
+                "url": "{{host}}/{{projectKey}}/product-types/{{id}}",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n      \"action\": \"changeLocalizedEnumValueLabel\",\n      \"attributeName\": \"myLeNumAttribute\",\n      \"newValue\": {\n        \"key\": \"lenumkey\",\n        \"label\": {\n          \"en\": \"newenglish\",\n          \"de\": \"neugerman\"\n        }\n      }\n    }\n  ]\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "_postman_previewtype": "text",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip",
+                  "name": "Content-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 04 Sep 2017 09:06:17 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked",
+                  "name": "Transfer-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-1c8c7fe0-52f8-4e33-a794-7576525ee04a",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-a3e2881c.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "105",
+              "body": "{\"id\":\"34c992b0-9b6e-4a61-9a80-2fd64b5c02c1\",\"version\":24,\"name\":\"new prodcutType name\",\"description\":\"productTypedescription\",\"classifier\":\"Complex\",\"attributes\":[{\"name\":\"myENumAttribute\",\"label\":{\"en\":\"Awesome enum Attribute\",\"de\":\"Geniales hinzugefügtes Attribut\"},\"isRequired\":false,\"type\":{\"name\":\"enum\",\"values\":[{\"key\":\"enumkey\",\"label\":\"enumlabel\"},{\"key\":\"neweNumKey\",\"label\":\"ladida\"}]},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"},{\"name\":\"myAddedAttribute\",\"label\":{\"en\":\"english\",\"de\":\"german\"},\"inputTip\":{\"de\":\"german\",\"en\":\"english\"},\"isRequired\":false,\"type\":{\"name\":\"ltext\"},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"},{\"name\":\"myLeNumAttribute\",\"label\":{\"en\":\"Awesome added Attribute\",\"de\":\"Geniales hinzugefügtes Attribut\"},\"isRequired\":false,\"type\":{\"name\":\"lenum\",\"values\":[{\"key\":\"newleNumKey\",\"label\":{\"de\":\"german\",\"en\":\"english\"}},{\"key\":\"lenumkey\",\"label\":{\"en\":\"newenglish\",\"de\":\"neugerman\"}}]},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"},{\"name\":\"my2ndAddedAttribute\",\"label\":{\"en\":\"Awesome 2nd added Attribute\",\"de\":\"Geniales 2. hinzugefügtes Attribut\"},\"isRequired\":false,\"type\":{\"name\":\"ltext\"},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"}],\"key\":\"my-key\",\"createdAt\":\"2017-08-29T14:41:05.472Z\",\"lastModifiedAt\":\"2017-09-04T09:06:17.570Z\"}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "f1158274-d337-d59b-d2fe-e07a4aecb558",
+          "name": "Change AttributeDefinition IsSearchable",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/product-types/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n      \"action\": \"changeIsSearchable\",\n      \"attributeName\": \"ProductTypeAttribute\",\n      \"isSearchable\": false\n    }\n  ]\n}"
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "id": "4b64bda0-9651-3b6f-7f1c-b11818f3c163",
+              "name": "Change prodcutType AttributeDefinition IsSearchable",
+              "originalRequest": {
+                "url": "{{host}}/{{projectKey}}/product-types/{{id}}",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n      \"action\": \"changeIsSearchable\",\n      \"attributeName\": \"myENumAttribute\",\n      \"isSearchable\": false\n    }\n  ]\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "_postman_previewtype": "text",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip",
+                  "name": "Content-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 04 Sep 2017 09:08:49 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked",
+                  "name": "Transfer-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-ae565161-78e9-4d43-b843-c031739b1328",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-4d7984f6.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "128",
+              "body": "{\"id\":\"34c992b0-9b6e-4a61-9a80-2fd64b5c02c1\",\"version\":25,\"name\":\"new prodcutType name\",\"description\":\"productTypedescription\",\"classifier\":\"Complex\",\"attributes\":[{\"name\":\"myENumAttribute\",\"label\":{\"de\":\"Geniales hinzugefügtes Attribut\",\"en\":\"Awesome enum Attribute\"},\"isRequired\":false,\"type\":{\"name\":\"enum\",\"values\":[{\"key\":\"enumkey\",\"label\":\"enumlabel\"},{\"key\":\"neweNumKey\",\"label\":\"ladida\"}]},\"attributeConstraint\":\"Unique\",\"isSearchable\":false,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"},{\"name\":\"myAddedAttribute\",\"label\":{\"de\":\"german\",\"en\":\"english\"},\"inputTip\":{\"en\":\"english\",\"de\":\"german\"},\"isRequired\":false,\"type\":{\"name\":\"ltext\"},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"},{\"name\":\"myLeNumAttribute\",\"label\":{\"de\":\"Geniales hinzugefügtes Attribut\",\"en\":\"Awesome added Attribute\"},\"isRequired\":false,\"type\":{\"name\":\"lenum\",\"values\":[{\"key\":\"newleNumKey\",\"label\":{\"en\":\"english\",\"de\":\"german\"}},{\"key\":\"lenumkey\",\"label\":{\"de\":\"neugerman\",\"en\":\"newenglish\"}}]},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"},{\"name\":\"my2ndAddedAttribute\",\"label\":{\"de\":\"Geniales 2. hinzugefügtes Attribut\",\"en\":\"Awesome 2nd added Attribute\"},\"isRequired\":false,\"type\":{\"name\":\"ltext\"},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"}],\"key\":\"my-key\",\"createdAt\":\"2017-08-29T14:41:05.472Z\",\"lastModifiedAt\":\"2017-09-04T09:08:49.822Z\"}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "5a2bd4fa-7cdb-2f63-bee0-a42dfda22a08",
+          "name": "Change AttributeDefinition InputHint",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}",
+                  "postman.setNextRequest('Remove AttributeDefinition');"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{host}}/{{projectKey}}/product-types/{{id}}",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n      \"action\": \"changeInputHint\",\n      \"attributeName\": \"ProductTypeAttribute\",\n      \"newValue\": \"SingleLine\"\n    }\n  ]\n}"
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "id": "019c4d62-c73c-ed69-9c36-c6e398f1bacd",
+              "name": "Change productType AttributeDefinition InputHint",
+              "originalRequest": {
+                "url": "{{host}}/{{projectKey}}/product-types/{{id}}",
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n      \"action\": \"changeInputHint\",\n      \"attributeName\": \"myAddedAttribute\",\n      \"newValue\": \"SingleLine\"\n    }\n  ]\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "_postman_previewtype": "text",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip",
+                  "name": "Content-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 04 Sep 2017 09:12:16 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked",
+                  "name": "Transfer-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-5e6868ef-cdf9-4154-aaa9-ea63b7fb2981",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-de8742bd.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "105",
+              "body": "{\"id\":\"34c992b0-9b6e-4a61-9a80-2fd64b5c02c1\",\"version\":26,\"name\":\"new prodcutType name\",\"description\":\"productTypedescription\",\"classifier\":\"Complex\",\"attributes\":[{\"name\":\"myENumAttribute\",\"label\":{\"en\":\"Awesome enum Attribute\",\"de\":\"Geniales hinzugefügtes Attribut\"},\"isRequired\":false,\"type\":{\"name\":\"enum\",\"values\":[{\"key\":\"enumkey\",\"label\":\"enumlabel\"},{\"key\":\"neweNumKey\",\"label\":\"ladida\"}]},\"attributeConstraint\":\"Unique\",\"isSearchable\":false,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"},{\"name\":\"myAddedAttribute\",\"label\":{\"en\":\"english\",\"de\":\"german\"},\"inputTip\":{\"de\":\"german\",\"en\":\"english\"},\"isRequired\":false,\"type\":{\"name\":\"ltext\"},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"SingleLine\",\"displayGroup\":\"Other\"},{\"name\":\"myLeNumAttribute\",\"label\":{\"en\":\"Awesome added Attribute\",\"de\":\"Geniales hinzugefügtes Attribut\"},\"isRequired\":false,\"type\":{\"name\":\"lenum\",\"values\":[{\"key\":\"newleNumKey\",\"label\":{\"de\":\"german\",\"en\":\"english\"}},{\"key\":\"lenumkey\",\"label\":{\"en\":\"newenglish\",\"de\":\"neugerman\"}}]},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"},{\"name\":\"my2ndAddedAttribute\",\"label\":{\"en\":\"Awesome 2nd added Attribute\",\"de\":\"Geniales 2. hinzugefügtes Attribut\"},\"isRequired\":false,\"type\":{\"name\":\"ltext\"},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"}],\"key\":\"my-key\",\"createdAt\":\"2017-08-29T14:41:05.472Z\",\"lastModifiedAt\":\"2017-09-04T09:12:16.553Z\"}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "fe3e24e5-12d7-12da-2fe2-c7da7911b30e",
+          "name": "Delete Product Type by ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": {
+              "raw": "{{host}}/{{projectKey}}/product-types/{{id}}?version={{version}}",
+              "auth": {},
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "{{projectKey}}",
+                "product-types",
+                "{{id}}"
+              ],
+              "query": [
+                {
+                  "key": "version",
+                  "value": "{{version}}",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "id": "5d1cfd50-e8cc-f8ac-3df8-d3d8f0e5f7af",
+              "name": "Delete Product Type by ID",
+              "originalRequest": {
+                "url": {
+                  "raw": "{{host}}/{{projectKey}}/product-types/{{id}}?version={{version}}",
+                  "auth": {},
+                  "host": [
+                    "{{host}}"
+                  ],
+                  "path": [
+                    "{{projectKey}}",
+                    "product-types",
+                    "{{id}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "version",
+                      "value": "{{version}}",
+                      "equals": true,
+                      "description": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}",
+                    "description": ""
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "_postman_previewtype": "text",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip",
+                  "name": "Content-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 04 Sep 2017 09:13:29 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked",
+                  "name": "Transfer-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-c1dc7c37-7bd9-4383-bb64-14a810edbb4d",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-de8742bd.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "91",
+              "body": "{\"id\":\"34c992b0-9b6e-4a61-9a80-2fd64b5c02c1\",\"version\":26,\"name\":\"new prodcutType name\",\"description\":\"productTypedescription\",\"classifier\":\"Complex\",\"attributes\":[{\"name\":\"myENumAttribute\",\"label\":{\"de\":\"Geniales hinzugefügtes Attribut\",\"en\":\"Awesome enum Attribute\"},\"isRequired\":false,\"type\":{\"name\":\"enum\",\"values\":[{\"key\":\"enumkey\",\"label\":\"enumlabel\"},{\"key\":\"neweNumKey\",\"label\":\"ladida\"}]},\"attributeConstraint\":\"Unique\",\"isSearchable\":false,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"},{\"name\":\"myAddedAttribute\",\"label\":{\"de\":\"german\",\"en\":\"english\"},\"inputTip\":{\"en\":\"english\",\"de\":\"german\"},\"isRequired\":false,\"type\":{\"name\":\"ltext\"},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"SingleLine\",\"displayGroup\":\"Other\"},{\"name\":\"myLeNumAttribute\",\"label\":{\"de\":\"Geniales hinzugefügtes Attribut\",\"en\":\"Awesome added Attribute\"},\"isRequired\":false,\"type\":{\"name\":\"lenum\",\"values\":[{\"key\":\"newleNumKey\",\"label\":{\"en\":\"english\",\"de\":\"german\"}},{\"key\":\"lenumkey\",\"label\":{\"de\":\"neugerman\",\"en\":\"newenglish\"}}]},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"},{\"name\":\"my2ndAddedAttribute\",\"label\":{\"de\":\"Geniales 2. hinzugefügtes Attribut\",\"en\":\"Awesome 2nd added Attribute\"},\"isRequired\":false,\"type\":{\"name\":\"ltext\"},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"}],\"key\":\"my-key\",\"createdAt\":\"2017-08-29T14:41:05.472Z\",\"lastModifiedAt\":\"2017-09-04T09:12:16.553Z\"}"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
