@@ -164,7 +164,6 @@
               "basic": {
                 "username": "{{client_id}}",
                 "password": "{{client_secret}}",
-                "saveHelperData": true,
                 "showPassword": false
               }
             },
@@ -176,7 +175,7 @@
               },
               {
                 "key": "Authorization",
-                "value": "Basic NjVZRW1LWlZPaUU2WkdpQmMwRFZFWUpwOlFxc3ZsZFdsNUhWVlpkcnNfN2ptLXhRZjQxVkdFcTdU"
+                "value": "Bearer {{access_token}}"
               }
             ],
             "body": {},
