@@ -9175,30 +9175,6 @@
       ]
     },
     {
-      "_postman_id": "6e9a6244-2f07-0cd6-fb65-96cf617bc29c",
-      "name": "Product Suggestions",
-      "description": "",
-      "item": [
-        {
-          "_postman_id": "21fe258c-3d64-a54a-f2fa-da2d6ea9085e",
-          "name": "Suggest Query",
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}"
-              }
-            ],
-            "body": {},
-            "url": "{{host}}/{{projectKey}}/product-projections/suggest",
-            "description": ""
-          },
-          "response": []
-        }
-      ]
-    },
-    {
       "_postman_id": "5bfc7fd3-3678-c35d-b801-04273b243205",
       "name": "Product Types",
       "description": "",
