@@ -6391,13 +6391,6 @@
       "description": "",
       "item": [
         {
-          "_postman_id": "6e80865e-0577-d65d-4bf5-6786badfba3e",
-          "name": "Orders Import",
-          "description": "",
-          "item": [],
-          "_postman_isSubFolder": true
-        },
-        {
           "_postman_id": "e840db41-aea0-331d-207e-fa1caa6692c5",
           "name": "Query CustomerGroups",
           "event": [
@@ -9720,6 +9713,12 @@
           "response": []
         }
       ]
+    },
+    {
+      "_postman_id": "6e80865e-0577-d65d-4bf5-6786badfba3e",
+      "name": "Orders Import",
+      "description": "",
+      "item": []
     },
     {
       "_postman_id": "88c3c194-774f-8f43-dcdb-466eac7ad942",
