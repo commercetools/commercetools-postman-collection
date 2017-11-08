@@ -209,7 +209,6 @@
               "basic": {
                 "username": "{{client_id}}",
                 "password": "{{client_secret}}",
-                "saveHelperData": true,
                 "showPassword": false
               }
             },
@@ -218,10 +217,6 @@
               {
                 "key": "Content-Type",
                 "value": "application/json"
-              },
-              {
-                "key": "Authorization",
-                "value": "Basic NjVZRW1LWlZPaUU2WkdpQmMwRFZFWUpwOlFxc3ZsZFdsNUhWVlpkcnNfN2ptLXhRZjQxVkdFcTdU"
               }
             ],
             "body": {},
