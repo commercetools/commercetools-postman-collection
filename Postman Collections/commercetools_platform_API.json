@@ -29814,6 +29814,1053 @@
           "response": []
         }
       ]
+    },
+    {
+      "_postman_id": "88c3c194-774f-8f43-dcdb-466eac7ad942",
+      "name": "Payments copy",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "e75daf2e-7234-b893-faa2-cf03a32b23d4",
+          "name": "Create a Payment",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"amountPlanned\": {\n    \"currencyCode\": \"EUR\",\n    \"centAmount\":100\n  }\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/payments",
+            "description": "https://dev.commercetools.com/http-api-projects-payments.html#create-a-payment"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "596a1cb3-33ab-e56b-69ce-24f934bdd018",
+          "name": "Query Payments by ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "body": {},
+            "url": "{{host}}/{{projectKey}}/payments/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-payments.html#get-payment-by-id"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "0fa5a32a-5804-12b1-8d54-2669694eb145",
+          "name": "Query Payments",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "body": {},
+            "url": "{{host}}/{{projectKey}}/payments",
+            "description": "https://dev.commercetools.com/http-api-projects-payments.html#query-payments"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "d31b7e83-0f63-ad7e-b807-f2879e5322b5",
+          "name": "Set Key",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setKey\",\n    \"key\": \"String\"\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/payments/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-payments.html#set-key"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "85d88582-6110-979f-8aef-56333807bc90",
+          "name": "Change AmountPlanned",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeAmountPlanned\",\n    \"amount\": {\n      \"currencyCode\": \"EUR\",\n      \"centAmount\": 4000\n    }\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/payments/{{id}}",
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "67ec848d-92dc-0cd3-f8bc-297e95754e3a",
+          "name": "Set Anonymous ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setAnonymousId\",\n    \"anonymousId\": \"anon\"\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/payments/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-payments.html#set-anonymousid"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "f3a5dfb7-b249-0efe-f1f8-c6878f36af13",
+          "name": "Set Customer",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCustomer\",\n    \"customer\": {\n      \"typeId\": \"customer\",\n      \"id\": \"0c2eaad4-833c-43c1-98a4-5d03f57e9329\"\n    }\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/payments/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-payments.html#set-customer"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "6639b724-bba1-f7f2-dba8-a7fc0e3f20e6",
+          "name": "Set External ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setExternalId\",\n    \"externalId\": \"externalID\"\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/payments/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-payments.html#set-externalid"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "09643e36-39a5-e48a-08ce-cf119db1c4cc",
+          "name": "Set Interface ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setExternalId\",\n    \"externalId\": \"externalID\"\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/payments/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-payments.html#set-externalid"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "f8a03089-1efa-405d-4ca7-3a72879421f8",
+          "name": "Set Authorization",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setAuthorization\",\n    \"amount\": {\n      \"currencyCode\": \"EUR\",\n      \"centAmount\": 5000\n    },\n    \"until\": \"2018-09-11T14:00:00.000Z\"\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/payments/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-payments.html#set-externalid"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "49bb6a27-ae1c-1f45-76a6-0a7c37752751",
+          "name": "Set Amount Paid",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setAmountPaid\",\n    \"amount\": {\n      \"currencyCode\": \"EUR\",\n      \"centAmount\": 6000\n    }\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/payments/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-payments.html#set-amountpaid"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "f7933676-f0e2-e91d-5a75-4dcd6947571a",
+          "name": "Set Amount Refunded",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setAmountRefunded\",\n    \"amount\": {\n      \"currencyCode\": \"EUR\",\n      \"centAmount\": 7000\n    }\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/payments/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-payments.html#set-amountrefunded"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "0722e312-9a26-ca9d-cedd-28c746d2e6ad",
+          "name": "Set MethodInfoInterface",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setMethodInfoInterface\",\n    \"interface\": \"setMethodInfoInterface\"\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/payments/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-payments.html#set-methodinfointerface"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "7de62a40-d23b-e2cb-cb4d-7f33f67a0b53",
+          "name": "Set MethodInfoMethod",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setMethodInfoMethod\",\n    \"method\": \"Method\"\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/payments/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-payments.html#set-methodinfointerface"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "97ea1091-cb00-fe11-a639-50eb9f7ef842",
+          "name": "Set MethodInfoName",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setMethodInfoName\",\n    \"name\": {\n      \"de\": \"MethodInfoNameDE\",\n      \"en\": \"MethodInfoNameEN\"\n    }\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/payments/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-payments.html#set-methodinfoname"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "98094bdd-563f-39c4-8ce1-038d0f2b8ee5",
+          "name": "Set StatusInterfaceCode",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setStatusInterfaceCode\",\n    \"interfaceCode\": \"InterfaceCode\"\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/payments/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-payments.html#set-statusinterfacecode"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "875335a9-9476-ce12-97f6-eb835f065600",
+          "name": "Set StatusInterfaceText",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setStatusInterfaceText\",\n    \"interfaceText\": \"InterfaceText\"\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/payments/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-payments.html#set-statusinterfacetext"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "720748aa-e45c-373f-e136-655e82324084",
+          "name": "Transition State",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"transitionState\",\n    \"state\": {\n      \"typeId\": \"PaymentState\",\n      \"id\": \"fdb89018-ba6d-43fc-bfdf-a3a64d8ed7a6\"\n    }\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/payments/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-payments.html#transition-state"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "113e1e5f-fa05-e141-fd98-6bac202ff5df",
+          "name": "Add Transaction",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "    postman.setEnvironmentVariable(\"transactionId\", data.transactions[0].id)",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addTransaction\",\n    \"transaction\": {\n      \"type\": \"Authorization\",\n      \"amount\":{\n  \t\t\"centAmount\":5000,\n  \t\t\"currencyCode\":\"EUR\"\n      }\n    }\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/payments/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-payments.html#add-transaction"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "aa5253a6-908c-1ee0-c828-af16104ce14f",
+          "name": "Change Transaction State",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeTransactionState\",\n    \"transactionId\": \"{{transactionId}}\",\n    \"state\": \"Failure\"\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/payments/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-payments.html#change-transactionstate"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "38ff0df1-aa6b-f43f-3632-8b2e26da6d4d",
+          "name": "Change Transaction Timestamp",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeTransactionTimestamp\",\n    \"transactionId\": \"{{transactionId}}\",\n    \"timestamp\": \"2018-09-11T14:00:00.000Z\"\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/payments/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-payments.html#change-transactiontimestamp"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "0e46e3f9-88ac-a3c7-9798-37b16344a1b9",
+          "name": "Change Transaction Interaction ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeTransactionInteractionId\",\n    \"transactionId\": \"{{transactionId}}\",\n    \"interactionId\": \"newInteractionId\"\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/payments/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-payments.html#change-transactioninteractionid"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "54f1da01-0d11-fddf-d4c7-1d15f3285eab",
+          "name": "Add InterfaceInteraction",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addInterfaceInteraction\",\n    \"type\": {\n      \"typeId\": \"type\",\n      \"id\": \"2c5d1b7d-c189-47ba-ba53-06c270ce47b9\"\n    }\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/payments/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-payments.html#add-interfaceinteraction"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "28f123a3-cf78-57d1-1743-fec50574551a",
+          "name": "Set CustomType",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCustomType\",\n    \"type\": {\n      \"id\": \"43cd5649-5879-432f-a112-ae3bb6221acf\"\n    }\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/payments/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-payments.html#set-custom-type"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "783732c7-f451-21cb-e97f-89775c6f1c03",
+          "name": "Set CustomField",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCustomField\",\n    \"name\": \"StringCustomField\",\n    \"value\": \"CustomFieldValue\"\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/payments/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-payments.html#set-customfield"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "68fd2659-769a-1bdf-3b18-4b0d6f8e7b0e",
+          "name": "Delete Payment",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{host}}/{{projectKey}}/payments/{{id}}?version={{version}}",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "{{projectKey}}",
+                "payments",
+                "{{id}}"
+              ],
+              "query": [
+                {
+                  "key": "version",
+                  "value": "{{version}}",
+                  "equals": true
+                }
+              ]
+            },
+            "description": "https://dev.commercetools.com/http-api-projects-payments.html#delete-payment-by-id"
+          },
+          "response": []
+        }
+      ]
     }
   ]
 }
