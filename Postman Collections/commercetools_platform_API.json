@@ -9132,67 +9132,6 @@
       "description": "",
       "item": [
         {
-          "_postman_id": "648b62f8-fdbc-6dff-98b7-484e535102a1",
-          "name": "PostHelpers",
-          "description": "",
-          "item": [
-            {
-              "_postman_id": "5bc5c2f1-3577-cbde-6bd3-e27033d27fd1",
-              "name": "Delete TestCart",
-              "event": [
-                {
-                  "listen": "test",
-                  "script": {
-                    "type": "text/javascript",
-                    "exec": [
-                      "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                      "if (responseCode.code === 200){",
-                      "    postman.setEnvironmentVariable(\"id\", null);   ",
-                      "    postman.setEnvironmentVariable(\"version\", null);   ",
-                      "} ",
-                      "postman.setNextRequest('Create a Payment');"
-                    ]
-                  }
-                }
-              ],
-              "request": {
-                "method": "DELETE",
-                "header": [
-                  {
-                    "key": "Authorization",
-                    "value": "Bearer {{access_token}}"
-                  }
-                ],
-                "body": {
-                  "mode": "raw",
-                  "raw": ""
-                },
-                "url": {
-                  "raw": "{{host}}/{{projectKey}}/carts/{{testCartId}}?version={{testCartVersion}}",
-                  "host": [
-                    "{{host}}"
-                  ],
-                  "path": [
-                    "{{projectKey}}",
-                    "carts",
-                    "{{testCartId}}"
-                  ],
-                  "query": [
-                    {
-                      "key": "version",
-                      "value": "{{testCartVersion}}",
-                      "equals": true
-                    }
-                  ]
-                },
-                "description": "http://dev.commercetools.com/http-api-projects-carts.html#delete-cart"
-              },
-              "response": []
-            }
-          ],
-          "_postman_isSubFolder": true
-        },
-        {
           "_postman_id": "94663a6c-7170-2b41-bde2-ee4261053a18",
           "name": "Create Order from Cart",
           "event": [
