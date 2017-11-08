@@ -26825,6 +26825,12 @@
           "response": []
         }
       ]
+    },
+    {
+      "_postman_id": "d2af123b-1643-66bf-ceb8-48969fa253bc",
+      "name": "Authorization",
+      "description": "",
+      "item": []
     }
   ]
 }
