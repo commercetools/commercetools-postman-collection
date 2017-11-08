@@ -158,12 +158,7 @@
               }
             },
             "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Basic NjVZRW1LWlZPaUU2WkdpQmMwRFZFWUpwOlFxc3ZsZFdsNUhWVlpkcnNfN2ptLXhRZjQxVkdFcTdU"
-              }
-            ],
+            "header": [],
             "body": {},
             "url": {
               "raw": "https://{{auth_url}}/oauth/{{projectKey}}/anonymous/token?grant_type=client_credentials&scope=manage_my_profile:{{projectKey}}",
