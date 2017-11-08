@@ -93,12 +93,7 @@
               }
             },
             "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Basic NjVZRW1LWlZPaUU2WkdpQmMwRFZFWUpwOlFxc3ZsZFdsNUhWVlpkcnNfN2ptLXhRZjQxVkdFcTdU"
-              }
-            ],
+            "header": [],
             "body": {},
             "url": {
               "raw": "https://{{auth_url}}/oauth/{{projectKey}}/customers/token?grant_type=password&username={{user_email}}&password={{user_password}}&scope=manage_project:{{projectKey}}",
