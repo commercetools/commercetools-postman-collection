@@ -30861,6 +30861,1639 @@
           "response": []
         }
       ]
+    },
+    {
+      "_postman_id": "ecfcec0a-fe68-5042-4f15-f5e9c4229e66",
+      "name": "Product Discounts copy",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "7939411f-cab7-3453-bad6-1ca48805078c",
+          "name": "Create a ProductDiscount",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": {\n    \"de\": \"DefaultProductDiscountDE\",\n    \"en\": \"DefaultProductDiscountEN\"\n  },\n  \"value\": {\n    \"type\": \"relative\",\n    \"permyriad\": 1000\n  },\n  \"predicate\": \"product.id = \\\"e6b98eaa-631d-422b-9fc0-af67c18ff48d\\\"\",\n  \"sortOrder\": \"0.1\",\n  \"active\": true\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/product-discounts",
+            "description": "https://dev.commercetools.com/http-api-projects-productDiscounts.html#create-a-productdiscount"
+          },
+          "response": [
+            {
+              "id": "37210656-6f53-8581-2002-fe9f851c9f49",
+              "name": "Create a ProductDiscount 2",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}",
+                    "disabled": false
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "disabled": false
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": {\n    \"de\": \"Produkt Discount\",\n    \"en\": \"product discount\"\n  },\n  \"value\": {\n    \"type\": \"relative\",\n    \"permyriad\": 1000\n  },\n  \"predicate\": \"product.id = \\\"e62c0102-5a65-4f3f-9bbc-17a7cc815ad2\\\"\",\n  \"sortOrder\": \"0.1\",\n  \"active\": true\n}"
+                },
+                "url": "{{host}}/{{projectKey}}/product-discounts"
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "499",
+                  "name": "Content-Length",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 04 Sep 2017 15:24:14 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-fdf496ee-ea58-473e-88f1-d4cf81c4ec5e",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-ebb1810c.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "800",
+              "body": "{\"id\":\"e1a2df0f-fda1-46fd-b934-ef912a9da9d6\",\"version\":1,\"value\":{\"type\":\"relative\",\"permyriad\":1000},\"predicate\":\"product.id = \\\"e62c0102-5a65-4f3f-9bbc-17a7cc815ad2\\\"\",\"name\":{\"de\":\"Produkt Discount\",\"en\":\"product discount\"},\"description\":{\"de\":\"Beschreibung\",\"en\":\"Description\"},\"isActive\":true,\"sortOrder\":\"0.1\",\"references\":[{\"typeId\":\"product\",\"id\":\"e62c0102-5a65-4f3f-9bbc-17a7cc815ad2\"}],\"attributeTypes\":{},\"createdAt\":\"2017-09-04T15:24:14.661Z\",\"lastModifiedAt\":\"2017-09-04T15:24:14.661Z\"}"
+            },
+            {
+              "id": "5caeddda-295f-6c0e-ab9b-829d6cafc9fa",
+              "name": "Create a Product Discount",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": {\n    \"de\": \"discount\",\n    \"en\": \"discount\"\n  },\n  \"value\": {\n    \"type\": \"relative\",\n    \"permyriad\": 1000\n  },\n  \"variantId\": \"2\",\n  \"predicate\": \"product.id = \\\"f7b5f182-b78a-4d53-811f-a289382d1e45\\\"\",\n  \"sortOrder\": \"0.1\",\n  \"active\": true\n}"
+                },
+                "url": "{{host}}/{{projectKey}}/product-discounts"
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "428",
+                  "name": "Content-Length",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 28 Aug 2017 15:27:43 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-b878ea2f-4e1f-4b0e-94e3-b330f9070ce1",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-5b2ab894.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "67",
+              "body": "{\"id\":\"d2f52092-ad1a-49dd-81d7-526a05f0459a\",\"version\":1,\"value\":{\"type\":\"relative\",\"permyriad\":1000},\"predicate\":\"product.id = \\\"f7b5f182-b78a-4d53-811f-a289382d1e45\\\"\",\"name\":{\"de\":\"discount\",\"en\":\"discount\"},\"isActive\":true,\"sortOrder\":\"0.1\",\"references\":[{\"typeId\":\"product\",\"id\":\"f7b5f182-b78a-4d53-811f-a289382d1e45\"}],\"attributeTypes\":{},\"createdAt\":\"2017-08-28T15:27:43.984Z\",\"lastModifiedAt\":\"2017-08-28T15:27:43.984Z\"}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "49478c2b-7c67-34ac-a412-55d807bebedc",
+          "name": "Query ProductDiscount by ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "body": {},
+            "url": "{{host}}/{{projectKey}}/product-discounts/{{id}}",
+            "description": ""
+          },
+          "response": [
+            {
+              "id": "910d97bd-56f7-c655-7180-3f8f6d404696",
+              "name": "Query ProductDiscount by ID Fail",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}"
+                  }
+                ],
+                "body": {},
+                "url": "{{host}}/{{projectKey}}/product-discounts/{{id}}"
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip",
+                  "name": "Content-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 04 Sep 2017 15:19:14 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked",
+                  "name": "Transfer-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-91f21aee-b54b-400f-b85d-7ae7a47b5223",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-f36b4abf.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "1362",
+              "body": "{\"statusCode\":404,\"message\":\"The Resource with ID '6cca2507-4ed9-4b74-b907-d9d1d58265fc' was not found.\",\"errors\":[{\"code\":\"ResourceNotFound\",\"message\":\"The Resource with ID '6cca2507-4ed9-4b74-b907-d9d1d58265fc' was not found.\"}]}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "fedfc938-6d77-2ea2-bc38-2de4342c6550",
+          "name": "Query ProductDiscounts",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "body": {},
+            "url": "{{host}}/{{projectKey}}/product-discounts",
+            "description": "https://dev.commercetools.com/http-api-projects-productDiscounts.html#query-productdiscounts"
+          },
+          "response": [
+            {
+              "id": "48d8d609-38cb-5756-c594-80e5ed28967c",
+              "name": "Query ProductDiscounts",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}"
+                  }
+                ],
+                "body": {},
+                "url": "{{host}}/{{projectKey}}/product-discounts"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip",
+                  "name": "Content-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 04 Sep 2017 15:19:21 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked",
+                  "name": "Transfer-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-78423eb3-01fc-44d6-8495-d188d43879e3",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-ebb1810c.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "61",
+              "body": "{\"offset\":0,\"count\":0,\"total\":0,\"results\":[]}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "d64181c0-7e07-e986-c968-9b4e84f8b483",
+          "name": "Change Value",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeValue\",\n    \"value\": {\n      \"type\": \"relative\",\n        \"permyriad\": 2000\n    }\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/product-discounts/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-productDiscounts.html#change-value"
+          },
+          "response": [
+            {
+              "id": "85aba1e6-4d23-5e78-9a2e-367431d15328",
+              "name": "Change ProductDiscount Value",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeValue\",\n    \"value\": {\n    \t\"type\": \"relative\",\n        \"permyriad\": 2000\n    }\n  }]\n}"
+                },
+                "url": "{{host}}/{{projectKey}}/product-discounts/{{id}}"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip",
+                  "name": "Content-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 04 Sep 2017 15:28:28 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked",
+                  "name": "Transfer-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-6e06938c-f4eb-4988-8e10-ba990e874b25",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-bf772e57.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "86",
+              "body": "{\"id\":\"e1a2df0f-fda1-46fd-b934-ef912a9da9d6\",\"version\":2,\"value\":{\"type\":\"relative\",\"permyriad\":2000},\"predicate\":\"product.id = \\\"e62c0102-5a65-4f3f-9bbc-17a7cc815ad2\\\"\",\"name\":{\"en\":\"product discount\",\"de\":\"Produkt Discount\"},\"description\":{\"en\":\"Description\",\"de\":\"Beschreibung\"},\"isActive\":true,\"sortOrder\":\"0.1\",\"references\":[{\"typeId\":\"product\",\"id\":\"e62c0102-5a65-4f3f-9bbc-17a7cc815ad2\"}],\"attributeTypes\":{},\"createdAt\":\"2017-09-04T15:24:14.661Z\",\"lastModifiedAt\":\"2017-09-04T15:28:28.080Z\"}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "d0de9e2d-4585-3343-34d9-62ac89244626",
+          "name": "Change Predicate",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changePredicate\",\n    \"predicate\": \"product.id = \\\"4c754031-ba0f-440e-9d40-2e64996785de\\\"\"\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/product-discounts/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-productDiscounts.html#change-predicate"
+          },
+          "response": [
+            {
+              "id": "21179e51-4e31-a049-a96a-57e393106b78",
+              "name": "Change Predicate Fail",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changePredicate\",\n    \"predicate\": \"product.id = \\\"e62c0102-5a65-4f3f-9bbc-17a7cc815ad2\\\"\"\n  }]\n}"
+                },
+                "url": "{{host}}/{{projectKey}}/product-discounts/{{id}}"
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "257",
+                  "name": "Content-Length",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 04 Sep 2017 15:31:10 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-bfd21e38-8940-45d3-bfae-13f4bb648533",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-de8742bd.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "503",
+              "body": "{\"statusCode\":400,\"message\":\"'predicate' has no changes.\",\"errors\":[{\"code\":\"InvalidOperation\",\"message\":\"'predicate' has no changes.\",\"action\":{\"type\":\"changePredicate\",\"predicate\":\"product.id = \\\"e62c0102-5a65-4f3f-9bbc-17a7cc815ad2\\\"\"},\"actionIndex\":1}]}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "cee2f843-4fe1-c512-04f0-a2c852883118",
+          "name": "Change IsActive",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeIsActive\",\n    \"isActive\": false\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/product-discounts/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-productDiscounts.html#change-is-active"
+          },
+          "response": [
+            {
+              "id": "87a67ff4-a52c-3415-7ae6-127ea4d3f4fb",
+              "name": "Change ProductDiscounts IsActive",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeIsActive\",\n    \"isActive\": false\n  }]\n}"
+                },
+                "url": "{{host}}/{{projectKey}}/product-discounts/{{id}}"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip",
+                  "name": "Content-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 04 Sep 2017 15:32:09 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked",
+                  "name": "Transfer-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-87cc99dd-290b-4df0-a263-c0815fde65ed",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-e56cc360.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "774",
+              "body": "{\"id\":\"e1a2df0f-fda1-46fd-b934-ef912a9da9d6\",\"version\":3,\"value\":{\"type\":\"relative\",\"permyriad\":2000},\"predicate\":\"product.id = \\\"e62c0102-5a65-4f3f-9bbc-17a7cc815ad2\\\"\",\"name\":{\"de\":\"Produkt Discount\",\"en\":\"product discount\"},\"description\":{\"de\":\"Beschreibung\",\"en\":\"Description\"},\"isActive\":false,\"sortOrder\":\"0.1\",\"references\":[{\"typeId\":\"product\",\"id\":\"e62c0102-5a65-4f3f-9bbc-17a7cc815ad2\"}],\"attributeTypes\":{},\"createdAt\":\"2017-09-04T15:24:14.661Z\",\"lastModifiedAt\":\"2017-09-04T15:32:09.839Z\"}"
+            },
+            {
+              "id": "ef85ab90-8207-8aa2-06a5-8de595ef7180",
+              "name": "Change Predicate Fail",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changePredicate\",\n    \"predicate\": \"product.id = \\\"e62c0102-5a65-4f3f-9bbc-17a7cc815ad2\\\"\"\n  }]\n}"
+                },
+                "url": "{{host}}/{{projectKey}}/product-discounts/{{id}}"
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": "Used in response to a preflight request to indicate which HTTP headers can be used when making the actual request."
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": "Specifies the method or methods allowed when accessing the resource. This is used in response to a preflight request."
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": "Indicates how long the results of a preflight request can be cached in seconds."
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": "Custom header"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "257",
+                  "name": "Content-Length",
+                  "description": "The length of the response body in octets (8-bit bytes)"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": "The mime type of this content"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 04 Sep 2017 15:31:10 GMT",
+                  "name": "Date",
+                  "description": "The date and time that the message was sent"
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": "A name for the server"
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": "Informs the client of proxies through which the response was sent."
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-bfd21e38-8940-45d3-bfae-13f4bb648533",
+                  "name": "X-Correlation-ID",
+                  "description": "Custom header"
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-de8742bd.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": "Custom header"
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": "Custom header"
+                }
+              ],
+              "cookie": [],
+              "responseTime": "503",
+              "body": "{\"statusCode\":400,\"message\":\"'predicate' has no changes.\",\"errors\":[{\"code\":\"InvalidOperation\",\"message\":\"'predicate' has no changes.\",\"action\":{\"type\":\"changePredicate\",\"predicate\":\"product.id = \\\"e62c0102-5a65-4f3f-9bbc-17a7cc815ad2\\\"\"},\"actionIndex\":1}]}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "c79d4d68-be62-71b2-ee6c-b854785c1b43",
+          "name": "Change Name",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeName\",\n    \"name\": {\n      \"de\": \"NewProductDiscountDE\",\n      \"en\": \"NewProductDiscountEN\"\n    }\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/product-discounts/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-productDiscounts.html#change-name"
+          },
+          "response": [
+            {
+              "id": "161f252a-6bb1-1974-6ce7-66b1d6f19255",
+              "name": "Change productDiscount Name",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeName\",\n    \"name\": {\n    \t\"de\": \"de\",\n    \t\"en\": \"en\"\n    }\n  }]\n}"
+                },
+                "url": "{{host}}/{{projectKey}}/product-discounts/{{id}}"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip",
+                  "name": "Content-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 07 Sep 2017 07:41:01 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked",
+                  "name": "Transfer-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-6e72e2a4-b790-4c40-bf6b-f821f5a7b819",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-e56cc360.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "82",
+              "body": "{\"id\":\"e1a2df0f-fda1-46fd-b934-ef912a9da9d6\",\"version\":4,\"value\":{\"type\":\"relative\",\"permyriad\":2000},\"predicate\":\"product.id = \\\"e62c0102-5a65-4f3f-9bbc-17a7cc815ad2\\\"\",\"name\":{\"de\":\"de\",\"en\":\"en\"},\"description\":{\"en\":\"Description\",\"de\":\"Beschreibung\"},\"isActive\":false,\"sortOrder\":\"0.1\",\"references\":[{\"typeId\":\"product\",\"id\":\"e62c0102-5a65-4f3f-9bbc-17a7cc815ad2\"}],\"attributeTypes\":{},\"createdAt\":\"2017-09-04T15:24:14.661Z\",\"lastModifiedAt\":\"2017-09-07T07:41:01.824Z\"}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "3b0506f7-a563-d5d6-5a0a-5c3d549f90ab",
+          "name": "Change Description",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setDescription\",\n    \"description\": {\n      \"de\": \"NewProductDiscountDescriptionDE\",\n      \"en\": \"NewProductDiscountDescriptionEN\"\n    }\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/product-discounts/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-productDiscounts.html#set-description"
+          },
+          "response": [
+            {
+              "id": "a332e987-31f4-9a45-cd3a-ea1c643e7d31",
+              "name": "Change productDiscount Description",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setDescription\",\n    \"description\": {\n    \t\"de\": \"de\",\n    \t\"en\": \"en\"\n    }\n  }]\n}"
+                },
+                "url": "{{host}}/{{projectKey}}/product-discounts/{{id}}"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip",
+                  "name": "Content-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 07 Sep 2017 07:44:46 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked",
+                  "name": "Transfer-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-497df11a-e9ce-4efc-96b9-871ed8cc2c20",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-e56cc360.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "71",
+              "body": "{\"id\":\"e1a2df0f-fda1-46fd-b934-ef912a9da9d6\",\"version\":5,\"value\":{\"type\":\"relative\",\"permyriad\":2000},\"predicate\":\"product.id = \\\"e62c0102-5a65-4f3f-9bbc-17a7cc815ad2\\\"\",\"name\":{\"en\":\"en\",\"de\":\"de\"},\"description\":{\"de\":\"de\",\"en\":\"en\"},\"isActive\":false,\"sortOrder\":\"0.1\",\"references\":[{\"typeId\":\"product\",\"id\":\"e62c0102-5a65-4f3f-9bbc-17a7cc815ad2\"}],\"attributeTypes\":{},\"createdAt\":\"2017-09-04T15:24:14.661Z\",\"lastModifiedAt\":\"2017-09-07T07:44:46.832Z\"}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "ec42d7f3-7ba6-3959-2bec-06dfb234ecb8",
+          "name": "Change Sort Order",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeSortOrder\",\n    \"sortOrder\": \"0.3\"\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/product-discounts/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-productDiscounts.html#change-sort-order"
+          },
+          "response": [
+            {
+              "id": "8c555f6a-e616-8db4-5b20-b73858449e82",
+              "name": "Change productDiscount Sort Order",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeSortOrder\",\n    \"sortOrder\": \"0.9\"\n  }]\n}"
+                },
+                "url": "{{host}}/{{projectKey}}/product-discounts/{{id}}"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip",
+                  "name": "Content-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 07 Sep 2017 10:10:32 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked",
+                  "name": "Transfer-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-5564314a-7a63-4580-b470-04d21a39f9e5",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-a3e2881c.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "72",
+              "body": "{\"id\":\"e1a2df0f-fda1-46fd-b934-ef912a9da9d6\",\"version\":6,\"value\":{\"type\":\"relative\",\"permyriad\":2000},\"predicate\":\"product.id = \\\"e62c0102-5a65-4f3f-9bbc-17a7cc815ad2\\\"\",\"name\":{\"de\":\"de\",\"en\":\"en\"},\"description\":{\"en\":\"en\",\"de\":\"de\"},\"isActive\":false,\"sortOrder\":\"0.9\",\"references\":[{\"typeId\":\"product\",\"id\":\"e62c0102-5a65-4f3f-9bbc-17a7cc815ad2\"}],\"attributeTypes\":{},\"createdAt\":\"2017-09-04T15:24:14.661Z\",\"lastModifiedAt\":\"2017-09-07T10:10:32.867Z\"}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "f25e6b2b-8828-d61a-45a4-7749091fdcd5",
+          "name": "Delete ProductDiscount",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{host}}/{{projectKey}}/product-discounts/{{id}}?version={{version}}",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "{{projectKey}}",
+                "product-discounts",
+                "{{id}}"
+              ],
+              "query": [
+                {
+                  "key": "version",
+                  "value": "{{version}}",
+                  "equals": true
+                }
+              ]
+            },
+            "description": "https://dev.commercetools.com/http-api-projects-productDiscounts.html#delete-productdiscount"
+          },
+          "response": []
+        }
+      ]
     }
   ]
 }
