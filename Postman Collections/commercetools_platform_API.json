@@ -36,17 +36,11 @@
               "basic": {
                 "username": "{{client_id}}",
                 "password": "{{client_secret}}",
-                "saveHelperData": true,
                 "showPassword": false
               }
             },
             "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Basic NjVZRW1LWlZPaUU2WkdpQmMwRFZFWUpwOlFxc3ZsZFdsNUhWVlpkcnNfN2ptLXhRZjQxVkdFcTdU"
-              }
-            ],
+            "header": [],
             "body": {},
             "url": {
               "raw": "https://{{auth_url}}/oauth/token?grant_type=client_credentials&scope=manage_project:{{projectKey}}",
