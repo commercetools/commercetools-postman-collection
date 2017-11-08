@@ -26887,6 +26887,81 @@
             "description": "Use this request to obtain an access token for your commercetools platform project via Client Credentials Flow. As a prerequisite you must have filled out environment variables in Postman for projectKey, client_id and client_secret to use this."
           },
           "response": []
+        },
+        {
+          "_postman_id": "f7e1d08d-f924-c1a9-901a-acbcbb5931b9",
+          "name": "Obtain access token through password flow",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.access_token){",
+                  "    postman.setEnvironmentVariable(\"access_token\", data.access_token);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": {
+                "username": "{{client_id}}",
+                "password": "{{client_secret}}",
+                "saveHelperData": true,
+                "showPassword": false
+              }
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic NjVZRW1LWlZPaUU2WkdpQmMwRFZFWUpwOlFxc3ZsZFdsNUhWVlpkcnNfN2ptLXhRZjQxVkdFcTdU"
+              }
+            ],
+            "body": {},
+            "url": {
+              "raw": "https://{{auth_url}}/oauth/{{projectKey}}/customers/token?grant_type=password&username={{user_email}}&password={{user_password}}&scope=manage_project:{{projectKey}}",
+              "protocol": "https",
+              "host": [
+                "{{auth_url}}"
+              ],
+              "path": [
+                "oauth",
+                "{{projectKey}}",
+                "customers",
+                "token"
+              ],
+              "query": [
+                {
+                  "equals": true,
+                  "key": "grant_type",
+                  "value": "password"
+                },
+                {
+                  "equals": true,
+                  "key": "username",
+                  "value": "{{user_email}}"
+                },
+                {
+                  "equals": true,
+                  "key": "password",
+                  "value": "{{user_password}}"
+                },
+                {
+                  "equals": true,
+                  "key": "scope",
+                  "value": "manage_project:{{projectKey}}"
+                }
+              ]
+            },
+            "description": "Use this request to obtain an access token for your commercetools platform project via Password Flow. As a prerequisite you must have filled out environment variables in Postman for projectKey, client_id, client_secret, user_email and user_password to use this."
+          },
+          "response": []
         }
       ]
     }
