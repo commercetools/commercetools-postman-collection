@@ -25617,6 +25617,282 @@
           "response": []
         }
       ]
+    },
+    {
+      "_postman_id": "74578024-9b94-892e-aabe-302512baaf9a",
+      "name": "Custom Objects copy",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "b1c69cb4-a67b-01f5-824b-6642fd81789d",
+          "name": "Pre-Helper",
+          "description": "",
+          "item": [
+            {
+              "_postman_id": "8a2996c9-6635-9b2c-b6b1-6c24c5812a3a",
+              "name": "Create or Update a CustomObject",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                      "var data = JSON.parse(responseBody);",
+                      "if(data.id && data.version){",
+                      "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                      "    postman.setEnvironmentVariable(\"version\", data.version);",
+                      "}"
+                    ]
+                  }
+                }
+              ],
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"container\": \"my.custom.namespace\",\n    \"key\": \"1\",\n    \"value\": {\n        \"name\": {\n          \"en\": \"This is a Name\",\n          \"de\": \"Das ist ein Name\"\n        },\n        \"text\": {\n          \"en\": \"This is a Text\",\n          \"de\": \"Das ist ein Text\"\n        }\n    }\n}"
+                },
+                "url": "{{host}}/{{projectKey}}/custom-objects",
+                "description": ""
+              },
+              "response": []
+            }
+          ],
+          "_postman_isSubFolder": true
+        },
+        {
+          "_postman_id": "d081780f-714d-24ae-8945-e2f6ab734aaf",
+          "name": "Query customObjects",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "body": {},
+            "url": "{{host}}/{{projectKey}}/custom-objects",
+            "description": "http://dev.commercetools.com/http-api-projects-custom-objects.html#query-customobjects"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "99a6c040-b005-064e-5b2f-90f457139ae0",
+          "name": "Get CustomObject by Id",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "body": {},
+            "url": "{{host}}/{{projectKey}}/custom-objects/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-custom-objects.html#get-customobject-by-id"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "c2d673c1-0c12-b799-f899-6671e4681450",
+          "name": "Delete CustomObject by Id",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "if (responseCode.code === 200){",
+                  "    postman.setEnvironmentVariable(\"id\", null);   ",
+                  "    postman.setEnvironmentVariable(\"version\", null);   ",
+                  "} "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{host}}/{{projectKey}}/custom-objects/{{id}}?version={{version}}",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "{{projectKey}}",
+                "custom-objects",
+                "{{id}}"
+              ],
+              "query": [
+                {
+                  "key": "version",
+                  "value": "{{version}}",
+                  "equals": true
+                }
+              ]
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-custom-objects.html#delete-customobject-by-id"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "88724c1d-dac7-3918-4c03-e2b601a8dcd5",
+          "name": "Create or Update a CustomObject",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"container\": \"my.custom.namespace\",\n    \"key\": \"myKey\",\n    \"value\": {\n        \"name\": {\n          \"en\": \"This is a Name\",\n          \"de\": \"Das ist ein Name\"\n        },\n        \"text\": {\n          \"en\": \"This is a Text\",\n          \"de\": \"Das ist ein Text\"\n        }\n    }\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/custom-objects",
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "afc567f2-1eaa-dd82-0438-2a852ef9b3ef",
+          "name": "Get CustomObject by container and key",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "body": {},
+            "url": "{{host}}/{{projectKey}}/custom-objects/my.custom.namespace/myKey",
+            "description": "http://dev.commercetools.com/http-api-projects-custom-objects.html#get-customobject-by-container-and-key"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "fe3d0379-a16f-5e23-479d-db82f1f16c85",
+          "name": "Delete CustomObject by Container and Key",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "if (responseCode.code === 200){",
+                  "    postman.setEnvironmentVariable(\"id\", null);   ",
+                  "    postman.setEnvironmentVariable(\"version\", null);   ",
+                  "} "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{host}}/{{projectKey}}/custom-objects/my.custom.namespace/myKey",
+            "description": "http://dev.commercetools.com/http-api-projects-custom-objects.html#delete-customobject-by-container-and-key"
+          },
+          "response": []
+        }
+      ]
     }
   ]
 }
