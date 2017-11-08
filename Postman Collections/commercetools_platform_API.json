@@ -32783,6 +32783,46 @@
           ]
         }
       ]
+    },
+    {
+      "_postman_id": "5c48fd15-4085-d644-40c7-b6da86b2399b",
+      "name": "Product Projection Search copy",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "fa07d9d3-11f2-55ac-d783-32a8cefb2d97",
+          "name": "Search ProductProjections",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "body": {},
+            "url": "{{host}}/{{projectKey}}/product-projections/search",
+            "description": ""
+          },
+          "response": []
+        }
+      ]
     }
   ]
 }
