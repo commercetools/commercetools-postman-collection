@@ -25733,6 +25733,1230 @@
           "response": []
         }
       ]
+    },
+    {
+      "_postman_id": "8d355b03-5e4a-eb79-9258-b396774123d5",
+      "name": "Inventory copy",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "db3e5490-1908-0c8b-bbb5-8ced8533e190",
+          "name": "Query Inventory",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "body": {},
+            "url": "{{host}}/{{projectKey}}/inventory",
+            "description": "http://dev.commercetools.com/http-api-projects-inventory.html#query-inventory"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "b2e66a6f-3f59-603b-bce4-9222066031e3",
+          "name": "Create an InventoryEntry",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sku\": \"mySKU\",\n  \"quantityOnStock\": 1\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/inventory",
+            "description": ""
+          },
+          "response": [
+            {
+              "id": "c8a193ba-6d7e-c165-177f-c4c37908e89d",
+              "name": "Create a DiscountCode that applies to two CartDiscounts",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "name": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Authorization",
+                    "name": "Authorization",
+                    "value": "Bearer HOs8Bt3kBHUKaddqv_scvT2Pdw7-zvje"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n\t\"name\": {\n\t\t\"en\": \"My Discount Code\"\n\t},\n\t\"description\": {\n\t\t\"en\": \"A discount Code that will trigger two specific CartDiscounts.\"\n\t},\n\t\"code\": \"iWantIt4Free\",\n\t\"cartDiscounts\": [\n\t\t{\n\t\t\t\"typeId\": \"cart-discount\",\n\t\t\t\"id\": \"b4491b56-6863-4c42-bec7-490c749852a9\"\n\t\t},\n\t\t{\n\t\t\t\"typeId\": \"cart-discount\",\n\t\t\t\"id\": \"1d6ac18f-e61e-486e-a143-4e10b3bda654\"\n\t\t}\n\t],\n\t\"cartPredicate\": \"lineItemCount(sku = \\\"mySKU\\\") > 0\",\n\t\"isActive\": true\n}"
+                },
+                "url": "https://api.sphere.io/{{projectKey}}/discount-codes"
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "619",
+                  "name": "Content-Length",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 12 Jun 2017 10:34:01 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-3ecc4ab1-68e5-41ab-80f6-6f2def324d86",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-de8742bd.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "674",
+              "body": "{\"id\":\"a42fe562-300a-499e-bee0-64c1395d16d5\",\"version\":1,\"code\":\"iWantIt4Free\",\"name\":{\"en\":\"My Discount Code\"},\"description\":{\"en\":\"A discount Code that will trigger two specific CartDiscounts.\"},\"cartDiscounts\":[{\"typeId\":\"cart-discount\",\"id\":\"b4491b56-6863-4c42-bec7-490c749852a9\"},{\"typeId\":\"cart-discount\",\"id\":\"1d6ac18f-e61e-486e-a143-4e10b3bda654\"}],\"isActive\":true,\"cartPredicate\":\"lineItemCount(sku = \\\"mySKU\\\") > 0\",\"references\":[],\"attributeTypes\":{},\"cartFieldTypes\":{},\"lineItemFieldTypes\":{},\"customLineItemFieldTypes\":{},\"createdAt\":\"2017-06-12T10:34:01.661Z\",\"lastModifiedAt\":\"2017-06-12T10:34:01.661Z\"}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "62595bac-d4f6-31b5-d8cb-a179694f3443",
+          "name": "Add Quantity",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addQuantity\",\n    \"quantity\": 1\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/inventory/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-inventory.html#add-quantity"
+          },
+          "response": [
+            {
+              "id": "24b2c1d6-58c9-6c1b-9c8a-886407f2ea99",
+              "name": "Create a DiscountCode that applies to two CartDiscounts",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "name": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Authorization",
+                    "name": "Authorization",
+                    "value": "Bearer HOs8Bt3kBHUKaddqv_scvT2Pdw7-zvje"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n\t\"name\": {\n\t\t\"en\": \"My Discount Code\"\n\t},\n\t\"description\": {\n\t\t\"en\": \"A discount Code that will trigger two specific CartDiscounts.\"\n\t},\n\t\"code\": \"iWantIt4Free\",\n\t\"cartDiscounts\": [\n\t\t{\n\t\t\t\"typeId\": \"cart-discount\",\n\t\t\t\"id\": \"b4491b56-6863-4c42-bec7-490c749852a9\"\n\t\t},\n\t\t{\n\t\t\t\"typeId\": \"cart-discount\",\n\t\t\t\"id\": \"1d6ac18f-e61e-486e-a143-4e10b3bda654\"\n\t\t}\n\t],\n\t\"cartPredicate\": \"lineItemCount(sku = \\\"mySKU\\\") > 0\",\n\t\"isActive\": true\n}"
+                },
+                "url": "https://api.sphere.io/{{projectKey}}/discount-codes"
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "619",
+                  "name": "Content-Length",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 12 Jun 2017 10:34:01 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-3ecc4ab1-68e5-41ab-80f6-6f2def324d86",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-de8742bd.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "674",
+              "body": "{\"id\":\"a42fe562-300a-499e-bee0-64c1395d16d5\",\"version\":1,\"code\":\"iWantIt4Free\",\"name\":{\"en\":\"My Discount Code\"},\"description\":{\"en\":\"A discount Code that will trigger two specific CartDiscounts.\"},\"cartDiscounts\":[{\"typeId\":\"cart-discount\",\"id\":\"b4491b56-6863-4c42-bec7-490c749852a9\"},{\"typeId\":\"cart-discount\",\"id\":\"1d6ac18f-e61e-486e-a143-4e10b3bda654\"}],\"isActive\":true,\"cartPredicate\":\"lineItemCount(sku = \\\"mySKU\\\") > 0\",\"references\":[],\"attributeTypes\":{},\"cartFieldTypes\":{},\"lineItemFieldTypes\":{},\"customLineItemFieldTypes\":{},\"createdAt\":\"2017-06-12T10:34:01.661Z\",\"lastModifiedAt\":\"2017-06-12T10:34:01.661Z\"}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "4fb393b2-e321-2c34-8bf5-ff0028e05725",
+          "name": "Remove Quantity",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"removeQuantity\",\n    \"quantity\": 1\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/inventory/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-inventory.html#remove-quantity"
+          },
+          "response": [
+            {
+              "id": "3dacc877-c182-405a-9e72-fdd200d18aaa",
+              "name": "Create a DiscountCode that applies to two CartDiscounts",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "name": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Authorization",
+                    "name": "Authorization",
+                    "value": "Bearer HOs8Bt3kBHUKaddqv_scvT2Pdw7-zvje"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n\t\"name\": {\n\t\t\"en\": \"My Discount Code\"\n\t},\n\t\"description\": {\n\t\t\"en\": \"A discount Code that will trigger two specific CartDiscounts.\"\n\t},\n\t\"code\": \"iWantIt4Free\",\n\t\"cartDiscounts\": [\n\t\t{\n\t\t\t\"typeId\": \"cart-discount\",\n\t\t\t\"id\": \"b4491b56-6863-4c42-bec7-490c749852a9\"\n\t\t},\n\t\t{\n\t\t\t\"typeId\": \"cart-discount\",\n\t\t\t\"id\": \"1d6ac18f-e61e-486e-a143-4e10b3bda654\"\n\t\t}\n\t],\n\t\"cartPredicate\": \"lineItemCount(sku = \\\"mySKU\\\") > 0\",\n\t\"isActive\": true\n}"
+                },
+                "url": "https://api.sphere.io/{{projectKey}}/discount-codes"
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "619",
+                  "name": "Content-Length",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 12 Jun 2017 10:34:01 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-3ecc4ab1-68e5-41ab-80f6-6f2def324d86",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-de8742bd.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "674",
+              "body": "{\"id\":\"a42fe562-300a-499e-bee0-64c1395d16d5\",\"version\":1,\"code\":\"iWantIt4Free\",\"name\":{\"en\":\"My Discount Code\"},\"description\":{\"en\":\"A discount Code that will trigger two specific CartDiscounts.\"},\"cartDiscounts\":[{\"typeId\":\"cart-discount\",\"id\":\"b4491b56-6863-4c42-bec7-490c749852a9\"},{\"typeId\":\"cart-discount\",\"id\":\"1d6ac18f-e61e-486e-a143-4e10b3bda654\"}],\"isActive\":true,\"cartPredicate\":\"lineItemCount(sku = \\\"mySKU\\\") > 0\",\"references\":[],\"attributeTypes\":{},\"cartFieldTypes\":{},\"lineItemFieldTypes\":{},\"customLineItemFieldTypes\":{},\"createdAt\":\"2017-06-12T10:34:01.661Z\",\"lastModifiedAt\":\"2017-06-12T10:34:01.661Z\"}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "3d8e2d72-f2c2-2ee6-f07c-96580bf209a3",
+          "name": "Change Quantity",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeQuantity\",\n    \"quantity\": 5\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/inventory/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-inventory.html#change-quantity"
+          },
+          "response": [
+            {
+              "id": "0bcc4a36-1f75-5c8d-1400-a7fe5b4b04b5",
+              "name": "Create a DiscountCode that applies to two CartDiscounts",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "name": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Authorization",
+                    "name": "Authorization",
+                    "value": "Bearer HOs8Bt3kBHUKaddqv_scvT2Pdw7-zvje"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n\t\"name\": {\n\t\t\"en\": \"My Discount Code\"\n\t},\n\t\"description\": {\n\t\t\"en\": \"A discount Code that will trigger two specific CartDiscounts.\"\n\t},\n\t\"code\": \"iWantIt4Free\",\n\t\"cartDiscounts\": [\n\t\t{\n\t\t\t\"typeId\": \"cart-discount\",\n\t\t\t\"id\": \"b4491b56-6863-4c42-bec7-490c749852a9\"\n\t\t},\n\t\t{\n\t\t\t\"typeId\": \"cart-discount\",\n\t\t\t\"id\": \"1d6ac18f-e61e-486e-a143-4e10b3bda654\"\n\t\t}\n\t],\n\t\"cartPredicate\": \"lineItemCount(sku = \\\"mySKU\\\") > 0\",\n\t\"isActive\": true\n}"
+                },
+                "url": "https://api.sphere.io/{{projectKey}}/discount-codes"
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "619",
+                  "name": "Content-Length",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 12 Jun 2017 10:34:01 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-3ecc4ab1-68e5-41ab-80f6-6f2def324d86",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-de8742bd.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "674",
+              "body": "{\"id\":\"a42fe562-300a-499e-bee0-64c1395d16d5\",\"version\":1,\"code\":\"iWantIt4Free\",\"name\":{\"en\":\"My Discount Code\"},\"description\":{\"en\":\"A discount Code that will trigger two specific CartDiscounts.\"},\"cartDiscounts\":[{\"typeId\":\"cart-discount\",\"id\":\"b4491b56-6863-4c42-bec7-490c749852a9\"},{\"typeId\":\"cart-discount\",\"id\":\"1d6ac18f-e61e-486e-a143-4e10b3bda654\"}],\"isActive\":true,\"cartPredicate\":\"lineItemCount(sku = \\\"mySKU\\\") > 0\",\"references\":[],\"attributeTypes\":{},\"cartFieldTypes\":{},\"lineItemFieldTypes\":{},\"customLineItemFieldTypes\":{},\"createdAt\":\"2017-06-12T10:34:01.661Z\",\"lastModifiedAt\":\"2017-06-12T10:34:01.661Z\"}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "f071fe48-d556-eac3-d7b2-c6e307e52ed3",
+          "name": "Set RestockableInDays",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setRestockableInDays\",\n    \"restockableInDays\": 7\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/inventory/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-inventory.html#set-restockableindays"
+          },
+          "response": [
+            {
+              "id": "3d7a2d44-7539-7a81-0a29-ba1201c44d1d",
+              "name": "Create a DiscountCode that applies to two CartDiscounts",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "name": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Authorization",
+                    "name": "Authorization",
+                    "value": "Bearer HOs8Bt3kBHUKaddqv_scvT2Pdw7-zvje"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n\t\"name\": {\n\t\t\"en\": \"My Discount Code\"\n\t},\n\t\"description\": {\n\t\t\"en\": \"A discount Code that will trigger two specific CartDiscounts.\"\n\t},\n\t\"code\": \"iWantIt4Free\",\n\t\"cartDiscounts\": [\n\t\t{\n\t\t\t\"typeId\": \"cart-discount\",\n\t\t\t\"id\": \"b4491b56-6863-4c42-bec7-490c749852a9\"\n\t\t},\n\t\t{\n\t\t\t\"typeId\": \"cart-discount\",\n\t\t\t\"id\": \"1d6ac18f-e61e-486e-a143-4e10b3bda654\"\n\t\t}\n\t],\n\t\"cartPredicate\": \"lineItemCount(sku = \\\"mySKU\\\") > 0\",\n\t\"isActive\": true\n}"
+                },
+                "url": "https://api.sphere.io/{{projectKey}}/discount-codes"
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "619",
+                  "name": "Content-Length",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 12 Jun 2017 10:34:01 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-3ecc4ab1-68e5-41ab-80f6-6f2def324d86",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-de8742bd.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "674",
+              "body": "{\"id\":\"a42fe562-300a-499e-bee0-64c1395d16d5\",\"version\":1,\"code\":\"iWantIt4Free\",\"name\":{\"en\":\"My Discount Code\"},\"description\":{\"en\":\"A discount Code that will trigger two specific CartDiscounts.\"},\"cartDiscounts\":[{\"typeId\":\"cart-discount\",\"id\":\"b4491b56-6863-4c42-bec7-490c749852a9\"},{\"typeId\":\"cart-discount\",\"id\":\"1d6ac18f-e61e-486e-a143-4e10b3bda654\"}],\"isActive\":true,\"cartPredicate\":\"lineItemCount(sku = \\\"mySKU\\\") > 0\",\"references\":[],\"attributeTypes\":{},\"cartFieldTypes\":{},\"lineItemFieldTypes\":{},\"customLineItemFieldTypes\":{},\"createdAt\":\"2017-06-12T10:34:01.661Z\",\"lastModifiedAt\":\"2017-06-12T10:34:01.661Z\"}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "a0c262bc-35e7-4e5d-b474-71834a4c04ef",
+          "name": "Set ExpectedDelivery",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setExpectedDelivery\",\n    \"expectedDelivery\": \"2015-10-21T14:00:00.000Z\"\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/inventory/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-inventory.html#set-expecteddelivery"
+          },
+          "response": [
+            {
+              "id": "b5e57f37-3dd9-befb-b600-c186320e858d",
+              "name": "Create a DiscountCode that applies to two CartDiscounts",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "name": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Authorization",
+                    "name": "Authorization",
+                    "value": "Bearer HOs8Bt3kBHUKaddqv_scvT2Pdw7-zvje"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n\t\"name\": {\n\t\t\"en\": \"My Discount Code\"\n\t},\n\t\"description\": {\n\t\t\"en\": \"A discount Code that will trigger two specific CartDiscounts.\"\n\t},\n\t\"code\": \"iWantIt4Free\",\n\t\"cartDiscounts\": [\n\t\t{\n\t\t\t\"typeId\": \"cart-discount\",\n\t\t\t\"id\": \"b4491b56-6863-4c42-bec7-490c749852a9\"\n\t\t},\n\t\t{\n\t\t\t\"typeId\": \"cart-discount\",\n\t\t\t\"id\": \"1d6ac18f-e61e-486e-a143-4e10b3bda654\"\n\t\t}\n\t],\n\t\"cartPredicate\": \"lineItemCount(sku = \\\"mySKU\\\") > 0\",\n\t\"isActive\": true\n}"
+                },
+                "url": "https://api.sphere.io/{{projectKey}}/discount-codes"
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "619",
+                  "name": "Content-Length",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 12 Jun 2017 10:34:01 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-3ecc4ab1-68e5-41ab-80f6-6f2def324d86",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-de8742bd.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "674",
+              "body": "{\"id\":\"a42fe562-300a-499e-bee0-64c1395d16d5\",\"version\":1,\"code\":\"iWantIt4Free\",\"name\":{\"en\":\"My Discount Code\"},\"description\":{\"en\":\"A discount Code that will trigger two specific CartDiscounts.\"},\"cartDiscounts\":[{\"typeId\":\"cart-discount\",\"id\":\"b4491b56-6863-4c42-bec7-490c749852a9\"},{\"typeId\":\"cart-discount\",\"id\":\"1d6ac18f-e61e-486e-a143-4e10b3bda654\"}],\"isActive\":true,\"cartPredicate\":\"lineItemCount(sku = \\\"mySKU\\\") > 0\",\"references\":[],\"attributeTypes\":{},\"cartFieldTypes\":{},\"lineItemFieldTypes\":{},\"customLineItemFieldTypes\":{},\"createdAt\":\"2017-06-12T10:34:01.661Z\",\"lastModifiedAt\":\"2017-06-12T10:34:01.661Z\"}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "2ab00550-64bb-6168-85cb-c31158fa37aa",
+          "name": "Set SupplyChannel",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setSupplyChannel\",\n    \"supplyChannel\": {\n      \"id\": \"d65d7ed8-57a6-4791-b2ad-5400b2fb55d1\",\n      \"typeId\": \"channel\"\n    }\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/inventory/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-inventory.html#set-supplychannel"
+          },
+          "response": [
+            {
+              "id": "30fdff90-a62d-9be2-c37e-3cac7db4497d",
+              "name": "Create a DiscountCode that applies to two CartDiscounts",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "name": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Authorization",
+                    "name": "Authorization",
+                    "value": "Bearer HOs8Bt3kBHUKaddqv_scvT2Pdw7-zvje"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n\t\"name\": {\n\t\t\"en\": \"My Discount Code\"\n\t},\n\t\"description\": {\n\t\t\"en\": \"A discount Code that will trigger two specific CartDiscounts.\"\n\t},\n\t\"code\": \"iWantIt4Free\",\n\t\"cartDiscounts\": [\n\t\t{\n\t\t\t\"typeId\": \"cart-discount\",\n\t\t\t\"id\": \"b4491b56-6863-4c42-bec7-490c749852a9\"\n\t\t},\n\t\t{\n\t\t\t\"typeId\": \"cart-discount\",\n\t\t\t\"id\": \"1d6ac18f-e61e-486e-a143-4e10b3bda654\"\n\t\t}\n\t],\n\t\"cartPredicate\": \"lineItemCount(sku = \\\"mySKU\\\") > 0\",\n\t\"isActive\": true\n}"
+                },
+                "url": "https://api.sphere.io/{{projectKey}}/discount-codes"
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "619",
+                  "name": "Content-Length",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 12 Jun 2017 10:34:01 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-3ecc4ab1-68e5-41ab-80f6-6f2def324d86",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-de8742bd.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "674",
+              "body": "{\"id\":\"a42fe562-300a-499e-bee0-64c1395d16d5\",\"version\":1,\"code\":\"iWantIt4Free\",\"name\":{\"en\":\"My Discount Code\"},\"description\":{\"en\":\"A discount Code that will trigger two specific CartDiscounts.\"},\"cartDiscounts\":[{\"typeId\":\"cart-discount\",\"id\":\"b4491b56-6863-4c42-bec7-490c749852a9\"},{\"typeId\":\"cart-discount\",\"id\":\"1d6ac18f-e61e-486e-a143-4e10b3bda654\"}],\"isActive\":true,\"cartPredicate\":\"lineItemCount(sku = \\\"mySKU\\\") > 0\",\"references\":[],\"attributeTypes\":{},\"cartFieldTypes\":{},\"lineItemFieldTypes\":{},\"customLineItemFieldTypes\":{},\"createdAt\":\"2017-06-12T10:34:01.661Z\",\"lastModifiedAt\":\"2017-06-12T10:34:01.661Z\"}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "1ff1574e-3ce0-f6cb-4308-b69e3214efb0",
+          "name": "Set Custom Type",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCustomType\",\n    \"type\": {\n      \"id\": \"80f18b4e-75eb-49fb-a732-a98814ae4721\",\n      \"typeId\": \"type\"\n    }\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/inventory/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-inventory.html#set-custom-type"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "d3b382b2-c05c-97e5-735c-adfd693c065a",
+          "name": "Set CustomField",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCustomField\",\n    \"name\": \"StringCustomField\",\n    \"value\": \"myNewValue\"\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/inventory/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-inventory.html#set-customfield"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "9bfe4dce-7f00-64d1-01d1-f58a0f80142c",
+          "name": "Delete InventoryEntry",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "if (responseCode.code === 200){",
+                  "    postman.setEnvironmentVariable(\"id\", null);   ",
+                  "    postman.setEnvironmentVariable(\"version\", null);   ",
+                  "} "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{host}}/{{projectKey}}/inventory/{{id}}?version={{version}}",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "{{projectKey}}",
+                "inventory",
+                "{{id}}"
+              ],
+              "query": [
+                {
+                  "key": "version",
+                  "value": "{{version}}",
+                  "equals": true
+                }
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
     }
   ]
 }
