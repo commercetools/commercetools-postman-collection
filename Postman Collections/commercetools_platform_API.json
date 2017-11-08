@@ -43663,6 +43663,12 @@
           "response": []
         }
       ]
+    },
+    {
+      "_postman_id": "dee243e3-c09b-0b97-c4b1-d6f032d6d6be",
+      "name": "Product Suggestions",
+      "description": "",
+      "item": []
     }
   ]
 }
