@@ -46441,6 +46441,532 @@
           "response": []
         }
       ]
+    },
+    {
+      "_postman_id": "cc8b7a52-fe07-04d9-1cc9-916276e7e76f",
+      "name": "States copy",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "2b3af72e-91e5-3382-6cf8-adca39499a41",
+          "name": "Create State",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key\": \"StateKey\",\n  \"type\": \"OrderState\"\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/states",
+            "description": "http://dev.commercetools.com/http-api-projects-states.html#create-state"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "8f18320a-ba62-b939-a737-5349fe9214bb",
+          "name": "Get State by ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "body": {},
+            "url": "{{host}}/{{projectKey}}/states/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-states.html#get-state-by-id"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "d12de040-8586-d3ab-af25-c3b7a3f3bc6d",
+          "name": "Query States",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "body": {},
+            "url": "{{host}}/{{projectKey}}/states",
+            "description": "http://dev.commercetools.com/http-api-projects-states.html#query-states"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "07d2cd3f-dce7-8221-e006-bd7326034e9f",
+          "name": "Change Key",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeKey\",\n      \"key\": \"ChangedStateKey\"\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/states/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-states.html#change-state-key"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "5b7383f2-519f-ab05-7376-69fdab2ff80d",
+          "name": "Set Name",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setName\",\n      \"name\": {\n        \"de\": \"StateNameDE\",\n        \"en\": \"StateNameEN\"\n      }\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/states/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-states.html#set-state-name"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "645e512f-e904-9480-cae9-72da8081b8fa",
+          "name": "Set Description",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setDescription\",\n      \"description\":{\n        \"de\": \"StatedescriptionDE\",\n        \"en\": \"StatedescriptionEN\"\n      }\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/states/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-states.html#set-state-description"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "36dcc03c-e2ca-5835-0a7a-9b6892ad8cfd",
+          "name": "Change Type",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeType\",\n    \"type\": \"ReviewState\"\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/states/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-states.html#change-state-type"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "a66e6818-45f3-f99d-97e7-525526a8d20d",
+          "name": "Change initial State",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeInitial\",\n      \"initial\": false\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/states/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-states.html#change-initial-state"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "596f1a56-03e5-b45b-21f7-c12594ec1956",
+          "name": "Set Transitions",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setTransitions\",\n    \"transitions\": [\n    {\n      \"typeId\": \"state\",\n      \"id\": \"7e697898-dafd-4da3-8ecf-9375eaf48d4a\"\n    },\n    {\n      \"typeId\": \"state\",\n      \"id\": \"175f0c96-6546-4de1-a1b5-b0e54657715f\"\n    }\n  ]\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/states/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-states.html#set-transitions"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "91722d6e-e8ce-8421-ea55-995dace33e23",
+          "name": "Add Roles",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addRoles\",\n    \"roles\": [\"ReviewIncludedInStatistics\"]\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/states/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-states.html#change-initial-state"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "18c98cdc-bd65-9e46-d8da-8b672eca05aa",
+          "name": "Remove Roles",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"removeRoles\",\n    \"roles\": [\"ReviewIncludedInStatistics\"]\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/states/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-states.html#change-initial-state"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "c6de033d-6bb0-6a7d-4c4d-11aab676af17",
+          "name": "Set Roles",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setRoles\",\n    \"roles\": [\"ReviewIncludedInStatistics\"]\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/states/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-states.html#change-initial-state"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "f7556683-be6f-95cf-65c9-7adc45e22952",
+          "name": "Delete State",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{host}}/{{projectKey}}/states/{{id}}?version={{version}}",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "{{projectKey}}",
+                "states",
+                "{{id}}"
+              ],
+              "query": [
+                {
+                  "key": "version",
+                  "value": "{{version}}",
+                  "equals": true
+                }
+              ]
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-states.html#delete-state"
+          },
+          "response": []
+        }
+      ]
     }
   ]
 }
