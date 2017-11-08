@@ -28411,6 +28411,1409 @@
           "response": []
         }
       ]
+    },
+    {
+      "_postman_id": "818edc8b-ee29-7ae6-9fd1-33cbc34c8ce0",
+      "name": "Orders copy",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "2f1e7163-4b84-1c3b-e5ad-07bf79d0699e",
+          "name": "PreHelpers",
+          "description": "",
+          "item": [
+            {
+              "_postman_id": "149559e6-500c-3ff2-bee0-7d3be8bde81e",
+              "name": "Create TestCart",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                      "var data = JSON.parse(responseBody);",
+                      "if(data.id && data.version){",
+                      "    postman.setEnvironmentVariable(\"testCartVersion\", Number(data.version));",
+                      "    postman.setEnvironmentVariable(\"testCartId\", data.id);",
+                      "    postman.setEnvironmentVariable(\"lineItemId\", data.lineItems[0].id);",
+                      "    postman.setEnvironmentVariable(\"customLineItemId\", data.customLineItems[0].id)",
+                      "}"
+                    ]
+                  }
+                }
+              ],
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"currency\": \"EUR\",\n  \"customerId\": \"0c2eaad4-833c-43c1-98a4-5d03f57e9329\",\n  \"shippingAddress\": {\n    \"country\": \"DE\"\n  },\n  \"lineItems\":[{\n  \t\"productId\": \"e6b98eaa-631d-422b-9fc0-af67c18ff48d\",\n    \"variantId\": 1,\n    \"quantity\": 5\n  }],\n  \"customLineItems\":[\n  \t{\n  \t\t\"name\": {\n    \t\t\"en\": \"Name EN\",\n    \t\t\"de\": \"Name DE\"\n\t\t},\n\t    \"quantity\": 6,\n\t    \"money\": {\n\t        \"currencyCode\": \"EUR\",\n\t        \"centAmount\":4200\n\t      },\n\t    \"slug\": \"mySlug\",\n\t    \"taxCategory\": {\n\t    \t\"typeId\":\"tax-category\",\n\t    \t\"id\":\"5786eba8-d448-4b7a-84fd-07fd1d612696\"\n\t    }\n  }\n  ]\n}"
+                },
+                "url": "{{host}}/{{projectKey}}/carts",
+                "description": "http://dev.commercetools.com/http-api-projects-carts.html#create-cart"
+              },
+              "response": []
+            },
+            {
+              "_postman_id": "ae5dc5fc-6886-4238-5449-53c8a7666528",
+              "name": "Set ShippingMethod on TestCart",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                      "var data = JSON.parse(responseBody);",
+                      "if(data.id && data.version){",
+                      "    postman.setEnvironmentVariable(\"testCartVersion\", data.version);",
+                      "    postman.setEnvironmentVariable(\"testCartId\", data.id)",
+                      "}",
+                      "postman.setNextRequest('Create Order from Cart');"
+                    ]
+                  }
+                }
+              ],
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"version\": 1,\n  \"actions\": [{\n    \"action\": \"setShippingMethod\",\n    \"shippingMethod\": {\n      \"id\": \"5fb8a475-9fb7-4f65-a08c-4a26c26c56b8\",\n      \"typeId\": \"shipping-method\"\n    }\n  }]\n}"
+                },
+                "url": "{{host}}/{{projectKey}}/carts/{{testCartId}}",
+                "description": "http://dev.commercetools.com/http-api-projects-carts.html#set-shippingmethod"
+              },
+              "response": []
+            }
+          ],
+          "_postman_isSubFolder": true
+        },
+        {
+          "_postman_id": "648b62f8-fdbc-6dff-98b7-484e535102a1",
+          "name": "PostHelpers",
+          "description": "",
+          "item": [
+            {
+              "_postman_id": "5bc5c2f1-3577-cbde-6bd3-e27033d27fd1",
+              "name": "Delete TestCart",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                      "if (responseCode.code === 200){",
+                      "    postman.setEnvironmentVariable(\"id\", null);   ",
+                      "    postman.setEnvironmentVariable(\"version\", null);   ",
+                      "} ",
+                      "postman.setNextRequest('Create a Payment');"
+                    ]
+                  }
+                }
+              ],
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "{{host}}/{{projectKey}}/carts/{{testCartId}}?version={{testCartVersion}}",
+                  "host": [
+                    "{{host}}"
+                  ],
+                  "path": [
+                    "{{projectKey}}",
+                    "carts",
+                    "{{testCartId}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "version",
+                      "value": "{{testCartVersion}}",
+                      "equals": true
+                    }
+                  ]
+                },
+                "description": "http://dev.commercetools.com/http-api-projects-carts.html#delete-cart"
+              },
+              "response": []
+            }
+          ],
+          "_postman_isSubFolder": true
+        },
+        {
+          "_postman_id": "94663a6c-7170-2b41-bde2-ee4261053a18",
+          "name": "Create Order from Cart",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "    postman.setEnvironmentVariable(\"testCartVersion\", Number(postman.getEnvironmentVariable(\"testCartVersion\"))+1)",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"{{testCartId}}\",\n  \"version\": 3\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/orders",
+            "description": "https://dev.commercetools.com/http-api-projects-orders.html#create-order-from-cart"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "98238c39-f986-0568-0c02-07d80582f33c",
+          "name": "Get Order by ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "body": {},
+            "url": "{{host}}/{{projectKey}}/orders/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-orders.html#get-order-by-id"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "dbcd1e3b-8c8d-1bde-51a6-20addf61a486",
+          "name": "Query Orders",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "body": {},
+            "url": "{{host}}/{{projectKey}}/orders",
+            "description": "https://dev.commercetools.com/http-api-projects-orders.html#query-orders"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "b79d8850-87ec-840c-fb92-bb894e179a50",
+          "name": "Change OrderState",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeOrderState\",\n    \"orderState\": \"Open\"\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/orders/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-orders.html#change-orderstate"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "f48b34c6-8f37-acf3-9b51-1a1e5d8c354c",
+          "name": "Change ShipmentState",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeShipmentState\",\n    \"shipmentState\": \"Ready\"\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/orders/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-orders.html#change-shipmentstate"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "394a6dfc-217a-4121-063a-6a49b4bad9c9",
+          "name": "Change PaymentState",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changePaymentState\",\n    \"paymentState\": \"Failed\"\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/orders/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-orders.html#change-paymentstate"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "cfd2daac-1385-1b92-5cee-7fd38ec09c3e",
+          "name": "Update SyncInfo",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"updateSyncInfo\",\n    \"channel\": {\n      \"typeId\": \"channel\",\n      \"id\": \"d65d7ed8-57a6-4791-b2ad-5400b2fb55d1\"\n    }\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/orders/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-orders.html#update-syncinfo"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "41ce1f34-731b-0c00-2f6f-0ffcc00c98fa",
+          "name": "Add ReturnInfo",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "    postman.setEnvironmentVariable(\"returnItemId\", data.returnInfo[0].items[0].id)",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addReturnInfo\",\n    \"items\": [{\n      \"quantity\": 1,\n      \"lineItemId\": \"{{lineItemId}}\",\n      \"shipmentState\": \"Returned\"\n    }]\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/orders/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-orders.html#add-returninfo"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "6ea70d21-d484-eb91-1829-8b1880cc806d",
+          "name": "Set ReturnShipmentState",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setReturnShipmentState\",\n    \"returnItemId\": \"{{returnItemId}}\",\n    \"shipmentState\": \"BackInStock\"\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/orders/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-orders.html#set-returnshipmentstate"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "7693abec-a098-2e1f-7d81-11383e748bbe",
+          "name": "Set ReturnPaymentState",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setReturnPaymentState\",\n    \"returnItemId\": \"{{returnItemId}}\",\n    \"paymentState\": \"NotRefunded\"\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/orders/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-orders.html#set-returnpaymentstate"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "0c713427-a330-c52e-0c52-9515b29e2d0f",
+          "name": "Change the state of LineItem according to allowed transitions",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"transitionLineItemState\",\n    \"lineItemId\": \"{{lineItemId}}\",\n    \"quantity\": 3,\n    \"fromState\": {\n      \"typeId\": \"state\",\n      \"id\": \"51341d4e-688e-4f65-bcc2-52989f7d65c2\"\n    },\n    \"toState\": {\n      \"typeId\": \"state\",\n      \"id\": \"d70dba8b-a24d-41fe-9a3c-322838c6e1ae\"\n    }\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/orders/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-orders.html#set-returnpaymentstate"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "08ef28d0-7e25-92a3-29e4-53b545020fc0",
+          "name": "Change the state of CustomLineItem according to allowed transitions",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"transitionCustomLineItemState\",\n    \"customLineItemId\": \"{{customLineItemId}}\",\n    \"quantity\": 6,\n    \"fromState\": {\n      \"typeId\": \"state\",\n      \"id\": \"51341d4e-688e-4f65-bcc2-52989f7d65c2\"\n    },\n    \"toState\": {\n      \"typeId\": \"state\",\n      \"id\": \"d70dba8b-a24d-41fe-9a3c-322838c6e1ae\"\n    }\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/orders/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-orders.html#set-returnpaymentstate"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "b2cfd8c3-3a1c-ccb3-cf97-073ade63ad39",
+          "name": "Import State for LineItems",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"importLineItemState\",\n    \"lineItemId\": \"{{lineItemId}}\",\n    \"state\": [\n\t{\n\t\t\"quantity\": 5,\n\t\t\"state\": {\n\t\t\t\"typeId\": \"state\",\n\t\t\t\"id\": \"51341d4e-688e-4f65-bcc2-52989f7d65c2\"\n\t\t}\n\t}\n    ]\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/orders/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-orders.html#set-returnpaymentstate"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "0f96e283-6488-96c9-ca34-6167aa84bd0a",
+          "name": "Import State for CustomLineItems",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"importCustomLineItemState\",\n    \"customLineItemId\": \"{{customLineItemId}}\",\n    \"state\": [\n\t{\n\t\t\"quantity\": 6,\n\t\t\"state\": {\n\t\t\t\"typeId\": \"state\",\n\t\t\t\"id\": \"51341d4e-688e-4f65-bcc2-52989f7d65c2\"\n\t\t}\n\t}\n    ]\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/orders/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-orders.html#import-state-for-customlineitems"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "abfc01b0-988d-374e-dea9-d32a5c92688b",
+          "name": "Add Delivery",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "    postman.setEnvironmentVariable(\"deliveryId\", data.shippingInfo.deliveries[0].id);",
+                  "    postman.setEnvironmentVariable(\"deliveryItemId\", data.shippingInfo.deliveries[0].items[0].id)",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addDelivery\",\n    \"items\": [\n    \t{\n    \t\t\"id\": \"{{lineItemId}}\",\n    \t\t\"quantity\": 1\n    \t}\n    ]\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/orders/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-orders.html#add-delivery"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "db8f4459-f67c-5d9f-5960-57efd928ce36",
+          "name": "Add Parcel",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addParcelToDelivery\",\n    \"deliveryId\": \"{{deliveryId}}\",\n    \"items\":[\n    {\n    \t\"quantity\": 1,\n    \t\"id\": \"{{deliveryItemId}}\"\n    }\n    ]\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/orders/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-orders.html#add-parcel"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "5332f417-f5a7-25bd-b72f-a1612a7868b4",
+          "name": "Set Order Number",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setOrderNumber\",\n    \"orderNumber\": \"myOrderNumber\"\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/orders/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-orders.html#set-order-number"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "79e607ad-2c24-566c-0b58-71cf7ae0abf8",
+          "name": "Transition State",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"transitionState\",\n    \"state\": {\n    \t\"typeId\": \"state\",\n    \t\"id\":\"090f3218-9f0f-4812-a391-fddc5ee86cbe\"\n    }\n    }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/orders/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-orders.html#set-order-number"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "043de683-5089-f78f-a839-fb97244073fc",
+          "name": "Set Customer Email",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCustomerEmail\",\n    \"email\":\"mail@mail.de\"\n    }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/orders/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-orders.html#set-customer-email"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "b7dd3fa8-717f-71ba-57e2-0c9903ec3d9a",
+          "name": "Set Shipping Address",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setShippingAddress\",\n    \"address\": {\n    \t\"country\": \"DE\",\n    \t\"streetName\": \"Street\"\n    }\n    }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/orders/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-orders.html#set-customer-email"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "639248ff-ecf0-db84-6002-a6af08db38d0",
+          "name": "Set Billing Address",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setBillingAddress\",\n    \"address\": {\n    \t\"country\": \"DE\",\n    \t\"street\": \"Street\"\n    }\n    }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/orders/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-orders.html#set-customer-email"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "d1f4f96d-069c-8e8d-0219-7cca7f4abbe3",
+          "name": "Set Custom Type",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCustomType\",\n    \"type\": {\n    \t\"typeId\": \"type\",\n    \t\"id\": \"089eaa2e-b54b-42d7-811e-23e180fe8dcc\"\n    }\n    }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/orders/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-orders.html#set-customType"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "d7861848-de74-1a03-149e-e37c3835d74b",
+          "name": "Set CustomField",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCustomField\",\n    \"name\": \"StringCustomField\",\n    \"value\": \"Value\"\n    }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/orders/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-orders.html#set-customField"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "a69e9917-f829-dedc-dc95-a677f4591def",
+          "name": "Set LineItem Custom Type",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setLineItemCustomType\",\n    \"type\": {\n    \t\"id\": \"96a0e2f6-1369-4359-ad9e-99132482f214\"\n    },\n    \"lineItemId\": \"{{lineItemId}}\"\n    }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/orders/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-orders.html#set-lineitem-custom-type"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "00140fe5-01b1-b890-7e2f-284d7baff7f3",
+          "name": "Set LineItem CustomField",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setLineItemCustomField\",\n    \"name\": \"myCustomFieldName\",\n    \"value\":\"Value\",\n    \"lineItemId\": \"{{lineItemId}}\"\n    }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/orders/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-orders.html#set-lineitem-customfield"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "6fc9e782-dd82-812e-397b-e5ce7b671c70",
+          "name": "Set CustomLineItem Custom Type",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCustomLineItemCustomType\",\n    \"type\": {\n    \t\"typeId\": \"type\",\n    \t\"id\": \"7c30f10f-db54-418d-b62f-6ab4a4216222\"\n    },\n    \"customLineItemId\": \"{{customLineItemId}}\"\n    }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/orders/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-orders.html#set-lineitem-custom-type"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "8014f801-20eb-9422-777e-515d3e8596c8",
+          "name": "Set CustomLineItem CustomField",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCustomLineItemCustomField\",\n    \"name\": \"StringCustomField\",\n    \"value\":\"Value\",\n    \"customLineItemId\": \"{{customLineItemId}}\"\n    }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/orders/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-orders.html#set-lineitem-customfield"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "0b3e1121-74eb-ff50-a53b-f080d50accd0",
+          "name": "Add Payment",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addPayment\",\n    \"payment\": {\n      \"typeId\": \"payment\",\n      \"id\": \"d45b6f23-76a0-459f-bf55-591dfe8a4ade\"\n    }\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/orders/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-orders.html#add-payment"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "020a9db8-6106-8d46-2995-f34801943c91",
+          "name": "Remove Payment",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"removePayment\",\n    \"payment\": {\n      \"typeId\": \"payment\",\n      \"id\": \"d45b6f23-76a0-459f-bf55-591dfe8a4ade\"\n    }\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/orders/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-orders.html#remove-payment"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "5d0f326f-9aea-b7c4-2680-26565a22adc1",
+          "name": "Set Locale",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setLocale\",\n    \"locale\": \"DE-de\"\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/orders/{{id}}",
+            "description": "https://dev.commercetools.com/http-api-projects-orders.html#remove-payment"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "d6abada6-2c51-53f7-ef27-45accf3c555d",
+          "name": "Delete Order",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}",
+                  "postman.setNextRequest('Delete TestCart');"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{host}}/{{projectKey}}/orders/{{id}}?version={{version}}",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "{{projectKey}}",
+                "orders",
+                "{{id}}"
+              ],
+              "query": [
+                {
+                  "key": "version",
+                  "value": "{{version}}",
+                  "equals": true
+                }
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
     }
   ]
 }
