@@ -26830,7 +26830,65 @@
       "_postman_id": "d2af123b-1643-66bf-ceb8-48969fa253bc",
       "name": "Authorization",
       "description": "",
-      "item": []
+      "item": [
+        {
+          "_postman_id": "e0400025-e735-2c9f-bd1c-e2f8ad6f3e6a",
+          "name": "Obtain access token",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.access_token){",
+                  "    postman.setEnvironmentVariable(\"access_token\", data.access_token);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": {
+                "username": "{{client_id}}",
+                "password": "{{client_secret}}",
+                "showPassword": false
+              }
+            },
+            "method": "POST",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "https://{{auth_url}}/oauth/token?grant_type=client_credentials&scope=manage_project:{{projectKey}}",
+              "protocol": "https",
+              "host": [
+                "{{auth_url}}"
+              ],
+              "path": [
+                "oauth",
+                "token"
+              ],
+              "query": [
+                {
+                  "equals": true,
+                  "key": "grant_type",
+                  "value": "client_credentials"
+                },
+                {
+                  "equals": true,
+                  "key": "scope",
+                  "value": "manage_project:{{projectKey}}"
+                }
+              ]
+            },
+            "description": "Use this request to obtain an access token for your commercetools platform project via Client Credentials Flow. As a prerequisite you must have filled out environment variables in Postman for projectKey, client_id and client_secret to use this."
+          },
+          "response": []
+        }
+      ]
     }
   ]
 }
