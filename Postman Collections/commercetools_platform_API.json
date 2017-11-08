@@ -9175,30 +9175,6 @@
       ]
     },
     {
-      "_postman_id": "27cb3848-ef0d-aee6-5a4a-22f3ef5d4eb6",
-      "name": "Product Projection Search",
-      "description": "",
-      "item": [
-        {
-          "_postman_id": "032334d2-1134-de7f-a732-7a8da8a018e9",
-          "name": "Search ProductProjections",
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}"
-              }
-            ],
-            "body": {},
-            "url": "{{host}}/{{projectKey}}/product-projections/search",
-            "description": ""
-          },
-          "response": []
-        }
-      ]
-    },
-    {
       "_postman_id": "6e9a6244-2f07-0cd6-fb65-96cf617bc29c",
       "name": "Product Suggestions",
       "description": "",
