@@ -93,7 +93,12 @@
               }
             },
             "method": "POST",
-            "header": [],
+            "header": [
+              {
+                "key": "a",
+                "value": ""
+              }
+            ],
             "body": {},
             "url": {
               "raw": "https://{{auth_url}}/oauth/{{projectKey}}/customers/token?grant_type=password&username={{user_email}}&password={{user_password}}&scope=manage_project:{{projectKey}}",
