@@ -2377,30 +2377,6 @@
       "item": []
     },
     {
-      "_postman_id": "58886168-061c-0beb-7a49-018a0fa017a2",
-      "name": "Project",
-      "description": "",
-      "item": [
-        {
-          "_postman_id": "a8540b5e-d4d8-23e3-f629-047312787ae8",
-          "name": "Get Project",
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}"
-              }
-            ],
-            "body": {},
-            "url": "{{host}}/{{projectKey}}/",
-            "description": "http://dev.commercetools.com/http-api-projects-project.html#get-project"
-          },
-          "response": []
-        }
-      ]
-    },
-    {
       "_postman_id": "a480a618-fa19-7d5e-8e9b-d937d81b8643",
       "name": "Reviews",
       "description": "",
