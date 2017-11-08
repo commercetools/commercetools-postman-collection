@@ -43890,6 +43890,652 @@
           ]
         }
       ]
+    },
+    {
+      "_postman_id": "c590744c-dcdd-e479-ab96-53d324aa107e",
+      "name": "Reviews copy",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "c5707e04-17a1-6f22-7175-9bb8bd374466",
+          "name": "Create a Review",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"text\": \"Review text\"\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/reviews",
+            "description": "http://dev.commercetools.com/http-api-projects-reviews.html#create-a-review"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "53b416cf-05ee-5d43-1e41-43cc64d57112",
+          "name": "Get Review by ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "body": {},
+            "url": "{{host}}/{{projectKey}}/reviews/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-reviews.html#get-review-by-id"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "6ac84671-eeff-4e65-5c76-b03780be4cd8",
+          "name": "Query Reviews",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "body": {},
+            "url": "{{host}}/{{projectKey}}/reviews",
+            "description": "http://dev.commercetools.com/http-api-projects-reviews.html#query-reviews"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "499e8926-cccd-38fe-aaa8-c138f4e8d985",
+          "name": "Set Key",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setKey\",\n    \"key\": \"myReviewKey\"\n    }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/reviews/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-reviews.html#set-key"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "e9df3596-3c12-d0f4-c9ca-311bd327bc9a",
+          "name": "Set Author Name",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setAuthorName\",\n    \"authorName\": \"myAuthorName\"\n    }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/reviews/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-reviews.html#set-author-name"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "6c438d91-0469-60af-64e8-6c96e12ac924",
+          "name": "Set Customer by CustomerID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCustomer\",\n    \"customer\": {\n      \"typeId\": \"customer\",\n      \"id\": \"0c2eaad4-833c-43c1-98a4-5d03f57e9329\"\n    }\n    }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/reviews/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-reviews.html#set-customer"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "d7e3fc1d-53a5-2ba6-1355-502401fdba5b",
+          "name": "Set Customer by CustomerKey",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCustomer\",\n    \"customer\": {\n      \"typeId\": \"customer\",\n      \"key\": \"customerKey\"\n    }\n    }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/reviews/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-reviews.html#set-customer"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "0a4071a0-0685-5e6f-f613-75ef7cdf4e95",
+          "name": "Set Rating",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setRating\",\n    \"rating\": 60\n    }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/reviews/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-reviews.html#set-rating"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "6fd404c7-2876-0426-5a55-1f5d69333fe5",
+          "name": "Set Target",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setTarget\",\n    \"target\": {\n      \"typeId\": \"product\",\n      \"id\": \"6ad584b6-de7a-4424-b2e8-48fb9d675b71\"\n    }\n    }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/reviews/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-reviews.html#set-target"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "b751948f-5c6f-5765-d11c-673e70b7d424",
+          "name": "Set Text",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setText\",\n    \"text\": \"reviewText\"\n    }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/reviews/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-reviews.html#set-text"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "c8c7ce74-91ee-a556-4e67-61baacb81c61",
+          "name": "Set Title",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setTitle\",\n    \"title\": \"reviewTitle\"\n    }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/reviews/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-reviews.html#set-title"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "29bcf2c8-4f77-595b-a8d4-2d9fa90140d9",
+          "name": "Set Locale",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setLocale\",\n    \"locale\": \"ISO-code locale\"\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/reviews/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-reviews.html#set-locale"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "4cdcf1f0-5ee3-9b30-5693-85e08f93c446",
+          "name": "Transition State",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n    \"actions\": [{\n      \"action\": \"transitionState\",\n      \"state\": {\n        \"typeId\": \"state\",\n        \"id\": \"5f8a1147-1743-47e2-8223-46114faf930d\"\n      }\n    }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/reviews/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-reviews.html#transition-state"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "16ea01cc-b071-8a9f-597b-f895ad55df9a",
+          "name": "Set CustomType",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCustomType\",\n    \"type\": {\n            \"typeId\": \"type\",\n            \"id\": \"f5c2b2fa-e5a3-460d-85e0-6a8080fcfd28\"\n        }\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/reviews/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-shoppingLists.html#set-customfield"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "3159c74e-6ad0-ec44-243d-0de10b23a332",
+          "name": "Set CustomField",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCustomField\",\n    \"name\": \"CustomField\",\n    \"value\": \"ladida\"\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/reviews/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-shoppingLists.html#set-customfield"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "a9592f30-3749-ce6f-02e9-a06816612015",
+          "name": "Delete Review",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{host}}/{{projectKey}}/reviews/{{id}}?version={{version}}",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "{{projectKey}}",
+                "reviews",
+                "{{id}}"
+              ],
+              "query": [
+                {
+                  "key": "version",
+                  "value": "{{version}}",
+                  "equals": true
+                }
+              ]
+            },
+            "description": "http://dev.commercetools.com/http-api-projects-reviews.html#delete-review-by-id"
+          },
+          "response": []
+        }
+      ]
     }
   ]
 }
