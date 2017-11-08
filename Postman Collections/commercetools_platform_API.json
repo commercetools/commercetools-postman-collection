@@ -25617,6 +25617,1271 @@
           "response": []
         }
       ]
+    },
+    {
+      "_postman_id": "e49bbbcd-0fb2-6b15-7918-2d59802e7fdf",
+      "name": "Categories copy",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "ed3bdff2-7fbb-c6b8-ae4e-62112e5d81d1",
+          "name": "Query Categories",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "body": {},
+            "url": "{{host}}/{{projectKey}}/categories",
+            "description": "http://dev.commercetools.com/http-api-projects-categories.html#query-categories"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "e8bd2421-35e3-efdc-8988-56844bf6703f",
+          "name": "Create a category",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": {\n    \"de\": \"Das ist eine Kategorie\",\n    \"en\": \"This is a category\"\n  },\n  \"slug\": {\n    \"de\": \"slug-de\",\n    \"en\": \"slug-en\"\n  },\n  \"key\": \"myKey\"\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/categories",
+            "description": "http://dev.commercetools.com/http-api-projects-categories.html#create-a-category"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "e2b270a7-7a2e-b4b1-3758-994d36c90f69",
+          "name": "Get Category by ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "body": {},
+            "url": "{{host}}/{{projectKey}}/categories/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-categories.html#get-category-by-id"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "b3ca69c8-f0b1-8e49-0174-0039f9adaa82",
+          "name": "Get Category by Key",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "body": {},
+            "url": "{{host}}/{{projectKey}}/categories/key=myKey",
+            "description": "http://dev.commercetools.com/http-api-projects-categories.html#update-category-by-key"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "6a8a4534-beb4-9ba4-53b5-1d40054c7caf",
+          "name": "Set Key",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setKey\",\n    \"key\": \"myNewKey\"\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/categories/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-categories.html#update-category-by-key"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "eb48d1b5-97c4-ae66-c5b6-724c9bffc0e7",
+          "name": "Change Name",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeName\",\n    \"name\": {\n      \"de\": \"Kategoriename\",\n      \"en\": \"Category name\"\n    }\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/categories/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-categories.html#change-name"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "c7442388-374c-f75a-98c0-689d78d324c0",
+          "name": "Change Slug",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeSlug\",\n    \"slug\": {\n      \"de\": \"meine-kategorie\",\n      \"en\": \"my-category\"\n    }\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/categories/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-categories.html#change-slug"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "c51b7e4c-9cc6-32be-5232-72429d4b6e87",
+          "name": "Set Description",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setDescription\",\n    \"description\": {\n      \"de\": \"This is a category description\",\n      \"en\": \"Dies ist eine Kategorie-Beschreibung\"\n    }\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/categories/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-categories.html#set-description"
+          },
+          "response": [
+            {
+              "id": "2bca35be-f21a-0dd8-a61f-ac4860df6769",
+              "name": "Set description to null",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n\t\"version\": {{version}},\n\t\"actions\": [{\n\t\t\"action\": \"setDescription\",\n\t\t\"description\": null\n\t}]\n}"
+                },
+                "url": "{{host}}/{{projectKey}}/categories/{{id}}"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip",
+                  "name": "Content-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 11 Jul 2017 13:14:40 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked",
+                  "name": "Transfer-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-f6d837f9-d29c-4af6-8578-aca80a1ede7e",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-40bb8d66.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "59",
+              "body": "{\"id\":\"e7cb5e48-08fd-4ac2-a8cd-804e12158038\",\"version\":8,\"name\":{\"en\":\"Snowboard equipment\"},\"slug\":{\"en\":\"snowboard-equipment\"},\"ancestors\":[],\"orderHint\":\"\",\"createdAt\":\"2017-05-04T09:58:24.564Z\",\"lastModifiedAt\":\"2017-07-11T13:14:40.044Z\",\"assets\":[],\"lastMessageSequenceNumber\":1}"
+            },
+            {
+              "id": "f5d3d235-11d5-adbc-0f59-3bf81d33673a",
+              "name": "Set description to empty",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n\t\"version\": {{version}},\n\t\"actions\": [{\n\t\t\"action\": \"setDescription\"\n\t}]\n}"
+                },
+                "url": "{{host}}/{{projectKey}}/categories/{{id}}"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip",
+                  "name": "Content-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 12 Jul 2017 09:50:13 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked",
+                  "name": "Transfer-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-a4a53d29-b822-415d-b0a8-74f8cd4b549c",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-a3e2881c.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "75",
+              "body": "{\"id\":\"e7cb5e48-08fd-4ac2-a8cd-804e12158038\",\"version\":18,\"name\":{\"en\":\"Snowboard equipment\"},\"slug\":{\"en\":\"snowboard-equipment\"},\"ancestors\":[],\"orderHint\":\"0.1\",\"createdAt\":\"2017-05-04T09:58:24.564Z\",\"lastModifiedAt\":\"2017-07-12T09:50:13.129Z\",\"assets\":[],\"lastMessageSequenceNumber\":1}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "9e9b97d4-78ca-4232-3778-307c0c745013",
+          "name": "Change Parent",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeParent\",\n    \"parent\": {\n      \"typeId\": \"category\",\n      \"id\": \"14dcd209-28c0-42e7-aaac-fb277423b9b0\"\n    }\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/categories/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-categories.html#change-parent"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "6e8f927e-8d84-4685-8cbe-9fbc43820a3e",
+          "name": "Change OrderHint",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeOrderHint\",\n    \"orderHint\": \"0.1\"\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/categories/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-categories.html#change-orderhint"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "9cdc4a37-fe35-f019-2a83-0703d4fdfc3e",
+          "name": "Set External ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setExternalId\",\n    \"externalId\": \"1337\"\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/categories/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-categories.html#set-external-id"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "4f516e46-0dfb-2c82-f36e-4c6387e7389b",
+          "name": "Set Meta Title",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setMetaTitle\",\n    \"metaTitle\": {\n      \"de\": \"Dies ist mein Meta-Title\",\n      \"en\": \"This is my meta title\"\n    }\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/categories/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-categories.html#set-meta-title"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "91f53527-917c-99bd-d64c-9e39716e1c0e",
+          "name": "Set Meta Description",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setMetaDescription\",\n    \"metaDescription\": {\n      \"de\": \"Dies ist meine MetaDecription\",\n      \"en\": \"this is my meta description\"\n    }\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/categories/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-categories.html#set-meta-description"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "ac1498ba-baf7-5b3b-af47-5d240a857f07",
+          "name": "Set Meta Keywords",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setMetaKeywords\",\n    \"metaKeywords\": {\n      \"de\": \"commercetools, genial\",\n      \"en\": \"commercetools, aweseome\"\n    }\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/categories/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-categories.html#set-meta-keywords"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "43305e77-be13-a7ac-a1d3-23f2cc9fd046",
+          "name": "Set Custom Type",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCustomType\",\n    \"type\": {\n      \"id\": \"b6fe494a-42be-4af7-9e8e-c4583d7431e2\",\n      \"typeId\": \"type\"\n    }\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/categories/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-categories.html#set-custom-type"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "84d0b4a8-1ff0-e94c-cdf5-1f6798411138",
+          "name": "Set CustomField",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setCustomField\",\n    \"name\": \"StringCustomField\",\n    \"value\": \"myNewValue\"\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/categories/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-categories.html#set-customfield"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "971f0aec-a79b-5d21-2054-be709f5dd978",
+          "name": "Add Asset",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "    postman.setEnvironmentVariable(\"assetId\", data.assets[0].id);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addAsset\",\n    \"asset\": {\n      \"sources\": [{\n        \"uri\": \"https://www.commercetools.de/ct-logo.svg\",\n        \"key\": \"vector\"\n      }],\n      \"name\": {\n        \"de\": \"commercetools Logo\",\n        \"en\": \"commercetools logo\"\n      }\n    }\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/categories/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-categories.html#add-asset"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "204633c7-88bd-2016-8c8e-ffff62bf7fb3",
+          "name": "Change Asset Order",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeAssetOrder\",\n    \"assetOrder\": [\"{{assetId}}\"]\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/categories/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-categories.html#change-asset-order"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "7e54675d-9c3f-17c8-7a93-58502394186b",
+          "name": "Change Asset Name",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeAssetName\",\n    \"assetId\": \"{{assetId}}\",\n    \"name\": {\n      \"de\": \"Mein Asset\",\n      \"en\": \"My asset\"\n    }\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/categories/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-categories.html#change-asset-name"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "c9babe62-fcc7-c381-a132-d4ac67cd38fb",
+          "name": "Set Asset Description",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setAssetDescription\",\n    \"assetId\": \"{{assetId}}\",\n    \"description\": {\n      \"de\": \"Dies ist eine Asset-Beschreibung\",\n      \"en\": \"This is a asset description\"\n    }\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/categories/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-categories.html#set-asset-description"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "4b9a639a-99a6-0f84-8cef-db7901efdee0",
+          "name": "Set Asset Tags",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setAssetTags\",\n    \"assetId\": \"{{assetId}}\",\n    \"tags\": [\"commercetools\",\"awesome\"]\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/categories/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-categories.html#set-asset-tags"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "ea5c5107-0378-5a03-2579-ea9d1b3f906e",
+          "name": "Set Asset Sources",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setAssetSources\",\n    \"assetId\": \"{{assetId}}\",\n    \"sources\": [{\n      \"uri\": \"https://www.commercetools.de/ct-logo.svg\",\n      \"key\": \"vector\"\n    }]\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/categories/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-categories.html#set-asset-sources"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "87774f08-8428-0b92-166e-b6bef562fa73",
+          "name": "Set Asset Custom Type",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setAssetCustomType\",\n    \"assetId\": \"{{assetId}}\",\n    \"type\": {\n      \"id\": \"146ac9bf-3ecf-4370-912f-f90ee63731b4\",\n      \"typeId\": \"type\"\n    }\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/categories/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-categories.html#set-asset-custom-type"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "3ae89a57-19d5-73f1-cc13-03d3cd2dfec8",
+          "name": "Set Asset Custom Field",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setAssetCustomField\",\n    \"assetId\": \"{{assetId}}\",\n    \"name\": \"StringCustomField\",\n    \"value\": \"myNewValue\"\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/categories/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-categories.html#set-asset-custom-field"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "50322ae1-c3df-523a-021b-85060fe60d02",
+          "name": "Remove Asset",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"removeAsset\",\n    \"assetId\": \"{{assetId}}\"\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/categories/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-categories.html#remove-asset"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "b8106c0c-2341-2300-1524-d312d1484f13",
+          "name": "Delete Category by ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "if (responseCode.code === 200){",
+                  "    postman.setEnvironmentVariable(\"id\", null);   ",
+                  "    postman.setEnvironmentVariable(\"version\", null);   ",
+                  "}  "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "body": {},
+            "url": {
+              "raw": "{{host}}/{{projectKey}}/categories/{{id}}?version={{version}}",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "{{projectKey}}",
+                "categories",
+                "{{id}}"
+              ],
+              "query": [
+                {
+                  "key": "version",
+                  "value": "{{version}}",
+                  "equals": true
+                }
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
     }
   ]
 }
