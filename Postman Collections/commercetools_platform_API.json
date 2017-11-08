@@ -42895,6 +42895,1001 @@
           ]
         }
       ]
+    },
+    {
+      "_postman_id": "54b014ea-90cf-22f5-3640-1aa66b8d691f",
+      "name": "Project copy",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "d2fc2aa0-8a16-36d9-10ee-77f5a06bee72",
+          "name": "Get Project",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.version){",
+                  "     postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "body": {},
+            "url": "{{host}}/{{projectKey}}/",
+            "description": "http://dev.commercetools.com/http-api-projects-project.html#get-project"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "9b63ef6d-97c1-d157-b43c-dc00c590ea41",
+          "name": "Get Project copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.version){",
+                  "     postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "body": {},
+            "url": "{{host}}/{{projectKey}}/",
+            "description": "http://dev.commercetools.com/http-api-projects-project.html#get-project"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "02c83209-0bb5-52e8-4c2c-a052b1c47d86",
+          "name": "Change Name",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.version){",
+                  "     postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n      \"action\": \"changeName\",\n      \"name\": \"CTP Postman Monitor\"\n    }\n  ]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}",
+            "description": "https://dev.commercetools.com/http-api-projects-project.html#change-name"
+          },
+          "response": [
+            {
+              "id": "d809cc53-dade-7f8e-9150-541cb6940643",
+              "name": "Set AttributeDefinition InputTip",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n      \"action\": \"setInputTip\",\n      \"attributeName\": \"myAddedAttribute\",\n      \"inputTip\": {\n        \"en\": \"english\",\n        \"de\": \"german\"\n      }\n    }\n  ]\n}"
+                },
+                "url": "{{host}}/{{projectKey}}/product-types/{{id}}"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip",
+                  "name": "Content-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 30 Aug 2017 13:52:14 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked",
+                  "name": "Transfer-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-04440961-5779-40a6-a91d-f9ae1b22b59e",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-e56cc360.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "55",
+              "body": "{\"id\":\"34c992b0-9b6e-4a61-9a80-2fd64b5c02c1\",\"version\":11,\"name\":\"new prodcutType name\",\"description\":\"productTypedescription\",\"classifier\":\"Complex\",\"attributes\":[{\"name\":\"myAddedAttribute\",\"label\":{\"de\":\"german\",\"en\":\"english\"},\"inputTip\":{\"en\":\"english\",\"de\":\"german\"},\"isRequired\":false,\"type\":{\"name\":\"ltext\"},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"}],\"key\":\"my-key\",\"createdAt\":\"2017-08-29T14:41:05.472Z\",\"lastModifiedAt\":\"2017-08-30T13:52:14.428Z\"}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "773e8f31-b95b-de2a-6f13-03a67560d6fc",
+          "name": "Change Currency",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.version){",
+                  "     postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n      \"action\": \"changeCurrencies\",\n      \"currencies\": [\n      \t\"EUR\"\n      ]\n    }\n  ]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}",
+            "description": "https://dev.commercetools.com/http-api-projects-project.html#change-currencies"
+          },
+          "response": [
+            {
+              "id": "b15d1417-3386-5a8b-14c4-338808e2be36",
+              "name": "Set AttributeDefinition InputTip",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n      \"action\": \"setInputTip\",\n      \"attributeName\": \"myAddedAttribute\",\n      \"inputTip\": {\n        \"en\": \"english\",\n        \"de\": \"german\"\n      }\n    }\n  ]\n}"
+                },
+                "url": "{{host}}/{{projectKey}}/product-types/{{id}}"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip",
+                  "name": "Content-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 30 Aug 2017 13:52:14 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked",
+                  "name": "Transfer-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-04440961-5779-40a6-a91d-f9ae1b22b59e",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-e56cc360.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "55",
+              "body": "{\"id\":\"34c992b0-9b6e-4a61-9a80-2fd64b5c02c1\",\"version\":11,\"name\":\"new prodcutType name\",\"description\":\"productTypedescription\",\"classifier\":\"Complex\",\"attributes\":[{\"name\":\"myAddedAttribute\",\"label\":{\"de\":\"german\",\"en\":\"english\"},\"inputTip\":{\"en\":\"english\",\"de\":\"german\"},\"isRequired\":false,\"type\":{\"name\":\"ltext\"},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"}],\"key\":\"my-key\",\"createdAt\":\"2017-08-29T14:41:05.472Z\",\"lastModifiedAt\":\"2017-08-30T13:52:14.428Z\"}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "2f94f225-d86d-67ed-27bd-65afaa4b3953",
+          "name": "Change Countries",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.version){",
+                  "     postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n      \"action\": \"changeCountries\",\n      \"countries\":[\n      \t\"DE\",\n      \t\"US\"\n      ]\n    }\n  ]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}",
+            "description": "https://dev.commercetools.com/http-api-projects-project.html#change-countries"
+          },
+          "response": [
+            {
+              "id": "3e5c61b7-703c-743e-8b1c-94744963eb28",
+              "name": "Set AttributeDefinition InputTip",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n      \"action\": \"setInputTip\",\n      \"attributeName\": \"myAddedAttribute\",\n      \"inputTip\": {\n        \"en\": \"english\",\n        \"de\": \"german\"\n      }\n    }\n  ]\n}"
+                },
+                "url": "{{host}}/{{projectKey}}/product-types/{{id}}"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip",
+                  "name": "Content-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 30 Aug 2017 13:52:14 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked",
+                  "name": "Transfer-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-04440961-5779-40a6-a91d-f9ae1b22b59e",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-e56cc360.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "55",
+              "body": "{\"id\":\"34c992b0-9b6e-4a61-9a80-2fd64b5c02c1\",\"version\":11,\"name\":\"new prodcutType name\",\"description\":\"productTypedescription\",\"classifier\":\"Complex\",\"attributes\":[{\"name\":\"myAddedAttribute\",\"label\":{\"de\":\"german\",\"en\":\"english\"},\"inputTip\":{\"en\":\"english\",\"de\":\"german\"},\"isRequired\":false,\"type\":{\"name\":\"ltext\"},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"}],\"key\":\"my-key\",\"createdAt\":\"2017-08-29T14:41:05.472Z\",\"lastModifiedAt\":\"2017-08-30T13:52:14.428Z\"}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "30be6b9a-f74f-9d9e-68ec-3d0c0d2f3bb4",
+          "name": "Change Languages",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.version){",
+                  "     postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n      \"action\": \"changeLanguages\",\n      \"languages\":[\n      \t\"en\",\n        \"de\",\n        \"de-DE\"\n      ]\n    }\n  ]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}",
+            "description": "https://dev.commercetools.com/http-api-projects-project.html#change-languages"
+          },
+          "response": [
+            {
+              "id": "faed938c-df53-9294-9f0c-6610e792d97b",
+              "name": "Set AttributeDefinition InputTip",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n      \"action\": \"setInputTip\",\n      \"attributeName\": \"myAddedAttribute\",\n      \"inputTip\": {\n        \"en\": \"english\",\n        \"de\": \"german\"\n      }\n    }\n  ]\n}"
+                },
+                "url": "{{host}}/{{projectKey}}/product-types/{{id}}"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip",
+                  "name": "Content-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 30 Aug 2017 13:52:14 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked",
+                  "name": "Transfer-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-04440961-5779-40a6-a91d-f9ae1b22b59e",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-e56cc360.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "55",
+              "body": "{\"id\":\"34c992b0-9b6e-4a61-9a80-2fd64b5c02c1\",\"version\":11,\"name\":\"new prodcutType name\",\"description\":\"productTypedescription\",\"classifier\":\"Complex\",\"attributes\":[{\"name\":\"myAddedAttribute\",\"label\":{\"de\":\"german\",\"en\":\"english\"},\"inputTip\":{\"en\":\"english\",\"de\":\"german\"},\"isRequired\":false,\"type\":{\"name\":\"ltext\"},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"}],\"key\":\"my-key\",\"createdAt\":\"2017-08-29T14:41:05.472Z\",\"lastModifiedAt\":\"2017-08-30T13:52:14.428Z\"}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "267d2453-f60c-192d-f972-072ee4b407be",
+          "name": "Change Messages Enabled",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.version){",
+                  "     postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n      \"action\": \"changeMessagesEnabled\",\n      \"messagesEnabled\":false\n    }\n  ]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}",
+            "description": "https://dev.commercetools.com/http-api-projects-project.html#change-mesages-enabled"
+          },
+          "response": [
+            {
+              "id": "b3da3186-8995-1be9-18c2-83ff696715c9",
+              "name": "Set AttributeDefinition InputTip",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n      \"action\": \"setInputTip\",\n      \"attributeName\": \"myAddedAttribute\",\n      \"inputTip\": {\n        \"en\": \"english\",\n        \"de\": \"german\"\n      }\n    }\n  ]\n}"
+                },
+                "url": "{{host}}/{{projectKey}}/product-types/{{id}}"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip",
+                  "name": "Content-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 30 Aug 2017 13:52:14 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked",
+                  "name": "Transfer-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-04440961-5779-40a6-a91d-f9ae1b22b59e",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-e56cc360.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "55",
+              "body": "{\"id\":\"34c992b0-9b6e-4a61-9a80-2fd64b5c02c1\",\"version\":11,\"name\":\"new prodcutType name\",\"description\":\"productTypedescription\",\"classifier\":\"Complex\",\"attributes\":[{\"name\":\"myAddedAttribute\",\"label\":{\"de\":\"german\",\"en\":\"english\"},\"inputTip\":{\"en\":\"english\",\"de\":\"german\"},\"isRequired\":false,\"type\":{\"name\":\"ltext\"},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"}],\"key\":\"my-key\",\"createdAt\":\"2017-08-29T14:41:05.472Z\",\"lastModifiedAt\":\"2017-08-30T13:52:14.428Z\"}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "7f98cc29-0369-9bec-9831-06c7eb8ec58c",
+          "name": "Set ShippingRateInputType",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.version){",
+                  "     postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n      \"action\": \"setShippingRateInputType\",\n      \"shippingRateInputType\":{\n      }\n    }\n  ]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}",
+            "description": "https://dev.commercetools.com/http-api-projects-project.html#set-shippingrateinputtype"
+          },
+          "response": [
+            {
+              "id": "86de9a52-b284-81da-157e-99fc0f330cbd",
+              "name": "Set AttributeDefinition InputTip",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{access_token}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n      \"action\": \"setInputTip\",\n      \"attributeName\": \"myAddedAttribute\",\n      \"inputTip\": {\n        \"en\": \"english\",\n        \"de\": \"german\"\n      }\n    }\n  ]\n}"
+                },
+                "url": "{{host}}/{{projectKey}}/product-types/{{id}}"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Accept, Authorization, Content-Type, Origin, User-Agent",
+                  "name": "Access-Control-Allow-Headers",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, DELETE, OPTIONS",
+                  "name": "Access-Control-Allow-Methods",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*",
+                  "name": "Access-Control-Allow-Origin",
+                  "description": ""
+                },
+                {
+                  "key": "Access-Control-Max-Age",
+                  "value": "299",
+                  "name": "Access-Control-Max-Age",
+                  "description": ""
+                },
+                {
+                  "key": "Alt-Svc",
+                  "value": "clear",
+                  "name": "Alt-Svc",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Encoding",
+                  "value": "gzip",
+                  "name": "Content-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "name": "Content-Type",
+                  "description": ""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 30 Aug 2017 13:52:14 GMT",
+                  "name": "Date",
+                  "description": ""
+                },
+                {
+                  "key": "Server",
+                  "value": "nginx",
+                  "name": "Server",
+                  "description": ""
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked",
+                  "name": "Transfer-Encoding",
+                  "description": ""
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 google",
+                  "name": "Via",
+                  "description": ""
+                },
+                {
+                  "key": "X-Correlation-ID",
+                  "value": "projects-04440961-5779-40a6-a91d-f9ae1b22b59e",
+                  "name": "X-Correlation-ID",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-By",
+                  "value": "api-gce-e56cc360.sphere.prod.commercetools.de",
+                  "name": "X-Served-By",
+                  "description": ""
+                },
+                {
+                  "key": "X-Served-Config",
+                  "value": "sphere-projects-ws-1.0",
+                  "name": "X-Served-Config",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "55",
+              "body": "{\"id\":\"34c992b0-9b6e-4a61-9a80-2fd64b5c02c1\",\"version\":11,\"name\":\"new prodcutType name\",\"description\":\"productTypedescription\",\"classifier\":\"Complex\",\"attributes\":[{\"name\":\"myAddedAttribute\",\"label\":{\"de\":\"german\",\"en\":\"english\"},\"inputTip\":{\"en\":\"english\",\"de\":\"german\"},\"isRequired\":false,\"type\":{\"name\":\"ltext\"},\"attributeConstraint\":\"Unique\",\"isSearchable\":true,\"inputHint\":\"MultiLine\",\"displayGroup\":\"Other\"}],\"key\":\"my-key\",\"createdAt\":\"2017-08-29T14:41:05.472Z\",\"lastModifiedAt\":\"2017-08-30T13:52:14.428Z\"}"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
