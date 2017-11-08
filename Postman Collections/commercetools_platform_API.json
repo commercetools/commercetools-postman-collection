@@ -96,7 +96,8 @@
             "header": [
               {
                 "key": "",
-                "value": ""
+                "value": "",
+                "disabled": true
               }
             ],
             "body": {},
