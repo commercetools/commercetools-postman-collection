@@ -26962,6 +26962,63 @@
             "description": "Use this request to obtain an access token for your commercetools platform project via Password Flow. As a prerequisite you must have filled out environment variables in Postman for projectKey, client_id, client_secret, user_email and user_password to use this."
           },
           "response": []
+        },
+        {
+          "_postman_id": "eaefb1d8-4615-a451-a138-d497e5e98ccc",
+          "name": "Token Introspection",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": {
+                "username": "{{client_id}}",
+                "password": "{{client_secret}}",
+                "showPassword": false
+              }
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "body": {},
+            "url": {
+              "raw": "https://{{auth_url}}/oauth/introspect?token={{access_token}}",
+              "protocol": "https",
+              "host": [
+                "{{auth_url}}"
+              ],
+              "path": [
+                "oauth",
+                "introspect"
+              ],
+              "query": [
+                {
+                  "equals": true,
+                  "key": "token",
+                  "value": "{{access_token}}"
+                }
+              ]
+            },
+            "description": "Token introspection allows to determine the active state of an OAuth 2.0 access token and to determine meta-information about this accces token, such as the `scope`."
+          },
+          "response": []
         }
       ]
     }
