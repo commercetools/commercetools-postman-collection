@@ -2296,6 +2296,46 @@
             "description": "http://dev.commercetools.com/http-api-projects-carts.html#delete-cart"
           },
           "response": []
+        },
+        {
+          "_postman_id": "d2bbedde-b176-9cf2-f096-131f16a53b03",
+          "name": "Set Cart Total Tax copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"changeTaxCalculationMode\",\n    \"taxCalculationMode\": \"UnitPriceLevel\"\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/carts/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-carts.html#change-taxcalculationmode"
+          },
+          "response": []
         }
       ]
     },
