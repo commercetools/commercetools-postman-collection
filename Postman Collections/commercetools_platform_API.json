@@ -1075,7 +1075,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addCustomLineItem\",\n    \"name\": {\n      \"en\": \"Name EN\",\n      \"de\": \"Name DE\"\n    },\n    \"quantity\": 1,\n    \"money\": {\n        \"currencyCode\": \"EUR\",\n        \"centAmount\":4200\n      },\n    \"slug\": \"mySlug\"\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"addCustomLineItem\",\n    \"name\": {\n      \"en\": \"Name EN\",\n      \"de\": \"Name DE\"\n    },\n    \"quantity\": 1,\n    \"money\": {\n        \"currencyCode\": \"EUR\",\n        \"centAmount\":4200\n      },\n    \"slug\": \"mySlug\",\n    \"taxCategory\": {\n    \t\"typeId\": \"tax-category\",\n    \t\"id\": \"5786eba8-d448-4b7a-84fd-07fd1d612696\"\n    }\n  }]\n}"
             },
             "url": "{{host}}/{{projectKey}}/carts/{{id}}",
             "description": "http://dev.commercetools.com/http-api-projects-carts.html#add-customlineitem"
