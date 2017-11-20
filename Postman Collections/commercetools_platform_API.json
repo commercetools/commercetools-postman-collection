@@ -2226,6 +2226,21 @@
             "description": "http://dev.commercetools.com/http-api-projects-carts.html#delete-cart"
           },
           "response": []
+        },
+        {
+          "_postman_id": "4c8dfbb2-68c3-13d0-f278-7a2a8cc4a20f",
+          "name": "Set ShippingMethod TaxRate",
+          "request": {
+            "method": null,
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": null,
+            "description": null
+          },
+          "response": []
         }
       ]
     },
