@@ -811,7 +811,7 @@
         },
         {
           "_postman_id": "e0886534-a888-9784-3a96-025964a753b1",
-          "name": "Set LineItem TaxAmount copy",
+          "name": "Set LineItem TaxAmount",
           "event": [
             {
               "listen": "test",
