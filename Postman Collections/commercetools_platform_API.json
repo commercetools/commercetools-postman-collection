@@ -2127,7 +2127,7 @@
         },
         {
           "_postman_id": "d2bbedde-b176-9cf2-f096-131f16a53b03",
-          "name": "Set Cart Total Tax copy",
+          "name": "Set Cart Total Tax",
           "event": [
             {
               "listen": "test",
