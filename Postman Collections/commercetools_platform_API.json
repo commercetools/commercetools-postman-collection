@@ -810,6 +810,61 @@
           "response": []
         },
         {
+          "_postman_id": "e0886534-a888-9784-3a96-025964a753b1",
+          "name": "Set LineItem TaxAmount copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "    postman.setEnvironmentVariable(\"cartExternalId\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"cartExternalVersion\", data.version); ",
+                  "    postman.setEnvironmentVariable(\"cartExternalLineItemId\", data.lineItems[0].id);",
+                  "    postman.setEnvironmentVariable(\"cartExternalCustomLineItemId\", data.customLineItems[0].id);",
+                  "}"
+                ]
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "postman.setEnvironmentVariable(\"id\", postman.getEnvironmentVariable(\"cartExternalId\"));",
+                  "postman.setEnvironmentVariable(\"version\", postman.getEnvironmentVariable(\"cartExternalVersion\"));",
+                  "postman.setEnvironmentVariable(\"lineItemId\", postman.getEnvironmentVariable(\"cartExternalLineItemId\"));"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setLineItemTaxRate\",\n    \"lineItemId\": \"{{lineItemId}}\",\n    \"externalTaxRate\": {\n      \"name\": \"myTaxRate\",\n      \"amount\": 0.19,\n      \"country\": \"DE\"\n    }\n  }]\n}"
+            },
+            "url": "{{host}}/{{projectKey}}/carts/{{id}}",
+            "description": "http://dev.commercetools.com/http-api-projects-carts.html#set-lineitem-taxamount"
+          },
+          "response": []
+        },
+        {
           "_postman_id": "fae8d5a3-8f56-1181-d276-70f5a192e8c6",
           "name": "Set LineItem TotalPrice",
           "event": [
@@ -2129,61 +2184,6 @@
               ]
             },
             "description": "http://dev.commercetools.com/http-api-projects-carts.html#delete-cart"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "e0886534-a888-9784-3a96-025964a753b1",
-          "name": "Set LineItem TaxAmount copy",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "    postman.setEnvironmentVariable(\"cartExternalId\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"cartExternalVersion\", data.version); ",
-                  "    postman.setEnvironmentVariable(\"cartExternalLineItemId\", data.lineItems[0].id);",
-                  "    postman.setEnvironmentVariable(\"cartExternalCustomLineItemId\", data.customLineItems[0].id);",
-                  "}"
-                ]
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "postman.setEnvironmentVariable(\"id\", postman.getEnvironmentVariable(\"cartExternalId\"));",
-                  "postman.setEnvironmentVariable(\"version\", postman.getEnvironmentVariable(\"cartExternalVersion\"));",
-                  "postman.setEnvironmentVariable(\"lineItemId\", postman.getEnvironmentVariable(\"cartExternalLineItemId\"));"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}"
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setLineItemTaxRate\",\n    \"lineItemId\": \"{{lineItemId}}\",\n    \"externalTaxRate\": {\n      \"name\": \"myTaxRate\",\n      \"amount\": 0.19,\n      \"country\": \"DE\"\n    }\n  }]\n}"
-            },
-            "url": "{{host}}/{{projectKey}}/carts/{{id}}",
-            "description": "http://dev.commercetools.com/http-api-projects-carts.html#set-lineitem-taxamount"
           },
           "response": []
         }
