@@ -1216,7 +1216,7 @@
         },
         {
           "_postman_id": "d1a5c9a2-c5c5-251c-973f-eb95e7258116",
-          "name": "Change CustomLineItem TaxAmount copy",
+          "name": "Change CustomLineItem TaxAmount",
           "event": [
             {
               "listen": "test",
