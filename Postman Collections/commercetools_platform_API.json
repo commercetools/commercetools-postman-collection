@@ -1415,6 +1415,21 @@
                   "}"
                 ]
               }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "postman.setEnvironmentVariable(\"id\", postman.getEnvironmentVariable(\"cartExternalId\"));",
+                  "postman.setEnvironmentVariable(\"version\", postman.getEnvironmentVariable(\"cartExternalVersion\"));",
+                  "postman.setEnvironmentVariable(\"lineItemId\", postman.getEnvironmentVariable(\"cartExternalLineItemId\"));",
+                  "postman.setEnvironmentVariable(\"customLineItemId\", postman.getEnvironmentVariable(\"cartExternalCustomLineItemId\"));",
+                  "",
+                  "",
+                  ""
+                ]
+              }
             }
           ],
           "request": {
