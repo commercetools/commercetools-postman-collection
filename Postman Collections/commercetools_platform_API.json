@@ -729,6 +729,7 @@
                   "    postman.setEnvironmentVariable(\"id\", data.id);  ",
                   "    postman.setEnvironmentVariable(\"cartId\", data.id); ",
                   "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "    postman.setEnvironmentVariable(\"cartVersion\", data.version);",
                   "}"
                 ]
               }
