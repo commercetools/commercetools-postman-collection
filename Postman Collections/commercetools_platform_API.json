@@ -1962,6 +1962,38 @@
         {
           "_postman_id": "4c8dfbb2-68c3-13d0-f278-7a2a8cc4a20f",
           "name": "Set ShippingMethod TaxRate",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "    postman.setEnvironmentVariable(\"cartExternalId\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"cartExternalVersion\", data.version);",
+                  "}"
+                ]
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "postman.setEnvironmentVariable(\"id\", postman.getEnvironmentVariable(\"cartExternalId\"));",
+                  "postman.setEnvironmentVariable(\"version\", postman.getEnvironmentVariable(\"cartExternalVersion\"));",
+                  "postman.setEnvironmentVariable(\"lineItemId\", postman.getEnvironmentVariable(\"cartExternalLineItemId\"));",
+                  "postman.setEnvironmentVariable(\"customLineItemId\", postman.getEnvironmentVariable(\"cartExternalCustomLineItemId\"));",
+                  "",
+                  ""
+                ]
+              }
+            }
+          ],
           "request": {
             "method": null,
             "header": [],
