@@ -2047,7 +2047,7 @@
         },
         {
           "_postman_id": "cf2de4f9-2b20-ca7f-ec66-5556fc96dd75",
-          "name": "Change Tax CalculationMode copy",
+          "name": "Change Tax CalculationMode",
           "event": [
             {
               "listen": "test",
