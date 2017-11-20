@@ -1232,6 +1232,16 @@
                   "}"
                 ]
               }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "postman.setEnvironmentVariable(\"id\", postman.getEnvironmentVariable(\"cartId\"))",
+                  "postman.setEnvironmentVariable(\"version\", postman.getEnvironmentVariable(\"cartVersion\"));"
+                ]
+              }
             }
           ],
           "request": {
