@@ -1,5 +1,4 @@
 {
-  "variables": [],
   "info": {
     "name": "commercetools platform API",
     "_postman_id": "727d1b55-8468-d7cb-8ae3-43edb365e9a0",
@@ -761,6 +760,17 @@
           "name": "Set LineItem TaxRate",
           "event": [
             {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "postman.setEnvironmentVariable(\"id\", postman.getEnvironmentVariable(\"cartExternalId\"));",
+                  "postman.setEnvironmentVariable(\"version\", postman.getEnvironmentVariable(\"cartExternalVersion\"));",
+                  "postman.setEnvironmentVariable(\"lineItemId\", postman.getEnvironmentVariable(\"cartExternalLineItemId\"));"
+                ]
+              }
+            },
+            {
               "listen": "test",
               "script": {
                 "type": "text/javascript",
@@ -775,17 +785,6 @@
                   "    postman.setEnvironmentVariable(\"cartExternalLineItemId\", data.lineItems[0].id);",
                   "    postman.setEnvironmentVariable(\"cartExternalCustomLineItemId\", data.customLineItems[0].id);",
                   "}"
-                ]
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "postman.setEnvironmentVariable(\"id\", postman.getEnvironmentVariable(\"cartExternalId\"));",
-                  "postman.setEnvironmentVariable(\"version\", postman.getEnvironmentVariable(\"cartExternalVersion\"));",
-                  "postman.setEnvironmentVariable(\"lineItemId\", postman.getEnvironmentVariable(\"cartExternalLineItemId\"));"
                 ]
               }
             }
@@ -816,6 +815,17 @@
           "name": "Set LineItem TaxAmount",
           "event": [
             {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "postman.setEnvironmentVariable(\"id\", postman.getEnvironmentVariable(\"cartExternalAmountId\"));",
+                  "postman.setEnvironmentVariable(\"version\", postman.getEnvironmentVariable(\"cartExternalAmountVersion\"));",
+                  "postman.setEnvironmentVariable(\"lineItemId\", postman.getEnvironmentVariable(\"cartExternalAmountLineItemId\"));"
+                ]
+              }
+            },
+            {
               "listen": "test",
               "script": {
                 "type": "text/javascript",
@@ -830,17 +840,6 @@
                   "    postman.setEnvironmentVariable(\"cartExternalLineItemId\", data.lineItems[0].id);",
                   "    postman.setEnvironmentVariable(\"cartExternalCustomLineItemId\", data.customLineItems[0].id);",
                   "}"
-                ]
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "postman.setEnvironmentVariable(\"id\", postman.getEnvironmentVariable(\"cartExternalAmountId\"));",
-                  "postman.setEnvironmentVariable(\"version\", postman.getEnvironmentVariable(\"cartExternalAmountVersion\"));",
-                  "postman.setEnvironmentVariable(\"lineItemId\", postman.getEnvironmentVariable(\"cartExternalAmountLineItemId\"));"
                 ]
               }
             }
@@ -871,6 +870,17 @@
           "name": "Set LineItem TotalPrice",
           "event": [
             {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "postman.setEnvironmentVariable(\"id\", postman.getEnvironmentVariable(\"cartExternalAmountId\"));",
+                  "postman.setEnvironmentVariable(\"version\", postman.getEnvironmentVariable(\"cartExternalAmountVersion\"));",
+                  "postman.setEnvironmentVariable(\"lineItemId\", postman.getEnvironmentVariable(\"cartExternalAmountLineItemId\"));"
+                ]
+              }
+            },
+            {
               "listen": "test",
               "script": {
                 "type": "text/javascript",
@@ -885,17 +895,6 @@
                   "    postman.setEnvironmentVariable(\"cartExternalAmountLineItemId\", data.lineItems[0].id);",
                   "    postman.setEnvironmentVariable(\"cartExternalAmountCustomLineItemId\", data.customLineItems[0].id);",
                   "}"
-                ]
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "postman.setEnvironmentVariable(\"id\", postman.getEnvironmentVariable(\"cartExternalAmountId\"));",
-                  "postman.setEnvironmentVariable(\"version\", postman.getEnvironmentVariable(\"cartExternalAmountVersion\"));",
-                  "postman.setEnvironmentVariable(\"lineItemId\", postman.getEnvironmentVariable(\"cartExternalAmountLineItemId\"));"
                 ]
               }
             }
@@ -1169,6 +1168,20 @@
           "name": "Change CustomLineItem TaxRate",
           "event": [
             {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "postman.setEnvironmentVariable(\"id\", postman.getEnvironmentVariable(\"cartExternalId\"));",
+                  "postman.setEnvironmentVariable(\"version\", postman.getEnvironmentVariable(\"cartExternalVersion\"));",
+                  "postman.setEnvironmentVariable(\"lineItemId\", postman.getEnvironmentVariable(\"cartExternalLineItemId\"));",
+                  "postman.setEnvironmentVariable(\"customLineItemId\", postman.getEnvironmentVariable(\"cartExternalCustomLineItemId\"));",
+                  "",
+                  ""
+                ]
+              }
+            },
+            {
               "listen": "test",
               "script": {
                 "type": "text/javascript",
@@ -1181,20 +1194,6 @@
                   "    postman.setEnvironmentVariable(\"cartExternalId\", data.id); ",
                   "    postman.setEnvironmentVariable(\"cartExternalVersion\", data.version);",
                   "}"
-                ]
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "postman.setEnvironmentVariable(\"id\", postman.getEnvironmentVariable(\"cartExternalId\"));",
-                  "postman.setEnvironmentVariable(\"version\", postman.getEnvironmentVariable(\"cartExternalVersion\"));",
-                  "postman.setEnvironmentVariable(\"lineItemId\", postman.getEnvironmentVariable(\"cartExternalLineItemId\"));",
-                  "postman.setEnvironmentVariable(\"customLineItemId\", postman.getEnvironmentVariable(\"cartExternalCustomLineItemId\"));",
-                  "",
-                  ""
                 ]
               }
             }
@@ -1225,6 +1224,16 @@
           "name": "Change CustomLineItem TaxAmount",
           "event": [
             {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "postman.setEnvironmentVariable(\"id\", postman.getEnvironmentVariable(\"cartId\"))",
+                  "postman.setEnvironmentVariable(\"version\", postman.getEnvironmentVariable(\"cartVersion\"));"
+                ]
+              }
+            },
+            {
               "listen": "test",
               "script": {
                 "type": "text/javascript",
@@ -1237,16 +1246,6 @@
                   "    postman.setEnvironmentVariable(\"cartExternalAmountId\", data.id); ",
                   "    postman.setEnvironmentVariable(\"cartExternalAmountVersion\", data.version);",
                   "}"
-                ]
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "postman.setEnvironmentVariable(\"id\", postman.getEnvironmentVariable(\"cartId\"))",
-                  "postman.setEnvironmentVariable(\"version\", postman.getEnvironmentVariable(\"cartVersion\"));"
                 ]
               }
             }
@@ -1403,20 +1402,6 @@
           "name": "Set Customer Email",
           "event": [
             {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            },
-            {
               "listen": "prerequest",
               "script": {
                 "type": "text/javascript",
@@ -1428,6 +1413,20 @@
                   "",
                   "",
                   ""
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
                 ]
               }
             }
@@ -1981,6 +1980,20 @@
           "name": "Set ShippingMethod TaxRate",
           "event": [
             {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "postman.setEnvironmentVariable(\"id\", postman.getEnvironmentVariable(\"cartExternalId\"));",
+                  "postman.setEnvironmentVariable(\"version\", postman.getEnvironmentVariable(\"cartExternalVersion\"));",
+                  "postman.setEnvironmentVariable(\"lineItemId\", postman.getEnvironmentVariable(\"cartExternalLineItemId\"));",
+                  "postman.setEnvironmentVariable(\"customLineItemId\", postman.getEnvironmentVariable(\"cartExternalCustomLineItemId\"));",
+                  "",
+                  ""
+                ]
+              }
+            },
+            {
               "listen": "test",
               "script": {
                 "type": "text/javascript",
@@ -1993,20 +2006,6 @@
                   "    postman.setEnvironmentVariable(\"cartExternalId\", data.id); ",
                   "    postman.setEnvironmentVariable(\"cartExternalVersion\", data.version);",
                   "}"
-                ]
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "postman.setEnvironmentVariable(\"id\", postman.getEnvironmentVariable(\"cartExternalId\"));",
-                  "postman.setEnvironmentVariable(\"version\", postman.getEnvironmentVariable(\"cartExternalVersion\"));",
-                  "postman.setEnvironmentVariable(\"lineItemId\", postman.getEnvironmentVariable(\"cartExternalLineItemId\"));",
-                  "postman.setEnvironmentVariable(\"customLineItemId\", postman.getEnvironmentVariable(\"cartExternalCustomLineItemId\"));",
-                  "",
-                  ""
                 ]
               }
             }
@@ -8707,20 +8706,20 @@
           "name": "Get Message by ID",
           "event": [
             {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;"
-                ]
-              }
-            },
-            {
               "listen": "prerequest",
               "script": {
                 "type": "text/javascript",
                 "exec": [
                   "postman.setEnvironmentVariable('id', 'f369cdaf-ab82-406f-adcb-7bc583062636');"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;"
                 ]
               }
             }
@@ -13006,6 +13005,12 @@
           "response": []
         }
       ]
+    },
+    {
+      "_postman_id": "dee243e3-c09b-0b97-c4b1-d6f032d6d6be",
+      "name": "Product Suggestions",
+      "description": "",
+      "item": []
     },
     {
       "_postman_id": "478f9ceb-b062-2091-f53b-e5513808f73c",
@@ -28450,12 +28455,6 @@
           "response": []
         }
       ]
-    },
-    {
-      "_postman_id": "dee243e3-c09b-0b97-c4b1-d6f032d6d6be",
-      "name": "Product Suggestions",
-      "description": "",
-      "item": []
     }
   ]
 }
