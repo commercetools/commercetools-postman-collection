@@ -4238,39 +4238,6 @@
       "description": "",
       "item": [
         {
-          "_postman_id": "ce97d7b9-228e-dc58-33f9-fcb302d78959",
-          "name": "Query Channels",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
-                  "var data = JSON.parse(responseBody);",
-                  "if(data.id && data.version){",
-                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
-                  "    postman.setEnvironmentVariable(\"version\", data.version);",
-                  "}"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token}}"
-              }
-            ],
-            "body": {},
-            "url": "{{host}}/{{projectKey}}/channels",
-            "description": ""
-          },
-          "response": []
-        },
-        {
           "_postman_id": "f8990be3-e3d4-37ed-e99a-bb02e11842f1",
           "name": "Create a Channel",
           "event": [
@@ -4305,6 +4272,39 @@
               "mode": "raw",
               "raw": "{\n  \"key\": \"myChannel\",\n  \"roles\": [\"ProductDistribution\"],\n  \"name\": {\n    \"de\": \"myChannel\",\n    \"en\": \"myChannel\"\n  }\n}"
             },
+            "url": "{{host}}/{{projectKey}}/channels",
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "ce97d7b9-228e-dc58-33f9-fcb302d78959",
+          "name": "Query Channels",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.id && data.version){",
+                  "    postman.setEnvironmentVariable(\"id\", data.id); ",
+                  "    postman.setEnvironmentVariable(\"version\", data.version);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "body": {},
             "url": "{{host}}/{{projectKey}}/channels",
             "description": ""
           },
