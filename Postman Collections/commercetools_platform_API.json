@@ -2870,7 +2870,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setValidUntil\",\n      \"validUntil\": \"2017-10-15T14:00:00.000Z\"\n  }]\n}"
+              "raw": "{\n  \"version\": {{version}},\n  \"actions\": [{\n    \"action\": \"setValidUntil\",\n      \"validUntil\": \"2017-10-15T20:00:00.000Z\"\n  }]\n}"
             },
             "url": "{{host}}/{{projectKey}}/cart-discounts/{{id}}",
             "description": "http://dev.commercetools.com/http-api-projects-cartDiscounts.html#set-valid-until"
