@@ -27562,7 +27562,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"key\": \"acp-payment-b2c\",\n  \"name\": { \n    \"en\": \"B2C Payment\",\n    \"de\": \"B2C Payment\"\n  },\n  \"resourceTypeIds\": [\"payment\"],\n  \"description\": { \n    \"en\": \"ACP Payment\",\n    \"de\": \"ACP Payment\" \n  },\n  \"fieldDefinitions\": [\n    {\n      \"name\": \"type\",\n      \"type\": { \"name\": \"String\" },\n      \"required\": false,\n      \"label\": { \n        \"en\": \"Type\", \n        \"de\": \"Type\"\n      },\n      \"inputHint\": \"SingleLine\"\n    }\n  ]\n}"
+              "raw": "{\n  \"key\": \"acp-payment-b2c\",\n  \"name\": { \n    \"en\": \"B2C Payment\",\n    \"de\": \"B2C Payment\"\n  },\n  \"resourceTypeIds\": [\"payment\"],\n  \"description\": { \n    \"en\": \"B2C Payment\",\n    \"de\": \"B2C Payment\" \n  },\n  \"fieldDefinitions\": [\n    {\n      \"name\": \"type\",\n      \"type\": { \"name\": \"String\" },\n      \"required\": false,\n      \"label\": { \n        \"en\": \"Type\", \n        \"de\": \"Type\"\n      },\n      \"inputHint\": \"SingleLine\"\n    }\n  ]\n}"
             },
             "url": "{{host}}/{{projectKey}}/types",
             "description": "http://dev.commercetools.com/http-api-projects-types.html#create-type"
