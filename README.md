@@ -12,6 +12,9 @@ for a complete and approved documentation of the commercetools platform API.
 
 ## How to use
 
+**:warning: Be aware that postman automatically synchronizes environment variables to your workspace if logged in.
+Use this collection only for development purposes and non-production projects.**
+
 To use this collection in Postman please perform the following steps:
 
 1. Download and install the Postman Client

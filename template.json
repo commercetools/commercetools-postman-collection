@@ -16,13 +16,13 @@
     },
     {
       "enabled": true,
-      "key": "ctp_client_id",
+      "key": "client_id",
       "value": "<your-client-id>",
       "type": "text"
     },
     {
       "enabled": true,
-      "key": "ctp_client_secret",
+      "key": "client_secret",
       "value": "<your-client-secret>",
       "type": "text"
     },
