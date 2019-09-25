@@ -41921,7 +41921,7 @@
                                 ],
                                 "body": {
                                     "mode": "raw",
-                                    "raw": "{\n  \"version\" : 1,\n  \"actions\" : [ {\n    \"action\" : \"changeName\",\n    \"name\" : {\n      \"en\" : \"New Name\"\n    }\n  } ]\n}"
+                                    "raw": "{\n    \"version\": {{shopping-list-version}},\n    \"actions\": []\n}"
                                 },
                                 "url": {
                                     "raw": "{{host}}/{{projectKey}}/me/shopping-lists/{{shopping-list-id}}",
@@ -42021,6 +42021,1317 @@
                                 "description": "Delete MyShoppingList by ID"
                             },
                             "response": []
+                        },{
+                            "name": "AddLineItem",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"shopping-list-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"shopping-list-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"shopping-list-key\", data.key);",
+                                            "}",
+                                            "",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"version\": {{shopping-list-version}},\n    \"actions\": [\n                |{\n            \"action\": \"addLineItem\"\n        }\n    ]\n}"
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{projectKey}}/me/shopping-lists/{{shopping-list-id}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{projectKey}}",
+                                        "me",
+                                        "shopping-lists",
+                                        "{{shopping-list-id}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "expand",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        }
+                                    ]
+                                },
+                                "description": "MyShoppingListAddLineItemAction"
+                            },
+                            "response": []
+                        },{
+                            "name": "AddTextLineItem",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"shopping-list-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"shopping-list-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"shopping-list-key\", data.key);",
+                                            "}",
+                                            "",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"version\": {{shopping-list-version}},\n    \"actions\": [\n                |{\n            \"action\": \"addTextLineItem\"\n        }\n    ]\n}"
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{projectKey}}/me/shopping-lists/{{shopping-list-id}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{projectKey}}",
+                                        "me",
+                                        "shopping-lists",
+                                        "{{shopping-list-id}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "expand",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        }
+                                    ]
+                                },
+                                "description": "MyShoppingListAddTextLineItemAction"
+                            },
+                            "response": []
+                        },{
+                            "name": "ChangeLineItemQuantity",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"shopping-list-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"shopping-list-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"shopping-list-key\", data.key);",
+                                            "}",
+                                            "",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"version\": {{shopping-list-version}},\n    \"actions\": [\n                |{\n            \"action\": \"changeLineItemQuantity\"\n        }\n    ]\n}"
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{projectKey}}/me/shopping-lists/{{shopping-list-id}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{projectKey}}",
+                                        "me",
+                                        "shopping-lists",
+                                        "{{shopping-list-id}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "expand",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        }
+                                    ]
+                                },
+                                "description": "MyShoppingListChangeLineItemQuantityAction"
+                            },
+                            "response": []
+                        },{
+                            "name": "ChangeLineItemsOrder",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"shopping-list-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"shopping-list-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"shopping-list-key\", data.key);",
+                                            "}",
+                                            "",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"version\": {{shopping-list-version}},\n    \"actions\": [\n                |{\n            \"action\": \"changeLineItemsOrder\"\n        }\n    ]\n}"
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{projectKey}}/me/shopping-lists/{{shopping-list-id}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{projectKey}}",
+                                        "me",
+                                        "shopping-lists",
+                                        "{{shopping-list-id}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "expand",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        }
+                                    ]
+                                },
+                                "description": "MyShoppingListChangeLineItemsOrderAction"
+                            },
+                            "response": []
+                        },{
+                            "name": "ChangeName",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"shopping-list-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"shopping-list-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"shopping-list-key\", data.key);",
+                                            "}",
+                                            "",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"version\": {{shopping-list-version}},\n    \"actions\": [\n                |{\n            \"action\": \"changeName\"\n        }\n    ]\n}"
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{projectKey}}/me/shopping-lists/{{shopping-list-id}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{projectKey}}",
+                                        "me",
+                                        "shopping-lists",
+                                        "{{shopping-list-id}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "expand",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        }
+                                    ]
+                                },
+                                "description": "MyShoppingListChangeNameAction"
+                            },
+                            "response": []
+                        },{
+                            "name": "ChangeTextLineItemName",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"shopping-list-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"shopping-list-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"shopping-list-key\", data.key);",
+                                            "}",
+                                            "",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"version\": {{shopping-list-version}},\n    \"actions\": [\n                |{\n            \"action\": \"changeTextLineItemName\"\n        }\n    ]\n}"
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{projectKey}}/me/shopping-lists/{{shopping-list-id}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{projectKey}}",
+                                        "me",
+                                        "shopping-lists",
+                                        "{{shopping-list-id}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "expand",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        }
+                                    ]
+                                },
+                                "description": "MyShoppingListChangeTextLineItemNameAction"
+                            },
+                            "response": []
+                        },{
+                            "name": "ChangeTextLineItemQuantity",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"shopping-list-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"shopping-list-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"shopping-list-key\", data.key);",
+                                            "}",
+                                            "",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"version\": {{shopping-list-version}},\n    \"actions\": [\n                |{\n            \"action\": \"changeTextLineItemQuantity\"\n        }\n    ]\n}"
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{projectKey}}/me/shopping-lists/{{shopping-list-id}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{projectKey}}",
+                                        "me",
+                                        "shopping-lists",
+                                        "{{shopping-list-id}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "expand",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        }
+                                    ]
+                                },
+                                "description": "MyShoppingListChangeTextLineItemQuantityAction"
+                            },
+                            "response": []
+                        },{
+                            "name": "ChangeTextLineItemsOrder",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"shopping-list-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"shopping-list-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"shopping-list-key\", data.key);",
+                                            "}",
+                                            "",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"version\": {{shopping-list-version}},\n    \"actions\": [\n                |{\n            \"action\": \"changeTextLineItemsOrder\"\n        }\n    ]\n}"
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{projectKey}}/me/shopping-lists/{{shopping-list-id}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{projectKey}}",
+                                        "me",
+                                        "shopping-lists",
+                                        "{{shopping-list-id}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "expand",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        }
+                                    ]
+                                },
+                                "description": "MyShoppingListChangeTextLineItemsOrderAction"
+                            },
+                            "response": []
+                        },{
+                            "name": "RemoveLineItem",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"shopping-list-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"shopping-list-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"shopping-list-key\", data.key);",
+                                            "}",
+                                            "",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"version\": {{shopping-list-version}},\n    \"actions\": [\n                |{\n            \"action\": \"removeLineItem\"\n        }\n    ]\n}"
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{projectKey}}/me/shopping-lists/{{shopping-list-id}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{projectKey}}",
+                                        "me",
+                                        "shopping-lists",
+                                        "{{shopping-list-id}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "expand",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        }
+                                    ]
+                                },
+                                "description": "MyShoppingListRemoveLineItemAction"
+                            },
+                            "response": []
+                        },{
+                            "name": "RemoveTextLineItem",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"shopping-list-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"shopping-list-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"shopping-list-key\", data.key);",
+                                            "}",
+                                            "",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"version\": {{shopping-list-version}},\n    \"actions\": [\n                |{\n            \"action\": \"removeTextLineItem\"\n        }\n    ]\n}"
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{projectKey}}/me/shopping-lists/{{shopping-list-id}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{projectKey}}",
+                                        "me",
+                                        "shopping-lists",
+                                        "{{shopping-list-id}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "expand",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        }
+                                    ]
+                                },
+                                "description": "MyShoppingListRemoveTextLineItemAction"
+                            },
+                            "response": []
+                        },{
+                            "name": "SetCustomField",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"shopping-list-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"shopping-list-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"shopping-list-key\", data.key);",
+                                            "}",
+                                            "",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"version\": {{shopping-list-version}},\n    \"actions\": [\n                |{\n            \"action\": \"setCustomField\"\n        }\n    ]\n}"
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{projectKey}}/me/shopping-lists/{{shopping-list-id}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{projectKey}}",
+                                        "me",
+                                        "shopping-lists",
+                                        "{{shopping-list-id}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "expand",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        }
+                                    ]
+                                },
+                                "description": "MyShoppingListSetCustomFieldAction"
+                            },
+                            "response": []
+                        },{
+                            "name": "SetCustomType",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"shopping-list-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"shopping-list-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"shopping-list-key\", data.key);",
+                                            "}",
+                                            "",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"version\": {{shopping-list-version}},\n    \"actions\": [\n                |{\n            \"action\": \"setCustomType\"\n        }\n    ]\n}"
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{projectKey}}/me/shopping-lists/{{shopping-list-id}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{projectKey}}",
+                                        "me",
+                                        "shopping-lists",
+                                        "{{shopping-list-id}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "expand",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        }
+                                    ]
+                                },
+                                "description": "MyShoppingListSetCustomTypeAction"
+                            },
+                            "response": []
+                        },{
+                            "name": "SetDeleteDaysAfterLastModification",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"shopping-list-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"shopping-list-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"shopping-list-key\", data.key);",
+                                            "}",
+                                            "",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"version\": {{shopping-list-version}},\n    \"actions\": [\n                |{\n            \"action\": \"setDeleteDaysAfterLastModification\"\n        }\n    ]\n}"
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{projectKey}}/me/shopping-lists/{{shopping-list-id}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{projectKey}}",
+                                        "me",
+                                        "shopping-lists",
+                                        "{{shopping-list-id}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "expand",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        }
+                                    ]
+                                },
+                                "description": "MyShoppingListSetDeleteDaysAfterLastModificationAction"
+                            },
+                            "response": []
+                        },{
+                            "name": "SetDescription",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"shopping-list-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"shopping-list-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"shopping-list-key\", data.key);",
+                                            "}",
+                                            "",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"version\": {{shopping-list-version}},\n    \"actions\": [\n                |{\n            \"action\": \"setDescription\"\n        }\n    ]\n}"
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{projectKey}}/me/shopping-lists/{{shopping-list-id}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{projectKey}}",
+                                        "me",
+                                        "shopping-lists",
+                                        "{{shopping-list-id}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "expand",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        }
+                                    ]
+                                },
+                                "description": "MyShoppingListSetDescriptionAction"
+                            },
+                            "response": []
+                        },{
+                            "name": "SetLineItemCustomField",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"shopping-list-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"shopping-list-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"shopping-list-key\", data.key);",
+                                            "}",
+                                            "",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"version\": {{shopping-list-version}},\n    \"actions\": [\n                |{\n            \"action\": \"setLineItemCustomField\"\n        }\n    ]\n}"
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{projectKey}}/me/shopping-lists/{{shopping-list-id}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{projectKey}}",
+                                        "me",
+                                        "shopping-lists",
+                                        "{{shopping-list-id}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "expand",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        }
+                                    ]
+                                },
+                                "description": "MyShoppingListSetLineItemCustomFieldAction"
+                            },
+                            "response": []
+                        },{
+                            "name": "SetLineItemCustomType",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"shopping-list-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"shopping-list-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"shopping-list-key\", data.key);",
+                                            "}",
+                                            "",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"version\": {{shopping-list-version}},\n    \"actions\": [\n                |{\n            \"action\": \"setLineItemCustomType\"\n        }\n    ]\n}"
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{projectKey}}/me/shopping-lists/{{shopping-list-id}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{projectKey}}",
+                                        "me",
+                                        "shopping-lists",
+                                        "{{shopping-list-id}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "expand",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        }
+                                    ]
+                                },
+                                "description": "MyShoppingListSetLineItemCustomTypeAction"
+                            },
+                            "response": []
+                        },{
+                            "name": "SetTextLineItemCustomField",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"shopping-list-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"shopping-list-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"shopping-list-key\", data.key);",
+                                            "}",
+                                            "",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"version\": {{shopping-list-version}},\n    \"actions\": [\n                |{\n            \"action\": \"setTextLineItemCustomField\"\n        }\n    ]\n}"
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{projectKey}}/me/shopping-lists/{{shopping-list-id}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{projectKey}}",
+                                        "me",
+                                        "shopping-lists",
+                                        "{{shopping-list-id}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "expand",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        }
+                                    ]
+                                },
+                                "description": "MyShoppingListSetTextLineItemCustomFieldAction"
+                            },
+                            "response": []
+                        },{
+                            "name": "SetTextLineItemCustomType",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"shopping-list-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"shopping-list-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"shopping-list-key\", data.key);",
+                                            "}",
+                                            "",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"version\": {{shopping-list-version}},\n    \"actions\": [\n                |{\n            \"action\": \"setTextLineItemCustomType\"\n        }\n    ]\n}"
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{projectKey}}/me/shopping-lists/{{shopping-list-id}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{projectKey}}",
+                                        "me",
+                                        "shopping-lists",
+                                        "{{shopping-list-id}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "expand",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        }
+                                    ]
+                                },
+                                "description": "MyShoppingListSetTextLineItemCustomTypeAction"
+                            },
+                            "response": []
+                        },{
+                            "name": "SetTextLineItemDescription",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"shopping-list-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"shopping-list-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"shopping-list-key\", data.key);",
+                                            "}",
+                                            "",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"version\": {{shopping-list-version}},\n    \"actions\": [\n                |{\n            \"action\": \"setTextLineItemDescription\"\n        }\n    ]\n}"
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{projectKey}}/me/shopping-lists/{{shopping-list-id}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{projectKey}}",
+                                        "me",
+                                        "shopping-lists",
+                                        "{{shopping-list-id}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "expand",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        }
+                                    ]
+                                },
+                                "description": "MyShoppingListSetTextLineItemDescriptionAction"
+                            },
+                            "response": []
                         }
                     ],
                     "event": [
@@ -42042,6 +43353,22 @@
                                     "}",
                                     "",
                                     ""
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Payment",
+                    "description": "null",
+                    "item": [
+                    ],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "type": "text/javascript",
+                                "exec": [
                                 ]
                             }
                         }
