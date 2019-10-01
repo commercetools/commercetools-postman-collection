@@ -41068,7 +41068,7 @@
                                         }
                                     ]
                                 },
-                                "description": "Create Order"
+                                "description": "Create MyOrder"
                             },
                             "response": []
                         },{
@@ -41137,7 +41137,7 @@
                                         }
                                     ]
                                 },
-                                "description": "Get Order by ID"
+                                "description": "Get MyOrder by ID"
                             },
                             "response": []
                         },{
@@ -41206,7 +41206,7 @@
                                         }
                                     ]
                                 },
-                                "description": "Update Order by ID"
+                                "description": "Update MyOrder by ID"
                             },
                             "response": []
                         }
