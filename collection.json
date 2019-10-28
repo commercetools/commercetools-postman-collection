@@ -53986,6 +53986,99 @@
                             }
                         }
                     ]
+                },
+                {
+                    "name": "Authenticate Customer (Sign In)",
+                    "description": "Retrieves the authenticated customer.",
+                    "item": [
+                        {
+                            "name": "Create Authenticate Customer (Sign In)",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"login-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"login-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"login-key\", data.key);",
+                                            "}",
+                                            "",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                   {
+                                       "type": "oauth2",
+                                       "oauth2": {
+                                           "accessToken": "{{ctp_access_token}}",
+                                           "addTokenTo": "header",
+                                           "tokenType": "Bearer"
+                                       }
+                                   },
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": ""
+                                },
+                                "url": {
+                                    "raw": "{{host}}/{{projectKey}}/in-store/key={{storeKey}}/login",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{projectKey}}",
+                                        "in-store",
+                                        "key={{storeKey}}",
+                                        "login"
+                                    ],
+                                    "query": [
+                                    ]
+                                },
+                                "description": "Authenticate Customer (Sign In)"
+                            },
+                            "response": []
+                        }
+                    ],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "type": "text/javascript",
+                                "exec": [
+                                    "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                    "var data = JSON.parse(responseBody);",
+                                    "if(data.version){",
+                                    "    pm.environment.set(\"login-version\", data.version);",
+                                    "}",
+                                    "if(data.id){",
+                                    "    pm.environment.set(\"login-id\", data.id); ",
+                                    "}",
+                                    "if(data.key){",
+                                    "    pm.environment.set(\"login-key\", data.key);",
+                                    "}",
+                                    "",
+                                    ""
+                                ]
+                            }
+                        }
+                    ]
                 }
             ]
         }
