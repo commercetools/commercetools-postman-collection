@@ -1080,7 +1080,7 @@
                                 }
                             ]
                         },
-                        "description": "Create Category"
+                        "description": "Creating a category produces the CategoryCreated message."
                     },
                     "response": []
                 },{
@@ -3198,7 +3198,7 @@
                                 }
                             ]
                         },
-                        "description": "Create Cart"
+                        "description": "Creating a cart can fail with an InvalidOperation if the referenced shipping method in the\\nCartDraft has a predicate which does not match the cart.\\n"
                     },
                     "response": []
                 },{
@@ -3266,7 +3266,7 @@
                                 }
                             ]
                         },
-                        "description": "Get Cart by ID"
+                        "description": "The cart may not contain up-to-date prices, discounts etc.\\nIf you want to ensure they\\u2019re up-to-date, send an Update request with the Recalculate update action instead.\\n"
                     },
                     "response": []
                 },{
@@ -9723,7 +9723,7 @@
                                 }
                             ]
                         },
-                        "description": "Create Customer"
+                        "description": "Creates a customer. If an anonymous cart is passed in,\\nthen the cart is assigned to the created customer and the version number of the Cart will increase.\\nIf the ID of an anonymous session is given, all carts and orders will be assigned to the created customer.\\n"
                     },
                     "response": []
                 },{
@@ -12189,7 +12189,7 @@
                                 }
                             ]
                         },
-                        "description": "Get CustomerGroup by key"
+                        "description": "Gets a customer group by Key."
                     },
                     "response": []
                 },{
@@ -12327,7 +12327,7 @@
                                 }
                             ]
                         },
-                        "description": "Update CustomerGroup by key"
+                        "description": "Updates a customer group by Key."
                     },
                     "response": []
                 },{
@@ -12872,7 +12872,7 @@
                                 }
                             ]
                         },
-                        "description": "Query custom-objects"
+                        "description": "The query endpoint allows to retrieve custom objects in a specific container or all custom objects.\\nFor performance reasons, it is highly advisable to query only for custom objects in a container by using\\nthe container field in the where predicate.\\n"
                     },
                     "response": []
                 },{
@@ -12939,7 +12939,7 @@
                                 }
                             ]
                         },
-                        "description": "Create CustomObject"
+                        "description": "Creates a new custom object or updates an existing custom object.\\nIf an object with the given container\\\/key exists,\\nthe object will be replaced with the new value and the version is incremented.\\nIf the request contains a version and an object with the given container\\\/key exists then the version\\nmust match the version of the existing object. Concurrent updates for the same custom object still can result\\nin a Conflict (409) even if the version is not provided.\\nFields with null values will not be saved.\\n"
                     },
                     "response": []
                 },{
@@ -15505,7 +15505,7 @@
                             "query": [
                             ]
                         },
-                        "description": "Authenticate Customer (Sign In)"
+                        "description": "Authenticate Customer (Sign In). Retrieves the authenticated\\ncustomer (a customer that matches the given email\\\/password pair).\\nIf used with an access token for Anonymous Sessions,\\nall orders and carts belonging to the anonymousId will be assigned to the newly created customer.\\nIf a cart is is returned as part of the CustomerSignInResult,\\nit has been recalculated (It will have up-to-date prices, taxes and discounts,\\nand invalid line items have been removed.).\\n"
                     },
                     "response": []
                 }
@@ -15886,7 +15886,7 @@
                                 }
                             ]
                         },
-                        "description": "Create Order"
+                        "description": "Creates an order from a Cart.\\nThe cart must have a shipping address set before creating an order.\\nWhen using the Platform TaxMode, the shipping address is used for tax calculation.\\n"
                     },
                     "response": []
                 },{
@@ -19012,7 +19012,7 @@
                                 }
                             ]
                         },
-                        "description": "Create Payment"
+                        "description": "To create a payment object a payment draft object has to be given with the request."
                     },
                     "response": []
                 },{
@@ -21093,7 +21093,7 @@
                                 }
                             ]
                         },
-                        "description": "Query products"
+                        "description": "You can use the query endpoint to get the full representations of products.\\nREMARK: We suggest to use the performance optimized search endpoint which has a bunch functionalities,\\nthe query API lacks like sorting on custom attributes, etc.\\n"
                     },
                     "response": []
                 },{
@@ -21184,7 +21184,7 @@
                                 }
                             ]
                         },
-                        "description": "Create Product"
+                        "description": "To create a new product, send a representation that is going to become the initial staged representation\\nof the new product in the master catalog. If price selection query parameters are provided,\\nthe selected prices will be added to the response.\\n"
                     },
                     "response": []
                 },{
@@ -21276,7 +21276,7 @@
                                 }
                             ]
                         },
-                        "description": "Get Product by ID"
+                        "description": "Gets the full representation of a product by ID."
                     },
                     "response": []
                 },{
@@ -21370,7 +21370,7 @@
                                 }
                             ]
                         },
-                        "description": "Get Product by key"
+                        "description": "Gets the full representation of a product by Key."
                     },
                     "response": []
                 },{
@@ -27435,7 +27435,7 @@
                                 }
                             ]
                         },
-                        "description": "Query product-projections"
+                        "description": "You can use the product projections query endpoint to get the current or staged representations of Products.\\nWhen used with an API client that has the view_published_products:{projectKey} scope,\\nthis endpoint only returns published (current) product projections.\\n"
                     },
                     "response": []
                 },{
@@ -27533,7 +27533,7 @@
                                 }
                             ]
                         },
-                        "description": "Get ProductProjection by ID"
+                        "description": "Gets the current or staged representation of a product in a catalog by ID.\\nWhen used with an API client that has the view_published_products:{projectKey} scope,\\nthis endpoint only returns published (current) product projections.\\n"
                     },
                     "response": []
                 },{
@@ -27633,7 +27633,7 @@
                                 }
                             ]
                         },
-                        "description": "Get ProductProjection by key"
+                        "description": "Gets the current or staged representation of a product found by Key.\\nWhen used with an API client that has the view_published_products:{projectKey} scope,\\nthis endpoint only returns published (current) product projections.\\n"
                     },
                     "response": []
                 }
@@ -32631,7 +32631,7 @@
                                 }
                             ]
                         },
-                        "description": "Get ShoppingList by ID"
+                        "description": "Gets a shopping list by ID."
                     },
                     "response": []
                 },{
@@ -32701,7 +32701,7 @@
                                 }
                             ]
                         },
-                        "description": "Get ShoppingList by key"
+                        "description": "Gets a shopping list by Key."
                     },
                     "response": []
                 },{
@@ -32839,7 +32839,7 @@
                                 }
                             ]
                         },
-                        "description": "Update ShoppingList by key"
+                        "description": "Update a shopping list found by its Key."
                     },
                     "response": []
                 },{
@@ -35767,7 +35767,7 @@
                                 }
                             ]
                         },
-                        "description": "Create Subscription"
+                        "description": "The creation of a Subscription is eventually consistent, it may take up to a minute before it becomes fully active.\\nIn order to test that the destination is correctly configured, a test message will be put into the queue.\\nIf the message could not be delivered, the subscription will not be created.\\nThe payload of the test message is a notification of type ResourceCreated for the resourceTypeId subscription.\\nCurrently, a maximum of 25 subscriptions can be created per project.\\n"
                     },
                     "response": []
                 },{
@@ -35835,7 +35835,7 @@
                                 }
                             ]
                         },
-                        "description": "Get Subscription by ID"
+                        "description": "Retrieves the representation of a subscription by its id."
                     },
                     "response": []
                 },{
@@ -35905,7 +35905,7 @@
                                 }
                             ]
                         },
-                        "description": "Get Subscription by key"
+                        "description": "Retrieves the representation of a subscription by its key."
                     },
                     "response": []
                 },{
@@ -43690,7 +43690,7 @@
                                 }
                             ]
                         },
-                        "description": "Create Extension"
+                        "description": "Currently, a maximum of 25 extensions can be created per project."
                     },
                     "response": []
                 },{
@@ -43758,7 +43758,7 @@
                                 }
                             ]
                         },
-                        "description": "Get Extension by ID"
+                        "description": "Retrieves the representation of an extension by its id."
                     },
                     "response": []
                 },{
@@ -43828,7 +43828,7 @@
                                 }
                             ]
                         },
-                        "description": "Get Extension by key"
+                        "description": "Retrieves the representation of an extension by its key."
                     },
                     "response": []
                 },{
@@ -45521,7 +45521,7 @@
                                         }
                                     ]
                                 },
-                                "description": "Query carts"
+                                "description": "Queries carts in a specific Store. The {storeKey} path parameter maps to a Store\\u2019s key."
                             },
                             "response": []
                         },{
@@ -45590,7 +45590,7 @@
                                         }
                                     ]
                                 },
-                                "description": "Create Cart"
+                                "description": "Creates a cart in the store specified by {storeKey}. The {storeKey} path parameter maps to a Store\\u2019s key.\\nWhen using this endpoint the cart\\u2019s store field is always set to the store specified in the path parameter.\\nCreating a cart can fail with an InvalidOperation if the referenced shipping method\\nin the CartDraft has a predicate which does not match the cart.\\n"
                             },
                             "response": []
                         },{
@@ -45660,7 +45660,7 @@
                                         }
                                     ]
                                 },
-                                "description": "Get Cart by ID"
+                                "description": "Returns a cart by its ID from a specific Store. The {storeKey} path parameter maps to a Store\\u2019s key.\\nIf the cart exists in the commercetools project but does not have the store field,\\nor the store field references a different store, this method returns a ResourceNotFound error.\\nThe cart may not contain up-to-date prices, discounts etc.\\nIf you want to ensure they\\u2019re up-to-date, send an Update request with the Recalculate update action instead.\\n"
                             },
                             "response": []
                         },{
@@ -45730,7 +45730,7 @@
                                         }
                                     ]
                                 },
-                                "description": "Update Cart by ID"
+                                "description": "Updates a cart in the store specified by {storeKey}. The {storeKey} path parameter maps to a Store\\u2019s key.\\nIf the cart exists in the commercetools project but does not have the store field,\\nor the store field references a different store, this method returns a ResourceNotFound error.\\n"
                             },
                             "response": []
                         },{
@@ -49441,7 +49441,7 @@
                                         }
                                     ]
                                 },
-                                "description": "Query orders"
+                                "description": "Queries orders in a specific Store. The {storeKey} path parameter maps to a Store\\u2019s key."
                             },
                             "response": []
                         },{
@@ -49510,7 +49510,7 @@
                                         }
                                     ]
                                 },
-                                "description": "Create Order"
+                                "description": "Creates an order from a Cart from a specific Store. The {storeKey} path parameter maps to a Store\\u2019s key.\\nWhen using this endpoint the orders\\u2019s store field is always set to the store specified in the path parameter.\\nThe cart must have a shipping address set before creating an order. When using the Platform TaxMode,\\nthe shipping address is used for tax calculation.\\n"
                             },
                             "response": []
                         },{
@@ -49580,7 +49580,7 @@
                                         }
                                     ]
                                 },
-                                "description": "Get Order by ID"
+                                "description": "Returns an order by its ID from a specific Store. The {storeKey} path parameter maps to a Store\\u2019s key.\\nIf the order exists in the commercetools project but does not have the store field,\\nor the store field references a different store, this method returns a ResourceNotFound error.\\n"
                             },
                             "response": []
                         },{
@@ -49650,7 +49650,7 @@
                                         }
                                     ]
                                 },
-                                "description": "Update Order by ID"
+                                "description": "Updates an order in the store specified by {storeKey}. The {storeKey} path parameter maps to a Store\\u2019s key.\\nIf the order exists in the commercetools project but does not have the store field,\\nor the store field references a different store, this method returns a ResourceNotFound error.\\n"
                             },
                             "response": []
                         },{
@@ -53344,7 +53344,7 @@
                 },
                 {
                     "name": "Customers",
-                    "description": "A customer is a person purchasing products. customers, Orders, Comments and Reviews can be associated to a customer.\n",
+                    "description": "A customer is a person purchasing products. customers, Orders,\nComments and Reviews can be associated to a customer.\n",
                     "item": [
                         {
                             "name": "Query Customers",
@@ -53508,7 +53508,7 @@
                                         }
                                     ]
                                 },
-                                "description": "Create Customer"
+                                "description": "Creates a customer in a specific Store. The {storeKey} path parameter maps to a Store\\u2019s key.\\nWhen using this endpoint, if omitted,\\nthe customer\\u2019s stores field is set to the store specified in the path parameter.\\nIf an anonymous cart is passed in as when using this method,\\nthen the cart is assigned to the created customer and the version number of the Cart increases.\\nIf the ID of an anonymous session is given, all carts and orders will be assigned to the created customer and\\nthe store specified. If you pass in a cart with a store field specified,\\nthe store field must reference the same store specified in the {storeKey} path parameter.\\n"
                             },
                             "response": []
                         },{
@@ -53578,7 +53578,7 @@
                                         }
                                     ]
                                 },
-                                "description": "Get Customer by ID"
+                                "description": "Returns a customer by its ID from a specific Store. The {storeKey} path parameter maps to a Store\\u2019s key.\\nIt also considers customers that do not have the stores field.\\nIf the customer exists in the commercetools project but the stores field references different stores,\\nthis method returns a ResourceNotFound error.\\n"
                             },
                             "response": []
                         },{
@@ -53650,7 +53650,7 @@
                                         }
                                     ]
                                 },
-                                "description": "Get Customer by key"
+                                "description": "Returns a customer by its Key from a specific Store. The {storeKey} path parameter maps to a Store\\u2019s key.\\nIt also considers customers that do not have the stores field.\\nIf the customer exists in the commercetools project but the stores field references different stores,\\nthis method returns a ResourceNotFound error.\\n"
                             },
                             "response": []
                         },{
@@ -53720,7 +53720,7 @@
                                         }
                                     ]
                                 },
-                                "description": "Update Customer by ID"
+                                "description": "Updates a customer in the store specified by {storeKey}. The {storeKey} path parameter maps to a Store\\u2019s key.\\nIf the customer exists in the commercetools project but the stores field references a different store,\\nthis method returns a ResourceNotFound error.\\n"
                             },
                             "response": []
                         },{
@@ -53792,7 +53792,7 @@
                                         }
                                     ]
                                 },
-                                "description": "Update Customer by key"
+                                "description": "If the customer exists in the commercetools project but the stores field references a different store,\\nthis method returns a ResourceNotFound error.\\n"
                             },
                             "response": []
                         },{
