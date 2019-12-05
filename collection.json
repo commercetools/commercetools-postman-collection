@@ -3662,7 +3662,7 @@
                         "method": "POST",
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"version\": {{cart-version}},\n    \"actions\": [\n        {\n            \"action\" : \"addLineItem\",\n            \"productId\" : \"{{productId}}\",\n            \"variantId\" : 2,\n            \"quantity\" : 1,\n            \"supplyChannel\" : {\n              \"typeId\" : \"channel\",\n              \"id\" : \"{{channelId}}\"\n            },\n            \"distributionChannel\" : {\n              \"typeId\" : \"channel\",\n              \"id\" : \"{{channelId}}\"\n            },\n            \"externalTaxRate\" : {\n              \"name\" : \"StandardExternalTaxRate\",\n              \"amount\" : 0.19,\n              \"country\" : \"DE\",\n              \"state\" : \"Bavaria\"\n            },\n            \"shippingDetails\" : [ {\n              \"addressKey\" : \"AddressKeyStringFromAddress\",\n              \"quantity\" : 2\n            } ]\n          }\n    ]\n}"
+                            "raw": "{\n    \"version\": {{cart-version}},\n    \"actions\": [\n        {\n            \"action\" : \"addLineItem\",\n            \"productId\" : \"{{productId}}\",\n            \"variantId\" : 2,\n            \"quantity\" : 1,\n            \"supplyChannel\" : {\n              \"typeId\" : \"channel\",\n              \"id\" : \"{{channelId}}\"\n            },\n            \"distributionChannel\" : {\n              \"typeId\" : \"channel\",\n              \"id\" : \"{{channelId}}\"\n            },\n            \"externalTaxRate\" : {\n              \"name\" : \"StandardExternalTaxRate\",\n              \"amount\" : 0.19,\n              \"country\" : \"DE\",\n              \"state\" : \"Bavaria\"\n            },\n            \"shippingDetails\" : {\n              \"targets\" : [ {\n                \"addressKey\" : \"AddressKeyStringFromAddress\",\n                \"quantity\" : 2\n              } ]\n            }\n          }\n    ]\n}"
                         },
                         "header": [
                             {
@@ -4206,7 +4206,7 @@
                         "method": "POST",
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"version\": {{cart-version}},\n    \"actions\": [\n        {\n            \"action\" : \"changeTaxCalculationMode\",\n            \"taxRoundingMode\" : \"HalfUp\"\n          }\n    ]\n}"
+                            "raw": "{\n    \"version\": {{cart-version}},\n    \"actions\": [\n        {\n            \"action\" : \"changeTaxCalculationMode\",\n            \"taxCalculationMode\" : \"LineItemLevel\"\n          }\n    ]\n}"
                         },
                         "header": [
                             {
@@ -4682,7 +4682,7 @@
                         "method": "POST",
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"version\": {{cart-version}},\n    \"actions\": [\n        {\n            \"action\" : \"removeLineItem\",\n            \"lineItemId\" : \"{{lineItemId}}\",\n            \"quantity\" : 1,\n            \"externalPrice\" : {\n              \"currencyCode\" : \"EUR\",\n              \"centAmount\" : 4000\n            },\n            \"shippingDetailsToRemove\" : [ {\n              \"addressKey\" : \"AddressKeyStringFromAddress\",\n              \"quantity\" : 2\n            } ]\n          }\n    ]\n}"
+                            "raw": "{\n    \"version\": {{cart-version}},\n    \"actions\": [\n        {\n            \"action\" : \"removeLineItem\",\n            \"lineItemId\" : \"{{lineItemId}}\",\n            \"quantity\" : 1,\n            \"externalPrice\" : {\n              \"currencyCode\" : \"EUR\",\n              \"centAmount\" : 4000\n            },\n            \"shippingDetailsToRemove\" : {\n              \"targets\" : [ {\n                \"addressKey\" : \"AddressKeyStringFromAddress\",\n                \"quantity\" : 2\n              } ]\n            }\n          }\n    ]\n}"
                         },
                         "header": [
                             {
@@ -4954,7 +4954,7 @@
                         "method": "POST",
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"version\": {{cart-version}},\n    \"actions\": [\n        {\n            \"action\" : \"setCartTotalTax\",\n            \"taxCalculationMode\" : \"UnitPriceLevel\"\n          }\n    ]\n}"
+                            "raw": "{\n    \"version\": {{cart-version}},\n    \"actions\": [\n        {\n            \"action\" : \"setCartTotalTax\",\n            \"externalTotalGross\" : {\n              \"currencyCode\" : \"EUR\",\n              \"centAmount\" : 10000\n            }\n          }\n    ]\n}"
                         },
                         "header": [
                             {
@@ -5294,7 +5294,7 @@
                         "method": "POST",
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"version\": {{cart-version}},\n    \"actions\": [\n        {\n            \"action\" : \"setCustomLineItemShippingDetails\",\n            \"lineItemId\" : \"{{lineItemId}}\",\n            \"shippingDetails\" : [ {\n              \"addressKey\" : \"{{addressKey}}\",\n              \"quantity\" : 1\n            } ]\n          }\n    ]\n}"
+                            "raw": "{\n    \"version\": {{cart-version}},\n    \"actions\": [\n        {\n            \"action\" : \"setCustomLineItemShippingDetails\",\n            \"customLineItemId\" : \"{{lineItemId}}\",\n            \"shippingDetails\" : {\n              \"targets\" : [ {\n                \"addressKey\" : \"{{addressKey}}\",\n                \"quantity\" : 1\n              } ]\n            }\n          }\n    ]\n}"
                         },
                         "header": [
                             {
@@ -6042,7 +6042,7 @@
                         "method": "POST",
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"version\": {{cart-version}},\n    \"actions\": [\n        {\n            \"actions\" : \"setLineItemPrice\",\n            \"lineItemId\" : \"{{lineItemId}}\",\n            \"externalPrice\" : {\n              \"currencyCode\" : \"EUR\",\n              \"centAmount\" : 4000\n            },\n            \"action\" : \"setLineItemPrice\"\n          }\n    ]\n}"
+                            "raw": "{\n    \"version\": {{cart-version}},\n    \"actions\": [\n        {\n            \"action\" : \"setLineItemPrice\",\n            \"lineItemId\" : \"{{lineItemId}}\",\n            \"externalPrice\" : {\n              \"currencyCode\" : \"EUR\",\n              \"centAmount\" : 4000\n            }\n          }\n    ]\n}"
                         },
                         "header": [
                             {
@@ -6110,7 +6110,7 @@
                         "method": "POST",
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"version\": {{cart-version}},\n    \"actions\": [\n        {\n            \"action\" : \"setLineItemShippingDetails\",\n            \"lineItemId\" : \"{{lineItemId}}\",\n            \"shippingDetails\" : [ {\n              \"addressKey\" : \"{{addressKey}}\",\n              \"quantity\" : 1\n            } ]\n          }\n    ]\n}"
+                            "raw": "{\n    \"version\": {{cart-version}},\n    \"actions\": [\n        {\n            \"action\" : \"setLineItemShippingDetails\",\n            \"lineItemId\" : \"{{lineItemId}}\",\n            \"shippingDetails\" : {\n              \"targets\" : [ {\n                \"addressKey\" : \"{{addressKey}}\",\n                \"quantity\" : 1\n              } ]\n            }\n          }\n    ]\n}"
                         },
                         "header": [
                             {
@@ -6178,7 +6178,7 @@
                         "method": "POST",
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"version\": {{cart-version}},\n    \"actions\": [\n        {\n            \"action\" : \"setLineItemTaxAmount\",\n            \"lineItemId\" : \"{{lineItemId}}\",\n            \"externalTaxRate\" : {\n              \"name\" : \"myTaxRate\",\n              \"amount\" : 0.19,\n              \"country\" : \"DE\"\n            }\n          }\n    ]\n}"
+                            "raw": "{\n    \"version\": {{cart-version}},\n    \"actions\": [\n        {\n            \"action\" : \"setLineItemTaxAmount\",\n            \"lineItemId\" : \"{{lineItemId}}\",\n            \"externalTaxAmount\" : {\n              \"totalGross\" : {\n                \"currencyCode\" : \"EUR\",\n                \"centAmount\" : 100\n              },\n              \"taxRate\" : {\n                \"name\" : \"myTaxRate\",\n                \"amount\" : 0.19,\n                \"country\" : \"DE\"\n              }\n            }\n          }\n    ]\n}"
                         },
                         "header": [
                             {
@@ -8018,7 +8018,7 @@
                         "method": "POST",
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"version\": {{cart-discount-version}},\n    \"actions\": [\n        {\n            \"actions\" : \"setCustomField\",\n            \"name\" : \"ExamplaryStringTypeField\",\n            \"value\" : \"TextString\",\n            \"action\" : \"setCustomField\"\n          }\n    ]\n}"
+                            "raw": "{\n    \"version\": {{cart-discount-version}},\n    \"actions\": [\n        {\n            \"action\" : \"setCustomField\",\n            \"name\" : \"ExamplaryStringTypeField\",\n            \"value\" : \"TextString\"\n          }\n    ]\n}"
                         },
                         "header": [
                             {
@@ -16211,7 +16211,7 @@
                         "method": "POST",
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"version\": {{order-version}},\n    \"actions\": [\n        {\n            \"actions\" : \"addItemShippingAddress\",\n            \"address\" : {\n              \"id\" : \"exampleAddress\",\n              \"key\" : \"exampleKey\",\n              \"title\" : \"My Address\",\n              \"salutation\" : \"Mr.\",\n              \"firstName\" : \"Example\",\n              \"lastName\" : \"Person\",\n              \"streetName\" : \"Examplary Street\",\n              \"streetNumber\" : \"4711\",\n              \"additionalStreetInfo\" : \"Backhouse\",\n              \"postalCode\" : \"80933\",\n              \"city\" : \"Exemplary City\",\n              \"region\" : \"Exemplary Region\",\n              \"state\" : \"Exemplary State\",\n              \"country\" : \"DE\",\n              \"company\" : \"My Company Name\",\n              \"department\" : \"Sales\",\n              \"building\" : \"Hightower 1\",\n              \"apartment\" : \"247\",\n              \"pOBox\" : \"2471\",\n              \"phone\" : \"+49 89 12345678\",\n              \"mobile\" : \"+49 171 2345678\",\n              \"email\" : \"mail@mail.com\",\n              \"fax\" : \"+49 89 12345679\",\n              \"additionalAddressInfo\" : \"no additional Info\",\n              \"externalId\" : \"Information not needed\"\n            },\n            \"action\" : \"addItemShippingAddress\"\n          }\n    ]\n}"
+                            "raw": "{\n    \"version\": {{order-version}},\n    \"actions\": [\n        {\n            \"action\" : \"addItemShippingAddress\",\n            \"address\" : {\n              \"id\" : \"exampleAddress\",\n              \"key\" : \"exampleKey\",\n              \"title\" : \"My Address\",\n              \"salutation\" : \"Mr.\",\n              \"firstName\" : \"Example\",\n              \"lastName\" : \"Person\",\n              \"streetName\" : \"Examplary Street\",\n              \"streetNumber\" : \"4711\",\n              \"additionalStreetInfo\" : \"Backhouse\",\n              \"postalCode\" : \"80933\",\n              \"city\" : \"Exemplary City\",\n              \"region\" : \"Exemplary Region\",\n              \"state\" : \"Exemplary State\",\n              \"country\" : \"DE\",\n              \"company\" : \"My Company Name\",\n              \"department\" : \"Sales\",\n              \"building\" : \"Hightower 1\",\n              \"apartment\" : \"247\",\n              \"pOBox\" : \"2471\",\n              \"phone\" : \"+49 89 12345678\",\n              \"mobile\" : \"+49 171 2345678\",\n              \"email\" : \"mail@mail.com\",\n              \"fax\" : \"+49 89 12345679\",\n              \"additionalAddressInfo\" : \"no additional Info\",\n              \"externalId\" : \"Information not needed\"\n            }\n          }\n    ]\n}"
                         },
                         "header": [
                             {
@@ -17367,7 +17367,7 @@
                         "method": "POST",
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"version\": {{order-version}},\n    \"actions\": [\n        {\n            \"action\" : \"setCustomLineItemShippingDetails\",\n            \"customLineItemId\" : \"{{customLineItemId}}\",\n            \"shippingDetails\" : [ {\n              \"addressKey\" : \"{{addressKey}}\",\n              \"quantity\" : 2\n            } ]\n          }\n    ]\n}"
+                            "raw": "{\n    \"version\": {{order-version}},\n    \"actions\": [\n        {\n            \"action\" : \"setCustomLineItemShippingDetails\",\n            \"customLineItemId\" : \"{{customLineItemId}}\",\n            \"shippingDetails\" : {\n              \"targets\" : [ {\n                \"addressKey\" : \"{{addressKey}}\",\n                \"quantity\" : 2\n              } ]\n            }\n          }\n    ]\n}"
                         },
                         "header": [
                             {
@@ -17911,7 +17911,7 @@
                         "method": "POST",
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"version\": {{order-version}},\n    \"actions\": [\n        {\n            \"action\" : \"setLineItemShippingDetails\",\n            \"lineItemId\" : \"{{lineItemId}}\",\n            \"shippingDetails\" : [ {\n              \"addressKey\" : \"AddressKeyStringFromAddress\",\n              \"quantity\" : 2\n            } ]\n          }\n    ]\n}"
+                            "raw": "{\n    \"version\": {{order-version}},\n    \"actions\": [\n        {\n            \"action\" : \"setLineItemShippingDetails\",\n            \"lineItemId\" : \"{{lineItemId}}\",\n            \"shippingDetails\" : {\n              \"targets\" : [ {\n                \"addressKey\" : \"AddressKeyStringFromAddress\",\n                \"quantity\" : 2\n              } ]\n            }\n          }\n    ]\n}"
                         },
                         "header": [
                             {
@@ -20919,7 +20919,7 @@
                         "method": "POST",
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"version\": {{payment-version}},\n    \"actions\": [\n        {\n            \"action\" : \"transitionState\",\n            \"state\" : {\n              \"typeId\" : \"PaymentState\",\n              \"id\" : \"{{paymentStateId}}\"\n            }\n          }\n    ]\n}"
+                            "raw": "{\n    \"version\": {{payment-version}},\n    \"actions\": [\n        {\n            \"action\" : \"transitionState\",\n            \"state\" : {\n              \"typeId\" : \"state\",\n              \"id\" : \"{{paymentStateId}}\"\n            }\n          }\n    ]\n}"
                         },
                         "header": [
                             {
@@ -24463,7 +24463,7 @@
                         "method": "POST",
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"version\": {{product-version}},\n    \"actions\": [\n        {\n            \"action\" : \"setCategoryOrderHint\",\n            \"categoryId\" : \"{{categoryId}}\",\n            \"orderHint\" : 0.1\n          }\n    ]\n}"
+                            "raw": "{\n    \"version\": {{product-version}},\n    \"actions\": [\n        {\n            \"action\" : \"setCategoryOrderHint\",\n            \"categoryId\" : \"{{categoryId}}\",\n            \"orderHint\" : \"0.1\"\n          }\n    ]\n}"
                         },
                         "header": [
                             {
@@ -24647,7 +24647,7 @@
                         "method": "POST",
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"version\": {{product-version}},\n    \"actions\": [\n        {\n            \"action\" : \"setDiscountedPrice\",\n            \"priceId\" : \"{{priceId}}\",\n            \"staged\" : true,\n            \"discounted\" : {\n              \"id\" : \"{{priceId}}\",\n              \"value\" : {\n                \"currencyCode\" : \"EUR\",\n                \"centAmount\" : 4000\n              },\n              \"currentValue\" : {\n                \"currencyCode\" : \"EUR\",\n                \"centAmount\" : 3000\n              },\n              \"country\" : \"DE\"\n            }\n          }\n    ]\n}"
+                            "raw": "{\n    \"version\": {{product-version}},\n    \"actions\": [\n        {\n            \"action\" : \"setDiscountedPrice\",\n            \"priceId\" : \"{{priceId}}\",\n            \"staged\" : true,\n            \"discounted\" : {\n              \"value\" : {\n                \"currencyCode\" : \"EUR\",\n                \"centAmount\" : 4000\n              },\n              \"discount\" : {\n                \"typeId\" : \"product-discount\",\n                \"id\" : \"{{product-discount-id}}\"\n              }\n            }\n          }\n    ]\n}"
                         },
                         "header": [
                             {
@@ -36302,7 +36302,7 @@
                         "method": "POST",
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"version\": {{subscription-version}},\n    \"actions\": [\n        {\n            \"action\" : \"setChanges\",\n            \"changes\" : [ \"channel\", \"product\", \"payment\" ]\n          }\n    ]\n}"
+                            "raw": "{\n    \"version\": {{subscription-version}},\n    \"actions\": [\n        {\n            \"action\" : \"setChanges\",\n            \"changes\" : [ {\n              \"resourceTypeId\" : \"channel\"\n            }, {\n              \"resourceTypeId\" : \"product\"\n            }, {\n              \"resourceTypeId\" : \"payment\"\n            } ]\n          }\n    ]\n}"
                         },
                         "header": [
                             {
@@ -46066,7 +46066,7 @@
                                 "method": "POST",
                                 "body": {
                                     "mode": "raw",
-                                    "raw": "{\n    \"version\": {{cart-version}},\n    \"actions\": [\n        {\n            \"action\" : \"addLineItem\",\n            \"productId\" : \"{{productId}}\",\n            \"variantId\" : 2,\n            \"quantity\" : 1,\n            \"supplyChannel\" : {\n              \"typeId\" : \"channel\",\n              \"id\" : \"{{channelId}}\"\n            },\n            \"distributionChannel\" : {\n              \"typeId\" : \"channel\",\n              \"id\" : \"{{channelId}}\"\n            },\n            \"externalTaxRate\" : {\n              \"name\" : \"StandardExternalTaxRate\",\n              \"amount\" : 0.19,\n              \"country\" : \"DE\",\n              \"state\" : \"Bavaria\"\n            },\n            \"shippingDetails\" : [ {\n              \"addressKey\" : \"AddressKeyStringFromAddress\",\n              \"quantity\" : 2\n            } ]\n          }\n    ]\n}"
+                                    "raw": "{\n    \"version\": {{cart-version}},\n    \"actions\": [\n        {\n            \"action\" : \"addLineItem\",\n            \"productId\" : \"{{productId}}\",\n            \"variantId\" : 2,\n            \"quantity\" : 1,\n            \"supplyChannel\" : {\n              \"typeId\" : \"channel\",\n              \"id\" : \"{{channelId}}\"\n            },\n            \"distributionChannel\" : {\n              \"typeId\" : \"channel\",\n              \"id\" : \"{{channelId}}\"\n            },\n            \"externalTaxRate\" : {\n              \"name\" : \"StandardExternalTaxRate\",\n              \"amount\" : 0.19,\n              \"country\" : \"DE\",\n              \"state\" : \"Bavaria\"\n            },\n            \"shippingDetails\" : {\n              \"targets\" : [ {\n                \"addressKey\" : \"AddressKeyStringFromAddress\",\n                \"quantity\" : 2\n              } ]\n            }\n          }\n    ]\n}"
                                 },
                                 "header": [
                                     {
@@ -46626,7 +46626,7 @@
                                 "method": "POST",
                                 "body": {
                                     "mode": "raw",
-                                    "raw": "{\n    \"version\": {{cart-version}},\n    \"actions\": [\n        {\n            \"action\" : \"changeTaxCalculationMode\",\n            \"taxRoundingMode\" : \"HalfUp\"\n          }\n    ]\n}"
+                                    "raw": "{\n    \"version\": {{cart-version}},\n    \"actions\": [\n        {\n            \"action\" : \"changeTaxCalculationMode\",\n            \"taxCalculationMode\" : \"LineItemLevel\"\n          }\n    ]\n}"
                                 },
                                 "header": [
                                     {
@@ -47116,7 +47116,7 @@
                                 "method": "POST",
                                 "body": {
                                     "mode": "raw",
-                                    "raw": "{\n    \"version\": {{cart-version}},\n    \"actions\": [\n        {\n            \"action\" : \"removeLineItem\",\n            \"lineItemId\" : \"{{lineItemId}}\",\n            \"quantity\" : 1,\n            \"externalPrice\" : {\n              \"currencyCode\" : \"EUR\",\n              \"centAmount\" : 4000\n            },\n            \"shippingDetailsToRemove\" : [ {\n              \"addressKey\" : \"AddressKeyStringFromAddress\",\n              \"quantity\" : 2\n            } ]\n          }\n    ]\n}"
+                                    "raw": "{\n    \"version\": {{cart-version}},\n    \"actions\": [\n        {\n            \"action\" : \"removeLineItem\",\n            \"lineItemId\" : \"{{lineItemId}}\",\n            \"quantity\" : 1,\n            \"externalPrice\" : {\n              \"currencyCode\" : \"EUR\",\n              \"centAmount\" : 4000\n            },\n            \"shippingDetailsToRemove\" : {\n              \"targets\" : [ {\n                \"addressKey\" : \"AddressKeyStringFromAddress\",\n                \"quantity\" : 2\n              } ]\n            }\n          }\n    ]\n}"
                                 },
                                 "header": [
                                     {
@@ -47396,7 +47396,7 @@
                                 "method": "POST",
                                 "body": {
                                     "mode": "raw",
-                                    "raw": "{\n    \"version\": {{cart-version}},\n    \"actions\": [\n        {\n            \"action\" : \"setCartTotalTax\",\n            \"taxCalculationMode\" : \"UnitPriceLevel\"\n          }\n    ]\n}"
+                                    "raw": "{\n    \"version\": {{cart-version}},\n    \"actions\": [\n        {\n            \"action\" : \"setCartTotalTax\",\n            \"externalTotalGross\" : {\n              \"currencyCode\" : \"EUR\",\n              \"centAmount\" : 10000\n            }\n          }\n    ]\n}"
                                 },
                                 "header": [
                                     {
@@ -47746,7 +47746,7 @@
                                 "method": "POST",
                                 "body": {
                                     "mode": "raw",
-                                    "raw": "{\n    \"version\": {{cart-version}},\n    \"actions\": [\n        {\n            \"action\" : \"setCustomLineItemShippingDetails\",\n            \"lineItemId\" : \"{{lineItemId}}\",\n            \"shippingDetails\" : [ {\n              \"addressKey\" : \"{{addressKey}}\",\n              \"quantity\" : 1\n            } ]\n          }\n    ]\n}"
+                                    "raw": "{\n    \"version\": {{cart-version}},\n    \"actions\": [\n        {\n            \"action\" : \"setCustomLineItemShippingDetails\",\n            \"customLineItemId\" : \"{{lineItemId}}\",\n            \"shippingDetails\" : {\n              \"targets\" : [ {\n                \"addressKey\" : \"{{addressKey}}\",\n                \"quantity\" : 1\n              } ]\n            }\n          }\n    ]\n}"
                                 },
                                 "header": [
                                     {
@@ -48516,7 +48516,7 @@
                                 "method": "POST",
                                 "body": {
                                     "mode": "raw",
-                                    "raw": "{\n    \"version\": {{cart-version}},\n    \"actions\": [\n        {\n            \"actions\" : \"setLineItemPrice\",\n            \"lineItemId\" : \"{{lineItemId}}\",\n            \"externalPrice\" : {\n              \"currencyCode\" : \"EUR\",\n              \"centAmount\" : 4000\n            },\n            \"action\" : \"setLineItemPrice\"\n          }\n    ]\n}"
+                                    "raw": "{\n    \"version\": {{cart-version}},\n    \"actions\": [\n        {\n            \"action\" : \"setLineItemPrice\",\n            \"lineItemId\" : \"{{lineItemId}}\",\n            \"externalPrice\" : {\n              \"currencyCode\" : \"EUR\",\n              \"centAmount\" : 4000\n            }\n          }\n    ]\n}"
                                 },
                                 "header": [
                                     {
@@ -48586,7 +48586,7 @@
                                 "method": "POST",
                                 "body": {
                                     "mode": "raw",
-                                    "raw": "{\n    \"version\": {{cart-version}},\n    \"actions\": [\n        {\n            \"action\" : \"setLineItemShippingDetails\",\n            \"lineItemId\" : \"{{lineItemId}}\",\n            \"shippingDetails\" : [ {\n              \"addressKey\" : \"{{addressKey}}\",\n              \"quantity\" : 1\n            } ]\n          }\n    ]\n}"
+                                    "raw": "{\n    \"version\": {{cart-version}},\n    \"actions\": [\n        {\n            \"action\" : \"setLineItemShippingDetails\",\n            \"lineItemId\" : \"{{lineItemId}}\",\n            \"shippingDetails\" : {\n              \"targets\" : [ {\n                \"addressKey\" : \"{{addressKey}}\",\n                \"quantity\" : 1\n              } ]\n            }\n          }\n    ]\n}"
                                 },
                                 "header": [
                                     {
@@ -48656,7 +48656,7 @@
                                 "method": "POST",
                                 "body": {
                                     "mode": "raw",
-                                    "raw": "{\n    \"version\": {{cart-version}},\n    \"actions\": [\n        {\n            \"action\" : \"setLineItemTaxAmount\",\n            \"lineItemId\" : \"{{lineItemId}}\",\n            \"externalTaxRate\" : {\n              \"name\" : \"myTaxRate\",\n              \"amount\" : 0.19,\n              \"country\" : \"DE\"\n            }\n          }\n    ]\n}"
+                                    "raw": "{\n    \"version\": {{cart-version}},\n    \"actions\": [\n        {\n            \"action\" : \"setLineItemTaxAmount\",\n            \"lineItemId\" : \"{{lineItemId}}\",\n            \"externalTaxAmount\" : {\n              \"totalGross\" : {\n                \"currencyCode\" : \"EUR\",\n                \"centAmount\" : 100\n              },\n              \"taxRate\" : {\n                \"name\" : \"myTaxRate\",\n                \"amount\" : 0.19,\n                \"country\" : \"DE\"\n              }\n            }\n          }\n    ]\n}"
                                 },
                                 "header": [
                                     {
@@ -49843,7 +49843,7 @@
                                 "method": "POST",
                                 "body": {
                                     "mode": "raw",
-                                    "raw": "{\n    \"version\": {{order-version}},\n    \"actions\": [\n        {\n            \"actions\" : \"addItemShippingAddress\",\n            \"address\" : {\n              \"id\" : \"exampleAddress\",\n              \"key\" : \"exampleKey\",\n              \"title\" : \"My Address\",\n              \"salutation\" : \"Mr.\",\n              \"firstName\" : \"Example\",\n              \"lastName\" : \"Person\",\n              \"streetName\" : \"Examplary Street\",\n              \"streetNumber\" : \"4711\",\n              \"additionalStreetInfo\" : \"Backhouse\",\n              \"postalCode\" : \"80933\",\n              \"city\" : \"Exemplary City\",\n              \"region\" : \"Exemplary Region\",\n              \"state\" : \"Exemplary State\",\n              \"country\" : \"DE\",\n              \"company\" : \"My Company Name\",\n              \"department\" : \"Sales\",\n              \"building\" : \"Hightower 1\",\n              \"apartment\" : \"247\",\n              \"pOBox\" : \"2471\",\n              \"phone\" : \"+49 89 12345678\",\n              \"mobile\" : \"+49 171 2345678\",\n              \"email\" : \"mail@mail.com\",\n              \"fax\" : \"+49 89 12345679\",\n              \"additionalAddressInfo\" : \"no additional Info\",\n              \"externalId\" : \"Information not needed\"\n            },\n            \"action\" : \"addItemShippingAddress\"\n          }\n    ]\n}"
+                                    "raw": "{\n    \"version\": {{order-version}},\n    \"actions\": [\n        {\n            \"action\" : \"addItemShippingAddress\",\n            \"address\" : {\n              \"id\" : \"exampleAddress\",\n              \"key\" : \"exampleKey\",\n              \"title\" : \"My Address\",\n              \"salutation\" : \"Mr.\",\n              \"firstName\" : \"Example\",\n              \"lastName\" : \"Person\",\n              \"streetName\" : \"Examplary Street\",\n              \"streetNumber\" : \"4711\",\n              \"additionalStreetInfo\" : \"Backhouse\",\n              \"postalCode\" : \"80933\",\n              \"city\" : \"Exemplary City\",\n              \"region\" : \"Exemplary Region\",\n              \"state\" : \"Exemplary State\",\n              \"country\" : \"DE\",\n              \"company\" : \"My Company Name\",\n              \"department\" : \"Sales\",\n              \"building\" : \"Hightower 1\",\n              \"apartment\" : \"247\",\n              \"pOBox\" : \"2471\",\n              \"phone\" : \"+49 89 12345678\",\n              \"mobile\" : \"+49 171 2345678\",\n              \"email\" : \"mail@mail.com\",\n              \"fax\" : \"+49 89 12345679\",\n              \"additionalAddressInfo\" : \"no additional Info\",\n              \"externalId\" : \"Information not needed\"\n            }\n          }\n    ]\n}"
                                 },
                                 "header": [
                                     {
@@ -51033,7 +51033,7 @@
                                 "method": "POST",
                                 "body": {
                                     "mode": "raw",
-                                    "raw": "{\n    \"version\": {{order-version}},\n    \"actions\": [\n        {\n            \"action\" : \"setCustomLineItemShippingDetails\",\n            \"customLineItemId\" : \"{{customLineItemId}}\",\n            \"shippingDetails\" : [ {\n              \"addressKey\" : \"{{addressKey}}\",\n              \"quantity\" : 2\n            } ]\n          }\n    ]\n}"
+                                    "raw": "{\n    \"version\": {{order-version}},\n    \"actions\": [\n        {\n            \"action\" : \"setCustomLineItemShippingDetails\",\n            \"customLineItemId\" : \"{{customLineItemId}}\",\n            \"shippingDetails\" : {\n              \"targets\" : [ {\n                \"addressKey\" : \"{{addressKey}}\",\n                \"quantity\" : 2\n              } ]\n            }\n          }\n    ]\n}"
                                 },
                                 "header": [
                                     {
@@ -51593,7 +51593,7 @@
                                 "method": "POST",
                                 "body": {
                                     "mode": "raw",
-                                    "raw": "{\n    \"version\": {{order-version}},\n    \"actions\": [\n        {\n            \"action\" : \"setLineItemShippingDetails\",\n            \"lineItemId\" : \"{{lineItemId}}\",\n            \"shippingDetails\" : [ {\n              \"addressKey\" : \"AddressKeyStringFromAddress\",\n              \"quantity\" : 2\n            } ]\n          }\n    ]\n}"
+                                    "raw": "{\n    \"version\": {{order-version}},\n    \"actions\": [\n        {\n            \"action\" : \"setLineItemShippingDetails\",\n            \"lineItemId\" : \"{{lineItemId}}\",\n            \"shippingDetails\" : {\n              \"targets\" : [ {\n                \"addressKey\" : \"AddressKeyStringFromAddress\",\n                \"quantity\" : 2\n              } ]\n            }\n          }\n    ]\n}"
                                 },
                                 "header": [
                                     {
