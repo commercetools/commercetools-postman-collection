@@ -5702,7 +5702,7 @@
                         "method": "POST",
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"version\": {{cart-version}},\n    \"actions\": [\n        {\n            \"action\" : \"setCustomerGroup\",\n            \"customerGroup\" : {\n              \"id\" : \"{{customerGroupId}}\",\n              \"typeId\" : \"customerGroup\"\n            }\n          }\n    ]\n}"
+                            "raw": "{\n    \"version\": {{cart-version}},\n    \"actions\": [\n        {\n            \"action\" : \"setCustomerGroup\",\n            \"customerGroup\" : {\n              \"id\" : \"{{customerGroupId}}\",\n              \"typeId\" : \"customer-group\"\n            }\n          }\n    ]\n}"
                         },
                         "header": [
                             {
@@ -48166,7 +48166,7 @@
                                 "method": "POST",
                                 "body": {
                                     "mode": "raw",
-                                    "raw": "{\n    \"version\": {{cart-version}},\n    \"actions\": [\n        {\n            \"action\" : \"setCustomerGroup\",\n            \"customerGroup\" : {\n              \"id\" : \"{{customerGroupId}}\",\n              \"typeId\" : \"customerGroup\"\n            }\n          }\n    ]\n}"
+                                    "raw": "{\n    \"version\": {{cart-version}},\n    \"actions\": [\n        {\n            \"action\" : \"setCustomerGroup\",\n            \"customerGroup\" : {\n              \"id\" : \"{{customerGroupId}}\",\n              \"typeId\" : \"customer-group\"\n            }\n          }\n    ]\n}"
                                 },
                                 "header": [
                                     {
