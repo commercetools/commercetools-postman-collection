@@ -1955,7 +1955,7 @@
                         "method": "POST",
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"version\": {{category-version}},\n    \"actions\": [\n        {\n            \"action\" : \"changeSlug\",\n            \"slug\" : \"slug\"\n          }\n    ]\n}"
+                            "raw": "{\n    \"version\": {{category-version}},\n    \"actions\": [\n        {\n            \"action\" : \"changeSlug\",\n            \"slug\" : {\n              \"de\" : \"meine-kategorie\",\n              \"en\" : \"my-category\"\n            }\n          }\n    ]\n}"
                         },
                         "header": [
                             {
