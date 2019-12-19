@@ -14457,7 +14457,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "..\/examples\/graphql-query.example.graphql"
+                            "raw": "{\n  \"query\" : \"\\n      query query_1($productId: String){\\n        product(key:$productId){\\n          key\\n        }\\n      }\\n    \",\n  \"operationName\" : \"query_1\",\n  \"variables\" : {\n    \"productId\" : \"f8ded810-a1\"\n  }\n}"
                         },
                         "url": {
                             "raw": "{{host}}/{{projectKey}}/graphql",
