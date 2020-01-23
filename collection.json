@@ -21140,7 +21140,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n  \"productType\" : {\n    \"id\" : \"24f510c3-f334-4099-94e2-d6224a8eb919\",\n    \"typeId\" : \"product-type\"\n  },\n  \"categories\" : [ {\n    \"typeId\" : \"category\",\n    \"id\" : \"24f510c3-f334-4099-94e2-d6224a8eb919\"\n  } ],\n  \"name\" : {\n    \"en\" : \"Some Product\"\n  },\n  \"slug\" : {\n    \"en\" : \"product_slug_<random-uuid>\"\n  },\n  \"masterVariant\" : {\n    \"sku\" : \"SKU-1\",\n    \"prices\" : [ {\n      \"currencyCode\" : \"EUR\",\n      \"centAmount\" : 4200\n    } ],\n    \"images\" : [ {\n      \"url\" : \"http:\/\/my.custom.cdn.net\/master.png\",\n      \"label\" : \"Master Image\",\n      \"dimensions\" : {\n        \"w\" : 303,\n        \"h\" : 197\n      }\n    } ]\n  },\n  \"variants\" : [ {\n    \"images\" : [ {\n      \"url\" : \"http:\/\/my.custom.cdn.net\/variant.png\",\n      \"label\" : \"Variant Image\",\n      \"dimensions\" : {\n        \"w\" : 303,\n        \"h\" : 197\n      }\n    } ]\n  } ]\n}"
+                            "raw": "{\n  \"productType\" : {\n    \"id\" : \"24f510c3-f334-4099-94e2-d6224a8eb919\",\n    \"typeId\" : \"product-type\"\n  },\n  \"categories\" : [ {\n    \"typeId\" : \"category\",\n    \"id\" : \"24f510c3-f334-4099-94e2-d6224a8eb919\"\n  } ],\n  \"name\" : {\n    \"en\" : \"Some Product\"\n  },\n  \"slug\" : {\n    \"en\" : \"product_slug_<random-uuid>\"\n  },\n  \"masterVariant\" : {\n    \"sku\" : \"SKU-1\",\n    \"prices\" : [ {\n      \"value\" : {\n        \"currencyCode\" : \"EUR\",\n        \"centAmount\" : 4200\n      }\n    } ],\n    \"images\" : [ {\n      \"url\" : \"http:\/\/my.custom.cdn.net\/master.png\",\n      \"label\" : \"Master Image\",\n      \"dimensions\" : {\n        \"w\" : 303,\n        \"h\" : 197\n      }\n    } ]\n  },\n  \"variants\" : [ {\n    \"images\" : [ {\n      \"url\" : \"http:\/\/my.custom.cdn.net\/variant.png\",\n      \"label\" : \"Variant Image\",\n      \"dimensions\" : {\n        \"w\" : 303,\n        \"h\" : 197\n      }\n    } ]\n  } ]\n}"
                         },
                         "url": {
                             "raw": "{{host}}/{{projectKey}}/products",
@@ -25199,7 +25199,7 @@
                         "method": "POST",
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"version\": {{product-version}},\n    \"actions\": [\n        {\n            \"action\" : \"setPrices\",\n            \"variantId\" : 1,\n            \"prices\" : [ {\n              \"currencyCode\" : \"USD\",\n              \"centAmount\" : 3100\n            }, {\n              \"currencyCode\" : \"EUR\",\n              \"centAmount\" : 4000\n            } ]\n          }\n    ]\n}"
+                            "raw": "{\n    \"version\": {{product-version}},\n    \"actions\": [\n        {\n            \"action\" : \"setPrices\",\n            \"variantId\" : 1,\n            \"prices\" : [ {\n              \"value\" : {\n                \"currencyCode\" : \"USD\",\n                \"centAmount\" : 3100\n              }\n            }, {\n              \"value\" : {\n                \"currencyCode\" : \"EUR\",\n                \"centAmount\" : 4000\n              }\n            } ]\n          }\n    ]\n}"
                         },
                         "header": [
                             {
