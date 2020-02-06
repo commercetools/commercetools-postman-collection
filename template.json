@@ -5,13 +5,13 @@
     {
       "enabled": true,
       "key": "host",
-      "value": "https://api.sphere.io",
+      "value": "https://api.europe-west1.gcp.commercetools.com/",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "auth_url",
-      "value": "https://auth.sphere.io",
+      "value": "https://auth.europe-west1.gcp.commercetools.com",
       "type": "text"
     },
     {
