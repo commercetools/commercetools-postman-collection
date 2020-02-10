@@ -10369,6 +10369,74 @@
                     },
                     "response": []
                 },{
+                    "name": "AddStores",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "type": "text/javascript",
+                                "exec": [
+                                    "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                    "var data = JSON.parse(responseBody);",
+                                    "if(data.version){",
+                                    "    pm.environment.set(\"customer-version\", data.version);",
+                                    "}",
+                                    "if(data.id){",
+                                    "    pm.environment.set(\"customer-id\", data.id); ",
+                                    "}",
+                                    "if(data.key){",
+                                    "    pm.environment.set(\"customer-key\", data.key);",
+                                    "}",
+                                    "",
+                                    ""
+                                ]
+                            }
+                        }
+                    ],
+                    "request": {
+                        "auth":
+                            {
+                                "type": "oauth2",
+                                "oauth2": {
+                                    "accessToken": "{{ctp_access_token}}",
+                                    "addTokenTo": "header",
+                                    "tokenType": "Bearer"
+                                }
+                            },
+                        "method": "POST",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"version\": {{customer-version}},\n    \"actions\": [\n        {\n            \"action\" : \"addStores\",\n            \"store\" : {\n              \"key\" : \"{{storeKey}}\",\n              \"typeKey\" : \"store\"\n            }\n          }\n    ]\n}"
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{host}}/{{projectKey}}/customers/{{customer-id}}",
+                            "host": [
+                                "{{host}}"
+                            ],
+                            "path": [
+                                "{{projectKey}}",
+                                "customers",
+                                "{{customer-id}}"
+                            ],
+                            "query": [
+                                {
+                                    "key": "expand",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                }
+                            ]
+                        },
+                        "description": "CustomerAddStoreAction"
+                    },
+                    "response": []
+                },{
                     "name": "ChangeAddress",
                     "event": [
                         {
@@ -10706,6 +10774,74 @@
                             ]
                         },
                         "description": "CustomerRemoveShippingAddressIdAction"
+                    },
+                    "response": []
+                },{
+                    "name": "RemoveStores",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "type": "text/javascript",
+                                "exec": [
+                                    "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                    "var data = JSON.parse(responseBody);",
+                                    "if(data.version){",
+                                    "    pm.environment.set(\"customer-version\", data.version);",
+                                    "}",
+                                    "if(data.id){",
+                                    "    pm.environment.set(\"customer-id\", data.id); ",
+                                    "}",
+                                    "if(data.key){",
+                                    "    pm.environment.set(\"customer-key\", data.key);",
+                                    "}",
+                                    "",
+                                    ""
+                                ]
+                            }
+                        }
+                    ],
+                    "request": {
+                        "auth":
+                            {
+                                "type": "oauth2",
+                                "oauth2": {
+                                    "accessToken": "{{ctp_access_token}}",
+                                    "addTokenTo": "header",
+                                    "tokenType": "Bearer"
+                                }
+                            },
+                        "method": "POST",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"version\": {{customer-version}},\n    \"actions\": [\n        {\n            \"action\" : \"removeStores\",\n            \"store\" : {\n              \"key\" : \"{{storeKey}}\",\n              \"typeKey\" : \"store\"\n            }\n          }\n    ]\n}"
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{host}}/{{projectKey}}/customers/{{customer-id}}",
+                            "host": [
+                                "{{host}}"
+                            ],
+                            "path": [
+                                "{{projectKey}}",
+                                "customers",
+                                "{{customer-id}}"
+                            ],
+                            "query": [
+                                {
+                                    "key": "expand",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                }
+                            ]
+                        },
+                        "description": "CustomerRemoveStoreAction"
                     },
                     "response": []
                 },{
@@ -11726,6 +11862,74 @@
                             ]
                         },
                         "description": "CustomerSetSalutationAction"
+                    },
+                    "response": []
+                },{
+                    "name": "SetStores",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "type": "text/javascript",
+                                "exec": [
+                                    "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                    "var data = JSON.parse(responseBody);",
+                                    "if(data.version){",
+                                    "    pm.environment.set(\"customer-version\", data.version);",
+                                    "}",
+                                    "if(data.id){",
+                                    "    pm.environment.set(\"customer-id\", data.id); ",
+                                    "}",
+                                    "if(data.key){",
+                                    "    pm.environment.set(\"customer-key\", data.key);",
+                                    "}",
+                                    "",
+                                    ""
+                                ]
+                            }
+                        }
+                    ],
+                    "request": {
+                        "auth":
+                            {
+                                "type": "oauth2",
+                                "oauth2": {
+                                    "accessToken": "{{ctp_access_token}}",
+                                    "addTokenTo": "header",
+                                    "tokenType": "Bearer"
+                                }
+                            },
+                        "method": "POST",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"version\": {{customer-version}},\n    \"actions\": [\n        {\n            \"action\" : \"setStores\",\n            \"stores\" : [ {\n              \"key\" : \"{{storeKey}}\",\n              \"typeKey\" : \"store\"\n            } ]\n          }\n    ]\n}"
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{host}}/{{projectKey}}/customers/{{customer-id}}",
+                            "host": [
+                                "{{host}}"
+                            ],
+                            "path": [
+                                "{{projectKey}}",
+                                "customers",
+                                "{{customer-id}}"
+                            ],
+                            "query": [
+                                {
+                                    "key": "expand",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                }
+                            ]
+                        },
+                        "description": "CustomerSetStoresAction"
                     },
                     "response": []
                 },{
