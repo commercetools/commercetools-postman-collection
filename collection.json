@@ -10399,7 +10399,7 @@
                     },
                     "response": []
                 },{
-                    "name": "AddStores",
+                    "name": "AddStore",
                     "event": [
                         {
                             "listen": "test",
@@ -10436,7 +10436,7 @@
                         "method": "POST",
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"version\": {{customer-version}},\n    \"actions\": [\n        {\n            \"action\" : \"addStores\",\n            \"store\" : {\n              \"key\" : \"{{storeKey}}\",\n              \"typeKey\" : \"store\"\n            }\n          }\n    ]\n}"
+                            "raw": "{\n    \"version\": {{customer-version}},\n    \"actions\": [\n        {\n            \"action\" : \"addStore\",\n            \"store\" : {\n              \"key\" : \"{{storeKey}}\",\n              \"typeKey\" : \"store\"\n            }\n          }\n    ]\n}"
                         },
                         "header": [
                             {
@@ -10807,7 +10807,7 @@
                     },
                     "response": []
                 },{
-                    "name": "RemoveStores",
+                    "name": "RemoveStore",
                     "event": [
                         {
                             "listen": "test",
@@ -10844,7 +10844,7 @@
                         "method": "POST",
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"version\": {{customer-version}},\n    \"actions\": [\n        {\n            \"action\" : \"removeStores\",\n            \"store\" : {\n              \"key\" : \"{{storeKey}}\",\n              \"typeKey\" : \"store\"\n            }\n          }\n    ]\n}"
+                            "raw": "{\n    \"version\": {{customer-version}},\n    \"actions\": [\n        {\n            \"action\" : \"removeStore\",\n            \"store\" : {\n              \"key\" : \"{{storeKey}}\",\n              \"typeKey\" : \"store\"\n            }\n          }\n    ]\n}"
                         },
                         "header": [
                             {
