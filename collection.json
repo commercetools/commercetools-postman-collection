@@ -1012,7 +1012,7 @@
                                     "disabled": true
                                 },
                                 {
-                                    "key": "/^[a-zA-Z0-9]+$/",
+                                    "key": "/^var[.][a-zA-Z0-9]+$/",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -3136,7 +3136,7 @@
                                     "disabled": true
                                 },
                                 {
-                                    "key": "/^[a-zA-Z0-9]+$/",
+                                    "key": "/^var[.][a-zA-Z0-9]+$/",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -6951,7 +6951,7 @@
                                     "disabled": true
                                 },
                                 {
-                                    "key": "/^[a-zA-Z0-9]+$/",
+                                    "key": "/^var[.][a-zA-Z0-9]+$/",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -8593,7 +8593,7 @@
                                     "disabled": true
                                 },
                                 {
-                                    "key": "/^[a-zA-Z0-9]+$/",
+                                    "key": "/^var[.][a-zA-Z0-9]+$/",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -9679,7 +9679,7 @@
                                     "disabled": true
                                 },
                                 {
-                                    "key": "/^[a-zA-Z0-9]+$/",
+                                    "key": "/^var[.][a-zA-Z0-9]+$/",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -12217,7 +12217,7 @@
                                     "disabled": true
                                 },
                                 {
-                                    "key": "/^[a-zA-Z0-9]+$/",
+                                    "key": "/^var[.][a-zA-Z0-9]+$/",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -13111,7 +13111,7 @@
                                     "disabled": true
                                 },
                                 {
-                                    "key": "/^[a-zA-Z0-9]+$/",
+                                    "key": "/^var[.][a-zA-Z0-9]+$/",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -13459,7 +13459,7 @@
                                     "disabled": true
                                 },
                                 {
-                                    "key": "/^[a-zA-Z0-9]+$/",
+                                    "key": "/^var[.][a-zA-Z0-9]+$/",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -14845,7 +14845,7 @@
                                     "disabled": true
                                 },
                                 {
-                                    "key": "/^[a-zA-Z0-9]+$/",
+                                    "key": "/^var[.][a-zA-Z0-9]+$/",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -15885,7 +15885,7 @@
                                     "disabled": true
                                 },
                                 {
-                                    "key": "/^[a-zA-Z0-9]+$/",
+                                    "key": "/^var[.][a-zA-Z0-9]+$/",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -16082,7 +16082,7 @@
                                     "disabled": true
                                 },
                                 {
-                                    "key": "/^[a-zA-Z0-9]+$/",
+                                    "key": "/^var[.][a-zA-Z0-9]+$/",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -19214,7 +19214,7 @@
                                     "disabled": true
                                 },
                                 {
-                                    "key": "/^[a-zA-Z0-9]+$/",
+                                    "key": "/^var[.][a-zA-Z0-9]+$/",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -21368,7 +21368,7 @@
                                     "disabled": true
                                 },
                                 {
-                                    "key": "/^[a-zA-Z0-9]+$/",
+                                    "key": "/^var[.][a-zA-Z0-9]+$/",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -26390,7 +26390,7 @@
                                     "disabled": true
                                 },
                                 {
-                                    "key": "/^[a-zA-Z0-9]+$/",
+                                    "key": "/^var[.][a-zA-Z0-9]+$/",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -27722,7 +27722,7 @@
                                     "disabled": true
                                 },
                                 {
-                                    "key": "/^[a-zA-Z0-9]+$/",
+                                    "key": "/^var[.][a-zA-Z0-9]+$/",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -28049,7 +28049,7 @@
                                     "disabled": true
                                 },
                                 {
-                                    "key": "/^[a-zA-Z0-9]+$/",
+                                    "key": "/^var[.][a-zA-Z0-9]+$/",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -30099,7 +30099,7 @@
                                     "disabled": true
                                 },
                                 {
-                                    "key": "/^[a-zA-Z0-9]+$/",
+                                    "key": "/^var[.][a-zA-Z0-9]+$/",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -31505,7 +31505,7 @@
                                     "disabled": true
                                 },
                                 {
-                                    "key": "/^[a-zA-Z0-9]+$/",
+                                    "key": "/^var[.][a-zA-Z0-9]+$/",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -32807,7 +32807,7 @@
                                     "disabled": true
                                 },
                                 {
-                                    "key": "/^[a-zA-Z0-9]+$/",
+                                    "key": "/^var[.][a-zA-Z0-9]+$/",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -35005,7 +35005,7 @@
                                     "disabled": true
                                 },
                                 {
-                                    "key": "/^[a-zA-Z0-9]+$/",
+                                    "key": "/^var[.][a-zA-Z0-9]+$/",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -36023,7 +36023,7 @@
                                     "disabled": true
                                 },
                                 {
-                                    "key": "/^[a-zA-Z0-9]+$/",
+                                    "key": "/^var[.][a-zA-Z0-9]+$/",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -36917,7 +36917,7 @@
                                     "disabled": true
                                 },
                                 {
-                                    "key": "/^[a-zA-Z0-9]+$/",
+                                    "key": "/^var[.][a-zA-Z0-9]+$/",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -37947,7 +37947,7 @@
                                     "disabled": true
                                 },
                                 {
-                                    "key": "/^[a-zA-Z0-9]+$/",
+                                    "key": "/^var[.][a-zA-Z0-9]+$/",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -39589,7 +39589,7 @@
                                     "disabled": true
                                 },
                                 {
-                                    "key": "/^[a-zA-Z0-9]+$/",
+                                    "key": "/^var[.][a-zA-Z0-9]+$/",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -40937,7 +40937,7 @@
                                             "disabled": true
                                         },
                                         {
-                                            "key": "/^[a-zA-Z0-9]+$/",
+                                            "key": "/^var[.][a-zA-Z0-9]+$/",
                                             "value": "",
                                             "equals": true,
                                             "disabled": true
@@ -41349,7 +41349,7 @@
                                             "disabled": true
                                         },
                                         {
-                                            "key": "/^[a-zA-Z0-9]+$/",
+                                            "key": "/^var[.][a-zA-Z0-9]+$/",
                                             "value": "",
                                             "equals": true,
                                             "disabled": true
@@ -41686,7 +41686,7 @@
                                             "disabled": true
                                         },
                                         {
-                                            "key": "/^[a-zA-Z0-9]+$/",
+                                            "key": "/^var[.][a-zA-Z0-9]+$/",
                                             "value": "",
                                             "equals": true,
                                             "disabled": true
@@ -42098,7 +42098,7 @@
                                             "disabled": true
                                         },
                                         {
-                                            "key": "/^[a-zA-Z0-9]+$/",
+                                            "key": "/^var[.][a-zA-Z0-9]+$/",
                                             "value": "",
                                             "equals": true,
                                             "disabled": true
@@ -43832,7 +43832,7 @@
                                     "disabled": true
                                 },
                                 {
-                                    "key": "/^[a-zA-Z0-9]+$/",
+                                    "key": "/^var[.][a-zA-Z0-9]+$/",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -44000,7 +44000,7 @@
                                     "disabled": true
                                 },
                                 {
-                                    "key": "/^[a-zA-Z0-9]+$/",
+                                    "key": "/^var[.][a-zA-Z0-9]+$/",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -44894,7 +44894,7 @@
                                     "disabled": true
                                 },
                                 {
-                                    "key": "/^[a-zA-Z0-9]+$/",
+                                    "key": "/^var[.][a-zA-Z0-9]+$/",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -45214,7 +45214,7 @@
                                     "disabled": true
                                 },
                                 {
-                                    "key": "/^[a-zA-Z0-9]+$/",
+                                    "key": "/^var[.][a-zA-Z0-9]+$/",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -45916,7 +45916,7 @@
                                             "disabled": true
                                         },
                                         {
-                                            "key": "/^[a-zA-Z0-9]+$/",
+                                            "key": "/^var[.][a-zA-Z0-9]+$/",
                                             "value": "",
                                             "equals": true,
                                             "disabled": true
@@ -49842,7 +49842,7 @@
                                             "disabled": true
                                         },
                                         {
-                                            "key": "/^[a-zA-Z0-9]+$/",
+                                            "key": "/^var[.][a-zA-Z0-9]+$/",
                                             "value": "",
                                             "equals": true,
                                             "disabled": true
@@ -53070,7 +53070,7 @@
                                                     "disabled": true
                                                 },
                                                 {
-                                                    "key": "/^[a-zA-Z0-9]+$/",
+                                                    "key": "/^var[.][a-zA-Z0-9]+$/",
                                                     "value": "",
                                                     "equals": true,
                                                     "disabled": true
@@ -53492,7 +53492,7 @@
                                                     "disabled": true
                                                 },
                                                 {
-                                                    "key": "/^[a-zA-Z0-9]+$/",
+                                                    "key": "/^var[.][a-zA-Z0-9]+$/",
                                                     "value": "",
                                                     "equals": true,
                                                     "disabled": true
@@ -53858,7 +53858,7 @@
                                             "disabled": true
                                         },
                                         {
-                                            "key": "/^[a-zA-Z0-9]+$/",
+                                            "key": "/^var[.][a-zA-Z0-9]+$/",
                                             "value": "",
                                             "equals": true,
                                             "disabled": true
