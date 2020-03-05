@@ -32621,6 +32621,74 @@
                     },
                     "response": []
                 },{
+                    "name": "SetLocalizedDescription",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "type": "text/javascript",
+                                "exec": [
+                                    "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                    "var data = JSON.parse(responseBody);",
+                                    "if(data.version){",
+                                    "    pm.environment.set(\"shipping-method-version\", data.version);",
+                                    "}",
+                                    "if(data.id){",
+                                    "    pm.environment.set(\"shipping-method-id\", data.id); ",
+                                    "}",
+                                    "if(data.key){",
+                                    "    pm.environment.set(\"shipping-method-key\", data.key);",
+                                    "}",
+                                    "",
+                                    ""
+                                ]
+                            }
+                        }
+                    ],
+                    "request": {
+                        "auth":
+                            {
+                                "type": "oauth2",
+                                "oauth2": {
+                                    "accessToken": "{{ctp_access_token}}",
+                                    "addTokenTo": "header",
+                                    "tokenType": "Bearer"
+                                }
+                            },
+                        "method": "POST",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"version\": {{shipping-method-version}},\n    \"actions\": [\n        {\n            \"action\" : \"setLocalizedDescription\",\n            \"localizedDescription\" : \"localizedDescriptionString\"\n          }\n    ]\n}"
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{host}}/{{projectKey}}/shipping-methods/{{shipping-method-id}}",
+                            "host": [
+                                "{{host}}"
+                            ],
+                            "path": [
+                                "{{projectKey}}",
+                                "shipping-methods",
+                                "{{shipping-method-id}}"
+                            ],
+                            "query": [
+                                {
+                                    "key": "expand",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                }
+                            ]
+                        },
+                        "description": "ShippingMethodSetLocalizedDescriptionAction"
+                    },
+                    "response": []
+                },{
                     "name": "SetPredicate",
                     "event": [
                         {
