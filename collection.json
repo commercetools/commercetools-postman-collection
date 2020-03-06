@@ -10436,7 +10436,7 @@
                         "method": "POST",
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"version\": {{customer-version}},\n    \"actions\": [\n        {\n            \"action\" : \"addStore\",\n            \"store\" : {\n              \"key\" : \"{{storeKey}}\",\n              \"typeKey\" : \"store\"\n            }\n          }\n    ]\n}"
+                            "raw": "{\n    \"version\": {{customer-version}},\n    \"actions\": [\n        {\n            \"action\" : \"addStore\",\n            \"store\" : {\n              \"key\" : \"{{storeKey}}\",\n              \"typeId\" : \"store\"\n            }\n          }\n    ]\n}"
                         },
                         "header": [
                             {
@@ -10844,7 +10844,7 @@
                         "method": "POST",
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"version\": {{customer-version}},\n    \"actions\": [\n        {\n            \"action\" : \"removeStore\",\n            \"store\" : {\n              \"key\" : \"{{storeKey}}\",\n              \"typeKey\" : \"store\"\n            }\n          }\n    ]\n}"
+                            "raw": "{\n    \"version\": {{customer-version}},\n    \"actions\": [\n        {\n            \"action\" : \"removeStore\",\n            \"store\" : {\n              \"key\" : \"{{storeKey}}\",\n              \"typeId\" : \"store\"\n            }\n          }\n    ]\n}"
                         },
                         "header": [
                             {
@@ -11932,7 +11932,7 @@
                         "method": "POST",
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"version\": {{customer-version}},\n    \"actions\": [\n        {\n            \"action\" : \"setStores\",\n            \"stores\" : [ {\n              \"key\" : \"{{storeKey}}\",\n              \"typeKey\" : \"store\"\n            } ]\n          }\n    ]\n}"
+                            "raw": "{\n    \"version\": {{customer-version}},\n    \"actions\": [\n        {\n            \"action\" : \"setStores\",\n            \"stores\" : [ {\n              \"key\" : \"{{storeKey}}\",\n              \"typeId\" : \"store\"\n            } ]\n          }\n    ]\n}"
                         },
                         "header": [
                             {
@@ -18753,6 +18753,74 @@
                             ]
                         },
                         "description": "OrderSetShippingAddressAction"
+                    },
+                    "response": []
+                },{
+                    "name": "SetStore",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "type": "text/javascript",
+                                "exec": [
+                                    "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                    "var data = JSON.parse(responseBody);",
+                                    "if(data.version){",
+                                    "    pm.environment.set(\"order-version\", data.version);",
+                                    "}",
+                                    "if(data.id){",
+                                    "    pm.environment.set(\"order-id\", data.id); ",
+                                    "}",
+                                    "if(data.key){",
+                                    "    pm.environment.set(\"order-key\", data.key);",
+                                    "}",
+                                    "",
+                                    ""
+                                ]
+                            }
+                        }
+                    ],
+                    "request": {
+                        "auth":
+                            {
+                                "type": "oauth2",
+                                "oauth2": {
+                                    "accessToken": "{{ctp_access_token}}",
+                                    "addTokenTo": "header",
+                                    "tokenType": "Bearer"
+                                }
+                            },
+                        "method": "POST",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"version\": {{order-version}},\n    \"actions\": [\n        {\n            \"action\" : \"setStore\",\n            \"store\" : {\n              \"key\" : \"{{storeKey}}\",\n              \"typeId\" : \"store\"\n            }\n          }\n    ]\n}"
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{host}}/{{projectKey}}/orders/{{order-id}}",
+                            "host": [
+                                "{{host}}"
+                            ],
+                            "path": [
+                                "{{projectKey}}",
+                                "orders",
+                                "{{order-id}}"
+                            ],
+                            "query": [
+                                {
+                                    "key": "expand",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                }
+                            ]
+                        },
+                        "description": "OrderSetStoreAction"
                     },
                     "response": []
                 },{
@@ -52659,6 +52727,76 @@
                                     ]
                                 },
                                 "description": "OrderSetShippingAddressAction"
+                            },
+                            "response": []
+                        },{
+                            "name": "SetStore",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"order-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"order-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"order-key\", data.key);",
+                                            "}",
+                                            "",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"version\": {{order-version}},\n    \"actions\": [\n        {\n            \"action\" : \"setStore\",\n            \"store\" : {\n              \"key\" : \"{{storeKey}}\",\n              \"typeId\" : \"store\"\n            }\n          }\n    ]\n}"
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{projectKey}}/in-store/key={{storeKey}}/orders/{{order-id}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{projectKey}}",
+                                        "in-store",
+                                        "key={{storeKey}}",
+                                        "orders",
+                                        "{{order-id}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "expand",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        }
+                                    ]
+                                },
+                                "description": "OrderSetStoreAction"
                             },
                             "response": []
                         },{
