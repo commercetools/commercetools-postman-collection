@@ -21400,6 +21400,18 @@
                                     "disabled": true
                                 },
                                 {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
                                     "key": "expand",
                                     "value": "",
                                     "equals": true,
@@ -21527,6 +21539,18 @@
                                     "disabled": true
                                 },
                                 {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
                                     "key": "expand",
                                     "value": "",
                                     "equals": true,
@@ -21614,6 +21638,18 @@
                                 },
                                 {
                                     "key": "priceChannel",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -21713,6 +21749,18 @@
                                     "disabled": true
                                 },
                                 {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
                                     "key": "expand",
                                     "value": "",
                                     "equals": true,
@@ -21800,6 +21848,18 @@
                                 },
                                 {
                                     "key": "priceChannel",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -21899,6 +21959,18 @@
                                     "disabled": true
                                 },
                                 {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
                                     "key": "expand",
                                     "value": "",
                                     "equals": true,
@@ -21986,6 +22058,18 @@
                                 },
                                 {
                                     "key": "priceChannel",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -22091,6 +22175,18 @@
                                     "disabled": true
                                 },
                                 {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
                                     "key": "version",
                                     "value": "{{product-version}}",
                                     "equals": true,
@@ -22189,6 +22285,18 @@
                                     "disabled": true
                                 },
                                 {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
                                     "key": "expand",
                                     "value": "",
                                     "equals": true,
@@ -22276,6 +22384,18 @@
                                 },
                                 {
                                     "key": "priceChannel",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -22373,6 +22493,18 @@
                                     "disabled": true
                                 },
                                 {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
                                     "key": "expand",
                                     "value": "",
                                     "equals": true,
@@ -22460,6 +22592,18 @@
                                 },
                                 {
                                     "key": "priceChannel",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -22557,6 +22701,18 @@
                                     "disabled": true
                                 },
                                 {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
                                     "key": "expand",
                                     "value": "",
                                     "equals": true,
@@ -22644,6 +22800,18 @@
                                 },
                                 {
                                     "key": "priceChannel",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -22741,6 +22909,18 @@
                                     "disabled": true
                                 },
                                 {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
                                     "key": "expand",
                                     "value": "",
                                     "equals": true,
@@ -22828,6 +23008,18 @@
                                 },
                                 {
                                     "key": "priceChannel",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -22925,6 +23117,18 @@
                                     "disabled": true
                                 },
                                 {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
                                     "key": "expand",
                                     "value": "",
                                     "equals": true,
@@ -23012,6 +23216,18 @@
                                 },
                                 {
                                     "key": "priceChannel",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -23109,6 +23325,18 @@
                                     "disabled": true
                                 },
                                 {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
                                     "key": "expand",
                                     "value": "",
                                     "equals": true,
@@ -23196,6 +23424,18 @@
                                 },
                                 {
                                     "key": "priceChannel",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -23293,6 +23533,18 @@
                                     "disabled": true
                                 },
                                 {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
                                     "key": "expand",
                                     "value": "",
                                     "equals": true,
@@ -23380,6 +23632,18 @@
                                 },
                                 {
                                     "key": "priceChannel",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -23477,6 +23741,18 @@
                                     "disabled": true
                                 },
                                 {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
                                     "key": "expand",
                                     "value": "",
                                     "equals": true,
@@ -23564,6 +23840,18 @@
                                 },
                                 {
                                     "key": "priceChannel",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -23661,6 +23949,18 @@
                                     "disabled": true
                                 },
                                 {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
                                     "key": "expand",
                                     "value": "",
                                     "equals": true,
@@ -23748,6 +24048,18 @@
                                 },
                                 {
                                     "key": "priceChannel",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -23845,6 +24157,18 @@
                                     "disabled": true
                                 },
                                 {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
                                     "key": "expand",
                                     "value": "",
                                     "equals": true,
@@ -23932,6 +24256,18 @@
                                 },
                                 {
                                     "key": "priceChannel",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -24029,6 +24365,18 @@
                                     "disabled": true
                                 },
                                 {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
                                     "key": "expand",
                                     "value": "",
                                     "equals": true,
@@ -24116,6 +24464,18 @@
                                 },
                                 {
                                     "key": "priceChannel",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -24213,6 +24573,18 @@
                                     "disabled": true
                                 },
                                 {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
                                     "key": "expand",
                                     "value": "",
                                     "equals": true,
@@ -24300,6 +24672,18 @@
                                 },
                                 {
                                     "key": "priceChannel",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -24397,6 +24781,18 @@
                                     "disabled": true
                                 },
                                 {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
                                     "key": "expand",
                                     "value": "",
                                     "equals": true,
@@ -24484,6 +24880,18 @@
                                 },
                                 {
                                     "key": "priceChannel",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -24581,6 +24989,18 @@
                                     "disabled": true
                                 },
                                 {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
                                     "key": "expand",
                                     "value": "",
                                     "equals": true,
@@ -24668,6 +25088,18 @@
                                 },
                                 {
                                     "key": "priceChannel",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -24765,6 +25197,18 @@
                                     "disabled": true
                                 },
                                 {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
                                     "key": "expand",
                                     "value": "",
                                     "equals": true,
@@ -24852,6 +25296,18 @@
                                 },
                                 {
                                     "key": "priceChannel",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -24949,6 +25405,18 @@
                                     "disabled": true
                                 },
                                 {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
                                     "key": "expand",
                                     "value": "",
                                     "equals": true,
@@ -25036,6 +25504,18 @@
                                 },
                                 {
                                     "key": "priceChannel",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -25133,6 +25613,18 @@
                                     "disabled": true
                                 },
                                 {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
                                     "key": "expand",
                                     "value": "",
                                     "equals": true,
@@ -25220,6 +25712,18 @@
                                 },
                                 {
                                     "key": "priceChannel",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -25317,6 +25821,18 @@
                                     "disabled": true
                                 },
                                 {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
                                     "key": "expand",
                                     "value": "",
                                     "equals": true,
@@ -25404,6 +25920,18 @@
                                 },
                                 {
                                     "key": "priceChannel",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -25501,6 +26029,18 @@
                                     "disabled": true
                                 },
                                 {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
                                     "key": "expand",
                                     "value": "",
                                     "equals": true,
@@ -25588,6 +26128,18 @@
                                 },
                                 {
                                     "key": "priceChannel",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -25685,6 +26237,18 @@
                                     "disabled": true
                                 },
                                 {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
                                     "key": "expand",
                                     "value": "",
                                     "equals": true,
@@ -25772,6 +26336,18 @@
                                 },
                                 {
                                     "key": "priceChannel",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -25869,6 +26445,18 @@
                                     "disabled": true
                                 },
                                 {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
                                     "key": "expand",
                                     "value": "",
                                     "equals": true,
@@ -25956,6 +26544,18 @@
                                 },
                                 {
                                     "key": "priceChannel",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -26053,6 +26653,18 @@
                                     "disabled": true
                                 },
                                 {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
                                     "key": "expand",
                                     "value": "",
                                     "equals": true,
@@ -26140,6 +26752,18 @@
                                 },
                                 {
                                     "key": "priceChannel",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -26237,6 +26861,18 @@
                                     "disabled": true
                                 },
                                 {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
                                     "key": "expand",
                                     "value": "",
                                     "equals": true,
@@ -26324,6 +26960,18 @@
                                 },
                                 {
                                     "key": "priceChannel",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -27754,6 +28402,18 @@
                                     "disabled": true
                                 },
                                 {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
                                     "key": "expand",
                                     "value": "",
                                     "equals": true,
@@ -27888,6 +28548,18 @@
                                     "disabled": true
                                 },
                                 {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
                                     "key": "expand",
                                     "value": "",
                                     "equals": true,
@@ -27983,6 +28655,18 @@
                                 },
                                 {
                                     "key": "priceChannel",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "localeProjection",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "storeProjection",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -45851,6 +46535,74 @@
                             ]
                         },
                         "description": "Delete Store by key"
+                    },
+                    "response": []
+                },{
+                    "name": "SetLanguages",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "type": "text/javascript",
+                                "exec": [
+                                    "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                    "var data = JSON.parse(responseBody);",
+                                    "if(data.version){",
+                                    "    pm.environment.set(\"store-version\", data.version);",
+                                    "}",
+                                    "if(data.id){",
+                                    "    pm.environment.set(\"store-id\", data.id); ",
+                                    "}",
+                                    "if(data.key){",
+                                    "    pm.environment.set(\"store-key\", data.key);",
+                                    "}",
+                                    "",
+                                    ""
+                                ]
+                            }
+                        }
+                    ],
+                    "request": {
+                        "auth":
+                            {
+                                "type": "oauth2",
+                                "oauth2": {
+                                    "accessToken": "{{ctp_access_token}}",
+                                    "addTokenTo": "header",
+                                    "tokenType": "Bearer"
+                                }
+                            },
+                        "method": "POST",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"version\": {{store-version}},\n    \"actions\": [\n        {\n            \"action\" : \"setLanguages\",\n            \"languages\" : [ \"en\" ]\n          }\n    ]\n}"
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{host}}/{{projectKey}}/stores/{{store-id}}",
+                            "host": [
+                                "{{host}}"
+                            ],
+                            "path": [
+                                "{{projectKey}}",
+                                "stores",
+                                "{{store-id}}"
+                            ],
+                            "query": [
+                                {
+                                    "key": "expand",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                }
+                            ]
+                        },
+                        "description": "StoreSetLanguagesAction"
                     },
                     "response": []
                 },{
