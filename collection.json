@@ -32197,30 +32197,6 @@
                             ],
                             "query": [
                                 {
-                                    "key": "shipping-methodId",
-                                    "value": "",
-                                    "equals": true,
-                                    "disabled": true
-                                },
-                                {
-                                    "key": "country",
-                                    "value": "",
-                                    "equals": true,
-                                    "disabled": true
-                                },
-                                {
-                                    "key": "state",
-                                    "value": "",
-                                    "equals": true,
-                                    "disabled": true
-                                },
-                                {
-                                    "key": "currency",
-                                    "value": "",
-                                    "equals": true,
-                                    "disabled": true
-                                },
-                                {
                                     "key": "expand",
                                     "value": "",
                                     "equals": true,
@@ -55459,6 +55435,22 @@
                                     "}",
                                     "",
                                     ""
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ShippingMethods",
+                    "description": "null",
+                    "item": [
+                    ],
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "type": "text/javascript",
+                                "exec": [
                                 ]
                             }
                         }
