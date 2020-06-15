@@ -43042,6 +43042,77 @@
                             },
                             "response": []
                         },{
+                            "name": "Get ShoppingList by key",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"shopping-list-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"shopping-list-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"shopping-list-key\", data.key);",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"shopping-list-key\", data.key);",
+                                            "}",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": ""
+                                },
+                                "url": {
+                                    "raw": "{{host}}/{{projectKey}}/me/shopping-lists/key={{shopping-list-key}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{projectKey}}",
+                                        "me",
+                                        "shopping-lists",
+                                        "key={{shopping-list-key}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "expand",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        }
+                                    ]
+                                },
+                                "description": "Get MyShoppingList by key"
+                            },
+                            "response": []
+                        },{
                             "name": "Update ShoppingList by ID",
                             "event": [
                                 {
@@ -43108,6 +43179,77 @@
                                     ]
                                 },
                                 "description": "Update MyShoppingList by ID"
+                            },
+                            "response": []
+                        },{
+                            "name": "Update ShoppingList by key",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"shopping-list-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"shopping-list-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"shopping-list-key\", data.key);",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"shopping-list-key\", data.key);",
+                                            "}",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"version\": {{shopping-list-version}},\n    \"actions\": []\n}"
+                                },
+                                "url": {
+                                    "raw": "{{host}}/{{projectKey}}/me/shopping-lists/key={{shopping-list-key}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{projectKey}}",
+                                        "me",
+                                        "shopping-lists",
+                                        "key={{shopping-list-key}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "expand",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        }
+                                    ]
+                                },
+                                "description": "Update MyShoppingList by key"
                             },
                             "response": []
                         },{
@@ -43183,6 +43325,83 @@
                                     ]
                                 },
                                 "description": "Delete MyShoppingList by ID"
+                            },
+                            "response": []
+                        },{
+                            "name": "Delete ShoppingList by key",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"shopping-list-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"shopping-list-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"shopping-list-key\", data.key);",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"shopping-list-key\", data.key);",
+                                            "}",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "DELETE",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": ""
+                                },
+                                "url": {
+                                    "raw": "{{host}}/{{projectKey}}/me/shopping-lists/key={{shopping-list-key}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{projectKey}}",
+                                        "me",
+                                        "shopping-lists",
+                                        "key={{shopping-list-key}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "version",
+                                            "value": "{{shopping-list-version}}",
+                                            "equals": true,
+                                            "disabled": false
+                                        },
+                                        {
+                                            "key": "expand",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        }
+                                    ]
+                                },
+                                "description": "Delete MyShoppingList by key"
                             },
                             "response": []
                         },{
