@@ -474,6 +474,66 @@
                     },
                     "response": []
                 },{
+                    "name": "ChangeCountryTaxRateFallbackEnabled",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "type": "text/javascript",
+                                "exec": [
+                                    "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                    "var data = JSON.parse(responseBody);",
+                                    "if(data.version){",
+                                    "    pm.environment.set(\"project-version\", data.version);",
+                                    "}",
+                                    "if(data.id){",
+                                    "    pm.environment.set(\"project-id\", data.id); ",
+                                    "}",
+                                    "if(data.key){",
+                                    "    pm.environment.set(\"project-key\", data.key);",
+                                    "}",
+                                    "",
+                                    ""
+                                ]
+                            }
+                        }
+                    ],
+                    "request": {
+                        "auth":
+                            {
+                                "type": "oauth2",
+                                "oauth2": {
+                                    "accessToken": "{{ctp_access_token}}",
+                                    "addTokenTo": "header",
+                                    "tokenType": "Bearer"
+                                }
+                            },
+                        "method": "POST",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"version\": {{project-version}},\n    \"actions\": [\n        {\n            \"action\" : \"changeCountryTaxRateFallbackEnabled\",\n            \"countryTaxRateFallbackEnabled\" : true\n          }\n    ]\n}"
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{host}}/{{projectKey}}",
+                            "host": [
+                                "{{host}}"
+                            ],
+                            "path": [
+                                "{{projectKey}}"
+                            ],
+                            "query": [
+                            ]
+                        },
+                        "description": "ProjectChangeCountryTaxRateFallbackEnabledAction"
+                    },
+                    "response": []
+                },{
                     "name": "ChangeCurrencies",
                     "event": [
                         {
