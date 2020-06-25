@@ -41318,9 +41318,73 @@
             "description": "null",
             "item": [
                 {
-                    "name": "Email",
+                    "name": "Confirm",
                     "description": "null",
                     "item": [
+                        {
+                            "name": "Create Confirm",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"confirm-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"confirm-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"confirm-key\", data.key);",
+                                            "}",
+                                            "",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                   {
+                                       "type": "oauth2",
+                                       "oauth2": {
+                                           "accessToken": "{{ctp_access_token}}",
+                                           "addTokenTo": "header",
+                                           "tokenType": "Bearer"
+                                       }
+                                   },
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": ""
+                                },
+                                "url": {
+                                    "raw": "{{host}}/{{projectKey}}/me/email/confirm",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{projectKey}}",
+                                        "me",
+                                        "email",
+                                        "confirm"
+                                    ],
+                                    "query": [
+                                    ]
+                                },
+                                "description": "post Confirm"
+                            },
+                            "response": []
+                        }
                     ],
                     "event": [
                         {
@@ -41328,6 +41392,19 @@
                             "script": {
                                 "type": "text/javascript",
                                 "exec": [
+                                    "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                    "var data = JSON.parse(responseBody);",
+                                    "if(data.version){",
+                                    "    pm.environment.set(\"confirm-version\", data.version);",
+                                    "}",
+                                    "if(data.id){",
+                                    "    pm.environment.set(\"confirm-id\", data.id); ",
+                                    "}",
+                                    "if(data.key){",
+                                    "    pm.environment.set(\"confirm-key\", data.key);",
+                                    "}",
+                                    "",
+                                    ""
                                 ]
                             }
                         }
@@ -42690,6 +42767,77 @@
                             },
                             "response": []
                         },{
+                            "name": "Get Payment by key",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"payment-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"payment-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"payment-key\", data.key);",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"payment-key\", data.key);",
+                                            "}",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": ""
+                                },
+                                "url": {
+                                    "raw": "{{host}}/{{projectKey}}/me/payments/key={{payment-key}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{projectKey}}",
+                                        "me",
+                                        "payments",
+                                        "key={{payment-key}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "expand",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        }
+                                    ]
+                                },
+                                "description": "Get MyPayment by key"
+                            },
+                            "response": []
+                        },{
                             "name": "Update Payment by ID",
                             "event": [
                                 {
@@ -42733,7 +42881,7 @@
                                 ],
                                 "body": {
                                     "mode": "raw",
-                                    "raw": "{\n  \"version\" : 1,\n  \"actions\" : [ {\n    \"action\" : \"setMethodInfoMethod\",\n    \"method\" : \"12334567890123456\"\n  } ]\n}"
+                                    "raw": "{\n    \"version\": {{payment-version}},\n    \"actions\": []\n}"
                                 },
                                 "url": {
                                     "raw": "{{host}}/{{projectKey}}/me/payments/{{payment-id}}",
@@ -42756,6 +42904,77 @@
                                     ]
                                 },
                                 "description": "Update MyPayment by ID"
+                            },
+                            "response": []
+                        },{
+                            "name": "Update Payment by key",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"payment-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"payment-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"payment-key\", data.key);",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"payment-key\", data.key);",
+                                            "}",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"version\": {{payment-version}},\n    \"actions\": []\n}"
+                                },
+                                "url": {
+                                    "raw": "{{host}}/{{projectKey}}/me/payments/key={{payment-key}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{projectKey}}",
+                                        "me",
+                                        "payments",
+                                        "key={{payment-key}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "expand",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        }
+                                    ]
+                                },
+                                "description": "Update MyPayment by key"
                             },
                             "response": []
                         },{
@@ -42831,6 +43050,497 @@
                                     ]
                                 },
                                 "description": "Delete MyPayment by ID"
+                            },
+                            "response": []
+                        },{
+                            "name": "Delete Payment by key",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"payment-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"payment-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"payment-key\", data.key);",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"payment-key\", data.key);",
+                                            "}",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "DELETE",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": ""
+                                },
+                                "url": {
+                                    "raw": "{{host}}/{{projectKey}}/me/payments/key={{payment-key}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{projectKey}}",
+                                        "me",
+                                        "payments",
+                                        "key={{payment-key}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "version",
+                                            "value": "{{payment-version}}",
+                                            "equals": true,
+                                            "disabled": false
+                                        },
+                                        {
+                                            "key": "expand",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        }
+                                    ]
+                                },
+                                "description": "Delete MyPayment by key"
+                            },
+                            "response": []
+                        },{
+                            "name": "AddTransaction",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"payment-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"payment-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"payment-key\", data.key);",
+                                            "}",
+                                            "",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"version\": {{payment-version}},\n    \"actions\": [\n                |{\n            \"action\": \"addTransaction\"\n        }\n    ]\n}"
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{projectKey}}/me/payments/{{payment-id}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{projectKey}}",
+                                        "me",
+                                        "payments",
+                                        "{{payment-id}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "expand",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        }
+                                    ]
+                                },
+                                "description": "MyPaymentAddTransactionAction"
+                            },
+                            "response": []
+                        },{
+                            "name": "ChangeAmountPlanned",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"payment-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"payment-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"payment-key\", data.key);",
+                                            "}",
+                                            "",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"version\": {{payment-version}},\n    \"actions\": [\n                |{\n            \"action\": \"changeAmountPlanned\"\n        }\n    ]\n}"
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{projectKey}}/me/payments/{{payment-id}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{projectKey}}",
+                                        "me",
+                                        "payments",
+                                        "{{payment-id}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "expand",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        }
+                                    ]
+                                },
+                                "description": "MyPaymentChangeAmountPlannedAction"
+                            },
+                            "response": []
+                        },{
+                            "name": "SetCustomField",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"payment-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"payment-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"payment-key\", data.key);",
+                                            "}",
+                                            "",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"version\": {{payment-version}},\n    \"actions\": [\n                |{\n            \"action\": \"setCustomField\"\n        }\n    ]\n}"
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{projectKey}}/me/payments/{{payment-id}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{projectKey}}",
+                                        "me",
+                                        "payments",
+                                        "{{payment-id}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "expand",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        }
+                                    ]
+                                },
+                                "description": "MyPaymentSetCustomFieldAction"
+                            },
+                            "response": []
+                        },{
+                            "name": "SetMethodInfoInterface",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"payment-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"payment-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"payment-key\", data.key);",
+                                            "}",
+                                            "",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"version\": {{payment-version}},\n    \"actions\": [\n                |{\n            \"action\": \"setMethodInfoInterface\"\n        }\n    ]\n}"
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{projectKey}}/me/payments/{{payment-id}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{projectKey}}",
+                                        "me",
+                                        "payments",
+                                        "{{payment-id}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "expand",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        }
+                                    ]
+                                },
+                                "description": "MyPaymentSetMethodInfoInterfaceAction"
+                            },
+                            "response": []
+                        },{
+                            "name": "SetMethodInfoMethod",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"payment-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"payment-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"payment-key\", data.key);",
+                                            "}",
+                                            "",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"version\": {{payment-version}},\n    \"actions\": [\n                |{\n            \"action\": \"setMethodInfoMethod\"\n        }\n    ]\n}"
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{projectKey}}/me/payments/{{payment-id}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{projectKey}}",
+                                        "me",
+                                        "payments",
+                                        "{{payment-id}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "expand",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        }
+                                    ]
+                                },
+                                "description": "MyPaymentSetMethodInfoMethodAction"
+                            },
+                            "response": []
+                        },{
+                            "name": "SetMethodInfoName",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"payment-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"payment-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"payment-key\", data.key);",
+                                            "}",
+                                            "",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"version\": {{payment-version}},\n    \"actions\": [\n                |{\n            \"action\": \"setMethodInfoName\"\n        }\n    ]\n}"
+                                },
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{projectKey}}/me/payments/{{payment-id}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{projectKey}}",
+                                        "me",
+                                        "payments",
+                                        "{{payment-id}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "expand",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        }
+                                    ]
+                                },
+                                "description": "MyPaymentSetMethodInfoNameAction"
                             },
                             "response": []
                         }
@@ -44796,22 +45506,6 @@
                                     "}",
                                     "",
                                     ""
-                                ]
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "Payment",
-                    "description": "null",
-                    "item": [
-                    ],
-                    "event": [
-                        {
-                            "listen": "test",
-                            "script": {
-                                "type": "text/javascript",
-                                "exec": [
                                 ]
                             }
                         }
