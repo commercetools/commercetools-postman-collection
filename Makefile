@@ -15,5 +15,5 @@ generate_collection:
 check_pending:
 	git status --porcelain -- ':(exclude)*gen.properties'
 	CHANGES_PENDING=`git status --porcelain -- ':(exclude)*gen.properties' | grep -c ^ || true`
-	echo "::set-env name=CHANGES_PENDING::$CHANGES_PENDING"
+	echo "::set-env name=CHANGES_PENDING::${CHANGES_PENDING}"
 
