@@ -37,11 +37,11 @@
                                     "    parts = parts.filter(scope => scope.includes(\":\")).map(scope => scope.split(\":\"))",
                                     "    if (parts.length > 0) {",
                                     "        scopeParts = parts[0];",
-                                    "        pm.environment.set(\"projectKey\", scopeParts[1]);",
+                                    "        pm.environment.set(\"project-key\", scopeParts[1]);",
                                     "        parts = parts.filter(scope => scope.length >= 3)",
                                     "        if (parts.length > 0) {",
                                     "            scopeParts = parts[0];",
-                                    "            pm.environment.set(\"storeKey\", scopeParts[2]);",
+                                    "            pm.environment.set(\"store-key\", scopeParts[2]);",
                                     "        }",
                                     "    }",
                                     "}"
@@ -102,11 +102,11 @@
                                     "    parts = parts.filter(scope => scope.includes(\":\")).map(scope => scope.split(\":\"))",
                                     "    if (parts.length > 0) {",
                                     "        scopeParts = parts[0];",
-                                    "        pm.environment.set(\"projectKey\", scopeParts[1]);",
+                                    "        pm.environment.set(\"project-key\", scopeParts[1]);",
                                     "        parts = parts.filter(scope => scope.length >= 3)",
                                     "        if (parts.length > 0) {",
                                     "            scopeParts = parts[0];",
-                                    "            pm.environment.set(\"storeKey\", scopeParts[2]);",
+                                    "            pm.environment.set(\"store-key\", scopeParts[2]);",
                                     "        }",
                                     "    }",
                                     "}"
@@ -135,13 +135,13 @@
                             "raw": ""
                         },
                         "url": {
-                            "raw": "{{auth_url}}/oauth/{{projectKey}}/customers/token?grant_type=password&username={{user_email}}&password={{user_password}}",
+                            "raw": "{{auth_url}}/oauth/{{project-key}}/customers/token?grant_type=password&username={{user_email}}&password={{user_password}}",
                             "host": [
                                 "{{auth_url}}"
                             ],
                             "path": [
                                 "oauth",
-                                "{{projectKey}}",
+                                "{{project-key}}",
                                 "customers",
                                 "token"
                             ],
@@ -185,11 +185,11 @@
                                     "    parts = parts.filter(scope => scope.includes(\":\")).map(scope => scope.split(\":\"))",
                                     "    if (parts.length > 0) {",
                                     "        scopeParts = parts[0];",
-                                    "        pm.environment.set(\"projectKey\", scopeParts[1]);",
+                                    "        pm.environment.set(\"project-key\", scopeParts[1]);",
                                     "        parts = parts.filter(scope => scope.length >= 3)",
                                     "        if (parts.length > 0) {",
                                     "            scopeParts = parts[0];",
-                                    "            pm.environment.set(\"storeKey\", scopeParts[2]);",
+                                    "            pm.environment.set(\"store-key\", scopeParts[2]);",
                                     "        }",
                                     "    }",
                                     "}"
@@ -212,13 +212,13 @@
                             "raw": ""
                         },
                         "url": {
-                            "raw": "{{auth_url}}/oauth/{{projectKey}}/anonymous/token?grant_type=client_credentials",
+                            "raw": "{{auth_url}}/oauth/{{project-key}}/anonymous/token?grant_type=client_credentials",
                             "host": [
                                 "{{auth_url}}"
                             ],
                             "path": [
                                 "oauth",
-                                "{{projectKey}}",
+                                "{{project-key}}",
                                 "anonymous",
                                 "token"
                             ],
@@ -346,12 +346,12 @@
                                     }
                                 ],
                                 "url": {
-                                        "raw": "{{host}}/{{projectKey}}/import-sinks/{{import-sink-key}}",
+                                    "raw": "{{host}}/{{project-key}}/import-sinks/{{import-sink-key}}",
                                     "host": [
                                         "{{host}}"
                                     ],
                                     "path": [
-                                        "{{projectKey}}",
+                                        "{{project-key}}",
                                         "import-sinks",
                                         "{{import-sink-key}}"
                                     ],
@@ -415,12 +415,12 @@
                                     }
                                 ],
                                 "url": {
-                                        "raw": "{{host}}/{{projectKey}}/import-sinks/{{import-sink-key}}",
+                                    "raw": "{{host}}/{{project-key}}/import-sinks/{{import-sink-key}}",
                                     "host": [
                                         "{{host}}"
                                     ],
                                     "path": [
-                                        "{{projectKey}}",
+                                        "{{project-key}}",
                                         "import-sinks",
                                         "{{import-sink-key}}"
                                     ],
@@ -484,12 +484,12 @@
                                     }
                                 ],
                                 "url": {
-                                        "raw": "{{host}}/{{projectKey}}/import-sinks/{{import-sink-key}}",
+                                    "raw": "{{host}}/{{project-key}}/import-sinks/{{import-sink-key}}",
                                     "host": [
                                         "{{host}}"
                                     ],
                                     "path": [
-                                        "{{projectKey}}",
+                                        "{{project-key}}",
                                         "import-sinks",
                                         "{{import-sink-key}}"
                                     ],
@@ -553,12 +553,12 @@
                                     }
                                 ],
                                 "url": {
-                                        "raw": "{{host}}/{{projectKey}}/import-sinks",
+                                    "raw": "{{host}}/{{project-key}}/import-sinks",
                                     "host": [
                                         "{{host}}"
                                     ],
                                     "path": [
-                                        "{{projectKey}}",
+                                        "{{project-key}}",
                                         "import-sinks"
                                     ],
                                     "query": [
@@ -621,12 +621,12 @@
                                     }
                                 ],
                                 "url": {
-                                        "raw": "{{host}}/{{projectKey}}/import-sinks",
+                                    "raw": "{{host}}/{{project-key}}/import-sinks",
                                     "host": [
                                         "{{host}}"
                                     ],
                                     "path": [
-                                        "{{projectKey}}",
+                                        "{{project-key}}",
                                         "import-sinks"
                                     ],
                                     "query": [
@@ -707,12 +707,12 @@
                                     }
                                 ],
                                 "url": {
-                                        "raw": "{{host}}/{{projectKey}}/import-summaries/importSinkKey={{import-sink-key}}",
+                                    "raw": "{{host}}/{{project-key}}/import-summaries/importSinkKey={{import-sink-key}}",
                                     "host": [
                                         "{{host}}"
                                     ],
                                     "path": [
-                                        "{{projectKey}}",
+                                        "{{project-key}}",
                                         "import-summaries",
                                         "importSinkKey={{import-sink-key}}"
                                     ],
@@ -782,15 +782,15 @@
                                     }
                                 ],
                                 "url": {
-                                        "raw": "{{host}}/{{projectKey}}/categories/importSinkKey={{importSinkKey}}/resourceKey={{resourceKey}}",
+                                    "raw": "{{host}}/{{project-key}}/categories/importSinkKey={{import-sink-key}}/resourceKey={{resource-key}}",
                                     "host": [
                                         "{{host}}"
                                     ],
                                     "path": [
-                                        "{{projectKey}}",
+                                        "{{project-key}}",
                                         "categories",
-                                        "importSinkKey={{importSinkKey}}",
-                                        "resourceKey={{resourceKey}}"
+                                        "importSinkKey={{import-sink-key}}",
+                                        "resourceKey={{resource-key}}"
                                     ],
                                     "query": [
                                     ]
@@ -856,14 +856,14 @@
                                             }
                                         ],
                                         "url": {
-                                                "raw": "{{host}}/{{projectKey}}/categories/importSinkKey={{importSinkKey}}/import-operations/{{id}}",
+                                            "raw": "{{host}}/{{project-key}}/categories/importSinkKey={{import-sink-key}}/import-operations/{{id}}",
                                             "host": [
                                                 "{{host}}"
                                             ],
                                             "path": [
-                                                "{{projectKey}}",
+                                                "{{project-key}}",
                                                 "categories",
-                                                "importSinkKey={{importSinkKey}}",
+                                                "importSinkKey={{import-sink-key}}",
                                                 "import-operations",
                                                 "{{id}}"
                                             ],
@@ -927,14 +927,14 @@
                                             }
                                         ],
                                         "url": {
-                                                "raw": "{{host}}/{{projectKey}}/categories/importSinkKey={{importSinkKey}}/import-operations",
+                                            "raw": "{{host}}/{{project-key}}/categories/importSinkKey={{import-sink-key}}/import-operations",
                                             "host": [
                                                 "{{host}}"
                                             ],
                                             "path": [
-                                                "{{projectKey}}",
+                                                "{{project-key}}",
                                                 "categories",
-                                                "importSinkKey={{importSinkKey}}",
+                                                "importSinkKey={{import-sink-key}}",
                                                 "import-operations"
                                             ],
                                             "query": [
@@ -1023,12 +1023,12 @@
                                     }
                                 ],
                                 "url": {
-                                        "raw": "{{host}}/{{projectKey}}/categories/importSinkKey={{import-sink-key}}",
+                                    "raw": "{{host}}/{{project-key}}/categories/importSinkKey={{import-sink-key}}",
                                     "host": [
                                         "{{host}}"
                                     ],
                                     "path": [
-                                        "{{projectKey}}",
+                                        "{{project-key}}",
                                         "categories",
                                         "importSinkKey={{import-sink-key}}"
                                     ],
@@ -1098,15 +1098,15 @@
                                     }
                                 ],
                                 "url": {
-                                        "raw": "{{host}}/{{projectKey}}/prices/importSinkKey={{importSinkKey}}/resourceKey={{resourceKey}}",
+                                    "raw": "{{host}}/{{project-key}}/prices/importSinkKey={{import-sink-key}}/resourceKey={{resource-key}}",
                                     "host": [
                                         "{{host}}"
                                     ],
                                     "path": [
-                                        "{{projectKey}}",
+                                        "{{project-key}}",
                                         "prices",
-                                        "importSinkKey={{importSinkKey}}",
-                                        "resourceKey={{resourceKey}}"
+                                        "importSinkKey={{import-sink-key}}",
+                                        "resourceKey={{resource-key}}"
                                     ],
                                     "query": [
                                     ]
@@ -1172,14 +1172,14 @@
                                             }
                                         ],
                                         "url": {
-                                                "raw": "{{host}}/{{projectKey}}/prices/importSinkKey={{importSinkKey}}/import-operations/{{id}}",
+                                            "raw": "{{host}}/{{project-key}}/prices/importSinkKey={{import-sink-key}}/import-operations/{{id}}",
                                             "host": [
                                                 "{{host}}"
                                             ],
                                             "path": [
-                                                "{{projectKey}}",
+                                                "{{project-key}}",
                                                 "prices",
-                                                "importSinkKey={{importSinkKey}}",
+                                                "importSinkKey={{import-sink-key}}",
                                                 "import-operations",
                                                 "{{id}}"
                                             ],
@@ -1243,14 +1243,14 @@
                                             }
                                         ],
                                         "url": {
-                                                "raw": "{{host}}/{{projectKey}}/prices/importSinkKey={{importSinkKey}}/import-operations",
+                                            "raw": "{{host}}/{{project-key}}/prices/importSinkKey={{import-sink-key}}/import-operations",
                                             "host": [
                                                 "{{host}}"
                                             ],
                                             "path": [
-                                                "{{projectKey}}",
+                                                "{{project-key}}",
                                                 "prices",
-                                                "importSinkKey={{importSinkKey}}",
+                                                "importSinkKey={{import-sink-key}}",
                                                 "import-operations"
                                             ],
                                             "query": [
@@ -1339,12 +1339,12 @@
                                     }
                                 ],
                                 "url": {
-                                        "raw": "{{host}}/{{projectKey}}/prices/importSinkKey={{import-sink-key}}",
+                                    "raw": "{{host}}/{{project-key}}/prices/importSinkKey={{import-sink-key}}",
                                     "host": [
                                         "{{host}}"
                                     ],
                                     "path": [
-                                        "{{projectKey}}",
+                                        "{{project-key}}",
                                         "prices",
                                         "importSinkKey={{import-sink-key}}"
                                     ],
@@ -1414,15 +1414,15 @@
                                     }
                                 ],
                                 "url": {
-                                        "raw": "{{host}}/{{projectKey}}/products/importSinkKey={{importSinkKey}}/resourceKey={{resourceKey}}",
+                                    "raw": "{{host}}/{{project-key}}/products/importSinkKey={{import-sink-key}}/resourceKey={{resource-key}}",
                                     "host": [
                                         "{{host}}"
                                     ],
                                     "path": [
-                                        "{{projectKey}}",
+                                        "{{project-key}}",
                                         "products",
-                                        "importSinkKey={{importSinkKey}}",
-                                        "resourceKey={{resourceKey}}"
+                                        "importSinkKey={{import-sink-key}}",
+                                        "resourceKey={{resource-key}}"
                                     ],
                                     "query": [
                                     ]
@@ -1488,14 +1488,14 @@
                                             }
                                         ],
                                         "url": {
-                                                "raw": "{{host}}/{{projectKey}}/products/importSinkKey={{importSinkKey}}/import-operations/{{id}}",
+                                            "raw": "{{host}}/{{project-key}}/products/importSinkKey={{import-sink-key}}/import-operations/{{id}}",
                                             "host": [
                                                 "{{host}}"
                                             ],
                                             "path": [
-                                                "{{projectKey}}",
+                                                "{{project-key}}",
                                                 "products",
-                                                "importSinkKey={{importSinkKey}}",
+                                                "importSinkKey={{import-sink-key}}",
                                                 "import-operations",
                                                 "{{id}}"
                                             ],
@@ -1559,14 +1559,14 @@
                                             }
                                         ],
                                         "url": {
-                                                "raw": "{{host}}/{{projectKey}}/products/importSinkKey={{importSinkKey}}/import-operations",
+                                            "raw": "{{host}}/{{project-key}}/products/importSinkKey={{import-sink-key}}/import-operations",
                                             "host": [
                                                 "{{host}}"
                                             ],
                                             "path": [
-                                                "{{projectKey}}",
+                                                "{{project-key}}",
                                                 "products",
-                                                "importSinkKey={{importSinkKey}}",
+                                                "importSinkKey={{import-sink-key}}",
                                                 "import-operations"
                                             ],
                                             "query": [
@@ -1655,12 +1655,12 @@
                                     }
                                 ],
                                 "url": {
-                                        "raw": "{{host}}/{{projectKey}}/products/importSinkKey={{import-sink-key}}",
+                                    "raw": "{{host}}/{{project-key}}/products/importSinkKey={{import-sink-key}}",
                                     "host": [
                                         "{{host}}"
                                     ],
                                     "path": [
-                                        "{{projectKey}}",
+                                        "{{project-key}}",
                                         "products",
                                         "importSinkKey={{import-sink-key}}"
                                     ],
@@ -1730,15 +1730,15 @@
                                     }
                                 ],
                                 "url": {
-                                        "raw": "{{host}}/{{projectKey}}/product-drafts/importSinkKey={{importSinkKey}}/resourceKey={{resourceKey}}",
+                                    "raw": "{{host}}/{{project-key}}/product-drafts/importSinkKey={{import-sink-key}}/resourceKey={{resource-key}}",
                                     "host": [
                                         "{{host}}"
                                     ],
                                     "path": [
-                                        "{{projectKey}}",
+                                        "{{project-key}}",
                                         "product-drafts",
-                                        "importSinkKey={{importSinkKey}}",
-                                        "resourceKey={{resourceKey}}"
+                                        "importSinkKey={{import-sink-key}}",
+                                        "resourceKey={{resource-key}}"
                                     ],
                                     "query": [
                                     ]
@@ -1804,14 +1804,14 @@
                                             }
                                         ],
                                         "url": {
-                                                "raw": "{{host}}/{{projectKey}}/product-drafts/importSinkKey={{importSinkKey}}/import-operations/{{id}}",
+                                            "raw": "{{host}}/{{project-key}}/product-drafts/importSinkKey={{import-sink-key}}/import-operations/{{id}}",
                                             "host": [
                                                 "{{host}}"
                                             ],
                                             "path": [
-                                                "{{projectKey}}",
+                                                "{{project-key}}",
                                                 "product-drafts",
-                                                "importSinkKey={{importSinkKey}}",
+                                                "importSinkKey={{import-sink-key}}",
                                                 "import-operations",
                                                 "{{id}}"
                                             ],
@@ -1875,14 +1875,14 @@
                                             }
                                         ],
                                         "url": {
-                                                "raw": "{{host}}/{{projectKey}}/product-drafts/importSinkKey={{importSinkKey}}/import-operations",
+                                            "raw": "{{host}}/{{project-key}}/product-drafts/importSinkKey={{import-sink-key}}/import-operations",
                                             "host": [
                                                 "{{host}}"
                                             ],
                                             "path": [
-                                                "{{projectKey}}",
+                                                "{{project-key}}",
                                                 "product-drafts",
-                                                "importSinkKey={{importSinkKey}}",
+                                                "importSinkKey={{import-sink-key}}",
                                                 "import-operations"
                                             ],
                                             "query": [
@@ -1971,12 +1971,12 @@
                                     }
                                 ],
                                 "url": {
-                                        "raw": "{{host}}/{{projectKey}}/product-drafts/importSinkKey={{import-sink-key}}",
+                                    "raw": "{{host}}/{{project-key}}/product-drafts/importSinkKey={{import-sink-key}}",
                                     "host": [
                                         "{{host}}"
                                     ],
                                     "path": [
-                                        "{{projectKey}}",
+                                        "{{project-key}}",
                                         "product-drafts",
                                         "importSinkKey={{import-sink-key}}"
                                     ],
@@ -2046,15 +2046,15 @@
                                     }
                                 ],
                                 "url": {
-                                        "raw": "{{host}}/{{projectKey}}/product-types/importSinkKey={{importSinkKey}}/resourceKey={{resourceKey}}",
+                                    "raw": "{{host}}/{{project-key}}/product-types/importSinkKey={{import-sink-key}}/resourceKey={{resource-key}}",
                                     "host": [
                                         "{{host}}"
                                     ],
                                     "path": [
-                                        "{{projectKey}}",
+                                        "{{project-key}}",
                                         "product-types",
-                                        "importSinkKey={{importSinkKey}}",
-                                        "resourceKey={{resourceKey}}"
+                                        "importSinkKey={{import-sink-key}}",
+                                        "resourceKey={{resource-key}}"
                                     ],
                                     "query": [
                                     ]
@@ -2120,14 +2120,14 @@
                                             }
                                         ],
                                         "url": {
-                                                "raw": "{{host}}/{{projectKey}}/product-types/importSinkKey={{importSinkKey}}/import-operations/{{id}}",
+                                            "raw": "{{host}}/{{project-key}}/product-types/importSinkKey={{import-sink-key}}/import-operations/{{id}}",
                                             "host": [
                                                 "{{host}}"
                                             ],
                                             "path": [
-                                                "{{projectKey}}",
+                                                "{{project-key}}",
                                                 "product-types",
-                                                "importSinkKey={{importSinkKey}}",
+                                                "importSinkKey={{import-sink-key}}",
                                                 "import-operations",
                                                 "{{id}}"
                                             ],
@@ -2191,14 +2191,14 @@
                                             }
                                         ],
                                         "url": {
-                                                "raw": "{{host}}/{{projectKey}}/product-types/importSinkKey={{importSinkKey}}/import-operations",
+                                            "raw": "{{host}}/{{project-key}}/product-types/importSinkKey={{import-sink-key}}/import-operations",
                                             "host": [
                                                 "{{host}}"
                                             ],
                                             "path": [
-                                                "{{projectKey}}",
+                                                "{{project-key}}",
                                                 "product-types",
-                                                "importSinkKey={{importSinkKey}}",
+                                                "importSinkKey={{import-sink-key}}",
                                                 "import-operations"
                                             ],
                                             "query": [
@@ -2287,12 +2287,12 @@
                                     }
                                 ],
                                 "url": {
-                                        "raw": "{{host}}/{{projectKey}}/product-types/importSinkKey={{import-sink-key}}",
+                                    "raw": "{{host}}/{{project-key}}/product-types/importSinkKey={{import-sink-key}}",
                                     "host": [
                                         "{{host}}"
                                     ],
                                     "path": [
-                                        "{{projectKey}}",
+                                        "{{project-key}}",
                                         "product-types",
                                         "importSinkKey={{import-sink-key}}"
                                     ],
@@ -2362,15 +2362,15 @@
                                     }
                                 ],
                                 "url": {
-                                        "raw": "{{host}}/{{projectKey}}/product-variants/importSinkKey={{importSinkKey}}/resourceKey={{resourceKey}}",
+                                    "raw": "{{host}}/{{project-key}}/product-variants/importSinkKey={{import-sink-key}}/resourceKey={{resource-key}}",
                                     "host": [
                                         "{{host}}"
                                     ],
                                     "path": [
-                                        "{{projectKey}}",
+                                        "{{project-key}}",
                                         "product-variants",
-                                        "importSinkKey={{importSinkKey}}",
-                                        "resourceKey={{resourceKey}}"
+                                        "importSinkKey={{import-sink-key}}",
+                                        "resourceKey={{resource-key}}"
                                     ],
                                     "query": [
                                     ]
@@ -2436,14 +2436,14 @@
                                             }
                                         ],
                                         "url": {
-                                                "raw": "{{host}}/{{projectKey}}/product-variants/importSinkKey={{importSinkKey}}/import-operations/{{id}}",
+                                            "raw": "{{host}}/{{project-key}}/product-variants/importSinkKey={{import-sink-key}}/import-operations/{{id}}",
                                             "host": [
                                                 "{{host}}"
                                             ],
                                             "path": [
-                                                "{{projectKey}}",
+                                                "{{project-key}}",
                                                 "product-variants",
-                                                "importSinkKey={{importSinkKey}}",
+                                                "importSinkKey={{import-sink-key}}",
                                                 "import-operations",
                                                 "{{id}}"
                                             ],
@@ -2507,14 +2507,14 @@
                                             }
                                         ],
                                         "url": {
-                                                "raw": "{{host}}/{{projectKey}}/product-variants/importSinkKey={{importSinkKey}}/import-operations",
+                                            "raw": "{{host}}/{{project-key}}/product-variants/importSinkKey={{import-sink-key}}/import-operations",
                                             "host": [
                                                 "{{host}}"
                                             ],
                                             "path": [
-                                                "{{projectKey}}",
+                                                "{{project-key}}",
                                                 "product-variants",
-                                                "importSinkKey={{importSinkKey}}",
+                                                "importSinkKey={{import-sink-key}}",
                                                 "import-operations"
                                             ],
                                             "query": [
@@ -2603,12 +2603,12 @@
                                     }
                                 ],
                                 "url": {
-                                        "raw": "{{host}}/{{projectKey}}/product-variants/importSinkKey={{import-sink-key}}",
+                                    "raw": "{{host}}/{{project-key}}/product-variants/importSinkKey={{import-sink-key}}",
                                     "host": [
                                         "{{host}}"
                                     ],
                                     "path": [
-                                        "{{projectKey}}",
+                                        "{{project-key}}",
                                         "product-variants",
                                         "importSinkKey={{import-sink-key}}"
                                     ],
@@ -2682,14 +2682,14 @@
                                             }
                                         ],
                                         "url": {
-                                                "raw": "{{host}}/{{projectKey}}/product-variant-patches/importSinkKey={{importSinkKey}}/import-operations/{{id}}",
+                                            "raw": "{{host}}/{{project-key}}/product-variant-patches/importSinkKey={{import-sink-key}}/import-operations/{{id}}",
                                             "host": [
                                                 "{{host}}"
                                             ],
                                             "path": [
-                                                "{{projectKey}}",
+                                                "{{project-key}}",
                                                 "product-variant-patches",
-                                                "importSinkKey={{importSinkKey}}",
+                                                "importSinkKey={{import-sink-key}}",
                                                 "import-operations",
                                                 "{{id}}"
                                             ],
@@ -2753,14 +2753,14 @@
                                             }
                                         ],
                                         "url": {
-                                                "raw": "{{host}}/{{projectKey}}/product-variant-patches/importSinkKey={{importSinkKey}}/import-operations",
+                                            "raw": "{{host}}/{{project-key}}/product-variant-patches/importSinkKey={{import-sink-key}}/import-operations",
                                             "host": [
                                                 "{{host}}"
                                             ],
                                             "path": [
-                                                "{{projectKey}}",
+                                                "{{project-key}}",
                                                 "product-variant-patches",
-                                                "importSinkKey={{importSinkKey}}",
+                                                "importSinkKey={{import-sink-key}}",
                                                 "import-operations"
                                             ],
                                             "query": [
@@ -2849,12 +2849,12 @@
                                     }
                                 ],
                                 "url": {
-                                        "raw": "{{host}}/{{projectKey}}/product-variant-patches/importSinkKey={{import-sink-key}}",
+                                    "raw": "{{host}}/{{project-key}}/product-variant-patches/importSinkKey={{import-sink-key}}",
                                     "host": [
                                         "{{host}}"
                                     ],
                                     "path": [
-                                        "{{projectKey}}",
+                                        "{{project-key}}",
                                         "product-variant-patches",
                                         "importSinkKey={{import-sink-key}}"
                                     ],
