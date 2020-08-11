@@ -10,3 +10,4 @@ for a complete and approved documentation of the commercetools platform API.
 ## Postman collections 
 
 * [API](api/)
+* [Import](import/)
