@@ -2870,6 +2870,252 @@
                             "response": []
                         }
                     ]
+                },
+                {
+                    "name": "Orders",
+                    "description": "null",
+                    "item": [
+                        {
+                            "name": "Import-operations",
+                            "description": "null",
+                            "item": [
+                                {
+                                    "name": "Get import-operation",
+                                    "event": [
+                                        {
+                                            "listen": "test",
+                                            "script": {
+                                                "type": "text/javascript",
+                                                "exec": [
+                                                    "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                                    "var data = JSON.parse(responseBody);",
+                                                    "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                                    "    pm.environment.set(\"import-operation-id\", data.results[0].id); ",
+                                                    "    pm.environment.set(\"import-operation-version\", data.results[0].version);",
+                                                    "}",
+                                                    "if(data.results && data.results[0] && data.results[0].key){",
+                                                    "    pm.environment.set(\"import-operation-key\", data.results[0].key); ",
+                                                    "}",
+                                                    "if(data.version){",
+                                                    "    pm.environment.set(\"import-operation-version\", data.version);",
+                                                    "}",
+                                                    "if(data.id){",
+                                                    "    pm.environment.set(\"import-operation-id\", data.id); ",
+                                                    "}",
+                                                    "if(data.key){",
+                                                    "    pm.environment.set(\"import-operation-key\", data.key);",
+                                                    "}",
+                                                    ""
+                                                ]
+                                            }
+                                        }
+                                    ],
+                                    "request": {
+                                        "auth":
+                                            {
+                                                "type": "oauth2",
+                                                "oauth2": {
+                                                    "accessToken": "{{ctp_access_token}}",
+                                                    "addTokenTo": "header",
+                                                    "tokenType": "Bearer"
+                                                }
+                                            },
+                                        "method": "get",
+                                        "header": [
+                                            {
+                                                "key": "Content-Type",
+                                                "value": "application/json"
+                                            }
+                                        ],
+                                        "url": {
+                                            "raw": "{{host}}/{{project-key}}/orders/importSinkKey={{import-sink-key}}/import-operations/{{id}}",
+                                            "host": [
+                                                "{{host}}"
+                                            ],
+                                            "path": [
+                                                "{{project-key}}",
+                                                "orders",
+                                                "importSinkKey={{import-sink-key}}",
+                                                "import-operations",
+                                                "{{id}}"
+                                            ],
+                                            "query": [
+                                            ]
+                                        },
+                                        "description": "Retrieves the import operation with the given id.\n",
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": ""
+                                        }
+                                    },
+                                    "response": []
+                                },
+                                {
+                                    "name": "Query import-operations",
+                                    "event": [
+                                        {
+                                            "listen": "test",
+                                            "script": {
+                                                "type": "text/javascript",
+                                                "exec": [
+                                                    "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                                    "var data = JSON.parse(responseBody);",
+                                                    "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                                    "    pm.environment.set(\"import-operation-id\", data.results[0].id); ",
+                                                    "    pm.environment.set(\"import-operation-version\", data.results[0].version);",
+                                                    "}",
+                                                    "if(data.results && data.results[0] && data.results[0].key){",
+                                                    "    pm.environment.set(\"import-operation-key\", data.results[0].key); ",
+                                                    "}",
+                                                    "if(data.version){",
+                                                    "    pm.environment.set(\"import-operation-version\", data.version);",
+                                                    "}",
+                                                    "if(data.id){",
+                                                    "    pm.environment.set(\"import-operation-id\", data.id); ",
+                                                    "}",
+                                                    "if(data.key){",
+                                                    "    pm.environment.set(\"import-operation-key\", data.key);",
+                                                    "}",
+                                                    ""
+                                                ]
+                                            }
+                                        }
+                                    ],
+                                    "request": {
+                                        "auth":
+                                            {
+                                                "type": "oauth2",
+                                                "oauth2": {
+                                                    "accessToken": "{{ctp_access_token}}",
+                                                    "addTokenTo": "header",
+                                                    "tokenType": "Bearer"
+                                                }
+                                            },
+                                        "method": "get",
+                                        "header": [
+                                            {
+                                                "key": "Content-Type",
+                                                "value": "application/json"
+                                            }
+                                        ],
+                                        "url": {
+                                            "raw": "{{host}}/{{project-key}}/orders/importSinkKey={{import-sink-key}}/import-operations",
+                                            "host": [
+                                                "{{host}}"
+                                            ],
+                                            "path": [
+                                                "{{project-key}}",
+                                                "orders",
+                                                "importSinkKey={{import-sink-key}}",
+                                                "import-operations"
+                                            ],
+                                            "query": [
+                                                {
+                                                    "key": "limit",
+                                                    "value": "",
+                                                    "equals": true,
+                                                    "disabled": true
+                                                },
+                                                {
+                                                    "key": "offset",
+                                                    "value": "",
+                                                    "equals": true,
+                                                    "disabled": true
+                                                },
+                                                {
+                                                    "key": "resourceKey",
+                                                    "value": "",
+                                                    "equals": true,
+                                                    "disabled": true
+                                                },
+                                                {
+                                                    "key": "state",
+                                                    "value": "",
+                                                    "equals": true,
+                                                    "disabled": true
+                                                }
+                                            ]
+                                        },
+                                        "description": "Retrieves all order import operations of an import sink key.",
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": ""
+                                        }
+                                    },
+                                    "response": []
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Import order",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                            "    pm.environment.set(\"order-id\", data.results[0].id); ",
+                                            "    pm.environment.set(\"order-version\", data.results[0].version);",
+                                            "}",
+                                            "if(data.results && data.results[0] && data.results[0].key){",
+                                            "    pm.environment.set(\"order-key\", data.results[0].key); ",
+                                            "}",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"order-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"order-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"order-key\", data.key);",
+                                            "}",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "post",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{project-key}}/orders/importSinkKey={{import-sink-key}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{project-key}}",
+                                        "orders",
+                                        "importSinkKey={{import-sink-key}}"
+                                    ],
+                                    "query": [
+                                    ]
+                                },
+                                "description": "Creates a new import request for an order",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"type\" : \"order\",\n  \"resources\" : [ {\n    \"key\" : \"test-order-number\",\n    \"lineItems\" : [ {\n      \"name\" : {\n        \"en\" : \"abc\"\n      },\n      \"quantity\" : 10,\n      \"price\" : {\n        \"value\" : {\n          \"type\" : \"centPrecision\",\n          \"centAmount\" : 100,\n          \"currencyCode\" : \"EUR\"\n        }\n      },\n      \"supplyChannel\" : {\n        \"typeId\" : \"channel\",\n        \"key\" : \"supplier-channel-key\"\n      },\n      \"variant\" : {\n        \"key\" : \"product-variant-key\",\n        \"typeId\" : \"product-variant\"\n      }\n    } ],\n    \"customLineItems\" : [ {\n      \"name\" : {\n        \"en\" : \"name\"\n      },\n      \"totalPrice\" : {\n        \"type\" : \"centPrecision\",\n        \"centAmount\" : 123,\n        \"currencyCode\" : \"EUR\"\n      },\n      \"state\" : [ {\n        \"quantity\" : 10,\n        \"state\" : {\n          \"key\" : \"state-key\",\n          \"typeId\" : \"state\"\n        }\n      } ],\n      \"money\" : {\n        \"type\" : \"centPrecision\",\n        \"centAmount\" : 123,\n        \"currencyCode\" : \"EUR\"\n      },\n      \"quantity\" : 10,\n      \"slug\" : \"my-slug\",\n      \"taxCategory\" : {\n        \"typeId\" : \"tax-category\",\n        \"key\" : \"tax-category-key\"\n      },\n      \"discountedPricePerQuantity\" : [ {\n        \"value\" : {\n          \"type\" : \"centPrecision\",\n          \"centAmount\" : 123,\n          \"currencyCode\" : \"EUR\"\n        },\n        \"includedDiscounts\" : [ {\n          \"discountedAmount\" : {\n            \"type\" : \"centPrecision\",\n            \"centAmount\" : 123,\n            \"currencyCode\" : \"EUR\"\n          },\n          \"discount\" : {\n            \"typeId\" : \"cart-discount\",\n            \"key\" : \"cart-discount-key\"\n          }\n        } ]\n      } ]\n    } ],\n    \"customerGroup\" : {\n      \"typeId\" : \"customer-group\",\n      \"key\" : \"customer-group-key\"\n    },\n    \"customerEmail\" : \"customer-email@example.com\",\n    \"customer\" : {\n      \"typeId\" : \"customer\",\n      \"key\" : \"myKey\"\n    },\n    \"orderNumber\" : \"test-order-number\",\n    \"totalPrice\" : {\n      \"type\" : \"centPrecision\",\n      \"currencyCode\" : \"EUR\",\n      \"centAmount\" : 4200\n    }\n  } ]\n}"
+                                }
+                            },
+                            "response": []
+                        }
+                    ]
                 }
             ]
         }
