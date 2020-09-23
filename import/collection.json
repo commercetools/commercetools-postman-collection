@@ -1035,7 +1035,7 @@
                                     "query": [
                                     ]
                                 },
-                                "description": "Creates a new import request for a category",
+                                "description": "Creates import request for creating new categories or updating existing ones.",
                                 "body": {
                                     "mode": "raw",
                                     "raw": "{\n  \"type\" : \"category\",\n  \"resources\" : [ {\n    \"key\" : \"greatTestCat\",\n    \"name\" : {\n      \"en\" : \"greatTestCat\"\n    },\n    \"slug\" : {\n      \"en\" : \"great-slug\"\n    }\n  } ]\n}"
@@ -1351,7 +1351,7 @@
                                     "query": [
                                     ]
                                 },
-                                "description": "Creates a new import request for prices",
+                                "description": "Creates import request for creating new prices or updating existing ones.",
                                 "body": {
                                     "mode": "raw",
                                     "raw": "{\n  \"type\" : \"price\",\n  \"resources\" : [ {\n    \"key\" : \"bigPriceKeyTestCat\",\n    \"productVariant\" : {\n      \"typeId\" : \"product-variant\",\n      \"key\" : \"red-t-shirt\"\n    },\n    \"product\" : {\n      \"typeId\" : \"product\",\n      \"key\" : \"t-shirt\"\n    },\n    \"value\" : {\n      \"type\" : \"centPrecision\",\n      \"currencyCode\" : \"EUR\",\n      \"centAmount\" : 300\n    }\n  } ]\n}"
@@ -1667,7 +1667,7 @@
                                     "query": [
                                     ]
                                 },
-                                "description": "Creates a new import request for products",
+                                "description": "Creates import request for creating new products or updating existing ones.",
                                 "body": {
                                     "mode": "raw",
                                     "raw": "{\n  \"type\" : \"product\",\n  \"resources\" : [ {\n    \"typeId\" : \"product\",\n    \"key\" : \"t-shirt\",\n    \"name\" : {\n      \"en\" : \"t-shirt\"\n    },\n    \"productType\" : {\n      \"typeId\" : \"product-type\",\n      \"key\" : \"sample\"\n    },\n    \"slug\" : {\n      \"en\" : \"t-shirt-slug\"\n    },\n    \"metaTitle\" : {\n      \"en\" : \"title\"\n    },\n    \"metaDescription\" : {\n      \"en\" : \"description\"\n    },\n    \"metaKeywords\" : {\n      \"en\" : \"Keywords\"\n    }\n  } ]\n}"
@@ -1983,7 +1983,7 @@
                                     "query": [
                                     ]
                                 },
-                                "description": "Creates a new import request for product drafts\n",
+                                "description": "Creates import request for creating new product drafts or updating existing ones.\n",
                                 "body": {
                                     "mode": "raw",
                                     "raw": "{\n  \"type\" : \"product-draft\",\n  \"resources\" : [ {\n    \"key\" : \"product-draft-key\",\n    \"name\" : {\n      \"en\" : \"blue shirt\"\n    },\n    \"slug\" : {\n      \"en\" : \"blue-t-shirt\"\n    },\n    \"productType\" : {\n      \"typeId\" : \"product-type\",\n      \"key\" : \"sample\"\n    },\n    \"masterVariant\" : {\n      \"attributes\" : [ {\n        \"type\" : \"reference\",\n        \"name\" : \"product-ref-attribute\",\n        \"value\" : {\n          \"key\" : \"greatTestCat\",\n          \"typeId\" : \"category\"\n        }\n      } ]\n    }\n  } ]\n}"
@@ -2299,7 +2299,7 @@
                                     "query": [
                                     ]
                                 },
-                                "description": "Creates a new import request for product types",
+                                "description": "Creates import request for creating new product types or updating existing ones.",
                                 "body": {
                                     "mode": "raw",
                                     "raw": "{\n  \"type\" : \"product-type\",\n  \"resources\" : [ {\n    \"key\" : \"sample\",\n    \"name\" : \"test_product_type\",\n    \"description\" : \"Test product type.\",\n    \"attributes\" : [ {\n      \"name\" : \"product-ref-attribute\",\n      \"label\" : {\n        \"en\" : \"selling product\"\n      },\n      \"isRequired\" : false,\n      \"isSearchable\" : false,\n      \"type\" : {\n        \"name\" : \"reference\",\n        \"referenceTypeId\" : \"category\"\n      }\n    } ]\n  } ]\n}"
@@ -2615,7 +2615,7 @@
                                     "query": [
                                     ]
                                 },
-                                "description": "Creates a new import request for product variants",
+                                "description": "Creates import request for creating new product variants or updating existing ones.",
                                 "body": {
                                     "mode": "raw",
                                     "raw": "{\n  \"type\" : \"product-variant\",\n  \"resources\" : [ {\n    \"typeId\" : \"product-variant\",\n    \"key\" : \"red-t-shirt\",\n    \"sku\" : \"red-t-shirt\",\n    \"product\" : {\n      \"key\" : \"t-shirt\",\n      \"typeId\" : \"product\"\n    },\n    \"isMasterVariant\" : true,\n    \"attributes\" : [ {\n      \"name\" : \"new\",\n      \"type\" : \"boolean\",\n      \"value\" : true\n    }, {\n      \"name\" : \"weight\",\n      \"type\" : \"number\",\n      \"value\" : 12.5\n    } ],\n    \"assets\" : [ {\n      \"id\" : \"uuid-kafar7545792sd6r\",\n      \"key\" : \"uuid-kafar7545792sd6r\",\n      \"sources\" : [ {\n        \"uri\" : \"http:\/\/www.example.com\"\n      } ],\n      \"name\" : {\n        \"en\" : \"asset name\"\n      }\n    } ],\n    \"images\" : [ {\n      \"url\" : \"https:\/\/www.commercetools.com\/cli\/data\/253234387_1.jpg\",\n      \"dimensions\" : {\n        \"w\" : 1400,\n        \"h\" : 1400\n      },\n      \"label\" : \"tank top image Font\"\n    } ]\n  } ]\n}"
@@ -3107,7 +3107,7 @@
                                     "query": [
                                     ]
                                 },
-                                "description": "Creates a new import request for an order",
+                                "description": "Creates import request for creating new orders or updating existing ones.",
                                 "body": {
                                     "mode": "raw",
                                     "raw": "{\n  \"type\" : \"order\",\n  \"resources\" : [ {\n    \"key\" : \"test-order-number\",\n    \"lineItems\" : [ {\n      \"name\" : {\n        \"en\" : \"abc\"\n      },\n      \"quantity\" : 10,\n      \"price\" : {\n        \"value\" : {\n          \"type\" : \"centPrecision\",\n          \"centAmount\" : 100,\n          \"currencyCode\" : \"EUR\"\n        }\n      },\n      \"supplyChannel\" : {\n        \"typeId\" : \"channel\",\n        \"key\" : \"supplier-channel-key\"\n      },\n      \"variant\" : {\n        \"key\" : \"product-variant-key\",\n        \"typeId\" : \"product-variant\"\n      }\n    } ],\n    \"customLineItems\" : [ {\n      \"name\" : {\n        \"en\" : \"name\"\n      },\n      \"totalPrice\" : {\n        \"type\" : \"centPrecision\",\n        \"centAmount\" : 123,\n        \"currencyCode\" : \"EUR\"\n      },\n      \"state\" : [ {\n        \"quantity\" : 10,\n        \"state\" : {\n          \"key\" : \"state-key\",\n          \"typeId\" : \"state\"\n        }\n      } ],\n      \"money\" : {\n        \"type\" : \"centPrecision\",\n        \"centAmount\" : 123,\n        \"currencyCode\" : \"EUR\"\n      },\n      \"quantity\" : 10,\n      \"slug\" : \"my-slug\",\n      \"taxCategory\" : {\n        \"typeId\" : \"tax-category\",\n        \"key\" : \"tax-category-key\"\n      },\n      \"discountedPricePerQuantity\" : [ {\n        \"value\" : {\n          \"type\" : \"centPrecision\",\n          \"centAmount\" : 123,\n          \"currencyCode\" : \"EUR\"\n        },\n        \"includedDiscounts\" : [ {\n          \"discountedAmount\" : {\n            \"type\" : \"centPrecision\",\n            \"centAmount\" : 123,\n            \"currencyCode\" : \"EUR\"\n          },\n          \"discount\" : {\n            \"typeId\" : \"cart-discount\",\n            \"key\" : \"cart-discount-key\"\n          }\n        } ]\n      } ]\n    } ],\n    \"customerGroup\" : {\n      \"typeId\" : \"customer-group\",\n      \"key\" : \"customer-group-key\"\n    },\n    \"customerEmail\" : \"customer-email@example.com\",\n    \"customer\" : {\n      \"typeId\" : \"customer\",\n      \"key\" : \"myKey\"\n    },\n    \"orderNumber\" : \"test-order-number\",\n    \"totalPrice\" : {\n      \"type\" : \"centPrecision\",\n      \"currencyCode\" : \"EUR\",\n      \"centAmount\" : 4200\n    }\n  } ]\n}"
@@ -3423,7 +3423,7 @@
                                     "query": [
                                     ]
                                 },
-                                "description": "Creates a new import request for a customer",
+                                "description": "Creates import request for creating new customers or updating existing ones.",
                                 "body": {
                                     "mode": "raw",
                                     "raw": "{\n  \"type\" : \"customer\",\n  \"resources\" : [ {\n    \"key\" : \"keycustomertest\",\n    \"firstName\" : \"Alice\",\n    \"lastName\" : \"Doe\",\n    \"email\" : \"alice@example.org\",\n    \"password\" : \"secret\"\n  } ]\n}"
