@@ -2906,7 +2906,7 @@
                                 "description": "Creates a new import request for product variant patches",
                                 "body": {
                                     "mode": "raw",
-                                    "raw": "{\n  \"type\" : \"product-variant-patch\",\n  \"patches\" : [ {\n    \"productVariant\" : {\n      \"typeId\" : \"product-variant\",\n      \"key\" : \"red-t-shirt\"\n    },\n    \"attributes\" : {\n      \"new\" : {\n        \"type\" : \"boolean\",\n        \"value\" : false\n      },\n      \"weight\" : \"null\"\n    }\n  } ]\n}"
+                                    "raw": "{\n  \"type\" : \"product-variant-patch\",\n  \"patches\" : [ {\n    \"productVariant\" : {\n      \"typeId\" : \"product-variant\",\n      \"key\" : \"red-t-shirt\"\n    },\n    \"attributes\" : {\n      \"updated\" : {\n        \"type\" : \"boolean\",\n        \"value\" : true\n      },\n      \"new\" : {\n        \"type\" : \"boolean\",\n        \"value\" : false\n      },\n      \"deleted\" : \"null\"\n    }\n  } ]\n}"
                                 }
                             },
                             "response": []
