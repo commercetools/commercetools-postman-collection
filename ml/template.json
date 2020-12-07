@@ -1,0 +1,36 @@
+{
+  "id": "5bb74f05-5e78-4aee-b59e-492c947bc160",
+  "name": "Commercetools Machine Learning API.template",
+  "values": [
+    {
+      "enabled": true,
+      "key": "host",
+      "value": "https://ml-eu.europe-west1.gcp.commercetools.com",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "auth_url",
+      "value": "https://auth.sphere.io",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "client_id",
+      "value": "<your-client-id>",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "client_secret",
+      "value": "<your-client-secret>",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "ctp_access_token",
+      "value": "<your_access_token>",
+      "type": "text"
+    }
+  ]
+}
