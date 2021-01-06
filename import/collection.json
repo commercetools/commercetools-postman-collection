@@ -634,13 +634,13 @@
                                             "key": "limit",
                                             "value": "",
                                             "equals": true,
-                                            "disabled": false
+                                            "disabled": true
                                         },
                                         {
                                             "key": "offset",
                                             "value": "",
                                             "equals": true,
-                                            "disabled": false
+                                            "disabled": true
                                         }
                                     ]
                                 },
