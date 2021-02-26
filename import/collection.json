@@ -1982,7 +1982,7 @@
                                 "description": "Creates import request for creating new product types or updating existing ones.",
                                 "body": {
                                     "mode": "raw",
-                                    "raw": "{\n  \"type\" : \"product-type\",\n  \"resources\" : [ {\n    \"key\" : \"sample\",\n    \"name\" : \"test_product_type\",\n    \"description\" : \"Test product type.\",\n    \"attributes\" : [ {\n      \"name\" : \"product-ref-attribute\",\n      \"label\" : {\n        \"en\" : \"selling product\"\n      },\n      \"isRequired\" : false,\n      \"isSearchable\" : false,\n      \"type\" : {\n        \"name\" : \"reference\",\n        \"referenceTypeId\" : \"category\"\n      }\n    } ]\n  } ]\n}"
+                                    "raw": "{\n  \"type\" : \"product-type\",\n  \"resources\" : [ {\n    \"key\" : \"sample\",\n    \"name\" : \"test_product_type\",\n    \"description\" : \"Test product type.\",\n    \"attributes\" : [ {\n      \"name\" : \"product-ref-attribute\",\n      \"label\" : {\n        \"en\" : \"selling product\"\n      },\n      \"isRequired\" : false,\n      \"isSearchable\" : false,\n      \"type\" : {\n        \"name\" : \"reference\",\n        \"referenceTypeId\" : \"category\"\n      },\n      \"attributeConstraint\" : \"Unique\",\n      \"inputTip\" : {\n        \"en\" : \"product input tip\"\n      },\n      \"inputHint\" : \"SingleLine\"\n    } ]\n  } ]\n}"
                                 }
                             },
                             "response": []
