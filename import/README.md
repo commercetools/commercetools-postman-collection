@@ -18,7 +18,7 @@ Use this collection only for development purposes and non-production projects.**
 To use this collection in Postman please perform the following steps:
 
 1. Download and install the Postman Client
-2. Import the [collection.json](https://github.com/commercetools/commercetools-postman-api-examples/raw/master/collection.json) and [template.json](https://github.com/commercetools/commercetools-postman-api-examples/raw/master/template.json) in your postman application
+2. Import the [collection.json](collection.json) and [template.json](template.json) in your postman application
 3. In the Merchant Center, create a new API Client and fill in the client credentials in your environment
 4. Obtain an access token by sending the "Authorization/Obtain access token" request at the bottom of the request list. Now you can use all other endpoints
 
