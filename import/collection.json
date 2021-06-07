@@ -2746,6 +2746,258 @@
                     ]
                 },
                 {
+                    "name": "Order-patches",
+                    "description": "null",
+                    "item": [
+                        {
+                            "name": "Import-operations",
+                            "description": "null",
+                            "item": [
+                                {
+                                    "name": "Get import-operation",
+                                    "event": [
+                                        {
+                                            "listen": "test",
+                                            "script": {
+                                                "type": "text/javascript",
+                                                "exec": [
+                                                    "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                                    "var data = JSON.parse(responseBody);",
+                                                    "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                                    "    pm.environment.set(\"import-operation-id\", data.results[0].id); ",
+                                                    "    pm.environment.set(\"import-operation-version\", data.results[0].version);",
+                                                    "}",
+                                                    "if(data.results && data.results[0] && data.results[0].key){",
+                                                    "    pm.environment.set(\"import-operation-key\", data.results[0].key); ",
+                                                    "}",
+                                                    "if(data.version){",
+                                                    "    pm.environment.set(\"import-operation-version\", data.version);",
+                                                    "}",
+                                                    "if(data.id){",
+                                                    "    pm.environment.set(\"import-operation-id\", data.id); ",
+                                                    "}",
+                                                    "if(data.key){",
+                                                    "    pm.environment.set(\"import-operation-key\", data.key);",
+                                                    "}",
+                                                    ""
+                                                ]
+                                            }
+                                        }
+                                    ],
+                                    "request": {
+                                        "auth":
+                                            {
+                                                "type": "oauth2",
+                                                "oauth2": {
+                                                    "accessToken": "{{ctp_access_token}}",
+                                                    "addTokenTo": "header",
+                                                    "tokenType": "Bearer"
+                                                }
+                                            },
+                                        "method": "get",
+                                        "header": [
+                                            {
+                                                "key": "Content-Type",
+                                                "value": "application/json"
+                                            }
+                                        ],
+                                        "url": {
+                                            "raw": "{{host}}/{{project-key}}/order-patches/importSinkKey={{import-sink-key}}/import-operations/{{id}}",
+                                            "host": [
+                                                "{{host}}"
+                                            ],
+                                            "path": [
+                                                "{{project-key}}",
+                                                "order-patches",
+                                                "importSinkKey={{import-sink-key}}",
+                                                "import-operations",
+                                                "{{id}}"
+                                            ],
+                                            "query": [
+                                            ]
+                                        },
+                                        "description": "Retrieves the import operation with the given id.\n",
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": ""
+                                        }
+                                    },
+                                    "response": []
+                                },
+                                {
+                                    "name": "Query import-operations",
+                                    "event": [
+                                        {
+                                            "listen": "test",
+                                            "script": {
+                                                "type": "text/javascript",
+                                                "exec": [
+                                                    "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                                    "var data = JSON.parse(responseBody);",
+                                                    "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                                    "    pm.environment.set(\"import-operation-id\", data.results[0].id); ",
+                                                    "    pm.environment.set(\"import-operation-version\", data.results[0].version);",
+                                                    "}",
+                                                    "if(data.results && data.results[0] && data.results[0].key){",
+                                                    "    pm.environment.set(\"import-operation-key\", data.results[0].key); ",
+                                                    "}",
+                                                    "if(data.version){",
+                                                    "    pm.environment.set(\"import-operation-version\", data.version);",
+                                                    "}",
+                                                    "if(data.id){",
+                                                    "    pm.environment.set(\"import-operation-id\", data.id); ",
+                                                    "}",
+                                                    "if(data.key){",
+                                                    "    pm.environment.set(\"import-operation-key\", data.key);",
+                                                    "}",
+                                                    ""
+                                                ]
+                                            }
+                                        }
+                                    ],
+                                    "request": {
+                                        "auth":
+                                            {
+                                                "type": "oauth2",
+                                                "oauth2": {
+                                                    "accessToken": "{{ctp_access_token}}",
+                                                    "addTokenTo": "header",
+                                                    "tokenType": "Bearer"
+                                                }
+                                            },
+                                        "method": "get",
+                                        "header": [
+                                            {
+                                                "key": "Content-Type",
+                                                "value": "application/json"
+                                            }
+                                        ],
+                                        "url": {
+                                            "raw": "{{host}}/{{project-key}}/order-patches/importSinkKey={{import-sink-key}}/import-operations",
+                                            "host": [
+                                                "{{host}}"
+                                            ],
+                                            "path": [
+                                                "{{project-key}}",
+                                                "order-patches",
+                                                "importSinkKey={{import-sink-key}}",
+                                                "import-operations"
+                                            ],
+                                            "query": [
+                                                {
+                                                    "key": "limit",
+                                                    "value": "",
+                                                    "equals": true,
+                                                    "disabled": true
+                                                },
+                                                {
+                                                    "key": "offset",
+                                                    "value": "",
+                                                    "equals": true,
+                                                    "disabled": true
+                                                },
+                                                {
+                                                    "key": "sort",
+                                                    "value": "",
+                                                    "equals": true,
+                                                    "disabled": true
+                                                },
+                                                {
+                                                    "key": "resourceKey",
+                                                    "value": "",
+                                                    "equals": true,
+                                                    "disabled": true
+                                                },
+                                                {
+                                                    "key": "state",
+                                                    "value": "",
+                                                    "equals": true,
+                                                    "disabled": true
+                                                }
+                                            ]
+                                        },
+                                        "description": "Retrieves all order-patches import operations of an import sink key.",
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": ""
+                                        }
+                                    },
+                                    "response": []
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Import order-patch",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                            "    pm.environment.set(\"order-patch-id\", data.results[0].id); ",
+                                            "    pm.environment.set(\"order-patch-version\", data.results[0].version);",
+                                            "}",
+                                            "if(data.results && data.results[0] && data.results[0].key){",
+                                            "    pm.environment.set(\"order-patch-key\", data.results[0].key); ",
+                                            "}",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"order-patch-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"order-patch-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"order-patch-key\", data.key);",
+                                            "}",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "post",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{project-key}}/order-patches/importSinkKey={{import-sink-key}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{project-key}}",
+                                        "order-patches",
+                                        "importSinkKey={{import-sink-key}}"
+                                    ],
+                                    "query": [
+                                    ]
+                                },
+                                "description": "Creates a new import request for order patches",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"type\" : \"order-patch\",\n  \"patches\" : [ {\n    \"orderNumber\" : \"12345\",\n    \"fields\" : {\n      \"addReturnInfo\" : {\n        \"items\" : [ {\n          \"id\" : \"1\",\n          \"type\" : \"LineItemReturnItem\",\n          \"quantity\" : 1,\n          \"lineItemId\" : \"1\",\n          \"comment\" : \"any comment\",\n          \"shipmentState\" : \"Advised\",\n          \"paymentState\" : \"Initial\",\n          \"lastModifiedAt\" : \"2021-04-29T09:21:15.003Z\",\n          \"createdAt\" : \"2021-04-01T09:21:15.003Z\"\n        } ],\n        \"returnTrackingId\" : \"returnTrackingId-example\",\n        \"returnDate\" : \"2021-04-30T09:21:15.003Z\"\n      },\n      \"addDeliveries\" : [ {\n        \"items\" : [ {\n          \"id\" : \"4ce24c27-cce5-447c-890e-0d6b70b690be\",\n          \"quantity\" : 5\n        } ],\n        \"parcels\" : [ {\n          \"measurements\" : {\n            \"heightInMillimeter\" : 20,\n            \"lengthInMillimeter\" : 40,\n            \"widthInMillimeter\" : 5,\n            \"weightInGram\" : 10\n          }\n        } ]\n      } ],\n      \"removeDelivery\" : {\n        \"id\" : \"95a6e7a7-b74e-4397-b0b4-37473d2e3573\"\n      },\n      \"removeParcelFromDelivery\" : {\n        \"parcelId\" : \"98840afa-ac20-4a34-a904-88d3407e2d76\"\n      },\n      \"addParcelToDelivery\" : {\n        \"deliveryId\" : \"95a6e7a7-b74e-4397-b0b4-37473d2e3573\",\n        \"measurements\" : {\n          \"heightInMillimeter\" : 20,\n          \"lengthInMillimeter\" : 40,\n          \"widthInMillimeter\" : 5,\n          \"weightInGram\" : 10\n        }\n      },\n      \"setParcelMeasurements\" : {\n        \"parcelId\" : \"98840afa-ac20-4a34-a904-88d3407e2d76\",\n        \"measurements\" : {\n          \"heightInMillimeter\" : 20,\n          \"lengthInMillimeter\" : 40,\n          \"widthInMillimeter\" : 5,\n          \"weightInGram\" : 10\n        }\n      },\n      \"setParcelTrackingData\" : {\n        \"parcelId\" : \"98840afa-ac20-4a34-a904-88d3407e2d76\",\n        \"trackingData\" : {\n          \"carrier\" : \"carrier data\"\n        }\n      },\n      \"setParcelItems\" : [ {\n        \"parcelId\" : \"98840afa-ac20-4a34-a904-88d3407e2d76\",\n        \"items\" : [ {\n          \"id\" : \"4ce24c27-cce5-447c-890e-0d6b70b690be\",\n          \"quantity\" : 5\n        } ]\n      } ]\n    }\n  } ]\n}"
+                                }
+                            },
+                            "response": []
+                        }
+                    ]
+                },
+                {
                     "name": "Customers",
                     "description": "null",
                     "item": [
