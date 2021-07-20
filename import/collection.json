@@ -361,7 +361,7 @@
                                 "description": "Updates the import sink given by the key.",
                                 "body": {
                                     "mode": "raw",
-                                    "raw": "{\n  \"key\" : \"product-import-sink\",\n  \"version\" : 1\n}"
+                                    "raw": "{\n  \"key\" : \"my-import-sink\",\n  \"version\" : 1\n}"
                                 }
                             },
                             "response": []
@@ -567,7 +567,7 @@
                                 "description": "Creates a new import sink.",
                                 "body": {
                                     "mode": "raw",
-                                    "raw": "{\n  \"key\" : \"product-import-sink\",\n  \"version\" : 1\n}"
+                                    "raw": "{\n  \"key\" : \"my-import-sink\"\n}"
                                 }
                             },
                             "response": []
