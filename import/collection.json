@@ -903,6 +903,12 @@
                                                     "value": "",
                                                     "equals": true,
                                                     "disabled": true
+                                                },
+                                                {
+                                                    "key": "debug",
+                                                    "value": "",
+                                                    "equals": true,
+                                                    "disabled": true
                                                 }
                                             ]
                                         },
@@ -1152,6 +1158,12 @@
                                                 },
                                                 {
                                                     "key": "state",
+                                                    "value": "",
+                                                    "equals": true,
+                                                    "disabled": true
+                                                },
+                                                {
+                                                    "key": "debug",
                                                     "value": "",
                                                     "equals": true,
                                                     "disabled": true
@@ -1407,6 +1419,12 @@
                                                     "value": "",
                                                     "equals": true,
                                                     "disabled": true
+                                                },
+                                                {
+                                                    "key": "debug",
+                                                    "value": "",
+                                                    "equals": true,
+                                                    "disabled": true
                                                 }
                                             ]
                                         },
@@ -1656,6 +1674,12 @@
                                                 },
                                                 {
                                                     "key": "state",
+                                                    "value": "",
+                                                    "equals": true,
+                                                    "disabled": true
+                                                },
+                                                {
+                                                    "key": "debug",
                                                     "value": "",
                                                     "equals": true,
                                                     "disabled": true
@@ -1911,6 +1935,12 @@
                                                     "value": "",
                                                     "equals": true,
                                                     "disabled": true
+                                                },
+                                                {
+                                                    "key": "debug",
+                                                    "value": "",
+                                                    "equals": true,
+                                                    "disabled": true
                                                 }
                                             ]
                                         },
@@ -2160,6 +2190,12 @@
                                                 },
                                                 {
                                                     "key": "state",
+                                                    "value": "",
+                                                    "equals": true,
+                                                    "disabled": true
+                                                },
+                                                {
+                                                    "key": "debug",
                                                     "value": "",
                                                     "equals": true,
                                                     "disabled": true
@@ -2415,6 +2451,12 @@
                                                     "value": "",
                                                     "equals": true,
                                                     "disabled": true
+                                                },
+                                                {
+                                                    "key": "debug",
+                                                    "value": "",
+                                                    "equals": true,
+                                                    "disabled": true
                                                 }
                                             ]
                                         },
@@ -2664,6 +2706,12 @@
                                                 },
                                                 {
                                                     "key": "state",
+                                                    "value": "",
+                                                    "equals": true,
+                                                    "disabled": true
+                                                },
+                                                {
+                                                    "key": "debug",
                                                     "value": "",
                                                     "equals": true,
                                                     "disabled": true
@@ -2919,6 +2967,12 @@
                                                     "value": "",
                                                     "equals": true,
                                                     "disabled": true
+                                                },
+                                                {
+                                                    "key": "debug",
+                                                    "value": "",
+                                                    "equals": true,
+                                                    "disabled": true
                                                 }
                                             ]
                                         },
@@ -3171,6 +3225,12 @@
                                                     "value": "",
                                                     "equals": true,
                                                     "disabled": true
+                                                },
+                                                {
+                                                    "key": "debug",
+                                                    "value": "",
+                                                    "equals": true,
+                                                    "disabled": true
                                                 }
                                             ]
                                         },
@@ -3420,6 +3480,12 @@
                                                 },
                                                 {
                                                     "key": "state",
+                                                    "value": "",
+                                                    "equals": true,
+                                                    "disabled": true
+                                                },
+                                                {
+                                                    "key": "debug",
                                                     "value": "",
                                                     "equals": true,
                                                     "disabled": true
