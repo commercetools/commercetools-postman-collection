@@ -2428,7 +2428,7 @@
                                         "description": "Creates a request for creating new ProductDrafts or updating existing ones.\n",
                                         "body": {
                                             "mode": "raw",
-                                            "raw": "{\n  \"type\" : \"product-draft\",\n  \"resources\" : [ {\n    \"key\" : \"product-draft-key\",\n    \"name\" : {\n      \"en\" : \"blue shirt\"\n    },\n    \"slug\" : {\n      \"en\" : \"blue-t-shirt\"\n    },\n    \"productType\" : {\n      \"typeId\" : \"product-type\",\n      \"key\" : \"sample\"\n    },\n    \"masterVariant\" : {\n      \"attributes\" : [ {\n        \"type\" : \"reference\",\n        \"name\" : \"product-ref-attribute\",\n        \"value\" : {\n          \"key\" : \"greatTestCat\",\n          \"typeId\" : \"category\"\n        }\n      } ]\n    }\n  } ]\n}"
+                                            "raw": "{\n  \"type\" : \"product-draft\",\n  \"resources\" : [ {\n    \"key\" : \"product-draft-key\",\n    \"name\" : {\n      \"en\" : \"blue shirt\"\n    },\n    \"slug\" : {\n      \"en\" : \"blue-t-shirt\"\n    },\n    \"productType\" : {\n      \"typeId\" : \"product-type\",\n      \"key\" : \"sample\"\n    },\n    \"masterVariant\" : {\n      \"key\" : \"master-variant-key\",\n      \"attributes\" : [ {\n        \"type\" : \"reference\",\n        \"name\" : \"product-ref-attribute\",\n        \"value\" : {\n          \"key\" : \"greatTestCat\",\n          \"typeId\" : \"category\"\n        }\n      } ]\n    }\n  } ]\n}"
                                         }
                                     },
                                     "response": []
@@ -2682,7 +2682,7 @@
                                 "description": "Creates import request for creating new product drafts or updating existing ones.\n",
                                 "body": {
                                     "mode": "raw",
-                                    "raw": "{\n  \"type\" : \"product-draft\",\n  \"resources\" : [ {\n    \"key\" : \"product-draft-key\",\n    \"name\" : {\n      \"en\" : \"blue shirt\"\n    },\n    \"slug\" : {\n      \"en\" : \"blue-t-shirt\"\n    },\n    \"productType\" : {\n      \"typeId\" : \"product-type\",\n      \"key\" : \"sample\"\n    },\n    \"masterVariant\" : {\n      \"attributes\" : [ {\n        \"type\" : \"reference\",\n        \"name\" : \"product-ref-attribute\",\n        \"value\" : {\n          \"key\" : \"greatTestCat\",\n          \"typeId\" : \"category\"\n        }\n      } ]\n    }\n  } ]\n}"
+                                    "raw": "{\n  \"type\" : \"product-draft\",\n  \"resources\" : [ {\n    \"key\" : \"product-draft-key\",\n    \"name\" : {\n      \"en\" : \"blue shirt\"\n    },\n    \"slug\" : {\n      \"en\" : \"blue-t-shirt\"\n    },\n    \"productType\" : {\n      \"typeId\" : \"product-type\",\n      \"key\" : \"sample\"\n    },\n    \"masterVariant\" : {\n      \"key\" : \"master-variant-key\",\n      \"attributes\" : [ {\n        \"type\" : \"reference\",\n        \"name\" : \"product-ref-attribute\",\n        \"value\" : {\n          \"key\" : \"greatTestCat\",\n          \"typeId\" : \"category\"\n        }\n      } ]\n    }\n  } ]\n}"
                                 }
                             },
                             "response": []
