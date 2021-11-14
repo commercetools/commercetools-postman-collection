@@ -2,9 +2,7 @@
 
 This repository contains Postman collections for the commercetools platform.
 
-## Getting Started with commercetools postman collection.
-
-Refer this guide for a detailed [guide on how to get started](GettingStarted.md).
+## [Get Started here](GettingStarted.md) with commercetools postman collection.
 
 ## Disclaimer
 
