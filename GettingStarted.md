@@ -4,7 +4,7 @@
 
 Postman is a tool that helps to use the REST APIs quickly without any development work, You can convert from a variety of API formats into Postman Collections that you can import into the postman app.
 
-## commercetools API collections.
+## commercetools API collections
 
 * [Platform API](api/)
 * [Import](import/)
