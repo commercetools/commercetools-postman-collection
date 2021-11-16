@@ -27,7 +27,7 @@ This will create an empty variable set environment.
 Set the initial values for primary variables.
 * host : The host information can be [found here](https://docs.commercetools.com/api/general-concepts#hosts)
 * auth_url : The Authorization URL can be [found here](https://docs.commercetools.com/api/authorization#requesting-an-access-token-using-commercetools-oauth-20-server)
-* client_id : create it from [here](https://docs.commercetools.com/merchant-center/api-clients#create-an-api-client)
+* client_id : From your API Client. More information can be [found here](https://docs.commercetools.com/merchant-center/api-clients#create-an-api-client)
 * client_secret : same as client_id
 * project_key: your project key
 
