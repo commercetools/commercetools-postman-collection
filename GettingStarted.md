@@ -12,7 +12,7 @@ Postman is an API platform that helps you quickly use REST APIs without requirin
 
 ## Install Postman App
 
-Follow Installation details from here https://www.postman.com/downloads/
+Instructions for installing the Postman app or using the web version can be found at https://www.postman.com/downloads/
 
 ## Setting Up Enviornment
 Each of the root folders [Platform API](api/), [Import](import/)
