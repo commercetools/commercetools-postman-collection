@@ -24,7 +24,7 @@ This will create an empty variable set environment.
 ![image](https://user-images.githubusercontent.com/4946943/141699543-9f626cd3-5dcf-4b8d-94ad-f0045fc15b44.png)
 
 
-set the initial values for primary variables.
+Set the initial values for primary variables.
 * host : find details [here](https://docs.commercetools.com/api/general-concepts#hosts)
 * auth_url : find details [here](https://docs.commercetools.com/api/authorization#requesting-an-access-token-using-commercetools-oauth-20-server)
 * client_id : create it from [here](https://docs.commercetools.com/merchant-center/api-clients#create-an-api-client)
