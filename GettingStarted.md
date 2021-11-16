@@ -16,7 +16,7 @@ Instructions for installing the Postman app or using the web version can be foun
 
 ## Setting Up Enviornment
 Every root folder in [Platform API](api/), [Import](import/)
-, [Machine Learning](ml/) contains template.json, import the template from environment tab
+, [Machine Learning](ml/) contains a template.json file. Import this file from the Environments tab.
 
 ![image](https://user-images.githubusercontent.com/4946943/141699003-e989317e-41dc-42c9-b682-eb97f6c8fe6d.png)
 
