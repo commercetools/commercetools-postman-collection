@@ -15,7 +15,7 @@ Postman is an API platform that helps you quickly use REST APIs without requirin
 Instructions for installing the Postman app or using the web version can be found at https://www.postman.com/downloads/
 
 ## Setting Up Enviornment
-Each of the root folders [Platform API](api/), [Import](import/)
+Every root folder in [Platform API](api/), [Import](import/)
 , [Machine Learning](ml/) contains template.json, import the template from environment tab
 
 ![image](https://user-images.githubusercontent.com/4946943/141699003-e989317e-41dc-42c9-b682-eb97f6c8fe6d.png)
