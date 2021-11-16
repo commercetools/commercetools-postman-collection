@@ -40,7 +40,7 @@ Each of the root folders [Platform API](api/), [Import](import/)
 ![image](https://user-images.githubusercontent.com/4946943/141699715-cbf64f9e-945b-42c1-ae8f-8de0cf892937.png)
 
 You Should be able to see the collection imported and if you expand the collection, there are two primary folders.
-* Authorization  - use "Obtain access token" to obain authentication token.
+* Authorization - Use "Obtain access token" to get an authentication token.
 * Projects - Explore endpoints and its ready to use.
 
  
