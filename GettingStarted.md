@@ -1,4 +1,4 @@
-# Getting started with commercetools Postman Collection.
+# Getting started with the commercetools Postman Collection.
 
 ## What are Postman Collections?
 
