@@ -2,7 +2,7 @@
 
 ## What are Postman Collections?
 
-Postman is a tool that helps to use the REST APIs quickly without any development work, You can convert from a variety of API formats into Postman Collections that you can import into the postman app.
+Postman is an API platform that helps you quickly use REST APIs without requiring any development work. Postman Collections are a group of saved API requests that you can import into the Postman app.
 
 ## commercetools API collections
 
