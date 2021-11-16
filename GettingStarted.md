@@ -41,6 +41,6 @@ Each of the root folders [Platform API](api/), [Import](import/)
 
 You Should be able to see the collection imported and if you expand the collection, there are two primary folders.
 * Authorization - Use "Obtain access token" to get an authentication token.
-* Projects - Explore endpoints and its ready to use.
+* Projects - Explore endpoints and it is ready to use.
 
  
