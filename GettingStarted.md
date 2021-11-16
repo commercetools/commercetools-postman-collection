@@ -35,7 +35,7 @@ set the initial values for primary variables.
 ## Import commercetools Postman collection
 
 Each of the root folders [Platform API](api/), [Import](import/)
-, [Machine Learning](ml/) contains collection.json, use these collections to import into the postman app.
+, [Machine Learning](ml/) contains a collection.json file. Use these files to import into the Postman app.
 
 ![image](https://user-images.githubusercontent.com/4946943/141699715-cbf64f9e-945b-42c1-ae8f-8de0cf892937.png)
 
