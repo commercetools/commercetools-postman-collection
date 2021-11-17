@@ -15,7 +15,7 @@ Key benefits of using Postman collections of commercetools APIs:
 
 ## Disclaimer
 
-This is not the official commercetools platform documentation. To read complete documentation for the commercetools platform, please visit http://docs.commercetools.com/
+To learn more about using commercetools APIs and to find complete platform documentation, please visit https://docs.commercetools.com/
 
 ## Postman collections 
 
