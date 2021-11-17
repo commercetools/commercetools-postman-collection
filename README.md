@@ -13,7 +13,7 @@ Key benefits of using Postman collections of commercetools APIs:
 
 [Get Started here](GettingStarted.md) with commercetools Postman collections.
 
-## Disclaimer
+## Further documentation
 
 To learn more about using commercetools APIs and to find complete platform documentation, please visit https://docs.commercetools.com/
 
