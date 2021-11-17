@@ -2,7 +2,7 @@
 
 This repository contains Postman collections for the commercetools APIs.
 
-## Why use postman collections?
+## Why use Postman collections?
 
 Postman collections help you to explore commercetools APIs in a setup time of minutes rather than days or weeks, you can theoretically run the whole commerce journey from creating products to creating, and eventually buying this product for the newly created customer.
 
