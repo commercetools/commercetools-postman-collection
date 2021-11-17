@@ -6,7 +6,7 @@ This repository contains Postman collections for the commercetools APIs.
 
 Postman collections help you explore commercetools APIs with a setup time of minutes. You can theoretically run the whole commerce journey from creating customers and products, to creating orders where these customers purchase the products.
 
-some key benefits of using Postman collection of commercetools APIs.
+Key benefits of using Postman collections of commercetools APIs:
 * Works with minimum technical knowledge.
 * No coding is required, and can be used as soon as you have created a commercetools project.
 * Easily explore all the API endpoints and achieve a holistic view of how the platform and other services operate.
