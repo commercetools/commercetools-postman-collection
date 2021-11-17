@@ -11,7 +11,7 @@ some key benefits of using Postman collection of commercetools APIs.
 * No coding is required, its ready to be used as soon as you have a trial project with commercetools as minimum requirement.
 * Easier to explore all the API endpoints, and helps you get a holistic view of how platform and other services works.
 
-[Get Started here](GettingStarted.md) with commercetools postman collection.
+[Get Started here](GettingStarted.md) with commercetools Postman collection.
 
 ## Disclaimer
 
