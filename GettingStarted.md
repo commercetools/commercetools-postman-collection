@@ -12,11 +12,15 @@ This guide describes how to import collections into Postman and how to set up th
 This is not the official commercetools documentation.
 To learn more about commercetools APIs and to find the complete and approved documentation, visit [docs.commercetools.com](http://docs.commercetools.com/).
 
-# Install Postman App
+# Setup
+
+The following sections provide instructions for installing Postman, for importing commercetools Postman collections and for setting up an environment.
+
+## Install Postman
 
 Instructions for installing the Postman app or using the web version can be found at [Installing and Updating](https://learning.postman.com/docs/getting-started/installation-and-updates/) in the Postman Learning Center.
 
-# Import commercetools Postman collection
+## Import commercetools Postman collection
 
 Every root folder in [Platform API](api/), [Import](import/) and [Machine Learning](ml/) contains a `collection.json` file.  
 You can import these files into Postman, for details see [Importing data into Postman](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/#importing-data-into-postman) in the Postman documentation.
@@ -26,7 +30,7 @@ After the import, you should be able to see the collection. If you expand the co
 - **Authorization** - Use "Obtain access token" to get an authentication token. This is required for using the endpoints in the **Project** folder.
 - **Project** - Ready to use, explore the endpoints.
 
-# Setting up an environment via commercetools API client
+## Set up an environment via commercetools API client
 
 An environment is a set of variables that you can use in your Postman queries. It can be generated and downloaded from the Merchant Center using the API Client to match your project:
 
@@ -35,14 +39,14 @@ An environment is a set of variables that you can use in your Postman queries. I
 1. Choose **Postman** from the dropdown menu.
 1. Click the **Download** icon.
 
-   ![image](postman-environment-download.png)
+   ![image](/src/images/postman-environment-download.png)
    This will download a Postman environment file containing all relevant data for your project.
 
 1. In Postman, click **File** > **Import** and upload the environment obtained from the Merchant Center.
 
    The environment can now be chosen from the environment selector at the top-right of Postman.
 
-# Setting up an environment manually
+## Set up an environment manually
 
 Every root folder in [Platform API](api/), [Import](import/) and [Machine Learning](ml/) contains a `template.json` file.
 To set up an environment using these templates, perform the following steps:
