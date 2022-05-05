@@ -26,7 +26,7 @@ An environment is a set of variables that you can use in your Postman queries. I
 1. Click the **Download** icon.
 
    ![image](/src/images/postman-environment-download.png)
-   This will download a Postman environment file containing all relevant data for your project.
+   This downloads a Postman environment file containing all relevant data for your project.
 
 1. In Postman, click **File** > **Import** and upload the environment obtained from the Merchant Center.
 
@@ -54,12 +54,12 @@ To set up an environment using these templates, perform the following steps:
 
 ## Import commercetools Postman collection
 
-Every root folder in [Platform API](api/), [Import](import/) and [Machine Learning](ml/) contains a `collection.json` file.  
-You can import these files into Postman, for details see [Importing data into Postman](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/#importing-data-into-postman) in the Postman documentation.
+Each of the following folders contain a `collection.json` file: [Platform API](api/), [Import](import/) and [Machine Learning](ml/).
+You can import these files into Postman, for details see [Importing data into Postman](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/#importing-data-into-postman) in the Postman Learning Center.
 
-After the import, you should be able to see the collection. If you expand the collection, there are two primary folders:
+After the import, you should be able to see the collection. Expanding the collection reveals two primary folders:
 
-- **Authorization** - Use "Obtain access token" to get an authentication token. This is required for using the endpoints in the **Project** folder.
+- **Authorization** - Use "Obtain access token" to get an authentication token. This is required for using the endpoints provided in the **Project** folder.
 - **Project** - Ready to use, explore the endpoints.
 
 You can now use the commercetools Postman collections.
