@@ -64,10 +64,10 @@ To set up an environment using these templates, perform the following steps:
 
 1. Set the initial values for primary variables:
 
-   - host : The host information can be [found here](https://docs.commercetools.com/api/general-concepts#hosts).
-   - auth_url : The Authorization URL can be [found here](https://docs.commercetools.com/api/authorization#requesting-an-access-token-using-commercetools-oauth-20-server).
-   - client_id : From your API Client. More information can be [found here](https://docs.commercetools.com/merchant-center/api-clients#create-an-api-client).
-   - client_secret : From your API Client.
-   - project_key: Your project key.
+   - `host`: The host information can be [found here](https://docs.commercetools.com/api/general-concepts#hosts).
+   - `auth_url`: The Authorization URL can be [found here](https://docs.commercetools.com/api/authorization#requesting-an-access-token-using-commercetools-oauth-20-server).
+   - `client_id`: From your API Client. More information can be [found here](https://docs.commercetools.com/merchant-center/api-clients#create-an-api-client).
+   - `client_secret`: From your API Client.
+   - `project_key`: Your project key.
 
    The environment is now ready to be used.
