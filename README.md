@@ -3,13 +3,13 @@
 Postman is an API platform that helps you quickly use REST APIs without any development effort.
 The API requests are managed within a **collection** that you can import into Postman.
 
-Postman collections help you explore commercetools APIs with a setup time of minutes. Theoretically, you can run the whole commerce journey from creating customers and products to creating orders where these customers purchase the products.
+Theoretically, you can run the whole commerce journey from creating customers and products to creating orders where these customers purchase the products.
 
 Key benefits of using Postman collections of commercetools APIs:
 
-- Works with minimum technical knowledge,
-- No coding is required, and can be used as soon as you have created a commercetools project,
-- Easily explore all the API endpoints and achieve a holistic view of how the platform and other services operate.
+- Works with minimum technical knowledge with no coding required,
+- Can be used as soon as you have created a commercetools project,
+- All the API endpoints can be explored to achieve a holistic view of how the platform and other services operate.
 
 This repository contains Postman collections including requests, responses as well as most commercetools endpoints and commands.
 For each command, the smallest possible payload is given. Optional fields can be found in the related [official documentation](http://docs.commercetools.com/).
