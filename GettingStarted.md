@@ -2,7 +2,10 @@
 
 This guide describes how to import collections into Postman and how to set up the corresponding environment variables.
 
-> **:warning: Note:** Be aware that postman automatically synchronizes environment variables (including your API client credentials) to your workspace if logged in. Use these collections only for development purposes and non-production projects.
+> **:warning: Note:**
+>
+> - Be aware that postman automatically synchronizes environment variables (including your API client credentials) to your workspace if logged in.
+> - Use these collections only for development purposes and non-production projects.
 
 ## Disclaimer
 
