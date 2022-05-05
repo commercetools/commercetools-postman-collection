@@ -14,7 +14,7 @@ To learn more about commercetools APIs and to find the complete and approved doc
 
 # Install Postman App
 
-Instructions for installing the Postman app or using the web version can be found at https://www.postman.com/downloads/.
+Instructions for installing the Postman app or using the web version can be found at [Installing and Updating](https://learning.postman.com/docs/getting-started/installation-and-updates/) in the Postman Learning Center.
 
 # Import commercetools Postman collection
 
