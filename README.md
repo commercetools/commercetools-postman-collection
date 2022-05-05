@@ -33,4 +33,4 @@ Feel free to clone the collections and adjust them to your needs.
 
 ## Getting started
 
-For information on using the Postman Collections, refer to [Getting started with the commercetools Postman collections](GettingStarted.md).
+For information on how to use the commercetools Postman Collections and set up an environment, refer to [Getting started](GettingStarted.md).
