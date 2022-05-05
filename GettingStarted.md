@@ -6,7 +6,7 @@ The API requests are managed within a **collection** that you can import into Po
 This repository contains Postman collections including requests, responses as well as most commercetools endpoints and commands.
 For each command, the smallest possible payload is given. Optional fields can be found in the related [official documentation](http://docs.commercetools.com/).
 
-Additionally, the collection provides example requests and responses for specific tasks and more complex data models.
+Additionally, the collections provide example requests and responses for specific tasks and more complex data models.
 
 ## Disclaimer
 
@@ -20,7 +20,7 @@ This is not the official commercetools documentation. Please see [here](http://d
 
 **:warning: Use these collection only for development purposes and non-production projects.**
 
-Feel free to clone the collection and adjust it to your needs.
+Feel free to clone the collections and adjust them to your needs.
 
 ## Install Postman App
 
@@ -28,7 +28,7 @@ Instructions for installing the Postman app or using the web version can be foun
 
 ## Import commercetools Postman collection
 
-Every root folder in [Platform API](api/), [Import](import/) and [Machine Learning](ml/) contains a `collection.json` file.
+Every root folder in [Platform API](api/), [Import](import/) and [Machine Learning](ml/) contains a `collection.json` file.  
 You can import these files into Postman, for details see [Importing data into Postman](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/#importing-data-into-postman) in the Postman documentation.
 
 After the import, you should be able to see the collection. If you expand the collection, there are two primary folders:
@@ -58,6 +58,7 @@ Every root folder in [Platform API](api/), [Import](import/) and [Machine Learni
 To set up an environment using these templates, perform the following steps:
 
 1. Import the `template.json` file, see [Importing data into Postman](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/#importing-data-into-postman) in the Postman documentation for details.
+
    This will create an empty variable set environment.
    ![image](https://user-images.githubusercontent.com/4946943/141699543-9f626cd3-5dcf-4b8d-94ad-f0045fc15b44.png)
 
