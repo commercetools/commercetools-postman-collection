@@ -1,6 +1,6 @@
 # Getting started
 
-This document provides instructions for installing Postman, for importing commercetools Postman collections and for setting up an environment to get you started.
+This document provides instructions for installing Postman, for importing commercetools Postman collections, and for setting up an environment to get you started.
 
 > **:warning: Note:**
 >
@@ -37,7 +37,7 @@ An environment is a set of variables that you can use in your Postman queries. I
 Every root folder in [Platform API](api/), [Import](import/) and [Machine Learning](ml/) contains a `template.json` file.
 To set up an environment using these templates, perform the following steps:
 
-1. Import the `template.json` file, see [Importing data into Postman](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/#importing-data-into-postman) in the Postman documentation for details.
+1. Import the `template.json` file, see [Importing data into Postman](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/#importing-data-into-postman) in the Postman Learning Center for further details.
 
    This will create an empty variable set environment.
    ![image](https://user-images.githubusercontent.com/4946943/141699543-9f626cd3-5dcf-4b8d-94ad-f0045fc15b44.png)
