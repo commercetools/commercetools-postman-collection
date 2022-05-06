@@ -7,9 +7,9 @@ Theoretically, you can run the whole commerce journey from creating Customers an
 
 Key benefits of using Postman collections of commercetools APIs:
 
-- Works with minimum technical knowledge with no coding required,
-- Can be used as soon as you have created a commercetools project,
-- The API endpoints can be explored to achieve a holistic view of how the commercetools Platform and other services operate.
+- Works with minimum technical knowledge with no coding required
+- Can be used as soon as you have created a commercetools project
+- The API endpoints can be explored to achieve a holistic view of how the commercetools Platform and other services operate
 
 This repository contains Postman collections including requests and responses for most commercetools endpoints.
 For each request, the smallest possible payload is given. Optional fields can be found in the related [official documentation](http://docs.commercetools.com/).
