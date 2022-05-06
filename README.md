@@ -1,9 +1,9 @@
 # commercetools Postman collections
 
-Postman is an API platform that helps you quickly use REST APIs without any development effort.
-The API requests are managed within a **collection** that you can import into Postman.
+Postman is an API platform that helps you use REST APIs without any development effort.
+API requests can be organized into **collections** that you can import into Postman.
 
-Theoretically, you can run the whole commerce journey from creating customers and products to creating orders where these customers purchase the products.
+Theoretically, you can run the whole commerce journey from creating Customers and Products to creating Orders where these Customers purchase the Products.
 
 Key benefits of using Postman collections of commercetools APIs:
 
@@ -11,8 +11,8 @@ Key benefits of using Postman collections of commercetools APIs:
 - Can be used as soon as you have created a commercetools project,
 - The API endpoints can be explored to achieve a holistic view of how the commercetools Platform and other services operate.
 
-This repository contains Postman collections including requests, responses as well as most commercetools endpoints and commands.
-For each command, the smallest possible payload is given. Optional fields can be found in the related [official documentation](http://docs.commercetools.com/).
+This repository contains Postman collections including requests and responses for most commercetools endpoints.
+For each request, the smallest possible payload is given. Optional fields can be found in the related [official documentation](http://docs.commercetools.com/).
 
 Additionally, the collections provide example requests and responses for specific tasks and more complex data models.
 
@@ -31,7 +31,7 @@ The following Postman collections are available:
 
 > **:warning: Note:**
 >
-> - Be aware that postman automatically synchronizes environment variables (including your API client credentials) to your workspace if logged in.
+> - Be aware that Postman automatically synchronizes environment variables (including your API client credentials) to your workspace if logged in.
 > - Use these collections only for development purposes and non-production projects.
 
 Feel free to clone the collections and adjust them to your needs.
