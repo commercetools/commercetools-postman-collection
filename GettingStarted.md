@@ -21,7 +21,7 @@ Instructions for installing the Postman app or using the web version can be foun
 An environment is a set of variables that you can use in your Postman queries. It can be generated and downloaded from the Merchant Center using the API Client to match your project:
 
 1. Create an API client following the instructions provided in [Create an API Client](https://docs.commercetools.com/merchant-center/api-clients#create-an-api-client) in the Merchant Center documentation.
-1. After clicking **Create API Client**, scroll down to the credential downloads section.
+1. After clicking **Create API Client**, scroll down to the bottom.
 1. Choose **Postman** from the dropdown menu.
 1. Click the **Download** icon.
 
