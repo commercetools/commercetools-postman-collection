@@ -1,6 +1,6 @@
 # commercetools Postman collections
 
-Postman is an API platform that helps you use REST APIs without any development effort.
+Postman provides a REST client that helps you executing API requests without any development effort.
 API requests can be organized into **collections** that you can import into Postman.
 
 Theoretically, you can run the whole commerce journey from creating Customers and Products to creating Orders where these Customers purchase the Products.
