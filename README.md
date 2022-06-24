@@ -6,7 +6,7 @@ This repository contains Postman collections for Composable Commerce HTTP APIs.
 
 Postman collections help you explore Composable Commerce HTTP APIs with a setup time of minutes. You can theoretically run the whole commerce journey from creating customers and products, to creating orders where these customers purchase the products.
 
-Key benefits of using Postman collections of Composable Commerce APIs:
+Key benefits of using the Composable Commerce Postman collections:
 * Works with minimum technical knowledge.
 * No coding is required, and can be used as soon as you have created a Project.
 * Easily explore all the API endpoints and achieve a holistic view of how the platform and other services operate.
