@@ -11,7 +11,7 @@ Key benefits of using the Composable Commerce Postman collections:
 * No coding is required, and can be used as soon as you have created a Project.
 * Easily explore all the API endpoints and achieve a holistic view of how the platform and other services operate.
 
-[Get Started here](GettingStarted.md) with Composable Commerce Postman collections.
+[Get Started here](GettingStarted.md) with the Composable Commerce Postman collections.
 
 ## Further documentation
 
