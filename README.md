@@ -15,7 +15,7 @@ Key benefits of using the Composable Commerce Postman collections:
 
 ## Further documentation
 
-To learn more about using Composable Commerce APIs and to find complete platform documentation, please visit https://docs.commercetools.com/
+To learn more about using Composable Commerce APIs and to find complete API documentation, please visit https://docs.commercetools.com/
 
 ## Postman collections
 
