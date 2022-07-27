@@ -4,7 +4,7 @@ This document provides instructions for installing Postman, for importing commer
 
 > **:warning: Note:**
 >
-> - Be aware that Postman automatically synchronizes environment variables (including your API client credentials) to your workspace if logged in.
+> - Be aware that Postman automatically synchronizes environment variables (including your API Client credentials) to your workspace if logged in.
 > - Use these collections only for development purposes and non-production projects.
 
 ## Disclaimer
@@ -16,11 +16,11 @@ To learn more about commercetools APIs and to find the complete and approved doc
 
 Instructions for installing the Postman app or using the web version can be found at [Installing and Updating](https://learning.postman.com/docs/getting-started/installation-and-updates/) in the Postman Learning Center.
 
-## Set up an environment via commercetools API client
+## Set up an environment via commercetools API Client
 
 An environment is a set of variables that you can use in your Postman queries. It can be generated and downloaded from the Merchant Center using the API Client to match your project:
 
-1. Create an API client following the instructions provided in [Create an API Client](https://docs.commercetools.com/merchant-center/api-clients#create-an-api-client) in the Merchant Center documentation.
+1. Create an API Client following the instructions provided in [Create an API Client](https://docs.commercetools.com/merchant-center/api-clients#create-an-api-client) in the Merchant Center documentation.
 1. After clicking **Create API Client**, scroll down to the bottom.
 1. Choose **Postman** from the dropdown menu.
 1. Click the **Download** icon.

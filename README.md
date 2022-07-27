@@ -31,7 +31,7 @@ The following Postman collections are available:
 
 > **:warning: Note:**
 >
-> - Be aware that Postman automatically synchronizes environment variables (including your API client credentials) to your workspace if logged in.
+> - Be aware that Postman automatically synchronizes environment variables (including your API Client credentials) to your workspace if logged in.
 > - Use these collections only for development purposes and non-production projects.
 
 Feel free to clone the collections and adjust them to your needs.
