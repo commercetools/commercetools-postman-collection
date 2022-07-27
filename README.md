@@ -1,17 +1,17 @@
-# commercetools Postman collections
+# Composable Commerce Postman collections
 
 Postman provides a REST client that helps you executing API requests without any development effort.
 API requests can be organized into **collections** that you can import into Postman.
 
 Theoretically, you can run the whole commerce journey from creating Customers and Products to creating Orders where these Customers purchase the Products.
 
-Key benefits of using Postman collections of commercetools APIs:
+Key benefits of using the Composable Commerce Postman collections:
 
 - Works with minimum technical knowledge with no coding required
-- Can be used as soon as you have created a commercetools project
-- The API endpoints can be explored to achieve a holistic view of how the commercetools Platform and other services operate
+- Can be used as soon as you have created a Project
+- The API endpoints can be explored to achieve a holistic view of how Composable Commerce and other services operate
 
-This repository contains Postman collections including requests and responses for most commercetools endpoints.
+This repository contains Postman collections including requests and responses for most Composable Commerce endpoints.
 For each request, the smallest possible payload is given. Optional fields can be found in the related [official documentation](http://docs.commercetools.com/).
 
 Additionally, the collections provide example requests and responses for specific tasks and more complex data models.
@@ -19,7 +19,7 @@ Additionally, the collections provide example requests and responses for specifi
 ## Disclaimer
 
 This is not the official commercetools documentation.
-To learn more about commercetools APIs and to find the complete and approved documentation, visit [docs.commercetools.com](http://docs.commercetools.com/).
+To learn more about Composable Commerce APIs and to find the complete and approved documentation, visit [docs.commercetools.com](http://docs.commercetools.com/).
 
 ## Available Postman collections
 
@@ -38,4 +38,4 @@ Feel free to clone the collections and adjust them to your needs.
 
 ## Getting started
 
-For information on how to use the commercetools Postman collections and set up an environment, refer to [Getting started](GettingStarted.md).
+For information on how to use the Composable Commerce Postman collections and set up an environment, refer to [Getting started](GettingStarted.md).
