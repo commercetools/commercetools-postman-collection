@@ -1,6 +1,6 @@
 # Import API
 
-This folder contains the Import API Postman collection (`collection.json`).
+This folder contains the Import API Postman Collection (`collection.json`).
 
 ## Further documentation
 

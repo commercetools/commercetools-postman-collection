@@ -1,6 +1,6 @@
 # HTTP API
 
-This folder contains the HTTP API Postman collection (`collection.json`).
+This folder contains the HTTP API Postman Collection (`collection.json`).
 
 ## Further documentation
 

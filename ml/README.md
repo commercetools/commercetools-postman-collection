@@ -1,6 +1,6 @@
 # Machine Learning
 
-This folder contains the Machine Learning Postman collection (`collection.json`).
+This folder contains the Machine Learning Postman Collection (`collection.json`).
 
 ## Further documentation
 
