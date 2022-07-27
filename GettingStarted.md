@@ -1,6 +1,6 @@
 # Getting started
 
-This document provides instructions for installing Postman, for importing commercetools Postman collections, and for setting up an environment to get you started.
+This document provides instructions for installing Postman, for importing Composable Commerce Postman Collections, and for setting up an environment to get you started.
 
 > **:warning: Note:**
 >
@@ -10,13 +10,13 @@ This document provides instructions for installing Postman, for importing commer
 ## Disclaimer
 
 This is not the official commercetools documentation.
-To learn more about commercetools APIs and to find the complete and approved documentation, visit [docs.commercetools.com](http://docs.commercetools.com/).
+To learn more about Composable Commerce APIs and to find the complete and approved documentation, visit [docs.commercetools.com](http://docs.commercetools.com/).
 
 ## Install Postman
 
 Instructions for installing the Postman app or using the web version can be found at [Installing and Updating](https://learning.postman.com/docs/getting-started/installation-and-updates/) in the Postman Learning Center.
 
-## Set up an environment via commercetools API Client
+## Set up an environment via the Composable Commerce API Client
 
 An environment is a set of variables that you can use in your Postman queries. It can be generated and downloaded from the Merchant Center using the API Client to match your project:
 
@@ -52,7 +52,7 @@ To set up an environment using these templates, perform the following steps:
 
    The environment is now ready to be used and can be chosen from the environment selector at the top-right of Postman.
 
-## Import commercetools Postman collection
+## Import Composable Commerce Postman Collections
 
 Each of the following folders contain a `collection.json` file: [Platform API](api/), [Import](import/) and [Machine Learning](ml/).
 You can import these files into Postman, for details see [Importing data into Postman](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/#importing-data-into-postman) in the Postman Learning Center.
@@ -62,4 +62,4 @@ After the import, you should be able to see the collection. Expanding the collec
 - **Authorization** - Use "Obtain access token" to get an authentication token. This is required for using the endpoints provided in the **Project** folder.
 - **Project** - Ready to use, explore the endpoints.
 
-You can now use the commercetools Postman collections.
+You can now use the Composable Commerce Postman Collections.
