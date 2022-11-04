@@ -1,30 +1,8 @@
-# commercetools API Postman collection
+# HTTP API
 
-This Postman collection contains examples of requests and responses for most endpoints and commands of the
-commercetools Composable Commerce. For every command the smallest possible payload is given. Please find optional
-fields in the related official documentation. Additionally the collection provides example requests and
-responses for specific tasks and more complex data models.
+This folder contains the HTTP API Postman Collection (`collection.json`).
 
-## Disclaimer
+## Further documentation
 
-This is not the official commercetools Composable Commerce documentation. Please see [here](http://docs.commercetools.com/)
-for a complete and approved documentation of the commercetools Composable Commerce.
-
-## How to use
-
-**:warning: Be aware that postman automatically synchronizes environment variables (including your API client credentials) to your workspace if logged in.
-Use this collection only for development purposes and non-production projects.**
-
-To use this collection in Postman please perform the following steps:
-
-1. Download and install the Postman Client
-2. Import the [collection.json](collection.json) and [template.json](template.json) in your postman application
-3. In the Merchant Center, create a new API Client and fill in the client credentials in your environment
-4. Obtain an access token by sending the "Authorization/Obtain access token" request at the bottom of the request list. Now you can use all other endpoints
-
-Feel free to clone and modify this collection to your needs.
-
-To automate frequent tasks the collection automatically manages commonly required values and parameters such
-as resource ids, keys and versions in Postman environment variables for you.
-
-Please see http://docs.commercetools.com/ for further information about the commercetools Plattform.
+- [Getting started](../GettingStarted.md) provides information on how to use the Composable Commerce Postman Collections and set up an environment.
+- [HTTP API](https://docs.commercetools.com/api/) on docs.commercetools.com provides information on the API.
