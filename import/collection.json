@@ -1894,6 +1894,88 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "name": "Types",
+                    "description": "null",
+                    "item": [
+                        {
+                            "name": "Import-containers",
+                            "description": "null",
+                            "item": [
+                                {
+                                    "name": "Import import-container",
+                                    "event": [
+                                        {
+                                            "listen": "test",
+                                            "script": {
+                                                "type": "text/javascript",
+                                                "exec": [
+                                                    "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                                    "var data = JSON.parse(responseBody);",
+                                                    "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                                    "    pm.environment.set(\"import-container-id\", data.results[0].id); ",
+                                                    "    pm.environment.set(\"import-container-version\", data.results[0].version);",
+                                                    "}",
+                                                    "if(data.results && data.results[0] && data.results[0].key){",
+                                                    "    pm.environment.set(\"import-container-key\", data.results[0].key); ",
+                                                    "}",
+                                                    "if(data.version){",
+                                                    "    pm.environment.set(\"import-container-version\", data.version);",
+                                                    "}",
+                                                    "if(data.id){",
+                                                    "    pm.environment.set(\"import-container-id\", data.id); ",
+                                                    "}",
+                                                    "if(data.key){",
+                                                    "    pm.environment.set(\"import-container-key\", data.key);",
+                                                    "}",
+                                                    ""
+                                                ]
+                                            }
+                                        }
+                                    ],
+                                    "request": {
+                                        "auth":
+                                            {
+                                                "type": "oauth2",
+                                                "oauth2": {
+                                                    "accessToken": "{{ctp_access_token}}",
+                                                    "addTokenTo": "header",
+                                                    "tokenType": "Bearer"
+                                                }
+                                            },
+                                        "method": "post",
+                                        "header": [
+                                            {
+                                                "key": "Content-Type",
+                                                "value": "application/json"
+                                            }
+                                        ],
+                                        "url": {
+                                            "raw": "{{host}}/{{project-key}}/types/import-containers/{{import-container-key}}",
+                                            "host": [
+                                                "{{host}}"
+                                            ],
+                                            "path": [
+                                                "{{project-key}}",
+                                                "types",
+                                                "import-containers",
+                                                "{{import-container-key}}"
+                                            ],
+                                            "query": [
+                                            ]
+                                        },
+                                        "description": "Creates a request for creating new Type or updating existing ones.",
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "{\n  \"type\" : \"type\",\n  \"resources\" : [ {\n    \"key\" : \"type-key\",\n    \"name\" : {\n      \"en\" : \"Name of type\"\n    },\n    \"description\" : {\n      \"en\" : \"Description of type\"\n    },\n    \"resourceTypeIds\" : [ \"customer\" ],\n    \"fieldDefinitions\" : [ {\n      \"type\" : {\n        \"name\" : \"String\"\n      },\n      \"name\" : \"string-type-name\",\n      \"label\" : {\n        \"en\" : \"A label for the string field.\"\n      },\n      \"required\" : false,\n      \"inputHint\" : \"SingleLine\"\n    } ]\n  } ]\n}"
+                                        }
+                                    },
+                                    "response": []
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         }
