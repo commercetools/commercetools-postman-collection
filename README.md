@@ -25,7 +25,8 @@ To learn more about Composable Commerce APIs and to find the complete and approv
 
 The following Postman Collections are available:
 
-- [Platform API](api/)
+- [HTTP API](api/)
+- [Connect](connect/)
 - [Import](import/)
 - [Machine Learning](ml/)
 
