@@ -28,7 +28,6 @@ The following Postman Collections are available:
 - [HTTP API](api/)
 - [Connect](connect/)
 - [Import](import/)
-- [Machine Learning](ml/)
 
 > **:warning: Note:**
 >
