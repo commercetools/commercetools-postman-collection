@@ -54,7 +54,7 @@ To set up an environment using these templates, perform the following steps:
 
 ## Import Composable Commerce Postman Collections
 
-Each of the following folders contain a `collection.json` file: [Platform API](api/), [Import](import/) and [Machine Learning](ml/).
+Each of the following folders contain a `collection.json` file: [Platform API](api/) and [Import](import/).
 You can import these files into Postman, for details see [Importing data into Postman](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/#importing-data-into-postman) in the Postman Learning Center.
 
 After the import, you should be able to see the collection. Expanding the collection reveals two primary folders:
