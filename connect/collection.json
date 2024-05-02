@@ -959,7 +959,7 @@
                                     "query": [
                                     ]
                                 },
-                                "description": "Specific Error Codes:\n- [ConnectorStagedNotPreviewable](ctp:connect:type:ConnectorStagedNotPreviewableError)\n- [DeploymentUnsupportedRegion](ctp:connect:type:DeploymentUnsupportedRegionError)\n- [DeploymentUnknownApplicationConfiguration](ctp:connect:type:DeploymentUnknownApplicationConfigurationError)\n- [DeploymentUnknownApplicationConfigurationKey](ctp:connect:type:DeploymentUnknownApplicationConfigurationKeyError)\n",
+                                "description": "Specific error codes:\n- [ConnectorStagedNotPreviewable](ctp:connect:type:ConnectorStagedNotPreviewableError)\n- [DeploymentUnsupportedRegion](ctp:connect:type:DeploymentUnsupportedRegionError)\n- [DeploymentUnknownApplicationConfiguration](ctp:connect:type:DeploymentUnknownApplicationConfigurationError)\n- [DeploymentUnknownApplicationConfigurationKey](ctp:connect:type:DeploymentUnknownApplicationConfigurationKeyError)\n- [DeploymentApplicationDoNotBelong](ctp:connect:type:DeploymentApplicationDoNotBelongError)\n- [DeploymentMustIncludeApplication](ctp:connect:type:DeploymentMustIncludeApplicationError)\n- [DeploymentApplicationRequired](ctp:connect:type:DeploymentApplicationRequiredError)\n",
                                 "body": {
                                     "mode": "raw",
                                     "raw": "{\n  \"key\" : \"deployment-key\",\n  \"connector\" : {\n    \"id\" : \"a49aa2c5-15b6-41c4-88af-4b7afdcc07a5\",\n    \"version\" : 1\n  },\n  \"region\" : \"europe-west1.gcp\",\n  \"configurations\" : [ {\n    \"applicationName\" : \"app-1\",\n    \"standardConfiguration\" : [ {\n      \"key\" : \"CONFIG_KEY\",\n      \"value\" : \"config-key-value\"\n    } ],\n    \"securedConfiguration\" : [ {\n      \"key\" : \"CONFIG_SECRET_KEY\",\n      \"value\" : \"config-secret-key-value\"\n    } ]\n  } ]\n}"
@@ -1025,6 +1025,18 @@
                                         "deployments"
                                     ],
                                     "query": [
+                                        {
+                                            "key": "integrationTypes",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        },
+                                        {
+                                            "key": "deploymentType",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        },
                                         {
                                             "key": "limit",
                                             "value": "",
@@ -1298,6 +1310,12 @@
                                 },
                                 {
                                     "key": "key",
+                                    "value": "",
+                                    "equals": true,
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "integrationTypes",
                                     "value": "",
                                     "equals": true,
                                     "disabled": true
@@ -1718,6 +1736,12 @@
                                         "drafts"
                                     ],
                                     "query": [
+                                        {
+                                            "key": "integrationTypes",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        },
                                         {
                                             "key": "limit",
                                             "value": "",
