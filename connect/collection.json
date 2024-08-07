@@ -1467,7 +1467,7 @@
                                 "description": "null",
                                 "body": {
                                     "mode": "raw",
-                                    "raw": "{\n  \"version\" : 1,\n  \"actions\" : [ {\n    \"action\" : \"setName\",\n    \"name\" : \"Connector Name\"\n  } ]\n}"
+                                    "raw": "{\n  \"version\" : 1,\n  \"actions\" : [ {\n    \"action\" : \"setName\",\n    \"name\" : \"New Connector name\"\n  } ]\n}"
                                 }
                             },
                             "response": []
@@ -1605,7 +1605,7 @@
                                 "description": "null",
                                 "body": {
                                     "mode": "raw",
-                                    "raw": "{\n  \"version\" : 1,\n  \"actions\" : [ {\n    \"action\" : \"setName\",\n    \"name\" : \"Connector Name\"\n  } ]\n}"
+                                    "raw": "{\n  \"version\" : 1,\n  \"actions\" : [ {\n    \"action\" : \"setName\",\n    \"name\" : \"New Connector name\"\n  } ]\n}"
                                 }
                             },
                             "response": []
@@ -1673,7 +1673,7 @@
                                 "description": "null",
                                 "body": {
                                     "mode": "raw",
-                                    "raw": "{\n  \"key\" : \"connector-key\",\n  \"name\" : \"Connector's name\",\n  \"description\" : \"Connector's description\",\n  \"creator\" : {\n    \"title\" : \"Mr\",\n    \"name\" : \"John Doe\",\n    \"email\" : \"john.doe@example.com\",\n    \"company\" : \"commercetools\",\n    \"noOfContributors\" : 200\n  },\n  \"repository\" : {\n    \"url\" : \"git@github.com:commercetools\/connect-application-kit.git\",\n    \"tag\" : \"0.0.0\"\n  },\n  \"privateProjects\" : [ ],\n  \"supportedRegions\" : [ \"us-central1.gcp\", \"europe-west1.gcp\" ],\n  \"isPreviewable\" : \"true\"\n}"
+                                    "raw": "{\n  \"key\" : \"connector-key\",\n  \"name\" : \"Connector's name\",\n  \"description\" : \"Connector's description\",\n  \"creator\" : {\n    \"title\" : \"Mr\",\n    \"name\" : \"John Doe\",\n    \"email\" : \"john.doe@example.com\",\n    \"company\" : \"commercetools\",\n    \"noOfContributors\" : 200\n  },\n  \"repository\" : {\n    \"url\" : \"git@github.com:commercetools\/connect-application-kit.git\",\n    \"tag\" : \"0.0.0\"\n  },\n  \"privateProjects\" : [ ],\n  \"supportedRegions\" : [ \"us-central1.gcp\", \"europe-west1.gcp\" ]\n}"
                                 }
                             },
                             "response": []
