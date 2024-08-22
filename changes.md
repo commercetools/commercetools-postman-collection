@@ -22,3 +22,11 @@
 - added property `applicationMode` to type `CartDiscountValueAbsoluteDraft` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/cart-discount/CartDiscountValueAbsoluteDraft.raml:13:2)
 </details>
 
+**Import changes**
+
+<details>
+<summary>Added Type(s)</summary>
+
+- added type `ReferencedResourceNotFound` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/error.raml:209:2)
+</details>
+
