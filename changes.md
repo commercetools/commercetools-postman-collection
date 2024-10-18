@@ -9,6 +9,13 @@
 
 
 <details>
+<summary>Added Method(s)</summary>
+
+- added method `head /{projectKey}/product-tailoring` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/product-tailoring.raml:18:0)
+</details>
+
+
+<details>
 <summary>Added Type(s)</summary>
 
 - added type `DiscountApplicationMode` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/types.raml:146:0)
