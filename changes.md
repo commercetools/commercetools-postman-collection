@@ -76,3 +76,11 @@
 - added type `ReferencedResourceNotFound` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/error.raml:232:2)
 </details>
 
+**History changes**
+
+<details>
+<summary>Required Property(s)</summary>
+
+- changed property `id` of type `ModifiedBy` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/ModifiedBy.raml:12:2)
+</details>
+
