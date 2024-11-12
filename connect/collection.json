@@ -959,7 +959,7 @@
                                     "query": [
                                     ]
                                 },
-                                "description": "Specific error codes:\n- [ConnectorStagedNotPreviewable](ctp:connect:type:ConnectorStagedNotPreviewableError)\n- [DeploymentUnsupportedRegion](ctp:connect:type:DeploymentUnsupportedRegionError)\n- [DeploymentUnknownApplicationConfiguration](ctp:connect:type:DeploymentUnknownApplicationConfigurationError)\n- [DeploymentUnknownApplicationConfigurationKey](ctp:connect:type:DeploymentUnknownApplicationConfigurationKeyError)\n- [DeploymentApplicationDoNotBelong](ctp:connect:type:DeploymentApplicationDoNotBelongError)\n- [DeploymentMustIncludeApplication](ctp:connect:type:DeploymentMustIncludeApplicationError)\n- [DeploymentApplicationRequired](ctp:connect:type:DeploymentApplicationRequiredError)\n",
+                                "description": "Specific Error Codes:\n- [ConnectorStagedNotPreviewable](ctp:connect:type:ConnectorStagedNotPreviewableError)\n- [DeploymentUnsupportedRegion](ctp:connect:type:DeploymentUnsupportedRegionError)\n- [DeploymentUnknownApplicationConfiguration](ctp:connect:type:DeploymentUnknownApplicationConfigurationError)\n- [DeploymentUnknownApplicationConfigurationKey](ctp:connect:type:DeploymentUnknownApplicationConfigurationKeyError)\n",
                                 "body": {
                                     "mode": "raw",
                                     "raw": "{\n  \"key\" : \"deployment-key\",\n  \"connector\" : {\n    \"id\" : \"a49aa2c5-15b6-41c4-88af-4b7afdcc07a5\",\n    \"version\" : 1\n  },\n  \"region\" : \"europe-west1.gcp\",\n  \"configurations\" : [ {\n    \"applicationName\" : \"app-1\",\n    \"standardConfiguration\" : [ {\n      \"key\" : \"CONFIG_KEY\",\n      \"value\" : \"config-key-value\"\n    } ],\n    \"securedConfiguration\" : [ {\n      \"key\" : \"CONFIG_SECRET_KEY\",\n      \"value\" : \"config-secret-key-value\"\n    } ]\n  } ]\n}"
@@ -1026,18 +1026,6 @@
                                     ],
                                     "query": [
                                         {
-                                            "key": "integrationTypes",
-                                            "value": "",
-                                            "equals": true,
-                                            "disabled": true
-                                        },
-                                        {
-                                            "key": "deploymentType",
-                                            "value": "",
-                                            "equals": true,
-                                            "disabled": true
-                                        },
-                                        {
                                             "key": "limit",
                                             "value": "",
                                             "equals": true,
@@ -1051,6 +1039,18 @@
                                         },
                                         {
                                             "key": "sort",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        },
+                                        {
+                                            "key": "integrationTypes",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        },
+                                        {
+                                            "key": "deploymentType",
                                             "value": "",
                                             "equals": true,
                                             "disabled": true
@@ -1673,7 +1673,7 @@
                                 "description": "null",
                                 "body": {
                                     "mode": "raw",
-                                    "raw": "{\n  \"key\" : \"connector-key\",\n  \"name\" : \"Connector's name\",\n  \"description\" : \"Connector's description\",\n  \"creator\" : {\n    \"title\" : \"Mr\",\n    \"name\" : \"John Doe\",\n    \"email\" : \"john.doe@example.com\",\n    \"company\" : \"commercetools\",\n    \"noOfContributors\" : 200\n  },\n  \"repository\" : {\n    \"url\" : \"git@github.com:commercetools\/connect-application-kit.git\",\n    \"tag\" : \"0.0.0\"\n  },\n  \"privateProjects\" : [ ],\n  \"supportedRegions\" : [ \"us-central1.gcp\", \"europe-west1.gcp\" ]\n}"
+                                    "raw": "{\n  \"id\" : \"5ab3edcd-9d23-4934-8f48-256805253119\",\n  \"key\" : \"connector-key\",\n  \"version\" : 1,\n  \"name\" : \"Connector's name\",\n  \"description\" : \"Connector's description\",\n  \"creator\" : {\n    \"title\" : \"Mr\",\n    \"name\" : \"John Doe\",\n    \"email\" : \"john.doe@example.com\",\n    \"company\" : \"commercetools\",\n    \"noOfContributors\" : 200\n  },\n  \"repository\" : {\n    \"url\" : \"git@github.com:commercetools\/connect-application-kit.git\",\n    \"tag\" : \"0.0.0\"\n  },\n  \"privateProjects\" : [ ],\n  \"private\" : false,\n  \"hasChanges\" : true,\n  \"alreadyListed\" : true,\n  \"isPreviewable\" : \"true\",\n  \"status\" : \"Draft\",\n  \"publishingReport\" : {\n    \"annotations\" : [ ],\n    \"value\" : null\n  },\n  \"previewableReport\" : {\n    \"entries\" : [ {\n      \"title\" : \"Image security analysis check succeeded\",\n      \"type\" : \"Information\",\n      \"message\" : {\n        \"annotations\" : [ ],\n        \"value\" : null\n      },\n      \"createdAt\" : \"2024-02-15T10:12:12.069Z\",\n      \"application\" : {\n        \"annotations\" : [ ],\n        \"value\" : null\n      }\n    }, {\n      \"title\" : \"SAST and SCA analysis check succeeded\",\n      \"type\" : \"Information\",\n      \"message\" : {\n        \"annotations\" : [ ],\n        \"value\" : null\n      },\n      \"createdAt\" : \"2024-02-15T10:12:12.072Z\",\n      \"application\" : {\n        \"annotations\" : [ ],\n        \"value\" : null\n      }\n    }, {\n      \"title\" : \"Connector specification file validation check succeeded\",\n      \"type\" : \"Information\",\n      \"message\" : {\n        \"annotations\" : [ ],\n        \"value\" : null\n      },\n      \"createdAt\" : \"2024-02-15T10:12:12.073Z\",\n      \"application\" : {\n        \"annotations\" : [ ],\n        \"value\" : null\n      }\n    } ]\n  },\n  \"supportedRegions\" : [ \"us-central1.gcp\", \"europe-west1.gcp\" ]\n}"
                                 }
                             },
                             "response": []
@@ -1737,12 +1737,6 @@
                                     ],
                                     "query": [
                                         {
-                                            "key": "integrationTypes",
-                                            "value": "",
-                                            "equals": true,
-                                            "disabled": true
-                                        },
-                                        {
                                             "key": "limit",
                                             "value": "",
                                             "equals": true,
@@ -1756,6 +1750,18 @@
                                         },
                                         {
                                             "key": "sort",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        },
+                                        {
+                                            "key": "isPrivate",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        },
+                                        {
+                                            "key": "integrationTypes",
                                             "value": "",
                                             "equals": true,
                                             "disabled": true
