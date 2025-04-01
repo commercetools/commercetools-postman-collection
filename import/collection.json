@@ -359,7 +359,7 @@
                                     "query": [
                                     ]
                                 },
-                                "description": "Retrieves an [ImportSummary](ctp:import:type:ImportSummary) for the given import container. An [ImportSummary](ctp:import:type:ImportSummary) is calculated on demand.\n",
+                                "description": "Retrieves an [ImportSummary](ctp:import:type:ImportSummary) for the given Import Container. An [ImportSummary](ctp:import:type:ImportSummary) is calculated on demand.\n",
                                 "body": {
                                     "mode": "raw",
                                     "raw": ""
@@ -534,7 +534,7 @@
                                     "query": [
                                     ]
                                 },
-                                "description": "Updates the import container given by the key.",
+                                "description": "Updates the Import Container given by the key.",
                                 "body": {
                                     "mode": "raw",
                                     "raw": "{\n  \"version\" : 1,\n  \"resourceType\" : \"product\"\n}"
@@ -603,7 +603,7 @@
                                     "query": [
                                     ]
                                 },
-                                "description": "Retrieves the import container given by the key.",
+                                "description": "Retrieves the Import Container given by the key.",
                                 "body": {
                                     "mode": "raw",
                                     "raw": ""
@@ -612,7 +612,7 @@
                             "response": []
                         },
                         {
-                            "name": "Delete import-container",
+                            "name": "Delete an Import Container.",
                             "event": [
                                 {
                                     "listen": "test",
@@ -672,7 +672,7 @@
                                     "query": [
                                     ]
                                 },
-                                "description": "Deletes the import container given by the key.",
+                                "description": "Deletes the Import Container specified by the `importContainerKey`.\n\nGenerates the [ImportContainerDeleted](\/projects\/events#import-container-deleted-event) Event.\n",
                                 "body": {
                                     "mode": "raw",
                                     "raw": ""
@@ -681,7 +681,7 @@
                             "response": []
                         },
                         {
-                            "name": "Creates a new import container.",
+                            "name": "Create a new Import Container.",
                             "event": [
                                 {
                                     "listen": "test",
@@ -740,7 +740,7 @@
                                     "query": [
                                     ]
                                 },
-                                "description": "Creates a new import container.",
+                                "description": "Creates a new Import Container.\n\nGenerates the [ImportContainerCreated](\/projects\/events#import-container-created-event) Event.\n",
                                 "body": {
                                     "mode": "raw",
                                     "raw": "{\n  \"key\" : \"my-import-container\"\n}"
@@ -826,7 +826,7 @@
                                         }
                                     ]
                                 },
-                                "description": "Retrieves all import containers of a given project key.",
+                                "description": "Retrieves all Import Containers of a given project key.",
                                 "body": {
                                     "mode": "raw",
                                     "raw": ""
