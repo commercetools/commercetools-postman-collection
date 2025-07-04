@@ -477,13 +477,31 @@
 **Import changes**
 
 <details>
+<summary>Added Enum(s)</summary>
+
+- added enum `product-selection` to type `ImportResourceType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/common.raml:405:8)
+</details>
+
+
+<details>
 <summary>Added Property(s)</summary>
 
 - added property `/^[a-zA-Z]{2,3}(?:-[a-zA-Z]{4})?(?:-(?:[a-zA-Z]{2}|\d{3}))?$/` to type `SearchKeywords` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/product-import.raml:12:6)
-- added property `attributes` to type `ProductImport` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/product-import.raml:98:6)
-- added property `attributes` to type `ProductDraftImport` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/product-draft-import.raml:48:6)
-- added property `level` to type `AttributeDefinition` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/product-type-import.raml:28:6)
-- added property `/^[a-zA-Z]{2,3}(?:-[a-zA-Z]{4})?(?:-(?:[a-zA-Z]{2}|\d{3}))?$/` to type `LocalizedString` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/common.raml:101:6)
+- added property `attributes` to type `ProductImport` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/product-import.raml:92:6)
+- added property `attributes` to type `ProductDraftImport` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/product-draft-import.raml:42:6)
+- added property `level` to type `AttributeDefinition` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/product-type-import.raml:40:6)
+- added property `value` to type `Attribute` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/product-variant-import.raml:27:6)
+- added property `/^[a-zA-Z]{2,3}(?:-[a-zA-Z]{4})?(?:-(?:[a-zA-Z]{2}|\d{3}))?$/` to type `LocalizedString` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/common.raml:104:6)
+</details>
+
+
+<details>
+<summary>Changed Property(s)</summary>
+
+- :warning: changed property `value` of type `MoneyAttribute` from type `TypedMoney` to `Money` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/product-variant-import.raml:169:6)
+- :warning: changed property `value` of type `MoneySetAttribute` from type `TypedMoney[]` to `Money[]` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/product-variant-import.raml:179:6)
+- :warning: changed property `country` of type `ExternalTaxRateDraft` from type `string` to `CountryCode` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/order-import.raml:357:6)
+- :warning: changed property `value` of type `MoneyField` from type `TypedMoney` to `Money` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/custom-field.raml:162:6)
 </details>
 
 
@@ -496,11 +514,34 @@
 
 
 <details>
+<summary>Added Method(s)</summary>
+
+- added method `post /{projectKey}/product-selections/import-containers/{importContainerKey}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:741:8)
+</details>
+
+
+<details>
 <summary>Added Type(s)</summary>
 
-- added type `InvalidFieldsUpdateError` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/error.raml:135:2)
-- added type `NewMasterVariantAdditionNotAllowedError` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/error.raml:226:2)
-- added type `AttributeLevel` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/product-type-import.raml:30:2)
+- added type `InvalidFieldsUpdateError` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/error.raml:137:2)
+- added type `NewMasterVariantAdditionNotAllowedError` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/error.raml:232:2)
+- added type `ProductSelectionImportRequest` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/import-request.raml:208:2)
+- added type `AttributeLevel` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/product-type-import.raml:42:2)
+- added type `VariantSelectionType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/product-selection-import.raml:10:2)
+- added type `VariantSelection` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/product-selection-import.raml:21:2)
+- added type `VariantExclusion` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/product-selection-import.raml:35:2)
+- added type `ProductSelectionAssignment` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/product-selection-import.raml:46:2)
+- added type `ProductSelectionMode` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/product-selection-import.raml:62:2)
+- added type `ProductSelectionImport` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/product-selection-import.raml:72:2)
+</details>
+
+
+<details>
+<summary>Added Resource(s)</summary>
+
+- added resource `/{projectKey}/product-selections` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:731:2)
+- added resource `/{projectKey}/product-selections/import-containers` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:732:4)
+- added resource `/{projectKey}/product-selections/import-containers/{importContainerKey}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:733:6)
 </details>
 
 **History changes**
