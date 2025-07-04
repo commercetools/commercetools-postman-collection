@@ -490,7 +490,6 @@
 - added property `attributes` to type `ProductImport` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/product-import.raml:92:6)
 - added property `attributes` to type `ProductDraftImport` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/product-draft-import.raml:42:6)
 - added property `level` to type `AttributeDefinition` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/product-type-import.raml:40:6)
-- added property `value` to type `Attribute` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/product-variant-import.raml:27:6)
 - added property `/^[a-zA-Z]{2,3}(?:-[a-zA-Z]{4})?(?:-(?:[a-zA-Z]{2}|\d{3}))?$/` to type `LocalizedString` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/common.raml:104:6)
 </details>
 
@@ -498,8 +497,8 @@
 <details>
 <summary>Changed Property(s)</summary>
 
-- :warning: changed property `value` of type `MoneyAttribute` from type `TypedMoney` to `Money` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/product-variant-import.raml:169:6)
-- :warning: changed property `value` of type `MoneySetAttribute` from type `TypedMoney[]` to `Money[]` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/product-variant-import.raml:179:6)
+- :warning: changed property `value` of type `MoneyAttribute` from type `TypedMoney` to `Money` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/product-variant-import.raml:165:6)
+- :warning: changed property `value` of type `MoneySetAttribute` from type `TypedMoney[]` to `Money[]` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/product-variant-import.raml:175:6)
 - :warning: changed property `country` of type `ExternalTaxRateDraft` from type `string` to `CountryCode` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/order-import.raml:357:6)
 - :warning: changed property `value` of type `MoneyField` from type `TypedMoney` to `Money` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/custom-field.raml:162:6)
 </details>
