@@ -359,7 +359,7 @@
                                     "query": [
                                     ]
                                 },
-                                "description": "Retrieves an [ImportSummary](ctp:import:type:ImportSummary) for the given Import Container. An [ImportSummary](ctp:import:type:ImportSummary) is calculated on demand.\n",
+                                "description": "Retrieves an [ImportSummary](ctp:import:type:ImportSummary) for the [ImportContainer](ctp:import:type:ImportContainer) with the provided `importContainerKey`.\n",
                                 "body": {
                                     "mode": "raw",
                                     "raw": ""
@@ -465,7 +465,7 @@
                                         }
                                     ]
                                 },
-                                "description": "Retrieves all [ImportOperations](ctp:import:type:ImportOperation) of a given ImportContainer key.\n",
+                                "description": "Retrieves all ImportOperations within an [ImportContainer](ctp:import:type:ImportContainer).\n",
                                 "body": {
                                     "mode": "raw",
                                     "raw": ""
@@ -534,7 +534,7 @@
                                     "query": [
                                     ]
                                 },
-                                "description": "Updates the Import Container given by the key.",
+                                "description": "Updates an [ImportContainer](ctp:import:type:ImportContainer) in the Project.",
                                 "body": {
                                     "mode": "raw",
                                     "raw": "{\n  \"version\" : 1,\n  \"resourceType\" : \"product\"\n}"
@@ -603,7 +603,7 @@
                                     "query": [
                                     ]
                                 },
-                                "description": "Retrieves the Import Container given by the key.",
+                                "description": "Retrieves an [ImportContainer](ctp:import:type:ImportContainer) with the provided `importContainerKey`.",
                                 "body": {
                                     "mode": "raw",
                                     "raw": ""
@@ -672,7 +672,7 @@
                                     "query": [
                                     ]
                                 },
-                                "description": "Deletes the Import Container specified by the `importContainerKey`.\n\nGenerates the [ImportContainerDeleted](\/projects\/events#import-container-deleted-event) Event.\n",
+                                "description": "Deletes an Import Container in the Project.\n\nGenerates the [ImportContainerDeleted](\/projects\/events#import-container-deleted-event) Event.\n",
                                 "body": {
                                     "mode": "raw",
                                     "raw": ""
@@ -681,7 +681,7 @@
                             "response": []
                         },
                         {
-                            "name": "Create a new Import Container.",
+                            "name": "Creates an Import Container in the Project.",
                             "event": [
                                 {
                                     "listen": "test",
@@ -740,7 +740,7 @@
                                     "query": [
                                     ]
                                 },
-                                "description": "Creates a new Import Container.\n\nGenerates the [ImportContainerCreated](\/projects\/events#import-container-created-event) Event.\n",
+                                "description": "Creates an Import Container in the Project.\n\nGenerates the [ImportContainerCreated](\/projects\/events#import-container-created-event) Event.\n",
                                 "body": {
                                     "mode": "raw",
                                     "raw": "{\n  \"key\" : \"my-import-container\"\n}"
@@ -826,7 +826,7 @@
                                         }
                                     ]
                                 },
-                                "description": "Retrieves all Import Containers of a given project key.",
+                                "description": "Retrieves all ImportContainers in the Project.",
                                 "body": {
                                     "mode": "raw",
                                     "raw": ""
@@ -901,7 +901,7 @@
                                     "query": [
                                     ]
                                 },
-                                "description": "Retrieves the [ImportOperation](ctp:import:type:ImportOperation) of a given ID.\n",
+                                "description": "Retrieves an ImportOperation with the provided `id`.\n",
                                 "body": {
                                     "mode": "raw",
                                     "raw": ""
@@ -981,7 +981,7 @@
                                             "query": [
                                             ]
                                         },
-                                        "description": "Creates a request for creating new Categories or updating existing ones.",
+                                        "description": "Creates an Import Request for Categories.",
                                         "body": {
                                             "mode": "raw",
                                             "raw": "{\n  \"type\" : \"category\",\n  \"resources\" : [ {\n    \"key\" : \"category-to-import\",\n    \"name\" : {\n      \"en\" : \"Category to import\"\n    },\n    \"slug\" : {\n      \"en\" : \"category-to-import-slug\"\n    },\n    \"description\" : {\n      \"en\" : \"Description of category to import\"\n    },\n    \"parent\" : {\n      \"typeId\" : \"category\",\n      \"key\" : \"key-of-parent-category\"\n    }\n  } ]\n}"
@@ -1063,7 +1063,7 @@
                                             "query": [
                                             ]
                                         },
-                                        "description": "Creates a request for creating new Prices or updating existing ones.",
+                                        "description": "Creates an Import Request for Prices.",
                                         "body": {
                                             "mode": "raw",
                                             "raw": "{\n  \"type\" : \"price\",\n  \"resources\" : [ {\n    \"key\" : \"price-key\",\n    \"country\" : \"DE\",\n    \"validFrom\" : \"2021-04-11T14:00:00.000Z\",\n    \"validUntil\" : \"2022-04-11T14:00:00.000Z\",\n    \"customerGroup\" : {\n      \"typeId\" : \"customer-group\",\n      \"key\" : \"customer-group-key\"\n    },\n    \"channel\" : {\n      \"typeId\" : \"channel\",\n      \"key\" : \"channel-key\"\n    },\n    \"productVariant\" : {\n      \"typeId\" : \"product-variant\",\n      \"key\" : \"red-t-shirt\"\n    },\n    \"product\" : {\n      \"typeId\" : \"product\",\n      \"key\" : \"t-shirt\"\n    },\n    \"value\" : {\n      \"type\" : \"centPrecision\",\n      \"currencyCode\" : \"EUR\",\n      \"centAmount\" : 300\n    }\n  } ]\n}"
@@ -1145,7 +1145,7 @@
                                             "query": [
                                             ]
                                         },
-                                        "description": "Creates a request for creating new Standalone Prices or updating existing ones.",
+                                        "description": "Creates an Import Request for Standalone Prices.",
                                         "body": {
                                             "mode": "raw",
                                             "raw": "{\n  \"type\" : \"standalone-price\",\n  \"resources\" : [ {\n    \"key\" : \"standalone-price-key\",\n    \"sku\" : \"variantSku\",\n    \"value\" : {\n      \"type\" : \"centPrecision\",\n      \"currencyCode\" : \"EUR\",\n      \"centAmount\" : 100\n    }\n  } ]\n}"
@@ -1227,7 +1227,7 @@
                                             "query": [
                                             ]
                                         },
-                                        "description": "Creates a request for creating new Products or updating existing ones.",
+                                        "description": "Creates an Import Request for Products.",
                                         "body": {
                                             "mode": "raw",
                                             "raw": "{\n  \"type\" : \"product\",\n  \"resources\" : [ {\n    \"key\" : \"product-key\",\n    \"name\" : {\n      \"en\" : \"t-shirt\"\n    },\n    \"productType\" : {\n      \"typeId\" : \"product-type\",\n      \"key\" : \"product-type-key\"\n    },\n    \"slug\" : {\n      \"en\" : \"t-shirt-slug\"\n    },\n    \"description\" : {\n      \"en\" : \"t-shirt-description\"\n    },\n    \"categories\" : [ {\n      \"typeId\" : \"category\",\n      \"key\" : \"category-key\"\n    } ],\n    \"taxCategory\" : {\n      \"typeId\" : \"tax-category\",\n      \"key\" : \"tax-category-key\"\n    },\n    \"state\" : {\n      \"typeId\" : \"state\",\n      \"key\" : \"state-key\"\n    }\n  } ]\n}"
@@ -1309,7 +1309,7 @@
                                             "query": [
                                             ]
                                         },
-                                        "description": "Creates a request for creating new ProductDrafts or updating existing ones.\n",
+                                        "description": "Creates an Import Request for Products.\n",
                                         "body": {
                                             "mode": "raw",
                                             "raw": "{\n  \"type\" : \"product-draft\",\n  \"resources\" : [ {\n    \"key\" : \"product-draft-key\",\n    \"name\" : {\n      \"en\" : \"blue shirt\"\n    },\n    \"slug\" : {\n      \"en\" : \"blue-t-shirt\"\n    },\n    \"productType\" : {\n      \"typeId\" : \"product-type\",\n      \"key\" : \"sample\"\n    },\n    \"masterVariant\" : {\n      \"key\" : \"master-variant-key\",\n      \"attributes\" : [ {\n        \"type\" : \"reference\",\n        \"name\" : \"product-ref-attribute\",\n        \"value\" : {\n          \"key\" : \"category-key\",\n          \"typeId\" : \"category\"\n        }\n      }, {\n        \"type\" : \"reference\",\n        \"name\" : \"product-custom-object-ref-attribute\",\n        \"value\" : {\n          \"key\" : \"custom-object-key\",\n          \"container\" : \"custom-object-container-key\",\n          \"typeId\" : \"key-value-document\"\n        }\n      } ]\n    }\n  } ]\n}"
@@ -1391,7 +1391,7 @@
                                             "query": [
                                             ]
                                         },
-                                        "description": "Creates a request for creating new ProductTypes or updating existing ones.",
+                                        "description": "Creates an Import Request for ProductTypes.",
                                         "body": {
                                             "mode": "raw",
                                             "raw": "{\n  \"type\" : \"product-type\",\n  \"resources\" : [ {\n    \"key\" : \"product-type-key\",\n    \"name\" : \"Product Type name\",\n    \"description\" : \"Test product type\",\n    \"attributes\" : [ {\n      \"name\" : \"product-ref-attribute\",\n      \"label\" : {\n        \"en\" : \"selling product\"\n      },\n      \"isRequired\" : false,\n      \"isSearchable\" : false,\n      \"type\" : {\n        \"name\" : \"reference\",\n        \"referenceTypeId\" : \"category\"\n      },\n      \"attributeConstraint\" : \"Unique\",\n      \"inputTip\" : {\n        \"en\" : \"product input tip\"\n      },\n      \"inputHint\" : \"SingleLine\"\n    } ]\n  } ]\n}"
@@ -1473,7 +1473,7 @@
                                             "query": [
                                             ]
                                         },
-                                        "description": "Creates a request for creating new ProductVariants or updating existing ones.",
+                                        "description": "Creates an Import Request for ProductVariants.",
                                         "body": {
                                             "mode": "raw",
                                             "raw": "{\n  \"type\" : \"product-variant\",\n  \"resources\" : [ {\n    \"key\" : \"red-t-shirt\",\n    \"sku\" : \"red-t-shirt\",\n    \"product\" : {\n      \"key\" : \"t-shirt\",\n      \"typeId\" : \"product\"\n    },\n    \"isMasterVariant\" : true,\n    \"attributes\" : [ {\n      \"name\" : \"new\",\n      \"type\" : \"boolean\",\n      \"value\" : true\n    }, {\n      \"name\" : \"weight\",\n      \"type\" : \"number\",\n      \"value\" : 12.5\n    } ]\n  } ]\n}"
@@ -1555,7 +1555,7 @@
                                             "query": [
                                             ]
                                         },
-                                        "description": "Creates a new import request for Product Variant Patches.\nReturns an [InvalidField](ctp:import:type:InvalidFieldError) error if the [ProductVariantPatchRequest](ctp:import:type:ProductVariantPatchRequest) contains patches with and without the `product` field set.\n",
+                                        "description": "Creates an Import Request for updating Product Variants.\nReturns an [InvalidField](ctp:import:type:InvalidFieldError) error if the [ProductVariantPatchRequest](ctp:import:type:ProductVariantPatchRequest) contains patches with and without the `product` field set.\n",
                                         "body": {
                                             "mode": "raw",
                                             "raw": "{\n  \"type\" : \"product-variant-patch\",\n  \"patches\" : [ {\n    \"productVariant\" : {\n      \"typeId\" : \"product-variant\",\n      \"key\" : \"red-t-shirt\"\n    },\n    \"attributes\" : {\n      \"attribute-to-update\" : {\n        \"type\" : \"boolean\",\n        \"value\" : true\n      },\n      \"name-of-attribute-to-delete\" : {\n        \"annotations\" : [ ],\n        \"value\" : null\n      },\n      \"name-of-localized-attribute-to-update\" : {\n        \"type\" : \"ltext\",\n        \"value\" : {\n          \"en\" : \"Existing field\",\n          \"es\" : {\n            \"annotations\" : [ ],\n            \"value\" : null\n          },\n          \"de\" : \"Updating field\"\n        }\n      },\n      \"name-of-localized-attribute-set-to-update\" : {\n        \"type\" : \"ltext-set\",\n        \"value\" : [ {\n          \"en\" : \"Existing field\",\n          \"es\" : {\n            \"annotations\" : [ ],\n            \"value\" : null\n          },\n          \"de\" : \"Updating field\",\n          \"br\" : \"New field\"\n        }, {\n          \"en\" : \"Another Existing field\",\n          \"es\" : {\n            \"annotations\" : [ ],\n            \"value\" : null\n          },\n          \"de\" : \"Another Updating field\",\n          \"br\" : \"Another New field\"\n        } ]\n      }\n    },\n    \"staged\" : false\n  } ]\n}"
@@ -1637,7 +1637,7 @@
                                             "query": [
                                             ]
                                         },
-                                        "description": "Creates a request for creating new Orders.",
+                                        "description": "Creates an Import Request for creating Orders.",
                                         "body": {
                                             "mode": "raw",
                                             "raw": "{\n  \"type\" : \"order\",\n  \"resources\" : [ {\n    \"orderNumber\" : \"order-number\",\n    \"customer\" : {\n      \"typeId\" : \"customer\",\n      \"key\" : \"order-customer-key\"\n    },\n    \"lineItems\" : [ {\n      \"name\" : {\n        \"en\" : \"abc\"\n      },\n      \"quantity\" : 10,\n      \"price\" : {\n        \"value\" : {\n          \"type\" : \"centPrecision\",\n          \"centAmount\" : 100,\n          \"currencyCode\" : \"EUR\"\n        }\n      },\n      \"supplyChannel\" : {\n        \"typeId\" : \"channel\",\n        \"key\" : \"supplier-channel-key\"\n      },\n      \"variant\" : {\n        \"productVariant\" : {\n          \"typeId\" : \"product-variant\",\n          \"key\" : \"product-key\"\n        },\n        \"sku\" : \"variant-sku\"\n      }\n    } ],\n    \"customerGroup\" : {\n      \"typeId\" : \"customer-group\",\n      \"key\" : \"customer-group-key\"\n    },\n    \"totalPrice\" : {\n      \"type\" : \"centPrecision\",\n      \"currencyCode\" : \"EUR\",\n      \"centAmount\" : 4200\n    }\n  } ]\n}"
@@ -1719,7 +1719,7 @@
                                             "query": [
                                             ]
                                         },
-                                        "description": "Creates a new import request for order patches",
+                                        "description": "Creates an Import Request for updating Orders.",
                                         "body": {
                                             "mode": "raw",
                                             "raw": "{\n  \"type\" : \"order-patch\",\n  \"patches\" : [ {\n    \"orderNumber\" : \"order-number\",\n    \"fields\" : {\n      \"addReturnInfo\" : {\n        \"items\" : [ {\n          \"quantity\" : 1,\n          \"lineItemId\" : \"1\",\n          \"comment\" : \"any comment\",\n          \"shipmentState\" : \"Advised\"\n        } ],\n        \"returnTrackingId\" : \"returnTrackingId-example\",\n        \"returnDate\" : \"2021-04-30T09:21:15.003Z\"\n      },\n      \"addDeliveries\" : [ {\n        \"items\" : [ {\n          \"id\" : \"4ce24c27-cce5-447c-890e-0d6b70b690be\",\n          \"quantity\" : 5\n        } ],\n        \"parcels\" : [ {\n          \"measurements\" : {\n            \"heightInMillimeter\" : 20,\n            \"lengthInMillimeter\" : 40,\n            \"widthInMillimeter\" : 5,\n            \"weightInGram\" : 10\n          }\n        } ]\n      } ],\n      \"removeDelivery\" : {\n        \"id\" : \"95a6e7a7-b74e-4397-b0b4-37473d2e3573\"\n      },\n      \"removeParcelFromDelivery\" : {\n        \"parcelId\" : \"98840afa-ac20-4a34-a904-88d3407e2d76\"\n      },\n      \"addParcelToDelivery\" : {\n        \"deliveryId\" : \"95a6e7a7-b74e-4397-b0b4-37473d2e3573\",\n        \"measurements\" : {\n          \"heightInMillimeter\" : 20,\n          \"lengthInMillimeter\" : 40,\n          \"widthInMillimeter\" : 5,\n          \"weightInGram\" : 10\n        }\n      },\n      \"setParcelMeasurements\" : {\n        \"parcelId\" : \"98840afa-ac20-4a34-a904-88d3407e2d76\",\n        \"measurements\" : {\n          \"heightInMillimeter\" : 20,\n          \"lengthInMillimeter\" : 40,\n          \"widthInMillimeter\" : 5,\n          \"weightInGram\" : 10\n        }\n      },\n      \"setParcelTrackingData\" : {\n        \"parcelId\" : \"98840afa-ac20-4a34-a904-88d3407e2d76\",\n        \"trackingData\" : {\n          \"carrier\" : \"carrier data\"\n        }\n      },\n      \"setParcelItems\" : [ {\n        \"parcelId\" : \"98840afa-ac20-4a34-a904-88d3407e2d76\",\n        \"items\" : [ {\n          \"id\" : \"4ce24c27-cce5-447c-890e-0d6b70b690be\",\n          \"quantity\" : 5\n        } ]\n      } ]\n    }\n  } ]\n}"
@@ -1801,7 +1801,7 @@
                                             "query": [
                                             ]
                                         },
-                                        "description": "Creates a request for creating new Customers or updating existing ones.",
+                                        "description": "Creates an Import Request for Customers.",
                                         "body": {
                                             "mode": "raw",
                                             "raw": "{\n  \"type\" : \"customer\",\n  \"resources\" : [ {\n    \"key\" : \"customer-to-import\",\n    \"customerNumber\" : \"12345\",\n    \"email\" : \"john@example.com\",\n    \"password\" : \"D0cEx@mpl3!2025\",\n    \"firstName\" : \"John\",\n    \"lastName\" : \"Doe\",\n    \"dateOfBirth\" : \"1980-01-01\",\n    \"isEmailVerified\" : false,\n    \"externalId\" : \"external-id-123\",\n    \"customerGroup\" : {\n      \"typeId\" : \"customer-group\",\n      \"key\" : \"customer-group-key\"\n    },\n    \"addresses\" : [ {\n      \"key\" : \"john-doe-address-key\",\n      \"streetName\" : \"Main Street\",\n      \"streetNumber\" : \"123\",\n      \"postalCode\" : \"12345\",\n      \"city\" : \"Berlin\",\n      \"country\" : \"DE\"\n    } ],\n    \"authenticationMode\" : \"Password\"\n  } ]\n}"
@@ -1883,7 +1883,7 @@
                                             "query": [
                                             ]
                                         },
-                                        "description": "Creates a request for creating new Inventories or updating existing ones.",
+                                        "description": "Creates an Import Request for InventoryEntries.",
                                         "body": {
                                             "mode": "raw",
                                             "raw": "{\n  \"type\" : \"inventory\",\n  \"resources\" : [ {\n    \"key\" : \"inventory-import-key\",\n    \"sku\" : \"product-variant-sku\",\n    \"quantityOnStock\" : 15,\n    \"restockableInDays\" : 2,\n    \"expectedDelivery\" : \"2022-06-30T14:00:00.000Z\",\n    \"supplyChannel\" : {\n      \"typeId\" : \"channel\",\n      \"key\" : \"channel-key\"\n    }\n  } ]\n}"
@@ -1965,7 +1965,7 @@
                                             "query": [
                                             ]
                                         },
-                                        "description": "Creates a request for creating new Type or updating existing ones.",
+                                        "description": "Creates an Import Request for Types.",
                                         "body": {
                                             "mode": "raw",
                                             "raw": "{\n  \"type\" : \"type\",\n  \"resources\" : [ {\n    \"key\" : \"type-key\",\n    \"name\" : {\n      \"en\" : \"Name of type\"\n    },\n    \"description\" : {\n      \"en\" : \"Description of type\"\n    },\n    \"resourceTypeIds\" : [ \"customer\" ],\n    \"fieldDefinitions\" : [ {\n      \"type\" : {\n        \"name\" : \"String\"\n      },\n      \"name\" : \"exampleStringField\",\n      \"label\" : {\n        \"en\" : \"Example string field.\"\n      },\n      \"required\" : false,\n      \"inputHint\" : \"SingleLine\"\n    } ]\n  } ]\n}"
@@ -2047,10 +2047,92 @@
                                             "query": [
                                             ]
                                         },
-                                        "description": "Creates a request for creating new Discount Codes or updating existing ones.",
+                                        "description": "Creates an Import Request for Discount Codes.",
                                         "body": {
                                             "mode": "raw",
                                             "raw": "{\n  \"type\" : \"discount-code\",\n  \"resources\" : [ {\n    \"key\" : \"discountCodeKey\",\n    \"code\" : \"Save10\",\n    \"name\" : {\n      \"en\" : \"Save10\"\n    },\n    \"cartDiscounts\" : [ {\n      \"typeId\" : \"cart-discount\",\n      \"key\" : \"cartDiscountKey\"\n    } ],\n    \"isActive\" : false,\n    \"groups\" : [ ]\n  } ]\n}"
+                                        }
+                                    },
+                                    "response": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Product-selections",
+                    "description": "null",
+                    "item": [
+                        {
+                            "name": "Import-containers",
+                            "description": "null",
+                            "item": [
+                                {
+                                    "name": "Import import-container",
+                                    "event": [
+                                        {
+                                            "listen": "test",
+                                            "script": {
+                                                "type": "text/javascript",
+                                                "exec": [
+                                                    "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                                    "var data = JSON.parse(responseBody);",
+                                                    "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                                    "    pm.environment.set(\"import-container-id\", data.results[0].id); ",
+                                                    "    pm.environment.set(\"import-container-version\", data.results[0].version);",
+                                                    "}",
+                                                    "if(data.results && data.results[0] && data.results[0].key){",
+                                                    "    pm.environment.set(\"import-container-key\", data.results[0].key); ",
+                                                    "}",
+                                                    "if(data.version){",
+                                                    "    pm.environment.set(\"import-container-version\", data.version);",
+                                                    "}",
+                                                    "if(data.id){",
+                                                    "    pm.environment.set(\"import-container-id\", data.id); ",
+                                                    "}",
+                                                    "if(data.key){",
+                                                    "    pm.environment.set(\"import-container-key\", data.key);",
+                                                    "}",
+                                                    ""
+                                                ]
+                                            }
+                                        }
+                                    ],
+                                    "request": {
+                                        "auth":
+                                            {
+                                                "type": "oauth2",
+                                                "oauth2": {
+                                                    "accessToken": "{{ctp_access_token}}",
+                                                    "addTokenTo": "header",
+                                                    "tokenType": "Bearer"
+                                                }
+                                            },
+                                        "method": "post",
+                                        "header": [
+                                            {
+                                                "key": "Content-Type",
+                                                "value": "application/json"
+                                            }
+                                        ],
+                                        "url": {
+                                            "raw": "{{host}}/{{project-key}}/product-selections/import-containers/{{import-container-key}}",
+                                            "host": [
+                                                "{{host}}"
+                                            ],
+                                            "path": [
+                                                "{{project-key}}",
+                                                "product-selections",
+                                                "import-containers",
+                                                "{{import-container-key}}"
+                                            ],
+                                            "query": [
+                                            ]
+                                        },
+                                        "description": "Creates an Import Request for Product Selections.",
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "{\n  \"type\" : \"product-selection\",\n  \"resources\" : [ {\n    \"key\" : \"selection-001\",\n    \"name\" : {\n      \"en\" : \"Featured Products\",\n      \"de\" : \"Empfohlene Produkte\"\n    },\n    \"mode\" : \"Individual\",\n    \"assignments\" : [ {\n      \"product\" : {\n        \"key\" : \"product-123\",\n        \"typeId\" : \"product\"\n      },\n      \"variantSelection\" : {\n        \"type\" : \"includeOnly\",\n        \"skus\" : [ \"SKU-1\", \"SKU-2\" ]\n      }\n    } ]\n  } ]\n}"
                                         }
                                     },
                                     "response": []
