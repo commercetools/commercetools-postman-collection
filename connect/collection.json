@@ -1331,11 +1331,11 @@
                     "response": []
                 },
                 {
-                    "name": "Drafts",
+                    "name": "ConnectorStaged",
                     "description": "null",
                     "item": [
                         {
-                            "name": "Get ConnectorDraft by id",
+                            "name": "Get ConnectorStaged by id",
                             "event": [
                                 {
                                     "listen": "test",
@@ -1404,7 +1404,7 @@
                             "response": []
                         },
                         {
-                            "name": "Update ConnectorDraft by id",
+                            "name": "Update ConnectorStaged by id",
                             "event": [
                                 {
                                     "listen": "test",
@@ -1473,7 +1473,7 @@
                             "response": []
                         },
                         {
-                            "name": "Get ConnectorDraft by key",
+                            "name": "Get ConnectorStaged by key",
                             "event": [
                                 {
                                     "listen": "test",
@@ -1542,7 +1542,7 @@
                             "response": []
                         },
                         {
-                            "name": "Update ConnectorDraft by key",
+                            "name": "Update ConnectorStaged by key",
                             "event": [
                                 {
                                     "listen": "test",
@@ -1611,7 +1611,7 @@
                             "response": []
                         },
                         {
-                            "name": "Create ConnectorDraft",
+                            "name": "Create ConnectorStaged",
                             "event": [
                                 {
                                     "listen": "test",
@@ -1679,7 +1679,7 @@
                             "response": []
                         },
                         {
-                            "name": "Query drafts",
+                            "name": "Query ConnectorStaged",
                             "event": [
                                 {
                                     "listen": "test",
