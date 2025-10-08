@@ -28,6 +28,7 @@ The following Postman Collections are available:
 - [HTTP API](api/)
 - [Connect](connect/)
 - [Import](import/)
+- [Checkout](checkout/)
 
 > **:warning: Note:**
 >
