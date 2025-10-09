@@ -822,3 +822,182 @@
 - added resource `/{projectKey}/graphql` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/api.raml:183:2)
 </details>
 
+**Checkout changes**
+
+<details>
+<summary>Added Type(s)</summary>
+
+- added type `ApplicationReference` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:0:0)
+- added type `ApplicationResourceIdentifier` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:1:0)
+- added type `CartReference` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:2:0)
+- added type `CartResourceIdentifier` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:3:0)
+- added type `OrderReference` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:4:0)
+- added type `OrderResourceIdentifier` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:5:0)
+- added type `PaymentReference` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:6:0)
+- added type `PaymentResourceIdentifier` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:7:0)
+- added type `Reference` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:8:0)
+- added type `ReferenceTypeId` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:9:0)
+- added type `ResourceIdentifier` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:10:0)
+- added type `ConnectorFailedError` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:13:0)
+- added type `InvalidInputError` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:16:0)
+- added type `InvalidJsonInputError` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:17:0)
+- added type `PaymentFailureError` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:19:0)
+- added type `PaymentIntegrationReference` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:22:0)
+- added type `PaymentIntegrationResourceIdentifier` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:23:0)
+- added type `PaymentIntent` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:24:0)
+- added type `PaymentIntentAction` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:25:0)
+- added type `PaymentIntentCancelAction` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:26:0)
+- added type `PaymentIntentCaptureAction` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:27:0)
+- added type `PaymentIntentOperation` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:28:0)
+- added type `PaymentIntentRefundAction` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:29:0)
+- added type `PaymentIntentReverseAction` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:30:0)
+- added type `AddDiscountCodeError` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:31:0)
+- added type `ConnectorError` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:42:0)
+- added type `DiscountCodeNotApplicable` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:44:0)
+- added type `ErrorLoadingAllPaymentIntegrations` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:45:0)
+- added type `ExpiredSession` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:46:0)
+- added type `FailedToRefreshSession` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:48:0)
+- added type `GiftCardBalanceError` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:49:0)
+- added type `GiftCardBalanceRemoved` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:50:0)
+- added type `GiftCardBalanceStarted` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:51:0)
+- added type `GiftCardBalanceSuccess` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:52:0)
+- added type `GiftCardRedeemError` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:53:0)
+- added type `GiftCardRedeemStarted` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:54:0)
+- added type `GiftCardRedeemSuccess` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:55:0)
+- added type `InvalidLocale` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:58:0)
+- added type `NoPaymentIntegrations` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:62:0)
+- added type `NonOrderableCartError` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:64:0)
+- added type `NotApplicableDiscountCodeRemoved` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:65:0)
+- added type `OrderVerificationRetryError` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:68:0)
+- added type `OrderVerificationStarted` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:69:0)
+- added type `OrderVerificationTimeout` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:70:0)
+- added type `PaymentIntegrationLoaded` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:73:0)
+- added type `PaymentIntegrationLoading` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:74:0)
+- added type `PaymentIntegrationLoadingError` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:75:0)
+- added type `PaymentIntegrationNotAvailable` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:76:0)
+- added type `PaymentIntegrationSelected` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:77:0)
+- added type `PaymentIntegrationSelectionConfirmation` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:78:0)
+- added type `PaymentIntegrationSelectionConfirmationFailed` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:79:0)
+- added type `PaymentIntegrationsReceived` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:80:0)
+- added type `RemoveDiscountCodeError` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:86:0)
+- added type `ShippingAddressMissingError` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:89:0)
+- added type `ShippingMethodDoesNotMatchCart` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:90:0)
+- added type `ShippingMethodSelected` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:91:0)
+- added type `ShippingMethodSelectionConfirmation` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:92:0)
+- added type `UpdatedFields` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:95:0)
+- added type `Transaction` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:96:0)
+- added type `TransactionDraft` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:97:0)
+- added type `TransactionError` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:98:0)
+- added type `TransactionItem` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:99:0)
+- added type `TransactionItemDraft` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:100:0)
+- added type `TransactionState` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:101:0)
+- added type `TransactionStatus` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:102:0)
+</details>
+
+
+<details>
+<summary>Changed Type(s)</summary>
+
+- :warning: changed type `PaymentCancelled` from type `Message` to `ResponseMessage` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:71:0)
+- :warning: changed type `PaymentFailed` from type `Message` to `ResponseMessage` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:72:0)
+- :warning: changed type `PaymentValidationFailed` from type `Message` to `ResponseMessage` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:82:0)
+</details>
+
+
+<details>
+<summary>Removed Type(s)</summary>
+
+- :warning: removed type `ApplicationNotFound` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:4:0)
+- :warning: removed type `InvalidToken` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:15:0)
+- :warning: removed type `NoPaymentMethods` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:17:0)
+- :warning: removed type `PaymentConnectorError` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:21:0)
+- :warning: removed type `PaymentMethodLoaded` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:22:0)
+- :warning: removed type `PaymentMethodLoading` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:23:0)
+- :warning: removed type `PaymentMethodLoadingError` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:24:0)
+- :warning: removed type `PaymentMethodSelected` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:25:0)
+- :warning: removed type `PaymentMethodSelectionConfirmation` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:26:0)
+- :warning: removed type `PaymentMethodSelectionConfirmationFailed` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:27:0)
+- :warning: removed type `PaymentMethodsReceived` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:28:0)
+- :warning: removed type `PaymentVerificationStarted` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:33:0)
+- :warning: removed type `PaymentVerificationTimeout` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:34:0)
+- :warning: removed type `PermissionsNotFound` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:35:0)
+- :warning: removed type `CapturePaymentAction` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:48:0)
+- :warning: removed type `RefundPaymentAction` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:49:0)
+- :warning: removed type `CancelPaymentAction` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:50:0)
+- :warning: removed type `Payment` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:51:0)
+- :warning: removed type `PaymentOperation` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/common.raml:39:2)
+- :warning: removed type `PaymentAction` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/common.raml:54:2)
+</details>
+
+
+<details>
+<summary>Added Method(s)</summary>
+
+- added method `post /{projectKey}/transactions` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:117:4)
+- added method `get /{projectKey}/transactions/{id}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:147:6)
+- added method `get /{projectKey}/transactions/key={key}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:171:6)
+</details>
+
+
+<details>
+<summary>Changed MethodBody(s)</summary>
+
+- :warning: changed body for `application/json` of method `post /{projectKey}/payment-intents/{paymentId}` from type `Payment` to `PaymentIntent` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:100:10)
+</details>
+
+
+<details>
+<summary>Removed Property(s)</summary>
+
+- :warning: removed property `payload` from type `ResponseMessage` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/responses/ResponseMessage.raml:9:2)
+</details>
+
+
+<details>
+<summary>Added Property(s)</summary>
+
+- added property `correlationId` to type `ApplicationDeactivated` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/responses/ApplicationDeactivated.raml:17:2)
+- added property `correlationId` to type `BadInputData` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/responses/BadInputData.raml:17:2)
+- added property `correlationId` to type `CartEmptiedDuringCheckout` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/responses/CartEmptiedDuringCheckout.raml:17:2)
+- added property `correlationId` to type `CartEmpty` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/responses/CartEmpty.raml:17:2)
+- added property `correlationId` to type `CartNotFound` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/responses/CartNotFound.raml:17:2)
+- added property `correlationId` to type `CartWithExistingPayment` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/responses/CartWithExistingPayment.raml:17:2)
+- added property `correlationId` to type `CheckoutCancelled` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/responses/CheckoutCancelled.raml:17:2)
+- added property `correlationId` to type `CheckoutCompleted` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/responses/CheckoutCompleted.raml:20:2)
+- added property `correlationId` to type `CheckoutLoaded` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/responses/CheckoutLoaded.raml:17:2)
+- added property `correlationId` to type `CheckoutStarted` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/responses/CheckoutStarted.raml:17:2)
+- added property `correlationId` to type `DeprecatedFields` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/responses/DeprecatedFields.raml:17:2)
+- added property `correlationId` to type `ExternalTermsAndConditionsPending` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/responses/ExternalTermsAndConditionsPending.raml:17:2)
+- added property `correlationId` to type `InitError` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/responses/InitError.raml:17:2)
+- added property `correlationId` to type `InitTimeout` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/responses/InitTimeout.raml:17:2)
+- added property `correlationId` to type `InvalidMode` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/responses/InvalidMode.raml:17:2)
+- added property `correlationId` to type `Message` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/responses/Message.raml:18:2)
+- added property `correlationId` to type `MultipleVendorButtonContainers` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/responses/MultipleVendorButtonContainers.raml:17:2)
+- added property `correlationId` to type `NoShippingMethods` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/responses/NoShippingMethods.raml:17:2)
+- added property `correlationId` to type `OrderCreated` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/responses/OrderCreated.raml:17:2)
+- added property `correlationId` to type `OrderCreationError` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/responses/OrderCreationError.raml:17:2)
+- added property `correlationId` to type `PaymentCancelled` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/responses/PaymentCancelled.raml:17:2)
+- added property `payload` to type `PaymentCancelled` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/responses/PaymentCancelled.raml:20:2)
+- added property `correlationId` to type `PaymentFailed` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/responses/PaymentFailed.raml:17:2)
+- added property `payload` to type `PaymentFailed` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/responses/PaymentFailed.raml:20:2)
+- added property `correlationId` to type `PaymentStarted` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/responses/PaymentStarted.raml:17:2)
+- added property `correlationId` to type `PaymentValidationFailed` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/responses/PaymentValidationFailed.raml:17:2)
+- added property `payload` to type `PaymentValidationFailed` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/responses/PaymentValidationFailed.raml:20:2)
+- added property `correlationId` to type `PaymentValidationPassed` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/responses/PaymentValidationPassed.raml:17:2)
+- added property `correlationId` to type `PaymentValidationStarted` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/responses/PaymentValidationStarted.raml:17:2)
+- added property `correlationId` to type `ProjectIsDeactivated` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/responses/ProjectIsDeactivated.raml:17:2)
+- added property `correlationId` to type `ResponseMessage` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/responses/ResponseMessage.raml:10:2)
+- added property `correlationId` to type `SetShippingAddressError` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/responses/SetShippingAddressError.raml:17:2)
+- added property `correlationId` to type `UnavailableLocale` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/responses/UnavailableLocale.raml:17:2)
+- added property `correlationId` to type `UnsupportedCountry` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/responses/UnsupportedCountry.raml:17:2)
+</details>
+
+
+<details>
+<summary>Added Resource(s)</summary>
+
+- added resource `/{projectKey}/transactions` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:115:2)
+- added resource `/{projectKey}/transactions/{id}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:140:4)
+- added resource `/{projectKey}/transactions/key={key}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:164:4)
+</details>
+

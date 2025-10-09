@@ -290,15 +290,15 @@
             ]
         },
         {
-            "name": "",
+            "name": "Project",
             "description": "null",
             "item": [
                 {
-                    "name": "Payment-intents",
+                    "name": "Payment Intents",
                     "description": "null",
                     "item": [
                         {
-                            "name": "post ByProjectKeyPaymentIntentsByPaymentId",
+                            "name": "Manage Payment by ID",
                             "event": [
                                 {
                                     "listen": "test",
@@ -373,7 +373,7 @@
                     "description": "null",
                     "item": [
                         {
-                            "name": "get ByProjectKeyTransactionsById",
+                            "name": "Get Transaction by ID",
                             "event": [
                                 {
                                     "listen": "test",
@@ -442,7 +442,7 @@
                             "response": []
                         },
                         {
-                            "name": "get ByProjectKeyTransactionsKeyByKey",
+                            "name": "Get Transaction by key",
                             "event": [
                                 {
                                     "listen": "test",
@@ -511,7 +511,7 @@
                             "response": []
                         },
                         {
-                            "name": "post ByProjectKeyTransactions",
+                            "name": "Create Transaction",
                             "event": [
                                 {
                                     "listen": "test",
