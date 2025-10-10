@@ -757,20 +757,20 @@
 <details>
 <summary>Added Method(s)</summary>
 
-- added method `post /{projectKey}/product-selections/import-containers/{importContainerKey}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:748:8)
-- added method `post /{projectKey}/business-units/import-containers/{importContainerKey}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:774:8)
+- added method `post /{projectKey}/business-units/import-containers/{importContainerKey}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:389:8)
+- added method `post /{projectKey}/product-selections/import-containers/{importContainerKey}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:711:8)
 </details>
 
 
 <details>
 <summary>Added Resource(s)</summary>
 
-- added resource `/{projectKey}/product-selections` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:738:2)
-- added resource `/{projectKey}/business-units` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:764:2)
-- added resource `/{projectKey}/product-selections/import-containers` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:739:4)
-- added resource `/{projectKey}/product-selections/import-containers/{importContainerKey}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:740:6)
-- added resource `/{projectKey}/business-units/import-containers` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:765:4)
-- added resource `/{projectKey}/business-units/import-containers/{importContainerKey}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:766:6)
+- added resource `/{projectKey}/business-units` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:377:2)
+- added resource `/{projectKey}/product-selections` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:699:2)
+- added resource `/{projectKey}/business-units/import-containers` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:379:4)
+- added resource `/{projectKey}/business-units/import-containers/{importContainerKey}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:381:6)
+- added resource `/{projectKey}/product-selections/import-containers` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:701:4)
+- added resource `/{projectKey}/product-selections/import-containers/{importContainerKey}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:703:6)
 </details>
 
 **History changes**
