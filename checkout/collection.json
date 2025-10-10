@@ -442,7 +442,7 @@
                             "response": []
                         },
                         {
-                            "name": "Get Transaction by key",
+                            "name": "Get Transaction by Key",
                             "event": [
                                 {
                                     "listen": "test",
@@ -574,6 +574,1442 @@
                                 "body": {
                                     "mode": "raw",
                                     "raw": "{\n  \"key\" : \"transaction-key\",\n  \"application\" : {\n    \"typeId\" : \"application\",\n    \"id\" : \"a84d4fe7-ae82-4c3f-8c6c-435e54204fdd\"\n  },\n  \"cart\" : {\n    \"typeId\" : \"cart\",\n    \"id\" : \"a0e60229-441c-44b0-952b-981a67cbd8c4\"\n  },\n  \"transactionItems\" : [ {\n    \"paymentIntegration\" : {\n      \"typeId\" : \"payment-integration\",\n      \"id\" : \"4c24762b-87df-4bd3-898a-bafed913a9ca\"\n    },\n    \"amount\" : {\n      \"centAmount\" : 1000,\n      \"currencyCode\" : \"EUR\"\n    }\n  } ]\n}"
+                                }
+                            },
+                            "response": []
+                        }
+                    ]
+                },
+                {
+                    "name": "Payment-integrations",
+                    "description": "null",
+                    "item": [
+                        {
+                            "name": "Get Payment Integration by ID",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                            "    pm.environment.set(\"payment-integration-id\", data.results[0].id); ",
+                                            "    pm.environment.set(\"payment-integration-version\", data.results[0].version);",
+                                            "}",
+                                            "if(data.results && data.results[0] && data.results[0].key){",
+                                            "    pm.environment.set(\"payment-integration-key\", data.results[0].key); ",
+                                            "}",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"payment-integration-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"payment-integration-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"payment-integration-key\", data.key);",
+                                            "}",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "get",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{project-key}}/payment-integrations/{{id}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{project-key}}",
+                                        "payment-integrations",
+                                        "{{id}}"
+                                    ],
+                                    "query": [
+                                    ]
+                                },
+                                "description": "Retrieves Payment Integrations in a [Project](ctp:api:type:Project) with a given `id`.\n",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": ""
+                                }
+                            },
+                            "response": []
+                        },
+                        {
+                            "name": "Check Payment Integration by ID",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                            "    pm.environment.set(\"payment-integration-id\", data.results[0].id); ",
+                                            "    pm.environment.set(\"payment-integration-version\", data.results[0].version);",
+                                            "}",
+                                            "if(data.results && data.results[0] && data.results[0].key){",
+                                            "    pm.environment.set(\"payment-integration-key\", data.results[0].key); ",
+                                            "}",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"payment-integration-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"payment-integration-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"payment-integration-key\", data.key);",
+                                            "}",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "head",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{project-key}}/payment-integrations/{{id}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{project-key}}",
+                                        "payment-integrations",
+                                        "{{id}}"
+                                    ],
+                                    "query": [
+                                    ]
+                                },
+                                "description": "Checks if a PaymentIntegration with a given `id` exists. Returns `200 OK` if the PaymentIntegration exists, or `404 Not Found` if it doesn't. Specific Error Codes:\n- [ResourceNotFound](ctp:checkout:type:ResourceNotFoundError)\n- [GeneralError](ctp:checkout:type:GeneralError)\n",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": ""
+                                }
+                            },
+                            "response": []
+                        },
+                        {
+                            "name": "Update Payment Integration by ID",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                            "    pm.environment.set(\"payment-integration-id\", data.results[0].id); ",
+                                            "    pm.environment.set(\"payment-integration-version\", data.results[0].version);",
+                                            "}",
+                                            "if(data.results && data.results[0] && data.results[0].key){",
+                                            "    pm.environment.set(\"payment-integration-key\", data.results[0].key); ",
+                                            "}",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"payment-integration-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"payment-integration-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"payment-integration-key\", data.key);",
+                                            "}",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "post",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{project-key}}/payment-integrations/{{id}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{project-key}}",
+                                        "payment-integrations",
+                                        "{{id}}"
+                                    ],
+                                    "query": [
+                                    ]
+                                },
+                                "description": "null",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"version\" : 1,\n  \"actions\" : [ {\n    \"action\" : \"setKey\",\n    \"key\" : \"my-payment-integration\"\n  } ]\n}"
+                                }
+                            },
+                            "response": []
+                        },
+                        {
+                            "name": "Delete Payment Integration by ID",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                            "    pm.environment.set(\"payment-integration-id\", data.results[0].id); ",
+                                            "    pm.environment.set(\"payment-integration-version\", data.results[0].version);",
+                                            "}",
+                                            "if(data.results && data.results[0] && data.results[0].key){",
+                                            "    pm.environment.set(\"payment-integration-key\", data.results[0].key); ",
+                                            "}",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"payment-integration-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"payment-integration-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"payment-integration-key\", data.key);",
+                                            "}",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "delete",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{project-key}}/payment-integrations/{{id}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{project-key}}",
+                                        "payment-integrations",
+                                        "{{id}}"
+                                    ],
+                                    "query": [
+                                    ]
+                                },
+                                "description": "null",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": ""
+                                }
+                            },
+                            "response": []
+                        },
+                        {
+                            "name": "Get Payment Integration by Key",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                            "    pm.environment.set(\"payment-integration-id\", data.results[0].id); ",
+                                            "    pm.environment.set(\"payment-integration-version\", data.results[0].version);",
+                                            "}",
+                                            "if(data.results && data.results[0] && data.results[0].key){",
+                                            "    pm.environment.set(\"payment-integration-key\", data.results[0].key); ",
+                                            "}",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"payment-integration-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"payment-integration-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"payment-integration-key\", data.key);",
+                                            "}",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "get",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{project-key}}/payment-integrations/key={{payment-integration-key}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{project-key}}",
+                                        "payment-integrations",
+                                        "key={{payment-integration-key}}"
+                                    ],
+                                    "query": [
+                                    ]
+                                },
+                                "description": "Retrieves Payment Integrations in a [Project](ctp:api:type:Project) with a given `key`. Specific Error Codes:\n- [ResourceNotFound](ctp:checkout:type:ResourceNotFoundError)\n- [GeneralError](ctp:checkout:type:GeneralError)\n",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": ""
+                                }
+                            },
+                            "response": []
+                        },
+                        {
+                            "name": "Update Payment Integration by Key",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                            "    pm.environment.set(\"payment-integration-id\", data.results[0].id); ",
+                                            "    pm.environment.set(\"payment-integration-version\", data.results[0].version);",
+                                            "}",
+                                            "if(data.results && data.results[0] && data.results[0].key){",
+                                            "    pm.environment.set(\"payment-integration-key\", data.results[0].key); ",
+                                            "}",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"payment-integration-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"payment-integration-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"payment-integration-key\", data.key);",
+                                            "}",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "post",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{project-key}}/payment-integrations/key={{payment-integration-key}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{project-key}}",
+                                        "payment-integrations",
+                                        "key={{payment-integration-key}}"
+                                    ],
+                                    "query": [
+                                    ]
+                                },
+                                "description": "null",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": ""
+                                }
+                            },
+                            "response": []
+                        },
+                        {
+                            "name": "Check Payment Integration by Key",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                            "    pm.environment.set(\"payment-integration-id\", data.results[0].id); ",
+                                            "    pm.environment.set(\"payment-integration-version\", data.results[0].version);",
+                                            "}",
+                                            "if(data.results && data.results[0] && data.results[0].key){",
+                                            "    pm.environment.set(\"payment-integration-key\", data.results[0].key); ",
+                                            "}",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"payment-integration-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"payment-integration-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"payment-integration-key\", data.key);",
+                                            "}",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "head",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{project-key}}/payment-integrations/key={{payment-integration-key}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{project-key}}",
+                                        "payment-integrations",
+                                        "key={{payment-integration-key}}"
+                                    ],
+                                    "query": [
+                                    ]
+                                },
+                                "description": "Checks if a PaymentIntegration with a given `key` exists. Returns `200 OK` if the PaymentIntegration exists, or `404 Not Found` if it doesn't. Specific Error Codes:\n- [ResourceNotFound](ctp:checkout:type:ResourceNotFoundError)\n- [GeneralError](ctp:checkout:type:GeneralError)\n",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": ""
+                                }
+                            },
+                            "response": []
+                        },
+                        {
+                            "name": "Delete Payment Integration by Key",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                            "    pm.environment.set(\"payment-integration-id\", data.results[0].id); ",
+                                            "    pm.environment.set(\"payment-integration-version\", data.results[0].version);",
+                                            "}",
+                                            "if(data.results && data.results[0] && data.results[0].key){",
+                                            "    pm.environment.set(\"payment-integration-key\", data.results[0].key); ",
+                                            "}",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"payment-integration-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"payment-integration-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"payment-integration-key\", data.key);",
+                                            "}",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "delete",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{project-key}}/payment-integrations/key={{payment-integration-key}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{project-key}}",
+                                        "payment-integrations",
+                                        "key={{payment-integration-key}}"
+                                    ],
+                                    "query": [
+                                    ]
+                                },
+                                "description": "null",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": ""
+                                }
+                            },
+                            "response": []
+                        },
+                        {
+                            "name": "Query Payment Integrations",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                            "    pm.environment.set(\"payment-integration-id\", data.results[0].id); ",
+                                            "    pm.environment.set(\"payment-integration-version\", data.results[0].version);",
+                                            "}",
+                                            "if(data.results && data.results[0] && data.results[0].key){",
+                                            "    pm.environment.set(\"payment-integration-key\", data.results[0].key); ",
+                                            "}",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"payment-integration-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"payment-integration-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"payment-integration-key\", data.key);",
+                                            "}",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "get",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{project-key}}/payment-integrations",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{project-key}}",
+                                        "payment-integrations"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "sort",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        },
+                                        {
+                                            "key": "limit",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        },
+                                        {
+                                            "key": "offset",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        },
+                                        {
+                                            "key": "withTotal",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        }
+                                    ]
+                                },
+                                "description": "Retrieves Payment Integrations in a [Project](ctp:api:type:Project).\n\nThe results are [paginated](\/..\/api\/general-concepts#pagination).\n",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": ""
+                                }
+                            },
+                            "response": []
+                        },
+                        {
+                            "name": "Create Payment Integration",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                            "    pm.environment.set(\"payment-integration-id\", data.results[0].id); ",
+                                            "    pm.environment.set(\"payment-integration-version\", data.results[0].version);",
+                                            "}",
+                                            "if(data.results && data.results[0] && data.results[0].key){",
+                                            "    pm.environment.set(\"payment-integration-key\", data.results[0].key); ",
+                                            "}",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"payment-integration-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"payment-integration-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"payment-integration-key\", data.key);",
+                                            "}",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "post",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{project-key}}/payment-integrations",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{project-key}}",
+                                        "payment-integrations"
+                                    ],
+                                    "query": [
+                                    ]
+                                },
+                                "description": "Creates a new PaymentIntegration.\n",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"type\" : \"card\",\n  \"status\" : \"Active\",\n  \"name\" : \"Credit Card via Adyen\",\n  \"application\" : {\n    \"id\" : \"bc95d35a-8cc1-484c-b207-bd8c55a55a28\",\n    \"typeId\" : \"application\"\n  },\n  \"connectorDeployment\" : {\n    \"id\" : \"cb0ad988-cc50-4829-83ad-777993d0ddd5\",\n    \"typeId\" : \"deployment\"\n  },\n  \"predicate\" : \"country='DE'\",\n  \"componentType\" : \"Component\",\n  \"sortingInfo\" : {\n    \"priority\" : 1\n  },\n  \"displayInfo\" : {\n    \"label\" : {\n      \"en\" : \"Credit Cards\"\n    },\n    \"logoUrl\" : {\n      \"en\" : \"https:\/\/mylogourl.com\/logo.svg\"\n    },\n    \"description\" : {\n      \"en\" : \"Pay securely with Credit Cards\"\n    },\n    \"payButtonText\" : {\n      \"en\" : \"Pay with cards\"\n    }\n  },\n  \"automatedReversalConfiguration\" : {\n    \"status\" : \"Active\",\n    \"predicate\" : \"country='DE'\"\n  }\n}"
+                                }
+                            },
+                            "response": []
+                        }
+                    ]
+                },
+                {
+                    "name": "Applications",
+                    "description": "null",
+                    "item": [
+                        {
+                            "name": "Get Application by ID",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                            "    pm.environment.set(\"application-id\", data.results[0].id); ",
+                                            "    pm.environment.set(\"application-version\", data.results[0].version);",
+                                            "}",
+                                            "if(data.results && data.results[0] && data.results[0].key){",
+                                            "    pm.environment.set(\"application-key\", data.results[0].key); ",
+                                            "}",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"application-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"application-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"application-key\", data.key);",
+                                            "}",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "get",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{project-key}}/applications/{{id}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{project-key}}",
+                                        "applications",
+                                        "{{id}}"
+                                    ],
+                                    "query": [
+                                    ]
+                                },
+                                "description": "Retrieves an [Application](ctp:checkout:type:Application) by a given `id`.\n",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": ""
+                                }
+                            },
+                            "response": []
+                        },
+                        {
+                            "name": "Check Application by ID",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                            "    pm.environment.set(\"application-id\", data.results[0].id); ",
+                                            "    pm.environment.set(\"application-version\", data.results[0].version);",
+                                            "}",
+                                            "if(data.results && data.results[0] && data.results[0].key){",
+                                            "    pm.environment.set(\"application-key\", data.results[0].key); ",
+                                            "}",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"application-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"application-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"application-key\", data.key);",
+                                            "}",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "head",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{project-key}}/applications/{{id}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{project-key}}",
+                                        "applications",
+                                        "{{id}}"
+                                    ],
+                                    "query": [
+                                    ]
+                                },
+                                "description": "Checks if an [Application](\/applications-api#application) with a given `id` exists. Returns `200 OK` if the Application exists, or `404 Not Found` if it doesn't. Specific Error Codes:\n- [ResourceNotFound](ctp:checkout:type:ResourceNotFoundError)\n- [GeneralError](ctp:checkout:type:GeneralError)\n",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": ""
+                                }
+                            },
+                            "response": []
+                        },
+                        {
+                            "name": "Update Application by ID",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                            "    pm.environment.set(\"application-id\", data.results[0].id); ",
+                                            "    pm.environment.set(\"application-version\", data.results[0].version);",
+                                            "}",
+                                            "if(data.results && data.results[0] && data.results[0].key){",
+                                            "    pm.environment.set(\"application-key\", data.results[0].key); ",
+                                            "}",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"application-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"application-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"application-key\", data.key);",
+                                            "}",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "post",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{project-key}}/applications/{{id}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{project-key}}",
+                                        "applications",
+                                        "{{id}}"
+                                    ],
+                                    "query": [
+                                    ]
+                                },
+                                "description": "null",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"version\" : 1,\n  \"actions\" : [ {\n    \"action\" : \"setName\",\n    \"name\" : \"my-application\"\n  } ]\n}"
+                                }
+                            },
+                            "response": []
+                        },
+                        {
+                            "name": "Delete Application by ID",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                            "    pm.environment.set(\"application-id\", data.results[0].id); ",
+                                            "    pm.environment.set(\"application-version\", data.results[0].version);",
+                                            "}",
+                                            "if(data.results && data.results[0] && data.results[0].key){",
+                                            "    pm.environment.set(\"application-key\", data.results[0].key); ",
+                                            "}",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"application-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"application-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"application-key\", data.key);",
+                                            "}",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "delete",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{project-key}}/applications/{{id}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{project-key}}",
+                                        "applications",
+                                        "{{id}}"
+                                    ],
+                                    "query": [
+                                    ]
+                                },
+                                "description": "null",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": ""
+                                }
+                            },
+                            "response": []
+                        },
+                        {
+                            "name": "Get Application by Key",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                            "    pm.environment.set(\"application-id\", data.results[0].id); ",
+                                            "    pm.environment.set(\"application-version\", data.results[0].version);",
+                                            "}",
+                                            "if(data.results && data.results[0] && data.results[0].key){",
+                                            "    pm.environment.set(\"application-key\", data.results[0].key); ",
+                                            "}",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"application-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"application-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"application-key\", data.key);",
+                                            "}",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "get",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{project-key}}/applications/key={{application-key}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{project-key}}",
+                                        "applications",
+                                        "key={{application-key}}"
+                                    ],
+                                    "query": [
+                                    ]
+                                },
+                                "description": "Retrieves an [Application](ctp:checkout:type:Application) with a given `key`.\nSpecific Error Codes:\n- [ResourceNotFound](ctp:checkout:type:ResourceNotFoundError)\n- [GeneralError](ctp:checkout:type:GeneralError)\n",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": ""
+                                }
+                            },
+                            "response": []
+                        },
+                        {
+                            "name": "Update Application by Key",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                            "    pm.environment.set(\"application-id\", data.results[0].id); ",
+                                            "    pm.environment.set(\"application-version\", data.results[0].version);",
+                                            "}",
+                                            "if(data.results && data.results[0] && data.results[0].key){",
+                                            "    pm.environment.set(\"application-key\", data.results[0].key); ",
+                                            "}",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"application-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"application-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"application-key\", data.key);",
+                                            "}",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "post",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{project-key}}/applications/key={{application-key}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{project-key}}",
+                                        "applications",
+                                        "key={{application-key}}"
+                                    ],
+                                    "query": [
+                                    ]
+                                },
+                                "description": "null",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": ""
+                                }
+                            },
+                            "response": []
+                        },
+                        {
+                            "name": "Check Application by Key",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                            "    pm.environment.set(\"application-id\", data.results[0].id); ",
+                                            "    pm.environment.set(\"application-version\", data.results[0].version);",
+                                            "}",
+                                            "if(data.results && data.results[0] && data.results[0].key){",
+                                            "    pm.environment.set(\"application-key\", data.results[0].key); ",
+                                            "}",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"application-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"application-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"application-key\", data.key);",
+                                            "}",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "head",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{project-key}}/applications/key={{application-key}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{project-key}}",
+                                        "applications",
+                                        "key={{application-key}}"
+                                    ],
+                                    "query": [
+                                    ]
+                                },
+                                "description": "Checks if an [Application](ctp:checkout:type:Application) with a given `key` exists. Returns `200 OK` if the Application exists, or `404 Not Found` if it doesn't. Specific Error Codes:\n- [ResourceNotFound](ctp:checkout:type:ResourceNotFoundError)\n- [GeneralError](ctp:checkout:type:GeneralError)\n",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": ""
+                                }
+                            },
+                            "response": []
+                        },
+                        {
+                            "name": "Delete Application by Key",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                            "    pm.environment.set(\"application-id\", data.results[0].id); ",
+                                            "    pm.environment.set(\"application-version\", data.results[0].version);",
+                                            "}",
+                                            "if(data.results && data.results[0] && data.results[0].key){",
+                                            "    pm.environment.set(\"application-key\", data.results[0].key); ",
+                                            "}",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"application-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"application-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"application-key\", data.key);",
+                                            "}",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "delete",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{project-key}}/applications/key={{application-key}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{project-key}}",
+                                        "applications",
+                                        "key={{application-key}}"
+                                    ],
+                                    "query": [
+                                    ]
+                                },
+                                "description": "null",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": ""
+                                }
+                            },
+                            "response": []
+                        },
+                        {
+                            "name": "Query Applications",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                            "    pm.environment.set(\"application-id\", data.results[0].id); ",
+                                            "    pm.environment.set(\"application-version\", data.results[0].version);",
+                                            "}",
+                                            "if(data.results && data.results[0] && data.results[0].key){",
+                                            "    pm.environment.set(\"application-key\", data.results[0].key); ",
+                                            "}",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"application-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"application-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"application-key\", data.key);",
+                                            "}",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "get",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{project-key}}/applications",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{project-key}}",
+                                        "applications"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "sort",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        },
+                                        {
+                                            "key": "limit",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        },
+                                        {
+                                            "key": "offset",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        },
+                                        {
+                                            "key": "withTotal",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        }
+                                    ]
+                                },
+                                "description": "Retrieves Applications\n",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": ""
+                                }
+                            },
+                            "response": []
+                        },
+                        {
+                            "name": "Create Application",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                            "    pm.environment.set(\"application-id\", data.results[0].id); ",
+                                            "    pm.environment.set(\"application-version\", data.results[0].version);",
+                                            "}",
+                                            "if(data.results && data.results[0] && data.results[0].key){",
+                                            "    pm.environment.set(\"application-key\", data.results[0].key); ",
+                                            "}",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"application-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"application-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"application-key\", data.key);",
+                                            "}",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "post",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{project-key}}/applications",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{project-key}}",
+                                        "applications"
+                                    ],
+                                    "query": [
+                                    ]
+                                },
+                                "description": "Creates a new [Application](ctp:checkout:type:Application).\n",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"key\" : \"my-application\",\n  \"allowedOrigins\" : {\n    \"allowAll\" : false,\n    \"origins\" : [ \"https:\/\/demo.com\" ]\n  },\n  \"countries\" : [ \"DE\" ],\n  \"description\" : {\n    \"en\" : \"English description\"\n  },\n  \"name\" : \"My Application\",\n  \"mode\" : \"CompleteFlow\",\n  \"status\" : \"Active\",\n  \"logo\" : {\n    \"url\" : \"https:\/\/svgshare.com\/i\/120g.svg\"\n  },\n  \"agreements\" : [ {\n    \"id\" : \"bc95d35a-8cc1-484c-b207-bd8c55a55a28\",\n    \"name\" : \"myAgreement\",\n    \"type\" : \"MandatoryCheckbox\",\n    \"status\" : \"Active\",\n    \"text\" : {\n      \"en\" : \"By clicking the Complete Purchase button below, I agree to the Terms of Use.\"\n    }\n  } ],\n  \"paymentsConfiguration\" : {\n    \"paymentReturnUrl\" : \"https:\/\/demo.com\/checkout\",\n    \"activePaymentComponentType\" : \"Component\"\n  },\n  \"discountsConfiguration\" : {\n    \"allowDiscounts\" : true\n  }\n}"
                                 }
                             },
                             "response": []
