@@ -850,6 +850,12 @@
                                         "{{id}}"
                                     ],
                                     "query": [
+                                        {
+                                            "key": "version",
+                                            "value": "{{payment-integration-version}}",
+                                            "equals": true,
+                                            "disabled": false
+                                        }
                                     ]
                                 },
                                 "description": "null",
@@ -1126,6 +1132,12 @@
                                         "key={{payment-integration-key}}"
                                     ],
                                     "query": [
+                                        {
+                                            "key": "version",
+                                            "value": "{{payment-integration-version}}",
+                                            "equals": true,
+                                            "disabled": false
+                                        }
                                     ]
                                 },
                                 "description": "null",
@@ -1568,6 +1580,12 @@
                                         "{{id}}"
                                     ],
                                     "query": [
+                                        {
+                                            "key": "version",
+                                            "value": "{{application-version}}",
+                                            "equals": true,
+                                            "disabled": false
+                                        }
                                     ]
                                 },
                                 "description": "null",
@@ -1844,6 +1862,12 @@
                                         "key={{application-key}}"
                                     ],
                                     "query": [
+                                        {
+                                            "key": "version",
+                                            "value": "{{application-version}}",
+                                            "equals": true,
+                                            "disabled": false
+                                        }
                                     ]
                                 },
                                 "description": "null",
