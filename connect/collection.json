@@ -383,7 +383,7 @@
                                         }
                                     ]
                                 },
-                                "description": "Retrieves logs for the given deployment.",
+                                "description": "Specific Error Codes:\n- [DeploymentApplicationDoesNotExist](ctp:connect:type:DeploymentApplicationDoesNotExistError)\n- [DeploymentLogInvalidDate](ctp:connect:type:DeploymentLogInvalidDateError)\n- [DeploymentLogInvalidPageToken](ctp:connect:type:DeploymentLogInvalidPageTokenError)\n",
                                 "body": {
                                     "mode": "raw",
                                     "raw": ""
@@ -684,7 +684,7 @@
                                         }
                                     ]
                                 },
-                                "description": "Retrieves logs for the given deployment.",
+                                "description": "Specific Error Codes:\n- [DeploymentApplicationDoesNotExist](ctp:connect:type:DeploymentApplicationDoesNotExistError)\n- [DeploymentLogInvalidDate](ctp:connect:type:DeploymentLogInvalidDateError)\n- [DeploymentLogInvalidPageToken](ctp:connect:type:DeploymentLogInvalidPageTokenError)\n",
                                 "body": {
                                     "mode": "raw",
                                     "raw": ""
