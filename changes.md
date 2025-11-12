@@ -458,6 +458,7 @@
 - :warning: removed property `payment` from type `OrderPaymentAddedMessagePayload` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/api/types/message/payload/OrderPaymentAddedMessagePayload.raml:8:2)
 - :warning: removed property `/[0-9].[0-9]*[1-9]/` from type `CategoryOrderHints` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/api/types/product/CategoryOrderHints.raml:14:2)
 - :warning: removed property `//` from type `ProductVariantChannelAvailabilityMap` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/api/types/product/ProductVariantChannelAvailabilityMap.raml:11:2)
+- :warning: removed property `tierMinimumQuantity` from type `StandalonePriceRemovePriceTierAction` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/api/types/standalone-price/updates/StandalonePriceRemovePriceTierAction.raml:9:2)
 </details>
 
 
@@ -562,6 +563,7 @@
 - added property `published` to type `ShoppingListLineItem` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/shopping-list/ShoppingListLineItem.raml:48:2)
 - added property `recurrencePolicy` to type `StandalonePrice` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/standalone-price/StandalonePrice.raml:97:2)
 - added property `recurrencePolicy` to type `StandalonePriceDraft` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/standalone-price/StandalonePriceDraft.raml:58:2)
+- added property `minimumQuantity` to type `StandalonePriceRemovePriceTierAction` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/standalone-price/updates/StandalonePriceRemovePriceTierAction.raml:9:2)
 - added property `source` to type `EventBridgeDestination` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/subscription/EventBridgeDestination.raml:18:2)
 - added property `events` to type `Subscription` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/subscription/Subscription.raml:54:2)
 - added property `events` to type `SubscriptionDraft` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/subscription/SubscriptionDraft.raml:27:2)
