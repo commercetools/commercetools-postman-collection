@@ -324,6 +324,13 @@
 
 
 <details>
+<summary>Deprecated Type(s)</summary>
+
+- type `ProductLegacySetSkuAction` is deprecated (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/types.raml:2139:0)
+</details>
+
+
+<details>
 <summary>Removed Type(s)</summary>
 
 - :warning: removed type `AssociateRoleNameChangedMessage` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/api/types/types.raml:838:0)
@@ -1205,7 +1212,7 @@
 - added property `variant` to type `AddAssetChange` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/AddAssetChange.raml:32:2)
 - added property `attributeName` to type `AddEnumValueChange` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/AddEnumValueChange.raml:21:2)
 - added property `variant` to type `AddExternalImageChange` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/AddExternalImageChange.raml:32:2)
-- added property `variant` to type `AddPriceChange` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/AddPriceChange.raml:30:2)
+- added property `variant` to type `AddPriceChange` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/AddPriceChange.raml:32:2)
 - added property `catalogData` to type `AddToCategoryChange` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/AddToCategoryChange.raml:28:2)
 - added property `custom` to type `Address` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Address.raml:8:2)
 - added property `sources` to type `Asset` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Asset.raml:9:2)
@@ -1279,7 +1286,7 @@
 - added property `variant` to type `RemoveAssetChange` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/RemoveAssetChange.raml:29:2)
 - added property `catalogData` to type `RemoveFromCategoryChange` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/RemoveFromCategoryChange.raml:28:2)
 - added property `variant` to type `RemoveImageChange` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/RemoveImageChange.raml:32:2)
-- added property `variant` to type `RemovePriceChange` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/RemovePriceChange.raml:33:2)
+- added property `variant` to type `RemovePriceChange` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/RemovePriceChange.raml:35:2)
 - added property `key` to type `ReturnItem` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ReturnItem.raml:9:2)
 - added property `custom` to type `ReturnItem` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ReturnItem.raml:37:2)
 - added property `catalogData` to type `SetAssetCustomFieldChange` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/SetAssetCustomFieldChange.raml:35:2)
