@@ -335,6 +335,13 @@
 
 
 <details>
+<summary>MarkDeprecated Type(s)</summary>
+
+- marked type `ProductSearchProjectionParams` as deprecated (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/types.raml:1936:0)
+</details>
+
+
+<details>
 <summary>Deprecated Type(s)</summary>
 
 - type `ProductLegacySetSkuAction` is deprecated (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/types.raml:2150:0)
@@ -466,6 +473,14 @@
 - :warning: changed property `paymentMethodInfo` of type `PaymentDraft` from type `PaymentMethodInfo` to `PaymentMethodInfoDraft` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/payment/PaymentDraft.raml:47:2)
 - :warning: changed property `exact` of type `SearchExactExpression` from type `SearchAnyValue` to `SearchExactValue` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/search/SearchExactExpression.raml:5:2)
 - :warning: changed property `filter` of type `SearchSorting` from type `SearchQueryExpression` to `SearchQuery` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/search/SearchSorting.raml:26:2)
+</details>
+
+
+<details>
+<summary>MarkDeprecated Property(s)</summary>
+
+- marked property `ProductSearchRequest::productProjectionParameters` as deprecated (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/product-search/ProductSearchRequest.raml:38:2)
+- marked property `ProductSearchResult::productProjection` as deprecated (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/product-search/ProductSearchResult.raml:15:2)
 </details>
 
 
@@ -622,8 +637,8 @@
 - added method `head /{projectKey}/recurring-orders` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurring-orders.raml:22:0)
 - added method `post /{projectKey}/recurring-orders` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurring-orders.raml:30:0)
 - added method `get /{projectKey}/recurrence-policies` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurrence-policies.raml:11:0)
-- added method `head /{projectKey}/recurrence-policies` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurrence-policies.raml:21:0)
-- added method `post /{projectKey}/recurrence-policies` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurrence-policies.raml:29:0)
+- added method `head /{projectKey}/recurrence-policies` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurrence-policies.raml:33:0)
+- added method `post /{projectKey}/recurrence-policies` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurrence-policies.raml:53:0)
 - added method `get /{projectKey}/as-associate/{associateId}/in-business-unit/key={businessUnitKey}/shopping-lists` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/as-associate.raml:422:6)
 - added method `head /{projectKey}/as-associate/{associateId}/in-business-unit/key={businessUnitKey}/shopping-lists` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/as-associate.raml:437:6)
 - added method `post /{projectKey}/as-associate/{associateId}/in-business-unit/key={businessUnitKey}/shopping-lists` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/as-associate.raml:445:6)
@@ -669,14 +684,14 @@
 - added method `head /{projectKey}/recurring-orders/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurring-orders.raml:118:2)
 - added method `post /{projectKey}/recurring-orders/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurring-orders.raml:123:2)
 - added method `delete /{projectKey}/recurring-orders/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurring-orders.raml:138:2)
-- added method `get /{projectKey}/recurrence-policies/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurrence-policies.raml:49:2)
-- added method `head /{projectKey}/recurrence-policies/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurrence-policies.raml:59:2)
-- added method `post /{projectKey}/recurrence-policies/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurrence-policies.raml:64:2)
-- added method `delete /{projectKey}/recurrence-policies/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurrence-policies.raml:77:2)
-- added method `get /{projectKey}/recurrence-policies/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurrence-policies.raml:96:2)
-- added method `head /{projectKey}/recurrence-policies/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurrence-policies.raml:106:2)
-- added method `post /{projectKey}/recurrence-policies/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurrence-policies.raml:111:2)
-- added method `delete /{projectKey}/recurrence-policies/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurrence-policies.raml:124:2)
+- added method `get /{projectKey}/recurrence-policies/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurrence-policies.raml:85:2)
+- added method `head /{projectKey}/recurrence-policies/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurrence-policies.raml:107:2)
+- added method `post /{projectKey}/recurrence-policies/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurrence-policies.raml:124:2)
+- added method `delete /{projectKey}/recurrence-policies/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurrence-policies.raml:149:2)
+- added method `get /{projectKey}/recurrence-policies/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurrence-policies.raml:180:2)
+- added method `head /{projectKey}/recurrence-policies/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurrence-policies.raml:202:2)
+- added method `post /{projectKey}/recurrence-policies/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurrence-policies.raml:219:2)
+- added method `delete /{projectKey}/recurrence-policies/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurrence-policies.raml:244:2)
 - added method `get /{projectKey}/in-store/key={storeKey}/business-units` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/business-units-in-store.raml:11:0)
 - added method `head /{projectKey}/in-store/key={storeKey}/business-units` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/business-units-in-store.raml:29:0)
 - added method `post /{projectKey}/in-store/key={storeKey}/business-units` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/business-units-in-store.raml:46:0)
@@ -716,8 +731,8 @@
 - added resource `/{projectKey}/payment-methods/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/payment-methods.raml:91:0)
 - added resource `/{projectKey}/recurring-orders/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurring-orders.raml:52:0)
 - added resource `/{projectKey}/recurring-orders/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurring-orders.raml:101:0)
-- added resource `/{projectKey}/recurrence-policies/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurrence-policies.raml:42:0)
-- added resource `/{projectKey}/recurrence-policies/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurrence-policies.raml:89:0)
+- added resource `/{projectKey}/recurrence-policies/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurrence-policies.raml:78:0)
+- added resource `/{projectKey}/recurrence-policies/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurrence-policies.raml:173:0)
 - added resource `/{projectKey}/in-store/key={storeKey}/business-units` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/in-store.raml:5:0)
 - added resource `/{projectKey}/in-store/key={storeKey}/business-units/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/business-units-in-store.raml:67:0)
 - added resource `/{projectKey}/in-store/key={storeKey}/business-units/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/business-units-in-store.raml:145:0)
