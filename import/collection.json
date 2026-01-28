@@ -359,7 +359,7 @@
                                     "query": [
                                     ]
                                 },
-                                "description": "Retrieves an [ImportSummary](ctp:import:type:ImportSummary) for the [ImportContainer](ctp:import:type:ImportContainer) with the provided `importContainerKey`.\n",
+                                "description": "Retrieves an [ImportSummary](ctp:import:type:ImportSummary) for the [ImportContainer](ctp:import:type:ImportContainer) with the provided `importContainerKey`. The returned values are [eventually consistent](\/general-concepts#eventual-consistency).\n",
                                 "body": {
                                     "mode": "raw",
                                     "raw": ""
