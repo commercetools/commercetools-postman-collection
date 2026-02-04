@@ -492,6 +492,8 @@
 - :warning: changed property `billingAddressIds` of type `Division` to be required (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/business-unit/BusinessUnit.raml:99:2)
 - :warning: changed property `shippingAddressIds` of type `Customer` to be required (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/customer/Customer.raml:98:2)
 - :warning: changed property `billingAddressIds` of type `Customer` to be required (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/customer/Customer.raml:106:2)
+- :warning: changed property `deleteDaysAfterLastModification` of type `CartsConfiguration` to be required (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/project/CartsConfiguration.raml:6:2)
+- :warning: changed property `deleteDaysAfterLastModification` of type `ShoppingListsConfiguration` to be required (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/project/ShoppingListsConfiguration.raml:6:2)
 </details>
 
 
