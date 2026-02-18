@@ -1335,6 +1335,75 @@
                     "description": "null",
                     "item": [
                         {
+                            "name": "Delete ConnectorStaged  by id",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                            "    pm.environment.set(\"draft-id\", data.results[0].id); ",
+                                            "    pm.environment.set(\"draft-version\", data.results[0].version);",
+                                            "}",
+                                            "if(data.results && data.results[0] && data.results[0].key){",
+                                            "    pm.environment.set(\"draft-key\", data.results[0].key); ",
+                                            "}",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"draft-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"draft-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"draft-key\", data.key);",
+                                            "}",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "delete",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/connectors/drafts/{{draft-id}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "connectors",
+                                        "drafts",
+                                        "{{draft-id}}"
+                                    ],
+                                    "query": [
+                                    ]
+                                },
+                                "description": "null",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": ""
+                                }
+                            },
+                            "response": []
+                        },
+                        {
                             "name": "Get ConnectorStaged by id",
                             "event": [
                                 {
@@ -1468,6 +1537,75 @@
                                 "body": {
                                     "mode": "raw",
                                     "raw": "{\n  \"version\" : 1,\n  \"actions\" : [ {\n    \"action\" : \"setName\",\n    \"name\" : \"New Connector name\"\n  } ]\n}"
+                                }
+                            },
+                            "response": []
+                        },
+                        {
+                            "name": "Delete ConnectorStaged  by key",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                            "    pm.environment.set(\"draft-id\", data.results[0].id); ",
+                                            "    pm.environment.set(\"draft-version\", data.results[0].version);",
+                                            "}",
+                                            "if(data.results && data.results[0] && data.results[0].key){",
+                                            "    pm.environment.set(\"draft-key\", data.results[0].key); ",
+                                            "}",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"draft-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"draft-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"draft-key\", data.key);",
+                                            "}",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "delete",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/connectors/drafts/key={{draft-key}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "connectors",
+                                        "drafts",
+                                        "key={{draft-key}}"
+                                    ],
+                                    "query": [
+                                    ]
+                                },
+                                "description": "null",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": ""
                                 }
                             },
                             "response": []
