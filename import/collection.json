@@ -672,7 +672,7 @@
                                     "query": [
                                     ]
                                 },
-                                "description": "Deletes an Import Container in the Project.\n\nGenerates the [ImportContainerDeleted](\/projects\/events#import-container-deleted-event) Event.\n",
+                                "description": "Deletes an Import Container in the Project.\n\nGenerates the [ImportContainerDeleted](ctp:api:type:ImportContainerDeletedEvent) Event.\n",
                                 "body": {
                                     "mode": "raw",
                                     "raw": ""
@@ -740,7 +740,7 @@
                                     "query": [
                                     ]
                                 },
-                                "description": "Creates an Import Container in the Project.\n\nGenerates the [ImportContainerCreated](\/projects\/events#import-container-created-event) Event.\n",
+                                "description": "Creates an Import Container in the Project.\n\nGenerates the [ImportContainerCreated](ctp:api:type:ImportContainerCreatedEvent) Event.\n",
                                 "body": {
                                     "mode": "raw",
                                     "raw": "{\n  \"key\" : \"my-import-container\"\n}"
