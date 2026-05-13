@@ -1,0 +1,1046 @@
+{
+  "info": {
+    "_postman_id": "2bc93ad9-d724-4727-b143-f3cb9c987afc",
+    "name": "Platform Insights Demo",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "33714270"
+  },
+  "item": [
+    {
+      "name": "Authorization",
+      "item": [
+        {
+          "name": "Obtain access token",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "var data = JSON.parse(responseBody);",
+                  "if(data.access_token){",
+                  "    pm.environment.set(\"ctp_access_token\", data.access_token);",
+                  "}",
+                  "if (data.scope) {",
+                  "    parts = data.scope.split(\" \");",
+                  "    parts = parts.filter(scope => scope.includes(\":\")).map(scope => scope.split(\":\"))",
+                  "    if (parts.length > 0) {",
+                  "        scopeParts = parts[0];",
+                  "        pm.environment.set(\"project-key\", scopeParts[1]);",
+                  "        parts = parts.filter(scope => scope.length >= 3)",
+                  "        if (parts.length > 0) {",
+                  "            scopeParts = parts[0];",
+                  "            pm.environment.set(\"store-key\", scopeParts[2]);",
+                  "        }",
+                  "    }",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{client_id}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{client_secret}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{auth_url}}/oauth/token?grant_type=client_credentials",
+              "host": [
+                "{{auth_url}}"
+              ],
+              "path": [
+                "oauth",
+                "token"
+              ],
+              "query": [
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials"
+                }
+              ]
+            },
+            "description": "Use this request to obtain an access token for your commercetools platform project via Client Credentials Flow. As a prerequisite you must have filled out environment variables in Postman for projectKey, client_id and client_secret to use this."
+          },
+          "response": []
+        }
+      ],
+      "description": "Authorization"
+    },
+    {
+      "name": "Platform Insights Setup",
+      "item": [
+        {
+          "name": "Platform Insights NewRelic",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "accessToken",
+                  "value": "{{ctp_access_token}}",
+                  "type": "string"
+                },
+                {
+                  "key": "addTokenTo",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "tokenType",
+                  "value": "Bearer",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"providers\" : [ {\n    \"type\" : \"NewRelic\",\n    \"region\" : \"eu\",\n    \"apiKey\" : \"{{newrelic-api-key}}\",\n    \"eventTypes\" : [ \"Metrics\", \"Logs\" ]\n  } ]\n}"
+            },
+            "url": {
+              "raw": "{{host}}/{{project-key}}/insights-configuration",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "{{project-key}}",
+                "insights-configuration"
+              ]
+            },
+            "description": "null"
+          },
+          "response": []
+        },
+        {
+          "name": "Platform Insights Datadog",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "accessToken",
+                  "value": "{{ctp_access_token}}",
+                  "type": "string"
+                },
+                {
+                  "key": "addTokenTo",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "tokenType",
+                  "value": "Bearer",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"providers\" : [ {\n    \"type\" : \"Datadog\",\n    \"site\": \"US1\",\n    \"apiKey\": \"{{datadog-api-key}}\",\n    \"eventTypes\": [\n        \"Metrics\", \"Logs\"\n    ]\n  } ]\n}"
+            },
+            "url": {
+              "raw": "{{host}}/{{project-key}}/insights-configuration",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "{{project-key}}",
+                "insights-configuration"
+              ]
+            },
+            "description": "null"
+          },
+          "response": []
+        },
+        {
+          "name": "Platform Insights Dynatrace",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "accessToken",
+                  "value": "{{ctp_access_token}}",
+                  "type": "string"
+                },
+                {
+                  "key": "addTokenTo",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "tokenType",
+                  "value": "Bearer",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"type\": \"DynatraceSaaS\",\n  \"environmentId\": \"{{dynatrace-environment-id}}\",\n  \"apiKey\": \"{{dynatrace-api-key}}\",\n  \"eventTypes\": [\n    \"Metrics\", \"Logs\"\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{host}}/{{project-key}}/insights-configuration",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "{{project-key}}",
+                "insights-configuration"
+              ]
+            },
+            "description": "null"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Demo Traffic",
+      "item": [
+        {
+          "name": "Products",
+          "item": [
+            {
+              "name": "Query Products",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                      "var data = JSON.parse(responseBody);",
+                      "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                      "    pm.environment.set(\"product-id\", data.results[0].id); ",
+                      "    pm.environment.set(\"product-version\", data.results[0].version);",
+                      "}",
+                      "if(data.results && data.results[0] && data.results[0].key){",
+                      "    pm.environment.set(\"product-key\", data.results[0].key); ",
+                      "}",
+                      "if(data.version){",
+                      "    pm.environment.set(\"product-version\", data.version);",
+                      "}",
+                      "if(data.id){",
+                      "    pm.environment.set(\"product-id\", data.id); ",
+                      "}",
+                      "if(data.key){",
+                      "    pm.environment.set(\"product-key\", data.key);",
+                      "}",
+                      ""
+                    ]
+                  }
+                }
+              ],
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "oauth2",
+                  "oauth2": [
+                    {
+                      "key": "accessToken",
+                      "value": "{{ctp_access_token}}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "addTokenTo",
+                      "value": "header",
+                      "type": "string"
+                    },
+                    {
+                      "key": "tokenType",
+                      "value": "Bearer",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "{{host}}/{{project-key}}/products",
+                  "host": [
+                    "{{host}}"
+                  ],
+                  "path": [
+                    "{{project-key}}",
+                    "products"
+                  ],
+                  "query": [
+                    {
+                      "key": "where",
+                      "value": "",
+                      "disabled": true
+                    },
+                    {
+                      "key": "priceCurrency",
+                      "value": "",
+                      "disabled": true
+                    },
+                    {
+                      "key": "priceCountry",
+                      "value": "",
+                      "disabled": true
+                    },
+                    {
+                      "key": "priceCustomerGroup",
+                      "value": "",
+                      "disabled": true
+                    },
+                    {
+                      "key": "priceCustomerGroupAssignments",
+                      "value": "",
+                      "disabled": true
+                    },
+                    {
+                      "key": "priceChannel",
+                      "value": "",
+                      "disabled": true
+                    },
+                    {
+                      "key": "priceRecurrencePolicy",
+                      "value": "",
+                      "disabled": true
+                    },
+                    {
+                      "key": "expand",
+                      "value": "",
+                      "disabled": true
+                    },
+                    {
+                      "key": "sort",
+                      "value": "",
+                      "disabled": true
+                    },
+                    {
+                      "key": "limit",
+                      "value": "",
+                      "disabled": true
+                    },
+                    {
+                      "key": "offset",
+                      "value": "",
+                      "disabled": true
+                    },
+                    {
+                      "key": "withTotal",
+                      "value": "",
+                      "disabled": true
+                    },
+                    {
+                      "key": "/^var[.][a-zA-Z0-9]+$/",
+                      "value": "",
+                      "disabled": true
+                    }
+                  ]
+                },
+                "description": "If [Product price selection query parameters](/../api/pricing-and-discounts-overview#product-price-selection) are provided, the selected Prices are added to the response."
+              },
+              "response": []
+            },
+            {
+              "name": "Product Projection Search with GET Copy",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                      "var data = JSON.parse(responseBody);",
+                      "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                      "    pm.environment.set(\"search-id\", data.results[0].id); ",
+                      "    pm.environment.set(\"search-version\", data.results[0].version);",
+                      "}",
+                      "if(data.results && data.results[0] && data.results[0].key){",
+                      "    pm.environment.set(\"search-key\", data.results[0].key); ",
+                      "}",
+                      "if(data.version){",
+                      "    pm.environment.set(\"search-version\", data.version);",
+                      "}",
+                      "if(data.id){",
+                      "    pm.environment.set(\"search-id\", data.id); ",
+                      "}",
+                      "if(data.key){",
+                      "    pm.environment.set(\"search-key\", data.key);",
+                      "}",
+                      ""
+                    ]
+                  }
+                }
+              ],
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "oauth2",
+                  "oauth2": [
+                    {
+                      "key": "accessToken",
+                      "value": "{{ctp_access_token}}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "addTokenTo",
+                      "value": "header",
+                      "type": "string"
+                    },
+                    {
+                      "key": "tokenType",
+                      "value": "Bearer",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "{{host}}/{{project-key}}/product-projections/search",
+                  "host": [
+                    "{{host}}"
+                  ],
+                  "path": [
+                    "{{project-key}}",
+                    "product-projections",
+                    "search"
+                  ],
+                  "query": [
+                    {
+                      "key": "markMatchingVariants",
+                      "value": "",
+                      "disabled": true
+                    },
+                    {
+                      "key": "/text.[a-z]{2}(-[A-Z]{2})?/",
+                      "value": "",
+                      "disabled": true
+                    },
+                    {
+                      "key": "fuzzy",
+                      "value": "",
+                      "disabled": true
+                    },
+                    {
+                      "key": "fuzzyLevel",
+                      "value": "",
+                      "disabled": true
+                    },
+                    {
+                      "key": "filter.query",
+                      "value": "",
+                      "disabled": true
+                    },
+                    {
+                      "key": "filter",
+                      "value": "",
+                      "disabled": true
+                    },
+                    {
+                      "key": "facet",
+                      "value": "",
+                      "disabled": true
+                    },
+                    {
+                      "key": "filter.facets",
+                      "value": "",
+                      "disabled": true
+                    },
+                    {
+                      "key": "expand",
+                      "value": "",
+                      "disabled": true
+                    },
+                    {
+                      "key": "sort",
+                      "value": "",
+                      "disabled": true
+                    },
+                    {
+                      "key": "limit",
+                      "value": "",
+                      "disabled": true
+                    },
+                    {
+                      "key": "offset",
+                      "value": "",
+                      "disabled": true
+                    },
+                    {
+                      "key": "staged",
+                      "value": "",
+                      "disabled": true
+                    },
+                    {
+                      "key": "priceCurrency",
+                      "value": "",
+                      "disabled": true
+                    },
+                    {
+                      "key": "priceCountry",
+                      "value": "",
+                      "disabled": true
+                    },
+                    {
+                      "key": "priceCustomerGroup",
+                      "value": "",
+                      "disabled": true
+                    },
+                    {
+                      "key": "priceCustomerGroupAssignments",
+                      "value": "",
+                      "disabled": true
+                    },
+                    {
+                      "key": "priceChannel",
+                      "value": "",
+                      "disabled": true
+                    },
+                    {
+                      "key": "priceRecurrencePolicy",
+                      "value": "",
+                      "disabled": true
+                    },
+                    {
+                      "key": "localeProjection",
+                      "value": "",
+                      "disabled": true
+                    },
+                    {
+                      "key": "storeProjection",
+                      "value": "",
+                      "disabled": true
+                    }
+                  ]
+                },
+                "description": "This method appends query parameters to the URL.\nThe maximum allowed URL length is 8192 characters.\nExceeding this limit will result in URL truncation, potentially leading to unexpected results.\nFor funnel searches on Product Listing Pages, where users select multiple filters, we recommend the [POST](ctp:api:endpoint:/{projectKey}/product-projections/search:POST) method which passes the query parameters within the request body, avoiding URL length restrictions.\n"
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Carts",
+          "item": [
+            {
+              "name": "Create Cart",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                      "var data = JSON.parse(responseBody);",
+                      "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                      "    pm.environment.set(\"cart-id\", data.results[0].id); ",
+                      "    pm.environment.set(\"cart-version\", data.results[0].version);",
+                      "}",
+                      "if(data.results && data.results[0] && data.results[0].key){",
+                      "    pm.environment.set(\"cart-key\", data.results[0].key); ",
+                      "}",
+                      "if(data.version){",
+                      "    pm.environment.set(\"cart-version\", data.version);",
+                      "}",
+                      "if(data.id){",
+                      "    pm.environment.set(\"cart-id\", data.id); ",
+                      "}",
+                      "if(data.key){",
+                      "    pm.environment.set(\"cart-key\", data.key);",
+                      "}",
+                      ""
+                    ],
+                    "type": "text/javascript",
+                    "packages": {},
+                    "requests": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "oauth2",
+                  "oauth2": [
+                    {
+                      "key": "accessToken",
+                      "value": "{{ctp_access_token}}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "addTokenTo",
+                      "value": "header",
+                      "type": "string"
+                    },
+                    {
+                      "key": "tokenType",
+                      "value": "Bearer",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"currency\" : \"EUR\",\n  \"country\": \"DE\",\n  \"shippingAddress\": {\n    \"country\": \"DE\"\n  },\n  \"lineItems\": [\n    {\n        \"productId\": \"{{product-id}}\",\n        \"variantId\": 1,\n        \"quantity\": 1\n    }\n  ]\n}"
+                },
+                "url": {
+                  "raw": "{{host}}/{{project-key}}/carts",
+                  "host": [
+                    "{{host}}"
+                  ],
+                  "path": [
+                    "{{project-key}}",
+                    "carts"
+                  ],
+                  "query": [
+                    {
+                      "key": "expand",
+                      "value": "",
+                      "disabled": true
+                    }
+                  ]
+                },
+                "description": "\nCreates a Cart in the Project.\n\nIf the referenced [ShippingMethod](ctp:api:type:ShippingMethod) in the [CartDraft](ctp:api:type:CartDraft) has a predicate that does not match, or if the Shipping Method is not active, an [InvalidOperation](ctp:api:type:InvalidOperationError) error is returned.\n\nSpecific Error Codes:\n\n- [DiscountCodeNonApplicable](ctp:api:type:DiscountCodeNonApplicableError)\n- [InvalidItemShippingDetails](ctp:api:type:InvalidItemShippingDetailsError)\n- [MatchingPriceNotFound](ctp:api:type:MatchingPriceNotFoundError)\n- [MissingTaxRateForCountry](ctp:api:type:MissingTaxRateForCountryError)\n"
+              },
+              "response": []
+            },
+            {
+              "name": "Query Carts",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                      "var data = JSON.parse(responseBody);",
+                      "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                      "    pm.environment.set(\"cart-id\", data.results[0].id); ",
+                      "    pm.environment.set(\"cart-version\", data.results[0].version);",
+                      "}",
+                      "if(data.results && data.results[0] && data.results[0].key){",
+                      "    pm.environment.set(\"cart-key\", data.results[0].key); ",
+                      "}",
+                      "if(data.version){",
+                      "    pm.environment.set(\"cart-version\", data.version);",
+                      "}",
+                      "if(data.id){",
+                      "    pm.environment.set(\"cart-id\", data.id); ",
+                      "}",
+                      "if(data.key){",
+                      "    pm.environment.set(\"cart-key\", data.key);",
+                      "}",
+                      ""
+                    ]
+                  }
+                }
+              ],
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "oauth2",
+                  "oauth2": [
+                    {
+                      "key": "accessToken",
+                      "value": "{{ctp_access_token}}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "addTokenTo",
+                      "value": "header",
+                      "type": "string"
+                    },
+                    {
+                      "key": "tokenType",
+                      "value": "Bearer",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "{{host}}/{{project-key}}/carts",
+                  "host": [
+                    "{{host}}"
+                  ],
+                  "path": [
+                    "{{project-key}}",
+                    "carts"
+                  ],
+                  "query": [
+                    {
+                      "key": "expand",
+                      "value": "",
+                      "disabled": true
+                    },
+                    {
+                      "key": "sort",
+                      "value": "",
+                      "disabled": true
+                    },
+                    {
+                      "key": "limit",
+                      "value": "",
+                      "disabled": true
+                    },
+                    {
+                      "key": "offset",
+                      "value": "",
+                      "disabled": true
+                    },
+                    {
+                      "key": "withTotal",
+                      "value": "",
+                      "disabled": true
+                    },
+                    {
+                      "key": "where",
+                      "value": "",
+                      "disabled": true
+                    },
+                    {
+                      "key": "/^var[.][a-zA-Z0-9]+$/",
+                      "value": "",
+                      "disabled": true
+                    }
+                  ]
+                },
+                "description": "Retrieves Carts in the Project."
+              },
+              "response": []
+            },
+            {
+              "name": "Delete Cart by ID",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                      "var data = JSON.parse(responseBody);",
+                      "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                      "    pm.environment.set(\"cart-id\", data.results[0].id); ",
+                      "    pm.environment.set(\"cart-version\", data.results[0].version);",
+                      "}",
+                      "if(data.results && data.results[0] && data.results[0].key){",
+                      "    pm.environment.set(\"cart-key\", data.results[0].key); ",
+                      "}",
+                      "if(data.version){",
+                      "    pm.environment.set(\"cart-version\", data.version);",
+                      "}",
+                      "if(data.id){",
+                      "    pm.environment.set(\"cart-id\", data.id); ",
+                      "}",
+                      "if(data.key){",
+                      "    pm.environment.set(\"cart-key\", data.key);",
+                      "}",
+                      ""
+                    ]
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "oauth2",
+                  "oauth2": [
+                    {
+                      "key": "accessToken",
+                      "value": "{{ctp_access_token}}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "addTokenTo",
+                      "value": "header",
+                      "type": "string"
+                    },
+                    {
+                      "key": "tokenType",
+                      "value": "Bearer",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "{{host}}/{{project-key}}/carts/{{cart-id}}?version={{cart-version}}",
+                  "host": [
+                    "{{host}}"
+                  ],
+                  "path": [
+                    "{{project-key}}",
+                    "carts",
+                    "{{cart-id}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "dataErasure",
+                      "value": "",
+                      "disabled": true
+                    },
+                    {
+                      "key": "version",
+                      "value": "{{cart-version}}"
+                    },
+                    {
+                      "key": "expand",
+                      "value": "",
+                      "disabled": true
+                    }
+                  ]
+                },
+                "description": "Deletes a Cart in the Project."
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Categories",
+          "item": [
+            {
+              "name": "Query Categories",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                      "var data = JSON.parse(responseBody);",
+                      "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                      "    pm.environment.set(\"category-id\", data.results[0].id); ",
+                      "    pm.environment.set(\"category-version\", data.results[0].version);",
+                      "}",
+                      "if(data.results && data.results[0] && data.results[0].key){",
+                      "    pm.environment.set(\"category-key\", data.results[0].key); ",
+                      "}",
+                      "if(data.version){",
+                      "    pm.environment.set(\"category-version\", data.version);",
+                      "}",
+                      "if(data.id){",
+                      "    pm.environment.set(\"category-id\", data.id); ",
+                      "}",
+                      "if(data.key){",
+                      "    pm.environment.set(\"category-key\", data.key);",
+                      "}",
+                      ""
+                    ]
+                  }
+                }
+              ],
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "oauth2",
+                  "oauth2": [
+                    {
+                      "key": "accessToken",
+                      "value": "{{ctp_access_token}}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "addTokenTo",
+                      "value": "header",
+                      "type": "string"
+                    },
+                    {
+                      "key": "tokenType",
+                      "value": "Bearer",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "{{host}}/{{project-key}}/categories",
+                  "host": [
+                    "{{host}}"
+                  ],
+                  "path": [
+                    "{{project-key}}",
+                    "categories"
+                  ],
+                  "query": [
+                    {
+                      "key": "expand",
+                      "value": "",
+                      "disabled": true
+                    },
+                    {
+                      "key": "sort",
+                      "value": "",
+                      "disabled": true
+                    },
+                    {
+                      "key": "limit",
+                      "value": "",
+                      "disabled": true
+                    },
+                    {
+                      "key": "offset",
+                      "value": "",
+                      "disabled": true
+                    },
+                    {
+                      "key": "withTotal",
+                      "value": "",
+                      "disabled": true
+                    },
+                    {
+                      "key": "where",
+                      "value": "",
+                      "disabled": true
+                    },
+                    {
+                      "key": "/^var[.][a-zA-Z0-9]+$/",
+                      "value": "",
+                      "disabled": true
+                    }
+                  ]
+                },
+                "description": "Either the [scope](/../api/scopes) `view_products:{projectKey}` or `view_categories:{projectKey}` is required.\n"
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
