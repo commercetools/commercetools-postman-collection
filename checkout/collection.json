@@ -1232,7 +1232,7 @@
                                         }
                                     ]
                                 },
-                                "description": "Retrieves Payment Integrations in a [Project](ctp:api:type:Project).\n\nThe results are [paginated](\/..\/api\/general-concepts#pagination).\n",
+                                "description": "Retrieves Payment Integrations in a [Project](ctp:api:type:Project).\n\nThe results are [paginated](\/api\/general-concepts#pagination).\n",
                                 "body": {
                                     "mode": "raw",
                                     "raw": ""
