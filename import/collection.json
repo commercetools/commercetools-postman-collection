@@ -2224,6 +2224,88 @@
                     ]
                 },
                 {
+                    "name": "Variants",
+                    "description": "null",
+                    "item": [
+                        {
+                            "name": "Import",
+                            "description": "null",
+                            "item": [
+                                {
+                                    "name": "Create Import Request for Variants",
+                                    "event": [
+                                        {
+                                            "listen": "test",
+                                            "script": {
+                                                "type": "text/javascript",
+                                                "exec": [
+                                                    "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                                    "var data = JSON.parse(responseBody);",
+                                                    "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                                    "    pm.environment.set(\"import-container-id\", data.results[0].id); ",
+                                                    "    pm.environment.set(\"import-container-version\", data.results[0].version);",
+                                                    "}",
+                                                    "if(data.results && data.results[0] && data.results[0].key){",
+                                                    "    pm.environment.set(\"import-container-key\", data.results[0].key); ",
+                                                    "}",
+                                                    "if(data.version){",
+                                                    "    pm.environment.set(\"import-container-version\", data.version);",
+                                                    "}",
+                                                    "if(data.id){",
+                                                    "    pm.environment.set(\"import-container-id\", data.id); ",
+                                                    "}",
+                                                    "if(data.key){",
+                                                    "    pm.environment.set(\"import-container-key\", data.key);",
+                                                    "}",
+                                                    ""
+                                                ]
+                                            }
+                                        }
+                                    ],
+                                    "request": {
+                                        "auth":
+                                            {
+                                                "type": "oauth2",
+                                                "oauth2": {
+                                                    "accessToken": "{{ctp_access_token}}",
+                                                    "addTokenTo": "header",
+                                                    "tokenType": "Bearer"
+                                                }
+                                            },
+                                        "method": "post",
+                                        "header": [
+                                            {
+                                                "key": "Content-Type",
+                                                "value": "application/json"
+                                            }
+                                        ],
+                                        "url": {
+                                            "raw": "{{host}}/{{project-key}}/variants/import-containers/{{import-container-key}}",
+                                            "host": [
+                                                "{{host}}"
+                                            ],
+                                            "path": [
+                                                "{{project-key}}",
+                                                "variants",
+                                                "import-containers",
+                                                "{{import-container-key}}"
+                                            ],
+                                            "query": [
+                                            ]
+                                        },
+                                        "description": "Creates an Import Request for Variants.\n\nThis endpoint is only available for Projects with `productCatalogModel` set to `Modular`.\n",
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "{\n  \"type\" : \"variant\",\n  \"resources\" : [ {\n    \"key\" : \"variant-1\",\n    \"sku\" : \"VARIANT-SKU-001\",\n    \"product\" : {\n      \"typeId\" : \"product\",\n      \"key\" : \"product-1\"\n    },\n    \"publish\" : false,\n    \"images\" : [ {\n      \"url\" : \"https:\/\/example.com\/images\/variant-1.jpg\",\n      \"label\" : \"Variant image\",\n      \"dimensions\" : {\n        \"w\" : 800,\n        \"h\" : 600\n      }\n    } ],\n    \"attributes\" : [ {\n      \"name\" : \"color\",\n      \"type\" : \"text\",\n      \"value\" : \"blue\"\n    } ],\n    \"assets\" : [ {\n      \"key\" : \"variant-asset-1\",\n      \"sources\" : [ {\n        \"uri\" : \"https:\/\/example.com\/assets\/variant-1.mp4\",\n        \"key\" : \"variant-video\"\n      } ],\n      \"name\" : {\n        \"en\" : \"Variant Demo\"\n      },\n      \"description\" : {\n        \"en\" : \"Variant demo video\"\n      },\n      \"tags\" : [ \"video\", \"demo\" ]\n    } ]\n  } ]\n}"
+                                        }
+                                    },
+                                    "response": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
                     "name": "Types",
                     "description": "null",
                     "item": [
