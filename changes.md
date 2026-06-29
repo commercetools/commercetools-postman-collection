@@ -1,14 +1,6 @@
 **Api changes**
 
 <details>
-<summary>MarkDeprecated Property(s)</summary>
-
-- marked property `ProductSearchRequest::productProjectionParameters` as deprecated (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/product-search/ProductSearchRequest.raml:38:2)
-- marked property `ProductSearchResult::productProjection` as deprecated (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/product-search/ProductSearchResult.raml:15:2)
-</details>
-
-
-<details>
 <summary>Required Property(s)</summary>
 
 - :warning: changed property `shippingAddressIds` of type `BusinessUnit` to be required (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/business-unit/BusinessUnit.raml:91:2)
@@ -36,6 +28,41 @@
 - changed property `newVariantSelection` of type `ProductSelectionVariantSelectionChangedMessagePayload` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/message/payload/ProductSelectionVariantSelectionChangedMessagePayload.raml:15:2)
 - changed property `images` of type `ProductTailoringSetExternalImagesAction` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/product-tailoring/updates/ProductTailoringSetExternalImagesAction.raml:18:2)
 - changed property `facets` of type `ProductProjectionPagedSearchResponse` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/product/ProductProjectionPagedSearchResponse.raml:39:2)
+</details>
+
+
+<details>
+<summary>MarkDeprecated Property(s)</summary>
+
+- marked property `ProductSearchRequest::productProjectionParameters` as deprecated (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/product-search/ProductSearchRequest.raml:38:2)
+- marked property `ProductSearchResult::productProjection` as deprecated (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/product-search/ProductSearchResult.raml:15:2)
+</details>
+
+
+<details>
+<summary>Removed Property(s)</summary>
+
+- :warning: removed property `payment` from type `OrderPaymentAddedMessage` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/api/types/message/OrderPaymentAddedMessage.raml:8:2)
+- :warning: removed property `payment` from type `OrderPaymentAddedMessagePayload` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/api/types/message/payload/OrderPaymentAddedMessagePayload.raml:8:2)
+- :warning: removed property `/[0-9].[0-9]*[1-9]/` from type `CategoryOrderHints` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/api/types/product/CategoryOrderHints.raml:14:2)
+- :warning: removed property `//` from type `ProductVariantChannelAvailabilityMap` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/api/types/product/ProductVariantChannelAvailabilityMap.raml:11:2)
+- :warning: removed property `tierMinimumQuantity` from type `StandalonePriceRemovePriceTierAction` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/api/types/standalone-price/updates/StandalonePriceRemovePriceTierAction.raml:9:2)
+</details>
+
+
+<details>
+<summary>Changed Property(s)</summary>
+
+- :warning: changed property `discount` of type `DiscountedTotalPricePortion` from type `CartDiscountReference` to `Reference` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/cart/DiscountedTotalPricePortion.raml:6:2)
+- :warning: changed property `line` of type `GraphQLErrorLocation` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/graphql/GraphQLErrorLocation.raml:6:2)
+- :warning: changed property `column` of type `GraphQLErrorLocation` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/graphql/GraphQLErrorLocation.raml:10:2)
+- :warning: changed property `actions` of type `MyBusinessUnitUpdate` from type `BusinessUnitUpdateAction[]` to `MyBusinessUnitUpdateAction[]` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/me/MyBusinessUnitUpdate.raml:11:2)
+- :warning: changed property `paymentMethodInfo` of type `MyPaymentDraft` from type `PaymentMethodInfo` to `PaymentMethodInfoDraft` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/me/MyPaymentDraft.raml:10:2)
+- :warning: changed property `totalPrice` of type `StagedOrder` from type `TypedMoney` to `CentPrecisionMoney` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/order/Order.raml:60:2)
+- :warning: changed property `totalPrice` of type `Order` from type `TypedMoney` to `CentPrecisionMoney` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/order/Order.raml:60:2)
+- :warning: changed property `paymentMethodInfo` of type `PaymentDraft` from type `PaymentMethodInfo` to `PaymentMethodInfoDraft` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/payment/PaymentDraft.raml:47:2)
+- :warning: changed property `exact` of type `SearchExactExpression` from type `SearchAnyValue` to `SearchExactValue` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/search/SearchExactExpression.raml:5:2)
+- :warning: changed property `filter` of type `SearchSorting` from type `SearchQueryExpression` to `SearchQuery` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/search/SearchSorting.raml:26:2)
 </details>
 
 
@@ -187,186 +214,6 @@
 - added property `source` to type `EventBridgeDestination` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/subscription/EventBridgeDestination.raml:18:2)
 - added property `events` to type `Subscription` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/subscription/Subscription.raml:54:2)
 - added property `events` to type `SubscriptionDraft` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/subscription/SubscriptionDraft.raml:27:2)
-</details>
-
-
-<details>
-<summary>Changed Property(s)</summary>
-
-- :warning: changed property `discount` of type `DiscountedTotalPricePortion` from type `CartDiscountReference` to `Reference` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/cart/DiscountedTotalPricePortion.raml:6:2)
-- :warning: changed property `line` of type `GraphQLErrorLocation` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/graphql/GraphQLErrorLocation.raml:6:2)
-- :warning: changed property `column` of type `GraphQLErrorLocation` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/graphql/GraphQLErrorLocation.raml:10:2)
-- :warning: changed property `actions` of type `MyBusinessUnitUpdate` from type `BusinessUnitUpdateAction[]` to `MyBusinessUnitUpdateAction[]` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/me/MyBusinessUnitUpdate.raml:11:2)
-- :warning: changed property `paymentMethodInfo` of type `MyPaymentDraft` from type `PaymentMethodInfo` to `PaymentMethodInfoDraft` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/me/MyPaymentDraft.raml:10:2)
-- :warning: changed property `totalPrice` of type `StagedOrder` from type `TypedMoney` to `CentPrecisionMoney` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/order/Order.raml:60:2)
-- :warning: changed property `totalPrice` of type `Order` from type `TypedMoney` to `CentPrecisionMoney` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/order/Order.raml:60:2)
-- :warning: changed property `paymentMethodInfo` of type `PaymentDraft` from type `PaymentMethodInfo` to `PaymentMethodInfoDraft` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/payment/PaymentDraft.raml:47:2)
-- :warning: changed property `exact` of type `SearchExactExpression` from type `SearchAnyValue` to `SearchExactValue` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/search/SearchExactExpression.raml:5:2)
-- :warning: changed property `filter` of type `SearchSorting` from type `SearchQueryExpression` to `SearchQuery` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/search/SearchSorting.raml:26:2)
-</details>
-
-
-<details>
-<summary>Removed Property(s)</summary>
-
-- :warning: removed property `payment` from type `OrderPaymentAddedMessage` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/api/types/message/OrderPaymentAddedMessage.raml:8:2)
-- :warning: removed property `payment` from type `OrderPaymentAddedMessagePayload` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/api/types/message/payload/OrderPaymentAddedMessagePayload.raml:8:2)
-- :warning: removed property `/[0-9].[0-9]*[1-9]/` from type `CategoryOrderHints` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/api/types/product/CategoryOrderHints.raml:14:2)
-- :warning: removed property `//` from type `ProductVariantChannelAvailabilityMap` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/api/types/product/ProductVariantChannelAvailabilityMap.raml:11:2)
-- :warning: removed property `tierMinimumQuantity` from type `StandalonePriceRemovePriceTierAction` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/api/types/standalone-price/updates/StandalonePriceRemovePriceTierAction.raml:9:2)
-</details>
-
-
-<details>
-<summary>Removed Method(s)</summary>
-
-- :warning: removed method `delete /{projectKey}/me/business-units/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/api/resources/me.raml:274:4)
-- :warning: removed method `delete /{projectKey}/me/business-units/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/api/resources/me.raml:315:4)
-</details>
-
-
-<details>
-<summary>Added Method(s)</summary>
-
-- added method `get /{projectKey}/discount-groups` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/discount-groups.raml:11:0)
-- added method `head /{projectKey}/discount-groups` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/discount-groups.raml:21:0)
-- added method `post /{projectKey}/discount-groups` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/discount-groups.raml:30:0)
-- added method `get /{projectKey}/payment-methods` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/payment-methods.raml:11:0)
-- added method `head /{projectKey}/payment-methods` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/payment-methods.raml:21:0)
-- added method `post /{projectKey}/payment-methods` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/payment-methods.raml:30:0)
-- added method `head /{projectKey}/product-tailoring` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/product-tailoring.raml:26:0)
-- added method `get /{projectKey}/recurring-orders` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurring-orders.raml:12:0)
-- added method `head /{projectKey}/recurring-orders` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurring-orders.raml:22:0)
-- added method `post /{projectKey}/recurring-orders` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurring-orders.raml:30:0)
-- added method `get /{projectKey}/recurrence-policies` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurrence-policies.raml:11:0)
-- added method `head /{projectKey}/recurrence-policies` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurrence-policies.raml:21:0)
-- added method `post /{projectKey}/recurrence-policies` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurrence-policies.raml:29:0)
-- added method `get /{projectKey}/variant-projections` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/variant-projections.raml:9:0)
-- added method `head /{projectKey}/variant-projections` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/variant-projections.raml:42:0)
-- added method `get /{projectKey}/variants` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/variants.raml:10:0)
-- added method `post /{projectKey}/variants` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/variants.raml:31:0)
-- added method `head /{projectKey}/variants` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/variants.raml:44:0)
-- added method `get /{projectKey}/as-associate/{associateId}/in-business-unit/key={businessUnitKey}/shopping-lists` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/as-associate.raml:422:6)
-- added method `head /{projectKey}/as-associate/{associateId}/in-business-unit/key={businessUnitKey}/shopping-lists` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/as-associate.raml:437:6)
-- added method `post /{projectKey}/as-associate/{associateId}/in-business-unit/key={businessUnitKey}/shopping-lists` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/as-associate.raml:445:6)
-- added method `get /{projectKey}/as-associate/{associateId}/in-business-unit/key={businessUnitKey}/shopping-lists/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/as-associate.raml:472:8)
-- added method `head /{projectKey}/as-associate/{associateId}/in-business-unit/key={businessUnitKey}/shopping-lists/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/as-associate.raml:490:8)
-- added method `post /{projectKey}/as-associate/{associateId}/in-business-unit/key={businessUnitKey}/shopping-lists/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/as-associate.raml:496:8)
-- added method `delete /{projectKey}/as-associate/{associateId}/in-business-unit/key={businessUnitKey}/shopping-lists/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/as-associate.raml:517:8)
-- added method `get /{projectKey}/as-associate/{associateId}/in-business-unit/key={businessUnitKey}/shopping-lists/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/as-associate.raml:545:8)
-- added method `head /{projectKey}/as-associate/{associateId}/in-business-unit/key={businessUnitKey}/shopping-lists/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/as-associate.raml:564:8)
-- added method `post /{projectKey}/as-associate/{associateId}/in-business-unit/key={businessUnitKey}/shopping-lists/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/as-associate.raml:570:8)
-- added method `delete /{projectKey}/as-associate/{associateId}/in-business-unit/key={businessUnitKey}/shopping-lists/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/as-associate.raml:591:8)
-- added method `get /{projectKey}/business-units/key={key}/associates/{associateId}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/business-units.raml:126:2)
-- added method `get /{projectKey}/business-units/{businessUnitId}/associates/{associateId}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/business-units.raml:146:2)
-- added method `post /{projectKey}/business-units/search` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/business-units.raml:161:2)
-- added method `head /{projectKey}/business-units/search` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/business-units.raml:174:2)
-- added method `get /{projectKey}/business-units/search/indexing-status` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/business-units.raml:187:2)
-- added method `post /{projectKey}/carts/customer-id={customerId}/merge` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/carts.raml:120:2)
-- added method `get /{projectKey}/channels/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/channels.raml:138:2)
-- added method `head /{projectKey}/channels/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/channels.raml:153:2)
-- added method `post /{projectKey}/channels/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/channels.raml:164:2)
-- added method `delete /{projectKey}/channels/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/channels.raml:182:2)
-- added method `get /{projectKey}/discount-groups/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/discount-groups.raml:53:2)
-- added method `head /{projectKey}/discount-groups/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/discount-groups.raml:63:2)
-- added method `post /{projectKey}/discount-groups/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/discount-groups.raml:69:2)
-- added method `delete /{projectKey}/discount-groups/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/discount-groups.raml:82:2)
-- added method `get /{projectKey}/discount-groups/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/discount-groups.raml:102:2)
-- added method `head /{projectKey}/discount-groups/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/discount-groups.raml:112:2)
-- added method `post /{projectKey}/discount-groups/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/discount-groups.raml:118:2)
-- added method `delete /{projectKey}/discount-groups/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/discount-groups.raml:131:2)
-- added method `get /{projectKey}/payment-methods/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/payment-methods.raml:51:2)
-- added method `head /{projectKey}/payment-methods/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/payment-methods.raml:61:2)
-- added method `post /{projectKey}/payment-methods/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/payment-methods.raml:67:2)
-- added method `delete /{projectKey}/payment-methods/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/payment-methods.raml:80:2)
-- added method `get /{projectKey}/payment-methods/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/payment-methods.raml:98:2)
-- added method `head /{projectKey}/payment-methods/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/payment-methods.raml:108:2)
-- added method `post /{projectKey}/payment-methods/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/payment-methods.raml:114:2)
-- added method `delete /{projectKey}/payment-methods/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/payment-methods.raml:127:2)
-- added method `get /{projectKey}/product-projections/key={key}/variant-attributes` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/product-projections-variant-attributes.raml:2:0)
-- added method `get /{projectKey}/product-projections/{ID}/variant-attributes` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/product-projections-variant-attributes.raml:2:0)
-- added method `get /{projectKey}/recurring-orders/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurring-orders.raml:59:2)
-- added method `head /{projectKey}/recurring-orders/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurring-orders.raml:69:2)
-- added method `post /{projectKey}/recurring-orders/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurring-orders.raml:74:2)
-- added method `delete /{projectKey}/recurring-orders/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurring-orders.raml:89:2)
-- added method `get /{projectKey}/recurring-orders/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurring-orders.raml:108:2)
-- added method `head /{projectKey}/recurring-orders/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurring-orders.raml:118:2)
-- added method `post /{projectKey}/recurring-orders/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurring-orders.raml:123:2)
-- added method `delete /{projectKey}/recurring-orders/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurring-orders.raml:138:2)
-- added method `get /{projectKey}/recurrence-policies/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurrence-policies.raml:50:2)
-- added method `head /{projectKey}/recurrence-policies/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurrence-policies.raml:61:2)
-- added method `post /{projectKey}/recurrence-policies/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurrence-policies.raml:67:2)
-- added method `delete /{projectKey}/recurrence-policies/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurrence-policies.raml:81:2)
-- added method `get /{projectKey}/recurrence-policies/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurrence-policies.raml:101:2)
-- added method `head /{projectKey}/recurrence-policies/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurrence-policies.raml:112:2)
-- added method `post /{projectKey}/recurrence-policies/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurrence-policies.raml:118:2)
-- added method `delete /{projectKey}/recurrence-policies/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurrence-policies.raml:132:2)
-- added method `get /{projectKey}/variant-projections/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/variant-projections.raml:70:2)
-- added method `head /{projectKey}/variant-projections/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/variant-projections.raml:95:2)
-- added method `get /{projectKey}/variant-projections/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/variant-projections.raml:119:2)
-- added method `head /{projectKey}/variant-projections/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/variant-projections.raml:144:2)
-- added method `post /{projectKey}/variants/bulk` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/variants.raml:59:2)
-- added method `get /{projectKey}/variants/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/variants.raml:95:2)
-- added method `head /{projectKey}/variants/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/variants.raml:105:2)
-- added method `post /{projectKey}/variants/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/variants.raml:111:2)
-- added method `delete /{projectKey}/variants/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/variants.raml:124:2)
-- added method `get /{projectKey}/variants/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/variants.raml:141:2)
-- added method `head /{projectKey}/variants/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/variants.raml:151:2)
-- added method `post /{projectKey}/variants/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/variants.raml:157:2)
-- added method `delete /{projectKey}/variants/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/variants.raml:170:2)
-- added method `get /{projectKey}/in-store/key={storeKey}/business-units` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/business-units-in-store.raml:11:0)
-- added method `head /{projectKey}/in-store/key={storeKey}/business-units` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/business-units-in-store.raml:29:0)
-- added method `post /{projectKey}/in-store/key={storeKey}/business-units` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/business-units-in-store.raml:46:0)
-- added method `get /{projectKey}/in-store/key={storeKey}/variant-projections` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/variant-projections-in-store.raml:9:0)
-- added method `head /{projectKey}/in-store/key={storeKey}/variant-projections` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/variant-projections-in-store.raml:46:0)
-- added method `get /{projectKey}/in-store/key={storeKey}/business-units/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/business-units-in-store.raml:74:2)
-- added method `head /{projectKey}/in-store/key={storeKey}/business-units/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/business-units-in-store.raml:92:2)
-- added method `post /{projectKey}/in-store/key={storeKey}/business-units/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/business-units-in-store.raml:106:2)
-- added method `delete /{projectKey}/in-store/key={storeKey}/business-units/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/business-units-in-store.raml:127:2)
-- added method `get /{projectKey}/in-store/key={storeKey}/business-units/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/business-units-in-store.raml:154:2)
-- added method `head /{projectKey}/in-store/key={storeKey}/business-units/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/business-units-in-store.raml:172:2)
-- added method `post /{projectKey}/in-store/key={storeKey}/business-units/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/business-units-in-store.raml:186:2)
-- added method `delete /{projectKey}/in-store/key={storeKey}/business-units/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/business-units-in-store.raml:207:2)
-- added method `get /{projectKey}/in-store/key={storeKey}/business-units/key={key}/associates/{associateId}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/business-units-in-store.raml:236:2)
-- added method `get /{projectKey}/in-store/key={storeKey}/business-units/{businessUnitId}/associates/{associateId}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/business-units-in-store.raml:256:2)
-- added method `post /{projectKey}/in-store/key={storeKey}/carts/customer-id={customerId}/merge` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/carts-in-store.raml:128:2)
-- added method `get /{projectKey}/in-store/key={storeKey}/product-projections/key={key}/variant-attributes` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/product-projections-variant-attributes-in-store.raml:2:0)
-- added method `get /{projectKey}/in-store/key={storeKey}/product-projections/{ID}/variant-attributes` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/product-projections-variant-attributes-in-store.raml:2:0)
-- added method `get /{projectKey}/in-store/key={storeKey}/variant-projections/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/variant-projections-in-store.raml:75:2)
-- added method `head /{projectKey}/in-store/key={storeKey}/variant-projections/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/variant-projections-in-store.raml:111:2)
-- added method `get /{projectKey}/in-store/key={storeKey}/variant-projections/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/variant-projections-in-store.raml:137:2)
-- added method `head /{projectKey}/in-store/key={storeKey}/variant-projections/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/variant-projections-in-store.raml:173:2)
-</details>
-
-
-<details>
-<summary>Removed Type(s)</summary>
-
-- :warning: removed type `AssociateRoleNameChangedMessage` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/api/types/types.raml:838:0)
-- :warning: removed type `AssociateRoleNameChangedMessagePayload` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/api/types/types.raml:1090:0)
-- :warning: removed type `ProductSearchFacetScope` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/api/types/types.raml:1696:0)
-- :warning: removed type `ProductSearchStatus` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/api/types/types.raml:1929:0)
-</details>
-
-
-<details>
-<summary>Changed Type(s)</summary>
-
-- :warning: changed type `DeliveryPayload` from type `object` to `SubscriptionNotification` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/types.raml:2648:0)
-</details>
-
-
-<details>
-<summary>Deprecated Type(s)</summary>
-
-- type `ProductLegacySetSkuAction` is deprecated (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/types.raml:2240:0)
-</details>
-
-
-<details>
-<summary>MarkDeprecated Type(s)</summary>
-
-- marked type `ProductSearchProjectionParams` as deprecated (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/types.raml:2026:0)
 </details>
 
 
@@ -845,6 +692,37 @@
 
 
 <details>
+<summary>MarkDeprecated Type(s)</summary>
+
+- marked type `ProductSearchProjectionParams` as deprecated (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/types.raml:2026:0)
+</details>
+
+
+<details>
+<summary>Changed Type(s)</summary>
+
+- :warning: changed type `DeliveryPayload` from type `object` to `SubscriptionNotification` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/types.raml:2648:0)
+</details>
+
+
+<details>
+<summary>Deprecated Type(s)</summary>
+
+- type `ProductLegacySetSkuAction` is deprecated (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/types.raml:2240:0)
+</details>
+
+
+<details>
+<summary>Removed Type(s)</summary>
+
+- :warning: removed type `AssociateRoleNameChangedMessage` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/api/types/types.raml:838:0)
+- :warning: removed type `AssociateRoleNameChangedMessagePayload` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/api/types/types.raml:1090:0)
+- :warning: removed type `ProductSearchFacetScope` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/api/types/types.raml:1696:0)
+- :warning: removed type `ProductSearchStatus` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/api/types/types.raml:1929:0)
+</details>
+
+
+<details>
 <summary>Added QueryParameter(s)</summary>
 
 - added query parameter `priceCustomerGroupAssignments` to method `get /{projectKey}/products` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/traits/price-selecting.raml:16:2)
@@ -942,6 +820,128 @@
 
 
 <details>
+<summary>Added Method(s)</summary>
+
+- added method `get /{projectKey}/discount-groups` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/discount-groups.raml:11:0)
+- added method `head /{projectKey}/discount-groups` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/discount-groups.raml:21:0)
+- added method `post /{projectKey}/discount-groups` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/discount-groups.raml:30:0)
+- added method `get /{projectKey}/payment-methods` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/payment-methods.raml:11:0)
+- added method `head /{projectKey}/payment-methods` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/payment-methods.raml:21:0)
+- added method `post /{projectKey}/payment-methods` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/payment-methods.raml:30:0)
+- added method `head /{projectKey}/product-tailoring` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/product-tailoring.raml:26:0)
+- added method `get /{projectKey}/recurring-orders` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurring-orders.raml:12:0)
+- added method `head /{projectKey}/recurring-orders` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurring-orders.raml:22:0)
+- added method `post /{projectKey}/recurring-orders` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurring-orders.raml:30:0)
+- added method `get /{projectKey}/recurrence-policies` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurrence-policies.raml:11:0)
+- added method `head /{projectKey}/recurrence-policies` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurrence-policies.raml:21:0)
+- added method `post /{projectKey}/recurrence-policies` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurrence-policies.raml:29:0)
+- added method `get /{projectKey}/variant-projections` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/variant-projections.raml:9:0)
+- added method `head /{projectKey}/variant-projections` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/variant-projections.raml:42:0)
+- added method `get /{projectKey}/variants` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/variants.raml:10:0)
+- added method `post /{projectKey}/variants` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/variants.raml:31:0)
+- added method `head /{projectKey}/variants` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/variants.raml:44:0)
+- added method `get /{projectKey}/as-associate/{associateId}/in-business-unit/key={businessUnitKey}/shopping-lists` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/as-associate.raml:422:6)
+- added method `head /{projectKey}/as-associate/{associateId}/in-business-unit/key={businessUnitKey}/shopping-lists` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/as-associate.raml:437:6)
+- added method `post /{projectKey}/as-associate/{associateId}/in-business-unit/key={businessUnitKey}/shopping-lists` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/as-associate.raml:445:6)
+- added method `get /{projectKey}/as-associate/{associateId}/in-business-unit/key={businessUnitKey}/shopping-lists/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/as-associate.raml:472:8)
+- added method `head /{projectKey}/as-associate/{associateId}/in-business-unit/key={businessUnitKey}/shopping-lists/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/as-associate.raml:490:8)
+- added method `post /{projectKey}/as-associate/{associateId}/in-business-unit/key={businessUnitKey}/shopping-lists/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/as-associate.raml:496:8)
+- added method `delete /{projectKey}/as-associate/{associateId}/in-business-unit/key={businessUnitKey}/shopping-lists/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/as-associate.raml:517:8)
+- added method `get /{projectKey}/as-associate/{associateId}/in-business-unit/key={businessUnitKey}/shopping-lists/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/as-associate.raml:545:8)
+- added method `head /{projectKey}/as-associate/{associateId}/in-business-unit/key={businessUnitKey}/shopping-lists/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/as-associate.raml:564:8)
+- added method `post /{projectKey}/as-associate/{associateId}/in-business-unit/key={businessUnitKey}/shopping-lists/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/as-associate.raml:570:8)
+- added method `delete /{projectKey}/as-associate/{associateId}/in-business-unit/key={businessUnitKey}/shopping-lists/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/as-associate.raml:591:8)
+- added method `get /{projectKey}/business-units/key={key}/associates/{associateId}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/business-units.raml:126:2)
+- added method `get /{projectKey}/business-units/{businessUnitId}/associates/{associateId}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/business-units.raml:146:2)
+- added method `post /{projectKey}/business-units/search` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/business-units.raml:161:2)
+- added method `head /{projectKey}/business-units/search` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/business-units.raml:174:2)
+- added method `get /{projectKey}/business-units/search/indexing-status` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/business-units.raml:187:2)
+- added method `post /{projectKey}/carts/customer-id={customerId}/merge` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/carts.raml:120:2)
+- added method `get /{projectKey}/channels/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/channels.raml:138:2)
+- added method `head /{projectKey}/channels/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/channels.raml:153:2)
+- added method `post /{projectKey}/channels/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/channels.raml:164:2)
+- added method `delete /{projectKey}/channels/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/channels.raml:182:2)
+- added method `get /{projectKey}/discount-groups/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/discount-groups.raml:53:2)
+- added method `head /{projectKey}/discount-groups/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/discount-groups.raml:63:2)
+- added method `post /{projectKey}/discount-groups/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/discount-groups.raml:69:2)
+- added method `delete /{projectKey}/discount-groups/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/discount-groups.raml:82:2)
+- added method `get /{projectKey}/discount-groups/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/discount-groups.raml:102:2)
+- added method `head /{projectKey}/discount-groups/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/discount-groups.raml:112:2)
+- added method `post /{projectKey}/discount-groups/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/discount-groups.raml:118:2)
+- added method `delete /{projectKey}/discount-groups/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/discount-groups.raml:131:2)
+- added method `get /{projectKey}/payment-methods/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/payment-methods.raml:51:2)
+- added method `head /{projectKey}/payment-methods/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/payment-methods.raml:61:2)
+- added method `post /{projectKey}/payment-methods/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/payment-methods.raml:67:2)
+- added method `delete /{projectKey}/payment-methods/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/payment-methods.raml:80:2)
+- added method `get /{projectKey}/payment-methods/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/payment-methods.raml:98:2)
+- added method `head /{projectKey}/payment-methods/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/payment-methods.raml:108:2)
+- added method `post /{projectKey}/payment-methods/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/payment-methods.raml:114:2)
+- added method `delete /{projectKey}/payment-methods/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/payment-methods.raml:127:2)
+- added method `get /{projectKey}/product-projections/key={key}/variant-attributes` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/product-projections-variant-attributes.raml:2:0)
+- added method `get /{projectKey}/product-projections/{ID}/variant-attributes` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/product-projections-variant-attributes.raml:2:0)
+- added method `get /{projectKey}/recurring-orders/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurring-orders.raml:59:2)
+- added method `head /{projectKey}/recurring-orders/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurring-orders.raml:69:2)
+- added method `post /{projectKey}/recurring-orders/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurring-orders.raml:74:2)
+- added method `delete /{projectKey}/recurring-orders/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurring-orders.raml:89:2)
+- added method `get /{projectKey}/recurring-orders/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurring-orders.raml:108:2)
+- added method `head /{projectKey}/recurring-orders/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurring-orders.raml:118:2)
+- added method `post /{projectKey}/recurring-orders/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurring-orders.raml:123:2)
+- added method `delete /{projectKey}/recurring-orders/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurring-orders.raml:138:2)
+- added method `get /{projectKey}/recurrence-policies/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurrence-policies.raml:50:2)
+- added method `head /{projectKey}/recurrence-policies/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurrence-policies.raml:61:2)
+- added method `post /{projectKey}/recurrence-policies/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurrence-policies.raml:67:2)
+- added method `delete /{projectKey}/recurrence-policies/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurrence-policies.raml:81:2)
+- added method `get /{projectKey}/recurrence-policies/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurrence-policies.raml:101:2)
+- added method `head /{projectKey}/recurrence-policies/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurrence-policies.raml:112:2)
+- added method `post /{projectKey}/recurrence-policies/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurrence-policies.raml:118:2)
+- added method `delete /{projectKey}/recurrence-policies/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/recurrence-policies.raml:132:2)
+- added method `get /{projectKey}/variant-projections/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/variant-projections.raml:70:2)
+- added method `head /{projectKey}/variant-projections/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/variant-projections.raml:95:2)
+- added method `get /{projectKey}/variant-projections/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/variant-projections.raml:119:2)
+- added method `head /{projectKey}/variant-projections/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/variant-projections.raml:144:2)
+- added method `post /{projectKey}/variants/bulk` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/variants.raml:59:2)
+- added method `get /{projectKey}/variants/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/variants.raml:95:2)
+- added method `head /{projectKey}/variants/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/variants.raml:105:2)
+- added method `post /{projectKey}/variants/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/variants.raml:111:2)
+- added method `delete /{projectKey}/variants/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/variants.raml:124:2)
+- added method `get /{projectKey}/variants/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/variants.raml:141:2)
+- added method `head /{projectKey}/variants/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/variants.raml:151:2)
+- added method `post /{projectKey}/variants/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/variants.raml:157:2)
+- added method `delete /{projectKey}/variants/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/variants.raml:170:2)
+- added method `get /{projectKey}/in-store/key={storeKey}/business-units` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/business-units-in-store.raml:11:0)
+- added method `head /{projectKey}/in-store/key={storeKey}/business-units` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/business-units-in-store.raml:29:0)
+- added method `post /{projectKey}/in-store/key={storeKey}/business-units` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/business-units-in-store.raml:46:0)
+- added method `get /{projectKey}/in-store/key={storeKey}/variant-projections` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/variant-projections-in-store.raml:9:0)
+- added method `head /{projectKey}/in-store/key={storeKey}/variant-projections` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/variant-projections-in-store.raml:46:0)
+- added method `get /{projectKey}/in-store/key={storeKey}/business-units/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/business-units-in-store.raml:74:2)
+- added method `head /{projectKey}/in-store/key={storeKey}/business-units/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/business-units-in-store.raml:92:2)
+- added method `post /{projectKey}/in-store/key={storeKey}/business-units/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/business-units-in-store.raml:106:2)
+- added method `delete /{projectKey}/in-store/key={storeKey}/business-units/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/business-units-in-store.raml:127:2)
+- added method `get /{projectKey}/in-store/key={storeKey}/business-units/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/business-units-in-store.raml:154:2)
+- added method `head /{projectKey}/in-store/key={storeKey}/business-units/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/business-units-in-store.raml:172:2)
+- added method `post /{projectKey}/in-store/key={storeKey}/business-units/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/business-units-in-store.raml:186:2)
+- added method `delete /{projectKey}/in-store/key={storeKey}/business-units/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/business-units-in-store.raml:207:2)
+- added method `get /{projectKey}/in-store/key={storeKey}/business-units/key={key}/associates/{associateId}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/business-units-in-store.raml:236:2)
+- added method `get /{projectKey}/in-store/key={storeKey}/business-units/{businessUnitId}/associates/{associateId}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/business-units-in-store.raml:256:2)
+- added method `post /{projectKey}/in-store/key={storeKey}/carts/customer-id={customerId}/merge` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/carts-in-store.raml:128:2)
+- added method `get /{projectKey}/in-store/key={storeKey}/product-projections/key={key}/variant-attributes` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/product-projections-variant-attributes-in-store.raml:2:0)
+- added method `get /{projectKey}/in-store/key={storeKey}/product-projections/{ID}/variant-attributes` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/product-projections-variant-attributes-in-store.raml:2:0)
+- added method `get /{projectKey}/in-store/key={storeKey}/variant-projections/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/variant-projections-in-store.raml:75:2)
+- added method `head /{projectKey}/in-store/key={storeKey}/variant-projections/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/variant-projections-in-store.raml:111:2)
+- added method `get /{projectKey}/in-store/key={storeKey}/variant-projections/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/variant-projections-in-store.raml:137:2)
+- added method `head /{projectKey}/in-store/key={storeKey}/variant-projections/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/resources/in-store/variant-projections-in-store.raml:173:2)
+</details>
+
+
+<details>
+<summary>Removed Method(s)</summary>
+
+- :warning: removed method `delete /{projectKey}/me/business-units/{ID}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/api/resources/me.raml:274:4)
+- :warning: removed method `delete /{projectKey}/me/business-units/key={key}` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/api/resources/me.raml:315:4)
+</details>
+
+
+<details>
 <summary>Added Enum(s)</summary>
 
 - added enum `ViewMyShoppingLists` to type `Permission` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/associate-role/Permission.raml:46:4)
@@ -980,67 +980,6 @@
 </details>
 
 **Import changes**
-
-<details>
-<summary>Added Method(s)</summary>
-
-- added method `post /{projectKey}/business-units/import-containers/{importContainerKey}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:391:8)
-- added method `post /{projectKey}/product-selections/import-containers/{importContainerKey}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:713:8)
-- added method `post /{projectKey}/product-tailorings/import-containers/{importContainerKey}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:742:8)
-- added method `post /{projectKey}/variants/import-containers/{importContainerKey}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:857:8)
-</details>
-
-
-<details>
-<summary>Added Resource(s)</summary>
-
-- added resource `/{projectKey}/business-units` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:379:2)
-- added resource `/{projectKey}/product-selections` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:701:2)
-- added resource `/{projectKey}/product-tailorings` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:730:2)
-- added resource `/{projectKey}/variants` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:845:2)
-- added resource `/{projectKey}/business-units/import-containers` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:381:4)
-- added resource `/{projectKey}/business-units/import-containers/{importContainerKey}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:383:6)
-- added resource `/{projectKey}/product-selections/import-containers` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:703:4)
-- added resource `/{projectKey}/product-selections/import-containers/{importContainerKey}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:705:6)
-- added resource `/{projectKey}/product-tailorings/import-containers` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:732:4)
-- added resource `/{projectKey}/product-tailorings/import-containers/{importContainerKey}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:734:6)
-- added resource `/{projectKey}/variants/import-containers` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:847:4)
-- added resource `/{projectKey}/variants/import-containers/{importContainerKey}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:849:6)
-</details>
-
-
-<details>
-<summary>Added Property(s)</summary>
-
-- added property `/^[a-zA-Z]{2,3}(?:-[a-zA-Z]{4})?(?:-(?:[a-zA-Z]{2}|\d{3}))?$/` to type `LocalizedString` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/common.raml:104:6)
-- added property `retentionPolicy` to type `ImportContainer` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/import-container.raml:56:6)
-- added property `expiresAt` to type `ImportContainer` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/import-container.raml:66:6)
-- added property `retentionPolicy` to type `ImportContainerDraft` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/import-container.raml:84:6)
-- added property `partiallyImported` to type `OperationStates` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/import-summary.raml:54:6)
-- added property `reservationExpirationInMinutes` to type `InventoryImport` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/inventory-import.raml:40:6)
-- added property `attributes` to type `ProductDraftImport` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/product-draft-import.raml:41:6)
-- added property `/^[a-zA-Z]{2,3}(?:-[a-zA-Z]{4})?(?:-(?:[a-zA-Z]{2}|\d{3}))?$/` to type `SearchKeywords` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/product-import.raml:12:6)
-- added property `attributes` to type `ProductImport` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/product-import.raml:91:6)
-- added property `level` to type `AttributeDefinition` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/product-type-import.raml:40:6)
-- added property `active` to type `StandalonePriceImport` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/standalone-price-import.raml:65:6)
-</details>
-
-
-<details>
-<summary>Changed Property(s)</summary>
-
-- :warning: changed property `value` of type `MoneySetField` from type `Money[]` to `TypedMoney[]` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/custom-field.raml:171:6)
-- :warning: changed property `country` of type `ExternalTaxRateDraft` from type `string` to `CountryCode` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/order-import.raml:357:6)
-</details>
-
-
-<details>
-<summary>Removed Property(s)</summary>
-
-- :warning: removed property `/^[a-z]{2}(-[A-Z]{2})?$/` from type `SearchKeywords` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/import/types/product-import.raml:11:6)
-- :warning: removed property `/^[a-z]{2}(-[A-Z]{2})?$/` from type `LocalizedString` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/import/types/common.raml:101:6)
-</details>
-
 
 <details>
 <summary>Added Type(s)</summary>
@@ -1082,6 +1021,67 @@
 
 
 <details>
+<summary>Added Resource(s)</summary>
+
+- added resource `/{projectKey}/business-units` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:379:2)
+- added resource `/{projectKey}/product-selections` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:701:2)
+- added resource `/{projectKey}/product-tailorings` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:730:2)
+- added resource `/{projectKey}/variants` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:845:2)
+- added resource `/{projectKey}/business-units/import-containers` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:381:4)
+- added resource `/{projectKey}/business-units/import-containers/{importContainerKey}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:383:6)
+- added resource `/{projectKey}/product-selections/import-containers` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:703:4)
+- added resource `/{projectKey}/product-selections/import-containers/{importContainerKey}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:705:6)
+- added resource `/{projectKey}/product-tailorings/import-containers` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:732:4)
+- added resource `/{projectKey}/product-tailorings/import-containers/{importContainerKey}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:734:6)
+- added resource `/{projectKey}/variants/import-containers` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:847:4)
+- added resource `/{projectKey}/variants/import-containers/{importContainerKey}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:849:6)
+</details>
+
+
+<details>
+<summary>Removed Property(s)</summary>
+
+- :warning: removed property `/^[a-z]{2}(-[A-Z]{2})?$/` from type `SearchKeywords` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/import/types/product-import.raml:11:6)
+- :warning: removed property `/^[a-z]{2}(-[A-Z]{2})?$/` from type `LocalizedString` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/import/types/common.raml:101:6)
+</details>
+
+
+<details>
+<summary>Changed Property(s)</summary>
+
+- :warning: changed property `value` of type `MoneySetField` from type `Money[]` to `TypedMoney[]` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/custom-field.raml:171:6)
+- :warning: changed property `country` of type `ExternalTaxRateDraft` from type `string` to `CountryCode` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/order-import.raml:357:6)
+</details>
+
+
+<details>
+<summary>Added Property(s)</summary>
+
+- added property `/^[a-zA-Z]{2,3}(?:-[a-zA-Z]{4})?(?:-(?:[a-zA-Z]{2}|\d{3}))?$/` to type `LocalizedString` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/common.raml:104:6)
+- added property `retentionPolicy` to type `ImportContainer` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/import-container.raml:56:6)
+- added property `expiresAt` to type `ImportContainer` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/import-container.raml:66:6)
+- added property `retentionPolicy` to type `ImportContainerDraft` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/import-container.raml:84:6)
+- added property `partiallyImported` to type `OperationStates` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/import-summary.raml:54:6)
+- added property `reservationExpirationInMinutes` to type `InventoryImport` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/inventory-import.raml:40:6)
+- added property `attributes` to type `ProductDraftImport` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/product-draft-import.raml:41:6)
+- added property `/^[a-zA-Z]{2,3}(?:-[a-zA-Z]{4})?(?:-(?:[a-zA-Z]{2}|\d{3}))?$/` to type `SearchKeywords` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/product-import.raml:12:6)
+- added property `attributes` to type `ProductImport` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/product-import.raml:91:6)
+- added property `level` to type `AttributeDefinition` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/product-type-import.raml:40:6)
+- added property `active` to type `StandalonePriceImport` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/standalone-price-import.raml:65:6)
+</details>
+
+
+<details>
+<summary>Added Method(s)</summary>
+
+- added method `post /{projectKey}/business-units/import-containers/{importContainerKey}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:391:8)
+- added method `post /{projectKey}/product-selections/import-containers/{importContainerKey}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:713:8)
+- added method `post /{projectKey}/product-tailorings/import-containers/{importContainerKey}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:742:8)
+- added method `post /{projectKey}/variants/import-containers/{importContainerKey}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/api.raml:857:8)
+</details>
+
+
+<details>
 <summary>Added Enum(s)</summary>
 
 - added enum `business-unit` to type `ImportResourceType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/common.raml:415:8)
@@ -1095,29 +1095,6 @@
 </details>
 
 **History changes**
-
-<details>
-<summary>Changed Type(s)</summary>
-
-- :warning: changed type `Address` from type `object` to `BaseAddress` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/types.raml:57:0)
-- :warning: changed type `GeoLocation` from type `object` to `GeoJson` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/types.raml:181:0)
-</details>
-
-
-<details>
-<summary>MarkDeprecated Type(s)</summary>
-
-- marked type `AddAssociateChange` as deprecated (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/types.raml:25:0)
-- marked type `AddPriceChange` as deprecated (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/types.raml:44:0)
-- marked type `AddProductSelectionChange` as deprecated (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/types.raml:46:0)
-- marked type `AddStateRolesChange` as deprecated (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/types.raml:51:0)
-- marked type `ChangeAmountAuthorizedChange` as deprecated (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/types.raml:79:0)
-- marked type `RemoveAssociateChange` as deprecated (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/types.raml:225:0)
-- marked type `RemovePriceChange` as deprecated (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/types.raml:243:0)
-- marked type `RemoveProductSelectionChange` as deprecated (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/types.raml:245:0)
-- marked type `RemoveStateRolesChange` as deprecated (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/types.raml:249:0)
-</details>
-
 
 <details>
 <summary>Added Type(s)</summary>
@@ -1292,144 +1269,217 @@
 
 
 <details>
-<summary>Added Method(s)</summary>
+<summary>MarkDeprecated Type(s)</summary>
 
-- added method `post /{projectKey}/graphql` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/api.raml:187:4)
+- marked type `AddAssociateChange` as deprecated (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/types.raml:25:0)
+- marked type `AddPriceChange` as deprecated (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/types.raml:44:0)
+- marked type `AddProductSelectionChange` as deprecated (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/types.raml:46:0)
+- marked type `AddStateRolesChange` as deprecated (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/types.raml:51:0)
+- marked type `ChangeAmountAuthorizedChange` as deprecated (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/types.raml:79:0)
+- marked type `RemoveAssociateChange` as deprecated (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/types.raml:225:0)
+- marked type `RemovePriceChange` as deprecated (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/types.raml:243:0)
+- marked type `RemoveProductSelectionChange` as deprecated (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/types.raml:245:0)
+- marked type `RemoveStateRolesChange` as deprecated (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/types.raml:249:0)
 </details>
 
 
 <details>
-<summary>Added Resource(s)</summary>
+<summary>Changed Type(s)</summary>
 
-- added resource `/{projectKey}/graphql` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/api.raml:186:2)
+- :warning: changed type `Address` from type `object` to `BaseAddress` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/types.raml:57:0)
+- :warning: changed type `GeoLocation` from type `object` to `GeoJson` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/types.raml:181:0)
 </details>
 
 
 <details>
-<summary>Removed Enum(s)</summary>
+<summary>Required Property(s)</summary>
 
-- :warning: removed enum `changeAmountAuthorized` from type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/history/types/UpdateType.raml:38:4)
-- :warning: removed enum `setAsssetKey` from type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/history/types/UpdateType.raml:141:4)
-- :warning: removed enum `Failed` from type `QuoteState` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/history/types/common/QuoteState.raml:10:4)
+- changed property `id` of type `ModifiedBy` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/ModifiedBy.raml:12:2)
+- changed property `id` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:9:2)
+- changed property `key` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:16:2)
+- changed property `title` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:27:2)
+- changed property `salutation` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:31:2)
+- changed property `firstName` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:35:2)
+- changed property `lastName` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:39:2)
+- changed property `streetName` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:43:2)
+- changed property `streetNumber` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:47:2)
+- changed property `additionalStreetInfo` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:51:2)
+- changed property `postalCode` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:55:2)
+- changed property `city` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:59:2)
+- changed property `region` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:63:2)
+- changed property `state` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:67:2)
+- changed property `company` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:71:2)
+- changed property `department` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:75:2)
+- changed property `building` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:79:2)
+- changed property `apartment` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:83:2)
+- changed property `pOBox` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:87:2)
+- changed property `phone` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:91:2)
+- changed property `mobile` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:95:2)
+- changed property `email` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:99:2)
+- changed property `fax` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:103:2)
+- changed property `additionalAddressInfo` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:107:2)
+- changed property `externalId` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:111:2)
+- changed property `description` of type `Asset` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Asset.raml:16:2)
+- changed property `custom` of type `Asset` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Asset.raml:24:2)
+- changed property `key` of type `Asset` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Asset.raml:28:2)
+- changed property `key` of type `AssetSource` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/AssetSource.raml:11:2)
+- changed property `dimensions` of type `AssetSource` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/AssetSource.raml:17:2)
+- changed property `contentType` of type `AssetSource` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/AssetSource.raml:21:2)
+- changed property `inputTip` of type `AttributeDefinition` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/AttributeDefinition.raml:30:2)
+- changed property `taxedPrice` of type `CustomLineItem` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/CustomLineItem.raml:24:2)
+- changed property `inputHint` of type `FieldDefinition` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/FieldDefinition.raml:26:2)
+- changed property `label` of type `Image` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Image.raml:13:2)
+- changed property `productSlug` of type `LineItem` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/LineItem.raml:34:2)
+- changed property `custom` of type `LineItem` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/LineItem.raml:120:2)
+- changed property `addedAt` of type `LineItem` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/LineItem.raml:124:2)
+- changed property `state` of type `Location` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Location.raml:9:2)
+- changed property `measurements` of type `Parcel` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Parcel.raml:20:2)
+- changed property `trackingData` of type `Parcel` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Parcel.raml:24:2)
+- changed property `items` of type `Parcel` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Parcel.raml:28:2)
+- changed property `heightInMillimeter` of type `ParcelMeasurements` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ParcelMeasurements.raml:5:2)
+- changed property `lengthInMillimeter` of type `ParcelMeasurements` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ParcelMeasurements.raml:10:2)
+- changed property `widthInMillimeter` of type `ParcelMeasurements` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ParcelMeasurements.raml:15:2)
+- changed property `weightInGram` of type `ParcelMeasurements` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ParcelMeasurements.raml:20:2)
+- changed property `channels` of type `ProductVariantAvailability` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ProductVariantAvailability.raml:7:2)
+- changed property `isOnStock` of type `ProductVariantAvailability` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ProductVariantAvailability.raml:11:2)
+- changed property `restockableInDays` of type `ProductVariantAvailability` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ProductVariantAvailability.raml:15:2)
+- changed property `availableQuantity` of type `ProductVariantAvailability` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ProductVariantAvailability.raml:20:2)
+- changed property `isOnStock` of type `ProductVariantChannelAvailability` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ProductVariantChannelAvailability.raml:5:2)
+- changed property `restockableInDays` of type `ProductVariantChannelAvailability` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ProductVariantChannelAvailability.raml:9:2)
+- changed property `availableQuantity` of type `ProductVariantChannelAvailability` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ProductVariantChannelAvailability.raml:14:2)
+- changed property `id` of type `ResourceIdentifier` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ResourceIdentifier.raml:6:2)
+- changed property `key` of type `ResourceIdentifier` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ResourceIdentifier.raml:8:2)
+- changed property `returnTrackingId` of type `ReturnInfo` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ReturnInfo.raml:11:2)
+- changed property `returnDate` of type `ReturnInfo` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ReturnInfo.raml:15:2)
+- changed property `comment` of type `ReturnItem` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ReturnItem.raml:22:2)
+- changed property `suggestTokenizer` of type `SearchKeyword` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/SearchKeyword.raml:9:2)
+- changed property `freeAbove` of type `ShippingRate` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ShippingRate.raml:8:2)
+- changed property `isMatching` of type `ShippingRate` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ShippingRate.raml:11:2)
+- changed property `externalId` of type `SyncInfo` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/SyncInfo.raml:11:2)
+- changed property `id` of type `TaxRate` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/TaxRate.raml:5:2)
+- changed property `state` of type `TaxRate` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/TaxRate.raml:36:2)
+- changed property `subRates` of type `TaxRate` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/TaxRate.raml:40:2)
+- changed property `custom` of type `TextLineItem` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/TextLineItem.raml:11:2)
+- changed property `description` of type `TextLineItem` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/TextLineItem.raml:15:2)
+- changed property `trackingId` of type `TrackingData` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/TrackingData.raml:7:2)
+- changed property `carrier` of type `TrackingData` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/TrackingData.raml:11:2)
+- changed property `provider` of type `TrackingData` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/TrackingData.raml:15:2)
+- changed property `providerTransaction` of type `TrackingData` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/TrackingData.raml:19:2)
+- changed property `isReturn` of type `TrackingData` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/TrackingData.raml:23:2)
+- changed property `timestamp` of type `Transaction` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Transaction.raml:10:2)
+- changed property `interactionId` of type `Transaction` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Transaction.raml:20:2)
 </details>
 
 
 <details>
-<summary>Added Enum(s)</summary>
+<summary>Removed Property(s)</summary>
 
-- added enum `shipping-method` to type `ChangeHistoryResourceType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/ChangeHistoryResourceType.raml:24:4)
-- added enum `standalone-price` to type `ChangeHistoryResourceType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/ChangeHistoryResourceType.raml:27:4)
-- added enum `addInheritedAssociate` to type `PlatformInitiatedChange` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/PlatformInitiatedChange.raml:7:4)
-- added enum `changeIncludedInStatistics` to type `PlatformInitiatedChange` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/PlatformInitiatedChange.raml:8:4)
-- added enum `changeInheritedAssociate` to type `PlatformInitiatedChange` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/PlatformInitiatedChange.raml:9:4)
-- added enum `changeLastVariantId` to type `PlatformInitiatedChange` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/PlatformInitiatedChange.raml:10:4)
-- added enum `changeLineItemPublished` to type `PlatformInitiatedChange` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/PlatformInitiatedChange.raml:12:4)
-- added enum `changeTopLevelUnit` to type `PlatformInitiatedChange` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/PlatformInitiatedChange.raml:14:4)
-- added enum `removeInheritedAssociate` to type `PlatformInitiatedChange` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/PlatformInitiatedChange.raml:15:4)
-- added enum `setAncestors` to type `PlatformInitiatedChange` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/PlatformInitiatedChange.raml:16:4)
-- added enum `setInheritedAssociates` to type `PlatformInitiatedChange` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/PlatformInitiatedChange.raml:18:4)
-- added enum `setInheritedStores` to type `PlatformInitiatedChange` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/PlatformInitiatedChange.raml:19:4)
-- added enum `setLineItemDeactivatedAt` to type `PlatformInitiatedChange` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/PlatformInitiatedChange.raml:21:4)
-- added enum `setProductCount` to type `PlatformInitiatedChange` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/PlatformInitiatedChange.raml:22:4)
-- added enum `setReservations` to type `PlatformInitiatedChange` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/PlatformInitiatedChange.raml:23:4)
-- added enum `addShipping` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:31:4)
-- added enum `addShippingRate` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:33:4)
-- added enum `addZone` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:39:4)
-- added enum `changeActive` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:40:4)
-- added enum `changeApprovalRuleMode` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:43:4)
-- added enum `changeCustomLineItemPriceRoundingMode` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:53:4)
-- added enum `changeCustomer` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:55:4)
-- added enum `changeDiscountTypeCombination` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:57:4)
-- added enum `changeIncludedInStatistics` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:64:4)
-- added enum `changeIsDefault` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:68:4)
-- added enum `changeLastVariantId` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:72:4)
-- added enum `changeLineItemPriceRoundingMode` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:74:4)
-- added enum `changeLineItemPublished` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:75:4)
-- added enum `changePriceRoundingMode` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:90:4)
-- added enum `changeTaxCategory` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:105:4)
-- added enum `changeTopLevelUnit` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:111:4)
-- added enum `excludeProduct` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:117:4)
-- added enum `removeShipping` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:142:4)
-- added enum `removeShippingRate` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:144:4)
-- added enum `removeZone` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:148:4)
-- added enum `replaceTaxRate` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:149:4)
-- added enum `revertStagedChanges` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:151:4)
-- added enum `revertStagedVariantChanges` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:152:4)
-- added enum `setAncestors` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:156:4)
-- added enum `setAssetKey` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:162:4)
-- added enum `setAssociates` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:165:4)
-- added enum `setBillingAddressCustomField` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:170:4)
-- added enum `setBillingAddressCustomType` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:171:4)
-- added enum `setBusinessUnit` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:172:4)
-- added enum `setCustomLineItemDiscountedPrice` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:182:4)
-- added enum `setCustomLineItemDiscountedPricePerQuantity` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:183:4)
-- added enum `setCustomerGroupAssignments` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:196:4)
-- added enum `setDeliveryAddressCustomField` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:204:4)
-- added enum `setDeliveryAddressCustomType` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:205:4)
-- added enum `setDeliveryCustomField` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:206:4)
-- added enum `setDeliveryCustomType` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:207:4)
-- added enum `setDirectDiscounts` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:210:4)
-- added enum `setDiscountOnTotalPrice` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:211:4)
-- added enum `setInheritedAssociates` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:219:4)
-- added enum `setInheritedStores` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:220:4)
-- added enum `setItemShippingAddressCustomField` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:224:4)
-- added enum `setItemShippingAddressCustomType` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:225:4)
-- added enum `setLocalizedDescription` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:244:4)
-- added enum `setLocalizedName` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:245:4)
-- added enum `setMaxCartQuantity` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:248:4)
-- added enum `setMinCartQuantity` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:256:4)
-- added enum `setParcelCustomField` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:262:4)
-- added enum `setParcelCustomType` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:263:4)
-- added enum `setPredicate` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:268:4)
-- added enum `setPriceKey` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:269:4)
-- added enum `setPriceMode` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:270:4)
-- added enum `setPriceTiers` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:271:4)
-- added enum `setProductAttribute` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:273:4)
-- added enum `setReferences` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:282:4)
-- added enum `setReservationExpirationInMinutes` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:285:4)
-- added enum `setReturnInfo` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:286:4)
-- added enum `setReturnItemCustomField` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:287:4)
-- added enum `setReturnItemCustomType` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:288:4)
-- added enum `setShippingAddressCustomField` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:296:4)
-- added enum `setShippingAddressCustomType` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:297:4)
-- added enum `setShippingCustomField` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:298:4)
-- added enum `setShippingCustomType` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:299:4)
-- added enum `setShippingInfoDiscountedPrice` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:300:4)
-- added enum `setShippingMethodTaxCategory` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:305:4)
-- added enum `setTaxedShippingPrice` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:320:4)
-- added enum `setTransactionCustomField` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:326:4)
-- added enum `setTransactionCustomType` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:327:4)
-- added enum `setUnitType` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:329:4)
-- added enum `setVariantExclusion` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:336:4)
-- added enum `ApplicationStoppedByGroupBestDeal` to type `DiscountCodeState` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/DiscountCodeState.raml:17:4)
-- added enum `CreateApprovalRules` to type `Permission` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Permission.raml:43:4)
-- added enum `UpdateApprovalRules` to type `Permission` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Permission.raml:44:4)
-- added enum `UpdateApprovalFlows` to type `Permission` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Permission.raml:45:4)
-- added enum `ViewMyShoppingLists` to type `Permission` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Permission.raml:46:4)
-- added enum `ViewOthersShoppingLists` to type `Permission` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Permission.raml:47:4)
-- added enum `UpdateMyShoppingLists` to type `Permission` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Permission.raml:48:4)
-- added enum `UpdateOthersShoppingLists` to type `Permission` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Permission.raml:49:4)
-- added enum `CreateMyShoppingLists` to type `Permission` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Permission.raml:50:4)
-- added enum `CreateOthersShoppingLists` to type `Permission` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Permission.raml:51:4)
-- added enum `DeleteMyShoppingLists` to type `Permission` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Permission.raml:52:4)
-- added enum `DeleteOthersShoppingLists` to type `Permission` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Permission.raml:53:4)
-- added enum `includeOnly` to type `ProductVariantSelectionTypeEnum` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ProductVariantSelectionTypeEnum.raml:7:4)
-- added enum `includeAllExcept` to type `ProductVariantSelectionTypeEnum` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ProductVariantSelectionTypeEnum.raml:8:4)
-- added enum `RenegotiationAddressed` to type `QuoteState` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/QuoteState.raml:10:4)
-- added enum `approval-flow` to type `ReferenceTypeId` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ReferenceTypeId.raml:7:4)
-- added enum `approval-rule` to type `ReferenceTypeId` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ReferenceTypeId.raml:8:4)
-- added enum `attribute-group` to type `ReferenceTypeId` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ReferenceTypeId.raml:10:4)
-- added enum `direct-discount` to type `ReferenceTypeId` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ReferenceTypeId.raml:20:4)
-- added enum `discount-group` to type `ReferenceTypeId` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ReferenceTypeId.raml:22:4)
-- added enum `payment-method` to type `ReferenceTypeId` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ReferenceTypeId.raml:28:4)
-- added enum `product-price` to type `ReferenceTypeId` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ReferenceTypeId.raml:32:4)
-- added enum `product-tailoring` to type `ReferenceTypeId` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ReferenceTypeId.raml:34:4)
-- added enum `recurrence-policy` to type `ReferenceTypeId` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ReferenceTypeId.raml:38:4)
-- added enum `recurring-order` to type `ReferenceTypeId` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ReferenceTypeId.raml:39:4)
-- added enum `standalone-price` to type `ReferenceTypeId` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ReferenceTypeId.raml:44:4)
-- added enum `Delivered` to type `ShipmentState` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ShipmentState.raml:7:4)
-- added enum `Canceled` to type `ShipmentState` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ShipmentState.raml:13:4)
-- added enum `RecurringOrderState` to type `StateTypeEnum` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/StateTypeEnum.raml:7:4)
+- :warning: removed property `/^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$/` from type `CategoryOrderHints` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/history/types/common/CategoryOrderHints.raml:6:2)
+- :warning: removed property `variantId` from type `LineItem` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/history/types/common/LineItem.raml:24:2)
+- :warning: removed property `fractionDigits` from type `Money` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/history/types/common/Money.raml:10:2)
+- :warning: removed property `type` from type `Money` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/history/types/common/Money.raml:13:2)
+- :warning: removed property `//` from type `ProductVariantChannelAvailabilityMap` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/history/types/common/ProductVariantChannelAvailabilityMap.raml:6:2)
+- :warning: removed property `skus` from type `ProductVariantSelection` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/history/types/common/ProductVariantSelection.raml:8:2)
+</details>
+
+
+<details>
+<summary>Changed Property(s)</summary>
+
+- :warning: changed property `nextValue` of type `AddEnumValueChange` from type `EnumValue` to `CustomFieldEnumValue` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/type/AddEnumValueChange.raml:15:2)
+- :warning: changed property `nextValue` of type `AddInterfaceInteractionChange` from type `CustomFieldExpandedValue` to `CustomFields` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/payment/AddInterfaceInteractionChange.raml:15:2)
+- :warning: changed property `nextValue` of type `AddLocalizedEnumValueChange` from type `AttributeLocalizedEnumValue` to `CustomFieldLocalizedEnumValue` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/shared-types/AddLocalizedEnumValueChange.raml:14:2)
+- :warning: changed property `previousValue` of type `AddShoppingListLineItemChange` from type `LineItem` to `ShoppingListLineItem` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/shopping-list/AddShoppingListLineItemChange.raml:15:2)
+- :warning: changed property `nextValue` of type `AddShoppingListLineItemChange` from type `LineItem` to `ShoppingListLineItem` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/shopping-list/AddShoppingListLineItemChange.raml:18:2)
+- :warning: changed property `w` of type `AssetDimensions` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/AssetDimensions.raml:7:2)
+- :warning: changed property `h` of type `AssetDimensions` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/AssetDimensions.raml:12:2)
+- :warning: changed property `customer` of type `Associate` from type `Reference` to `CustomerReference` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Associate.raml:14:2)
+- :warning: changed property `associateRole` of type `AssociateRoleAssignment` from type `KeyReference` to `AssociateRoleKeyReference` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/AssociateRoleAssignment.raml:5:2)
+- :warning: changed property `previousValue` of type `ChangeEnumValueOrderChange` from type `EnumValue[]` to `CustomFieldEnumValue[]` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/type/ChangeEnumValueOrderChange.raml:15:2)
+- :warning: changed property `nextValue` of type `ChangeEnumValueOrderChange` from type `EnumValue[]` to `CustomFieldEnumValue[]` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/type/ChangeEnumValueOrderChange.raml:20:2)
+- :warning: changed property `previousValue` of type `ChangeInputHintChange` from type `TextInputHint` to `TypeTextInputHint` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/shared-types/ChangeInputHintChange.raml:14:2)
+- :warning: changed property `nextValue` of type `ChangeInputHintChange` from type `TextInputHint` to `TypeTextInputHint` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/shared-types/ChangeInputHintChange.raml:17:2)
+- :warning: changed property `previousValue` of type `ChangeLocalizedEnumValueOrderChange` from type `LocalizedEnumValue[]` to `AttributeLocalizedEnumValue[]` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/shared-types/ChangeLocalizedEnumValueOrderChange.raml:14:2)
+- :warning: changed property `nextValue` of type `ChangeLocalizedEnumValueOrderChange` from type `LocalizedEnumValue[]` to `AttributeLocalizedEnumValue[]` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/shared-types/ChangeLocalizedEnumValueOrderChange.raml:19:2)
+- :warning: changed property `previousValue` of type `ChangePlainEnumValueOrderChange` from type `EnumValue[]` to `AttributePlainEnumValue[]` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/product-type/ChangePlainEnumValueOrderChange.raml:15:2)
+- :warning: changed property `nextValue` of type `ChangePlainEnumValueOrderChange` from type `EnumValue[]` to `AttributePlainEnumValue[]` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/product-type/ChangePlainEnumValueOrderChange.raml:20:2)
+- :warning: changed property `type` of type `CustomFields` from type `Reference` to `TypeReference` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/CustomFields.raml:7:2)
+- :warning: changed property `fields` of type `CustomFields` from type `object` to `FieldContainer` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/CustomFields.raml:11:2)
+- :warning: changed property `money` of type `CustomLineItem` from type `Money` to `TypedMoney` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/CustomLineItem.raml:20:2)
+- :warning: changed property `totalPrice` of type `CustomLineItem` from type `Money` to `CentPrecisionMoney` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/CustomLineItem.raml:33:2)
+- :warning: changed property `quantity` of type `CustomLineItem` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/CustomLineItem.raml:45:2)
+- :warning: changed property `createdAt` of type `Delivery` from type `string` to `datetime` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Delivery.raml:16:2)
+- :warning: changed property `quantity` of type `DeliveryItem` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/DeliveryItem.raml:9:2)
+- :warning: changed property `discountCode` of type `DiscountCodeInfo` from type `Reference` to `DiscountCodeReference` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/DiscountCodeInfo.raml:5:2)
+- :warning: changed property `discountedAmount` of type `DiscountedLineItemPortion` from type `Money` to `TypedMoney` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/DiscountedLineItemPortion.raml:9:2)
+- :warning: changed property `value` of type `DiscountedLineItemPrice` from type `Money` to `TypedMoney` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/DiscountedLineItemPrice.raml:5:2)
+- :warning: changed property `quantity` of type `DiscountedLineItemPriceForQuantity` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/DiscountedLineItemPriceForQuantity.raml:5:2)
+- :warning: changed property `inputHint` of type `FieldDefinition` from type `TextInputHint` to `TypeTextInputHint` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/FieldDefinition.raml:26:2)
+- :warning: changed property `w` of type `ImageDimensions` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ImageDimensions.raml:5:2)
+- :warning: changed property `h` of type `ImageDimensions` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ImageDimensions.raml:9:2)
+- :warning: changed property `customer` of type `InheritedAssociate` from type `Reference` to `CustomerReference` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/InheritedAssociate.raml:9:2)
+- :warning: changed property `associateRole` of type `InheritedAssociateRoleAssignment` from type `KeyReference` to `AssociateRoleKeyReference` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/InheritedAssociateRoleAssignment.raml:5:2)
+- :warning: changed property `source` of type `InheritedAssociateRoleAssignment` from type `KeyReference` to `BusinessUnitKeyReference` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/InheritedAssociateRoleAssignment.raml:9:2)
+- :warning: changed property `quantity` of type `ItemShippingTarget` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ItemShippingTarget.raml:15:2)
+- :warning: changed property `quantity` of type `ItemState` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ItemState.raml:5:2)
+- :warning: changed property `state` of type `ItemState` from type `Reference` to `StateReference` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ItemState.raml:10:2)
+- :warning: changed property `productType` of type `LineItem` from type `Reference` to `ProductTypeReference` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/LineItem.raml:39:2)
+- :warning: changed property `variant` of type `LineItem` from type `Variant` to `ProductVariant` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/LineItem.raml:43:2)
+- :warning: changed property `quantity` of type `LineItem` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/LineItem.raml:54:2)
+- :warning: changed property `addedAt` of type `LineItem` from type `string` to `datetime` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/LineItem.raml:124:2)
+- :warning: changed property `centAmount` of type `Money` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Money.raml:6:2)
+- :warning: changed property `createdAt` of type `Parcel` from type `string` to `datetime` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Parcel.raml:16:2)
+- :warning: changed property `heightInMillimeter` of type `ParcelMeasurements` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ParcelMeasurements.raml:5:2)
+- :warning: changed property `lengthInMillimeter` of type `ParcelMeasurements` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ParcelMeasurements.raml:10:2)
+- :warning: changed property `widthInMillimeter` of type `ParcelMeasurements` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ParcelMeasurements.raml:15:2)
+- :warning: changed property `weightInGram` of type `ParcelMeasurements` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ParcelMeasurements.raml:20:2)
+- :warning: changed property `payments` of type `PaymentInfo` from type `Reference[]` to `PaymentReference[]` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/PaymentInfo.raml:5:2)
+- :warning: changed property `value` of type `Price` from type `Money` to `TypedMoney` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Price.raml:19:2)
+- :warning: changed property `productSelection` of type `ProductSelectionSetting` from type `Reference` to `ProductSelectionReference` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ProductSelectionSetting.raml:5:2)
+- :warning: changed property `restockableInDays` of type `ProductVariantAvailability` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ProductVariantAvailability.raml:15:2)
+- :warning: changed property `availableQuantity` of type `ProductVariantAvailability` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ProductVariantAvailability.raml:20:2)
+- :warning: changed property `restockableInDays` of type `ProductVariantChannelAvailability` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ProductVariantChannelAvailability.raml:9:2)
+- :warning: changed property `availableQuantity` of type `ProductVariantChannelAvailability` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ProductVariantChannelAvailability.raml:14:2)
+- :warning: changed property `previousValue` of type `RemoveDeliveryItemsChange` from type `Delivery` to `DeliveryChangeValue` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/order/RemoveDeliveryItemsChange.raml:15:2)
+- :warning: changed property `previousValue` of type `RemoveEnumValuesChange` from type `EnumValue` to `AttributePlainEnumValue` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/product-type/RemoveEnumValuesChange.raml:15:2)
+- :warning: changed property `previousValue` of type `RemoveLocalizedEnumValuesChange` from type `LocalizedEnumValue` to `AttributeLocalizedEnumValue` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/product-type/RemoveLocalizedEnumValuesChange.raml:15:2)
+- :warning: changed property `previousValue` of type `RemoveShoppingListLineItemChange` from type `LineItem` to `ShoppingListLineItem` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/shopping-list/RemoveShoppingListLineItemChange.raml:15:2)
+- :warning: changed property `nextValue` of type `RemoveShoppingListLineItemChange` from type `LineItem` to `ShoppingListLineItem` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/shopping-list/RemoveShoppingListLineItemChange.raml:18:2)
+- :warning: changed property `returnDate` of type `ReturnInfo` from type `string` to `datetime` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ReturnInfo.raml:15:2)
+- :warning: changed property `quantity` of type `ReturnItem` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ReturnItem.raml:15:2)
+- :warning: changed property `lastModifiedAt` of type `ReturnItem` from type `string` to `datetime` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ReturnItem.raml:41:2)
+- :warning: changed property `createdAt` of type `ReturnItem` from type `string` to `datetime` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ReturnItem.raml:45:2)
+- :warning: changed property `averageRating` of type `ReviewRatingStatistics` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ReviewRatingStatistics.raml:5:2)
+- :warning: changed property `highestRating` of type `ReviewRatingStatistics` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ReviewRatingStatistics.raml:10:2)
+- :warning: changed property `lowestRating` of type `ReviewRatingStatistics` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ReviewRatingStatistics.raml:13:2)
+- :warning: changed property `previousValue` of type `SetAttributeChange` from type `AttributeValue` to `Attribute` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/product/SetAttributeChange.raml:15:2)
+- :warning: changed property `nextValue` of type `SetAttributeChange` from type `AttributeValue` to `Attribute` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/product/SetAttributeChange.raml:18:2)
+- :warning: changed property `previousValue` of type `SetCustomLineItemTaxedPriceChange` from type `Money` to `TaxedItemPrice` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/order/SetCustomLineItemTaxedPriceChange.raml:14:2)
+- :warning: changed property `nextValue` of type `SetCustomLineItemTaxedPriceChange` from type `Money` to `TaxedItemPrice` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/order/SetCustomLineItemTaxedPriceChange.raml:17:2)
+- :warning: changed property `previousValue` of type `SetDiscountedPriceChange` from type `Price` to `DiscountedPrice` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/product/SetDiscountedPriceChange.raml:15:2)
+- :warning: changed property `nextValue` of type `SetDiscountedPriceChange` from type `Price` to `DiscountedPrice` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/product/SetDiscountedPriceChange.raml:18:2)
+- :warning: changed property `previousValue` of type `SetOrderTaxedPriceChange` from type `TaxedItemPrice` to `TaxedPrice` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/order/SetOrderTaxedPriceChange.raml:14:2)
+- :warning: changed property `nextValue` of type `SetOrderTaxedPriceChange` from type `TaxedItemPrice` to `TaxedPrice` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/order/SetOrderTaxedPriceChange.raml:17:2)
+- :warning: changed property `previousValue` of type `SetShippingInfoTaxedPriceChange` from type `TaxedPrice` to `TaxedItemPrice` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/order/SetShippingInfoTaxedPriceChange.raml:14:2)
+- :warning: changed property `nextValue` of type `SetShippingInfoTaxedPriceChange` from type `TaxedPrice` to `TaxedItemPrice` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/order/SetShippingInfoTaxedPriceChange.raml:17:2)
+- :warning: changed property `previousValue` of type `SetShippingRateChange` from type `Money` to `ShippingRate` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/order/SetShippingRateChange.raml:14:2)
+- :warning: changed property `nextValue` of type `SetShippingRateChange` from type `Money` to `ShippingRate` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/order/SetShippingRateChange.raml:17:2)
+- :warning: changed property `previousValue` of type `SetStoreChange` from type `Reference` to `KeyReference` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/shared-types/SetStoreChange.raml:14:2)
+- :warning: changed property `nextValue` of type `SetStoreChange` from type `Reference` to `KeyReference` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/shared-types/SetStoreChange.raml:17:2)
+- :warning: changed property `price` of type `ShippingRate` from type `Money` to `CentPrecisionMoney` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ShippingRate.raml:5:2)
+- :warning: changed property `freeAbove` of type `ShippingRate` from type `Money` to `CentPrecisionMoney` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ShippingRate.raml:8:2)
+- :warning: changed property `amount` of type `SubRate` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/SubRate.raml:10:2)
+- :warning: changed property `channel` of type `SyncInfo` from type `Reference` to `ChannelReference` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/SyncInfo.raml:7:2)
+- :warning: changed property `syncedAt` of type `SyncInfo` from type `string` to `datetime` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/SyncInfo.raml:15:2)
+- :warning: changed property `amount` of type `TaxRate` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/TaxRate.raml:22:2)
+- :warning: changed property `totalNet` of type `TaxedItemPrice` from type `Money` to `CentPrecisionMoney` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/TaxedItemPrice.raml:5:2)
+- :warning: changed property `totalGross` of type `TaxedItemPrice` from type `Money` to `CentPrecisionMoney` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/TaxedItemPrice.raml:9:2)
+- :warning: changed property `totalNet` of type `TaxedPrice` from type `Money` to `CentPrecisionMoney` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/TaxedPrice.raml:5:2)
+- :warning: changed property `totalGross` of type `TaxedPrice` from type `Money` to `CentPrecisionMoney` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/TaxedPrice.raml:9:2)
+- :warning: changed property `addedAt` of type `TextLineItem` from type `string` to `datetime` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/TextLineItem.raml:7:2)
+- :warning: changed property `quantity` of type `TextLineItem` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/TextLineItem.raml:32:2)
+- :warning: changed property `timestamp` of type `Transaction` from type `string` to `datetime` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Transaction.raml:10:2)
+- :warning: changed property `amount` of type `Transaction` from type `Money` to `CentPrecisionMoney` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Transaction.raml:16:2)
 </details>
 
 
@@ -1596,245 +1646,153 @@
 
 
 <details>
-<summary>Required Property(s)</summary>
+<summary>Added Resource(s)</summary>
 
-- changed property `id` of type `ModifiedBy` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/ModifiedBy.raml:12:2)
-- changed property `id` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:9:2)
-- changed property `key` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:16:2)
-- changed property `title` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:27:2)
-- changed property `salutation` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:31:2)
-- changed property `firstName` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:35:2)
-- changed property `lastName` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:39:2)
-- changed property `streetName` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:43:2)
-- changed property `streetNumber` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:47:2)
-- changed property `additionalStreetInfo` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:51:2)
-- changed property `postalCode` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:55:2)
-- changed property `city` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:59:2)
-- changed property `region` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:63:2)
-- changed property `state` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:67:2)
-- changed property `company` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:71:2)
-- changed property `department` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:75:2)
-- changed property `building` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:79:2)
-- changed property `apartment` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:83:2)
-- changed property `pOBox` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:87:2)
-- changed property `phone` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:91:2)
-- changed property `mobile` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:95:2)
-- changed property `email` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:99:2)
-- changed property `fax` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:103:2)
-- changed property `additionalAddressInfo` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:107:2)
-- changed property `externalId` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:111:2)
-- changed property `description` of type `Asset` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Asset.raml:16:2)
-- changed property `custom` of type `Asset` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Asset.raml:24:2)
-- changed property `key` of type `Asset` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Asset.raml:28:2)
-- changed property `key` of type `AssetSource` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/AssetSource.raml:11:2)
-- changed property `dimensions` of type `AssetSource` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/AssetSource.raml:17:2)
-- changed property `contentType` of type `AssetSource` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/AssetSource.raml:21:2)
-- changed property `inputTip` of type `AttributeDefinition` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/AttributeDefinition.raml:30:2)
-- changed property `taxedPrice` of type `CustomLineItem` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/CustomLineItem.raml:24:2)
-- changed property `inputHint` of type `FieldDefinition` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/FieldDefinition.raml:26:2)
-- changed property `label` of type `Image` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Image.raml:13:2)
-- changed property `productSlug` of type `LineItem` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/LineItem.raml:34:2)
-- changed property `custom` of type `LineItem` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/LineItem.raml:120:2)
-- changed property `addedAt` of type `LineItem` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/LineItem.raml:124:2)
-- changed property `state` of type `Location` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Location.raml:9:2)
-- changed property `measurements` of type `Parcel` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Parcel.raml:20:2)
-- changed property `trackingData` of type `Parcel` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Parcel.raml:24:2)
-- changed property `items` of type `Parcel` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Parcel.raml:28:2)
-- changed property `heightInMillimeter` of type `ParcelMeasurements` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ParcelMeasurements.raml:5:2)
-- changed property `lengthInMillimeter` of type `ParcelMeasurements` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ParcelMeasurements.raml:10:2)
-- changed property `widthInMillimeter` of type `ParcelMeasurements` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ParcelMeasurements.raml:15:2)
-- changed property `weightInGram` of type `ParcelMeasurements` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ParcelMeasurements.raml:20:2)
-- changed property `channels` of type `ProductVariantAvailability` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ProductVariantAvailability.raml:7:2)
-- changed property `isOnStock` of type `ProductVariantAvailability` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ProductVariantAvailability.raml:11:2)
-- changed property `restockableInDays` of type `ProductVariantAvailability` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ProductVariantAvailability.raml:15:2)
-- changed property `availableQuantity` of type `ProductVariantAvailability` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ProductVariantAvailability.raml:20:2)
-- changed property `isOnStock` of type `ProductVariantChannelAvailability` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ProductVariantChannelAvailability.raml:5:2)
-- changed property `restockableInDays` of type `ProductVariantChannelAvailability` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ProductVariantChannelAvailability.raml:9:2)
-- changed property `availableQuantity` of type `ProductVariantChannelAvailability` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ProductVariantChannelAvailability.raml:14:2)
-- changed property `id` of type `ResourceIdentifier` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ResourceIdentifier.raml:6:2)
-- changed property `key` of type `ResourceIdentifier` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ResourceIdentifier.raml:8:2)
-- changed property `returnTrackingId` of type `ReturnInfo` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ReturnInfo.raml:11:2)
-- changed property `returnDate` of type `ReturnInfo` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ReturnInfo.raml:15:2)
-- changed property `comment` of type `ReturnItem` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ReturnItem.raml:22:2)
-- changed property `suggestTokenizer` of type `SearchKeyword` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/SearchKeyword.raml:9:2)
-- changed property `freeAbove` of type `ShippingRate` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ShippingRate.raml:8:2)
-- changed property `isMatching` of type `ShippingRate` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ShippingRate.raml:11:2)
-- changed property `externalId` of type `SyncInfo` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/SyncInfo.raml:11:2)
-- changed property `id` of type `TaxRate` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/TaxRate.raml:5:2)
-- changed property `state` of type `TaxRate` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/TaxRate.raml:36:2)
-- changed property `subRates` of type `TaxRate` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/TaxRate.raml:40:2)
-- changed property `custom` of type `TextLineItem` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/TextLineItem.raml:11:2)
-- changed property `description` of type `TextLineItem` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/TextLineItem.raml:15:2)
-- changed property `trackingId` of type `TrackingData` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/TrackingData.raml:7:2)
-- changed property `carrier` of type `TrackingData` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/TrackingData.raml:11:2)
-- changed property `provider` of type `TrackingData` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/TrackingData.raml:15:2)
-- changed property `providerTransaction` of type `TrackingData` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/TrackingData.raml:19:2)
-- changed property `isReturn` of type `TrackingData` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/TrackingData.raml:23:2)
-- changed property `timestamp` of type `Transaction` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Transaction.raml:10:2)
-- changed property `interactionId` of type `Transaction` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Transaction.raml:20:2)
+- added resource `/{projectKey}/graphql` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/api.raml:186:2)
 </details>
 
 
 <details>
-<summary>Changed Property(s)</summary>
+<summary>Removed Enum(s)</summary>
 
-- :warning: changed property `nextValue` of type `AddEnumValueChange` from type `EnumValue` to `CustomFieldEnumValue` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/type/AddEnumValueChange.raml:15:2)
-- :warning: changed property `nextValue` of type `AddInterfaceInteractionChange` from type `CustomFieldExpandedValue` to `CustomFields` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/payment/AddInterfaceInteractionChange.raml:15:2)
-- :warning: changed property `nextValue` of type `AddLocalizedEnumValueChange` from type `AttributeLocalizedEnumValue` to `CustomFieldLocalizedEnumValue` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/shared-types/AddLocalizedEnumValueChange.raml:14:2)
-- :warning: changed property `previousValue` of type `AddShoppingListLineItemChange` from type `LineItem` to `ShoppingListLineItem` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/shopping-list/AddShoppingListLineItemChange.raml:15:2)
-- :warning: changed property `nextValue` of type `AddShoppingListLineItemChange` from type `LineItem` to `ShoppingListLineItem` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/shopping-list/AddShoppingListLineItemChange.raml:18:2)
-- :warning: changed property `w` of type `AssetDimensions` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/AssetDimensions.raml:7:2)
-- :warning: changed property `h` of type `AssetDimensions` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/AssetDimensions.raml:12:2)
-- :warning: changed property `customer` of type `Associate` from type `Reference` to `CustomerReference` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Associate.raml:14:2)
-- :warning: changed property `associateRole` of type `AssociateRoleAssignment` from type `KeyReference` to `AssociateRoleKeyReference` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/AssociateRoleAssignment.raml:5:2)
-- :warning: changed property `previousValue` of type `ChangeEnumValueOrderChange` from type `EnumValue[]` to `CustomFieldEnumValue[]` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/type/ChangeEnumValueOrderChange.raml:15:2)
-- :warning: changed property `nextValue` of type `ChangeEnumValueOrderChange` from type `EnumValue[]` to `CustomFieldEnumValue[]` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/type/ChangeEnumValueOrderChange.raml:20:2)
-- :warning: changed property `previousValue` of type `ChangeInputHintChange` from type `TextInputHint` to `TypeTextInputHint` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/shared-types/ChangeInputHintChange.raml:14:2)
-- :warning: changed property `nextValue` of type `ChangeInputHintChange` from type `TextInputHint` to `TypeTextInputHint` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/shared-types/ChangeInputHintChange.raml:17:2)
-- :warning: changed property `previousValue` of type `ChangeLocalizedEnumValueOrderChange` from type `LocalizedEnumValue[]` to `AttributeLocalizedEnumValue[]` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/shared-types/ChangeLocalizedEnumValueOrderChange.raml:14:2)
-- :warning: changed property `nextValue` of type `ChangeLocalizedEnumValueOrderChange` from type `LocalizedEnumValue[]` to `AttributeLocalizedEnumValue[]` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/shared-types/ChangeLocalizedEnumValueOrderChange.raml:19:2)
-- :warning: changed property `previousValue` of type `ChangePlainEnumValueOrderChange` from type `EnumValue[]` to `AttributePlainEnumValue[]` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/product-type/ChangePlainEnumValueOrderChange.raml:15:2)
-- :warning: changed property `nextValue` of type `ChangePlainEnumValueOrderChange` from type `EnumValue[]` to `AttributePlainEnumValue[]` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/product-type/ChangePlainEnumValueOrderChange.raml:20:2)
-- :warning: changed property `type` of type `CustomFields` from type `Reference` to `TypeReference` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/CustomFields.raml:7:2)
-- :warning: changed property `fields` of type `CustomFields` from type `object` to `FieldContainer` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/CustomFields.raml:11:2)
-- :warning: changed property `money` of type `CustomLineItem` from type `Money` to `TypedMoney` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/CustomLineItem.raml:20:2)
-- :warning: changed property `totalPrice` of type `CustomLineItem` from type `Money` to `CentPrecisionMoney` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/CustomLineItem.raml:33:2)
-- :warning: changed property `quantity` of type `CustomLineItem` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/CustomLineItem.raml:45:2)
-- :warning: changed property `createdAt` of type `Delivery` from type `string` to `datetime` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Delivery.raml:16:2)
-- :warning: changed property `quantity` of type `DeliveryItem` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/DeliveryItem.raml:9:2)
-- :warning: changed property `discountCode` of type `DiscountCodeInfo` from type `Reference` to `DiscountCodeReference` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/DiscountCodeInfo.raml:5:2)
-- :warning: changed property `discountedAmount` of type `DiscountedLineItemPortion` from type `Money` to `TypedMoney` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/DiscountedLineItemPortion.raml:9:2)
-- :warning: changed property `value` of type `DiscountedLineItemPrice` from type `Money` to `TypedMoney` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/DiscountedLineItemPrice.raml:5:2)
-- :warning: changed property `quantity` of type `DiscountedLineItemPriceForQuantity` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/DiscountedLineItemPriceForQuantity.raml:5:2)
-- :warning: changed property `inputHint` of type `FieldDefinition` from type `TextInputHint` to `TypeTextInputHint` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/FieldDefinition.raml:26:2)
-- :warning: changed property `w` of type `ImageDimensions` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ImageDimensions.raml:5:2)
-- :warning: changed property `h` of type `ImageDimensions` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ImageDimensions.raml:9:2)
-- :warning: changed property `customer` of type `InheritedAssociate` from type `Reference` to `CustomerReference` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/InheritedAssociate.raml:9:2)
-- :warning: changed property `associateRole` of type `InheritedAssociateRoleAssignment` from type `KeyReference` to `AssociateRoleKeyReference` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/InheritedAssociateRoleAssignment.raml:5:2)
-- :warning: changed property `source` of type `InheritedAssociateRoleAssignment` from type `KeyReference` to `BusinessUnitKeyReference` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/InheritedAssociateRoleAssignment.raml:9:2)
-- :warning: changed property `quantity` of type `ItemShippingTarget` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ItemShippingTarget.raml:15:2)
-- :warning: changed property `quantity` of type `ItemState` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ItemState.raml:5:2)
-- :warning: changed property `state` of type `ItemState` from type `Reference` to `StateReference` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ItemState.raml:10:2)
-- :warning: changed property `productType` of type `LineItem` from type `Reference` to `ProductTypeReference` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/LineItem.raml:39:2)
-- :warning: changed property `variant` of type `LineItem` from type `Variant` to `ProductVariant` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/LineItem.raml:43:2)
-- :warning: changed property `quantity` of type `LineItem` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/LineItem.raml:54:2)
-- :warning: changed property `addedAt` of type `LineItem` from type `string` to `datetime` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/LineItem.raml:124:2)
-- :warning: changed property `centAmount` of type `Money` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Money.raml:6:2)
-- :warning: changed property `createdAt` of type `Parcel` from type `string` to `datetime` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Parcel.raml:16:2)
-- :warning: changed property `heightInMillimeter` of type `ParcelMeasurements` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ParcelMeasurements.raml:5:2)
-- :warning: changed property `lengthInMillimeter` of type `ParcelMeasurements` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ParcelMeasurements.raml:10:2)
-- :warning: changed property `widthInMillimeter` of type `ParcelMeasurements` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ParcelMeasurements.raml:15:2)
-- :warning: changed property `weightInGram` of type `ParcelMeasurements` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ParcelMeasurements.raml:20:2)
-- :warning: changed property `payments` of type `PaymentInfo` from type `Reference[]` to `PaymentReference[]` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/PaymentInfo.raml:5:2)
-- :warning: changed property `value` of type `Price` from type `Money` to `TypedMoney` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Price.raml:19:2)
-- :warning: changed property `productSelection` of type `ProductSelectionSetting` from type `Reference` to `ProductSelectionReference` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ProductSelectionSetting.raml:5:2)
-- :warning: changed property `restockableInDays` of type `ProductVariantAvailability` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ProductVariantAvailability.raml:15:2)
-- :warning: changed property `availableQuantity` of type `ProductVariantAvailability` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ProductVariantAvailability.raml:20:2)
-- :warning: changed property `restockableInDays` of type `ProductVariantChannelAvailability` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ProductVariantChannelAvailability.raml:9:2)
-- :warning: changed property `availableQuantity` of type `ProductVariantChannelAvailability` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ProductVariantChannelAvailability.raml:14:2)
-- :warning: changed property `previousValue` of type `RemoveDeliveryItemsChange` from type `Delivery` to `DeliveryChangeValue` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/order/RemoveDeliveryItemsChange.raml:15:2)
-- :warning: changed property `previousValue` of type `RemoveEnumValuesChange` from type `EnumValue` to `AttributePlainEnumValue` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/product-type/RemoveEnumValuesChange.raml:15:2)
-- :warning: changed property `previousValue` of type `RemoveLocalizedEnumValuesChange` from type `LocalizedEnumValue` to `AttributeLocalizedEnumValue` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/product-type/RemoveLocalizedEnumValuesChange.raml:15:2)
-- :warning: changed property `previousValue` of type `RemoveShoppingListLineItemChange` from type `LineItem` to `ShoppingListLineItem` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/shopping-list/RemoveShoppingListLineItemChange.raml:15:2)
-- :warning: changed property `nextValue` of type `RemoveShoppingListLineItemChange` from type `LineItem` to `ShoppingListLineItem` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/shopping-list/RemoveShoppingListLineItemChange.raml:18:2)
-- :warning: changed property `returnDate` of type `ReturnInfo` from type `string` to `datetime` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ReturnInfo.raml:15:2)
-- :warning: changed property `quantity` of type `ReturnItem` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ReturnItem.raml:15:2)
-- :warning: changed property `lastModifiedAt` of type `ReturnItem` from type `string` to `datetime` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ReturnItem.raml:41:2)
-- :warning: changed property `createdAt` of type `ReturnItem` from type `string` to `datetime` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ReturnItem.raml:45:2)
-- :warning: changed property `averageRating` of type `ReviewRatingStatistics` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ReviewRatingStatistics.raml:5:2)
-- :warning: changed property `highestRating` of type `ReviewRatingStatistics` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ReviewRatingStatistics.raml:10:2)
-- :warning: changed property `lowestRating` of type `ReviewRatingStatistics` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ReviewRatingStatistics.raml:13:2)
-- :warning: changed property `previousValue` of type `SetAttributeChange` from type `AttributeValue` to `Attribute` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/product/SetAttributeChange.raml:15:2)
-- :warning: changed property `nextValue` of type `SetAttributeChange` from type `AttributeValue` to `Attribute` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/product/SetAttributeChange.raml:18:2)
-- :warning: changed property `previousValue` of type `SetCustomLineItemTaxedPriceChange` from type `Money` to `TaxedItemPrice` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/order/SetCustomLineItemTaxedPriceChange.raml:14:2)
-- :warning: changed property `nextValue` of type `SetCustomLineItemTaxedPriceChange` from type `Money` to `TaxedItemPrice` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/order/SetCustomLineItemTaxedPriceChange.raml:17:2)
-- :warning: changed property `previousValue` of type `SetDiscountedPriceChange` from type `Price` to `DiscountedPrice` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/product/SetDiscountedPriceChange.raml:15:2)
-- :warning: changed property `nextValue` of type `SetDiscountedPriceChange` from type `Price` to `DiscountedPrice` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/product/SetDiscountedPriceChange.raml:18:2)
-- :warning: changed property `previousValue` of type `SetOrderTaxedPriceChange` from type `TaxedItemPrice` to `TaxedPrice` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/order/SetOrderTaxedPriceChange.raml:14:2)
-- :warning: changed property `nextValue` of type `SetOrderTaxedPriceChange` from type `TaxedItemPrice` to `TaxedPrice` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/order/SetOrderTaxedPriceChange.raml:17:2)
-- :warning: changed property `previousValue` of type `SetShippingInfoTaxedPriceChange` from type `TaxedPrice` to `TaxedItemPrice` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/order/SetShippingInfoTaxedPriceChange.raml:14:2)
-- :warning: changed property `nextValue` of type `SetShippingInfoTaxedPriceChange` from type `TaxedPrice` to `TaxedItemPrice` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/order/SetShippingInfoTaxedPriceChange.raml:17:2)
-- :warning: changed property `previousValue` of type `SetShippingRateChange` from type `Money` to `ShippingRate` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/order/SetShippingRateChange.raml:14:2)
-- :warning: changed property `nextValue` of type `SetShippingRateChange` from type `Money` to `ShippingRate` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/order/SetShippingRateChange.raml:17:2)
-- :warning: changed property `previousValue` of type `SetStoreChange` from type `Reference` to `KeyReference` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/shared-types/SetStoreChange.raml:14:2)
-- :warning: changed property `nextValue` of type `SetStoreChange` from type `Reference` to `KeyReference` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/shared-types/SetStoreChange.raml:17:2)
-- :warning: changed property `price` of type `ShippingRate` from type `Money` to `CentPrecisionMoney` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ShippingRate.raml:5:2)
-- :warning: changed property `freeAbove` of type `ShippingRate` from type `Money` to `CentPrecisionMoney` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ShippingRate.raml:8:2)
-- :warning: changed property `amount` of type `SubRate` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/SubRate.raml:10:2)
-- :warning: changed property `channel` of type `SyncInfo` from type `Reference` to `ChannelReference` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/SyncInfo.raml:7:2)
-- :warning: changed property `syncedAt` of type `SyncInfo` from type `string` to `datetime` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/SyncInfo.raml:15:2)
-- :warning: changed property `amount` of type `TaxRate` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/TaxRate.raml:22:2)
-- :warning: changed property `totalNet` of type `TaxedItemPrice` from type `Money` to `CentPrecisionMoney` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/TaxedItemPrice.raml:5:2)
-- :warning: changed property `totalGross` of type `TaxedItemPrice` from type `Money` to `CentPrecisionMoney` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/TaxedItemPrice.raml:9:2)
-- :warning: changed property `totalNet` of type `TaxedPrice` from type `Money` to `CentPrecisionMoney` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/TaxedPrice.raml:5:2)
-- :warning: changed property `totalGross` of type `TaxedPrice` from type `Money` to `CentPrecisionMoney` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/TaxedPrice.raml:9:2)
-- :warning: changed property `addedAt` of type `TextLineItem` from type `string` to `datetime` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/TextLineItem.raml:7:2)
-- :warning: changed property `quantity` of type `TextLineItem` from type `integer` to `number` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/TextLineItem.raml:32:2)
-- :warning: changed property `timestamp` of type `Transaction` from type `string` to `datetime` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Transaction.raml:10:2)
-- :warning: changed property `amount` of type `Transaction` from type `Money` to `CentPrecisionMoney` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Transaction.raml:16:2)
+- :warning: removed enum `changeAmountAuthorized` from type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/history/types/UpdateType.raml:38:4)
+- :warning: removed enum `setAsssetKey` from type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/history/types/UpdateType.raml:141:4)
+- :warning: removed enum `Failed` from type `QuoteState` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/history/types/common/QuoteState.raml:10:4)
 </details>
 
 
 <details>
-<summary>Removed Property(s)</summary>
+<summary>Added Enum(s)</summary>
 
-- :warning: removed property `/^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$/` from type `CategoryOrderHints` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/history/types/common/CategoryOrderHints.raml:6:2)
-- :warning: removed property `variantId` from type `LineItem` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/history/types/common/LineItem.raml:24:2)
-- :warning: removed property `fractionDigits` from type `Money` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/history/types/common/Money.raml:10:2)
-- :warning: removed property `type` from type `Money` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/history/types/common/Money.raml:13:2)
-- :warning: removed property `//` from type `ProductVariantChannelAvailabilityMap` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/history/types/common/ProductVariantChannelAvailabilityMap.raml:6:2)
-- :warning: removed property `skus` from type `ProductVariantSelection` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/history/types/common/ProductVariantSelection.raml:8:2)
+- added enum `shipping-method` to type `ChangeHistoryResourceType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/ChangeHistoryResourceType.raml:24:4)
+- added enum `standalone-price` to type `ChangeHistoryResourceType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/ChangeHistoryResourceType.raml:27:4)
+- added enum `addInheritedAssociate` to type `PlatformInitiatedChange` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/PlatformInitiatedChange.raml:7:4)
+- added enum `changeIncludedInStatistics` to type `PlatformInitiatedChange` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/PlatformInitiatedChange.raml:8:4)
+- added enum `changeInheritedAssociate` to type `PlatformInitiatedChange` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/PlatformInitiatedChange.raml:9:4)
+- added enum `changeLastVariantId` to type `PlatformInitiatedChange` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/PlatformInitiatedChange.raml:10:4)
+- added enum `changeLineItemPublished` to type `PlatformInitiatedChange` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/PlatformInitiatedChange.raml:12:4)
+- added enum `changeTopLevelUnit` to type `PlatformInitiatedChange` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/PlatformInitiatedChange.raml:14:4)
+- added enum `removeInheritedAssociate` to type `PlatformInitiatedChange` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/PlatformInitiatedChange.raml:15:4)
+- added enum `setAncestors` to type `PlatformInitiatedChange` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/PlatformInitiatedChange.raml:16:4)
+- added enum `setInheritedAssociates` to type `PlatformInitiatedChange` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/PlatformInitiatedChange.raml:18:4)
+- added enum `setInheritedStores` to type `PlatformInitiatedChange` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/PlatformInitiatedChange.raml:19:4)
+- added enum `setLineItemDeactivatedAt` to type `PlatformInitiatedChange` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/PlatformInitiatedChange.raml:21:4)
+- added enum `setProductCount` to type `PlatformInitiatedChange` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/PlatformInitiatedChange.raml:22:4)
+- added enum `setReservations` to type `PlatformInitiatedChange` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/PlatformInitiatedChange.raml:23:4)
+- added enum `addShipping` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:31:4)
+- added enum `addShippingRate` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:33:4)
+- added enum `addZone` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:39:4)
+- added enum `changeActive` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:40:4)
+- added enum `changeApprovalRuleMode` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:43:4)
+- added enum `changeCustomLineItemPriceRoundingMode` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:53:4)
+- added enum `changeCustomer` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:55:4)
+- added enum `changeDiscountTypeCombination` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:57:4)
+- added enum `changeIncludedInStatistics` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:64:4)
+- added enum `changeIsDefault` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:68:4)
+- added enum `changeLastVariantId` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:72:4)
+- added enum `changeLineItemPriceRoundingMode` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:74:4)
+- added enum `changeLineItemPublished` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:75:4)
+- added enum `changePriceRoundingMode` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:90:4)
+- added enum `changeTaxCategory` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:105:4)
+- added enum `changeTopLevelUnit` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:111:4)
+- added enum `excludeProduct` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:117:4)
+- added enum `removeShipping` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:142:4)
+- added enum `removeShippingRate` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:144:4)
+- added enum `removeZone` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:148:4)
+- added enum `replaceTaxRate` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:149:4)
+- added enum `revertStagedChanges` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:151:4)
+- added enum `revertStagedVariantChanges` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:152:4)
+- added enum `setAncestors` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:156:4)
+- added enum `setAssetKey` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:162:4)
+- added enum `setAssociates` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:165:4)
+- added enum `setBillingAddressCustomField` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:170:4)
+- added enum `setBillingAddressCustomType` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:171:4)
+- added enum `setBusinessUnit` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:172:4)
+- added enum `setCustomLineItemDiscountedPrice` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:182:4)
+- added enum `setCustomLineItemDiscountedPricePerQuantity` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:183:4)
+- added enum `setCustomerGroupAssignments` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:196:4)
+- added enum `setDeliveryAddressCustomField` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:204:4)
+- added enum `setDeliveryAddressCustomType` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:205:4)
+- added enum `setDeliveryCustomField` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:206:4)
+- added enum `setDeliveryCustomType` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:207:4)
+- added enum `setDirectDiscounts` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:210:4)
+- added enum `setDiscountOnTotalPrice` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:211:4)
+- added enum `setInheritedAssociates` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:219:4)
+- added enum `setInheritedStores` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:220:4)
+- added enum `setItemShippingAddressCustomField` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:224:4)
+- added enum `setItemShippingAddressCustomType` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:225:4)
+- added enum `setLocalizedDescription` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:244:4)
+- added enum `setLocalizedName` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:245:4)
+- added enum `setMaxCartQuantity` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:248:4)
+- added enum `setMinCartQuantity` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:256:4)
+- added enum `setParcelCustomField` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:262:4)
+- added enum `setParcelCustomType` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:263:4)
+- added enum `setPredicate` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:268:4)
+- added enum `setPriceKey` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:269:4)
+- added enum `setPriceMode` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:270:4)
+- added enum `setPriceTiers` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:271:4)
+- added enum `setProductAttribute` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:273:4)
+- added enum `setReferences` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:282:4)
+- added enum `setReservationExpirationInMinutes` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:285:4)
+- added enum `setReturnInfo` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:286:4)
+- added enum `setReturnItemCustomField` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:287:4)
+- added enum `setReturnItemCustomType` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:288:4)
+- added enum `setShippingAddressCustomField` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:296:4)
+- added enum `setShippingAddressCustomType` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:297:4)
+- added enum `setShippingCustomField` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:298:4)
+- added enum `setShippingCustomType` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:299:4)
+- added enum `setShippingInfoDiscountedPrice` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:300:4)
+- added enum `setShippingMethodTaxCategory` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:305:4)
+- added enum `setTaxedShippingPrice` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:320:4)
+- added enum `setTransactionCustomField` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:326:4)
+- added enum `setTransactionCustomType` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:327:4)
+- added enum `setUnitType` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:329:4)
+- added enum `setVariantExclusion` to type `UpdateType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/UpdateType.raml:336:4)
+- added enum `ApplicationStoppedByGroupBestDeal` to type `DiscountCodeState` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/DiscountCodeState.raml:17:4)
+- added enum `CreateApprovalRules` to type `Permission` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Permission.raml:43:4)
+- added enum `UpdateApprovalRules` to type `Permission` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Permission.raml:44:4)
+- added enum `UpdateApprovalFlows` to type `Permission` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Permission.raml:45:4)
+- added enum `ViewMyShoppingLists` to type `Permission` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Permission.raml:46:4)
+- added enum `ViewOthersShoppingLists` to type `Permission` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Permission.raml:47:4)
+- added enum `UpdateMyShoppingLists` to type `Permission` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Permission.raml:48:4)
+- added enum `UpdateOthersShoppingLists` to type `Permission` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Permission.raml:49:4)
+- added enum `CreateMyShoppingLists` to type `Permission` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Permission.raml:50:4)
+- added enum `CreateOthersShoppingLists` to type `Permission` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Permission.raml:51:4)
+- added enum `DeleteMyShoppingLists` to type `Permission` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Permission.raml:52:4)
+- added enum `DeleteOthersShoppingLists` to type `Permission` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Permission.raml:53:4)
+- added enum `includeOnly` to type `ProductVariantSelectionTypeEnum` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ProductVariantSelectionTypeEnum.raml:7:4)
+- added enum `includeAllExcept` to type `ProductVariantSelectionTypeEnum` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ProductVariantSelectionTypeEnum.raml:8:4)
+- added enum `RenegotiationAddressed` to type `QuoteState` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/QuoteState.raml:10:4)
+- added enum `approval-flow` to type `ReferenceTypeId` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ReferenceTypeId.raml:7:4)
+- added enum `approval-rule` to type `ReferenceTypeId` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ReferenceTypeId.raml:8:4)
+- added enum `attribute-group` to type `ReferenceTypeId` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ReferenceTypeId.raml:10:4)
+- added enum `direct-discount` to type `ReferenceTypeId` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ReferenceTypeId.raml:20:4)
+- added enum `discount-group` to type `ReferenceTypeId` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ReferenceTypeId.raml:22:4)
+- added enum `payment-method` to type `ReferenceTypeId` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ReferenceTypeId.raml:28:4)
+- added enum `product-price` to type `ReferenceTypeId` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ReferenceTypeId.raml:32:4)
+- added enum `product-tailoring` to type `ReferenceTypeId` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ReferenceTypeId.raml:34:4)
+- added enum `recurrence-policy` to type `ReferenceTypeId` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ReferenceTypeId.raml:38:4)
+- added enum `recurring-order` to type `ReferenceTypeId` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ReferenceTypeId.raml:39:4)
+- added enum `standalone-price` to type `ReferenceTypeId` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ReferenceTypeId.raml:44:4)
+- added enum `Delivered` to type `ShipmentState` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ShipmentState.raml:7:4)
+- added enum `Canceled` to type `ShipmentState` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/ShipmentState.raml:13:4)
+- added enum `RecurringOrderState` to type `StateTypeEnum` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/StateTypeEnum.raml:7:4)
+</details>
+
+
+<details>
+<summary>Added Method(s)</summary>
+
+- added method `post /{projectKey}/graphql` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/api.raml:187:4)
 </details>
 
 **Checkout changes**
-
-<details>
-<summary>Changed MethodBody(s)</summary>
-
-- :warning: changed body for `application/json` of method `post /{projectKey}/payment-intents/{paymentId}` from type `Payment` to `PaymentIntent` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:128:10)
-</details>
-
 
 <details>
 <summary>Changed MethodResponseBody(s)</summary>
 
 - :warning: changed response body for `200: application/json` of method `post /{projectKey}/payment-intents/{paymentId}` from type `any` to `PaymentIntentResponse` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:138:14)
 - :warning: changed response body for `400: application/json` of method `post /{projectKey}/payment-intents/{paymentId}` from type `null` to `ErrorResponse` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:143:14)
-</details>
-
-
-<details>
-<summary>Removed Type(s)</summary>
-
-- :warning: removed type `ApplicationNotFound` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:4:0)
-- :warning: removed type `InvalidToken` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:15:0)
-- :warning: removed type `NoPaymentMethods` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:17:0)
-- :warning: removed type `PaymentConnectorError` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:21:0)
-- :warning: removed type `PaymentMethodLoaded` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:22:0)
-- :warning: removed type `PaymentMethodLoading` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:23:0)
-- :warning: removed type `PaymentMethodLoadingError` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:24:0)
-- :warning: removed type `PaymentMethodSelected` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:25:0)
-- :warning: removed type `PaymentMethodSelectionConfirmation` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:26:0)
-- :warning: removed type `PaymentMethodSelectionConfirmationFailed` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:27:0)
-- :warning: removed type `PaymentMethodsReceived` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:28:0)
-- :warning: removed type `PaymentVerificationStarted` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:33:0)
-- :warning: removed type `PaymentVerificationTimeout` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:34:0)
-- :warning: removed type `PermissionsNotFound` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:35:0)
-- :warning: removed type `CapturePaymentAction` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:48:0)
-- :warning: removed type `RefundPaymentAction` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:49:0)
-- :warning: removed type `CancelPaymentAction` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:50:0)
-- :warning: removed type `Payment` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:51:0)
-- :warning: removed type `PaymentOperation` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/common.raml:39:2)
-- :warning: removed type `PaymentAction` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/common.raml:54:2)
-</details>
-
-
-<details>
-<summary>Changed Type(s)</summary>
-
-- :warning: changed type `PaymentCancelled` from type `Message` to `ResponseMessage` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:174:0)
-- :warning: changed type `PaymentFailed` from type `Message` to `ResponseMessage` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:175:0)
-- :warning: changed type `PaymentValidationFailed` from type `Message` to `ResponseMessage` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:185:0)
 </details>
 
 
@@ -2002,31 +1960,37 @@
 
 
 <details>
-<summary>Added Method(s)</summary>
+<summary>Changed Type(s)</summary>
 
-- added method `post /{projectKey}/transactions` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:146:4)
-- added method `get /{projectKey}/payment-integrations` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:218:4)
-- added method `post /{projectKey}/payment-integrations` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:257:4)
-- added method `get /{projectKey}/applications` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:386:4)
-- added method `post /{projectKey}/applications` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:423:4)
-- added method `get /{projectKey}/transactions/{id}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:176:6)
-- added method `get /{projectKey}/transactions/key={key}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:200:6)
-- added method `get /{projectKey}/payment-integrations/{id}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:283:6)
-- added method `head /{projectKey}/payment-integrations/{id}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:295:6)
-- added method `post /{projectKey}/payment-integrations/{id}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:306:6)
-- added method `delete /{projectKey}/payment-integrations/{id}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:317:6)
-- added method `get /{projectKey}/payment-integrations/key={key}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:337:6)
-- added method `post /{projectKey}/payment-integrations/key={key}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:351:6)
-- added method `head /{projectKey}/payment-integrations/key={key}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:361:6)
-- added method `delete /{projectKey}/payment-integrations/key={key}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:372:6)
-- added method `get /{projectKey}/applications/{id}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:450:6)
-- added method `head /{projectKey}/applications/{id}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:461:6)
-- added method `post /{projectKey}/applications/{id}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:472:6)
-- added method `delete /{projectKey}/applications/{id}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:483:6)
-- added method `get /{projectKey}/applications/key={key}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:503:6)
-- added method `post /{projectKey}/applications/key={key}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:518:6)
-- added method `head /{projectKey}/applications/key={key}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:528:6)
-- added method `delete /{projectKey}/applications/key={key}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:539:6)
+- :warning: changed type `PaymentCancelled` from type `Message` to `ResponseMessage` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:174:0)
+- :warning: changed type `PaymentFailed` from type `Message` to `ResponseMessage` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:175:0)
+- :warning: changed type `PaymentValidationFailed` from type `Message` to `ResponseMessage` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/types/types.raml:185:0)
+</details>
+
+
+<details>
+<summary>Removed Type(s)</summary>
+
+- :warning: removed type `ApplicationNotFound` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:4:0)
+- :warning: removed type `InvalidToken` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:15:0)
+- :warning: removed type `NoPaymentMethods` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:17:0)
+- :warning: removed type `PaymentConnectorError` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:21:0)
+- :warning: removed type `PaymentMethodLoaded` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:22:0)
+- :warning: removed type `PaymentMethodLoading` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:23:0)
+- :warning: removed type `PaymentMethodLoadingError` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:24:0)
+- :warning: removed type `PaymentMethodSelected` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:25:0)
+- :warning: removed type `PaymentMethodSelectionConfirmation` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:26:0)
+- :warning: removed type `PaymentMethodSelectionConfirmationFailed` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:27:0)
+- :warning: removed type `PaymentMethodsReceived` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:28:0)
+- :warning: removed type `PaymentVerificationStarted` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:33:0)
+- :warning: removed type `PaymentVerificationTimeout` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:34:0)
+- :warning: removed type `PermissionsNotFound` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:35:0)
+- :warning: removed type `CapturePaymentAction` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:48:0)
+- :warning: removed type `RefundPaymentAction` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:49:0)
+- :warning: removed type `CancelPaymentAction` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:50:0)
+- :warning: removed type `Payment` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/types.raml:51:0)
+- :warning: removed type `PaymentOperation` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/common.raml:39:2)
+- :warning: removed type `PaymentAction` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/common.raml:54:2)
 </details>
 
 
@@ -2042,6 +2006,13 @@
 - added resource `/{projectKey}/payment-integrations/key={key}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:330:4)
 - added resource `/{projectKey}/applications/{id}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:443:4)
 - added resource `/{projectKey}/applications/key={key}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:496:4)
+</details>
+
+
+<details>
+<summary>Removed Property(s)</summary>
+
+- :warning: removed property `payload` from type `ResponseMessage` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/responses/ResponseMessage.raml:9:2)
 </details>
 
 
@@ -2088,9 +2059,38 @@
 
 
 <details>
-<summary>Removed Property(s)</summary>
+<summary>Changed MethodBody(s)</summary>
 
-- :warning: removed property `payload` from type `ResponseMessage` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference-previous/api-specs/checkout/types/responses/ResponseMessage.raml:9:2)
+- :warning: changed body for `application/json` of method `post /{projectKey}/payment-intents/{paymentId}` from type `Payment` to `PaymentIntent` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:128:10)
+</details>
+
+
+<details>
+<summary>Added Method(s)</summary>
+
+- added method `post /{projectKey}/transactions` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:146:4)
+- added method `get /{projectKey}/payment-integrations` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:218:4)
+- added method `post /{projectKey}/payment-integrations` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:257:4)
+- added method `get /{projectKey}/applications` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:386:4)
+- added method `post /{projectKey}/applications` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:423:4)
+- added method `get /{projectKey}/transactions/{id}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:176:6)
+- added method `get /{projectKey}/transactions/key={key}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:200:6)
+- added method `get /{projectKey}/payment-integrations/{id}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:283:6)
+- added method `head /{projectKey}/payment-integrations/{id}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:295:6)
+- added method `post /{projectKey}/payment-integrations/{id}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:306:6)
+- added method `delete /{projectKey}/payment-integrations/{id}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:317:6)
+- added method `get /{projectKey}/payment-integrations/key={key}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:337:6)
+- added method `post /{projectKey}/payment-integrations/key={key}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:351:6)
+- added method `head /{projectKey}/payment-integrations/key={key}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:361:6)
+- added method `delete /{projectKey}/payment-integrations/key={key}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:372:6)
+- added method `get /{projectKey}/applications/{id}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:450:6)
+- added method `head /{projectKey}/applications/{id}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:461:6)
+- added method `post /{projectKey}/applications/{id}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:472:6)
+- added method `delete /{projectKey}/applications/{id}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:483:6)
+- added method `get /{projectKey}/applications/key={key}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:503:6)
+- added method `post /{projectKey}/applications/key={key}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:518:6)
+- added method `head /{projectKey}/applications/key={key}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:528:6)
+- added method `delete /{projectKey}/applications/key={key}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/checkout/api.raml:539:6)
 </details>
 
 
