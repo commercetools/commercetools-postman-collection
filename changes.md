@@ -1306,6 +1306,7 @@
 <details>
 <summary>Required Property(s)</summary>
 
+- changed property `total` of type `RecordPagedQueryResponse` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/RecordPagedQueryResponse.raml:19:2)
 - changed property `id` of type `ModifiedBy` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/ModifiedBy.raml:12:2)
 - changed property `id` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:9:2)
 - changed property `key` of type `Address` to be optional (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/BaseAddress.raml:16:2)
@@ -1654,6 +1655,15 @@
 - added property `key` to type `TextLineItem` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/TextLineItem.raml:22:2)
 - added property `custom` to type `Transaction` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/common/Transaction.raml:28:2)
 - added property `customLineItemId` to type `TransitionCustomLineItemStateChange` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/types/change/order/TransitionCustomLineItemStateChange.raml:33:2)
+</details>
+
+
+<details>
+<summary>Added QueryParameter(s)</summary>
+
+- added query parameter `withTotal` to method `get /{projectKey}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/api.raml:337:6)
+- added query parameter `withTotal` to method `get /{projectKey}/{resourceType}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/api.raml:501:8)
+- added query parameter `withTotal` to method `get /{projectKey}/{resourceType}/{ID}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/api.raml:629:10)
 </details>
 
 
