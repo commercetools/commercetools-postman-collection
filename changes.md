@@ -1134,14 +1134,14 @@
 <details>
 <summary>Added Enum(s)</summary>
 
-- added enum `business-unit` to type `ImportResourceType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/common.raml:415:8)
-- added enum `product-selection` to type `ImportResourceType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/common.raml:425:8)
-- added enum `product-tailoring` to type `ImportResourceType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/common.raml:426:8)
-- added enum `variant` to type `ImportResourceType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/common.raml:431:8)
-- added enum `associate-role` to type `ReferenceType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/common.raml:462:8)
-- added enum `business-unit` to type `ReferenceType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/common.raml:463:8)
-- added enum `variant` to type `ReferenceType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/common.raml:479:8)
-- added enum `partiallyImported` to type `ProcessingState` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/common.raml:506:8)
+- added enum `business-unit` to type `ImportResourceType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/common.raml:482:8)
+- added enum `product-selection` to type `ImportResourceType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/common.raml:492:8)
+- added enum `product-tailoring` to type `ImportResourceType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/common.raml:493:8)
+- added enum `variant` to type `ImportResourceType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/common.raml:498:8)
+- added enum `associate-role` to type `ReferenceType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/common.raml:529:8)
+- added enum `business-unit` to type `ReferenceType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/common.raml:530:8)
+- added enum `variant` to type `ReferenceType` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/common.raml:546:8)
+- added enum `partiallyImported` to type `ProcessingState` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/common.raml:573:8)
 </details>
 
 
@@ -1178,8 +1178,8 @@
 
 - added type `InvalidFieldsUpdateError` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/error.raml:137:2)
 - added type `NewMasterVariantAdditionNotAllowedError` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/error.raml:232:2)
-- added type `AssociateRoleKeyReference` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/common.raml:297:2)
-- added type `BusinessUnitKeyReference` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/common.raml:305:2)
+- added type `AssociateRoleKeyReference` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/common.raml:358:2)
+- added type `BusinessUnitKeyReference` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/common.raml:369:2)
 - added type `StrategyEnum` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/import-container.raml:9:2)
 - added type `RetentionPolicy` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/import-container.raml:16:2)
 - added type `TimeToLiveConfig` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/import/types/import-container.raml:25:2)
