@@ -2001,9 +2001,14 @@
 <details>
 <summary>Added QueryParameter(s)</summary>
 
-- added query parameter `withTotal` to method `get /{projectKey}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/api.raml:337:6)
-- added query parameter `withTotal` to method `get /{projectKey}/{resourceType}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/api.raml:501:8)
-- added query parameter `withTotal` to method `get /{projectKey}/{resourceType}/{ID}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/api.raml:629:10)
+- added query parameter `userIds` to method `get /{projectKey}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/api.raml:278:6)
+- added query parameter `resourceIds` to method `get /{projectKey}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/api.raml:313:6)
+- added query parameter `withTotal` to method `get /{projectKey}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/api.raml:353:6)
+- added query parameter `userIds` to method `get /{projectKey}/{resourceType}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/api.raml:463:8)
+- added query parameter `resourceIds` to method `get /{projectKey}/{resourceType}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/api.raml:469:8)
+- added query parameter `withTotal` to method `get /{projectKey}/{resourceType}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/api.raml:529:8)
+- added query parameter `userIds` to method `get /{projectKey}/{resourceType}/{ID}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/api.raml:607:10)
+- added query parameter `withTotal` to method `get /{projectKey}/{resourceType}/{ID}` (file:///home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/history/api.raml:663:10)
 </details>
 
 
