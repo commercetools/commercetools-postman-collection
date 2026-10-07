@@ -358,7 +358,7 @@
                                     "query": [
                                     ]
                                 },
-                                "description": "Specific Error Codes:\n- [MultipleActionsNotAllowed](ctp:checkout:type:MultipleActionsNotAllowedError)\n- [RequiredField](ctp:checkout:type:RequiredFieldError)\n- [ResourceNotFound](ctp:checkout:type:ResourceNotFoundError)\n",
+                                "description": "Requests to the payment [Connector](\/checkout\/connectors-and-applications#payment-connectors) time out after 30 seconds.\n\nSpecific Error Codes:\n- [MultipleActionsNotAllowed](ctp:checkout:type:MultipleActionsNotAllowedError)\n- [RequiredField](ctp:checkout:type:RequiredFieldError)\n- [ResourceNotFound](ctp:checkout:type:ResourceNotFoundError)\n- [ConnectorTimeout](ctp:checkout:type:ConnectorTimeoutError)\n",
                                 "body": {
                                     "mode": "raw",
                                     "raw": "{\n  \"actions\" : [ {\n    \"action\" : \"capturePayment\",\n    \"amount\" : {\n      \"centAmount\" : 10000,\n      \"currencyCode\" : \"EUR\"\n    },\n    \"merchantReference\" : \"example-reference\"\n  } ]\n}"
@@ -570,10 +570,1068 @@
                                     "query": [
                                     ]
                                 },
-                                "description": "Creates a Transaction on Checkout. Specific Error Codes:\n- [InvalidInput](ctp:checkout:type:InvalidInputError)\n- [ResourceNotFound](ctp:checkout:type:ResourceNotFoundError)\n- [ConnectorFailed](ctp:checkout:type:ConnectorFailedError)\n- [PaymentFailure](ctp:checkout:type:PaymentFailureError)\n- [RequiredField](ctp:checkout:type:RequiredFieldError)\n",
+                                "description": "Creates a Transaction on Checkout. Requests to the payment [Connector](\/checkout\/connectors-and-applications#payment-connectors) time out after 30 seconds.\n\nSpecific Error Codes:\n- [InvalidInput](ctp:checkout:type:InvalidInputError)\n- [InternalConstraintViolated](ctp:checkout:type:InternalConstraintViolatedError)\n- [ResourceNotFound](ctp:checkout:type:ResourceNotFoundError)\n- [ConnectorFailed](ctp:checkout:type:ConnectorFailedError)\n- [ConnectorTimeout](ctp:checkout:type:ConnectorTimeoutError)\n- [PaymentFailure](ctp:checkout:type:PaymentFailureError)\n- [RequiredField](ctp:checkout:type:RequiredFieldError)\n",
                                 "body": {
                                     "mode": "raw",
-                                    "raw": "{\n  \"key\" : \"transaction-key\",\n  \"application\" : {\n    \"typeId\" : \"application\",\n    \"id\" : \"a84d4fe7-ae82-4c3f-8c6c-435e54204fdd\"\n  },\n  \"cart\" : {\n    \"typeId\" : \"cart\",\n    \"id\" : \"a0e60229-441c-44b0-952b-981a67cbd8c4\"\n  },\n  \"transactionItems\" : [ {\n    \"paymentIntegration\" : {\n      \"typeId\" : \"payment-integration\",\n      \"id\" : \"4c24762b-87df-4bd3-898a-bafed913a9ca\"\n    },\n    \"amount\" : {\n      \"centAmount\" : 1000,\n      \"currencyCode\" : \"EUR\"\n    }\n  } ]\n}"
+                                    "raw": "{\n  \"key\" : \"transaction-key\",\n  \"application\" : {\n    \"typeId\" : \"application\",\n    \"id\" : \"a84d4fe7-ae82-4c3f-8c6c-435e54204fdd\"\n  },\n  \"cart\" : {\n    \"typeId\" : \"cart\",\n    \"id\" : \"a0e60229-441c-44b0-952b-981a67cbd8c4\"\n  },\n  \"transactionItems\" : [ {\n    \"type\" : \"Recurring\",\n    \"paymentMethod\" : {\n      \"typeId\" : \"payment-method\",\n      \"id\" : \"9dee1785-0e29-4d0c-8f2e-3caeb1e77a3b\"\n    },\n    \"connectorDeployment\" : {\n      \"typeId\" : \"deployment\",\n      \"id\" : \"4c24762b-87df-4bd3-898a-bafed913a9ca\"\n    }\n  } ]\n}"
+                                }
+                            },
+                            "response": []
+                        }
+                    ]
+                },
+                {
+                    "name": "Recurring Payment Jobs",
+                    "description": "null",
+                    "item": [
+                        {
+                            "name": "Get Recurring Payment Job by ID",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                            "    pm.environment.set(\"recurring-payment-job-id\", data.results[0].id); ",
+                                            "    pm.environment.set(\"recurring-payment-job-version\", data.results[0].version);",
+                                            "}",
+                                            "if(data.results && data.results[0] && data.results[0].key){",
+                                            "    pm.environment.set(\"recurring-payment-job-key\", data.results[0].key); ",
+                                            "}",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"recurring-payment-job-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"recurring-payment-job-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"recurring-payment-job-key\", data.key);",
+                                            "}",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "get",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{project-key}}/recurring-payment-jobs/{{id}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{project-key}}",
+                                        "recurring-payment-jobs",
+                                        "{{id}}"
+                                    ],
+                                    "query": [
+                                    ]
+                                },
+                                "description": "Retrieves a Recurring Payment Job with a given `id`. Specific Error Codes:\n- [ResourceNotFound](ctp:checkout:type:ResourceNotFoundError)\n- [GeneralError](ctp:checkout:type:GeneralError)\n",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": ""
+                                }
+                            },
+                            "response": []
+                        },
+                        {
+                            "name": "Delete Recurring Payment Job by ID",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                            "    pm.environment.set(\"recurring-payment-job-id\", data.results[0].id); ",
+                                            "    pm.environment.set(\"recurring-payment-job-version\", data.results[0].version);",
+                                            "}",
+                                            "if(data.results && data.results[0] && data.results[0].key){",
+                                            "    pm.environment.set(\"recurring-payment-job-key\", data.results[0].key); ",
+                                            "}",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"recurring-payment-job-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"recurring-payment-job-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"recurring-payment-job-key\", data.key);",
+                                            "}",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "delete",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{project-key}}/recurring-payment-jobs/{{id}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{project-key}}",
+                                        "recurring-payment-jobs",
+                                        "{{id}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "version",
+                                            "value": "{{recurring-payment-job-version}}",
+                                            "equals": true,
+                                            "disabled": false
+                                        }
+                                    ]
+                                },
+                                "description": "Deletes a Recurring Payment Job with a given `id`. Specific Error Codes:\n- [ResourceNotFound](ctp:checkout:type:ResourceNotFoundError)\n- [ConcurrentModification](ctp:checkout:type:ConcurrentModificationError)\n",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": ""
+                                }
+                            },
+                            "response": []
+                        },
+                        {
+                            "name": "Get Recurring Payment Job by Key",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                            "    pm.environment.set(\"recurring-payment-job-id\", data.results[0].id); ",
+                                            "    pm.environment.set(\"recurring-payment-job-version\", data.results[0].version);",
+                                            "}",
+                                            "if(data.results && data.results[0] && data.results[0].key){",
+                                            "    pm.environment.set(\"recurring-payment-job-key\", data.results[0].key); ",
+                                            "}",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"recurring-payment-job-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"recurring-payment-job-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"recurring-payment-job-key\", data.key);",
+                                            "}",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "get",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{project-key}}/recurring-payment-jobs/key={{recurring-payment-job-key}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{project-key}}",
+                                        "recurring-payment-jobs",
+                                        "key={{recurring-payment-job-key}}"
+                                    ],
+                                    "query": [
+                                    ]
+                                },
+                                "description": "Retrieves a Recurring Payment Job with a given `key`. Specific Error Codes:\n- [ResourceNotFound](ctp:checkout:type:ResourceNotFoundError)\n- [GeneralError](ctp:checkout:type:GeneralError)\n",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": ""
+                                }
+                            },
+                            "response": []
+                        },
+                        {
+                            "name": "Delete Recurring Payment Job by Key",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                            "    pm.environment.set(\"recurring-payment-job-id\", data.results[0].id); ",
+                                            "    pm.environment.set(\"recurring-payment-job-version\", data.results[0].version);",
+                                            "}",
+                                            "if(data.results && data.results[0] && data.results[0].key){",
+                                            "    pm.environment.set(\"recurring-payment-job-key\", data.results[0].key); ",
+                                            "}",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"recurring-payment-job-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"recurring-payment-job-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"recurring-payment-job-key\", data.key);",
+                                            "}",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "delete",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{project-key}}/recurring-payment-jobs/key={{recurring-payment-job-key}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{project-key}}",
+                                        "recurring-payment-jobs",
+                                        "key={{recurring-payment-job-key}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "version",
+                                            "value": "{{recurring-payment-job-version}}",
+                                            "equals": true,
+                                            "disabled": false
+                                        }
+                                    ]
+                                },
+                                "description": "Deletes a Recurring Payment Job with a given `key`. Specific Error Codes:\n- [ResourceNotFound](ctp:checkout:type:ResourceNotFoundError)\n- [ConcurrentModification](ctp:checkout:type:ConcurrentModificationError)\n",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": ""
+                                }
+                            },
+                            "response": []
+                        },
+                        {
+                            "name": "Query Recurring Payment Jobs",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                            "    pm.environment.set(\"recurring-payment-job-id\", data.results[0].id); ",
+                                            "    pm.environment.set(\"recurring-payment-job-version\", data.results[0].version);",
+                                            "}",
+                                            "if(data.results && data.results[0] && data.results[0].key){",
+                                            "    pm.environment.set(\"recurring-payment-job-key\", data.results[0].key); ",
+                                            "}",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"recurring-payment-job-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"recurring-payment-job-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"recurring-payment-job-key\", data.key);",
+                                            "}",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "get",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{project-key}}/recurring-payment-jobs",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{project-key}}",
+                                        "recurring-payment-jobs"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "sort",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        },
+                                        {
+                                            "key": "limit",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        },
+                                        {
+                                            "key": "offset",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        },
+                                        {
+                                            "key": "withTotal",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        },
+                                        {
+                                            "key": "status.state",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        }
+                                    ]
+                                },
+                                "description": "Retrieves Recurring Payment Jobs in a [Project](ctp:api:type:Project).\n\nThe results are [paginated](\/api\/general-concepts#pagination).\n",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": ""
+                                }
+                            },
+                            "response": []
+                        },
+                        {
+                            "name": "Create Recurring Payment Job",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                            "    pm.environment.set(\"recurring-payment-job-id\", data.results[0].id); ",
+                                            "    pm.environment.set(\"recurring-payment-job-version\", data.results[0].version);",
+                                            "}",
+                                            "if(data.results && data.results[0] && data.results[0].key){",
+                                            "    pm.environment.set(\"recurring-payment-job-key\", data.results[0].key); ",
+                                            "}",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"recurring-payment-job-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"recurring-payment-job-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"recurring-payment-job-key\", data.key);",
+                                            "}",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "post",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{project-key}}/recurring-payment-jobs",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{project-key}}",
+                                        "recurring-payment-jobs"
+                                    ],
+                                    "query": [
+                                    ]
+                                },
+                                "description": "Creates a new [RecurringPaymentJob](ctp:checkout:type:RecurringPaymentJob). Specific Error Codes:\n- [InvalidInput](ctp:checkout:type:InvalidInputError)\n- [ReferencedResourceNotFound](ctp:checkout:type:ReferencedResourceNotFoundError)\n- [RequiredField](ctp:checkout:type:RequiredFieldError)\n",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"key\" : \"recurring-payment-job-key\",\n  \"originPayment\" : {\n    \"typeId\" : \"payment\",\n    \"id\" : \"d1fec278-22c2-4a1d-8190-8f1e8af5ccfb\"\n  },\n  \"paymentMethod\" : {\n    \"typeId\" : \"payment-method\",\n    \"id\" : \"9c5e8f2a-3b7d-4e6a-9c1f-2a5b8d7e4f3c\"\n  }\n}"
+                                }
+                            },
+                            "response": []
+                        }
+                    ]
+                },
+                {
+                    "name": "Recurring Payments",
+                    "description": "null",
+                    "item": [
+                        {
+                            "name": "Get Recurring Payment by ID",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                            "    pm.environment.set(\"recurring-payment-id\", data.results[0].id); ",
+                                            "    pm.environment.set(\"recurring-payment-version\", data.results[0].version);",
+                                            "}",
+                                            "if(data.results && data.results[0] && data.results[0].key){",
+                                            "    pm.environment.set(\"recurring-payment-key\", data.results[0].key); ",
+                                            "}",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"recurring-payment-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"recurring-payment-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"recurring-payment-key\", data.key);",
+                                            "}",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "get",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{project-key}}/recurring-payments/{{id}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{project-key}}",
+                                        "recurring-payments",
+                                        "{{id}}"
+                                    ],
+                                    "query": [
+                                    ]
+                                },
+                                "description": "Retrieves a Recurring Payment with a given `id`. Specific Error Codes:\n- [ResourceNotFound](ctp:checkout:type:ResourceNotFoundError)\n- [GeneralError](ctp:checkout:type:GeneralError)\n",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": ""
+                                }
+                            },
+                            "response": []
+                        },
+                        {
+                            "name": "Update Recurring Payment by ID",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                            "    pm.environment.set(\"recurring-payment-id\", data.results[0].id); ",
+                                            "    pm.environment.set(\"recurring-payment-version\", data.results[0].version);",
+                                            "}",
+                                            "if(data.results && data.results[0] && data.results[0].key){",
+                                            "    pm.environment.set(\"recurring-payment-key\", data.results[0].key); ",
+                                            "}",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"recurring-payment-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"recurring-payment-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"recurring-payment-key\", data.key);",
+                                            "}",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "post",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{project-key}}/recurring-payments/{{id}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{project-key}}",
+                                        "recurring-payments",
+                                        "{{id}}"
+                                    ],
+                                    "query": [
+                                    ]
+                                },
+                                "description": "Updates a Recurring Payment with a given `id`. Specific Error Codes:\n- [InvalidInput](ctp:checkout:type:InvalidInputError)\n- [ReferencedResourceNotFound](ctp:checkout:type:ReferencedResourceNotFoundError)\n- [ResourceNotFound](ctp:checkout:type:ResourceNotFoundError)\n- [ConcurrentModification](ctp:checkout:type:ConcurrentModificationError)\n",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"version\" : 1,\n  \"actions\" : [ {\n    \"action\" : \"setKey\",\n    \"key\" : \"new-recurring-payment-key\"\n  } ]\n}"
+                                }
+                            },
+                            "response": []
+                        },
+                        {
+                            "name": "Delete Recurring Payment by ID",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                            "    pm.environment.set(\"recurring-payment-id\", data.results[0].id); ",
+                                            "    pm.environment.set(\"recurring-payment-version\", data.results[0].version);",
+                                            "}",
+                                            "if(data.results && data.results[0] && data.results[0].key){",
+                                            "    pm.environment.set(\"recurring-payment-key\", data.results[0].key); ",
+                                            "}",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"recurring-payment-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"recurring-payment-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"recurring-payment-key\", data.key);",
+                                            "}",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "delete",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{project-key}}/recurring-payments/{{id}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{project-key}}",
+                                        "recurring-payments",
+                                        "{{id}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "version",
+                                            "value": "{{recurring-payment-version}}",
+                                            "equals": true,
+                                            "disabled": false
+                                        }
+                                    ]
+                                },
+                                "description": "Deletes a Recurring Payment with a given `id`. Specific Error Codes:\n- [ResourceNotFound](ctp:checkout:type:ResourceNotFoundError)\n- [ConcurrentModification](ctp:checkout:type:ConcurrentModificationError)\n",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": ""
+                                }
+                            },
+                            "response": []
+                        },
+                        {
+                            "name": "Get Recurring Payment by Key",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                            "    pm.environment.set(\"recurring-payment-id\", data.results[0].id); ",
+                                            "    pm.environment.set(\"recurring-payment-version\", data.results[0].version);",
+                                            "}",
+                                            "if(data.results && data.results[0] && data.results[0].key){",
+                                            "    pm.environment.set(\"recurring-payment-key\", data.results[0].key); ",
+                                            "}",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"recurring-payment-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"recurring-payment-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"recurring-payment-key\", data.key);",
+                                            "}",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "get",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{project-key}}/recurring-payments/key={{recurring-payment-key}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{project-key}}",
+                                        "recurring-payments",
+                                        "key={{recurring-payment-key}}"
+                                    ],
+                                    "query": [
+                                    ]
+                                },
+                                "description": "Retrieves a Recurring Payment with a given `key`. Specific Error Codes:\n- [ResourceNotFound](ctp:checkout:type:ResourceNotFoundError)\n- [GeneralError](ctp:checkout:type:GeneralError)\n",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": ""
+                                }
+                            },
+                            "response": []
+                        },
+                        {
+                            "name": "Update Recurring Payment by Key",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                            "    pm.environment.set(\"recurring-payment-id\", data.results[0].id); ",
+                                            "    pm.environment.set(\"recurring-payment-version\", data.results[0].version);",
+                                            "}",
+                                            "if(data.results && data.results[0] && data.results[0].key){",
+                                            "    pm.environment.set(\"recurring-payment-key\", data.results[0].key); ",
+                                            "}",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"recurring-payment-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"recurring-payment-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"recurring-payment-key\", data.key);",
+                                            "}",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "post",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{project-key}}/recurring-payments/key={{recurring-payment-key}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{project-key}}",
+                                        "recurring-payments",
+                                        "key={{recurring-payment-key}}"
+                                    ],
+                                    "query": [
+                                    ]
+                                },
+                                "description": "Updates a Recurring Payment with a given `key`. Specific Error Codes:\n- [InvalidInput](ctp:checkout:type:InvalidInputError)\n- [ReferencedResourceNotFound](ctp:checkout:type:ReferencedResourceNotFoundError)\n- [ResourceNotFound](ctp:checkout:type:ResourceNotFoundError)\n- [ConcurrentModification](ctp:checkout:type:ConcurrentModificationError)\n",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"version\" : 1,\n  \"actions\" : [ {\n    \"action\" : \"setKey\",\n    \"key\" : \"new-recurring-payment-key\"\n  } ]\n}"
+                                }
+                            },
+                            "response": []
+                        },
+                        {
+                            "name": "Delete Recurring Payment by Key",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                            "    pm.environment.set(\"recurring-payment-id\", data.results[0].id); ",
+                                            "    pm.environment.set(\"recurring-payment-version\", data.results[0].version);",
+                                            "}",
+                                            "if(data.results && data.results[0] && data.results[0].key){",
+                                            "    pm.environment.set(\"recurring-payment-key\", data.results[0].key); ",
+                                            "}",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"recurring-payment-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"recurring-payment-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"recurring-payment-key\", data.key);",
+                                            "}",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "delete",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{project-key}}/recurring-payments/key={{recurring-payment-key}}",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{project-key}}",
+                                        "recurring-payments",
+                                        "key={{recurring-payment-key}}"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "version",
+                                            "value": "{{recurring-payment-version}}",
+                                            "equals": true,
+                                            "disabled": false
+                                        }
+                                    ]
+                                },
+                                "description": "Deletes a Recurring Payment with a given `key`. Specific Error Codes:\n- [ResourceNotFound](ctp:checkout:type:ResourceNotFoundError)\n- [ConcurrentModification](ctp:checkout:type:ConcurrentModificationError)\n",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": ""
+                                }
+                            },
+                            "response": []
+                        },
+                        {
+                            "name": "Query Recurring Payments",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                            "    pm.environment.set(\"recurring-payment-id\", data.results[0].id); ",
+                                            "    pm.environment.set(\"recurring-payment-version\", data.results[0].version);",
+                                            "}",
+                                            "if(data.results && data.results[0] && data.results[0].key){",
+                                            "    pm.environment.set(\"recurring-payment-key\", data.results[0].key); ",
+                                            "}",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"recurring-payment-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"recurring-payment-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"recurring-payment-key\", data.key);",
+                                            "}",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "get",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{project-key}}/recurring-payments",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{project-key}}",
+                                        "recurring-payments"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "sort",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        },
+                                        {
+                                            "key": "limit",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        },
+                                        {
+                                            "key": "offset",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        },
+                                        {
+                                            "key": "withTotal",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        },
+                                        {
+                                            "key": "recurringOrderId",
+                                            "value": "",
+                                            "equals": true,
+                                            "disabled": true
+                                        }
+                                    ]
+                                },
+                                "description": "Retrieves Recurring Payments in a [Project](ctp:api:type:Project).\n\nThe results are [paginated](\/api\/general-concepts#pagination).\n",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": ""
+                                }
+                            },
+                            "response": []
+                        },
+                        {
+                            "name": "Create Recurring Payment",
+                            "event": [
+                                {
+                                    "listen": "test",
+                                    "script": {
+                                        "type": "text/javascript",
+                                        "exec": [
+                                            "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                            "var data = JSON.parse(responseBody);",
+                                            "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                            "    pm.environment.set(\"recurring-payment-id\", data.results[0].id); ",
+                                            "    pm.environment.set(\"recurring-payment-version\", data.results[0].version);",
+                                            "}",
+                                            "if(data.results && data.results[0] && data.results[0].key){",
+                                            "    pm.environment.set(\"recurring-payment-key\", data.results[0].key); ",
+                                            "}",
+                                            "if(data.version){",
+                                            "    pm.environment.set(\"recurring-payment-version\", data.version);",
+                                            "}",
+                                            "if(data.id){",
+                                            "    pm.environment.set(\"recurring-payment-id\", data.id); ",
+                                            "}",
+                                            "if(data.key){",
+                                            "    pm.environment.set(\"recurring-payment-key\", data.key);",
+                                            "}",
+                                            ""
+                                        ]
+                                    }
+                                }
+                            ],
+                            "request": {
+                                "auth":
+                                    {
+                                        "type": "oauth2",
+                                        "oauth2": {
+                                            "accessToken": "{{ctp_access_token}}",
+                                            "addTokenTo": "header",
+                                            "tokenType": "Bearer"
+                                        }
+                                    },
+                                "method": "post",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{host}}/{{project-key}}/recurring-payments",
+                                    "host": [
+                                        "{{host}}"
+                                    ],
+                                    "path": [
+                                        "{{project-key}}",
+                                        "recurring-payments"
+                                    ],
+                                    "query": [
+                                    ]
+                                },
+                                "description": "Creates a new [RecurringPayment](ctp:checkout:type:RecurringPayment). Specific Error Codes:\n- [InvalidInput](ctp:checkout:type:InvalidInputError)\n- [ReferencedResourceNotFound](ctp:checkout:type:ReferencedResourceNotFoundError)\n- [RequiredField](ctp:checkout:type:RequiredFieldError)\n",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"key\" : \"recurring-payment-key\",\n  \"recurringOrder\" : {\n    \"typeId\" : \"recurring-order\",\n    \"id\" : \"39ccda28-47f9-41bf-8dde-e1d720c19000\"\n  },\n  \"paymentMethodConfigurations\" : [ {\n    \"paymentMethod\" : {\n      \"typeId\" : \"payment-method\",\n      \"id\" : \"9c5e8f2a-3b7d-4e6a-9c1f-2a5b8d7e4f3c\"\n    },\n    \"connectorDeployment\" : {\n      \"typeId\" : \"deployment\",\n      \"id\" : \"4c24762b-87df-4bd3-898a-bafed913a9ca\"\n    }\n  } ]\n}"
                                 }
                             },
                             "response": []
