@@ -298,7 +298,7 @@
                     "description": "null",
                     "item": [
                         {
-                            "name": "Query logs from Deployment by id",
+                            "name": "Query DeploymentLogs from Deployment by Deployment ID",
                             "event": [
                                 {
                                     "listen": "test",
@@ -390,6 +390,225 @@
                                 }
                             },
                             "response": []
+                        },
+                        {
+                            "name": "Revisions",
+                            "description": "null",
+                            "item": [
+                                {
+                                    "name": "Rollback Deployment by Deployment ID",
+                                    "event": [
+                                        {
+                                            "listen": "test",
+                                            "script": {
+                                                "type": "text/javascript",
+                                                "exec": [
+                                                    "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                                    "var data = JSON.parse(responseBody);",
+                                                    "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                                    "    pm.environment.set(\"rollback-id\", data.results[0].id); ",
+                                                    "    pm.environment.set(\"rollback-version\", data.results[0].version);",
+                                                    "}",
+                                                    "if(data.results && data.results[0] && data.results[0].key){",
+                                                    "    pm.environment.set(\"rollback-key\", data.results[0].key); ",
+                                                    "}",
+                                                    "if(data.version){",
+                                                    "    pm.environment.set(\"rollback-version\", data.version);",
+                                                    "}",
+                                                    "if(data.id){",
+                                                    "    pm.environment.set(\"rollback-id\", data.id); ",
+                                                    "}",
+                                                    "if(data.key){",
+                                                    "    pm.environment.set(\"rollback-key\", data.key);",
+                                                    "}",
+                                                    ""
+                                                ]
+                                            }
+                                        }
+                                    ],
+                                    "request": {
+                                        "auth":
+                                            {
+                                                "type": "oauth2",
+                                                "oauth2": {
+                                                    "accessToken": "{{ctp_access_token}}",
+                                                    "addTokenTo": "header",
+                                                    "tokenType": "Bearer"
+                                                }
+                                            },
+                                        "method": "post",
+                                        "header": [
+                                            {
+                                                "key": "Content-Type",
+                                                "value": "application/json"
+                                            }
+                                        ],
+                                        "url": {
+                                            "raw": "{{host}}/{{project-key}}/deployments/{{deployment-id}}/revisions/{{revision}}/rollback",
+                                            "host": [
+                                                "{{host}}"
+                                            ],
+                                            "path": [
+                                                "{{project-key}}",
+                                                "deployments",
+                                                "{{deployment-id}}",
+                                                "revisions",
+                                                "{{revision}}",
+                                                "rollback"
+                                            ],
+                                            "query": [
+                                            ]
+                                        },
+                                        "description": "Restores the configuration of the revision onto the Deployment.\nA new Deployment version is created from the revision and deployed.\n\nThe `manage_api_clients:{projectKey}` scope is required if the connector version uses commercetools managed API Client credentials.\n\nSpecific Error Codes:\n- [DeploymentRollbackNotAllowed](ctp:connect:type:DeploymentRollbackNotAllowedError)\n- [DeploymentInvalidStatusTransition](ctp:connect:type:DeploymentInvalidStatusTransitionError)\n- [ConcurrentModification](ctp:connect:type:ConcurrentModificationError)\n",
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "{\n  \"version\" : 8\n}"
+                                        }
+                                    },
+                                    "response": []
+                                },
+                                {
+                                    "name": "Get DeploymentRevision of Deployment by Deployment ID",
+                                    "event": [
+                                        {
+                                            "listen": "test",
+                                            "script": {
+                                                "type": "text/javascript",
+                                                "exec": [
+                                                    "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                                    "var data = JSON.parse(responseBody);",
+                                                    "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                                    "    pm.environment.set(\"revision-id\", data.results[0].id); ",
+                                                    "    pm.environment.set(\"revision-version\", data.results[0].version);",
+                                                    "}",
+                                                    "if(data.results && data.results[0] && data.results[0].key){",
+                                                    "    pm.environment.set(\"revision-key\", data.results[0].key); ",
+                                                    "}",
+                                                    "if(data.version){",
+                                                    "    pm.environment.set(\"revision-version\", data.version);",
+                                                    "}",
+                                                    "if(data.id){",
+                                                    "    pm.environment.set(\"revision-id\", data.id); ",
+                                                    "}",
+                                                    "if(data.key){",
+                                                    "    pm.environment.set(\"revision-key\", data.key);",
+                                                    "}",
+                                                    ""
+                                                ]
+                                            }
+                                        }
+                                    ],
+                                    "request": {
+                                        "auth":
+                                            {
+                                                "type": "oauth2",
+                                                "oauth2": {
+                                                    "accessToken": "{{ctp_access_token}}",
+                                                    "addTokenTo": "header",
+                                                    "tokenType": "Bearer"
+                                                }
+                                            },
+                                        "method": "get",
+                                        "header": [
+                                            {
+                                                "key": "Content-Type",
+                                                "value": "application/json"
+                                            }
+                                        ],
+                                        "url": {
+                                            "raw": "{{host}}/{{project-key}}/deployments/{{deployment-id}}/revisions/{{revision}}",
+                                            "host": [
+                                                "{{host}}"
+                                            ],
+                                            "path": [
+                                                "{{project-key}}",
+                                                "deployments",
+                                                "{{deployment-id}}",
+                                                "revisions",
+                                                "{{revision}}"
+                                            ],
+                                            "query": [
+                                            ]
+                                        },
+                                        "description": "null",
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": ""
+                                        }
+                                    },
+                                    "response": []
+                                },
+                                {
+                                    "name": "Query DeploymentRevisions of Deployment by Deployment ID",
+                                    "event": [
+                                        {
+                                            "listen": "test",
+                                            "script": {
+                                                "type": "text/javascript",
+                                                "exec": [
+                                                    "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                                    "var data = JSON.parse(responseBody);",
+                                                    "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                                    "    pm.environment.set(\"revision-id\", data.results[0].id); ",
+                                                    "    pm.environment.set(\"revision-version\", data.results[0].version);",
+                                                    "}",
+                                                    "if(data.results && data.results[0] && data.results[0].key){",
+                                                    "    pm.environment.set(\"revision-key\", data.results[0].key); ",
+                                                    "}",
+                                                    "if(data.version){",
+                                                    "    pm.environment.set(\"revision-version\", data.version);",
+                                                    "}",
+                                                    "if(data.id){",
+                                                    "    pm.environment.set(\"revision-id\", data.id); ",
+                                                    "}",
+                                                    "if(data.key){",
+                                                    "    pm.environment.set(\"revision-key\", data.key);",
+                                                    "}",
+                                                    ""
+                                                ]
+                                            }
+                                        }
+                                    ],
+                                    "request": {
+                                        "auth":
+                                            {
+                                                "type": "oauth2",
+                                                "oauth2": {
+                                                    "accessToken": "{{ctp_access_token}}",
+                                                    "addTokenTo": "header",
+                                                    "tokenType": "Bearer"
+                                                }
+                                            },
+                                        "method": "get",
+                                        "header": [
+                                            {
+                                                "key": "Content-Type",
+                                                "value": "application/json"
+                                            }
+                                        ],
+                                        "url": {
+                                            "raw": "{{host}}/{{project-key}}/deployments/{{deployment-id}}/revisions",
+                                            "host": [
+                                                "{{host}}"
+                                            ],
+                                            "path": [
+                                                "{{project-key}}",
+                                                "deployments",
+                                                "{{deployment-id}}",
+                                                "revisions"
+                                            ],
+                                            "query": [
+                                            ]
+                                        },
+                                        "description": "Retrieves the revisions of a Deployment, most recent first.\n\nOnly versions that were deployed successfully are returned, so every result is a valid rollback target.\nAt most 20 revisions are returned.\n",
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": ""
+                                        }
+                                    },
+                                    "response": []
+                                }
+                            ]
                         },
                         {
                             "name": "Get Deployment by id",
@@ -599,7 +818,7 @@
                             "response": []
                         },
                         {
-                            "name": "Query logs from Deployment by key",
+                            "name": "Query DeploymentLogs from Deployment by Deployment Key",
                             "event": [
                                 {
                                     "listen": "test",
@@ -691,6 +910,225 @@
                                 }
                             },
                             "response": []
+                        },
+                        {
+                            "name": "Revisions",
+                            "description": "null",
+                            "item": [
+                                {
+                                    "name": "Rollback Deployment by Deployment Key",
+                                    "event": [
+                                        {
+                                            "listen": "test",
+                                            "script": {
+                                                "type": "text/javascript",
+                                                "exec": [
+                                                    "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                                    "var data = JSON.parse(responseBody);",
+                                                    "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                                    "    pm.environment.set(\"rollback-id\", data.results[0].id); ",
+                                                    "    pm.environment.set(\"rollback-version\", data.results[0].version);",
+                                                    "}",
+                                                    "if(data.results && data.results[0] && data.results[0].key){",
+                                                    "    pm.environment.set(\"rollback-key\", data.results[0].key); ",
+                                                    "}",
+                                                    "if(data.version){",
+                                                    "    pm.environment.set(\"rollback-version\", data.version);",
+                                                    "}",
+                                                    "if(data.id){",
+                                                    "    pm.environment.set(\"rollback-id\", data.id); ",
+                                                    "}",
+                                                    "if(data.key){",
+                                                    "    pm.environment.set(\"rollback-key\", data.key);",
+                                                    "}",
+                                                    ""
+                                                ]
+                                            }
+                                        }
+                                    ],
+                                    "request": {
+                                        "auth":
+                                            {
+                                                "type": "oauth2",
+                                                "oauth2": {
+                                                    "accessToken": "{{ctp_access_token}}",
+                                                    "addTokenTo": "header",
+                                                    "tokenType": "Bearer"
+                                                }
+                                            },
+                                        "method": "post",
+                                        "header": [
+                                            {
+                                                "key": "Content-Type",
+                                                "value": "application/json"
+                                            }
+                                        ],
+                                        "url": {
+                                            "raw": "{{host}}/{{project-key}}/deployments/key={{deployment-key}}/revisions/{{revision}}/rollback",
+                                            "host": [
+                                                "{{host}}"
+                                            ],
+                                            "path": [
+                                                "{{project-key}}",
+                                                "deployments",
+                                                "key={{deployment-key}}",
+                                                "revisions",
+                                                "{{revision}}",
+                                                "rollback"
+                                            ],
+                                            "query": [
+                                            ]
+                                        },
+                                        "description": "Restores the configuration of the revision onto the Deployment.\nA new Deployment version is created from the revision and deployed.\n\nThe `manage_api_clients:{projectKey}` scope is required if the connector version uses commercetools managed API Client credentials.\n\nSpecific Error Codes:\n- [DeploymentRollbackNotAllowed](ctp:connect:type:DeploymentRollbackNotAllowedError)\n- [DeploymentInvalidStatusTransition](ctp:connect:type:DeploymentInvalidStatusTransitionError)\n- [ConcurrentModification](ctp:connect:type:ConcurrentModificationError)\n",
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": "{\n  \"version\" : 8\n}"
+                                        }
+                                    },
+                                    "response": []
+                                },
+                                {
+                                    "name": "Get DeploymentRevision of Deployment by Deployment Key",
+                                    "event": [
+                                        {
+                                            "listen": "test",
+                                            "script": {
+                                                "type": "text/javascript",
+                                                "exec": [
+                                                    "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                                    "var data = JSON.parse(responseBody);",
+                                                    "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                                    "    pm.environment.set(\"revision-id\", data.results[0].id); ",
+                                                    "    pm.environment.set(\"revision-version\", data.results[0].version);",
+                                                    "}",
+                                                    "if(data.results && data.results[0] && data.results[0].key){",
+                                                    "    pm.environment.set(\"revision-key\", data.results[0].key); ",
+                                                    "}",
+                                                    "if(data.version){",
+                                                    "    pm.environment.set(\"revision-version\", data.version);",
+                                                    "}",
+                                                    "if(data.id){",
+                                                    "    pm.environment.set(\"revision-id\", data.id); ",
+                                                    "}",
+                                                    "if(data.key){",
+                                                    "    pm.environment.set(\"revision-key\", data.key);",
+                                                    "}",
+                                                    ""
+                                                ]
+                                            }
+                                        }
+                                    ],
+                                    "request": {
+                                        "auth":
+                                            {
+                                                "type": "oauth2",
+                                                "oauth2": {
+                                                    "accessToken": "{{ctp_access_token}}",
+                                                    "addTokenTo": "header",
+                                                    "tokenType": "Bearer"
+                                                }
+                                            },
+                                        "method": "get",
+                                        "header": [
+                                            {
+                                                "key": "Content-Type",
+                                                "value": "application/json"
+                                            }
+                                        ],
+                                        "url": {
+                                            "raw": "{{host}}/{{project-key}}/deployments/key={{deployment-key}}/revisions/{{revision}}",
+                                            "host": [
+                                                "{{host}}"
+                                            ],
+                                            "path": [
+                                                "{{project-key}}",
+                                                "deployments",
+                                                "key={{deployment-key}}",
+                                                "revisions",
+                                                "{{revision}}"
+                                            ],
+                                            "query": [
+                                            ]
+                                        },
+                                        "description": "null",
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": ""
+                                        }
+                                    },
+                                    "response": []
+                                },
+                                {
+                                    "name": "Query DeploymentRevisions of Deployment by Deployment Key",
+                                    "event": [
+                                        {
+                                            "listen": "test",
+                                            "script": {
+                                                "type": "text/javascript",
+                                                "exec": [
+                                                    "tests[\"Status code \" + responseCode.code] = responseCode.code === 200 || responseCode.code === 201;",
+                                                    "var data = JSON.parse(responseBody);",
+                                                    "if(data.results && data.results[0] && data.results[0].id && data.results[0].version){",
+                                                    "    pm.environment.set(\"revision-id\", data.results[0].id); ",
+                                                    "    pm.environment.set(\"revision-version\", data.results[0].version);",
+                                                    "}",
+                                                    "if(data.results && data.results[0] && data.results[0].key){",
+                                                    "    pm.environment.set(\"revision-key\", data.results[0].key); ",
+                                                    "}",
+                                                    "if(data.version){",
+                                                    "    pm.environment.set(\"revision-version\", data.version);",
+                                                    "}",
+                                                    "if(data.id){",
+                                                    "    pm.environment.set(\"revision-id\", data.id); ",
+                                                    "}",
+                                                    "if(data.key){",
+                                                    "    pm.environment.set(\"revision-key\", data.key);",
+                                                    "}",
+                                                    ""
+                                                ]
+                                            }
+                                        }
+                                    ],
+                                    "request": {
+                                        "auth":
+                                            {
+                                                "type": "oauth2",
+                                                "oauth2": {
+                                                    "accessToken": "{{ctp_access_token}}",
+                                                    "addTokenTo": "header",
+                                                    "tokenType": "Bearer"
+                                                }
+                                            },
+                                        "method": "get",
+                                        "header": [
+                                            {
+                                                "key": "Content-Type",
+                                                "value": "application/json"
+                                            }
+                                        ],
+                                        "url": {
+                                            "raw": "{{host}}/{{project-key}}/deployments/key={{deployment-key}}/revisions",
+                                            "host": [
+                                                "{{host}}"
+                                            ],
+                                            "path": [
+                                                "{{project-key}}",
+                                                "deployments",
+                                                "key={{deployment-key}}",
+                                                "revisions"
+                                            ],
+                                            "query": [
+                                            ]
+                                        },
+                                        "description": "Retrieves the revisions of a Deployment, most recent first.\n\nOnly versions that were deployed successfully are returned, so every result is a valid rollback target.\nAt most 20 revisions are returned.\n",
+                                        "body": {
+                                            "mode": "raw",
+                                            "raw": ""
+                                        }
+                                    },
+                                    "response": []
+                                }
+                            ]
                         },
                         {
                             "name": "Get Deployment by key",
@@ -959,7 +1397,7 @@
                                     "query": [
                                     ]
                                 },
-                                "description": "Specific Error Codes:\n- [ConnectorStagedNotPreviewable](ctp:connect:type:ConnectorStagedNotPreviewableError)\n- [DeploymentUnsupportedRegion](ctp:connect:type:DeploymentUnsupportedRegionError)\n- [DeploymentUnknownApplicationConfiguration](ctp:connect:type:DeploymentUnknownApplicationConfigurationError)\n- [DeploymentUnknownApplicationConfigurationKey](ctp:connect:type:DeploymentUnknownApplicationConfigurationKeyError)\n- [DeploymentInvalidType](ctp:connect:type:DeploymentInvalidTypeError)\n- [DeploymentProductionDeactivated](ctp:connect:type:DeploymentProductionDeactivatedError)\n- [DeploymentInvalidRetryPolicy](ctp:connect:type:DeploymentInvalidRetryPolicyError)\n- [DeploymentRetryPolicyOverrideNotAllowed](ctp:connect:type:DeploymentRetryPolicyOverrideNotAllowedError)\n\nThe `manage_api_clients:{projectKey}` scope is required if you use [automatically generated API Client credentials](\/connect\/modify-connector).\n",
+                                "description": "The `manage_api_clients:{projectKey}` scope is required if the connector version uses commercetools managed API Client credentials.\n\nSpecific Error Codes:\n- [ConnectorStagedNotPreviewable](ctp:connect:type:ConnectorStagedNotPreviewableError)\n- [DeploymentUnsupportedRegion](ctp:connect:type:DeploymentUnsupportedRegionError)\n- [DeploymentUnknownApplicationConfiguration](ctp:connect:type:DeploymentUnknownApplicationConfigurationError)\n- [DeploymentUnknownApplicationConfigurationKey](ctp:connect:type:DeploymentUnknownApplicationConfigurationKeyError)\n- [DeploymentInvalidType](ctp:connect:type:DeploymentInvalidTypeError)\n- [DeploymentProductionDeactivated](ctp:connect:type:DeploymentProductionDeactivatedError)\n- [DeploymentInvalidRetryPolicy](ctp:connect:type:DeploymentInvalidRetryPolicyError)\n- [DeploymentRetryPolicyOverrideNotAllowed](ctp:connect:type:DeploymentRetryPolicyOverrideNotAllowedError)\n\nThe `manage_api_clients:{projectKey}` scope is required if you use [automatically generated API Client credentials](\/connect\/modify-connector).\n",
                                 "body": {
                                     "mode": "raw",
                                     "raw": "{\n  \"key\" : \"deployment-key\",\n  \"connector\" : {\n    \"id\" : \"a49aa2c5-15b6-41c4-88af-4b7afdcc07a5\",\n    \"version\" : 1\n  },\n  \"region\" : \"europe-west1.gcp\",\n  \"configurations\" : [ {\n    \"applicationName\" : \"app-1\",\n    \"standardConfiguration\" : [ {\n      \"key\" : \"CONFIG_KEY\",\n      \"value\" : \"config-key-value\"\n    } ],\n    \"securedConfiguration\" : [ {\n      \"key\" : \"CONFIG_SECRET_KEY\",\n      \"value\" : \"config-secret-key-value\"\n    } ]\n  } ]\n}"
