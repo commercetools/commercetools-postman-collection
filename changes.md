@@ -1114,6 +1114,7 @@
 - added enum `IntakeAgent` to type `AttributionSource` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/common/AttributionSource.raml:7:4)
 - added enum `PromotionsAgent` to type `AttributionSource` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/common/AttributionSource.raml:8:4)
 - added enum `ManagedCommerceMCP` to type `AttributionSource` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/common/AttributionSource.raml:9:4)
+- added enum `ProductEnrichmentAgent` to type `AttributionSource` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/common/AttributionSource.raml:10:4)
 - added enum `discount-group` to type `ReferenceTypeId` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/common/ReferenceTypeId.raml:22:4)
 - added enum `mcp-server` to type `ReferenceTypeId` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/common/ReferenceTypeId.raml:26:4)
 - added enum `payment-method` to type `ReferenceTypeId` (file:/home/runner/work/commercetools-api-reference/commercetools-api-reference/commercetools-api-reference/api-specs/api/types/common/ReferenceTypeId.raml:29:4)
