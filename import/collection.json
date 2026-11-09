@@ -1063,7 +1063,7 @@
                                             "query": [
                                             ]
                                         },
-                                        "description": "Creates an Import Request for Categories.",
+                                        "description": "Creates an Import Request for Categories.\n\nWhen updating existing Categories, `assets` and `custom` omitted from a [CategoryImport](ctp:import:type:CategoryImport) are removed. Include all existing values you want to keep.\n",
                                         "body": {
                                             "mode": "raw",
                                             "raw": "{\n  \"type\" : \"category\",\n  \"resources\" : [ {\n    \"key\" : \"category-to-import\",\n    \"name\" : {\n      \"en\" : \"Category to import\"\n    },\n    \"slug\" : {\n      \"en\" : \"category-to-import-slug\"\n    },\n    \"description\" : {\n      \"en\" : \"Description of category to import\"\n    },\n    \"parent\" : {\n      \"typeId\" : \"category\",\n      \"key\" : \"key-of-parent-category\"\n    }\n  } ]\n}"
@@ -1145,7 +1145,7 @@
                                             "query": [
                                             ]
                                         },
-                                        "description": "Creates an Import Request for Customers.",
+                                        "description": "Creates an Import Request for Customers.\n\nWhen updating existing Customers, `addresses`, `customerGroup`, and `custom` omitted from a [CustomerImport](ctp:import:type:CustomerImport) are removed. Include all existing values you want to keep.\n",
                                         "body": {
                                             "mode": "raw",
                                             "raw": "{\n  \"type\" : \"customer\",\n  \"resources\" : [ {\n    \"key\" : \"customer-to-import\",\n    \"customerNumber\" : \"12345\",\n    \"email\" : \"john@example.com\",\n    \"password\" : \"D0cEx@mpl3!2025\",\n    \"firstName\" : \"John\",\n    \"lastName\" : \"Doe\",\n    \"dateOfBirth\" : \"1980-01-01\",\n    \"isEmailVerified\" : false,\n    \"externalId\" : \"external-id-123\",\n    \"customerGroup\" : {\n      \"typeId\" : \"customer-group\",\n      \"key\" : \"customer-group-key\"\n    },\n    \"addresses\" : [ {\n      \"key\" : \"john-doe-address-key\",\n      \"streetName\" : \"Main Street\",\n      \"streetNumber\" : \"123\",\n      \"postalCode\" : \"12345\",\n      \"city\" : \"Berlin\",\n      \"country\" : \"DE\"\n    } ],\n    \"authenticationMode\" : \"Password\"\n  } ]\n}"
@@ -1309,7 +1309,7 @@
                                             "query": [
                                             ]
                                         },
-                                        "description": "Creates an Import Request for Embedded Prices.",
+                                        "description": "Creates an Import Request for Embedded Prices.\n\nWhen updating an existing Embedded Price, optional values omitted from a [PriceImport](ctp:import:type:PriceImport), such as `country`, `channel`, `customerGroup`, `validFrom`, `validUntil`, `tiers`, `discounted`, and `custom`, are removed. Include all existing values you want to keep. Other Prices of the ProductVariant are not changed.\n",
                                         "body": {
                                             "mode": "raw",
                                             "raw": "{\n  \"type\" : \"price\",\n  \"resources\" : [ {\n    \"key\" : \"price-key\",\n    \"country\" : \"DE\",\n    \"validFrom\" : \"2021-04-11T14:00:00.000Z\",\n    \"validUntil\" : \"2022-04-11T14:00:00.000Z\",\n    \"customerGroup\" : {\n      \"typeId\" : \"customer-group\",\n      \"key\" : \"customer-group-key\"\n    },\n    \"channel\" : {\n      \"typeId\" : \"channel\",\n      \"key\" : \"channel-key\"\n    },\n    \"productVariant\" : {\n      \"typeId\" : \"product-variant\",\n      \"key\" : \"red-t-shirt\"\n    },\n    \"product\" : {\n      \"typeId\" : \"product\",\n      \"key\" : \"t-shirt\"\n    },\n    \"value\" : {\n      \"type\" : \"centPrecision\",\n      \"currencyCode\" : \"EUR\",\n      \"centAmount\" : 300\n    }\n  } ]\n}"
@@ -1391,7 +1391,7 @@
                                             "query": [
                                             ]
                                         },
-                                        "description": "Creates an Import Request for InventoryEntries.",
+                                        "description": "Creates an Import Request for InventoryEntries.\n\nWhen updating existing InventoryEntries, `supplyChannel` and `custom` omitted from an [InventoryImport](ctp:import:type:InventoryImport) are removed. Include all existing values you want to keep.\n",
                                         "body": {
                                             "mode": "raw",
                                             "raw": "{\n  \"type\" : \"inventory\",\n  \"resources\" : [ {\n    \"key\" : \"inventory-import-key\",\n    \"sku\" : \"product-variant-sku\",\n    \"quantityOnStock\" : 15,\n    \"restockableInDays\" : 2,\n    \"expectedDelivery\" : \"2022-06-30T14:00:00.000Z\",\n    \"supplyChannel\" : {\n      \"typeId\" : \"channel\",\n      \"key\" : \"channel-key\"\n    }\n  } ]\n}"
@@ -1473,7 +1473,7 @@
                                             "query": [
                                             ]
                                         },
-                                        "description": "Creates an Import Request for Products.",
+                                        "description": "Creates an Import Request for Products.\n\nWhen updating existing Products, `categories`, `taxCategory`, and product-level `attributes` omitted from a [ProductImport](ctp:import:type:ProductImport) are removed. Omitting `attributes` removes all product-level Attributes, and a partial list removes every Attribute that is not in the list. Include all existing values you want to keep. ProductVariants and Prices are not changed.\n",
                                         "body": {
                                             "mode": "raw",
                                             "raw": "{\n  \"type\" : \"product\",\n  \"resources\" : [ {\n    \"key\" : \"product-key\",\n    \"name\" : {\n      \"en\" : \"t-shirt\"\n    },\n    \"productType\" : {\n      \"typeId\" : \"product-type\",\n      \"key\" : \"product-type-key\"\n    },\n    \"slug\" : {\n      \"en\" : \"t-shirt-slug\"\n    },\n    \"description\" : {\n      \"en\" : \"t-shirt-description\"\n    },\n    \"categories\" : [ {\n      \"typeId\" : \"category\",\n      \"key\" : \"category-key\"\n    } ],\n    \"taxCategory\" : {\n      \"typeId\" : \"tax-category\",\n      \"key\" : \"tax-category-key\"\n    },\n    \"state\" : {\n      \"typeId\" : \"state\",\n      \"key\" : \"state-key\"\n    }\n  } ]\n}"
@@ -1555,7 +1555,7 @@
                                             "query": [
                                             ]
                                         },
-                                        "description": "Creates an Import Request for Products.\n",
+                                        "description": "Creates an Import Request for Products.\n\nWhen updating existing Products, ProductVariants, Embedded Prices, images, Assets, Attributes of the Product and its ProductVariants, `categories`, and `taxCategory` omitted from a [ProductDraftImport](ctp:import:type:ProductDraftImport) are removed. Omitting the product-level `attributes` field removes all product-level Attributes, and a partial list removes every Attribute that is not in the list. Include all existing values you want to keep.\n",
                                         "body": {
                                             "mode": "raw",
                                             "raw": "{\n  \"type\" : \"product-draft\",\n  \"resources\" : [ {\n    \"key\" : \"product-draft-key\",\n    \"name\" : {\n      \"en\" : \"blue shirt\"\n    },\n    \"slug\" : {\n      \"en\" : \"blue-t-shirt\"\n    },\n    \"productType\" : {\n      \"typeId\" : \"product-type\",\n      \"key\" : \"sample\"\n    },\n    \"masterVariant\" : {\n      \"key\" : \"master-variant-key\",\n      \"attributes\" : [ {\n        \"type\" : \"reference\",\n        \"name\" : \"product-ref-attribute\",\n        \"value\" : {\n          \"key\" : \"category-key\",\n          \"typeId\" : \"category\"\n        }\n      }, {\n        \"type\" : \"reference\",\n        \"name\" : \"product-custom-object-ref-attribute\",\n        \"value\" : {\n          \"key\" : \"custom-object-key\",\n          \"container\" : \"custom-object-container-key\",\n          \"typeId\" : \"key-value-document\"\n        }\n      } ]\n    }\n  } ]\n}"
@@ -1637,7 +1637,7 @@
                                             "query": [
                                             ]
                                         },
-                                        "description": "Creates an Import Request for ProductTypes.",
+                                        "description": "Creates an Import Request for ProductTypes.\n\nWhen updating existing ProductTypes, AttributeDefinitions omitted from a [ProductTypeImport](ctp:import:type:ProductTypeImport) are removed, and the corresponding Attribute values are deleted from all Products with this ProductType. Omitting the `attributes` field removes all AttributeDefinitions. This data cannot be recovered.\n",
                                         "body": {
                                             "mode": "raw",
                                             "raw": "{\n  \"type\" : \"product-type\",\n  \"resources\" : [ {\n    \"key\" : \"product-type-key\",\n    \"name\" : \"Product Type name\",\n    \"description\" : \"Test product type\",\n    \"attributes\" : [ {\n      \"name\" : \"product-ref-attribute\",\n      \"label\" : {\n        \"en\" : \"selling product\"\n      },\n      \"isRequired\" : false,\n      \"isSearchable\" : false,\n      \"type\" : {\n        \"name\" : \"reference\",\n        \"referenceTypeId\" : \"category\"\n      },\n      \"attributeConstraint\" : \"Unique\",\n      \"inputTip\" : {\n        \"en\" : \"product input tip\"\n      },\n      \"inputHint\" : \"SingleLine\"\n    } ]\n  } ]\n}"
@@ -1719,10 +1719,10 @@
                                             "query": [
                                             ]
                                         },
-                                        "description": "Creates an Import Request for ProductVariants.",
+                                        "description": "Creates an Import Request for ProductVariants.\n\nWhen updating existing ProductVariants, `sku`, `attributes`, `images`, and `assets` omitted from a [ProductVariantImport](ctp:import:type:ProductVariantImport) are removed. Include all existing values you want to keep. To update only some Attributes, use the [Product Variant Patches](ctp:import:endpoint:\/{projectKey}\/product-variant-patches\/import-containers\/{importContainerKey}:POST) endpoint.\n\nProductVariantImport does not change the Embedded Prices of an existing ProductVariant. A new ProductVariant created by this import has no Embedded Prices. Import them separately with the [Embedded Prices](ctp:import:endpoint:\/{projectKey}\/prices\/import-containers\/{importContainerKey}:POST) endpoint. StandalonePrices are not affected.\n",
                                         "body": {
                                             "mode": "raw",
-                                            "raw": "{\n  \"type\" : \"product-variant\",\n  \"resources\" : [ {\n    \"key\" : \"red-t-shirt\",\n    \"sku\" : \"red-t-shirt\",\n    \"product\" : {\n      \"key\" : \"t-shirt\",\n      \"typeId\" : \"product\"\n    },\n    \"isMasterVariant\" : true,\n    \"attributes\" : [ {\n      \"name\" : \"new\",\n      \"type\" : \"boolean\",\n      \"value\" : true\n    }, {\n      \"name\" : \"weight\",\n      \"type\" : \"number\",\n      \"value\" : 12.5\n    } ]\n  } ]\n}"
+                                            "raw": "{\n  \"type\" : \"product-variant\",\n  \"resources\" : [ {\n    \"key\" : \"red-t-shirt\",\n    \"sku\" : \"red-t-shirt\",\n    \"product\" : {\n      \"key\" : \"t-shirt\",\n      \"typeId\" : \"product\"\n    },\n    \"isMasterVariant\" : true,\n    \"attributes\" : [ {\n      \"name\" : \"new\",\n      \"type\" : \"boolean\",\n      \"value\" : true\n    }, {\n      \"name\" : \"weight\",\n      \"type\" : \"number\",\n      \"value\" : 12.5\n    } ],\n    \"images\" : [ {\n      \"url\" : \"https:\/\/example.com\/images\/red-t-shirt-front.jpg\",\n      \"label\" : \"Front view\",\n      \"dimensions\" : {\n        \"w\" : 1400,\n        \"h\" : 1400\n      }\n    } ],\n    \"assets\" : [ {\n      \"key\" : \"red-t-shirt-size-guide\",\n      \"name\" : {\n        \"en\" : \"Size guide\"\n      },\n      \"sources\" : [ {\n        \"uri\" : \"https:\/\/example.com\/assets\/red-t-shirt-size-guide.pdf\",\n        \"contentType\" : \"application\/pdf\"\n      } ]\n    } ]\n  } ]\n}"
                                         }
                                     },
                                     "response": []
@@ -1801,7 +1801,7 @@
                                             "query": [
                                             ]
                                         },
-                                        "description": "Creates an Import Request for updating Product Variants.\nReturns an [InvalidField](ctp:import:type:InvalidFieldError) error if the [ProductVariantPatchRequest](ctp:import:type:ProductVariantPatchRequest) contains patches with and without the `product` field set.\n",
+                                        "description": "Creates an Import Request for updating Product Variants.\nOnly the Attributes included in the patch are changed. All other Attributes, images, Assets, and Prices of the Product Variant remain unchanged.\nReturns an [InvalidField](ctp:import:type:InvalidFieldError) error if the [ProductVariantPatchRequest](ctp:import:type:ProductVariantPatchRequest) contains patches with and without the `product` field set.\n",
                                         "body": {
                                             "mode": "raw",
                                             "raw": "{\n  \"type\" : \"product-variant-patch\",\n  \"patches\" : [ {\n    \"productVariant\" : {\n      \"typeId\" : \"product-variant\",\n      \"key\" : \"red-t-shirt\"\n    },\n    \"attributes\" : {\n      \"attribute-to-update\" : {\n        \"type\" : \"boolean\",\n        \"value\" : true\n      },\n      \"name-of-attribute-to-delete\" : {\n        \"annotations\" : [ ],\n        \"value\" : null\n      },\n      \"name-of-localized-attribute-to-update\" : {\n        \"type\" : \"ltext\",\n        \"value\" : {\n          \"en\" : \"Existing field\",\n          \"es\" : {\n            \"annotations\" : [ ],\n            \"value\" : null\n          },\n          \"de\" : \"Updating field\"\n        }\n      },\n      \"name-of-localized-attribute-set-to-update\" : {\n        \"type\" : \"ltext-set\",\n        \"value\" : [ {\n          \"en\" : \"Existing field\",\n          \"es\" : {\n            \"annotations\" : [ ],\n            \"value\" : null\n          },\n          \"de\" : \"Updating field\",\n          \"br\" : \"New field\"\n        }, {\n          \"en\" : \"Another Existing field\",\n          \"es\" : {\n            \"annotations\" : [ ],\n            \"value\" : null\n          },\n          \"de\" : \"Another Updating field\",\n          \"br\" : \"Another New field\"\n        } ]\n      }\n    },\n    \"staged\" : false\n  } ]\n}"
@@ -1883,7 +1883,7 @@
                                             "query": [
                                             ]
                                         },
-                                        "description": "Creates an Import Request for Product Selections.",
+                                        "description": "Creates an Import Request for Product Selections.\n\nWhen updating existing Product Selections, an `assignments` list in a [ProductSelectionImport](ctp:import:type:ProductSelectionImport) becomes the complete set of assignments, and Products omitted from the list are removed from the Product Selection.\n",
                                         "body": {
                                             "mode": "raw",
                                             "raw": "{\n  \"type\" : \"product-selection\",\n  \"resources\" : [ {\n    \"key\" : \"selection-001\",\n    \"name\" : {\n      \"en\" : \"Featured Products\",\n      \"de\" : \"Empfohlene Produkte\"\n    },\n    \"mode\" : \"Individual\",\n    \"assignments\" : [ {\n      \"product\" : {\n        \"key\" : \"product-123\",\n        \"typeId\" : \"product\"\n      },\n      \"variantSelection\" : {\n        \"type\" : \"includeOnly\",\n        \"skus\" : [ \"SKU-1\", \"SKU-2\" ]\n      }\n    } ]\n  } ]\n}"
@@ -2211,7 +2211,7 @@
                                             "query": [
                                             ]
                                         },
-                                        "description": "Creates an Import Request for Standalone Prices.",
+                                        "description": "Creates an Import Request for Standalone Prices.\n\nWhen updating existing Standalone Prices, optional values omitted from a [StandalonePriceImport](ctp:import:type:StandalonePriceImport), such as `validFrom`, `validUntil`, `tiers`, `discounted`, and `custom`, are removed. Include all existing values you want to keep.\n\nStandalonePriceImport has no `staged` field. If the existing StandalonePrice has staged changes, every update through the Import API discards them, even if the imported `value` is the same. To keep the staged changes, first apply them with the [Apply Staged Changes](ctp:api:type:StandalonePriceApplyStagedChangesAction) update action.\n",
                                         "body": {
                                             "mode": "raw",
                                             "raw": "{\n  \"type\" : \"standalone-price\",\n  \"resources\" : [ {\n    \"key\" : \"standalone-price-key\",\n    \"sku\" : \"variantSku\",\n    \"value\" : {\n      \"type\" : \"centPrecision\",\n      \"currencyCode\" : \"EUR\",\n      \"centAmount\" : 100\n    }\n  } ]\n}"
@@ -2293,7 +2293,7 @@
                                             "query": [
                                             ]
                                         },
-                                        "description": "Creates an Import Request for Variants.\n\nThis endpoint is only available for Projects with `productCatalogModel` set to `Modular`.\n",
+                                        "description": "Creates an Import Request for Variants.\n\nThis endpoint is only available for Projects with `productCatalogModel` set to `Modular`.\n\nWhen updating existing Variants, `images`, `attributes`, and `assets` omitted from a [VariantImport](ctp:import:type:VariantImport) are removed. Include all existing values you want to keep.\n",
                                         "body": {
                                             "mode": "raw",
                                             "raw": "{\n  \"type\" : \"variant\",\n  \"resources\" : [ {\n    \"key\" : \"variant-1\",\n    \"sku\" : \"VARIANT-SKU-001\",\n    \"product\" : {\n      \"typeId\" : \"product\",\n      \"key\" : \"product-1\"\n    },\n    \"publish\" : false,\n    \"images\" : [ {\n      \"url\" : \"https:\/\/example.com\/images\/variant-1.jpg\",\n      \"label\" : \"Variant image\",\n      \"dimensions\" : {\n        \"w\" : 800,\n        \"h\" : 600\n      }\n    } ],\n    \"attributes\" : [ {\n      \"name\" : \"color\",\n      \"type\" : \"text\",\n      \"value\" : \"blue\"\n    } ],\n    \"assets\" : [ {\n      \"key\" : \"variant-asset-1\",\n      \"sources\" : [ {\n        \"uri\" : \"https:\/\/example.com\/assets\/variant-1.mp4\",\n        \"key\" : \"variant-video\"\n      } ],\n      \"name\" : {\n        \"en\" : \"Variant Demo\"\n      },\n      \"description\" : {\n        \"en\" : \"Variant demo video\"\n      },\n      \"tags\" : [ \"video\", \"demo\" ]\n    } ]\n  } ]\n}"
